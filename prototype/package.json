@@ -1,0 +1,12 @@
+{
+  "name": "BackendlessProManager-servercode",
+  "version": "1.0.0",
+  "scripts": {
+    "debug": "coderunner debug",
+    "deploy": "coderunner deploy"
+  },
+  "devDependencies": {
+    "backendless-coderunner": "^6.1.5"
+  },
+  "license": "MIT"
+}
