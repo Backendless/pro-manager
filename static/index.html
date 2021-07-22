@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="shortcut icon" href="./favicon.ico?v=1" type="image/ico">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family&#x3D;Material+Icons+Round">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/3.2.0/material-components-web.min.css">
+
+    <!-- jss-insertion-point -->
+
+    <script>
+      window.uiBuilderSDKPath = './library/sdk'
+      window.uiBuilderThemePath = '.'
+
+      less = {
+        env       : 'development',
+        logLevel  : 1,
+        globalVars: {
+          sdkPath  : JSON.stringify(window.uiBuilderSDKPath),
+          themePath: JSON.stringify(window.uiBuilderThemePath),
+        },
+      }
+    </script>
+
+    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.12.2/less.min.js"></script>
+
+    <script data-main="./main.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+<div id="app">
+</div>
+</body>
+<html>

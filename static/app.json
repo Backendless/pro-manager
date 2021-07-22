@@ -1,0 +1,255 @@
+{
+  "mainPage": "landing",
+  "isFunctionsMigrated": true,
+  "isFunctionsRenamedToUid": true,
+  "publishedPath": "web/BackendlessProManager",
+  "pages": {
+    "404": {
+      "label": "Not Found Page",
+      "style": {
+        "padding": "20px 20px 20px 20px"
+      },
+      "usedComponentTypes": [
+        "panel",
+        "block",
+        "text",
+        "button"
+      ],
+      "components": {
+        "page": {
+          "type": "page",
+          "handlers": {}
+        },
+        "902c9641de4ec9e73427e7192a118d14": {
+          "id": "Button - 1",
+          "type": "button",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        }
+      },
+      "dataBinding": {},
+      "attrs": {},
+      "html": "<div data-module-type=\"panel\" data-display=\"true\" id=\"Panel1\" data-uid=\"9ea586cd3d73a464ea46f38f4e5a5b6c\" style=\"display:flex;flex-direction:column;min-height:250px;min-width:300px;align-self:center;justify-content:center;margin:auto auto auto auto;padding:20px 20px 20px 20px;background-color:#ffffff;\"><div data-module-type=\"block\" data-display=\"true\" id=\"Block - 1\" data-uid=\"e5035b25cb15f71e61ed2f83fed2a899\" style=\"display:flex;flex-shrink:0;flex-direction:column;padding:10px;min-width:100px;\"><span data-module-type=\"text\" data-display=\"true\" id=\"Title\" data-uid=\"897f53f723c31e5c3686cd8c17114fb3\" style=\"align-self:center;font-size:46px;font-weight:700;color:#afafaf;\">404</span></div><div data-module-type=\"block\" data-display=\"true\" id=\"Block - 2\" data-uid=\"628a9372bb7f0083a006300f7cb931e7\" style=\"display:flex;flex-shrink:0;flex-direction:column;padding:10px;min-width:100px;\"><span data-module-type=\"text\" data-display=\"true\" id=\"Text - 1\" data-uid=\"86f9608b739bb9dbb42dc2c7044e7155\" style=\"align-self:center;font-size:26px;font-weight:700;color:#afafaf;\">Page Not Found</span></div><button data-label=\"Go To Main Page\" data-module-type=\"button\" data-raised=\"true\" data-display=\"true\" id=\"Button - 1\" data-uid=\"902c9641de4ec9e73427e7192a118d14\" data-variant=\"contained\" style=\"margin:40px 20px 20px 20px;\"></button></div>"
+    },
+    "landing": {
+      "label": "Landing Page",
+      "style": {},
+      "usedComponentTypes": [
+        "block",
+        "text",
+        "image",
+        "form",
+        "input",
+        "icon",
+        "textarea",
+        "link",
+        "button"
+      ],
+      "components": {
+        "page": {
+          "type": "page",
+          "handlers": {
+            "onEnter": {
+              "dependencies": []
+            }
+          }
+        },
+        "e8ab1434c6365dab092ef9b3240c4126": {
+          "id": "Begin Installation Button",
+          "type": "button",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onDisabledStateAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "85bca2fbc4ee3a8d6adc7ed882a45ad1": {
+          "id": "Progress Section",
+          "type": "block",
+          "handlers": {
+            "onMounted": {
+              "dependencies": []
+            }
+          }
+        },
+        "cfb590020fdb4f339997e6cbf852e53f": {
+          "id": "Progress Log",
+          "type": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "57ecc035cc7401123c2e0e4ed413fc45": {
+          "id": "Progress Complete Percent",
+          "type": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "dedf17cb4ba461e8f5bfa00f7aef7123": {
+          "id": "Status Message",
+          "type": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "59a9659fc0d9004800bb986754eb6f47": {
+          "id": "Manage Backendless Button",
+          "type": "button",
+          "handlers": {
+            "onDisplayAssignment": {
+              "dependencies": []
+            },
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "479b2a33da7b6974e864d71afcfcd975": {
+          "id": "Status Icon",
+          "type": "icon",
+          "handlers": {
+            "onIconAssignment": {
+              "dependencies": []
+            },
+            "onMouseOver": {
+              "dependencies": []
+            }
+          }
+        },
+        "457c6629fffdd48c7b8ff32e19c4a0cc": {
+          "id": "Status Table Row",
+          "type": "block",
+          "handlers": {
+            "onDisplayAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "711ff4a9a8a495c3a6f58613b8b1c992": {
+          "id": "Process Name Text",
+          "type": "text",
+          "handlers": {
+            "onMouseOver": {
+              "dependencies": []
+            }
+          }
+        },
+        "7449e3dcdfa88c517a5f189326054e2a": {
+          "id": "Block42",
+          "type": "block",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "6273606ad0c8da6687b596d645d24e1f": {
+          "id": "Block43",
+          "type": "block",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "97c567a4702912bf3ab71859bbe2765a": {
+          "id": "Stop Button",
+          "type": "button",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "9015e93d81e6e3bbd4dbbb490432bdb2": {
+          "id": "Restart Button",
+          "type": "button",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "466b4f2918c95779c4e7f11530b8a988": {
+          "id": "Start Button",
+          "type": "button",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "754bfc61e5c393581b798c31d51ec203": {
+          "id": "Version Input Reset",
+          "type": "icon",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "d56bad183bd940dffcdcab68ad19ce15": {
+          "id": "Path Input Reset",
+          "type": "icon",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "11873449cbdbbbff2b6a4729020ca31b": {
+          "id": "Version Input",
+          "type": "input",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "3e958ac9decced612cb42d1deb42762f": {
+          "id": "Port Input",
+          "type": "input",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "aa0adf05e875f996906a1e8a8dc2f3c8": {
+          "id": "Path Input",
+          "type": "input",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "050dce71f02927316de6f4c574748414": {
+          "id": "License Input",
+          "type": "textarea",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        }
+      },
+      "dataBinding": {},
+      "attrs": {},
+      "html": "<div data-module-type=\"block\" data-display id=\"Wrapper\" data-uid=\"c0f4200faca492e9e7e201abad2c9b46\" data-classes=\"wrapper\"><div data-module-type=\"block\" data-display id=\"Header\" data-uid=\"75d37f356107d6d467cde46105d92d71\" data-classes=\"header\"><span data-module-type=\"text\" data-display id=\"Header Title\" data-uid=\"9dde37cdf98b382917d56a4e68787f0d\" data-content=\"Backendless Pro Manager\" data-classes=\"header__title\" class=\"bl-text\">Text</span><img data-url=\"./styles/img/logo-placeholder.png\" data-module-type=\"image\" data-display id=\"Header Logo\" data-uid=\"fecd5a14e3f980f4f4f9ca5975c244d7\"/></div><div data-module-type=\"block\" data-display id=\"Container\" data-uid=\"4262e5e68ac100b8aea1c0066a8c60bb\" data-classes=\"container\"><div data-module-type=\"block\" data-display=\"true\" id=\"Initial Screen\" data-uid=\"9f14f707ac5a4d7fdcde61783a5293d3\" data-classes=\"initial\"><span data-module-type=\"text\" data-display id=\"Initial Title\" data-uid=\"7c572f7ff3db5996d758688a52516ab7\" data-content=\"Welcome to Backendless Pro installation!\" data-classes=\"initial__title\" class=\"bl-text\">Text</span><form data-module-type=\"form\" data-display id=\"Configure Section\" data-uid=\"d64762c9751351c6bb8f35ac073c5a17\" data-classes=\"configure\"><span data-module-type=\"text\" data-display id=\"Configure Title\" data-uid=\"c9931cc8f062761e8ace47554ff48759\" data-content=\"Make sure to enter all configuration parameters so that each item is marked as complete:\" data-classes=\"configure__title\">Form Title</span><div data-module-type=\"block\" data-display id=\"Configure Content\" data-uid=\"3ac8ebeccc661eacd76de039a4be2a59\" data-classes=\"configure__content\"><div data-module-type=\"block\" data-display id=\"Configure Version Field\" data-uid=\"eeea05aa6f8dc8cbd25499faca59bf72\" data-classes=\"configure__field\"><span data-module-type=\"text\" data-display id=\"Version Label\" data-uid=\"ca34621fc849f77729eaf45dc35ee063\" data-content=\"Backendless Pro version:\" data-classes=\"configure__label\" class=\"bl-text\">Text</span><div data-module-type=\"block\" data-display id=\"Block9\" data-uid=\"04ec50c10d95253b1fbd152fb7a3d7a3\" data-classes=\"configure__input-wrapper\"><div data-module-type=\"block\" data-display id=\"Block61\" data-uid=\"da84dda6ec4227af43a3667d506bc7d4\"><div data-label=\"\" data-module-type=\"input\" data-value=\"\" data-binding_onvalueassignment=\"version\" data-display id=\"Version Input\" data-uid=\"11873449cbdbbbff2b6a4729020ca31b\" data-variant=\"outlined\" data-classes=\"configure__input configure__input-version\"></div><i data-icon=\"refresh\" data-size=\"default\" data-module-type=\"icon\" data-display id=\"Version Input Reset\" data-uid=\"754bfc61e5c393581b798c31d51ec203\" data-classes=\"configure__input-default\"></i></div><span data-module-type=\"text\" data-display id=\"Version Input Descr\" data-uid=\"cfa8f4f32766bb6938882ee646428c34\" data-content=\"You can enter a different version number to install an older version of the product.\" data-classes=\"configure__descr\" class=\"bl-text\">Text</span></div></div><div data-module-type=\"block\" data-display data-uid=\"30968e61d724300d795d26144fc334e1\" id=\"Configure Port Field\" data-classes=\"configure__field\"><span data-module-type=\"text\" data-display data-uid=\"76bdaf5fdd669efaf19b6e15be0c1867\" data-content=\"Web server port:\" id=\"Port Label\" data-classes=\"configure__label\" class=\"bl-text\">Text</span><div data-module-type=\"block\" data-display data-uid=\"582adcdc82223acea1751b131ae2f6f9\" id=\"Block13\" data-classes=\"configure__input-wrapper\"><div data-label=\"\" data-module-type=\"input\" data-value=\"\" data-binding_onvalueassignment=\"port\" data-display data-uid=\"3e958ac9decced612cb42d1deb42762f\" data-variant=\"outlined\" id=\"Port Input\" data-classes=\"configure__input configure__input-port\"></div><span data-module-type=\"text\" data-display data-uid=\"edd7e89286d74e82d3ce6416f0cfe50e\" data-content=\"This is a web server port that will be used to access Backendless console and API endpoints.\" id=\"Port Input Descr\" data-classes=\"configure__descr\" class=\"bl-text\">Text</span></div></div><div data-module-type=\"block\" data-display data-uid=\"633bdd7f981ce188f3f817d223c5fdb9\" id=\"Configure Path Field\" data-classes=\"configure__field\"><span data-module-type=\"text\" data-display data-uid=\"a2b53fd8efd19dfe7b255cbb8ded293a\" data-content=\"Local mounting path:\" id=\"Path Label\" data-classes=\"configure__label\" class=\"bl-text\">Text</span><div data-module-type=\"block\" data-display data-uid=\"5dfa783fd17dc7b962915e8cb2fbf615\" id=\"Block18\" data-classes=\"configure__input-wrapper\"><div data-module-type=\"block\" data-display id=\"Block62\" data-uid=\"89435542363d3f63a97154eb963b49f8\"><div data-label=\"\" data-module-type=\"input\" data-value=\"\" data-binding_onvalueassignment=\"mountPath\" data-display data-uid=\"aa0adf05e875f996906a1e8a8dc2f3c8\" data-variant=\"outlined\" id=\"Path Input\" data-classes=\"configure__input configure__input-path\"></div><i data-icon=\"refresh\" data-size=\"default\" data-module-type=\"icon\" data-display data-uid=\"d56bad183bd940dffcdcab68ad19ce15\" data-classes=\"configure__input-default\" id=\"Path Input Reset\"></i></div><span data-module-type=\"text\" data-display data-uid=\"67e7113af0235315d8be8846ff81289c\" data-content=\"This is a local file storage path that will be used by Backendless to store configuration, files, logs, etc. \" id=\"Path Input Descr\" data-classes=\"configure__descr\" class=\"bl-text\">Text</span></div></div><div data-module-type=\"block\" data-display data-uid=\"07417e21076beefeac8b963f74519b2e\" id=\"Configure Licence Field\" data-classes=\"configure-field\"><span data-module-type=\"text\" data-display data-uid=\"145ab48efd26b71417e947c64768033a\" data-content=\"Backendless license key:\" id=\"Licence Label\" data-classes=\"configure__label\" class=\"bl-text\">Text</span><div data-module-type=\"block\" data-display data-uid=\"9fa9334defcd36cada542917fb89c682\" id=\"Block23\" data-classes=\"configure__input-wrapper\"><div data-label=\"\" data-variant=\"outlined\" data-rows=\"5\" data-rows-max=\"10\" data-module-type=\"textarea\" data-display id=\"License Input\" data-uid=\"050dce71f02927316de6f4c574748414\" data-classes=\"configure__input configure__input-licence\" data-binding_onvalueassignment=\"licence\"></div><div data-module-type=\"block\" data-display id=\"Block26\" data-uid=\"a18ec9eecbf5a731ffa1dd2de2f11558\"><span data-module-type=\"text\" data-display data-uid=\"5e9292f6bb164879842386f2e7e9db9b\" data-content=\"Enter your license key. To request a license, fill out the \" id=\"License Input Descr\" data-classes=\"configure__descr\" class=\"bl-text\">Text</span><a href=\"\" data-text=\"Backendless license request form\" data-module-type=\"link\" data-display id=\"License Request Form Link\" data-uid=\"11eb1363f80b6b7818a7fe642d3df1af\" data-classes=\"configure__descr configure__descr-link\" data-target-path=\"https://backendless.com/backendless-pro-license-request/\"></a><span data-module-type=\"text\" data-display id=\"Text40\" data-uid=\"da97d8d6ee41b08d9774d14aa16a66b7\" data-classes=\"configure__descr\" data-content=\".\" class=\"bl-text\">Text</span></div></div></div></div><button data-label=\"BEGIN INSTALLATION\" data-module-type=\"button\" data-raised=\"true\" type=\"submit\" id=\"Begin Installation Button\" data-display data-uid=\"e8ab1434c6365dab092ef9b3240c4126\" data-variant=\"outlined\" data-classes=\"configure__submit uis uis-angle-right-b\" data-size=\"small\"></button></form><div data-module-type=\"block\" data-display=\"false\" id=\"Progress Section\" data-uid=\"85bca2fbc4ee3a8d6adc7ed882a45ad1\" data-classes=\"progress\" data-data-container=\"true\"><div data-module-type=\"block\" data-display id=\"Progress Header\" data-uid=\"9bbaf56323b9cc6cf43ef48cf53cf23c\" data-classes=\"progress__header\"><div data-module-type=\"block\" data-display id=\"Block27\" data-uid=\"a692fae5ef0270bd573709f909364ba3\" data-classes=\"progress__title\"><span data-module-type=\"text\" data-display id=\"Progress Title\" data-uid=\"30cac562b168b398b1a5897de70a1912\" data-content=\"Installation status:\" data-classes=\"progress__title-text\" class=\"bl-text\">Text</span><span data-module-type=\"text\" data-display id=\"Status Message\" data-uid=\"dedf17cb4ba461e8f5bfa00f7aef7123\" data-classes=\"progress__title-status\" data-binding_oncontentassignment=\"messages.message\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display data-uid=\"f05e631f30e35fe70a7d5448813747ad\" id=\"Block29\" data-classes=\"progress__compete\"><div data-module-type=\"block\" data-display id=\"Progress Complete Bar\" data-uid=\"2d3e1adda04ccbb3f214972b22278c91\" data-classes=\"progress__complete-bar\"><div data-module-type=\"block\" data-display data-uid=\"ef2711536155ffa5de27d36f375510dd\" id=\"Progress Complete Fill\" data-classes=\"progress__complete-fill\"></div></div><span data-module-type=\"text\" data-display id=\"Progress Complete Percent\" data-uid=\"57ecc035cc7401123c2e0e4ed413fc45\" data-classes=\"progress__complete-percent\" data-binding_oncontentassignment=\"percent\" class=\"bl-text\">Text</span></div></div><div data-module-type=\"block\" data-display id=\"Progress Body\" data-uid=\"b2fbf4cc8102bff82844df43fcb73cfa\" data-classes=\"progress__body\"><div data-module-type=\"block\" data-display id=\"Progress Logs Wrapper\" data-uid=\"995bb2ab7307dc8737988ee2c1b4acb4\" data-classes=\"progress__list\"><div data-module-type=\"block\" data-display id=\"Progress Logs List\" data-uid=\"c41f10ca03a3b4765199a9bf3531f4b5\" data-dynamic-list-behaviour=\"true\" data-classes=\"progress__list-field\" data-binding_ondynamicitemsassignment=\"messages\"><span data-module-type=\"text\" data-display id=\"Progress Log\" data-uid=\"cfb590020fdb4f339997e6cbf852e53f\" data-classes=\"progress__message\" class=\"bl-text\">Text</span></div></div><button data-label=\"MANAGE BACKENDLESS\" data-module-type=\"button\" data-raised=\"true\" type=\"submit\" data-display data-uid=\"59a9659fc0d9004800bb986754eb6f47\" data-variant=\"outlined\" data-classes=\"progress__button uis uis-angle-right-b\" data-size=\"small\" id=\"Manage Backendless Button\"></button></div></div></div><div data-module-type=\"block\" data-display=\"false\" id=\"Status Screen\" data-uid=\"d0dbef53b8c80847a1ca79a3750cf0f1\" data-classes=\"status\" data-data-container=\"true\"><div data-module-type=\"block\" data-display id=\"Status Sidebar\" data-uid=\"5e2e0baf3527ecf261c9a681c98f8bf5\" data-classes=\"status__sidebar\"><span data-module-type=\"text\" data-display id=\"Sidebar Еуче\" data-uid=\"99a430629f9e1f966e81e71bc047f6e3\" data-content=\"Server Status\" data-classes=\"status__sidebar-title\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display data-uid=\"044bf8e32685e58c11a8caecfec5d9ee\" id=\"Status Container\" data-classes=\"status__container\"><div data-module-type=\"block\" data-display id=\"Status Table\" data-uid=\"7b3b066c150162bb4ea1a47fdd8d8274\" data-classes=\"status__table\"><div data-module-type=\"block\" data-display id=\"Status Table Header\" data-uid=\"7ea187cf970e472520d4248f6b43b45d\" data-classes=\"status__table-header\"><span data-module-type=\"text\" data-display id=\"Process Col Header\" data-uid=\"bb5b0f7f82b4ba248ff2181f4a1a63a7\" data-classes=\"status__table-col-process\" data-content=\"Process\" class=\"bl-text\">Text</span><span data-module-type=\"text\" data-display data-uid=\"09c45ea8637684bd3321fd95e837a8a8\" id=\"Status Col Header\" data-classes=\"status__table-col-status\" data-content=\"Status\" class=\"bl-text\">Text</span><span data-module-type=\"text\" data-display data-uid=\"c11fe4a84fedeedef3089885e9e1f398\" id=\"Actions Col Header\" data-classes=\"status__table-col-actions\" data-content=\"Actions\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display data-uid=\"f389d84a4a8318540ae7c2ac58ed8eec\" id=\"Block41\" data-classes=\"status__table-body\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"statusList\"><div data-module-type=\"block\" data-display id=\"Status Table Row\" data-uid=\"457c6629fffdd48c7b8ff32e19c4a0cc\" data-classes=\"status__table-row\"><div data-module-type=\"block\" data-display id=\"Process Name\" data-uid=\"abf2f16d6ac5a18854d3e8b3cc2635a6\" data-classes=\"status__table-col status__table-col-process\"><span data-module-type=\"text\" data-display id=\"Process Name Text\" data-uid=\"711ff4a9a8a495c3a6f58613b8b1c992\" data-classes=\"\" data-binding_oncontentassignment=\"name\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display id=\"Status Icon\" data-uid=\"9452ca97cd864caa3b4c5ecb803b4649\" data-classes=\"status__table-col status__table-col-status\"><i data-icon=\"thumb_up\" data-size=\"default\" data-module-type=\"icon\" data-display id=\"Status Icon\" data-uid=\"479b2a33da7b6974e864d71afcfcd975\" data-classes=\"status__table-icon\"></i></div><div data-module-type=\"block\" data-display id=\"Status Actions\" data-uid=\"2cb5711ad3c3cab837dfc8ecf3d7390f\" data-classes=\"status__table-col status__table-col-actions\"><div data-module-type=\"block\" data-display id=\"Block42\" data-uid=\"7449e3dcdfa88c517a5f189326054e2a\"><button data-label=\"STOP\" data-variant=\"outlined\" data-size=\"small\" data-module-type=\"button\" data-display data-uid=\"97c567a4702912bf3ab71859bbe2765a\" id=\"Stop Button\" data-classes=\"status__button status__button-stop\"></button><button data-label=\"RESTART\" data-variant=\"outlined\" data-size=\"small\" data-module-type=\"button\" data-display data-uid=\"9015e93d81e6e3bbd4dbbb490432bdb2\" id=\"Restart Button\" data-classes=\"status__button status__button-restart\"></button></div><div data-module-type=\"block\" data-display id=\"Block43\" data-uid=\"6273606ad0c8da6687b596d645d24e1f\"><button data-label=\"START\" data-variant=\"outlined\" data-size=\"small\" data-module-type=\"button\" data-display id=\"Start Button\" data-uid=\"466b4f2918c95779c4e7f11530b8a988\" data-classes=\"status__button status__button-start\"></button></div></div></div></div></div><div data-module-type=\"block\" data-display id=\"Legend Block\" data-uid=\"864b7dccfd0a0bd49abeab1c39e914dc\" data-classes=\"status__legend\"><span data-module-type=\"text\" data-display id=\"Legend Title\" data-uid=\"a286a335bd266f9e207dc4d1c3cbd7f5\" data-classes=\"status__legend-title\" data-content=\"Status legend:\" class=\"bl-text\">Text</span><div data-module-type=\"block\" data-display id=\"Legend Content\" data-uid=\"3affafa1bb7fec838ea55c31d6f54807\" data-classes=\"status__legend-content\"><div data-module-type=\"block\" data-display id=\"Legend Row\" data-uid=\"21a549fae239da0bf65a367cec389279\" data-classes=\"status__legend-row\"><i data-icon=\"arrow_circle_up\" data-size=\"default\" data-module-type=\"icon\" data-display id=\"Legend Icon Running\" data-uid=\"7a950ba231b2864e9dc770c4189f4d94\" data-classes=\"status__legend-icon status__legend-icon-running\"></i><span data-module-type=\"text\" data-display id=\"Text42\" data-uid=\"c665249d2c5208eecec5ad43cf5a6b74\" data-content=\"- running\" data-classes=\"status__legend-descr\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display data-uid=\"5c8736ddfc61c1a2447f255a6bf735cf\" data-classes=\"status__legend-row\" id=\"Legend Row2\"><i data-icon=\"arrow_circle_down\" data-size=\"default\" data-module-type=\"icon\" data-display id=\"Legend Icon Down\" data-uid=\"b8dcfcd2bed5b9e610ba30877cb4816b\" data-classes=\"status__legend-icon status__legend-icon-down\"></i><span data-module-type=\"text\" data-display data-uid=\"d02757046d076f2f76151e1c4d8a5d4d\" id=\"Text44\" data-content=\"- down\" data-classes=\"status__legend-descr\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display data-uid=\"0941bd5883bb71383aa5063c88247745\" data-classes=\"status__legend-row\" id=\"Legend Row3\"><i data-icon=\"pause_circle_outline\" data-size=\"default\" data-module-type=\"icon\" data-display data-uid=\"b0c9b5192d1ee535c31cb375a404b4bf\" id=\"Legend Icon Starting\" data-classes=\"status__legend-icon status__legend-icon-starting\"></i><span data-module-type=\"text\" data-display data-uid=\"8bfb1dc7763ef0337b3a6d8d572e3c9f\" id=\"Text47\" data-content=\" - starting\" data-classes=\"status__legend-descr\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display data-uid=\"4253f503627579ceb756c04813238beb\" data-classes=\"status__legend-row\" id=\"Legend Row4\"><i data-icon=\"pause_circle_outline\" data-size=\"default\" data-module-type=\"icon\" data-display data-uid=\"b9442df34d9ce709fc896b08d6b7262a\" id=\"Legend Icon Stopping\" data-classes=\"status__legend-icon status__legend-icon-stopping\"></i><span data-module-type=\"text\" data-display data-uid=\"08a485d830e77ba550699eb12d14246c\" id=\"Text50\" data-content=\"- stopping\" data-classes=\"status__legend-descr\" class=\"bl-text\">Text</span></div><div data-module-type=\"block\" data-display data-uid=\"d93cb3412e77773b5cc5f25dcb3db474\" data-classes=\"status__legend-row\" id=\"Legend Row5\"><i data-icon=\"stop_circle\" data-size=\"default\" data-module-type=\"icon\" data-display data-uid=\"04946d82f8ab4194c43dea23ac5dc97a\" id=\"Legend Icon Disabled\" data-classes=\"status__legend-icon status__legend-icon-disabled\"></i><span data-module-type=\"text\" data-display data-uid=\"e1e1b23c88456fbc97fa15d149b77ede\" id=\"Text53\" data-content=\"- disabled\" data-classes=\"status__legend-descr\" class=\"bl-text\">Text</span></div></div></div></div></div></div></div>"
+    }
+  }
+}

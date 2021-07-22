@@ -1,0 +1,2692 @@
+@themePrimary: #337ab7;
+
+@disabledColor: gray;
+
+@appBackgroundColor: #fff;
+@appTextColor: contrast(@appBackgroundColor);
+
+
+@appComponentShadowColor: #000;
+@appComponentShadow: 0 3px 1px -2px fade(@appComponentShadowColor, 20%), 0 2px 2px 0 fade(@appComponentShadowColor, 14%), 0 1px 5px 0 fade(@appComponentShadowColor, 12%);
+
+@appComponentBorderRadius: 4px;
+@appComponentBorderWidth: 2px;
+
+@appBlockBackgroundColor: @appBackgroundColor;
+@appBlockTextColor: @appTextColor;
+@appBlockBorder: 1px solid fadeout(contrast(@panelBackgroundColor), 95%);
+@appBlockBorderRadius: @appComponentBorderRadius;
+@appBlockShadow: @appComponentShadow;
+
+@appLayoutMaxPhoneWidth: 479px;
+@appLayoutMinTabletWidth: @appLayoutMaxPhoneWidth + 1px;
+@appLayoutMaxTabletWidth: 839px;
+@appLayoutMinDesktopWidth: @appLayoutMaxTabletWidth + 1px;
+
+@appLayoutPhoneGap: 16px;
+@appLayoutTabletGap: 16px;
+@appLayoutDesktopGap: 24px;
+
+html,
+body,
+#app,
+#page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background-color: @appBackgroundColor;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@tooltipColor: NULL;
+@tooltipBackground: NULL;
+@tooltipArrowBackground: @tooltipBackground;
+@tooltipArrowVisibility: NULL;
+
+.bl-tooltip {
+  color: @tooltipColor;
+  background: @tooltipBackground;
+
+  .bl-tooltip--arrow {
+    color: @tooltipArrowBackground;
+    visibility: @tooltipArrowVisibility;
+  }
+}
+
+
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+@checkboxThemeColor: @themePrimary;
+
+@checkboxUncheckedIconColor: @checkboxThemeColor;
+@checkboxCheckedIconColor: @checkboxUncheckedIconColor;
+@checkboxDisabledUncheckedIconColor: @disabledColor;
+@checkboxDisabledCheckedIconColor: @checkboxDisabledUncheckedIconColor;
+
+@checkboxUncheckedTextColor: @appTextColor;
+@checkboxCheckedTextColor: @checkboxUncheckedTextColor;
+@checkboxDisabledUncheckedTextColor: @disabledColor;
+@checkboxDisabledCheckedTextColor: @checkboxDisabledUncheckedTextColor;
+
+.bl-checkbox {
+  .bl-checkbox-root {
+    svg {
+      color: currentColor;
+    }
+  }
+
+  .variant(@iconColor, @labelColor) {
+    .bl-checkbox-root {
+      color: @iconColor;
+    }
+
+    .bl-checkbox-label {
+      color: @labelColor
+    }
+  }
+
+  &:not(.bl-checkbox--disabled) {
+    .bl-checkbox-root:hover {
+      background-color: fade(@checkboxCheckedIconColor, 10%);
+    }
+  }
+
+  &:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) {
+    .variant(@checkboxUncheckedIconColor, @checkboxUncheckedTextColor);
+  }
+
+  &.bl-checkbox--checked:not(.bl-checkbox--disabled) {
+    .variant(@checkboxCheckedIconColor, @checkboxCheckedTextColor);
+  }
+
+  &.bl-checkbox--checked.bl-checkbox--disabled {
+    .variant(@checkboxDisabledCheckedIconColor, @checkboxDisabledCheckedTextColor);
+  }
+
+  &:not(.bl-checkbox--checked).bl-checkbox--disabled {
+    .variant(@checkboxDisabledUncheckedIconColor, @checkboxDisabledUncheckedTextColor);
+  }
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
+
+
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
+
+
+/***************************************/
+/***************************************/
+/*****    component: data-table    *****/
+@dataTablePrimaryColor: @themePrimary;
+@dataTableDisabledColor: @disabledColor;
+
+@dataTableBackground: @appBackgroundColor;
+
+@dataTableScrollColor: fadeout(contrast(@dataTableBackground), 80%);
+
+@dataTableColor: contrast(@dataTableBackground);
+@dataTableBorder: @panelBorder;
+@dataTableBorderRadius: @panelBorderRadius;
+@dataTableShadow: @panelShadow;
+
+@dataTableButtonColor: @dataTableColor;
+@dataTableButtonColorActive: @dataTablePrimaryColor;
+
+@dataTableTitleColor: NULL;
+
+@dataTableSearchLabelColor: @dataTableDisabledColor;
+@dataTableSearchTextColor: @dataTableColor;
+@dataTableSearchButtonColorDisabled: transparent;
+
+@dataTableInputUnderlineBorder: 1px solid @dataTableDisabledColor;
+@dataTableInputUnderlineBorderHover: 1px solid @dataTableColor;
+@dataTableInputUnderlineBorderActive: 2px solid @dataTablePrimaryColor;
+
+@dataTableHeadCellColor: @dataTableColor;
+@dataTableHeadCellSize: NULL;
+@dataTableHeadCellBorder: 1px solid @dataTableDisabledColor;
+@dataTableHeadSortLabelColor: inherit;
+@dataTableHeadSortLabelColorActive: @dataTablePrimaryColor;
+
+@dataTableBodyCellColor: NULL;
+@dataTableBodyCellBorder: @dataTableHeadCellBorder;
+
+@dataTableBodyRowBackgroundEven: NULL;
+@dataTableBodyRowBackgroundOdd: NULL;
+@dataTableBodyRowBackgroundHover: NULL;
+@dataTableBodyRowBackgroundSelected: NULL;
+
+@dataTablePaginationColor: @dataTableColor;
+
+.bl-data-table {
+  display: flex;
+  flex-direction: column;
+
+  background: @dataTableBackground;
+  color: @dataTableColor;
+  box-shadow: @dataTableShadow;
+  border: @dataTableBorder;
+  border-radius: @dataTableBorderRadius;
+
+  .MuiButtonBase-root:not(.Mui-disabled) {
+    color: @dataTableButtonColor;
+
+    &:hover {
+      color: @dataTableButtonColorActive;
+    }
+  }
+
+  .MuiInputBase-root {
+    color: @dataTableSearchTextColor;
+
+    .MuiInputAdornment-positionStart {
+      color: @dataTableSearchLabelColor;
+    }
+
+    input {
+      color: inherit;
+    }
+
+    &:before {
+      border-bottom: @dataTableInputUnderlineBorder;
+    }
+
+    &:hover:not(.Mui-disabled):before {
+      border-bottom: @dataTableInputUnderlineBorderHover;
+    }
+
+    &:after {
+      border-bottom: @dataTableInputUnderlineBorderActive;
+    }
+
+  }
+
+  .bl-data-table-toolbar {
+    .bl-data-table-title {
+      color: @dataTableTitleColor;
+    }
+
+    .bl-data-table-search-field {
+      .MuiIconButton-root.Mui-disabled {
+        color: @dataTableSearchButtonColorDisabled;
+      }
+
+    }
+  }
+
+  .bl-data-table-head-cell {
+    color: @dataTableHeadCellColor;
+    font-size: @dataTableHeadCellSize;
+    border-bottom: @dataTableHeadCellBorder;
+
+    .MuiTableSortLabel-root {
+      .MuiTableSortLabel-icon {
+        color: @dataTableHeadSortLabelColor;
+      }
+
+      &.MuiTableSortLabel-active {
+        color: @dataTableHeadSortLabelColorActive;
+
+        .MuiTableSortLabel-icon {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .bl-data-table-row {
+    td {
+      color: @dataTableBodyCellColor;
+      border-bottom: @dataTableBodyCellBorder;
+    }
+
+    &:nth-child(2n) {
+      background-color: @dataTableBodyRowBackgroundEven;
+    }
+
+    &:nth-child(2n-1) {
+      background-color: @dataTableBodyRowBackgroundOdd;
+    }
+
+    &:hover {
+      background: @dataTableBodyRowBackgroundHover;
+    }
+
+    &.Mui-selected {
+      background-color: @dataTableBodyRowBackgroundSelected;
+    }
+  }
+
+  .bl-data-table-edit-row {
+    .bl-data-table-field {
+      .MuiInputBase-root {
+        &:before {
+          border-bottom: @dataTableInputUnderlineBorderHover;
+        }
+      }
+    }
+  }
+
+  .bl-data-table-pagination {
+    border-bottom: none;
+    color: @dataTablePaginationColor;
+
+    .MuiIconButton-root {
+      color: @dataTablePaginationColor;
+
+      &.Mui-disabled {
+        color: @dataTableDisabledColor
+      }
+    }
+
+    .MuiTypography-caption {
+      color: @dataTableDisabledColor;
+    }
+
+    .bl-data-table-pagination-select-icon {
+      color: inherit;
+    }
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: @dataTableScrollColor;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/*****    component: data-table    *****/
+/***************************************/
+/***************************************/
+
+
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+@chartBorderRadius: @appComponentBorderRadius;
+@chartBoxShadow: @appComponentShadow;
+@chartBackgroundColor: #FFF;
+
+.bl-chart {
+  position:relative;
+
+  background-color:@chartBackgroundColor;
+  border-radius: @chartBorderRadius;
+  box-shadow: @chartBoxShadow;
+}
+
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+
+
+/*********************************/
+/*********************************/
+/*****    component: chip    *****/
+@chipThemeColor: @themePrimary;
+@chipDisabledColor: @disabledColor;
+@chipBorderRadius: 16px;
+@chipWidth: max-content;
+@chipIconWidth: auto;
+@chipIconHeight: auto;
+@chipBorderWidth: @appComponentBorderWidth;
+@chipBorderType: solid;
+@chipFontSizeSmall: 16px;
+
+@chipBackground: @chipThemeColor;
+@chipColor: contrast(@chipBackground);
+@chipDisabledBackground: @chipDisabledColor;
+
+@chipOutlinedBackground: transparent;
+@chipOutlinedColor: @chipThemeColor;
+@chipOutlinedBorderWidth: @chipBorderWidth;
+@chipOutlinedBorderType: @chipBorderType;
+@chipOutlinedBorderColor: @chipOutlinedColor;
+@chipOutlinedBorder: @chipOutlinedBorderWidth @chipOutlinedBorderType @chipOutlinedBorderColor;
+@chipOutlinedDisabledColor: @chipDisabledColor;
+@chipOutlinedDisabledBorderWidth: @chipOutlinedBorderWidth;
+@chipOutlinedDisabledBorderType: @chipOutlinedBorderType;
+@chipOutlinedDisabledBorderColor: @chipDisabledColor;
+@chipOutlinedDisabledBorder: @chipOutlinedDisabledBorderWidth @chipOutlinedDisabledBorderType @chipOutlinedDisabledBorderColor;
+
+.bl-chip {
+  border-radius: @chipBorderRadius;
+  width: @chipWidth;
+
+  &:not(.bl-chip--outlined) {
+    background: @chipBackground;
+    color: @chipColor;
+
+    .bl-chip-front-icon {
+      color: @chipColor;
+    }
+
+    .bl-chip-delete-icon {
+      color: @chipColor;
+      width: @chipIconWidth;
+      height: @chipIconHeight;
+    }
+
+    .MuiChip-deleteIconSmall {
+      font-size: @chipFontSizeSmall;
+    }
+
+    &.bl-chip--disabled {
+      background: @chipDisabledBackground;
+      color: @chipDisabledColor;
+    }
+  }
+
+  &.bl-chip--outlined {
+    &:not(.bl-chip--disabled) {
+      background: @chipOutlinedBackground;
+      color: @chipOutlinedColor;
+      border: @chipOutlinedBorder;
+
+      .bl-chip-front-icon {
+        color: @chipOutlinedColor;
+      }
+
+      .bl-chip-delete-icon {
+        width: @chipIconWidth;
+        height: @chipIconHeight;
+        color: @chipOutlinedColor;
+      }
+    }
+
+    &.bl-chip--disabled {
+      border: @chipOutlinedDisabledBorder;
+      color: @chipOutlinedDisabledColor;
+
+      .bl-chip-front-icon {
+        color: @chipOutlinedDisabledColor;
+      }
+
+      .bl-chip-delete-icon {
+        color: @chipOutlinedDisabledColor;
+      }
+    }
+  }
+}
+
+//Mui classes
+.MuiChip-deleteIconSmall {
+  font-size: @chipFontSizeSmall;
+}
+
+.MuiChip-iconSmall {
+  font-size: 18px;
+}
+
+/*****    component: chip    *****/
+/*********************************/
+/*********************************/
+
+
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+@buttonThemeColor: @themePrimary;
+@buttonDisabledColor: @disabledColor;
+@buttonBorderRadius: @appComponentBorderRadius;
+@buttonBorderWidth: @appComponentBorderWidth;
+@buttonBorderType: solid;
+
+@buttonContainedBackground: @buttonThemeColor;
+@buttonContainedColor: contrast(@buttonContainedBackground);
+@buttonContainedBorderRadius: @buttonBorderRadius;
+@buttonContainedShadowColor: @appComponentShadowColor;
+@buttonContainedShadowHover: 0px 2px 4px -1px fade(@buttonContainedShadowColor, 20%), 0px 4px 5px 0px fade(@buttonContainedShadowColor, 14%), 0px 1px 10px 0px fade(@buttonContainedShadowColor, 12%);
+@buttonContainedShadowActive: 0px 5px 5px -3px fade(@buttonContainedShadowColor, 20%), 0px 8px 10px 1px fade(@buttonContainedShadowColor, 14%), 0px 3px 14px 2px fade(@buttonContainedShadowColor, 12%);
+@buttonContainedDisabledBackground: @buttonDisabledColor;
+@buttonContainedDisabledColor: contrast(@buttonContainedDisabledBackground);
+
+@buttonOutlinedBackground: transparent;
+@buttonOutlinedColor: @buttonThemeColor;
+@buttonOutlinedBorderRadius: @buttonBorderRadius;
+@buttonOutlinedBorderWidth: @buttonBorderWidth;
+@buttonOutlinedBorderType: @buttonBorderType;
+@buttonOutlinedBorderColor: @buttonOutlinedColor;
+@buttonOutlinedBorder: @buttonOutlinedBorderWidth @buttonOutlinedBorderType @buttonOutlinedBorderColor;
+@buttonOutlinedDisabledColor: @buttonDisabledColor;
+@buttonOutlinedDisabledBorderWidth: @buttonOutlinedBorderWidth;
+@buttonOutlinedDisabledBorderType: @buttonOutlinedBorderType;
+@buttonOutlinedDisabledBorderColor: @buttonDisabledColor;
+@buttonOutlinedDisabledBorder: @buttonOutlinedDisabledBorderWidth @buttonOutlinedDisabledBorderType @buttonOutlinedDisabledBorderColor;
+
+@buttonTextBackground: transparent;
+@buttonTextColor: @buttonThemeColor;
+@buttonTextColorHover: fade(@buttonTextColor, 4%);
+@buttonTextBorderRadius: @buttonBorderRadius;
+@buttonTextDisabledColor: @buttonDisabledColor;
+
+.bl-button {
+
+  &.bl-button--contained {
+    border-radius: @buttonContainedBorderRadius;
+
+    &:not(.bl-button--disabled) {
+      background: @buttonContainedBackground;
+      color: @buttonContainedColor;
+
+      &:not(.bl-button--unelevated) {
+        &:hover {
+          box-shadow: @buttonContainedShadowHover;
+        }
+
+        &:active,
+        &:focus {
+          box-shadow: @buttonContainedShadowActive;
+        }
+      }
+    }
+
+    &.bl-button--disabled {
+      background: @buttonContainedDisabledBackground;
+      color: @buttonContainedDisabledColor;
+    }
+  }
+
+
+  &.bl-button--outlined {
+    border-radius: @buttonOutlinedBorderRadius;
+
+    &:not(.bl-button--disabled) {
+      background: @buttonOutlinedBackground;
+      color: @buttonOutlinedColor;
+      border: @buttonOutlinedBorder;
+    }
+
+    &.bl-button--disabled {
+      border: @buttonOutlinedDisabledBorder;
+      color: @buttonOutlinedDisabledColor;
+    }
+  }
+
+
+  &.bl-button--text {
+    border-radius: @buttonTextBorderRadius;
+
+    &:not(.bl-button--disabled) {
+      background: @buttonTextBackground;
+      color: @buttonTextColor;
+
+      &:hover {
+        background: @buttonTextColorHover;
+      }
+    }
+
+    &.bl-button--disabled {
+      color: @buttonTextDisabledColor;
+    }
+  }
+}
+
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
+
+
+/********************************************/
+/********************************************/
+/*****    component: datetime-picker    *****/
+@datetimePickerPrimaryThemeColor: @themePrimary;
+@datetimePickerDisabledThemeColor: @disabledColor;
+
+@datetimePickerLabelColor: @appTextColor;
+@datetimePickerLabelColorActive: @appTextColor;
+@datetimePickerLabelColorDisabled: @disabledColor;
+
+//underline
+@datetimePickerUnderlineInputColor: @appTextColor;
+@datetimePickerUnderlineInputColorHover: NULL;
+
+@datetimePickerUnderlineBorderColor: @datetimePickerPrimaryThemeColor;
+@datetimePickerUnderlineBorderSize: NULL;
+@datetimePickerUnderlineBorderType: NULL;
+@datetimePickerUnderlineShadow: NULL;
+
+@datetimePickerUnderlineBorderColorHover: @datetimePickerUnderlineBorderColor;
+@datetimePickerUnderlineBorderSizeHover: NULL;
+@datetimePickerUnderlineBorderTypeHover: NULL;
+@datetimePickerUnderlineShadowHover: NULL;
+
+@datetimePickerUnderlineBorderColorActive: @datetimePickerUnderlineBorderColor;
+@datetimePickerUnderlineBorderSizeActive: NULL;
+@datetimePickerUnderlineBorderTypeActive: NULL;
+@datetimePickerUnderlineShadowActive: NULL;
+
+@datetimePickerUnderlineBorderColorDisabled: @datetimePickerDisabledThemeColor;
+@datetimePickerUnderlineBorderTypeDisabled: NULL;
+@datetimePickerUnderlineBorderSizeDisabled: NULL;
+@datetimePickerUnderlineShadowDisabled: NULL;
+
+//outlined
+@datetimePickerOutlinedBorderRadius: NULL;
+
+@datetimePickerOutlinedInputColor: @appTextColor;
+@datetimePickerOutlinedInputColorHover: NULL;
+
+@datetimePickerOutlinedShadow: NULL;
+@datetimePickerOutlinedBorder: 2px solid @datetimePickerPrimaryThemeColor;
+
+@datetimePickerOutlinedShadowHover: NULL;
+@datetimePickerOutlinedBorderHover: NULL;
+
+@datetimePickerOutlinedShadowActive: NULL;
+@datetimePickerOutlinedBorderActive: NULL;
+
+@datetimePickerOutlinedShadowDisabled: NULL;
+@datetimePickerOutlinedBorderDisabled: NULL;
+
+.bl-datetime-picker {
+
+  //label
+  .MuiFormLabel-root {
+    color: @datetimePickerLabelColor;
+
+    &.Mui-focused {
+      color: @datetimePickerLabelColorActive;
+    }
+
+    &.Mui-disabled {
+      color: @datetimePickerLabelColorDisabled;
+    }
+  }
+
+  .MuiInputBase-root {
+    &.MuiOutlinedInput-root {
+      border-radius: @datetimePickerOutlinedBorderRadius;
+
+      .MuiInputBase-input {
+        color: @datetimePickerOutlinedInputColor;
+
+        &:hover {
+          color: @datetimePickerOutlinedInputColorHover;
+        }
+      }
+
+      &:not(.Mui-disabled) {
+        .MuiOutlinedInput-notchedOutline {
+          border: @datetimePickerOutlinedBorder;
+          box-shadow: @datetimePickerOutlinedShadow;
+        }
+
+        &.Mui-focused {
+          .MuiOutlinedInput-notchedOutline {
+            border: @datetimePickerOutlinedBorderActive;
+            box-shadow: @datetimePickerOutlinedShadowActive;
+          }
+        }
+
+        &:hover {
+          .MuiOutlinedInput-notchedOutline {
+            border: @datetimePickerOutlinedBorderHover;
+            box-shadow: @datetimePickerOutlinedShadowHover;
+          }
+        }
+      }
+
+      &.Mui-disabled {
+        .MuiOutlinedInput-notchedOutline {
+          border: @datetimePickerOutlinedBorderDisabled;
+          box-shadow: @datetimePickerOutlinedShadowDisabled;
+        }
+      }
+    }
+
+    &.MuiInput-underline {
+      .MuiInputBase-input {
+        color: @datetimePickerUnderlineInputColor;
+
+        &:hover {
+          color: @datetimePickerUnderlineInputColorHover;
+        }
+      }
+
+      &:before {
+        border-bottom-color: @datetimePickerUnderlineBorderColor;
+        border-bottom-width: @datetimePickerUnderlineBorderSize;
+        border-bottom-style: @datetimePickerUnderlineBorderType;
+        box-shadow: @datetimePickerUnderlineShadow;
+      }
+
+      &:after {
+        border-bottom-color: @datetimePickerUnderlineBorderColorActive;
+        border-bottom-width: @datetimePickerUnderlineBorderSizeActive;
+        border-bottom-style: @datetimePickerUnderlineBorderTypeActive;
+        box-shadow: @datetimePickerUnderlineShadowActive;
+      }
+
+      &:hover:not(.Mui-disabled):not(.Mui-focused):before {
+        border-bottom-color: @datetimePickerUnderlineBorderColorHover;
+        border-bottom-width: @datetimePickerUnderlineBorderSizeHover;
+        border-bottom-style: @datetimePickerUnderlineBorderTypeHover;
+        box-shadow: @datetimePickerUnderlineShadowHover;
+      }
+
+      &.Mui-disabled:before {
+        border-bottom-color: @datetimePickerUnderlineBorderColorDisabled;
+        border-bottom-width: @datetimePickerUnderlineBorderSizeDisabled;
+        border-bottom-style: @datetimePickerUnderlineBorderTypeDisabled;
+        box-shadow: @datetimePickerUnderlineShadowDisabled;
+      }
+    }
+  }
+}
+
+@datetimePickerDialogPrimaryColor: @themePrimary;
+@datetimePickerDialogSecondaryColor: @appBackgroundColor;
+
+@datetimePickerDialogColor: @datetimePickerDialogPrimaryColor;
+@datetimePickerDialogBackground: @datetimePickerDialogSecondaryColor;
+@datetimePickerDialogBorder: 1px solid @datetimePickerDialogPrimaryColor;
+@datetimePickerDialogBorderRadius: NULL;
+@datetimePickerDialogShadow: NULL;
+
+@datetimePickerDialogToolbarBackground: @datetimePickerDialogPrimaryColor;
+@datetimePickerDialogToolbarColor: contrast(@datetimePickerDialogToolbarBackground);
+@datetimePickerDialogToolbarColorActive: @datetimePickerDialogSecondaryColor;
+
+@datetimePickerDialogHeaderButtonBackground: transparent;
+@datetimePickerDialogHeaderButtonColor: contrast(@datetimePickerDialogSecondaryColor);
+@datetimePickerDialogHeaderButtonBackgroundHover: NULL;
+@datetimePickerDialogHeaderButtonColorHover: NULL;
+@datetimePickerDialogHeaderButtonBackgroundDisabled: transparent;
+@datetimePickerDialogHeaderButtonColorDisabled: transparent;
+
+@datetimePickerDialogActionsBackground: rgba(0, 0, 0, 0.2);
+@datetimePickerDialogActionsButtonBackground: @datetimePickerDialogPrimaryColor;
+@datetimePickerDialogActionsButtonColor: contrast(@datetimePickerDialogActionsButtonBackground);
+
+@datetimePickerDialogDaysListColor: contrast(@datetimePickerDialogBackground);
+
+@datetimePickerDialogDaySelectedBackground: @datetimePickerDialogPrimaryColor;
+@datetimePickerDialogDaySelectedColor: contrast(@datetimePickerDialogPrimaryColor);
+
+@datetimePickerDialogDayCurrentBackground: fadeout(@datetimePickerDialogPrimaryColor, 80%);
+@datetimePickerDialogDayCurrentColor: contrast(@datetimePickerDialogDayCurrentBackground);
+
+@datetimePickerDialogDayDisabledBackground: transparent;
+@datetimePickerDialogDayDisabledColor: @datetimePickerDisabledThemeColor;
+
+@datetimePickerDialogDayBorderRadius: NULL;
+
+@datetimePickerDialogYearBackgroundActive: fadeout(@datetimePickerDialogPrimaryColor, 60%);
+@datetimePickerDialogYearColorActive: contrast(@datetimePickerDialogYearBackgroundActive);
+
+@datetimePickerDialogYearSelectedBackground: @datetimePickerDialogPrimaryColor;
+@datetimePickerDialogYearSelectedColor: contrast(@datetimePickerDialogYearSelectedBackground);
+
+@datetimePickerDialogClockPointerColor: darken(@datetimePickerDialogBackground, 20%);
+
+@datetimePickerTabBackground: @datetimePickerPrimaryThemeColor;
+@datetimePickerTabIndicatorBackground:contrast(@datetimePickerPrimaryThemeColor);
+@datetimePickerTabIconsColor:contrast(@datetimePickerPrimaryThemeColor);
+
+.bl-datetime-picker-dialog {
+
+  .MuiPaper-root {
+    color: @datetimePickerDialogColor;
+  }
+
+  .MuiDialog-paper {
+    background: @datetimePickerDialogBackground;
+    border: @datetimePickerDialogBorder;
+    border-radius: @datetimePickerDialogBorderRadius;
+    box-shadow: @datetimePickerDialogShadow;
+  }
+
+  .MuiToolbar-root {
+    background: @datetimePickerDialogToolbarBackground;
+
+    .MuiPickersToolbarText-toolbarTxt {
+      color: @datetimePickerDialogToolbarColor;
+    }
+
+    .MuiPickersToolbarText-toolbarBtnSelected {
+      color: @datetimePickerDialogToolbarColorActive;
+    }
+  }
+
+  .MuiPickersCalendarHeader-switchHeader {
+    margin: 5px;
+
+    .MuiButtonBase-root {
+      background: @datetimePickerDialogHeaderButtonBackground;
+      color: @datetimePickerDialogHeaderButtonColor;
+
+      &:hover {
+        background-color: @datetimePickerDialogHeaderButtonBackgroundHover;
+        color: @datetimePickerDialogHeaderButtonColorHover;
+      }
+
+      &.Mui-disabled {
+        background: @datetimePickerDialogHeaderButtonBackgroundDisabled;
+        color:@datetimePickerDialogHeaderButtonColorDisabled;
+      }
+    }
+
+  }
+
+  .MuiPickersCalendarHeader-dayLabel {
+    color: @datetimePickerDialogDaysListColor;
+  }
+
+  .MuiPickersDay-day {
+    color: inherit;
+    border-radius: @datetimePickerDialogDayBorderRadius;
+
+    &.MuiPickersDay-current {
+      background: @datetimePickerDialogDayCurrentBackground;
+      color: @datetimePickerDialogDayCurrentColor;
+    }
+
+    &.MuiPickersDay-daySelected {
+      background: @datetimePickerDialogDaySelectedBackground;
+      color: @datetimePickerDialogDaySelectedColor;
+    }
+
+    &.MuiPickersDay-dayDisabled {
+      background: @datetimePickerDialogDayDisabledBackground;
+      color: @datetimePickerDialogDayDisabledColor;
+    }
+  }
+
+  .MuiPickersYear-root {
+    &:focus,
+    &:hover {
+      background: @datetimePickerDialogYearBackgroundActive;
+      color: @datetimePickerDialogYearColorActive;
+    }
+
+    &.MuiPickersYear-yearSelected {
+      background: @datetimePickerDialogYearSelectedBackground;
+      color: @datetimePickerDialogYearSelectedColor;
+    }
+  }
+
+  .MuiPickersClockNumber-clockNumber {
+    color: inherit;
+
+    &.MuiPickersClockNumber-clockNumberSelected {
+      color: #fff;
+    }
+  }
+
+  .MuiPickersClock-pin,
+  .MuiPickersClockPointer-pointer {
+    background: @datetimePickerDialogClockPointerColor;
+  }
+
+  .MuiPickersClockPointer-thumb {
+    background: @datetimePickerDialogClockPointerColor;
+    border: 14px solid @datetimePickerDialogClockPointerColor;
+  }
+  .MuiTabs-root{
+    .MuiTab-root{
+      background-color: @datetimePickerTabBackground;
+      opacity: 1;
+    }
+
+    .MuiTabs-indicator{
+      background-color: @datetimePickerTabIndicatorBackground;
+    }
+
+    .MuiSvgIcon-root{
+      fill:@datetimePickerTabIconsColor;
+    }
+  }
+
+
+  .MuiDialogActions-root {
+    background: @datetimePickerDialogActionsBackground;
+
+    .MuiButton-root {
+      background: @datetimePickerDialogActionsButtonBackground;
+      color: @datetimePickerDialogActionsButtonColor;
+    }
+  }
+}
+
+/*****    component: datetime-picker    *****/
+/********************************************/
+/********************************************/
+
+
+/*********************************/
+/*********************************/
+/*****    component: form    *****/
+@formBackgroundColor: @appBlockBackgroundColor;
+@formShadow: @appBlockShadow;
+@formTextColor: @appBlockTextColor;
+@formBorder: @appBlockBorder;
+@formBorderRadius: @appBlockBorderRadius;
+
+.bl-form {
+  display:flex;
+  flex-direction:column;
+
+  background-color: @formBackgroundColor;
+  box-shadow: @formShadow;
+  color: @formTextColor;
+  border: @formBorder;
+  border-radius: @formBorderRadius;
+}
+
+
+/*****    component: form    *****/
+/*********************************/
+/*********************************/
+
+
+/***************************************/
+/***************************************/
+/*****    component: google-map    *****/
+@googleMapBackgroundColor: contrast(@appBlockBackgroundColor);
+@googleMapBorder: @appBlockBorder;
+@googleMapBorderRadius: @appBlockBorderRadius;
+@googleMapShadow: @appBlockShadow;
+
+.bl-google-map {
+  display:flex;
+  flex-grow:1;
+
+  background-color: @googleMapBackgroundColor;
+  border: @googleMapBorder;
+  border-radius: @googleMapBorderRadius;
+  box-shadow: @googleMapShadow;
+
+  .map {
+
+  }
+}
+
+/*****    component: google-map    *****/
+/***************************************/
+/***************************************/
+
+
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+@dividerColor:@themePrimary;
+@dividerWidth:@appComponentBorderWidth;
+
+.bl-divider {
+  border-color: @dividerColor;
+  border-width: @dividerWidth;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
+
+
+/*********************************/
+/*********************************/
+/*****    component: icon    *****/
+@iconColor: @themePrimary;
+
+.bl-icon {
+  color: @iconColor;
+}
+
+
+/*****    component: icon    *****/
+/*********************************/
+/*********************************/
+
+
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+@jumbotronBackground: #dbdbdb;
+@jumbotronShadow: NULL;
+@jumbotronTextColor: NULL;
+@jumbotronBorder: NULL;
+@jumbotronBorderRadius: 12px;
+@jumbotronPadding: 48px 24px 48px 24px;
+@jumbotronMargin: 0 0 48px 0;
+
+.bl-jumbotron {
+  display:flex;
+  flex-direction:column;
+
+  background: @jumbotronBackground;
+  box-shadow: @jumbotronShadow;
+  color: @jumbotronTextColor;
+  border: @jumbotronBorder;
+  border-radius: @jumbotronBorderRadius;
+  padding: @jumbotronPadding;
+  margin: @jumbotronMargin;
+}
+
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
+
+
+/**********************************/
+/**********************************/
+/*****    component: input    *****/
+@inputThemeColor: @themePrimary;
+
+//default
+@inputFilledShadow: NULL;
+@inputFilledShadowHover: NULL;
+@inputFilledShadowActive: NULL;
+@inputFilledShadowDisabled: NULL;
+
+@inputFilledBackground: #eee;
+@inputFilledBackgroundHover: NULL;
+@inputFilledBackgroundActive: #f1f1f1;
+@inputFilledBackgroundDisabled: #dbdbdb;
+
+@inputFilledBorder: NULL;
+@inputFilledBorderHover: NULL;
+@inputFilledBorderActive: NULL;
+@inputFilledBorderDisabled: NULL;
+
+@inputFilledUnderlineColor: @inputThemeColor;
+@inputFilledUnderlineWidth: @appComponentBorderWidth;
+@inputFilledUnderlineType: solid;
+@inputFilledUnderline: @inputFilledUnderlineWidth @inputFilledUnderlineType @inputFilledUnderlineColor;
+
+@inputFilledBorderRadius: @appComponentBorderRadius;
+@inputFilledBorderRadiusTopLeft: @inputFilledBorderRadius;
+@inputFilledBorderRadiusTopRight: @inputFilledBorderRadius;
+@inputFilledBorderRadiusBottomRight: 0;
+@inputFilledBorderRadiusBottomLeft: 0;
+
+@inputFilledColor: contrast(@inputFilledBackground);
+@inputFilledColorHover: contrast(@inputFilledBackground);
+@inputFilledColorActive: contrast(@inputFilledBackground);
+@inputFilledColorDisabled: contrast(@inputFilledBackgroundDisabled);
+
+@inputFilledAutofillColor: @inputFilledColor;
+@inputFilledAutofillColorHover: @inputFilledColorHover;
+@inputFilledAutofillColorActive: @inputFilledColorActive;
+
+@inputFilledAutofillBackgroundColor: transparent;
+@inputFilledAutofillBackgroundColorHover: transparent;
+@inputFilledAutofillBackgroundColorActive: transparent;
+
+@inputFilledLabelColor: @inputFilledColor;
+@inputFilledLabelColorHover: @inputFilledLabelColor;
+@inputFilledLabelColorActive: @inputFilledLabelColor;
+@inputFilledLabelColorDisabled: @disabledColor;
+
+//outlined
+@inputOutlinedShadow: NULL;
+@inputOutlinedShadowHover: NULL;
+@inputOutlinedShadowActive: NULL;
+@inputOutlinedShadowDisabled: NULL;
+
+@inputOutlinedBackground: NULL;
+@inputOutlinedBackgroundHover: NULL;
+@inputOutlinedBackgroundActive: NULL;
+@inputOutlinedBackgroundDisabled: NULL;
+
+@inputOutlinedBorderWidth: @appComponentBorderWidth;
+@inputOutlinedBorderType: solid;
+
+@inputOutlinedBorder: @inputOutlinedBorderWidth @inputOutlinedBorderType @inputThemeColor;
+@inputOutlinedBorderHover: NULL;
+@inputOutlinedBorderActive: @inputOutlinedBorderWidth @inputOutlinedBorderType @inputThemeColor;
+@inputOutlinedBorderDisabled: @inputOutlinedBorderWidth @inputOutlinedBorderType @disabledColor;
+
+@inputOutlinedBorderRadius: @appComponentBorderRadius;
+@inputOutlinedBorderRadiusTopLeft: @inputOutlinedBorderRadius;
+@inputOutlinedBorderRadiusTopRight: @inputOutlinedBorderRadius;
+@inputOutlinedBorderRadiusBottomRight: @inputOutlinedBorderRadius;
+@inputOutlinedBorderRadiusBottomLeft: @inputOutlinedBorderRadius;
+
+@inputOutlinedColor: @appTextColor;
+@inputOutlinedColorHover: @appTextColor;
+@inputOutlinedColorActive: @appTextColor;
+@inputOutlinedColorDisabled: @disabledColor;
+
+@inputOutlinedAutofillColor: @inputOutlinedColor;
+@inputOutlinedAutofillColorHover: @inputOutlinedColorHover;
+@inputOutlinedAutofillColorActive: @inputOutlinedColorActive;
+
+@inputOutlinedAutofillBackgroundColor: transparent;
+@inputOutlinedAutofillBackgroundColorHover: transparent;
+@inputOutlinedAutofillBackgroundColorActive: transparent;
+
+@inputOutlinedLabelColor: @appTextColor;
+@inputOutlinedLabelColorHover: @inputOutlinedLabelColor;
+@inputOutlinedLabelColorActive: @inputOutlinedLabelColor;
+@inputOutlinedLabelColorDisabled: @disabledColor;
+
+//standard
+@inputStandardShadow: NULL;
+@inputStandardShadowHover: NULL;
+@inputStandardShadowActive: NULL;
+@inputStandardShadowDisabled: NULL;
+
+@inputStandardUnderlineWidth: @appComponentBorderWidth;
+@inputStandardUnderlineType: solid;
+@inputStandardUnderlineColor: @inputStandardColor;
+@inputStandardUnderlineColorActive: @inputThemeColor;
+@inputStandardUnderlineColorDisabled: @disabledColor;
+
+@inputStandardUnderline: @inputStandardUnderlineWidth @inputStandardUnderlineType fade(@inputStandardUnderlineColor, 70%);
+@inputStandardUnderlineHover: calc(@inputStandardUnderlineWidth + 1px) @inputStandardUnderlineType @inputStandardUnderlineColor;
+@inputStandardUnderlineActive: @inputStandardUnderlineWidth @inputStandardUnderlineType @inputStandardUnderlineColorActive;
+@inputStandardUnderlineDisabled: @inputStandardUnderlineWidth @inputStandardUnderlineType @inputStandardUnderlineColorDisabled;
+
+@inputStandardColor: @appTextColor;
+@inputStandardColorHover: @appTextColor;
+@inputStandardColorActive: @appTextColor;
+@inputStandardColorDisabled: @disabledColor;
+
+@inputStandardAutofillColor: @inputStandardColor;
+@inputStandardAutofillColorHover: @inputStandardColorHover;
+@inputStandardAutofillColorActive: @inputStandardColorActive;
+
+@inputStandardLabelColor: @inputStandardColor;
+@inputStandardLabelColorHover: @inputStandardLabelColor;
+@inputStandardLabelColorActive: @inputStandardLabelColor;
+@inputStandardLabelColorDisabled: @disabledColor;
+
+
+.bl-input {
+  &.bl-input--outlined {
+    fieldset {
+      border-radius: @inputOutlinedBorderRadiusTopLeft @inputOutlinedBorderRadiusTopRight @inputOutlinedBorderRadiusBottomRight @inputOutlinedBorderRadiusBottomLeft;
+    }
+
+    .bl-input-label {
+      color: @inputOutlinedLabelColor;
+    }
+
+    &:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+      color: @inputOutlinedLabelColorHover;
+    }
+
+    .bl-input-label--disabled {
+      color: @inputOutlinedLabelColorDisabled;
+    }
+
+    .bl-input-label--focused {
+      color: @inputOutlinedLabelColorActive;
+    }
+
+    .bl-input-input-root {
+      &:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+        fieldset {
+          border: @inputOutlinedBorderHover;
+          box-shadow: @inputOutlinedShadowHover;
+        }
+
+        input:-webkit-autofill:hover {
+          -webkit-text-fill-color: @inputOutlinedAutofillColorHover;
+          transition: background-color 5000s ease-in-out 0s;
+          caret-color: @inputOutlinedAutofillColorHover;
+          -webkit-box-shadow: 0 0 0 30px @inputOutlinedAutofillBackgroundColorHover inset;
+        }
+
+        background-color: @inputOutlinedBackgroundHover;
+        color: @inputOutlinedColorHover;
+      }
+
+      &.bl-input-input--focused {
+        fieldset {
+          border: @inputOutlinedBorderActive;
+          box-shadow: @inputOutlinedShadowActive;
+        }
+
+        input:-webkit-autofill:focus {
+          -webkit-text-fill-color: @inputOutlinedAutofillColorActive;
+          transition: background-color 5000s ease-in-out 0s;
+          caret-color: @inputOutlinedAutofillColorActive;
+          -webkit-box-shadow: 0 0 0 30px @inputOutlinedAutofillBackgroundColorActive inset;
+        }
+
+        background-color: @inputOutlinedBackgroundActive;
+        color: @inputOutlinedColorActive;
+      }
+
+      &.bl-input-input--disabled {
+        fieldset {
+          border: @inputOutlinedBorderDisabled;
+          box-shadow: @inputOutlinedShadowDisabled;
+        }
+
+        background-color: @inputOutlinedBackgroundDisabled;
+        color: @inputOutlinedColorDisabled;
+      }
+
+      fieldset {
+        border: @inputOutlinedBorder;
+        box-shadow: @inputOutlinedShadow;
+      }
+
+      input:-webkit-autofill {
+        -webkit-text-fill-color: @inputOutlinedAutofillColor;
+        transition: background-color 5000s ease-in-out 0s;
+        caret-color: @inputOutlinedAutofillColor;
+        -webkit-box-shadow: 0 0 0 30px @inputOutlinedAutofillBackgroundColor inset;
+      }
+
+      background-color: @inputOutlinedBackground;
+      color: @inputOutlinedColor;
+    }
+  }
+
+  &.bl-input--filled {
+    ::after {
+      border-bottom: @inputFilledUnderline;
+    }
+
+    .bl-input-label {
+      color: @inputFilledLabelColor;
+    }
+
+    &:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+      color: @inputFilledLabelColorHover;
+    }
+
+    .bl-input-label--disabled {
+      color: @inputFilledLabelColorDisabled;
+    }
+
+    .bl-input-label--focused {
+      color: @inputFilledLabelColorActive;
+    }
+
+    .bl-input-input-root {
+      &:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+        input:-webkit-autofill:hover {
+          -webkit-text-fill-color: @inputFilledAutofillColorHover;
+          transition: background-color 5000s ease-in-out 0s;
+          caret-color: @inputFilledAutofillColorHover;
+          -webkit-box-shadow: 0 0 0 30px @inputFilledAutofillBackgroundColorHover inset;
+        }
+
+        border: @inputFilledBorderHover;
+        box-shadow: @inputFilledShadowHover;
+        background-color: @inputFilledBackgroundHover;
+        color: @inputFilledColorHover;
+      }
+
+      &.bl-input-input--focused {
+        input:-webkit-autofill:focus {
+          -webkit-text-fill-color: @inputFilledAutofillColorActive;
+          transition: background-color 5000s ease-in-out 0s;
+          caret-color: @inputFilledAutofillColorActive;
+          -webkit-box-shadow: 0 0 0 30px @inputFilledAutofillBackgroundColorActive inset;
+        }
+
+        border: @inputFilledBorderActive;
+        box-shadow: @inputFilledShadowActive;
+        background-color: @inputFilledBackgroundActive;
+        color: @inputFilledColorActive;
+      }
+
+      &.bl-input-input--disabled {
+        border: @inputFilledBorderDisabled;
+        box-shadow: @inputFilledShadowDisabled;
+        background-color: @inputFilledBackgroundDisabled;
+        color: @inputFilledColorDisabled;
+      }
+
+      input:-webkit-autofill {
+        -webkit-text-fill-color: @inputFilledAutofillColor;
+        transition: background-color 5000s ease-in-out 0s;
+        caret-color: @inputFilledAutofillColor;
+        -webkit-box-shadow: 0 0 0 30px @inputFilledAutofillBackgroundColor inset;
+      }
+
+      border-radius: @inputFilledBorderRadiusTopLeft @inputFilledBorderRadiusTopRight @inputFilledBorderRadiusBottomRight @inputFilledBorderRadiusBottomLeft;
+      border: @inputFilledBorder;
+      box-shadow: @inputFilledShadow;
+      background-color: @inputFilledBackground;
+      color: @inputFilledColor;
+    }
+  }
+
+  &.bl-input--standard {
+    .bl-input-label {
+      color: @inputStandardLabelColor;
+    }
+
+    &:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+      color: @inputStandardLabelColorHover;
+    }
+
+    .bl-input-label--disabled {
+      color: @inputStandardLabelColorDisabled;
+    }
+
+    .bl-input-label--focused {
+      color: @inputStandardLabelColorActive;
+    }
+
+    .bl-input-input-root {
+      &::after {
+        border-bottom: @inputStandardUnderlineActive;
+      }
+
+      &::before {
+        border-bottom: @inputStandardUnderline;
+      }
+
+      &:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+        input:-webkit-autofill:hover {
+          -webkit-text-fill-color: @inputStandardAutofillColorHover;
+          transition: background-color 5000s ease-in-out 0s;
+          caret-color: @inputStandardAutofillColorHover;
+        }
+
+        &::before {
+          border-bottom: @inputStandardUnderlineHover;
+        }
+
+        box-shadow: @inputStandardShadowHover;
+        color: @inputStandardColorHover;
+      }
+
+      &.bl-input-input--focused {
+        input:-webkit-autofill:focus {
+          -webkit-text-fill-color: @inputStandardAutofillColorActive;
+          transition: background-color 5000s ease-in-out 0s;
+          caret-color: @inputStandardAutofillColorActive;
+        }
+
+        box-shadow: @inputStandardShadowActive;
+        color: @inputStandardColorActive;
+      }
+
+      &.bl-input-input--disabled {
+        &::before {
+          border-bottom: @inputStandardUnderlineDisabled;
+        }
+
+        box-shadow: @inputStandardShadowDisabled;
+        color: @inputStandardColorDisabled;
+      }
+
+      input:-webkit-autofill {
+        -webkit-text-fill-color: @inputStandardAutofillColor;
+        transition: background-color 5000s ease-in-out 0s;
+        caret-color: @inputStandardAutofillColor;
+      }
+
+      box-shadow: @inputStandardShadow;
+      color: @inputStandardColor;
+    }
+  }
+}
+
+/*****    component: input    *****/
+/**********************************/
+/**********************************/
+
+
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+@imageBorder: NULL;
+@imageBorderRadius: @appComponentBorderRadius;
+@imageBoxShadow: NULL;
+
+.bl-image {
+  border: @imageBorder;
+  border-radius: @imageBorderRadius;
+  box-shadow: @imageBoxShadow;
+}
+
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
+
+
+/****************************************/
+/****************************************/
+/*****    component: layout-cell    *****/
+.bl-layout-cell {
+  width: auto;
+  grid-column-end: span 4;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cell-variant(@size, @device) {
+  .bl-layout-cell--@{size}-@{device} {
+    grid-column-end: span @size;
+  }
+}
+
+@media (max-width: @appLayoutMaxPhoneWidth) {
+  .cell-variant(1, phone);
+  .cell-variant(2, phone);
+  .cell-variant(3, phone);
+  .cell-variant(4, phone);
+}
+
+@media (max-width: @appLayoutMaxTabletWidth) and (min-width: @appLayoutMinTabletWidth) {
+  .cell-variant(1, tablet);
+  .cell-variant(2, tablet);
+  .cell-variant(3, tablet);
+  .cell-variant(4, tablet);
+  .cell-variant(5, tablet);
+  .cell-variant(6, tablet);
+  .cell-variant(7, tablet);
+  .cell-variant(8, tablet);
+}
+
+@media (min-width: @appLayoutMinDesktopWidth) {
+  .cell-variant(1, desktop);
+  .cell-variant(2, desktop);
+  .cell-variant(3, desktop);
+  .cell-variant(4, desktop);
+  .cell-variant(5, desktop);
+  .cell-variant(6, desktop);
+  .cell-variant(7, desktop);
+  .cell-variant(8, desktop);
+  .cell-variant(9, desktop);
+  .cell-variant(10, desktop);
+  .cell-variant(11, desktop);
+  .cell-variant(12, desktop);
+}
+
+/*****    component: layout-cell    *****/
+/****************************************/
+/****************************************/
+
+
+/***************************************/
+/***************************************/
+/*****    component: layout-row    *****/
+@rowPhoneGap: @appLayoutPhoneGap;
+@rowTabletGap: @appLayoutTabletGap;
+@rowDesktopGap: @appLayoutDesktopGap;
+
+.bl-layout-row {
+  display: grid;
+  margin: 0;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+
+@media (max-width: @appLayoutMaxPhoneWidth) {
+  .bl-layout-row {
+    gap: @rowPhoneGap;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: @appLayoutMaxTabletWidth) and (min-width: @appLayoutMinTabletWidth) {
+  .bl-layout-row {
+    gap: @rowTabletGap;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: @appLayoutMinDesktopWidth) {
+  .bl-layout-row {
+    gap: @rowDesktopGap;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+/*****    component: layout-row    *****/
+/***************************************/
+/***************************************/
+
+
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+@containerPhonePadding: @appLayoutPhoneGap;
+@containerTabletPadding: @appLayoutTabletGap;
+@containerDesktopPadding: @appLayoutDesktopGap;
+
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: @appLayoutMaxPhoneWidth) {
+  .bl-layout-container {
+    padding: @containerPhonePadding;
+  }
+}
+
+@media (max-width: @appLayoutMaxTabletWidth) and (min-width: @appLayoutMinTabletWidth) {
+  .bl-layout-container {
+    padding: @containerTabletPadding;
+  }
+}
+
+@media (min-width: @appLayoutMinDesktopWidth) {
+  .bl-layout-container {
+    padding: @containerDesktopPadding;
+  }
+}
+
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
+
+
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+@iframeBorder: @appBlockBorder;
+@iframeBorderRadius: @appBlockBorderRadius;
+@iframeShadow: @appBlockShadow;
+
+.bl-iframe {
+  flex:1;
+  overflow: hidden;
+
+  border: @iframeBorder;
+  border-radius: @iframeBorderRadius;
+  box-shadow: @iframeShadow;
+}
+
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
+
+
+/*********************************/
+/*********************************/
+/*****    component: link    *****/
+@linkColor: @appTextColor;
+@linkFontSize: NULL;
+@linkFontWeight: NULL;
+
+.bl-link {
+  color: @linkColor;
+  font-size: @linkFontSize;
+  font-weight: @linkFontWeight;
+}
+/*****    component: link    *****/
+/*********************************/
+/*********************************/
+
+
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+@paragraphColor: @appTextColor;
+@paragraphFontSize: NULL;
+@paragraphFontWeight: NULL;
+
+.bl-paragraph {
+  color: @paragraphColor;
+  font-size: @paragraphFontSize;
+  font-weight: @paragraphFontWeight;
+}
+
+
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
+
+
+/**********************************/
+/**********************************/
+/*****    component: panel    *****/
+@panelBackgroundColor: @appBlockBackgroundColor;
+@panelShadow: @appBlockShadow;
+@panelTextColor: @appBlockTextColor;
+@panelBorder: @appBlockBorder;
+@panelBorderRadius: @appBlockBorderRadius;
+@panelPadding: NULL;
+@panelMargin: NULL;
+
+.bl-panel {
+  background-color: @panelBackgroundColor;
+  box-shadow: @panelShadow;
+  color: @panelTextColor;
+  border: @panelBorder;
+  border-radius: @panelBorderRadius;
+  padding: @panelPadding;
+  margin: @panelMargin;
+}
+
+/*****    component: panel    *****/
+/**********************************/
+/**********************************/
+
+
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+.bl-page {
+
+}
+
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
+
+
+/*****************************************/
+/*****************************************/
+/*****    component: radio-button    *****/
+@radioColor: @themePrimary;
+@radioUncheckedColor: @radioColor;
+@radioCheckedColor: @radioColor;
+@radioDisabledColor: @disabledColor;
+@radioRippleColor: @radioColor;
+
+//label
+@radioLabelColor: @appTextColor;
+@radioLabelColorChecked: @appTextColor;
+@radioLabelColorDisabled: @radioDisabledColor;
+
+//unchecked
+@radioOuterCircleColor: @radioUncheckedColor;
+
+//checked
+@radioCheckedInnerCircleColor: @radioCheckedColor;
+@radioCheckedOuterCircleColor: @radioCheckedColor;
+
+//disabled unchecked
+@radioDisabledOuterCircleColor: @radioDisabledColor;
+
+//disabled checked
+@radioCheckedDisabledInnerCircleColor: @radioDisabledColor;
+@radioCheckedDisabledOuterCircleColor: @radioDisabledColor;
+
+//shadow on hover
+@radioCheckedHoverShadow: @radioCheckedInnerCircleColor;
+@radioUncheckedHoverShadow: @radioOuterCircleColor;
+
+// --------RADIO-BUTTON------- //
+.bl-radio-button {
+
+  .bl-radio-button-label {
+    font-size: inherit;
+  }
+
+  .bl-radio-button-color-secondary.bl-radio-button--checked {
+    color: @radioCheckedInnerCircleColor;
+  }
+
+  &.bl-radio-button--checked {
+    .bl-radio-button-label {
+      color: @radioLabelColorChecked;
+    }
+  }
+
+  &.bl-radio-button--checked.bl-radio-button--disabled {
+    .bl-radio-button-label {
+      color: @radioLabelColorDisabled;
+    }
+  }
+
+  .bl-radio-button-label {
+    &.bl-radio-button--disabled {
+      color: @radioLabelColorDisabled;
+    }
+
+    color: @radioLabelColor;
+  }
+
+  .bl-radio-button-control {
+    &.bl-radio-button-color-secondary {
+      &.bl-radio-button--checked:hover {
+        background-color: fade(@radioCheckedHoverShadow, 4%);
+      }
+
+      &:hover {
+        background-color: fade(@radioUncheckedHoverShadow, 4%);
+      }
+    }
+
+    &.bl-radio-button--disabled.bl-radio-button--checked {
+      svg.MuiSvgIcon-root {
+        color: @radioCheckedDisabledOuterCircleColor;
+      }
+
+      svg + svg.MuiSvgIcon-root {
+        color: @radioCheckedDisabledInnerCircleColor;
+      }
+    }
+
+    &.bl-radio-button--disabled {
+      svg.MuiSvgIcon-root {
+        color: @radioDisabledOuterCircleColor;
+      }
+    }
+
+    &.bl-radio-button--checked {
+      svg.MuiSvgIcon-root {
+        color: @radioCheckedOuterCircleColor;
+      }
+
+      svg + svg.MuiSvgIcon-root {
+        color: @radioCheckedInnerCircleColor;
+      }
+    }
+
+    svg.MuiSvgIcon-root {
+      color: @radioOuterCircleColor;
+    }
+  }
+}
+
+
+/*****    component: radio-button    *****/
+/*****************************************/
+/*****************************************/
+
+
+/***********************************/
+/***********************************/
+/*****    component: select    *****/
+@selectThemeColor: @themePrimary;
+
+@selectDropdownIconColor: @selectThemeColor;
+@selectDropdownIconColorHover: @selectThemeColor;
+@selectDropdownIconColorActive: @selectThemeColor;
+@selectDropdownIconColorDisabled: @disabledColor;
+
+@selectSelectedTextColor: @appTextColor;
+@selectSelectedTextColorHover: @appTextColor;
+@selectSelectedTextColorDisabled: @disabledColor;
+
+//outlined
+@selectOutlinedLabelColor: @appTextColor;
+@selectOutlinedLabelColorHover: @appTextColor;
+@selectOutlinedLabelColorActive: @appTextColor;
+@selectOutlinedLabelColorDisabled: @disabledColor;
+
+@selectOutlinedBorderWidth: @appComponentBorderWidth;
+@selectOutlinedBorderType: solid;
+
+@selectOutlinedBorder: @selectOutlinedBorderWidth @selectOutlinedBorderType @selectThemeColor;
+@selectOutlinedBorderHover: @selectOutlinedBorderWidth @selectOutlinedBorderType @selectThemeColor;
+@selectOutlinedBorderActive: @selectOutlinedBorderWidth @selectOutlinedBorderType @selectThemeColor;
+@selectOutlinedBorderDisabled: @selectOutlinedBorderWidth @selectOutlinedBorderType @disabledColor;
+
+@selectOutlinedBorderRadius: @appComponentBorderRadius;
+@selectOutlinedBorderRadiusTopLeft: @selectOutlinedBorderRadius;
+@selectOutlinedBorderRadiusTopRight: @selectOutlinedBorderRadius;
+@selectOutlinedBorderRadiusBottomRight: @selectOutlinedBorderRadius;
+@selectOutlinedBorderRadiusBottomLeft: @selectOutlinedBorderRadius;
+
+@selectOutlinedShadow: NULL;
+@selectOutlinedShadowHover: NULL;
+@selectOutlinedShadowActive: NULL;
+@selectOutlinedShadowDisabled: NULL;
+
+//filled
+@selectFilledShadow: NULL;
+@selectFilledShadowHover: NULL;
+@selectFilledShadowActive: NULL;
+@selectFilledShadowDisabled: NULL;
+
+@selectFilledBackground: #eee;
+@selectFilledBackgroundHover: NULL;
+@selectFilledBackgroundActive: #f1f1f1;
+@selectFilledBackgroundDisabled: #dbdbdb;
+
+@selectFilledDropdownIconColor: #000000;
+@selectFilledDropdownIconColorHover: #000000;
+@selectFilledDropdownIconColorActive: #000000;
+
+@selectFilledBorder: NULL;
+@selectFilledBorderHover: NULL;
+@selectFilledBorderActive: NULL;
+@selectFilledBorderDisabled: NULL;
+
+@selectFilledUnderlineColor: @selectThemeColor;
+@selectFilledUnderlineWidth: @appComponentBorderWidth;
+@selectFilledUnderlineType: solid;
+@selectFilledUnderline: @selectFilledUnderlineWidth @selectFilledUnderlineType @selectFilledUnderlineColor;
+
+@selectFilledBorderRadius: @appComponentBorderRadius;
+@selectFilledBorderRadiusTopLeft: @selectFilledBorderRadius;
+@selectFilledBorderRadiusTopRight: @selectFilledBorderRadius;
+@selectFilledBorderRadiusBottomRight: 0;
+@selectFilledBorderRadiusBottomLeft: 0;
+
+@selectFilledColor: contrast(@selectFilledBackground);
+@selectFilledColorHover: contrast(@selectFilledBackground);
+@selectFilledColorActive: contrast(@selectFilledBackground);
+@selectFilledColorDisabled: contrast(@selectFilledBackgroundDisabled);
+
+@selectFilledAutofillColor: @selectFilledColor;
+@selectFilledAutofillColorHover: @selectFilledColorHover;
+@selectFilledAutofillColorActive: @selectFilledColorActive;
+
+@selectFilledAutofillBackgroundColor: transparent;
+@selectFilledAutofillBackgroundColorHover: transparent;
+@selectFilledAutofillBackgroundColorActive: transparent;
+
+@selectFilledLabelColor: @selectFilledColor;
+@selectFilledLabelColorHover: @selectFilledLabelColor;
+@selectFilledLabelColorActive: @selectFilledLabelColor;
+@selectFilledLabelColorDisabled: @disabledColor;
+
+//standard
+@selectStandardShadow: NULL;
+@selectStandardShadowHover: NULL;
+@selectStandardShadowActive: NULL;
+@selectStandardShadowDisabled: NULL;
+
+@selectStandardUnderlineWidth: @appComponentBorderWidth;
+@selectStandardUnderlineType: solid;
+@selectStandardUnderlineColor: @selectStandardColor;
+@selectStandardUnderlineColorActive: @selectThemeColor;
+@selectStandardUnderlineColorDisabled: @disabledColor;
+
+@selectStandardUnderline: @selectStandardUnderlineWidth @selectStandardUnderlineType fade(@selectStandardUnderlineColor, 70%);
+@selectStandardUnderlineHover: calc(@selectStandardUnderlineWidth + 1px) @selectStandardUnderlineType @selectStandardUnderlineColor;
+@selectStandardUnderlineActive: @selectStandardUnderlineWidth @selectStandardUnderlineType @selectStandardUnderlineColorActive;
+@selectStandardUnderlineDisabled: @selectStandardUnderlineWidth @selectStandardUnderlineType @selectStandardUnderlineColorDisabled;
+
+@selectStandardColor: #000;
+@selectStandardColorHover: @appTextColor;
+@selectStandardColorActive: @appTextColor;
+@selectStandardColorDisabled: @disabledColor;
+
+@selectStandardAutofillColor: @selectStandardColor;
+@selectStandardAutofillColorHover: @selectStandardColorHover;
+@selectStandardAutofillColorActive: @selectStandardColorActive;
+
+@selectStandardLabelColor: @selectStandardColor;
+@selectStandardLabelColorHover: @selectStandardLabelColor;
+@selectStandardLabelColorActive: @selectStandardLabelColor;
+@selectStandardLabelColorDisabled: @disabledColor;
+
+@selectStandardDropdownIconColor: #000000;
+@selectStandardDropdownIconColorHover: #000000;
+@selectStandardDropdownIconColorActive: #000000;
+
+.bl-select {
+  .bl-select-label {
+    &.bl-select-label-outlined {
+      color: @selectOutlinedLabelColor;
+    }
+
+    &.bl-select-label-filled {
+      color: @selectFilledLabelColor;
+    }
+
+    &.bl-select-label-standard {
+      color: @selectStandardLabelColor;
+    }
+  }
+
+  &:hover .bl-select-label:not(.bl-select-label--disabled):not(.bl-select-label--focused) {
+    &.bl-select-label-outlined {
+      color: @selectOutlinedLabelColorHover;
+    }
+
+    &.bl-select-label-filled {
+      color: @selectFilledLabelColorHover;
+    }
+
+    &.bl-select-label-standard {
+      color: @selectStandardLabelColorHover;
+    }
+  }
+
+  .bl-select-label--disabled {
+    &.bl-select-label-outlined {
+      color: @selectOutlinedLabelColorDisabled;
+    }
+
+    &.bl-select-label-filled {
+      color: @selectFilledLabelColorDisabled;
+    }
+
+    &.bl-select-label-standard {
+      color: @selectStandardLabelColorDisabled;
+    }
+  }
+
+  .bl-select-label--focused {
+    &.bl-select-label-outlined {
+      color: @selectOutlinedLabelColorActive;
+    }
+
+    &.bl-select-label-filled {
+      color: @selectFilledLabelColorActive;
+    }
+
+    &.bl-select-label-standard {
+      color: @selectStandardColorActive;
+    }
+  }
+
+  .bl-select-box {
+    fieldset {
+      border-radius: @selectOutlinedBorderRadiusTopLeft @selectOutlinedBorderRadiusTopRight @selectOutlinedBorderRadiusBottomRight @selectOutlinedBorderRadiusBottomLeft;
+    }
+
+    &.bl-select-outlined {
+      .bl-select-root {
+        color: @selectSelectedTextColor;
+      }
+
+      .bl-select-icon {
+        color: @selectDropdownIconColor;
+      }
+
+      fieldset {
+        border: @selectOutlinedBorder;
+        box-shadow: @selectOutlinedShadow;
+      }
+
+      &:hover {
+        .bl-select-root {
+          color: @selectSelectedTextColorHover;
+        }
+
+        .bl-select-icon {
+          color: @selectDropdownIconColorHover;
+        }
+
+        fieldset {
+          border: @selectOutlinedBorderHover;
+          box-shadow: @selectOutlinedShadowHover;
+        }
+      }
+
+      &.bl-select--disabled {
+        .bl-select-root {
+          color: @selectSelectedTextColorDisabled;
+        }
+
+        .bl-select-icon {
+          color: @selectDropdownIconColorDisabled;
+        }
+
+        fieldset {
+          border: @selectOutlinedBorderDisabled;
+          box-shadow: @selectOutlinedShadowDisabled;
+        }
+      }
+
+      &.Mui-focused {
+        .bl-select-icon {
+          color: @selectDropdownIconColorActive;
+        }
+
+        fieldset {
+          border: @selectOutlinedBorderActive;
+          box-shadow: @selectOutlinedShadowActive;
+        }
+      }
+    }
+
+    &.bl-select-filled {
+      //none
+      background-color: @selectFilledBackground;
+
+      .bl-select-root {
+        color: @selectSelectedTextColor;
+      }
+
+      .bl-select-icon {
+        color: @selectFilledDropdownIconColor;
+      }
+
+      fieldset {
+        border: @selectFilledBorder;
+        box-shadow: @selectFilledShadow;
+      }
+
+      &:hover {
+        .bl-select-root {
+          color: @selectSelectedTextColorHover;
+        }
+
+        .bl-select-icon {
+          color: @selectFilledDropdownIconColorHover;
+        }
+
+        fieldset {
+          border: @selectFilledBorderHover;
+          box-shadow: @selectFilledShadowHover;
+        }
+      }
+
+      &.bl-select--disabled {
+        .bl-select-root {
+          color: @selectSelectedTextColorDisabled;
+        }
+
+        .bl-select-icon {
+          color: @selectDropdownIconColorDisabled;
+        }
+
+        fieldset {
+          border: @selectFilledBorderDisabled;
+          box-shadow: @selectFilledShadowDisabled;
+        }
+      }
+
+      &.Mui-focused {
+        .bl-select-icon {
+          color: @selectFilledDropdownIconColorActive;
+        }
+
+        fieldset {
+          border: @selectFilledBorderActive;
+          box-shadow: @selectFilledShadowActive;
+        }
+      }
+    }
+
+    &.bl-select-standard {
+      &::after {
+        border-bottom: @selectStandardUnderlineActive;
+      }
+
+      &::before {
+        border-bottom: @selectStandardUnderline;
+      }
+
+      &:hover {
+        &::before {
+          border-bottom: @selectStandardUnderlineHover;
+        }
+      }
+
+      .bl-select-root {
+        color: @selectStandardColor;
+      }
+
+      .bl-select-icon {
+        color: @selectStandardDropdownIconColor;
+      }
+
+      fieldset {
+        box-shadow: @selectStandardShadow;
+      }
+
+      &:hover {
+        .bl-select-root {
+          color: @selectSelectedTextColorHover;
+        }
+
+        .bl-select-icon {
+          color: @selectStandardDropdownIconColorHover;
+        }
+
+        fieldset {
+          box-shadow: @selectStandardShadowHover;
+        }
+      }
+
+      &.bl-select--disabled {
+        .bl-select-root {
+          color: @selectSelectedTextColorDisabled;
+        }
+
+        .bl-select-icon {
+          color: @selectDropdownIconColorDisabled;
+        }
+
+        fieldset {
+          box-shadow: @selectStandardShadowDisabled;
+        }
+      }
+
+      &.Mui-focused {
+        .bl-select-icon {
+          color: @selectStandardDropdownIconColorActive;
+        }
+
+        fieldset {
+          box-shadow: @selectStandardShadowActive;
+        }
+      }
+    }
+  }
+}
+
+//--Options--//
+@selectOptionsBackground: @appBackgroundColor;
+
+@selectOptionsShadow: @appComponentShadow;
+@selectOptionsBorder: NULL;
+
+@selectOptionsBorderRadius: NULL;
+@selectOptionsBorderRadiusTopLeft: @selectOptionsBorderRadius;
+@selectOptionsBorderRadiusTopRight: @selectOptionsBorderRadius;
+@selectOptionsBorderRadiusBottomRight: @selectOptionsBorderRadius;
+@selectOptionsBorderRadiusBottomLeft: @selectOptionsBorderRadius;
+
+@selectOptionsColor: @appTextColor;
+
+@selectOptionsItemColorHover: NULL;
+@selectOptionsItemBackgroundHover: NULL;
+
+//--Options--//
+.MuiMenu-paper {
+  background-color: @selectOptionsBackground;
+  box-shadow: @selectOptionsShadow;
+  border: @selectOptionsBorder;
+  border-radius: @selectOptionsBorderRadiusTopLeft @selectOptionsBorderRadiusTopRight @selectOptionsBorderRadiusBottomRight @selectOptionsBorderRadiusBottomLeft;
+
+  .MuiList-root.MuiMenu-list {
+    color: @selectOptionsColor;
+
+    .bl-select-option:hover {
+      color: @selectOptionsItemColorHover;
+      background-color: @selectOptionsItemBackgroundHover;
+    }
+  }
+}
+
+/*****    component: select    *****/
+/***********************************/
+/***********************************/
+
+
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+.bl-radio-button-group {
+
+}
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
+
+
+/***********************************/
+/***********************************/
+/*****    component: slider    *****/
+@sliderThemeColor: @themePrimary;
+@sliderDisabledColor: @disabledColor;
+
+@sliderRailColor: fade(@sliderTrackColor, 38);
+@sliderRailColorHover: NULL;
+@sliderRailColorDisabled: fade(@sliderTrackColorDisabled, 38);
+
+@sliderTrackColor: @sliderThemeColor;
+@sliderTrackColorHover: NULL;
+@sliderTrackColorDisabled: @sliderDisabledColor;
+
+@sliderMarkColor: @sliderTrackColor;
+@sliderMarkColorHover: NULL;
+@sliderMarkColorDisabled: @sliderTrackColorDisabled;
+
+@sliderMarkActiveColor: contrast(@sliderTrackColor);
+@sliderMarkActiveColorHover: NULL;
+@sliderMarkActiveColorDisabled: contrast(@sliderTrackColorDisabled);
+
+@sliderThumbColor: @sliderTrackColor;
+@sliderThumbColorActive: @sliderThumbColor;
+@sliderThumbColorOnComponentHover: NULL;
+@sliderThumbColorHover: NULL;
+@sliderThumbColorDisabled: @sliderTrackColorDisabled;
+
+@sliderThumbShadowHover: 0px 0px 0px 8px fade(@sliderTrackColor, 16);
+@sliderThumbShadowActive: 0px 0px 0px 14px fade(@sliderTrackColor, 16);
+
+@sliderThumbLabelColor: @sliderThumbColor;
+@sliderThumbLabelColorActive: @sliderThumbLabelColor;
+@sliderThumbLabelColorOnComponentHover: NULL;
+@sliderThumbLabelColorHover: NULL;
+@sliderThumbLabelColorDisabled: @sliderThumbColorDisabled;
+
+@sliderThumbLabelTextColor: contrast(@sliderThumbLabelColor);
+@sliderThumbLabelTextColorActive: @sliderThumbLabelTextColor;
+@sliderThumbLabelTextColorOnComponentHover: NULL;
+@sliderThumbLabelTextColorHover: NULL;
+@sliderThumbLabelTextColorDisabled: contrast(@sliderThumbLabelColorDisabled);
+
+.bl-slider {
+  &:hover {
+    .bl-slider-rail {
+      color: @sliderRailColorHover;
+    }
+
+    .bl-slider-track {
+      color: @sliderTrackColorHover;
+    }
+
+    .bl-slider--mark {
+      color: @sliderMarkColorHover;
+    }
+
+    .bl-slider--mark-active {
+      background-color: @sliderMarkActiveColorHover;
+    }
+
+    .bl-slider-thumb {
+      & .bl-slider--value-label * {
+        background: @sliderThumbLabelColorOnComponentHover;
+        color: @sliderThumbLabelTextColorOnComponentHover;
+      }
+
+      color: @sliderThumbColorOnComponentHover;
+    }
+  }
+
+  &.bl-slider--disabled {
+    .bl-slider-rail {
+      color: @sliderRailColorDisabled;
+    }
+
+    .bl-slider-track {
+      color: @sliderTrackColorDisabled;
+    }
+
+    .bl-slider--mark {
+      color: @sliderMarkColorDisabled;
+    }
+
+    .bl-slider--mark-active {
+      background-color: @sliderMarkActiveColorDisabled;
+    }
+
+    .bl-slider-thumb {
+      & .bl-slider--value-label {
+        & * {
+          background: @sliderThumbLabelColorDisabled;
+          color: @sliderThumbLabelTextColorDisabled;
+        }
+
+        left: auto;
+      }
+
+      color: @sliderThumbColorDisabled;
+    }
+  }
+
+  .bl-slider-rail {
+    color: @sliderRailColor;
+    opacity: 1;
+  }
+
+  .bl-slider-track {
+    color: @sliderTrackColor;
+    opacity: 1;
+  }
+
+  .bl-slider--mark {
+    color: @sliderMarkColor;
+    opacity: 1;
+  }
+
+  .bl-slider--mark-active {
+    background-color: @sliderMarkActiveColor;
+  }
+
+  .bl-slider-thumb {
+    &:hover {
+      .bl-slider--value-label * {
+        background: @sliderThumbLabelColorHover;
+        color: @sliderThumbLabelTextColorHover;
+      }
+
+      box-shadow: @sliderThumbShadowHover;
+      color: @sliderThumbColorHover
+    }
+
+    .bl-slider--value-label * {
+      background: @sliderThumbLabelColor;
+      color: @sliderThumbLabelTextColor;
+    }
+
+    &.bl-slider-thumb--focus {
+      box-shadow: @sliderThumbShadowHover;
+    }
+
+    &.bl-slider--active {
+      & .bl-slider--value-label * {
+        background: @sliderThumbLabelColorActive;
+        color: @sliderThumbLabelTextColorActive;
+      }
+
+      box-shadow: @sliderThumbShadowActive;
+      color: @sliderThumbColorActive;
+    }
+
+    color: @sliderThumbColor;
+  }
+}
+
+/*****    component: slider    *****/
+/***********************************/
+/***********************************/
+
+
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+@switchThemeColor: @themePrimary;
+
+@switchUncheckedThumbColor: #fff;
+@switchUncheckedTrackBackground: contrast(@appBackgroundColor);
+
+@switchCheckedThumbColor: @switchThemeColor;
+@switchCheckedTrackBackground: @switchCheckedThumbColor;
+
+.bl-switch {
+
+  .bl-switch-base {
+    color: @switchThemeColor;
+  }
+
+  .variant(@trackBackground, @thumbColor) {
+    .bl-switch-track {
+      background: @trackBackground;
+    }
+
+    .bl-switch-thumb {
+      background: @thumbColor;
+    }
+  }
+
+  .variant(@switchUncheckedTrackBackground, @switchUncheckedThumbColor);
+
+  &.bl-switch--checked {
+    .variant(@switchCheckedTrackBackground, @switchCheckedThumbColor);
+  }
+
+  &.bl-switch--disabled {
+    .bl-switch-root {
+      opacity: .38;
+    }
+
+    .bl-switch-track {
+      opacity: .54;
+    }
+
+    .bl-switch-thumb {
+      opacity: 1;
+    }
+  }
+}
+
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
+
+
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
+  color: @themePrimary;
+
+  circle {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+    animation: base-spinner_dash 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+}
+
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
+}
+
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
+
+
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+@textColor: @appTextColor;
+@textFontSize: NULL;
+@textFontWeight: NULL;
+
+.bl-text {
+  color: @textColor;
+  font-size: @textFontSize;
+  font-weight: @textFontWeight;
+}
+
+
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
+
+
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+@videoBorder: @appComponentBorderRadius;
+@videoBorderRadius: @appComponentBorderRadius;
+@videoShadow: @appBlockShadow;
+
+.bl-video {
+  border: @videoBorder;
+  border-radius: @videoBorderRadius;
+  box-shadow: @videoShadow;
+}
+
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
+
+
+/*************************************/
+/*************************************/
+/*****    component: textarea    *****/
+@textareaThemeColor: @themePrimary;
+
+//default
+@textareaDefaultShadow: NULL;
+@textareaDefaultShadowHover: NULL;
+@textareaDefaultShadowActive: NULL;
+@textareaDefaultShadowDisabled: NULL;
+
+@textareaDefaultBackground: #eee;
+@textareaDefaultBackgroundHover: NULL;
+@textareaDefaultBackgroundActive: #f1f1f1;
+@textareaDefaultBackgroundDisabled: #dbdbdb;
+
+@textareaDefaultBorder: NULL;
+@textareaDefaultBorderHover: NULL;
+@textareaDefaultBorderActive: NULL;
+@textareaDefaultBorderDisabled: NULL;
+
+@textareaDefaultUnderlineColor: @textareaThemeColor;
+
+@textareaDefaultBorderRadius: @appComponentBorderRadius;
+@textareaDefaultBorderRadiusTopLeft: @textareaDefaultBorderRadius;
+@textareaDefaultBorderRadiusTopRight: @textareaDefaultBorderRadius;
+@textareaDefaultBorderRadiusBottomRight: 0;
+@textareaDefaultBorderRadiusBottomLeft: 0;
+
+@textareaDefaultColor: contrast(@textareaDefaultBackground);
+@textareaDefaultColorHover: contrast(@textareaDefaultBackground);
+@textareaDefaultColorActive: contrast(@textareaDefaultBackground);
+@textareaDefaultColorDisabled: contrast(@textareaDefaultBackgroundDisabled);
+
+@textareaDefaultLabelColor: @textareaDefaultColor;
+@textareaDefaultLabelColorHover: @textareaDefaultColor;
+@textareaDefaultLabelColorActive: @textareaDefaultColor;
+@textareaDefaultLabelColorDisabled: @disabledColor;
+
+//outlined
+@textareaOutlinedShadow: NULL;
+@textareaOutlinedShadowHover: NULL;
+@textareaOutlinedShadowActive: NULL;
+@textareaOutlinedShadowDisabled: NULL;
+
+@textareaOutlinedBackground: NULL;
+@textareaOutlinedBackgroundHover: NULL;
+@textareaOutlinedBackgroundActive: NULL;
+@textareaOutlinedBackgroundDisabled: NULL;
+
+@textareaOutlinedBorderWidth: @appComponentBorderWidth;
+@textareaOutlinedBorderType: solid;
+
+@textareaOutlinedBorder: @textareaOutlinedBorderWidth @textareaOutlinedBorderType @textareaThemeColor;
+@textareaOutlinedBorderHover: NULL;
+@textareaOutlinedBorderActive: @textareaOutlinedBorderWidth @textareaOutlinedBorderType @textareaThemeColor;
+@textareaOutlinedBorderDisabled: @textareaOutlinedBorderWidth @textareaOutlinedBorderType @disabledColor;
+
+@textareaOutlinedBorderRadius: @appComponentBorderRadius;
+@textareaOutlinedBorderRadiusTopLeft: @textareaOutlinedBorderRadius;
+@textareaOutlinedBorderRadiusTopRight: @textareaOutlinedBorderRadius;
+@textareaOutlinedBorderRadiusBottomRight: @textareaOutlinedBorderRadius;
+@textareaOutlinedBorderRadiusBottomLeft: @textareaOutlinedBorderRadius;
+
+@textareaOutlinedColor: @appTextColor;
+@textareaOutlinedColorHover: @appTextColor;
+@textareaOutlinedColorActive: @appTextColor;
+@textareaOutlinedColorDisabled: @disabledColor;
+
+@textareaOutlinedLabelColor: @appTextColor;
+@textareaOutlinedLabelColorHover: @textareaOutlinedLabelColor;
+@textareaOutlinedLabelColorActive: @textareaOutlinedLabelColor;
+@textareaOutlinedLabelColorDisabled: @disabledColor;
+
+//standard
+@textareaStandardShadow: NULL;
+@textareaStandardShadowHover: NULL;
+@textareaStandardShadowActive: NULL;
+@textareaStandardShadowDisabled: NULL;
+
+@textareaStandardUnderlineWidth: @appComponentBorderWidth;
+@textareaStandardUnderlineType: solid;
+@textareaStandardUnderlineColor: @textareaStandardColor;
+@textareaStandardUnderlineColorActive: @textareaThemeColor;
+@textareaStandardUnderlineColorDisabled: @disabledColor;
+
+@textareaStandardUnderline:  @textareaStandardUnderlineWidth @textareaStandardUnderlineType fade(@textareaStandardUnderlineColor, 70%);
+@textareaStandardUnderlineHover: calc(@textareaStandardUnderlineWidth + 1px) @textareaStandardUnderlineType @textareaStandardUnderlineColor;
+@textareaStandardUnderlineActive: @textareaStandardUnderlineWidth @textareaStandardUnderlineType @textareaStandardUnderlineColorActive;
+@textareaStandardUnderlineDisabled: @textareaStandardUnderlineWidth @textareaStandardUnderlineType @textareaStandardUnderlineColorDisabled;
+
+@textareaStandardColor: @appTextColor;
+@textareaStandardColorHover:@appTextColor;
+@textareaStandardColorActive: @appTextColor;
+@textareaStandardColorDisabled: @disabledColor;
+
+@textareaStandardLabelColor: @textareaStandardColor;
+@textareaStandardLabelColorHover: @textareaStandardLabelColor;
+@textareaStandardLabelColorActive: @textareaStandardLabelColor;
+@textareaStandardLabelColorDisabled: @disabledColor;
+
+.bl-textarea {
+  &.bl-textarea--outlined {
+    fieldset {
+      border-radius: @textareaOutlinedBorderRadiusTopLeft @textareaOutlinedBorderRadiusTopRight @textareaOutlinedBorderRadiusBottomRight @textareaOutlinedBorderRadiusBottomLeft;
+    }
+
+    .bl-textarea-label {
+      color: @textareaOutlinedLabelColor;
+    }
+
+    &:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+      color: @textareaOutlinedLabelColorHover;
+    }
+
+    .bl-textarea-label--disabled {
+      color: @textareaOutlinedLabelColorDisabled;
+    }
+
+    .bl-textarea-label--focused {
+      color: @textareaOutlinedLabelColorActive;
+    }
+
+    .bl-textarea-input-root {
+      &:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+        fieldset {
+          border: @textareaOutlinedBorderHover;
+          box-shadow: @textareaOutlinedShadowHover;
+        }
+
+        background-color: @textareaOutlinedBackgroundHover;
+        color: @textareaOutlinedColorHover;
+      }
+
+      &.bl-textarea-input--focused {
+        fieldset {
+          border: @textareaOutlinedBorderActive;
+          box-shadow: @textareaOutlinedShadowActive;
+        }
+
+        background-color: @textareaOutlinedBackgroundActive;
+        color: @textareaOutlinedColorActive;
+      }
+
+      &.bl-textarea-input--disabled {
+        fieldset {
+          border: @textareaOutlinedBorderDisabled;
+          box-shadow: @textareaOutlinedShadowDisabled;
+        }
+
+        background-color: @textareaOutlinedBackgroundDisabled;
+        color: @textareaOutlinedColorDisabled;
+      }
+
+      fieldset {
+        border: @textareaOutlinedBorder;
+        box-shadow: @textareaOutlinedShadow;
+      }
+
+      background-color: @textareaOutlinedBackground;
+      color: @textareaOutlinedColor;
+    }
+  }
+
+  &.bl-textarea--filled {
+    ::after {
+      border-bottom-color: @textareaDefaultUnderlineColor;
+    }
+
+    .bl-textarea-label {
+      color: @textareaDefaultLabelColor;
+    }
+
+    &:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+      color: @textareaDefaultLabelColorHover;
+    }
+
+    .bl-textarea-label--disabled {
+      color: @textareaDefaultLabelColorDisabled;
+    }
+
+    .bl-textarea-label--focused {
+      color: @textareaDefaultLabelColorActive;
+    }
+
+    .bl-textarea-input-root {
+      &:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+        border: @textareaDefaultBorderHover;
+        box-shadow: @textareaDefaultShadowHover;
+        background-color: @textareaDefaultBackgroundHover;
+        color: @textareaDefaultColorHover;
+      }
+
+      &.bl-textarea-input--focused {
+        border: @textareaDefaultBorderActive;
+        box-shadow: @textareaDefaultShadowActive;
+        background-color: @textareaDefaultBackgroundActive;
+        color: @textareaDefaultColorActive;
+      }
+
+      &.bl-textarea-input--disabled {
+        border: @textareaDefaultBorderDisabled;
+        box-shadow: @textareaDefaultShadowDisabled;
+        background-color: @textareaDefaultBackgroundDisabled;
+        color: @textareaDefaultColorDisabled;
+      }
+
+      border-radius: @textareaDefaultBorderRadiusTopLeft @textareaDefaultBorderRadiusTopRight @textareaDefaultBorderRadiusBottomRight @textareaDefaultBorderRadiusBottomLeft;
+      border: @textareaDefaultBorder;
+      box-shadow: @textareaDefaultShadow;
+      background-color: @textareaDefaultBackground;
+      color: @textareaDefaultColor;
+    }
+  }
+
+  &.bl-textarea--standard {
+    .bl-textarea-label {
+      color: @textareaStandardLabelColor;
+    }
+
+    &:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+      color: @textareaStandardLabelColorHover;
+    }
+
+    .bl-textarea-label--disabled {
+      color: @textareaStandardLabelColorDisabled;
+    }
+
+    .bl-textarea-label--focused {
+      color: @textareaStandardLabelColorActive;
+    }
+
+    .bl-textarea-input-root {
+      &::after {
+        border-bottom: @textareaStandardUnderlineActive;
+      }
+
+      &::before {
+        border-bottom: @textareaStandardUnderline;
+      }
+
+      &:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+        &::before {
+          border-bottom: @textareaStandardUnderlineHover;
+        }
+
+        box-shadow: @textareaStandardShadowHover;
+        color: @textareaStandardColorHover;
+      }
+
+      &.bl-textarea-input--focused {
+        box-shadow: @textareaStandardShadowActive;
+        color: @textareaStandardColorActive;
+      }
+
+      &.bl-textarea-input--disabled {
+        &::before {
+          border-bottom: @textareaStandardUnderlineDisabled;
+        }
+
+        box-shadow: @textareaStandardShadowDisabled;
+        color: @textareaStandardColorDisabled;
+      }
+
+      box-shadow: @textareaStandardShadow;
+      color: @textareaStandardColor;
+    }
+  }
+}
+
+/*****    component: textarea    *****/
+/*************************************/
+/*************************************/

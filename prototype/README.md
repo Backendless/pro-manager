@@ -1,5 +1,8 @@
 ## Getting Started
 
+api.bl.local
+dev.bl.local
+
 To get started, right after donwloading and unzipping the code, you need to install 
 Backendless CodeRunner dependencies. Run the following command from the root directory
 of your Backendless CodeRunner project:
