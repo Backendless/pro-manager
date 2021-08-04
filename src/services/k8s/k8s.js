@@ -11,4 +11,5 @@ export const k8sCoreV1Api = kc.makeApiClient(k8s.CoreV1Api)
 export const k8sAppsV1Api = kc.makeApiClient(k8s.AppsV1Api)
 export const k8sBatchV1Api = kc.makeApiClient(k8s.BatchV1Api)
 export const k8sEventsV1Api = kc.makeApiClient(k8s.EventsV1Api)
+export const k8sExec = new k8s.Exec(kc)
 

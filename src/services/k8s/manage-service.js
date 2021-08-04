@@ -7,17 +7,15 @@ export class ManageService {
     async status() {
         const status = []
 
-        for (const container of blContainers.bl) {
+        for (const [key, container] of Object.entries(blContainers.bl)) {
             status.push(await container.serviceStatus())
         }
-        for (const container of blContainers.dependencies) {
+        for (const [key, container] of Object.entries(blContainers.dependencies)) {
             status.push(await container.serviceStatus())
         }
 
         return status
     }
-
-
 }
 
 export const manageService = new ManageService()

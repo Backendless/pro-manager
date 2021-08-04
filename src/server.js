@@ -42,7 +42,7 @@ export function start() {
 
   // app.use('*', notFoundHandler)
 
-  // app.use(errorsHandler)
+  app.use(errorsHandler)
 
   console.log('Start listening port:', Config.port)
 

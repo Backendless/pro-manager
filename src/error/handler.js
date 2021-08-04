@@ -1,5 +1,6 @@
 import { Logger } from '../logger'
 import { ApiError } from './error'
+import {HttpError} from "@kubernetes/client-node";
 
 const logger = Logger.Server
 
@@ -26,6 +27,8 @@ export function errorsHandler(err, req, res, next) {
     res.status(err.status || 400).json({ code: err.code, message: err.message })
 
     logger.debug('[ERROR]', err)
+  } else if (err instanceof HttpError) {
+    res.status(err.statusCode).send(err)
   } else if (err instanceof ApiError) {
     res.status(err.httpStatusCode || 500).json(err)
 

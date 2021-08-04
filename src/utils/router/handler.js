@@ -51,12 +51,9 @@ export function handler(cb) {
         }
       }
     } catch (e) {
-      if (typeof e === 'object') {
-        res.status(400).send(e)
-      } else {
-        e.stack = composeErrorStacks(e.stack, fakeRootError.stack)
-        next(e)
-      }
+      console.log(e)
+      e.stack = composeErrorStacks(e.stack, fakeRootError.stack)
+      next(e)
     }
   }
 }
