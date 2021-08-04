@@ -1,0 +1,53 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "StatefulSet",
+  "metadata": {
+    "name": "bl-nginx"
+  },
+  "spec": {
+    "serviceName": "bl-nginx",
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "bl-nginx"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "bl-nginx"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "bl-nginx",
+            "image": "k8s.gcr.io/nginx-slim:0.8",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "bl-nginx"
+              }
+            ],
+            "volumeMounts": [
+              {
+                "name": "www",
+                "mountPath": "/home/ksv/dev/nginx",
+                "mountPath1": "/usr/share/nginx/html"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "hostPath": {
+              "path": "/home/ksv/dev/nginx",
+              "type": ""
+            },
+            "name": "www"
+          }
+        ]
+      }
+    }
+  }
+}

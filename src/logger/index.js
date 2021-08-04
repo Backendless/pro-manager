@@ -196,8 +196,9 @@ function createLogger(category) {
   return logger
 }
 
-export const Logger = createLogger()
+export const Logger = createLogger
 
 Logger.Server = createLogger('Server')
+Logger.Docker = createLogger('DockerService')
 
 

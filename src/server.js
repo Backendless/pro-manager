@@ -8,7 +8,7 @@ import cors from 'cors'
 import { Logger } from './logger'
 import { mainRouter } from './controllers'
 // import { swaggerUIController } from './swagger'
-// import { notFoundHandler, errorsHandler } from './error'
+import { notFoundHandler, errorsHandler } from './error'
 
 const logger = Logger.Server
 
@@ -48,16 +48,16 @@ export function start() {
 
   const server = app.listen(Config.port, err => {
     if (err) {
-      Logger.error(err)
+      logger.error(err)
       process.exit(1)
     }
 
-    Logger.info('')
-    Logger.info('*************************************************************************************')
-    Logger.info('***   Backendless Pro Manage is running, talking to API server on %s', Config.apiUrl)
-    Logger.info(`***   Open http://localhost:${Config.port} in a browser to view the app.`)
-    Logger.info('*************************************************************************************')
-    Logger.info('')
+    logger.info('')
+    logger.info('*************************************************************************************')
+    logger.info('***   Backendless Pro Manage is running, talking to API server on %s', Config.apiUrl)
+    logger.info(`***   Open http://localhost:${Config.port} in a browser to view the app.`)
+    logger.info('*************************************************************************************')
+    logger.info('')
   })
 
   const startGracefulShutdown = signal => {

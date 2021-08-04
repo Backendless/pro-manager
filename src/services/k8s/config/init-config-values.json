@@ -1,0 +1,45 @@
+{
+  "job": {
+    "apiVersion": "batch/v1",
+    "kind": "Job",
+    "metadata": {
+      "name": "bl-init-config-values"
+    },
+    "spec": {
+      "backoffLimit": 6,
+      "completions": 1,
+      "parallelism": 1,
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "bl-init-config"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "consulConfig",
+                  "value": "{\"host\": \"bl-consul\", \"port\": 8500}"
+                }
+              ],
+              "image": "backendless/bl-config-loader:6.4.5",
+              "imagePullPolicy": "IfNotPresent",
+              "name": "bl-init-config",
+              "resources": {},
+              "securityContext": {
+                "allowPrivilegeEscalation": false,
+                "capabilities": {},
+                "privileged": false,
+                "readOnlyRootFilesystem": false,
+                "runAsNonRoot": false
+              }
+            }
+          ],
+          "restartPolicy": "Never"
+        }
+      }
+    }
+  }
+}

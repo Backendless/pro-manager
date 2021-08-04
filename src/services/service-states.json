@@ -1,0 +1,7 @@
+{
+  "running": "running",
+  "disabled": "disabled",
+  "notInstalled": "not installed",
+  "complete": "complete",
+  "changing": "changing"
+}
