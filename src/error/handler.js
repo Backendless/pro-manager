@@ -1,6 +1,6 @@
 import { Logger } from '../logger'
 import { ApiError } from './error'
-import {HttpError} from "@kubernetes/client-node";
+import { HttpError } from '@kubernetes/client-node'
 
 const logger = Logger.Server
 

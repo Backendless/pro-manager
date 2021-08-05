@@ -1,0 +1,10 @@
+{
+  "init": {
+    "recreate-main-backendless": "1_ReCreateMainBackendless.sql",
+    "static-insert-values": "2_StaticInsertValuesMainBackendless.sql",
+    "create-libnss": "3_create_libnss_user.sql",
+    "create-quartz": "4_CreateQuartzDB.sql"
+  },
+  "conf": "mysqld.cnf",
+  "mysqlConfigMapName": "bl-mysql-config-map"
+}

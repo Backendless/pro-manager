@@ -1,9 +1,13 @@
+import {installStatus} from './install-status'
+import {installMysql} from './mysql'
+import {checkReadWriteAccess} from "../../utils/fs";
 
 class InstallService {
 
     constructor() {
-        this.service = require('./k8s/install-service').installService
+        this.service = require('../k8s/install-service').installService
     }
+
     /*TYPES*/
     /**
      * @typedef {Object} InstallArgument
@@ -20,7 +24,12 @@ class InstallService {
      * @param {InstallArgument} [install]
      */
     async install(install) {
-        return this.service.install({ name: 'bl-nginx' })
+        if (!(await checkReadWriteAccess(install.mountPath))) {
+            throw new Error(`Read write access is denied for ${install.mountPath}'`)
+        }
+
+        return installMysql.install(install)
+        return this.service.install(install)
     }
 
     /**
@@ -29,13 +38,7 @@ class InstallService {
      */
     async status() {
         return {
-            messages: [
-                { time: 1624373244, message: 'Pulling images...' },
-                { time: 1624373244, message: 'Pulled images' },
-                { time: 1624373246, message: 'Starting consul...' },
-                { time: 1624373280, message: 'Starting mysql...' },
-                { time: 1624373293, message: 'Pulling images...' }
-            ],
+            messages: installStatus.get(),
             progress: 35
         }
     }
@@ -46,7 +49,7 @@ class InstallService {
      */
     async defaults() {
         return {
-            version: '6.4.1.8',
+            version: '6.4.1.9',
             port: 80,
             mountPath: '/opt/backendless'
         }
