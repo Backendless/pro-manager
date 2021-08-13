@@ -8,7 +8,7 @@ export async function initConfigMap() {
     try {
         await createConfigMap(initConfigMapConfig.name, initConfigMapConfig.map)
     } catch (error) {
-        if (error instanceof HttpError && error.statusCode === 409 ) {
+        if (error instanceof HttpError && error.statusCode === 409 && error.response.body.reason === 'AlreadyExists') {
             installStatus.info(`k8s config map already initialized`)
             return
         }
