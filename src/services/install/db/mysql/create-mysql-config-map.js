@@ -1,5 +1,5 @@
-import { installStatus } from '../install-status'
-import { replaceConfigMap } from '../../k8s/k8s-config-map'
+import { installStatus } from '../../install-status'
+import { replaceConfigMap } from '../../../k8s/k8s-config-map'
 
 const axios = require('axios')
 const fileNames = require('./mysql-file-names.json')

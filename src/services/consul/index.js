@@ -1,5 +1,5 @@
 import { listPods } from '../k8s/k8s-list-pods'
-import { blContainers } from '../k8s/bl-containers'
+import { blContainers } from '../bl-containers'
 import { executeInPod } from '../k8s/k8s-execute-pod'
 
 class Consul {

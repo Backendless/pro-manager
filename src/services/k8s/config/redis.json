@@ -4,16 +4,16 @@
     "kind": "StatefulSet",
     "metadata": {
       "annotations": {
-        "name": "bl-consul"
+        "name": "bl-redis"
       },
-      "name": "bl-consul"
+      "name": "bl-redis"
     },
     "spec": {
       "progressDeadlineSeconds": 60,
       "replicas": 1,
       "selector": {
         "matchLabels": {
-          "app": "bl-consul"
+          "app": "bl-redis"
         }
       },
       "strategy": {
@@ -26,37 +26,33 @@
       "template": {
         "metadata": {
           "labels": {
-            "app": "bl-consul"
+            "app": "bl-redis"
           }
         },
         "spec": {
           "containers": [
             {
               "args": [
-                "agent",
-                "-server",
-                "-bootstrap-expect",
-                "1",
-                "-ui",
-                "-client",
-                "0.0.0.0",
-                "-data-dir=/consul/data",
-                "-disable-host-node-id=true"
+                "redis-server",
+                "--appendonly",
+                "yes",
+                "--port",
+                "6379"
               ],
-              "image": "consul:1.1.0",
+              "image": "redis:6",
               "imagePullPolicy": "IfNotPresent",
-              "name": "bl-consul",
+              "name": "bl-redis",
               "ports": [
                 {
-                  "containerPort": 8500,
-                  "name": "bl-consul",
+                  "containerPort": 6379,
+                  "name": "bl-redis",
                   "protocol": "TCP"
                 }
               ],
               "volumeMounts": [
                 {
-                  "mountPath": "/consul/data",
-                  "name": "consul-data"
+                  "mountPath": "/data",
+                  "name": "data"
                 }
               ]
             }
@@ -73,23 +69,23 @@
     "apiVersion": "v1",
     "kind": "Service",
     "metadata": {
-      "name": "bl-consul",
+      "name": "bl-redis",
       "labels": {
-        "app": "bl-consul"
+        "app": "bl-redis"
       }
     },
     "spec": {
       "type": "NodePort",
       "ports": [
         {
-          "port": 8500,
-          "targetPort": 8500,
-          "name": "bl-consul",
-          "nodePort": 32600
+          "port": 6379,
+          "targetPort": 6379,
+          "name": "bl-redis",
+          "nodePort": 32379
         }
       ],
       "selector": {
-        "app": "bl-consul"
+        "app": "bl-redis"
       }
     }
   }

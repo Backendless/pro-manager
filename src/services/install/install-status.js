@@ -1,4 +1,4 @@
-import {Logger} from "../../logger";
+import { Logger } from '../../logger'
 
 const logger = Logger('install-status')
 
@@ -20,7 +20,7 @@ class InstallStatus {
 
     add(level, message) {
         logger.log(level, message)
-        this.messages.push({level, message, time: new Date().getTime()})
+        this.messages.push({ level, message, time: new Date().getTime() })
     }
 
     get(offset) {

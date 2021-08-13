@@ -24,7 +24,7 @@
                   "value": "{\"host\": \"bl-consul\", \"port\": 8500}"
                 }
               ],
-              "image": "backendless/bl-config-loader:6.4.5",
+              "image": "",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-init-config",
               "resources": {},

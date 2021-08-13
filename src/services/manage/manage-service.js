@@ -3,7 +3,7 @@
 export class ManageService {
 
     constructor() {
-        this.service = require('./k8s/manage-service').manageService
+        this.service = require('../k8s/manage-service').manageService
     }
 
     async changeState(state) {

@@ -1,6 +1,9 @@
-import {installStatus} from './install-status'
-import {installMysql} from './mysql'
-import {checkReadWriteAccess} from "../../utils/fs";
+import { installStatus } from './install-status'
+import { installMysql } from './db/mysql'
+import { checkReadWriteAccess } from '../../utils/fs'
+import { blContainers } from '../bl-containers'
+import States from '../service-states.json'
+import { initConfigMap } from './init-config-map'
 
 class InstallService {
 
@@ -28,8 +31,30 @@ class InstallService {
             throw new Error(`Read write access is denied for ${install.mountPath}'`)
         }
 
-        return installMysql.install(install)
-        return this.service.install(install)
+        await initConfigMap()
+
+        for (const [key, dependency] of Object.entries(blContainers.dependencies)) {
+            await this._installContainer(dependency, install)
+        }
+
+        await blContainers.bl.initConfigValues.installService(install)
+
+        Object.entries(blContainers.bl)
+            .filter(([key, container]) => container !== blContainers.bl.initConfigValues)
+            .map(async ([key, container]) => await this._installContainer(container, install))
+
+    }
+
+
+    async _installContainer(dependency, install) {
+        installStatus.info(`checking status for ${dependency.name}`)
+        const status = await dependency.serviceStatus()
+        installStatus.info(`status of ${dependency.name} is ${status}`)
+
+        if (status.state === States.notInstalled)
+            dependency.installService(install)
+        else
+            installStatus.info(`service ${dependency.name} already installed`)
     }
 
     /**

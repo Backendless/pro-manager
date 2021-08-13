@@ -1,4 +1,4 @@
-import { blContainers } from './bl-containers'
+import { blContainers } from '../bl-containers'
 
 export class ManageService {
     async changeState(state) {
