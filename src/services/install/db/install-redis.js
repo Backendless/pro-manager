@@ -1,9 +1,9 @@
-import {k8sAppsV1Api, k8sCoreV1Api} from '../../k8s/k8s'
+import { k8sAppsV1Api, k8sCoreV1Api } from '../../k8s/k8s'
 import config from '../../../../config/config.json'
 import redisK8sConfig from '../../k8s/config/consul.json'
-import {installStatus} from '../install-status'
+import { installStatus } from '../install-status'
 
-export async function installRedis({fullMountPath, internalPort, externalPort, name}) {
+export async function installRedis({ fullMountPath, internalPort, externalPort, name }) {
     installStatus.info('installing ${name}...')
     const workload = redisK8sConfig.workload
     workload.spec.template.spec.volumes.push({
@@ -25,7 +25,7 @@ export async function installRedis({fullMountPath, internalPort, externalPort, n
     const createConsulStateful = await k8sAppsV1Api.createNamespacedStatefulSet(config.k8s.namespace, workload)
     installStatus.info(`creating service for ${name}`)
 
-    const service = redisK8sConfig.service;
+    const service = redisK8sConfig.service
     service.metadata.labels.app = name
     service.metadata.name = name
     service.spec.selector.app = name
@@ -37,5 +37,5 @@ export async function installRedis({fullMountPath, internalPort, externalPort, n
     const createConsulServiceResult = await k8sCoreV1Api.createNamespacedService(config.k8s.namespace, service)
 
 
-    return {createConsulStateful, createConsulServiceResult}
+    return { createConsulStateful, createConsulServiceResult }
 }

@@ -1,16 +1,20 @@
-import {blStatefulsetStatus} from './k8s/bl-statefulset-status'
-import {blJobStatus} from './k8s/bl-job-status'
-import {installConsul} from './install/db/install-consul'
-import {installMysql} from './install/db/mysql'
-import {initConfigInConsul} from './install/init-config-in-consul'
-import {installRedis} from "./install/db/install-redis";
+import { blStatefulsetStatus } from './k8s/bl-statefulset-status'
+import { blJobStatus } from './k8s/bl-job-status'
+import { installConsul } from './install/db/install-consul'
+import { installMysql } from './install/db/mysql'
+import { initConfigInConsul } from './install/init-config-in-consul'
+import { installRedis } from './install/db/install-redis'
+import { installMongo } from './install/db/install-mongo'
+import { installBlServer } from './install/bl/install-bl-server'
+import { installBlTaskman } from './install/bl/install-bl-taskman'
+import { installBlHazelcast } from './install/bl/install-bl-hazelcast'
 
 class BlContainers {
     bl = {
         server: {
             name: 'bl-server',
             serviceStatus: () => blStatefulsetStatus('bl-server'),
-            installService: installArguments => (installArguments)
+            installService: installArguments => installBlServer(installArguments)
         },
         rtServer: {
             name: 'bl-rt-server',
@@ -20,7 +24,12 @@ class BlContainers {
         taskman: {
             name: 'bl-taskman',
             serviceStatus: () => blStatefulsetStatus('bl-taskman'),
-            installService: installArguments => (installArguments)
+            installService: installArguments => installBlTaskman(installArguments)
+        },
+        hazelcast: {
+            name: 'bl-hazelcast-3125',
+            serviceStatus: () => blStatefulsetStatus('bl-hazelcast-3125'),
+            installService: installArguments => installBlHazelcast(installArguments)
         },
         javaCoderunner: {
             name: 'bl-coderunner-java',
@@ -73,7 +82,7 @@ class BlContainers {
         mongo: {
             name: 'bl-mongo',
             serviceStatus: () => blStatefulsetStatus('bl-mongo'),
-            installService: installArguments => (installArguments)
+            installService: installArguments => installMongo(installArguments)
         },
 
     }

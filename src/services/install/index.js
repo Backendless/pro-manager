@@ -34,13 +34,19 @@ class InstallService {
         await initConfigMap()
 
         for (const [key, dependency] of Object.entries(blContainers.dependencies)) {
+            installStatus.info(`processing ${dependency.name}...`)
             await this._installContainer(dependency, install)
         }
 
-        await blContainers.bl.initConfigValues.installService(install)
+        installStatus.info('checking status of bl-init-config-values job')
+        const initConfigValuesContainer = blContainers.bl.initConfigValues;
+        if ((await initConfigValuesContainer.serviceStatus()).state === States.notInstalled)
+            await initConfigValuesContainer.installService(install)
+        else
+            installStatus.info('bl-init-config-values job already created')
 
         Object.entries(blContainers.bl)
-            .filter(([key, container]) => container !== blContainers.bl.initConfigValues)
+            .filter(([key, container]) => container !== initConfigValuesContainer)
             .map(async ([key, container]) => await this._installContainer(container, install))
 
     }
@@ -52,7 +58,7 @@ class InstallService {
         installStatus.info(`status of ${dependency.name} is ${status}`)
 
         if (status.state === States.notInstalled)
-            dependency.installService(install)
+            await dependency.installService(install)
         else
             installStatus.info(`service ${dependency.name} already installed`)
     }
