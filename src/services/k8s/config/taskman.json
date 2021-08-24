@@ -49,6 +49,10 @@
                   "value": "en_US.UTF-8"
                 },
                 {
+                  "name": "BL_MANAGEMENT_HTTP_PORT",
+                  "value": "2400"
+                },
+                {
                   "name": "BL_CONSUL_PORT",
                   "valueFrom": {
                     "configMapKeyRef": {
@@ -106,7 +110,7 @@
                   }
                 }
               ],
-              "image": "backendless/bl-taskman",
+              "image": "backendless/bl-server",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-taskman",
               "livenessProbe": {
@@ -167,7 +171,7 @@
         {
           "port": 2400,
           "targetPort": 2400,
-          "name": "bl-taskman",
+          "name": "bl-taskman"
         }
       ],
       "selector": {

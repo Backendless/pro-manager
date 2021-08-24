@@ -14,7 +14,7 @@ class BlContainers {
         server: {
             name: 'bl-server',
             serviceStatus: () => blStatefulsetStatus('bl-server'),
-            installService: installArguments => installBlServer(installArguments)
+            installService: installArguments => installBlServer(installArguments),
         },
         rtServer: {
             name: 'bl-rt-server',
@@ -52,12 +52,14 @@ class BlContainers {
         consul: {
             name: 'bl-consul',
             serviceStatus: () => blStatefulsetStatus('bl-consul'),
-            installService: installArguments => installConsul(installArguments)
+            installService: installArguments => installConsul(installArguments),
+            order: 0
         },
         mysql: {
             name: 'bl-mysql',
             serviceStatus: () => blStatefulsetStatus('bl-mysql'),
-            installService: installArguments => installMysql(installArguments)
+            installService: installArguments => installMysql(installArguments),
+            order: 1
         },
         redis: {
             name: 'bl-redis',
@@ -67,24 +69,33 @@ class BlContainers {
                 internalPort: 6379,
                 externalPort: 32379,
                 name: 'bl-redis'
-            })
+            }),
+            order: 2
         },
         debugRedis: {
             name: 'bl-redis-debug',
-            serviceStatus: () => blStatefulsetStatus('bl-redis'),
+            serviceStatus: () => blStatefulsetStatus('bl-redis-debug'),
             installService: installArguments => installRedis({
                 fullMountPath: `${installArguments.mountPath}/bl-redis-debug/data`,
                 internalPort: 6380,
                 externalPort: 32380,
                 name: 'bl-redis-debug'
-            })
+            }),
+            order: 3
         },
         mongo: {
             name: 'bl-mongo',
             serviceStatus: () => blStatefulsetStatus('bl-mongo'),
-            installService: installArguments => installMongo(installArguments)
+            installService: installArguments => installMongo(installArguments),
+            order: 4
         },
 
+    }
+
+    getSortedDependencies() {
+        return Object.entries(this.dependencies)
+            .sort(([key1, dependency1], [key2, dependency2]) => dependency1.order - dependency2.order)
+            .map(([key, dependency]) => dependency)
     }
 }
 

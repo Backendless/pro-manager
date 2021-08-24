@@ -19,7 +19,7 @@ export async function blStatefulsetStatus(containerName) {
         throw err
     }
 
-    logger.verbose(`service status for '${containerName} is ${JSON.stringify(serviceStatus)}`)
+    logger.verbose(`service status for '${containerName}' is ${JSON.stringify(serviceStatus)}`)
 
     if (serviceStatus.replicas < 1)
         blStatus.state = States.disabled

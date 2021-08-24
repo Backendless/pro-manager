@@ -1,7 +1,7 @@
 {
   "workload": {
     "apiVersion": "apps/v1",
-    "kind": "Deployment",
+    "kind": "StatefulSet",
     "metadata": {
       "name": "bl-hazelcast-3125"
     },
@@ -107,6 +107,51 @@
         {
           "name": "app",
           "port": 8080
+        }
+      ]
+    }
+  },
+  "permissions": {
+    "clusterRole": {
+      "apiVersion": "rbac.authorization.k8s.io/v1",
+      "kind": "ClusterRole",
+      "metadata": {
+        "name": "hazelcast-cluster-role"
+      },
+      "rules": [
+        {
+          "apiGroups": [
+            ""
+          ],
+          "resources": [
+            "endpoints",
+            "pods",
+            "nodes",
+            "services"
+          ],
+          "verbs": [
+            "get",
+            "list"
+          ]
+        }
+      ]
+    },
+    "clusterRoleBinding": {
+      "apiVersion": "rbac.authorization.k8s.io/v1",
+      "kind": "ClusterRoleBinding",
+      "metadata": {
+        "name": "hazelcast-cluster-role-binding"
+      },
+      "roleRef": {
+        "apiGroup": "rbac.authorization.k8s.io",
+        "kind": "ClusterRole",
+        "name": "hazelcast-cluster-role"
+      },
+      "subjects": [
+        {
+          "kind": "ServiceAccount",
+          "name": "default",
+          "namespace": "default"
         }
       ]
     }

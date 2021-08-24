@@ -1,6 +1,7 @@
 import { composeErrorStacks, FakeError } from '../../error'
+import {Logger} from "../../logger";
 
-// import { ReadFileStream } from '../read-file-stream'
+const logger = Logger('router-handler')
 
 export function handler(cb) {
   const fakeRootError = new FakeError()
@@ -51,7 +52,7 @@ export function handler(cb) {
         }
       }
     } catch (e) {
-      console.log(e)
+      logger.verbose(e)
       e.stack = composeErrorStacks(e.stack, fakeRootError.stack)
       next(e)
     }

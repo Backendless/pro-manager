@@ -5,5 +5,12 @@
     "configFile": "/etc/rancher/k3s/k3s.yaml",
     "configFile1": "/home/ksv/dev/bank_dev/kubectl.conf",
     "namespace": "default"
+  },
+  "logger": {
+    "levels": {
+      "default": "info",
+      "install-mongo": "verbose",
+      "install-redis": "verbose"
+    }
   }
 }

@@ -14,8 +14,17 @@ class Consul {
     }
 
     async _getPodName() {
-        return (await listPods(blContainers.dependencies.consul.name))[0].name
+        let pods = await listPods(blContainers.dependencies.consul.name);
+
+        while (pods.length < 1){
+            await _wait(200)
+            pods = await listPods(blContainers.dependencies.consul.name);
+        }
+
+        return pods[0].name
     }
 }
+
+const _wait = time => new Promise(resolve => setTimeout(resolve, time))
 
 export const consul = new Consul()

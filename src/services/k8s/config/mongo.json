@@ -33,11 +33,7 @@
           "containers": [
             {
               "args": [
-                "redis-server",
-                "--appendonly",
-                "yes",
-                "--port",
-                "6379"
+
               ],
               "image": "mongo:4",
               "imagePullPolicy": "IfNotPresent",

@@ -2,7 +2,7 @@ import winston from 'winston'
 import path from 'path'
 import fs from 'fs'
 
-// import { Config } from '../config'
+import config from "../../config/config.json";
 
 winston.addColors({
   error  : 'red',
@@ -115,26 +115,26 @@ const DefaultOptions = {
 function getTransportConfig() {
   const loggers = []
 
-  // if (Config.loggers) {
-  //   AVAILABLE_TRANSPORT_TYPES.forEach(transportType => {
-  //     const options = Config.loggers[transportType]
-  //
-  //     if (options) {
-  //       if (typeof options !== 'boolean' && typeof options !== 'object') {
-  //         throw new Error(
-  //           'Logger Transport Options is invalid, must be one of ["true", Object].'
-  //         )
-  //       }
-  //
-  //       loggers.push({
-  //         type   : transportType,
-  //         options: typeof options === 'object'
-  //           ? Object.assign({}, DefaultOptions[transportType], options)
-  //           : DefaultOptions[transportType],
-  //       })
-  //     }
-  //   })
-  // }
+  if (config.loggers) {
+    AVAILABLE_TRANSPORT_TYPES.forEach(transportType => {
+      const options = config.loggers[transportType]
+
+      if (options) {
+        if (typeof options !== 'boolean' && typeof options !== 'object') {
+          throw new Error(
+              'Logger Transport Options is invalid, must be one of ["true", Object].'
+          )
+        }
+
+        loggers.push({
+          type: transportType,
+          options: typeof options === 'object'
+              ? Object.assign({}, DefaultOptions[transportType], options)
+              : DefaultOptions[transportType],
+        })
+      }
+    })
+  }
 
   return loggers
 }
@@ -158,32 +158,33 @@ function createLogger(category) {
 
   const transportConfig = getTransportConfig()
 
-  // const loggersConfig = Config.loggers || {}
-  // const loggersLevels = loggersConfig.levels || {}
-  const loggersLevels = {}
+  const loggersConfig = config.logger
+  const loggersLevels = loggersConfig.levels || {}
 
-  loggersLevels.default = loggersLevels.default || 'info'
+  loggersLevels.default = loggersLevels.default || 'verbose'
 
   const level = loggersLevels[category] || loggersLevels.default
 
+  const transports = []
   if (transportConfig && transportConfig.length) {
-    const transports = []
-
-    transportConfig.forEach(({ type, options }) => {
-      const transport = Transports[type]({ ...options, label: category })
+    transportConfig.forEach(({type, options}) => {
+      const transport = Transports[type]({...options, label: category})
 
       if (transport) {
         transports.push(transport)
       }
     })
 
-    if (transports.length) {
-      logger = new winston.Logger({
-        level,
-        transports,
-      })
-    }
   }
+
+  if (transports.length === 0) {
+    transports.push(Transports[TransportTypes.CONSOLE]({label: category}))
+  }
+
+  logger = winston.createLogger({
+    level,
+    transports,
+  })
 
   logger.min = level => {
     if (logger.levels[level] >= 0) {
