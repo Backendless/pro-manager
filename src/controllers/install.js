@@ -4,7 +4,8 @@ import {installService} from '../services/install'
 export const router = new Router()
 
 router.post('/', handler(async ({body}) => {
-    return installService.install(body)
+    //install process should be async
+    installService.install(body)
 }))
 
 router.get('/default-arguments', handler(async () => {
