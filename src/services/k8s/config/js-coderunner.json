@@ -1,0 +1,127 @@
+{
+  "workload": {
+    "apiVersion": "apps/v1",
+    "kind": "StatefulSet",
+    "metadata": {
+      "annotations": {
+        "name": "bl-coderunner-js"
+      },
+      "name": "bl-coderunner-js"
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "bl-coderunner-js"
+        }
+      },
+      "strategy": {
+        "rollingUpdate": {
+          "maxSurge": 2,
+          "maxUnavailable": 0
+        },
+        "type": "RollingUpdate"
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "bl-coderunner-js"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "BL_CONFIG_PROVIDER",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_CONFIG_PROVIDER",
+                      "name": "bl-env"
+                    }
+                  }
+                },
+                {
+                  "name": "BL_CONSUL_HOST",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_CONSUL_HOST",
+                      "name": "bl-env"
+                    }
+                  }
+                },
+                {
+                  "name": "BL_CONSUL_PORT",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_CONSUL_PORT",
+                      "name": "bl-env"
+                    }
+                  }
+                },
+                {
+                  "name": "BL_MANAGEMENT_HTTP_PORT",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_MANAGEMENT_HTTP_PORT",
+                      "name": "bl-env"
+                    }
+                  }
+                },
+                {
+                  "name": "BL_HOST_IP",
+                  "valueFrom": {
+                    "fieldRef": {
+                      "apiVersion": "v1",
+                      "fieldPath": "status.hostIP"
+                    }
+                  }
+                }
+              ],
+              "image": "backendless/bl-coderunner-js:",
+              "imagePullPolicy": "IfNotPresent",
+              "livenessProbe": {
+                "failureThreshold": 3,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 2400,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 40,
+                "periodSeconds": 20,
+                "successThreshold": 1,
+                "timeoutSeconds": 5
+              },
+              "name": "bl-coderunner-js",
+              "readinessProbe": {
+                "failureThreshold": 10,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 2400,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 5,
+                "periodSeconds": 5,
+                "successThreshold": 1,
+                "timeoutSeconds": 5
+              },
+              "volumeMounts": [
+                {
+                  "mountPath": "/opt/backendless/repo",
+                  "name": "repo"
+                },
+                {
+                  "mountPath": "/opt/backendless/logs",
+                  "name": "logs"
+                }
+              ]
+            }
+          ],
+          "volumes": [
+
+          ]
+        }
+      }
+    }
+  }
+}

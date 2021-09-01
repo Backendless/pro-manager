@@ -1,13 +1,16 @@
-import { blStatefulsetStatus } from './k8s/bl-statefulset-status'
-import { blJobStatus } from './k8s/bl-job-status'
-import { installConsul } from './install/db/install-consul'
-import { installMysql } from './install/db/mysql'
-import { initConfigInConsul } from './install/init-config-in-consul'
-import { installRedis } from './install/db/install-redis'
-import { installMongo } from './install/db/install-mongo'
-import { installBlServer } from './install/bl/install-bl-server'
-import { installBlTaskman } from './install/bl/install-bl-taskman'
-import { installBlHazelcast } from './install/bl/install-bl-hazelcast'
+import {blStatefulsetStatus} from './k8s/bl-statefulset-status'
+import {blJobStatus} from './k8s/bl-job-status'
+import {installConsul} from './install/db/install-consul'
+import {installMysql} from './install/db/mysql'
+import {initConfigInConsul} from './install/init-config-in-consul'
+import {installRedis} from './install/db/install-redis'
+import {installMongo} from './install/db/install-mongo'
+import {installBlServer} from './install/bl/install-bl-server'
+import {installBlTaskman} from './install/bl/install-bl-taskman'
+import {installBlHazelcast} from './install/bl/install-bl-hazelcast'
+import {installBlJavaCoderunner} from "./install/bl/install-bl-java-coderunner";
+import {installBlJsCoderunner} from "./install/bl/install-bl-js-coderunner";
+import {installBlWebConsole} from "./install/bl/install-bl-web-console";
 
 class BlContainers {
     bl = {
@@ -34,12 +37,17 @@ class BlContainers {
         javaCoderunner: {
             name: 'bl-coderunner-java',
             serviceStatus: () => blStatefulsetStatus('bl-coderunner-java'),
-            installService: installArguments => (installArguments)
+            installService: installArguments => installBlJavaCoderunner(installArguments)
         },
         jsCoderunner: {
             name: 'bl-coderunner-js',
             serviceStatus: () => blStatefulsetStatus('bl-coderunner-js'),
-            installService: installArguments => (installArguments)
+            installService: installArguments => installBlJsCoderunner(installArguments)
+        },
+        console: {
+            name: 'bl-web-console',
+            serviceStatus: () => blStatefulsetStatus('bl-web-console'),
+            installService: installArguments => installBlWebConsole(installArguments)
         },
         initConfigValues: {
             name: 'bl-init-config-values',

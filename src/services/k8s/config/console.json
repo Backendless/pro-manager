@@ -1,0 +1,152 @@
+{
+  "workload": {
+    "apiVersion": "apps/v1",
+    "kind": "StatefulSet",
+    "metadata": {
+      "name": "bl-web-console"
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "bl-web-console"
+        }
+      },
+      "strategy": {
+        "rollingUpdate": {
+          "maxSurge": 1,
+          "maxUnavailable": 0
+        },
+        "type": "RollingUpdate"
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "bl-web-console"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "LANG",
+                  "value": "en_US.UTF-8"
+                },
+                {
+                  "name": "LC_ALL",
+                  "value": "en_US.UTF-8"
+                },
+                {
+                  "name": "PORT",
+                  "value": "80"
+                },
+                {
+                  "name": "BL_CONSUL_HOST",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_CONSUL_HOST",
+                      "name": "bl-env",
+                      "optional": false
+                    }
+                  }
+                },
+                {
+                  "name": "BL_CONSUL_PORT",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_CONSUL_PORT",
+                      "name": "bl-env",
+                      "optional": false
+                    }
+                  }
+                },
+                {
+                  "name": "BL_HOST_IP",
+                  "valueFrom": {
+                    "fieldRef": {
+                      "apiVersion": "v1",
+                      "fieldPath": "status.hostIP"
+                    }
+                  }
+                }
+              ],
+              "image": "backendless/bl-web-console:6.4.7.2",
+              "imagePullPolicy": "IfNotPresent",
+              "livenessProbe": {
+                "failureThreshold": 2,
+                "httpGet": {
+                  "path": "/",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 10,
+                "successThreshold": 1,
+                "timeoutSeconds": 5
+              },
+              "name": "bl-web-console",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "name": "80tcp324001",
+                  "protocol": "TCP"
+                }
+              ],
+              "readinessProbe": {
+                "failureThreshold": 40,
+                "httpGet": {
+                  "path": "/",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 5,
+                "periodSeconds": 1,
+                "successThreshold": 1,
+                "timeoutSeconds": 1
+              },
+              "volumeMounts": [
+                {
+                  "mountPath": "/opt/backendless/repo",
+                  "name": "repo"
+                },
+                {
+                  "mountPath": "/opt/backendless/console/logs",
+                  "name": "logs"
+                }
+              ]
+            }
+          ],
+          "restartPolicy": "Always",
+          "volumes": [
+
+          ]
+        }
+      }
+    }
+  },
+  "service": {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "bl-web-console",
+      "labels": {
+        "app": "bl-web-console"
+      }
+    },
+    "spec": {
+      "type": "NodePort",
+      "ports": [
+        {
+          "port": 80,
+          "targetPort": 80,
+          "name": "bl-web-console",
+          "nodePort": 32400
+        }
+      ],
+      "selector": {
+        "app": "bl-web-console"
+      }
+    }
+  }
+}

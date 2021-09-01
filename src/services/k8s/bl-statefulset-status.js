@@ -1,4 +1,3 @@
-import { listPods } from './k8s-list-pods'
 import { Logger } from '../../logger'
 import { statefulsetStatus } from './k8s-statefulset-status'
 
@@ -26,6 +25,8 @@ export async function blStatefulsetStatus(containerName) {
 
     if (serviceStatus.readyReplicas !== serviceStatus.replicas || serviceStatus.updatedReplicas !== serviceStatus.readyReplicas)
         blStatus.state = States.changing
+    else
+        blStatus.state = States.running
 
     return blStatus
 }

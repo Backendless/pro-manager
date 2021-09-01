@@ -3,8 +3,12 @@ import {installService} from '../services/install'
 
 export const router = new Router()
 
-router.get('/', handler(async () => {
-    return installService.install(await installService.defaults())
+router.post('/', handler(async ({body}) => {
+    return installService.install(body)
+}))
+
+router.get('/default-arguments', handler(async () => {
+    return installService.defaults()
 }))
 
 router.get('/delete', handler(async () => {
