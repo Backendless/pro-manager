@@ -6,6 +6,8 @@ class InstallStatus {
 
     messages = []
 
+    _servicesCreated = false
+
     info(message) {
         this.add('info', message)
     }
@@ -26,6 +28,15 @@ class InstallStatus {
     get(offset) {
         return this.messages.slice(offset ?? 0)
     }
+
+    isServicesCreated(){
+        return this._servicesCreated
+    }
+
+    setServiceCreated( serviceCreated ){
+        this._servicesCreated = serviceCreated
+    }
+
 }
 
 export const installStatus = new InstallStatus()

@@ -1,17 +1,23 @@
+import {blContainers} from "../bl-containers";
 
 
 export class ManageService {
-
-    constructor() {
-        this.service = require('../k8s/manage-service').manageService
-    }
 
     async changeState(state) {
         return this.service.changeState(state)
     }
 
     async status() {
-        return this.service.status()
+        const status = []
+
+        for (const [key, container] of Object.entries(blContainers.bl)) {
+            status.push(await container.serviceStatus())
+        }
+        for (const [key, container] of Object.entries(blContainers.dependencies)) {
+            status.push(await container.serviceStatus())
+        }
+
+        return status
     }
 }
 
