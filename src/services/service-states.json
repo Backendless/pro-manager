@@ -3,5 +3,8 @@
   "disabled": "disabled",
   "notInstalled": "not installed",
   "complete": "complete",
-  "changing": "changing"
+  "changing": "changing",
+  "restart": "restart",
+  "stop": "stop",
+  "start": "start"
 }
