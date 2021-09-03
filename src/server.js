@@ -2,6 +2,7 @@ import express from 'express'
 import Config from '../config/config.json'
 import compression from 'compression'
 import cors from 'cors'
+import stoppable from 'stoppable'
 
 // import { Config } from './config'
 // import { logRoutes } from './utils/log-routes'
@@ -46,7 +47,7 @@ export function start() {
 
   console.log('Start listening port:', Config.port)
 
-  const server = app.listen(Config.port, err => {
+  const server = stoppable(app.listen(Config.port, err => {
     if (err) {
       logger.error(err)
       process.exit(1)
@@ -58,15 +59,15 @@ export function start() {
     logger.info(`***   Open http://localhost:${Config.port} in a browser to view the app.`)
     logger.info('*************************************************************************************')
     logger.info('')
-  })
+  }))
 
   const startGracefulShutdown = signal => {
     console.log(`Termination ${signal} signal received. Shutting down...`)
 
     const stoppingTime = Date.now()
 
-    server.close(() => {
-      const stoppingDuration = stoppingTime - Date.now()
+    server.stop(() => {
+      const stoppingDuration = Date.now() - stoppingTime
 
       console.log(`The Server has been stopped in ${stoppingDuration / 1000} seconds`)
 
