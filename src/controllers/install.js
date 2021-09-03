@@ -20,7 +20,7 @@ router.get('/default-arguments', handler(async () => {
     return installService.defaults()
 }))
 
-router.get('/delete', handler(async () => {
+router.delete('/delete', handler(async () => {
     return installService.delete()
 }))
 

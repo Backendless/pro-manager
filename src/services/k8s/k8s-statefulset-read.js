@@ -25,6 +25,6 @@ export async function statefulsetRead(name) {
             }
         }
     }
-    return k8sAppsV1Api.replaceNamespacedStatefulSet(name, config.k8s.namespace, body)
+    return k8sAppsV1Api.readNamespacedStatefulSet(name, config.k8s.namespace)
 
 }
