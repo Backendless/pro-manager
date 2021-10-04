@@ -27,7 +27,7 @@ export async function executeInPod(pod, args) {
 
     const promise = new Promise((resolve, reject) => {
         outStream.on('result', chunk => resolve(chunk))
-        errStream.on('error', err => reject(err))
+        errStream.on('error', err => reject(new Error(err.toString())))
 
     })
 
@@ -35,10 +35,7 @@ export async function executeInPod(pod, args) {
         outStream, errStream, null,
         false /* tty */,
         status => {
-            // tslint:disable-next-line:no-console
-            logger.info('Exited with status:')
-            // tslint:disable-next-line:no-console
-            logger.info(`string value of status ${JSON.stringify(status, null, 2)}`)
+            logger.verbose(`string value of status ${JSON.stringify(status, null, 2)}`)
         })
 
     const result = await promise

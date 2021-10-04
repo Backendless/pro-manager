@@ -10,7 +10,8 @@
     "levels": {
       "default": "info",
       "install-mongo": "verbose",
-      "install-redis": "verbose"
+      "install-redis": "verbose",
+      "mysql-connection-configuration-service": "verbose"
     }
   }
 }
