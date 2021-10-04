@@ -3,6 +3,7 @@ import {describeMysqlConfiguration} from "./describe-mysql-configuration";
 import {Logger} from "../../../../logger";
 import {manageService} from "../../manage-service";
 import States from "../../../service-states.json"
+import {blContainers} from "../../../bl-containers";
 
 const logger = Logger('mysql-connection-configuration-service')
 
@@ -20,17 +21,12 @@ class MysqlConnectionConfigurationService {
         continue
       }
 
-      let value = null
-      try {
-        value = await consul.get(key)
-      } catch (err) {
-        if (err !== null && err.message != null && err.message.includes('No key exists at')) {
-          logger.verbose(`Cannot get value by key ${key}. Error: ${err.message}`)
-        } else {
-          throw err
-        }
+      const value = await consul.getOrNull(key)
+
+      if (value == null) {
         continue
       }
+
       logger.verbose(`found value ${value} for key ${key}`)
       shard[description.name] = value
     }
@@ -75,7 +71,7 @@ class MysqlConnectionConfigurationService {
     const shardName = shard.shard
 
     if (shardName == null) {
-      throw new Error("Filed shard is required")
+      throw new Error("Field 'shard' is required")
     }
 
     for (const description of describeMysqlConfiguration()) {
@@ -109,10 +105,10 @@ class MysqlConnectionConfigurationService {
   async saveShardAndRestart({shard, shouldRestart}) {
     await this.saveShard(shard)
     if (shouldRestart) {
-      manageService.changeState({serviceName: 'bl-server', state: States.restart})
+      manageService.changeState({serviceName: blContainers.bl.server.name, state: States.restart})
           .then(result => logger.verbose(`restart for bl-server sent`))
           .catch(error => logger.error(`Error during restarting bl-server: ${error}`))
-      manageService.changeState({serviceName: 'bl-taskman', state: States.restart})
+      manageService.changeState({serviceName: blContainers.bl.taskman.name, state: States.restart})
           .then(result => logger.verbose(`restart for bl-taskman sent`))
           .catch(error => logger.error(`Error during restarting bl-taskman: ${error}`))
     }
