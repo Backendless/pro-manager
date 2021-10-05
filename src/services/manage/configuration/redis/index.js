@@ -2,7 +2,6 @@ import {consul} from "../../../consul"
 import {describeRedisConfiguration} from "./describe-redis-configuration";
 import {Logger} from "../../../../logger";
 import {manageService} from "../../manage-service";
-import States from "../../../service-states.json"
 import {getRedisTypes} from "./get-redis-types";
 import {blContainers} from "../../../bl-containers";
 
@@ -24,7 +23,7 @@ class RedisConfigurationService {
       const value = await consul.getOrNull(key)
 
       if (value == null) {
-        logger.verbose(`found value for key ${key} not found`)
+        logger.verbose(`not found value for key ${key}`)
         continue
       }
 
@@ -70,19 +69,13 @@ class RedisConfigurationService {
   async saveConfigAndRestart({config, shouldRestart}) {
     await this.saveConfig(config)
     if (shouldRestart) {
-      this.restartService(blContainers.bl.server.name)
-      this.restartService(blContainers.bl.console.name)
-      this.restartService(blContainers.bl.rtServer.name)
-      this.restartService(blContainers.bl.taskman.name)
-      this.restartService(blContainers.bl.javaCoderunner.name)
-      this.restartService(blContainers.bl.jsCoderunner.name)
+      manageService.restartService(blContainers.bl.server.name)
+      manageService.restartService(blContainers.bl.console.name)
+      manageService.restartService(blContainers.bl.rtServer.name)
+      manageService.restartService(blContainers.bl.taskman.name)
+      manageService.restartService(blContainers.bl.javaCoderunner.name)
+      manageService.restartService(blContainers.bl.jsCoderunner.name)
     }
-  }
-
-  restartService(name){
-    manageService.changeState({serviceName: name, state: States.restart})
-        .then(result => logger.verbose(`restart for ${name} sent`))
-        .catch(error => logger.error(`Error during restarting ${name}: ${error}`))
   }
 
   async describeConfiguration() {

@@ -2,7 +2,6 @@ import {consul} from "../../../consul"
 import {describeMysqlConfiguration} from "./describe-mysql-configuration";
 import {Logger} from "../../../../logger";
 import {manageService} from "../../manage-service";
-import States from "../../../service-states.json"
 import {blContainers} from "../../../bl-containers";
 
 const logger = Logger('mysql-connection-configuration-service')
@@ -105,12 +104,8 @@ class MysqlConnectionConfigurationService {
   async saveShardAndRestart({shard, shouldRestart}) {
     await this.saveShard(shard)
     if (shouldRestart) {
-      manageService.changeState({serviceName: blContainers.bl.server.name, state: States.restart})
-          .then(result => logger.verbose(`restart for bl-server sent`))
-          .catch(error => logger.error(`Error during restarting bl-server: ${error}`))
-      manageService.changeState({serviceName: blContainers.bl.taskman.name, state: States.restart})
-          .then(result => logger.verbose(`restart for bl-taskman sent`))
-          .catch(error => logger.error(`Error during restarting bl-taskman: ${error}`))
+      manageService.restartService(blContainers.bl.server.name)
+      manageService.restartService(blContainers.bl.taskman.name)
     }
   }
 
