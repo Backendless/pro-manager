@@ -1,14 +1,14 @@
-import {blContainers} from "../bl-containers";
-import States from "../service-states.json";
-import {statefulsetRestart} from "../k8s/k8s-statefulset-restart";
-import {statefulsetScale} from "../k8s/k8s-statefulset-scale";
-import {Logger} from "../../logger";
+import { blContainers } from '../bl-containers'
+import States from '../service-states.json'
+import { statefulsetRestart } from '../k8s/k8s-statefulset-restart'
+import { statefulsetScale } from '../k8s/k8s-statefulset-scale'
+import { Logger } from '../../logger'
 
 const logger = Logger('manage-service')
 
 export class ManageService {
 
-    async changeState({serviceName, state}) {
+    async changeState({ serviceName, state }) {
         switch (state) {
             case States.restart:
                 await statefulsetRestart(serviceName)
@@ -23,7 +23,7 @@ export class ManageService {
     }
 
     restartService(name){
-        return manageService.changeState({serviceName: name, state: States.restart})
+        return manageService.changeState({ serviceName: name, state: States.restart })
             .then(result => logger.verbose(`restart for ${name} sent`))
             .catch(error => logger.error(`Error during restarting ${name}: ${error}`))
     }

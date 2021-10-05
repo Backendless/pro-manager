@@ -1,21 +1,21 @@
-import {k8sAppsV1Api, k8sCoreV1Api, k8sRbacAuthorizationV1Api} from '../../k8s/k8s'
+import { k8sAppsV1Api, k8sCoreV1Api, k8sRbacAuthorizationV1Api } from '../../k8s/k8s'
 import config from '../../../../config/config.json'
 import blK8sConfig from '../../k8s/config/hazelcast.json'
-import {installStatus} from '../install-status'
+import { installStatus } from '../install-status'
 import axios from 'axios'
-import {blJobStatus} from '../../k8s/bl-job-status'
-import {blContainers} from '../../bl-containers'
-import {consul} from '../../consul'
-import {HttpError} from "@kubernetes/client-node";
+import { blJobStatus } from '../../k8s/bl-job-status'
+import { blContainers } from '../../bl-containers'
+import { consul } from '../../consul'
+import { HttpError } from '@kubernetes/client-node'
 
 const States = require('../../service-states.json')
 
-export async function installBlHazelcast({version}) {
+export async function installBlHazelcast({ version }) {
     await waitForInitConsulJobComplete()
 
-    const clusterRoleName = blK8sConfig.permissions.clusterRole.metadata.name;
+    const clusterRoleName = blK8sConfig.permissions.clusterRole.metadata.name
     installStatus.info(`check if cluster role name ${clusterRoleName} exists`)
-    let clusterRoleExists = true;
+    let clusterRoleExists = true
     try {
         await k8sRbacAuthorizationV1Api.readClusterRole(clusterRoleName)
         installStatus.info(`cluster role name ${clusterRoleName} exists`)
@@ -32,9 +32,9 @@ export async function installBlHazelcast({version}) {
     }
 
 
-    const clusterRoleBindingName = blK8sConfig.permissions.clusterRoleBinding.metadata.name;
+    const clusterRoleBindingName = blK8sConfig.permissions.clusterRoleBinding.metadata.name
     installStatus.info(`check if cluster role binding name ${clusterRoleBindingName} exists`)
-    let clusterRoleBindingExists = true;
+    let clusterRoleBindingExists = true
     try {
         await k8sRbacAuthorizationV1Api.readClusterRoleBinding(clusterRoleBindingName)
         installStatus.info(`cluster role binding name ${clusterRoleBindingName} exists`)

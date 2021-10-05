@@ -1,15 +1,15 @@
-import {consul} from "../../../consul"
-import {describeDataConfiguration} from "./describe-data-configuration";
-import {Logger} from "../../../../logger";
-import {manageService} from "../../manage-service";
-import {blContainers} from "../../../bl-containers";
+import { consul } from '../../../consul'
+import { describeDataConfiguration } from './describe-data-configuration'
+import { Logger } from '../../../../logger'
+import { manageService } from '../../manage-service'
+import { blContainers } from '../../../bl-containers'
 
 const logger = Logger('data-configuration-service')
 
 class DataConfigurationService {
 
   async getDataConfigs() {
-    logger.verbose(`getting config from consul`)
+    logger.verbose('getting config from consul')
     const config = {}
     for (const description of describeDataConfiguration()) {
       const key = description.consulPath()
@@ -47,7 +47,7 @@ class DataConfigurationService {
     }
   }
 
-  async saveConfigAndRestart({config, shouldRestart}) {
+  async saveConfigAndRestart({ config, shouldRestart }) {
     await this.saveConfig(config)
     if (shouldRestart) {
       manageService.restartService(blContainers.bl.server.name)

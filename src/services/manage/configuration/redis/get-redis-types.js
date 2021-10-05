@@ -1,5 +1,5 @@
 export function getRedisTypes() {
     return [
-        "default", "bl/debug"
+        'default', 'bl/debug'
     ]
 }

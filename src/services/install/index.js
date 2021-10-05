@@ -1,12 +1,12 @@
-import {installStatus} from './install-status'
-import {installMysql} from './db/mysql'
-import {checkReadWriteAccess} from '../../utils/fs'
-import {blContainers} from '../bl-containers'
+import { installStatus } from './install-status'
+import { installMysql } from './db/mysql'
+import { checkReadWriteAccess } from '../../utils/fs'
+import { blContainers } from '../bl-containers'
 import States from '../service-states.json'
-import {initConfigMap} from './init-config-map'
-import {Logger} from "../../logger";
-import {k8sAppsV1Api, k8sCoreV1Api} from "../k8s/k8s";
-import * as config from "../../../config/config.json";
+import { initConfigMap } from './init-config-map'
+import { Logger } from '../../logger'
+import { k8sAppsV1Api, k8sCoreV1Api } from '../k8s/k8s'
+import * as config from '../../../config/config.json'
 
 const logger = Logger('install-service')
 
@@ -44,7 +44,7 @@ class InstallService {
         }
 
         installStatus.info('checking status of bl-init-config-values job')
-        const initConfigValuesContainer = blContainers.bl.initConfigValues;
+        const initConfigValuesContainer = blContainers.bl.initConfigValues
         if ((await initConfigValuesContainer.serviceStatus()).state === States.notInstalled) {
             await initConfigValuesContainer.installService(install)
         } else {

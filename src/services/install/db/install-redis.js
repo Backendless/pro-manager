@@ -2,7 +2,7 @@ import { k8sAppsV1Api, k8sCoreV1Api } from '../../k8s/k8s'
 import config from '../../../../config/config.json'
 import redisK8sConfig from '../../k8s/config/redis.json'
 import { installStatus } from '../install-status'
-import {Logger} from "../../../logger";
+import { Logger } from '../../../logger'
 
 const logger = Logger('install-redis')
 export async function installRedis({ fullMountPath, internalPort, externalPort, name }) {

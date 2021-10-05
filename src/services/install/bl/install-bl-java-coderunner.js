@@ -1,7 +1,7 @@
-import {k8sAppsV1Api} from '../../k8s/k8s'
+import { k8sAppsV1Api } from '../../k8s/k8s'
 import config from '../../../../config/config.json'
 import blK8sConfig from '../../k8s/config/java-coderunner.json'
-import {installStatus} from '../install-status'
+import { installStatus } from '../install-status'
 
 export async function installBlJavaCoderunner({ mountPath, version }) {
     installStatus.info('installing bl-coderunner-java...')

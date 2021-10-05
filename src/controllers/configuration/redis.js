@@ -1,5 +1,5 @@
-import {handler, Router} from '../../utils/router'
-import {redisConfigurationService} from "../../services/manage/configuration/redis";
+import { handler, Router } from '../../utils/router'
+import { redisConfigurationService } from '../../services/manage/configuration/redis'
 
 export const router = new Router()
 
@@ -7,6 +7,6 @@ router.get('/describe', handler(() => redisConfigurationService.describeConfigur
 
 router.get('/config', handler(() => redisConfigurationService.getRedisConfigs()))
 
-router.put('/config', handler(({body, query}) => {
-    return redisConfigurationService.saveConfigAndRestart({config: body, shouldRestart: query.restart})
+router.put('/config', handler(({ body, query }) => {
+    return redisConfigurationService.saveConfigAndRestart({ config: body, shouldRestart: query.restart })
 }))

@@ -1,9 +1,9 @@
-import {consul} from "../../../consul"
-import {describeRedisConfiguration} from "./describe-redis-configuration";
-import {Logger} from "../../../../logger";
-import {manageService} from "../../manage-service";
-import {getRedisTypes} from "./get-redis-types";
-import {blContainers} from "../../../bl-containers";
+import { consul } from '../../../consul'
+import { describeRedisConfiguration } from './describe-redis-configuration'
+import { Logger } from '../../../../logger'
+import { manageService } from '../../manage-service'
+import { getRedisTypes } from './get-redis-types'
+import { blContainers } from '../../../bl-containers'
 
 const logger = Logger('redis-configuration-service')
 
@@ -66,7 +66,7 @@ class RedisConfigurationService {
     }
   }
 
-  async saveConfigAndRestart({config, shouldRestart}) {
+  async saveConfigAndRestart({ config, shouldRestart }) {
     await this.saveConfig(config)
     if (shouldRestart) {
       manageService.restartService(blContainers.bl.server.name)

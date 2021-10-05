@@ -2,7 +2,7 @@ import winston from 'winston'
 import path from 'path'
 import fs from 'fs'
 
-import config from "../../config/config.json";
+import config from '../../config/config.json'
 
 winston.addColors({
   error  : 'red',
@@ -167,8 +167,8 @@ function createLogger(category) {
 
   const transports = []
   if (transportConfig && transportConfig.length) {
-    transportConfig.forEach(({type, options}) => {
-      const transport = Transports[type]({...options, label: category})
+    transportConfig.forEach(({ type, options }) => {
+      const transport = Transports[type]({ ...options, label: category })
 
       if (transport) {
         transports.push(transport)
@@ -178,7 +178,7 @@ function createLogger(category) {
   }
 
   if (transports.length === 0) {
-    transports.push(Transports[TransportTypes.CONSOLE]({label: category}))
+    transports.push(Transports[TransportTypes.CONSOLE]({ label: category }))
   }
 
   logger = winston.createLogger({

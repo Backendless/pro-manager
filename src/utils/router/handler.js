@@ -1,5 +1,5 @@
 import { composeErrorStacks, FakeError } from '../../error'
-import {Logger} from "../../logger";
+import { Logger } from '../../logger'
 
 const logger = Logger('router-handler')
 

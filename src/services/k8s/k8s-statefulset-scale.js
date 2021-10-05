@@ -1,5 +1,5 @@
-import {k8sAppsV1Api} from './k8s'
-import {Logger} from '../../logger'
+import { k8sAppsV1Api } from './k8s'
+import { Logger } from '../../logger'
 
 const config = require('../../../config/config.json')
 const logger = Logger('k8s-statefulset-scale')

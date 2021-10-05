@@ -1,7 +1,7 @@
 const k8s = require('@kubernetes/client-node')
 
-import {k8sAppsV1Api} from './k8s'
-import {Logger} from '../../logger'
+import { k8sAppsV1Api } from './k8s'
+import { Logger } from '../../logger'
 
 const config = require('../../../config/config.json')
 const logger = Logger('k8s-statefulset-restart')
@@ -24,7 +24,7 @@ export async function statefulsetRestart(name, resultAsIS = false) {
     //     })
 
     // const options = {"headers": {"Content-type": k8s.PatchUtils.PATCH_FORMAT_JSON_PATCH}};
-    const options = {"headers": {"Content-type": k8s.PatchUtils.PATCH_FORMAT_STRATEGIC_MERGE_PATCH}};
+    const options = { 'headers': { 'Content-type': k8s.PatchUtils.PATCH_FORMAT_STRATEGIC_MERGE_PATCH } }
 
     const body =
     // [
@@ -35,11 +35,11 @@ export async function statefulsetRestart(name, resultAsIS = false) {
     //     }
     // ]
         {
-        "spec": {
-            "template": {
-                "metadata": {
-                    "annotations":
-                        {"kubectl.kubernetes.io/restartedAt": new Date().toISOString()}
+        'spec': {
+            'template': {
+                'metadata': {
+                    'annotations':
+                        { 'kubectl.kubernetes.io/restartedAt': new Date().toISOString() }
                 }
             }
         }

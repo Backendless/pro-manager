@@ -1,8 +1,8 @@
-import {consul} from "../../../consul"
-import {describeMysqlConfiguration} from "./describe-mysql-configuration";
-import {Logger} from "../../../../logger";
-import {manageService} from "../../manage-service";
-import {blContainers} from "../../../bl-containers";
+import { consul } from '../../../consul'
+import { describeMysqlConfiguration } from './describe-mysql-configuration'
+import { Logger } from '../../../../logger'
+import { manageService } from '../../manage-service'
+import { blContainers } from '../../../bl-containers'
 
 const logger = Logger('mysql-connection-configuration-service')
 
@@ -47,7 +47,7 @@ class MysqlConnectionConfigurationService {
 
     let disabledShardsStr = null
     try {
-      disabledShardsStr = await consul.get(this._disabledShardsNamesKey);
+      disabledShardsStr = await consul.get(this._disabledShardsNamesKey)
     } catch (err) {
       if (err !== null && err.message != null && err.message.includes('No key exists at')) {
         logger.warn(`Error during getting disabled shards by key ${this._disabledShardsNamesKey}. Message: ${err}`)
@@ -101,7 +101,7 @@ class MysqlConnectionConfigurationService {
     }
   }
 
-  async saveShardAndRestart({shard, shouldRestart}) {
+  async saveShardAndRestart({ shard, shouldRestart }) {
     await this.saveShard(shard)
     if (shouldRestart) {
       manageService.restartService(blContainers.bl.server.name)
