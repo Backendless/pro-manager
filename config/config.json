@@ -1,5 +1,6 @@
 {
   "port": 5050,
+  "socketIOPort": 5051,
   "k8s": {
     "configFile3": "C:\\Users\\ksv510\\.kube\\config",
     "configFile": "/etc/rancher/k3s/k3s.yaml",
