@@ -11,6 +11,7 @@ import { installBlHazelcast } from './install/bl/install-bl-hazelcast'
 import { installBlJavaCoderunner } from './install/bl/install-bl-java-coderunner'
 import { installBlJsCoderunner } from './install/bl/install-bl-js-coderunner'
 import { installBlWebConsole } from './install/bl/install-bl-web-console'
+import { installBlRtServer } from './install/bl/install-bl-rt-server'
 
 class BlContainers {
     bl = {
@@ -22,7 +23,7 @@ class BlContainers {
         rtServer: {
             name: 'bl-rt-server',
             serviceStatus: () => blStatefulsetStatus('bl-rt-server'),
-            installService: installArguments => (installArguments)
+            installService: installArguments => installBlRtServer(installArguments)
         },
         taskman: {
             name: 'bl-taskman',
