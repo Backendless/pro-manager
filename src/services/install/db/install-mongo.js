@@ -1,12 +1,14 @@
 import { k8sAppsV1Api, k8sCoreV1Api } from '../../k8s/k8s'
 import config from '../../../../config/config.json'
-import mongoK8sConfig from '../../k8s/config/mongo.json'
 import { installStatus } from '../install-status'
 import { Logger } from '../../../logger'
+import { readFileContent } from '../../../utils/fs'
+import path from 'path'
 
 const logger = Logger('install-mongo')
 
 export async function installMongo({ mountPath }) {
+    const mongoK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/mongo.json')))
     installStatus.info('installing mongo...')
     const workload = mongoK8sConfig.workload
     workload.spec.template.spec.volumes.push({
