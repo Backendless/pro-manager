@@ -24,6 +24,16 @@ router.delete('/delete', handler(async () => {
     return installService.delete()
 }))
 
+router.delete('/:serviceName', handler(({ params }) => {
+    const { serviceName } = params
+    return installService.deleteService(serviceName)
+}))
+
+router.post('/:serviceName', handler(({ params, body }) => {
+    const { serviceName } = params
+    return installService.installService(serviceName, body)
+}))
+
 router.get('/status', handler(() => {
     return installService.status()
 }))

@@ -62,6 +62,21 @@ class InstallService {
         return installStatus.get(0)
     }
 
+    async installService(serviceName, install) {
+        const allContainers = Object.entries({ ...blContainers.bl, ...blContainers.dependencies })
+        const container = allContainers
+            .filter(([key, container]) => container.name === serviceName)
+            .map(([key, container]) => container)
+
+        logger.info(`found container ${JSON.stringify(container)} to install`)
+
+        if (container.length < 1) {
+            throw new Error(`'${serviceName}' is not in the list of containers, use one of the following: `
+                + `'${allContainers.map(([key, container]) => container.name)}'`)
+        }
+        return this._installContainer(container[0], install)
+    }
+
 
     async _installContainer(dependency, install) {
         installStatus.info(`checking status for ${dependency.name}`)
@@ -70,18 +85,19 @@ class InstallService {
 
         if (status.state === States.notInstalled) {
             installStatus.info(`install container ${dependency.name}`)
+
             await dependency.installService(install)
         } else {
             installStatus.info(`service ${dependency.name} already installed`)
         }
     }
 
-    async _deleteContainer(dependency) {
-        logger.info(`removing ${dependency.name}...`)
+    async _deleteContainer({ name }) {
+        logger.info(`removing ${name}...`)
         try {
-            const removeStatefulSetResult = await k8sAppsV1Api.deleteNamespacedStatefulSet(dependency.name, config.k8s.namespace)
-            logger.info(`removing service ${dependency.name}...`)
-            const removeServiceResult = await k8sCoreV1Api.deleteNamespacedService(dependency.name, config.k8s.namespace)
+            const removeStatefulSetResult = await k8sAppsV1Api.deleteNamespacedStatefulSet(name, config.k8s.namespace)
+            logger.info(`removing service ${name}...`)
+            const removeServiceResult = await k8sCoreV1Api.deleteNamespacedService(name, config.k8s.namespace)
         } catch (e) {
             logger.error(e)
         }
@@ -106,6 +122,10 @@ class InstallService {
         for (const [key, dependency] of Object.entries(blContainers.bl)) {
             await this._deleteContainer(dependency)
         }
+    }
+
+    async deleteService(serviceName) {
+        return this._deleteContainer({ name: serviceName })
     }
 
     /**
