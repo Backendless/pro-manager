@@ -16,13 +16,13 @@ const logger = Logger('socket-io')
 io.on('connection', client => {
     console.log(`a client with id '${client.id}  connected: ${JSON.stringify(client.handshake)}`)
 
-    client.on('subscribe', subscriber => {
+    client.on('service-logs:subscribe', subscriber => {
         const { serviceName, channelName } = subscriber
         logger.info(`client ${client.id} subscribed for '${channelName}' for logs for service '${serviceName}'`)
         serviceLog.subscribe({ socketIOClientId: client.id, subscriber })
     })
 
-    client.on('unsubscribe', subscriber => {
+    client.on('service-logs:unsubscribe', subscriber => {
         const { serviceName, channelName } = subscriber
         logger.info(`client ${client.id} unsubscribed for '${channelName}' for logs for service '${serviceName}'`)
         serviceLog.unsubscribe({ socketIOClientId: client.id, serviceName })
