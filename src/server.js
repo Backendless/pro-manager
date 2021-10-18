@@ -75,6 +75,8 @@ export function start() {
     })
   }
 
+  require('./socket-io')
+
   process.on('SIGTERM', startGracefulShutdown)
   process.on('SIGINT', startGracefulShutdown)
 }
