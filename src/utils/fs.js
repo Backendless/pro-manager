@@ -8,7 +8,7 @@ export async function checkReadWriteAccess(path) {
     return new Promise((resolve, reject) => {
         fs.access(path, fs.constants.R_OK | fs.constants.W_OK, err => {
             if (err) {
-                logger.info('$\'{path}\' doesn\'t exist or access denied')
+                logger.info(`'${path}' doesn't exist or access denied`)
                 resolve(false)
             } else {
                 logger.info(`can read/write '${path}'`)
