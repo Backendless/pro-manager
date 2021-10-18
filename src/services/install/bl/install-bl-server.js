@@ -1,12 +1,14 @@
 import { k8sAppsV1Api, k8sCoreV1Api } from '../../k8s/k8s'
 import config from '../../../../config/config.json'
-import blServerK8sConfig from '../../k8s/config/server.json'
 import { installStatus } from '../install-status'
+import { readFileContent } from '../../../utils/fs'
+import path from 'path'
 import { Logger } from '../../../logger'
 
 const logger = Logger('install-bl-server')
 
 export async function installBlServer({ mountPath, version }) {
+    const blServerK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/server.json')))
     installStatus.info('installing bl-server...')
     const workload = blServerK8sConfig.workload
     workload.spec.template.spec.containers[0].image=`backendless/bl-server:${version}`

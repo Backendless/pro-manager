@@ -2,10 +2,12 @@ import { createMysqlConfigMap } from './create-mysql-config-map'
 import { installStatus } from '../../install-status'
 import { k8sAppsV1Api, k8sCoreV1Api } from '../../../k8s/k8s'
 import config from '../../../../../config/config.json'
-import mysqlK8sConfig from '../../../k8s/config/mysql.json'
 import fileNames from './mysql-file-names.json'
+import { readFileContent } from '../../../../utils/fs'
+import path from 'path'
 
 export async function installMysql({ version, mountPath }) {
+    const mysqlK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../../k8s/config/mysql.json')))
     installStatus.info('installing mysql...')
     await createMysqlConfigMap(version)
     installStatus.info('created config map')

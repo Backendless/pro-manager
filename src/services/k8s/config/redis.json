@@ -35,9 +35,7 @@
               "args": [
                 "redis-server",
                 "--appendonly",
-                "yes",
-                "--port",
-                "6379"
+                "yes"
               ],
               "image": "redis:6",
               "imagePullPolicy": "IfNotPresent",

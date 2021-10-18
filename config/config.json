@@ -12,8 +12,9 @@
       "default": "info",
       "install-mongo": "verbose",
       "install-redis": "verbose",
-      "bl-statefulset-status": "verbose",
       "mysql-connection-configuration-service": "verbose",
+      "fs-util": "verbose",
+      "bl-statefulset-status": "verbose",
       "install-bl-rt-server": "verbose",
       "install-bl-server": "verbose"
     }

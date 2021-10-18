@@ -1,9 +1,11 @@
 import { k8sAppsV1Api, k8sCoreV1Api } from '../../k8s/k8s'
 import config from '../../../../config/config.json'
-import consulK8sConfig from '../../k8s/config/consul.json'
 import { installStatus } from '../install-status'
+import { readFileContent } from '../../../utils/fs'
+import path from 'path'
 
 export async function installConsul({ mountPath }) {
+    const consulK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/consul.json')))
     installStatus.info('installing consul...')
     const workload = consulK8sConfig.workload
     workload.spec.template.spec.volumes.push({
