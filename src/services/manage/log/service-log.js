@@ -17,8 +17,8 @@ export class ServiceLog {
         this.socketIO = socketIO
     }
 
-    async subscribe({ socketIOClientId, subscriber }) {
-        const { serviceName } = subscriber
+    async subscribe({ socketIOClientId, serviceName, channelName }) {
+        const subscriber = { serviceName, channelName }
 
         const subscribers = this.clients[serviceName] = this.clients[serviceName] || []
 

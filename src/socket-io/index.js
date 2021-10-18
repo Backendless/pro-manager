@@ -19,7 +19,7 @@ io.on('connection', client => {
     client.on('service-logs:subscribe', subscriber => {
         const { serviceName, channelName } = subscriber
         logger.info(`client ${client.id} subscribed for '${channelName}' for logs for service '${serviceName}'`)
-        serviceLog.subscribe({ socketIOClientId: client.id, subscriber })
+        serviceLog.subscribe({ socketIOClientId: client.id, serviceName, channelName })
     })
 
     client.on('service-logs:unsubscribe', subscriber => {
