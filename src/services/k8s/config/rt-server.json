@@ -1,0 +1,156 @@
+{
+  "workload": {
+    "apiVersion": "apps/v1",
+    "kind": "StatefulSet",
+    "metadata": {
+      "annotations": {
+        "name": "bl-rt-server"
+      },
+      "name": "bl-rt-server"
+    },
+    "spec": {
+      "progressDeadlineSeconds": 60,
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "bl-rt-server"
+        }
+      },
+      "strategy": {
+        "rollingUpdate": {
+          "maxSurge": 1,
+          "maxUnavailable": 0
+        },
+        "type": "RollingUpdate"
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "bl-rt-server"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "args": [
+                "play"
+              ],
+              "env": [
+                {
+                  "name": "BL_CONSUL_HOST",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_CONSUL_HOST",
+                      "name": "bl-env"
+                    }
+                  }
+                },
+                {
+                  "name": "BL_CONSUL_PORT",
+                  "valueFrom": {
+                    "configMapKeyRef": {
+                      "key": "BL_CONSUL_PORT",
+                      "name": "bl-env"
+                    }
+                  }
+                },
+                {
+                  "name": "BL_HOST_IP",
+                  "valueFrom": {
+                    "fieldRef": {
+                      "apiVersion": "v1",
+                      "fieldPath": "status.hostIP"
+                    }
+                  }
+                }
+              ],
+              "image": "backendless/bl-rt-server",
+              "imagePullPolicy": "IfNotPresent",
+              "name": "bl-rt-server",
+              "livenessProbe": {
+                "failureThreshold": 5,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 2992,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 1,
+                "periodSeconds": 2,
+                "successThreshold": 1,
+                "timeoutSeconds": 2
+              },
+              "readinessProbe": {
+                "failureThreshold": 5,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 2992,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 1,
+                "periodSeconds": 2,
+                "successThreshold": 1,
+                "timeoutSeconds": 2
+              },
+              "ports": [
+                {
+                  "containerPort": 5000,
+                  "name": "bl-rt-server",
+                  "protocol": "TCP"
+                },
+                {
+                  "containerPort": 2992,
+                  "name": "bl-rt-health",
+                  "protocol": "TCP"
+                }
+              ],
+              "volumeMounts": [
+                {
+                  "mountPath": "/opt/backendless/repo",
+                  "name": "repo"
+                },
+                {
+                  "mountPath": "/opt/backendless/logs",
+                  "name": "logs"
+                }
+              ]
+            }
+          ],
+          "restartPolicy": "Always",
+          "volumes": [
+
+          ]
+        }
+      }
+    }
+  },
+  "service": {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "bl-rt-server",
+      "labels": {
+        "app": "bl-rt-server"
+      }
+    },
+    "spec": {
+      "type": "NodePort",
+      "ports": [
+        {
+          "port": 5000,
+          "targetPort": 5000,
+          "name": "bl-rt-server",
+          "nodePort": 32700
+        },
+        {
+          "port": 2992,
+          "targetPort": 2992,
+          "name": "bl-rt-health",
+          "nodePort": 32692
+        }
+      ],
+      "selector": {
+        "app": "bl-rt-server"
+      }
+    }
+  }
+}
