@@ -20,11 +20,7 @@ export class ServiceLog {
     async subscribe({ socketIOClientId, subscriber }) {
         const { serviceName } = subscriber
 
-        if (!Array.isArray(this.clients[serviceName])) {
-            this.clients[serviceName] = []
-        }
-
-        const subscribers = this.clients[serviceName]
+        const subscribers = this.clients[serviceName] = this.clients[serviceName] || []
 
         if (subscribers.length < 1) {
             const newLength = subscribers.push(socketIOClientId)
