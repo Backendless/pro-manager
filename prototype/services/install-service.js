@@ -43,9 +43,8 @@ class install {
      */
     async defaults() {
         return {
-            version: "6.4.1.8",
-            port: 80,
-            mountPath: "/opt/backendless"
+            version: '6.4.1.9',
+            mountPath: '/mnt/c/k8s-mount'
         }
     }
 }
