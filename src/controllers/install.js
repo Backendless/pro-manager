@@ -12,7 +12,7 @@ router.post('/', handler(async ({ body }) => {
             installStatus.info('All services are created, you can see status of each service on Manage page')
         })
         .catch(error => {
-            installStatus.error(`Error during install process ${JSON.stringify(error)}`)
+            installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error)}`)
         })
 }))
 

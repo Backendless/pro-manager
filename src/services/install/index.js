@@ -135,8 +135,7 @@ class InstallService {
     async defaults() {
         return {
             version: '6.4.1.9',
-            port: 80,
-            mountPath: '/opt/backendless'
+            mountPath: '/mnt/c/k8s-mount'
         }
     }
 }

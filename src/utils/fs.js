@@ -1,4 +1,5 @@
 import { Logger } from '../logger'
+import { isWin } from './os'
 
 const fs = require('fs')
 
@@ -31,4 +32,8 @@ export async function readFileContent(path) {
             }
         })
     })
+}
+
+export function osDelimiterForFiles() {
+    return isWin() ? '\\' : '/'
 }
