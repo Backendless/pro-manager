@@ -12,22 +12,11 @@
     <!-- jss-insertion-point -->
 
     <script>
-      window.uiBuilderSDKPath = './library/sdk'
-      window.uiBuilderThemePath = '.'
-
-      less = {
-        env       : 'development',
-        logLevel  : 1,
-        globalVars: {
-          sdkPath  : JSON.stringify(window.uiBuilderSDKPath),
-          themePath: JSON.stringify(window.uiBuilderThemePath),
-        },
-      }
+        window.uiBuilderSDKPath = './library/sdk'
     </script>
 
-    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
+    <link rel="stylesheet" href="./styles.css"/>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.12.2/less.min.js"></script>
 
     <script data-main="./main.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 </head>

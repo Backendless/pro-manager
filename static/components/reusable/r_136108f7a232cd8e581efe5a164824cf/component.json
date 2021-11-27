@@ -1,0 +1,15 @@
+{
+  "category": "Reusable Components",
+  "name": "install logo (r_136)",
+  "components": {},
+  "type": "reusable",
+  "id": "r_136108f7a232cd8e581efe5a164824cf",
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "image",
+    "text"
+  ],
+  "style": {},
+  "attrs": {}
+}
