@@ -7,6 +7,8 @@ import { initConfigMap } from './init-config-map'
 import { Logger } from '../../logger'
 import { k8sAppsV1Api, k8sCoreV1Api } from '../k8s/k8s'
 import * as config from '../../../config/config.json'
+import { isWin } from '../../utils/os'
+import * as fs from 'fs'
 
 const logger = Logger('install-service')
 
@@ -32,9 +34,29 @@ class InstallService {
      * @param {InstallArgument} [install]
      */
     async install(install) {
+
+
+        fs.readdir(install.mountPath, (err, files) => {
+            if(err){
+                console.log(`error ${err}`)
+            }
+            else{
+            files.forEach(file => {
+                console.log(file)
+            })}
+        })
+
         if (!(await checkReadWriteAccess(install.mountPath))) {
             throw new Error(`Read write access is denied for ${install.mountPath}'`)
         }
+
+        if (isWin()) {
+            //we should replace `C:` or `D:` or any other latter to /mnt/<latter> because docker paths will be mounted in this way
+            const mountPathParts = install.mountPath.match(/(.)(:)(.*)/)
+            install.mountPath = `/run/desktop/mnt/host/${mountPathParts[1].toLowerCase()}${mountPathParts[3].replace(/\\/g, '/')}`
+        }
+
+        logger.info(`mount path '${install.mountPath}' will be used`)
 
         await initConfigMap()
 
@@ -135,7 +157,7 @@ class InstallService {
     async defaults() {
         return {
             version: '6.4.1.9',
-            mountPath: '/mnt/c/k8s-mount'
+            mountPath: 'C:\\k8s-mount'
         }
     }
 }
