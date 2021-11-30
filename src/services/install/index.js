@@ -122,7 +122,7 @@ class InstallService {
     async status() {
         return {
             messages: installStatus.get(),
-            progress: 35
+            servicesCreated: await installStatus.isServicesCreated()
         }
     }
 

@@ -7,7 +7,7 @@ export const router = new Router()
 router.post('/', handler(async ({ body }) => {
     //install process should be async
     installService.install(body)
-        .then(result => {
+        .then( result => {
             installStatus.setServiceCreated(true)
             installStatus.info('All services are created, you can see status of each service on Manage page')
         })
