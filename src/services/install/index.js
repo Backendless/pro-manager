@@ -9,6 +9,7 @@ import { k8sAppsV1Api, k8sCoreV1Api } from '../k8s/k8s'
 import * as config from '../../../config/config.json'
 import { isWin } from '../../utils/os'
 import * as fs from 'fs'
+import { deleteService } from '../k8s/k8s-delete-service'
 
 const logger = Logger('install-service')
 
@@ -37,13 +38,13 @@ class InstallService {
 
 
         fs.readdir(install.mountPath, (err, files) => {
-            if(err){
+            if (err) {
                 console.log(`error ${err}`)
+            } else {
+                files.forEach(file => {
+                    console.log(file)
+                })
             }
-            else{
-            files.forEach(file => {
-                console.log(file)
-            })}
         })
 
         if (!(await checkReadWriteAccess(install.mountPath))) {
@@ -114,17 +115,6 @@ class InstallService {
         }
     }
 
-    async _deleteContainer({ name }) {
-        logger.info(`removing ${name}...`)
-        try {
-            const removeStatefulSetResult = await k8sAppsV1Api.deleteNamespacedStatefulSet(name, config.k8s.namespace)
-            logger.info(`removing service ${name}...`)
-            const removeServiceResult = await k8sCoreV1Api.deleteNamespacedService(name, config.k8s.namespace)
-        } catch (e) {
-            logger.error(e)
-        }
-    }
-
     /**
      * @route GET /status
      * @return {Object}
@@ -136,18 +126,18 @@ class InstallService {
         }
     }
 
-    async delete() {
+    async deleteAll() {
         for (const [key, dependency] of Object.entries(blContainers.dependencies)) {
-            await this._deleteContainer(dependency)
+            await dependency.deleteService()
         }
 
         for (const [key, dependency] of Object.entries(blContainers.bl)) {
-            await this._deleteContainer(dependency)
+            await dependency.deleteService()
         }
     }
 
     async deleteService(serviceName) {
-        return this._deleteContainer({ name: serviceName })
+        return deleteService(serviceName)
     }
 
     /**

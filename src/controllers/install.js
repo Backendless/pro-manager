@@ -21,7 +21,7 @@ router.get('/default-arguments', handler(async () => {
 }))
 
 router.delete('/delete', handler(async () => {
-    return installService.delete()
+    return installService.deleteAll()
 }))
 
 router.delete('/:serviceName', handler(({ params }) => {
