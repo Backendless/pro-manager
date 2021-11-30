@@ -40,7 +40,7 @@ class InstallStatus {
                 if (await blContainers.dependencies.consul.serviceStatus() === States.notInstalled) {
                     this._servicesCreated = false
                 } else {
-                    this._servicesCreated = String(await consul.get(_servicesCreatedConsulKey)).toLowerCase() === 'true'
+                    this._servicesCreated = Boolean(await consul.get(_servicesCreatedConsulKey))
                 }
             } catch (error) {
                 logger.error(`Error during retrieve status from consul: ${error}`)
