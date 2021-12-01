@@ -115,7 +115,7 @@ define('./pages/progress/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-    var statusInit, error;
+    var error, statusInit;
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -126,8 +126,6 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
 function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEntitiesMap('setIntervals'); const timer = setInterval(callback, delay); if (timerId) {  stopSetTimeout(timerId);  timers[timerId] = timer }}
 
 
-  ___arguments.context.pageData['progress'] = 0;
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('78f9dfca14f91c91aaf2170f11c8e9e7'))['width'] = 0;
   try {
     statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null));
 
@@ -140,8 +138,6 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
     return false;
   }
-  ___arguments.context.pageData['progress'] = (statusInit['progress']);
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('78f9dfca14f91c91aaf2170f11c8e9e7'))['width'] = (String(statusInit['progress']) + String('%'));
   ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
   ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (statusInit['messages']));
 
@@ -149,12 +145,11 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     const callback = async () => {
         try {
       statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null));
-      ___arguments.context.pageData['progress'] = (statusInit['progress']);
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('78f9dfca14f91c91aaf2170f11c8e9e7'))['width'] = (String(statusInit['progress']) + String('%'));
       ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
       ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (statusInit['messages']));
-      if ((statusInit['progress']) == 100) {
+      if (statusInit['servicesCreated']) {
         stopSetTimeout('timer');
+        ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('e9f1780772ebd34dcb625ad823d37d66', false);
         ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('6ec49b615f364fc25ba12557e2fb8e0f', true);
       }
 
@@ -166,7 +161,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     };
 
     const timerId = 'timer';
-    const timerDelay = 1500;
+    const timerDelay = 1000;
 
     runSetTimeout(timerId, callback, timerDelay)
   })()
