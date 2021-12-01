@@ -4,17 +4,7 @@ import { installStatus } from '../services/install/install-status'
 
 export const router = new Router()
 
-router.post('/', handler(async ({ body }) => {
-    //install process should be async
-    installService.install(body)
-        .then( result => {
-            installStatus.setServiceCreated(true)
-            installStatus.info('All services are created, you can see status of each service on Manage page')
-        })
-        .catch(error => {
-            installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error)}`)
-        })
-}))
+router.post('/', handler(({ body }) => installService.install(body)))
 
 router.get('/default-arguments', handler(async () => {
     return installService.defaults()

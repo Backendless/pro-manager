@@ -10,6 +10,7 @@ import * as config from '../../../config/config.json'
 import { isWin } from '../../utils/os'
 import * as fs from 'fs'
 import { deleteService } from '../k8s/k8s-delete-service'
+import { ApiError } from '../../error'
 
 const logger = Logger('install-service')
 
@@ -35,21 +36,24 @@ class InstallService {
      * @param {InstallArgument} [install]
      */
     async install(install) {
-
-
-        fs.readdir(install.mountPath, (err, files) => {
-            if (err) {
-                console.log(`error ${err}`)
-            } else {
-                files.forEach(file => {
-                    console.log(file)
-                })
-            }
-        })
+        fs.promises.readdir(install.mountPath)
 
         if (!(await checkReadWriteAccess(install.mountPath))) {
-            throw new Error(`Read write access is denied for ${install.mountPath}'`)
+            throw new ApiError.BadRequestError(`Read write access is denied for ${install.mountPath}'`)
         }
+
+        //install process should be async
+        this._install(install).then(result => {
+            installStatus.setServiceCreated(true)
+            installStatus.info('All services are created, you can see status of each service on Manage page')
+        })
+        .catch(error => {
+            installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error)}`)
+        })
+    }
+
+    async _install(install) {
+
 
         if (isWin()) {
             //we should replace `C:` or `D:` or any other latter to /mnt/<latter> because docker paths will be mounted in this way
