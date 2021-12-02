@@ -1,6 +1,3 @@
 {
-  "serverURL": "http://localhost:5050",
-  "filesURL": "https://dev-appcontent.backendless.com",
-  "appId": "1415A76A-A03B-A64C-FF9B-44CCF00B3700",
-  "apiKey": "D8876ACD-D972-4CC8-991F-89658D7DF716"
+  "serverURL": "http://localhost:5050"
 }

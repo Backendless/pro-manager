@@ -22,54 +22,6 @@ body {
   color: NULL;
   visibility: NULL;
 }
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -279,55 +231,64 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
-/***********************************/
-/***********************************/
-/*****    component: button    *****/
-.bl-button.bl-button--contained {
-  border-radius: 4px;
+/*********************************/
+/*********************************/
+/*****    component: chip    *****/
+.bl-chip {
+  border-radius: 16px;
+  width: max-content;
 }
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
+.bl-chip:not(.bl-chip--outlined) {
   background: #337ab7;
   color: #ffffff;
 }
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
+  color: inherit;
 }
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
+  color: inherit;
+  width: auto;
+  height: auto;
 }
-.bl-button.bl-button--contained.bl-button--disabled {
+.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
   background: gray;
-  color: #ffffff;
+  color: gray;
 }
-.bl-button.bl-button--outlined {
-  border-radius: 4px;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
   background: transparent;
   color: #337ab7;
   border: 2px solid #337ab7;
 }
-.bl-button.bl-button--outlined.bl-button--disabled {
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
+  width: auto;
+  height: auto;
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled {
   border: 2px solid gray;
   color: gray;
 }
-.bl-button.bl-button--text {
-  border-radius: 4px;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
   color: gray;
 }
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
+  color: gray;
+}
+.MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.MuiChip-iconSmall {
+  font-size: 18px;
+}
+/*****    component: chip    *****/
+/*********************************/
+/*********************************/
 /**********************************/
 /**********************************/
 /*****    component: block    *****/
@@ -440,6 +401,54 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -606,6 +615,55 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button.bl-button--contained {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined {
+  border-radius: 4px;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text {
+  border-radius: 4px;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
 /************************************/
 /************************************/
 /*****    component: divider    *****/
@@ -616,64 +674,6 @@ body {
 /*****    component: divider    *****/
 /************************************/
 /************************************/
-/*********************************/
-/*********************************/
-/*****    component: chip    *****/
-.bl-chip {
-  border-radius: 16px;
-  width: max-content;
-}
-.bl-chip:not(.bl-chip--outlined) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
-  color: inherit;
-  width: auto;
-  height: auto;
-}
-.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
-  background: gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
-  width: auto;
-  height: auto;
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
-  color: gray;
-}
-.MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.MuiChip-iconSmall {
-  font-size: 18px;
-}
-/*****    component: chip    *****/
-/*********************************/
-/*********************************/
 /*********************************/
 /*********************************/
 /*****    component: form    *****/
@@ -687,6 +687,15 @@ body {
   border-radius: 4px;
 }
 /*****    component: form    *****/
+/*********************************/
+/*********************************/
+/*********************************/
+/*********************************/
+/*****    component: icon    *****/
+.bl-icon {
+  color: #337ab7;
+}
+/*****    component: icon    *****/
 /*********************************/
 /*********************************/
 /***************************************/
@@ -703,210 +712,6 @@ body {
 /*****    component: google-map    *****/
 /***************************************/
 /***************************************/
-/*********************************/
-/*********************************/
-/*****    component: icon    *****/
-.bl-icon {
-  color: #337ab7;
-}
-/*****    component: icon    *****/
-/*********************************/
-/*********************************/
-/**********************************/
-/**********************************/
-/*****    component: image    *****/
-.bl-image {
-  border: NULL;
-  border-radius: 4px;
-  box-shadow: NULL;
-}
-/*****    component: image    *****/
-/**********************************/
-/**********************************/
-/**********************************/
-/**********************************/
-/*****    component: input    *****/
-.bl-input.bl-input--outlined fieldset {
-  border-radius: 4px 4px 4px 4px;
-}
-.bl-input.bl-input--outlined .bl-input-label {
-  color: #000000;
-}
-.bl-input.bl-input--outlined:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
-  color: #000000;
-}
-.bl-input.bl-input--outlined .bl-input-label--disabled {
-  color: gray;
-}
-.bl-input.bl-input--outlined .bl-input-label--focused {
-  color: #000000;
-}
-.bl-input.bl-input--outlined .bl-input-input-root {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover fieldset {
-  border: NULL;
-  box-shadow: NULL;
-}
-.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-  -webkit-box-shadow: 0 0 0 30px transparent inset;
-}
-.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused fieldset {
-  border: 2px solid #337ab7;
-  box-shadow: NULL;
-}
-.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-  -webkit-box-shadow: 0 0 0 30px transparent inset;
-}
-.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--disabled {
-  background-color: NULL;
-  color: gray;
-}
-.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--disabled fieldset {
-  border: 2px solid gray;
-  box-shadow: NULL;
-}
-.bl-input.bl-input--outlined .bl-input-input-root fieldset {
-  border: 2px solid #337ab7;
-  box-shadow: NULL;
-}
-.bl-input.bl-input--outlined .bl-input-input-root input:-webkit-autofill {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-  -webkit-box-shadow: 0 0 0 30px transparent inset;
-}
-.bl-input.bl-input--filled ::after {
-  border-bottom: 2px solid #337ab7;
-}
-.bl-input.bl-input--filled .bl-input-label {
-  color: #000000;
-}
-.bl-input.bl-input--filled:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
-  color: #000000;
-}
-.bl-input.bl-input--filled .bl-input-label--disabled {
-  color: gray;
-}
-.bl-input.bl-input--filled .bl-input-label--focused {
-  color: #000000;
-}
-.bl-input.bl-input--filled .bl-input-input-root {
-  border-radius: 4px 4px 0 0;
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #eee;
-  color: #000000;
-}
-.bl-input.bl-input--filled .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: NULL;
-  color: #000000;
-}
-.bl-input.bl-input--filled .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-  -webkit-box-shadow: 0 0 0 30px transparent inset;
-}
-.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--focused {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #f1f1f1;
-  color: #000000;
-}
-.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-  -webkit-box-shadow: 0 0 0 30px transparent inset;
-}
-.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--disabled {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #dbdbdb;
-  color: #000000;
-}
-.bl-input.bl-input--filled .bl-input-input-root input:-webkit-autofill {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-  -webkit-box-shadow: 0 0 0 30px transparent inset;
-}
-.bl-input.bl-input--standard .bl-input-label {
-  color: #000000;
-}
-.bl-input.bl-input--standard:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
-  color: #000000;
-}
-.bl-input.bl-input--standard .bl-input-label--disabled {
-  color: gray;
-}
-.bl-input.bl-input--standard .bl-input-label--focused {
-  color: #000000;
-}
-.bl-input.bl-input--standard .bl-input-input-root {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-input.bl-input--standard .bl-input-input-root::after {
-  border-bottom: 2px solid #337ab7;
-}
-.bl-input.bl-input--standard .bl-input-input-root::before {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-}
-.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-}
-.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover::before {
-  border-bottom: calc(2px + 1px) solid #000000;
-}
-.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--focused {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-}
-.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--disabled {
-  box-shadow: NULL;
-  color: gray;
-}
-.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--disabled::before {
-  border-bottom: 2px solid gray;
-}
-.bl-input.bl-input--standard .bl-input-input-root input:-webkit-autofill {
-  -webkit-text-fill-color: #000000;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: #000000;
-}
-/*****    component: input    *****/
-/**********************************/
-/**********************************/
 /***********************************/
 /***********************************/
 /*****    component: iframe    *****/
@@ -937,32 +742,6 @@ body {
 /*****    component: jumbotron    *****/
 /**************************************/
 /**************************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
-}
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
-}
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1053,6 +832,222 @@ body {
 /*****    component: layout-cell    *****/
 /****************************************/
 /****************************************/
+/**********************************/
+/**********************************/
+/*****    component: input    *****/
+.bl-input.bl-input--outlined fieldset {
+  border-radius: 4px 4px 4px 4px;
+}
+.bl-input.bl-input--outlined .bl-input-label {
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--outlined:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-label--disabled {
+  color: gray;
+}
+.bl-input.bl-input--outlined .bl-input-label--focused {
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-input-root {
+  background-color: NULL;
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--disabled {
+  background-color: NULL;
+  color: gray;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--disabled fieldset {
+  border: 2px solid gray;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--filled ::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-input.bl-input--filled .bl-input-label {
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--filled:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-label--disabled {
+  color: gray;
+}
+.bl-input.bl-input--filled .bl-input-label--focused {
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root {
+  border-radius: 4px 4px 0 0;
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #eee;
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--filled .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--focused {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #f1f1f1;
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--disabled {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #dbdbdb;
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--standard .bl-input-label {
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--standard:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-label--disabled {
+  color: gray;
+}
+.bl-input.bl-input--standard .bl-input-label--focused {
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root {
+  box-shadow: NULL;
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--standard .bl-input-input-root::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-input.bl-input--standard .bl-input-input-root::before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover::before {
+  border-bottom: calc(2px + 1px) solid #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--focused {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--disabled {
+  box-shadow: NULL;
+  color: gray;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--disabled::before {
+  border-bottom: 2px solid gray;
+}
+.bl-input.bl-input--standard .bl-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+/*****    component: input    *****/
+/**********************************/
+/**********************************/
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
 /***************************************/
 /***************************************/
 /*****    component: layout-row    *****/
@@ -1100,17 +1095,6 @@ body {
 /*****    component: page    *****/
 /*********************************/
 /*********************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
 /**********************************/
 /**********************************/
 /*****    component: panel    *****/
@@ -1126,6 +1110,34 @@ body {
 /*****    component: panel    *****/
 /**********************************/
 /**********************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
+  border: NULL;
+  border-radius: 4px;
+  box-shadow: NULL;
+}
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
 /*****************************************/
 /*****************************************/
 /*****    component: radio-button    *****/
@@ -1174,6 +1186,42 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
+  color: #337ab7;
+}
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
+}
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1351,12 +1399,47 @@ body {
 /*****    component: select    *****/
 /***********************************/
 /***********************************/
-/************************************************/
-/************************************************/
-/*****    component: radio-buttons-group    *****/
-/*****    component: radio-buttons-group    *****/
-/************************************************/
-/************************************************/
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+.bl-switch .bl-switch-base {
+  color: #337ab7;
+}
+.bl-switch .bl-switch-track {
+  background: #000000;
+}
+.bl-switch .bl-switch-thumb {
+  background: #fff;
+}
+.bl-switch.bl-switch--checked .bl-switch-track {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--disabled .bl-switch-root {
+  opacity: 0.38;
+}
+.bl-switch.bl-switch--disabled .bl-switch-track {
+  opacity: 0.54;
+}
+.bl-switch.bl-switch--disabled .bl-switch-thumb {
+  opacity: 1;
+}
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+.bl-text {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
 /***********************************/
 /***********************************/
 /*****    component: slider    *****/
@@ -1445,42 +1528,6 @@ body {
 /*****    component: slider    *****/
 /***********************************/
 /***********************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
-}
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
-  }
-}
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1614,47 +1661,6 @@ body {
 /*****    component: textarea    *****/
 /*************************************/
 /*************************************/
-/*********************************/
-/*********************************/
-/*****    component: text    *****/
-.bl-text {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: text    *****/
-/*********************************/
-/*********************************/
-/***********************************/
-/***********************************/
-/*****    component: switch    *****/
-.bl-switch .bl-switch-base {
-  color: #337ab7;
-}
-.bl-switch .bl-switch-track {
-  background: #000000;
-}
-.bl-switch .bl-switch-thumb {
-  background: #fff;
-}
-.bl-switch.bl-switch--checked .bl-switch-track {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--checked .bl-switch-thumb {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--disabled .bl-switch-root {
-  opacity: 0.38;
-}
-.bl-switch.bl-switch--disabled .bl-switch-track {
-  opacity: 0.54;
-}
-.bl-switch.bl-switch--disabled .bl-switch-thumb {
-  opacity: 1;
-}
-/*****    component: switch    *****/
-/***********************************/
-/***********************************/
 /**********************************/
 /**********************************/
 /*****    component: video    *****/
@@ -1727,6 +1733,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 34.24%;
+  height: 100%;
   background: #171A23;
 }
 .install__container {
@@ -1751,9 +1758,19 @@ body {
 .install__LogoImg {
   margin-top: 110px;
   margin-bottom: 27px;
+  width: 100%;
+  min-height: 15px;
+  background-image: url('./styles/images/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .install__LogoScreens {
   margin-top: 75px;
+  width: 100%;
+  min-height: 551px;
+  background-image: url('./styles/images/screens.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .install__title {
   font-family: FuturaHeavy, Arial, sans-serif;
@@ -1851,7 +1868,10 @@ body {
   width: 100%;
   max-width: 710px;
   margin: 39px 0px;
-  justify-content: center;
+  background-image: url('./styles/images/ajax-loader.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% 100%;
 }
 .install__loader {
   width: 70%;
@@ -1881,7 +1901,8 @@ body {
     padding: 0px 15px;
   }
   .install__LogoScreens {
-    width: 300px;
+    background-size: 300px auto;
+    min-height: 330px;
   }
   .install__FieldDescription {
     min-width: 125px;
@@ -1904,7 +1925,8 @@ body {
     font-size: 32px;
   }
   .install__LogoScreens {
-    width: 240px;
+    background-size: 240px auto;
+    min-height: 260px;
   }
   .install__ProgressLabel {
     margin-right: 30px;

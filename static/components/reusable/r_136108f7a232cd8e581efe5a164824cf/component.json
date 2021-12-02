@@ -1,5 +1,6 @@
 {
   "category": "Reusable Components",
+  "showInToolbox": true,
   "name": "install logo (r_136)",
   "components": {},
   "type": "reusable",
@@ -7,7 +8,6 @@
   "dataBinding": {},
   "usedComponentTypes": [
     "block",
-    "image",
     "text"
   ],
   "style": {},
