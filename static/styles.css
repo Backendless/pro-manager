@@ -1,0 +1,1970 @@
+html,
+body,
+#app,
+#page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background-color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+.bl-tooltip {
+  color: NULL;
+  background: NULL;
+}
+.bl-tooltip .bl-tooltip--arrow {
+  color: NULL;
+  visibility: NULL;
+}
+/*******************************************************/
+/*******************************************************/
+/*****    component: autocomplete-google-places    *****/
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined fieldset {
+  border-radius: 4px 4px 4px 4px;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-label {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined:hover .bl-autocomplete-google-places-label:not(.bl-autocomplete-google-places-label--disabled):not(.bl-autocomplete-google-places-label--focused) {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-label--disabled {
+  color: gray;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-label--focused {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--focused {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--focused fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--disabled {
+  background-color: NULL;
+  color: gray;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--disabled fieldset {
+  border: 2px solid gray;
+  box-shadow: NULL;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--outlined .bl-autocomplete-google-places-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled ::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-label {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled:hover .bl-autocomplete-google-places-label:not(.bl-autocomplete-google-places-label--disabled):not(.bl-autocomplete-google-places-label--focused) {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-label--disabled {
+  color: gray;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-label--focused {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-input-input-root {
+  border-radius: 4px 4px 0 0;
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #eee;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: NULL;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--focused {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #f1f1f1;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--disabled {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #dbdbdb;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--filled .bl-autocomplete-google-places-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-label {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard:hover .bl-autocomplete-google-places-label:not(.bl-autocomplete-google-places-label--disabled):not(.bl-autocomplete-google-places-label--focused) {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-label--disabled {
+  color: gray;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-label--focused {
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root::before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root:not(.bl-autocomplete-google-places-input-input--focused):not(.bl-autocomplete-google-places-input-input--disabled):hover::before {
+  border-bottom: calc(2px + 1px) solid #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--focused {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--disabled {
+  box-shadow: NULL;
+  color: gray;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root.bl-autocomplete-google-places-input-input--disabled::before {
+  border-bottom: 2px solid gray;
+}
+.bl-autocomplete-google-places.bl-autocomplete-google-places-input--standard .bl-autocomplete-google-places-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+.bl-autocomplete-google-places--listbox {
+  background-color: white;
+}
+.bl-autocomplete-google-places--listbox .bl-autocomplete-google-places--option {
+  background-color: white;
+  color: #000000;
+}
+.bl-autocomplete-google-places--listbox .bl-autocomplete-google-places--option .MuiTypography-colorTextSecondary {
+  color: gray;
+}
+.bl-autocomplete-google-places--listbox .bl-autocomplete-google-places--option:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+  color: #000000;
+}
+.bl-autocomplete-google-places--listbox .bl-autocomplete-google-places--option:hover .MuiTypography-colorTextSecondary {
+  color: gray;
+}
+.bl-autocomplete-google-places--noOptions {
+  background-color: white;
+  color: #000000;
+}
+.bl-autocomplete-google-places--noOptions:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+  color: #000000;
+}
+/*****    component: autocomplete-google-places    *****/
+/*******************************************************/
+/*******************************************************/
+/*********************************/
+/*********************************/
+/*****    component: chip    *****/
+.bl-chip {
+  border-radius: 16px;
+  width: max-content;
+}
+.bl-chip:not(.bl-chip--outlined) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
+  color: inherit;
+  width: auto;
+  height: auto;
+}
+.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
+  background: gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
+  width: auto;
+  height: auto;
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
+  color: gray;
+}
+.MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.MuiChip-iconSmall {
+  font-size: 18px;
+}
+/*****    component: chip    *****/
+/*********************************/
+/*********************************/
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
+/***************************************/
+/***************************************/
+/*****    component: data-table    *****/
+.bl-data-table {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000000;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.bl-data-table .MuiButtonBase-root:not(.Mui-disabled) {
+  color: #000000;
+}
+.bl-data-table .MuiButtonBase-root:not(.Mui-disabled):hover {
+  color: #337ab7;
+}
+.bl-data-table .MuiInputBase-root {
+  color: #000000;
+}
+.bl-data-table .MuiInputBase-root .MuiInputAdornment-positionStart {
+  color: gray;
+}
+.bl-data-table .MuiInputBase-root input {
+  color: inherit;
+}
+.bl-data-table .MuiInputBase-root:before {
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .MuiInputBase-root:hover:not(.Mui-disabled):before {
+  border-bottom: 1px solid #000000;
+}
+.bl-data-table .MuiInputBase-root:after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-data-table .bl-data-table-toolbar .bl-data-table-title {
+  color: NULL;
+}
+.bl-data-table .bl-data-table-toolbar .bl-data-table-search-field .MuiIconButton-root.Mui-disabled {
+  color: transparent;
+}
+.bl-data-table .bl-data-table-head-cell {
+  color: #000000;
+  font-size: NULL;
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root .MuiTableSortLabel-icon {
+  color: inherit;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: #337ab7;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+  color: inherit;
+}
+.bl-data-table .bl-data-table-row td {
+  color: NULL;
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .bl-data-table-row:nth-child(2n) {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-row:nth-child(2n-1) {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-row:hover {
+  background: NULL;
+}
+.bl-data-table .bl-data-table-row.Mui-selected {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-edit-row .bl-data-table-field .MuiInputBase-root:before {
+  border-bottom: 1px solid #000000;
+}
+.bl-data-table .bl-data-table-pagination {
+  border-bottom: none;
+  color: #000000;
+}
+.bl-data-table .bl-data-table-pagination .MuiIconButton-root {
+  color: #000000;
+}
+.bl-data-table .bl-data-table-pagination .MuiIconButton-root.Mui-disabled {
+  color: gray;
+}
+.bl-data-table .bl-data-table-pagination .MuiTypography-caption {
+  color: gray;
+}
+.bl-data-table .bl-data-table-pagination .bl-data-table-pagination-select-icon {
+  color: inherit;
+}
+.bl-data-table ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.bl-data-table ::-webkit-scrollbar {
+  width: 8px;
+}
+.bl-data-table ::-webkit-scrollbar-track {
+  background: transparent;
+}
+/*****    component: data-table    *****/
+/***************************************/
+/***************************************/
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
+/********************************************/
+/********************************************/
+/*****    component: datetime-picker    *****/
+.bl-datetime-picker .MuiFormLabel-root {
+  color: #000000;
+}
+.bl-datetime-picker .MuiFormLabel-root.Mui-focused {
+  color: #000000;
+}
+.bl-datetime-picker .MuiFormLabel-root.Mui-disabled {
+  color: gray;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root {
+  border-radius: NULL;
+  background-color: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root .MuiInputBase-input {
+  color: #000000;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root .MuiInputBase-input:hover {
+  color: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled) .MuiOutlinedInput-notchedOutline {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled).Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled):hover .MuiOutlinedInput-notchedOutline {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline .MuiInputBase-input {
+  color: #000000;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline .MuiInputBase-input:hover {
+  color: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:before {
+  border-bottom-color: #337ab7;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:after {
+  border-bottom-color: #337ab7;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:hover:not(.Mui-disabled):not(.Mui-focused):before {
+  border-bottom-color: #337ab7;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline.Mui-disabled:before {
+  border-bottom-color: gray;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiFilledInput-root {
+  background-color: #eee;
+}
+.bl-datetime-picker-dialog .MuiPaper-root {
+  color: #337ab7;
+}
+.bl-datetime-picker-dialog .MuiDialog-paper {
+  background: #fff;
+  border: 1px solid #337ab7;
+  border-radius: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker-dialog .MuiToolbar-root {
+  background: #337ab7;
+}
+.bl-datetime-picker-dialog .MuiToolbar-root .MuiPickersToolbarText-toolbarTxt {
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiToolbar-root .MuiPickersToolbarText-toolbarBtnSelected {
+  color: #fff;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader {
+  margin: 5px;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root {
+  background: transparent;
+  color: #000000;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root:hover {
+  background-color: NULL;
+  color: NULL;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root.Mui-disabled {
+  background: transparent;
+  color: transparent;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-dayLabel {
+  color: #000000;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day {
+  color: inherit;
+  border-radius: NULL;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-current {
+  background: rgba(51, 122, 183, 0.2);
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-daySelected {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-dayDisabled {
+  background: transparent;
+  color: gray;
+}
+.bl-datetime-picker-dialog .MuiPickersYear-root:focus,
+.bl-datetime-picker-dialog .MuiPickersYear-root:hover {
+  background: rgba(51, 122, 183, 0.4);
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersYear-root.MuiPickersYear-yearSelected {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersClockNumber-clockNumber {
+  color: inherit;
+}
+.bl-datetime-picker-dialog .MuiPickersClockNumber-clockNumber.MuiPickersClockNumber-clockNumberSelected {
+  color: #fff;
+}
+.bl-datetime-picker-dialog .MuiPickersClock-pin,
+.bl-datetime-picker-dialog .MuiPickersClockPointer-pointer {
+  background: #cccccc;
+}
+.bl-datetime-picker-dialog .MuiPickersClockPointer-thumb {
+  background: #cccccc;
+  border: 14px solid #cccccc;
+}
+.bl-datetime-picker-dialog .MuiTabs-root .MuiTab-root {
+  background-color: #337ab7;
+  opacity: 1;
+}
+.bl-datetime-picker-dialog .MuiTabs-root .MuiTabs-indicator {
+  background-color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiTabs-root .MuiSvgIcon-root {
+  fill: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiDialogActions-root {
+  background: rgba(0, 0, 0, 0.2);
+}
+.bl-datetime-picker-dialog .MuiDialogActions-root .MuiButton-root {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: datetime-picker    *****/
+/********************************************/
+/********************************************/
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button.bl-button--contained {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined {
+  border-radius: 4px;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text {
+  border-radius: 4px;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+.bl-divider {
+  border-color: #337ab7;
+  border-width: 2px;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
+/*********************************/
+/*********************************/
+/*****    component: form    *****/
+.bl-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+/*****    component: form    *****/
+/*********************************/
+/*********************************/
+/*********************************/
+/*********************************/
+/*****    component: icon    *****/
+.bl-icon {
+  color: #337ab7;
+}
+/*****    component: icon    *****/
+/*********************************/
+/*********************************/
+/***************************************/
+/***************************************/
+/*****    component: google-map    *****/
+.bl-google-map {
+  display: flex;
+  flex-grow: 1;
+  background-color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: google-map    *****/
+/***************************************/
+/***************************************/
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+.bl-iframe {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+.bl-jumbotron {
+  display: flex;
+  flex-direction: column;
+  background: #dbdbdb;
+  box-shadow: NULL;
+  color: NULL;
+  border: NULL;
+  border-radius: 12px;
+  padding: 48px 24px 48px 24px;
+  margin: 0 0 48px 0;
+}
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
+/****************************************/
+/****************************************/
+/*****    component: layout-cell    *****/
+.bl-layout-cell {
+  width: auto;
+  grid-column-end: span 4;
+  margin: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 479px) {
+  .bl-layout-cell--1-phone {
+    grid-column-end: span 1;
+  }
+  .bl-layout-cell--2-phone {
+    grid-column-end: span 2;
+  }
+  .bl-layout-cell--3-phone {
+    grid-column-end: span 3;
+  }
+  .bl-layout-cell--4-phone {
+    grid-column-end: span 4;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-cell--1-tablet {
+    grid-column-end: span 1;
+  }
+  .bl-layout-cell--2-tablet {
+    grid-column-end: span 2;
+  }
+  .bl-layout-cell--3-tablet {
+    grid-column-end: span 3;
+  }
+  .bl-layout-cell--4-tablet {
+    grid-column-end: span 4;
+  }
+  .bl-layout-cell--5-tablet {
+    grid-column-end: span 5;
+  }
+  .bl-layout-cell--6-tablet {
+    grid-column-end: span 6;
+  }
+  .bl-layout-cell--7-tablet {
+    grid-column-end: span 7;
+  }
+  .bl-layout-cell--8-tablet {
+    grid-column-end: span 8;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-cell--1-desktop {
+    grid-column-end: span 1;
+  }
+  .bl-layout-cell--2-desktop {
+    grid-column-end: span 2;
+  }
+  .bl-layout-cell--3-desktop {
+    grid-column-end: span 3;
+  }
+  .bl-layout-cell--4-desktop {
+    grid-column-end: span 4;
+  }
+  .bl-layout-cell--5-desktop {
+    grid-column-end: span 5;
+  }
+  .bl-layout-cell--6-desktop {
+    grid-column-end: span 6;
+  }
+  .bl-layout-cell--7-desktop {
+    grid-column-end: span 7;
+  }
+  .bl-layout-cell--8-desktop {
+    grid-column-end: span 8;
+  }
+  .bl-layout-cell--9-desktop {
+    grid-column-end: span 9;
+  }
+  .bl-layout-cell--10-desktop {
+    grid-column-end: span 10;
+  }
+  .bl-layout-cell--11-desktop {
+    grid-column-end: span 11;
+  }
+  .bl-layout-cell--12-desktop {
+    grid-column-end: span 12;
+  }
+}
+/*****    component: layout-cell    *****/
+/****************************************/
+/****************************************/
+/**********************************/
+/**********************************/
+/*****    component: input    *****/
+.bl-input.bl-input--outlined fieldset {
+  border-radius: 4px 4px 4px 4px;
+}
+.bl-input.bl-input--outlined .bl-input-label {
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--outlined:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-label--disabled {
+  color: gray;
+}
+.bl-input.bl-input--outlined .bl-input-label--focused {
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-input-root {
+  background-color: NULL;
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--disabled {
+  background-color: NULL;
+  color: gray;
+}
+.bl-input.bl-input--outlined .bl-input-input-root.bl-input-input--disabled fieldset {
+  border: 2px solid gray;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-input.bl-input--outlined .bl-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--filled ::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-input.bl-input--filled .bl-input-label {
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--filled:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-label--disabled {
+  color: gray;
+}
+.bl-input.bl-input--filled .bl-input-label--focused {
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root {
+  border-radius: 4px 4px 0 0;
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #eee;
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--filled .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--focused {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #f1f1f1;
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--filled .bl-input-input-root.bl-input-input--disabled {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #dbdbdb;
+  color: #000000;
+}
+.bl-input.bl-input--filled .bl-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+}
+.bl-input.bl-input--standard .bl-input-label {
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--standard:hover .bl-input-label:not(.bl-input-label--disabled):not(.bl-input-label--focused) {
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-label--disabled {
+  color: gray;
+}
+.bl-input.bl-input--standard .bl-input-label--focused {
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root {
+  box-shadow: NULL;
+  color: #000000;
+  font-size: inherit;
+}
+.bl-input.bl-input--standard .bl-input-input-root::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-input.bl-input--standard .bl-input-input-root::before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root:not(.bl-input-input--focused):not(.bl-input-input--disabled):hover::before {
+  border-bottom: calc(2px + 1px) solid #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--focused {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--focused input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--disabled {
+  box-shadow: NULL;
+  color: gray;
+}
+.bl-input.bl-input--standard .bl-input-input-root.bl-input-input--disabled::before {
+  border-bottom: 2px solid gray;
+}
+.bl-input.bl-input--standard .bl-input-input-root input:-webkit-autofill {
+  -webkit-text-fill-color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000000;
+}
+/*****    component: input    *****/
+/**********************************/
+/**********************************/
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
+/***************************************/
+/***************************************/
+/*****    component: layout-row    *****/
+.bl-layout-row {
+  display: grid;
+  margin: 0;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+@media (max-width: 479px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-row {
+    gap: 24px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+/*****    component: layout-row    *****/
+/***************************************/
+/***************************************/
+/*********************************/
+/*********************************/
+/*****    component: link    *****/
+.bl-link {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: link    *****/
+/*********************************/
+/*********************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
+/**********************************/
+/**********************************/
+/*****    component: panel    *****/
+.bl-panel {
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: NULL;
+  margin: NULL;
+}
+/*****    component: panel    *****/
+/**********************************/
+/**********************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
+  border: NULL;
+  border-radius: 4px;
+  box-shadow: NULL;
+}
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
+/*****************************************/
+/*****************************************/
+/*****    component: radio-button    *****/
+.bl-radio-button .bl-radio-button-label {
+  font-size: inherit;
+}
+.bl-radio-button .bl-radio-button-color-secondary.bl-radio-button--checked {
+  color: #337ab7;
+}
+.bl-radio-button.bl-radio-button--checked .bl-radio-button-label {
+  color: #000000;
+}
+.bl-radio-button.bl-radio-button--checked.bl-radio-button--disabled .bl-radio-button-label {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-label {
+  color: #000000;
+}
+.bl-radio-button .bl-radio-button-label.bl-radio-button--disabled {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button-color-secondary.bl-radio-button--checked:hover {
+  background-color: rgba(51, 122, 183, 0.04);
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button-color-secondary:hover {
+  background-color: rgba(51, 122, 183, 0.04);
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled.bl-radio-button--checked svg.MuiSvgIcon-root {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled.bl-radio-button--checked svg + svg.MuiSvgIcon-root {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled svg.MuiSvgIcon-root {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--checked svg.MuiSvgIcon-root {
+  color: #337ab7;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--checked svg + svg.MuiSvgIcon-root {
+  color: #337ab7;
+}
+.bl-radio-button .bl-radio-button-control svg.MuiSvgIcon-root {
+  color: #337ab7;
+}
+/*****    component: radio-button    *****/
+/*****************************************/
+/*****************************************/
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
+  color: #337ab7;
+}
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
+}
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
+/***********************************/
+/***********************************/
+/*****    component: select    *****/
+.bl-select .bl-select-label.bl-select-label-outlined {
+  color: #000000;
+}
+.bl-select .bl-select-label.bl-select-label-filled {
+  color: #000000;
+}
+.bl-select .bl-select-label.bl-select-label-standard {
+  color: #000;
+}
+.bl-select:hover .bl-select-label:not(.bl-select-label--disabled):not(.bl-select-label--focused).bl-select-label-outlined {
+  color: #000000;
+}
+.bl-select:hover .bl-select-label:not(.bl-select-label--disabled):not(.bl-select-label--focused).bl-select-label-filled {
+  color: #000000;
+}
+.bl-select:hover .bl-select-label:not(.bl-select-label--disabled):not(.bl-select-label--focused).bl-select-label-standard {
+  color: #000;
+}
+.bl-select .bl-select-label--disabled.bl-select-label-outlined {
+  color: gray;
+}
+.bl-select .bl-select-label--disabled.bl-select-label-filled {
+  color: gray;
+}
+.bl-select .bl-select-label--disabled.bl-select-label-standard {
+  color: gray;
+}
+.bl-select .bl-select-label--focused.bl-select-label-outlined {
+  color: #000000;
+}
+.bl-select .bl-select-label--focused.bl-select-label-filled {
+  color: #000000;
+}
+.bl-select .bl-select-label--focused.bl-select-label-standard {
+  color: #000000;
+}
+.bl-select .bl-select-box fieldset {
+  border-radius: 4px 4px 4px 4px;
+}
+.bl-select .bl-select-box.bl-select-outlined .bl-select-root {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-outlined .bl-select-icon {
+  color: #337ab7;
+}
+.bl-select .bl-select-box.bl-select-outlined fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-outlined:hover .bl-select-root {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-outlined:hover .bl-select-icon {
+  color: #337ab7;
+}
+.bl-select .bl-select-box.bl-select-outlined:hover fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-outlined.bl-select--disabled .bl-select-root {
+  color: gray;
+}
+.bl-select .bl-select-box.bl-select-outlined.bl-select--disabled .bl-select-icon {
+  color: gray;
+}
+.bl-select .bl-select-box.bl-select-outlined.bl-select--disabled fieldset {
+  border: 2px solid gray;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-outlined.Mui-focused .bl-select-icon {
+  color: #337ab7;
+}
+.bl-select .bl-select-box.bl-select-outlined.Mui-focused fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-filled {
+  background-color: #eee;
+}
+.bl-select .bl-select-box.bl-select-filled .bl-select-root {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-filled .bl-select-icon {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-filled fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-filled:hover .bl-select-root {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-filled:hover .bl-select-icon {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-filled:hover fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-filled.bl-select--disabled .bl-select-root {
+  color: gray;
+}
+.bl-select .bl-select-box.bl-select-filled.bl-select--disabled .bl-select-icon {
+  color: gray;
+}
+.bl-select .bl-select-box.bl-select-filled.bl-select--disabled fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-filled.Mui-focused .bl-select-icon {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-filled.Mui-focused fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-standard::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-select .bl-select-box.bl-select-standard::before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+.bl-select .bl-select-box.bl-select-standard:hover::before {
+  border-bottom: calc(2px + 1px) solid #000;
+}
+.bl-select .bl-select-box.bl-select-standard .bl-select-root {
+  color: #000;
+}
+.bl-select .bl-select-box.bl-select-standard .bl-select-icon {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-standard fieldset {
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-standard:hover .bl-select-root {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-standard:hover .bl-select-icon {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-standard:hover fieldset {
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-standard.bl-select--disabled .bl-select-root {
+  color: gray;
+}
+.bl-select .bl-select-box.bl-select-standard.bl-select--disabled .bl-select-icon {
+  color: gray;
+}
+.bl-select .bl-select-box.bl-select-standard.bl-select--disabled fieldset {
+  box-shadow: NULL;
+}
+.bl-select .bl-select-box.bl-select-standard.Mui-focused .bl-select-icon {
+  color: #000000;
+}
+.bl-select .bl-select-box.bl-select-standard.Mui-focused fieldset {
+  box-shadow: NULL;
+}
+.MuiMenu-paper {
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: NULL;
+  border-radius: NULL NULL NULL NULL;
+}
+.MuiMenu-paper .MuiList-root.MuiMenu-list {
+  color: #000000;
+}
+.MuiMenu-paper .MuiList-root.MuiMenu-list .bl-select-option:hover {
+  color: NULL;
+  background-color: NULL;
+}
+/*****    component: select    *****/
+/***********************************/
+/***********************************/
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+.bl-switch .bl-switch-base {
+  color: #337ab7;
+}
+.bl-switch .bl-switch-track {
+  background: #000000;
+}
+.bl-switch .bl-switch-thumb {
+  background: #fff;
+}
+.bl-switch.bl-switch--checked .bl-switch-track {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--disabled .bl-switch-root {
+  opacity: 0.38;
+}
+.bl-switch.bl-switch--disabled .bl-switch-track {
+  opacity: 0.54;
+}
+.bl-switch.bl-switch--disabled .bl-switch-thumb {
+  opacity: 1;
+}
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+.bl-text {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
+/***********************************/
+/***********************************/
+/*****    component: slider    *****/
+.bl-slider:hover .bl-slider-rail {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-track {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark-active {
+  background-color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider.bl-slider--disabled .bl-slider-rail {
+  color: rgba(128, 128, 128, 0.38);
+}
+.bl-slider.bl-slider--disabled .bl-slider-track {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
+  left: auto;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
+  background: gray;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-rail {
+  color: rgba(51, 122, 183, 0.38);
+  opacity: 1;
+}
+.bl-slider .bl-slider-track {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider .bl-slider-thumb {
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+}
+.bl-slider .bl-slider-thumb.bl-slider--active {
+  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: slider    *****/
+/***********************************/
+/***********************************/
+/*************************************/
+/*************************************/
+/*****    component: textarea    *****/
+.bl-textarea.bl-textarea--outlined fieldset {
+  border-radius: 4px 4px 4px 4px;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled {
+  background-color: NULL;
+  color: gray;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled fieldset {
+  border: 2px solid gray;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--filled ::after {
+  border-bottom-color: #337ab7;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root {
+  border-radius: 4px 4px 0 0;
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #eee;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--focused {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #f1f1f1;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--disabled {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #dbdbdb;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root::before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover::before {
+  border-bottom: calc(2px + 1px) solid #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--focused {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled {
+  box-shadow: NULL;
+  color: gray;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled::before {
+  border-bottom: 2px solid gray;
+}
+/*****    component: textarea    *****/
+/*************************************/
+/*************************************/
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+.bl-video {
+  border: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
+@font-face {
+  font-family: 'FuturaHeavy';
+  src: url('./styles/fonts/futura/FuturaHeavyfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaBook';
+  src: url('./styles/fonts/futura/FuturaBookfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''), url('./styles/fonts/OpenSans/open-sans-v27-latin-regular.woff2') format('woff2'), url('./styles/fonts/OpenSans/open-sans-v27-latin-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''), url('./styles/fonts/OpenSans/open-sans-v27-latin-600.woff2') format('woff2'), url('./styles/fonts/OpenSans/open-sans-v27-latin-600.woff') format('woff');
+}
+.MuiOutlinedInput-notchedOutline {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.MuiInputBase-input {
+  height: 34px;
+  border: 1px solid #73808D;
+  border-radius: 2px;
+  font-size: 13px;
+  padding: 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.MuiOutlinedInput-multiline,
+.MuiInputBase-multiline {
+  padding: 0px;
+}
+.MuiInputBase-inputMultiline {
+  height: 168px !important;
+  padding-top: 5px;
+}
+.MainButton {
+  width: 217px;
+  height: 34px;
+  background: #1B76BC !important;
+  border-radius: 2px !important;
+  color: #fff !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+.install__logo {
+  flex-direction: column;
+  align-items: center;
+  width: 34.24%;
+  height: 100%;
+  background: #171A23;
+}
+.install__container {
+  width: 65.76%;
+}
+.install__main,
+.install__progress {
+  width: 100%;
+  max-width: 745px;
+  margin: 100px auto 0px auto;
+  flex-direction: column;
+}
+.install__progress {
+  align-items: flex-start;
+}
+.install__LogoTitle {
+  font-family: FuturaHeavy;
+  font-size: 36px;
+  line-height: 42px;
+  color: #FFFFFF;
+}
+.install__LogoImg {
+  margin-top: 110px;
+  margin-bottom: 27px;
+  width: 100%;
+  min-height: 15px;
+  background-image: url('./styles/images/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.install__LogoScreens {
+  margin-top: 75px;
+  width: 100%;
+  min-height: 551px;
+  background-image: url('./styles/images/screens.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.install__title {
+  font-family: FuturaHeavy, Arial, sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  color: #303042;
+  font-weight: 700;
+  margin-bottom: 45px;
+}
+.install__notice {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  color: #303042;
+  margin-bottom: 39px;
+}
+.install__form {
+  box-shadow: none;
+  align-items: flex-start;
+}
+.install__FormItem {
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.install__FormRow {
+  width: 100%;
+  max-width: 529px;
+  align-items: flex-start;
+}
+.install__FormGroup {
+  flex-direction: column;
+  width: 100%;
+}
+.install__FieldDescription {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  margin-top: 10px;
+}
+.install__InputHint {
+  font-family: FuturaBook;
+  font-size: 12px;
+  line-height: 14px;
+  color: #414343;
+  margin: 5px 0px 20px 0px;
+}
+.install__InputHintLink {
+  font-family: FuturaBook;
+  font-size: 12px;
+  line-height: 14px;
+  color: #414343;
+  text-decoration: underline;
+  color: #1B76BC;
+}
+.install__RestoteIcon {
+  margin-left: 20px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.install__RestoteIcon:after {
+  content: url('./styles/images/BackIcon.png');
+}
+.install__FormGroupTextArea {
+  padding-right: 37px;
+}
+.install__TextArea {
+  width: 100%;
+}
+.install__BeginButton {
+  margin-top: 73px;
+  margin-bottom: 83px;
+}
+.install__ProgressStatusBlock {
+  width: 100%;
+  max-width: 710px;
+}
+.install__ProgressLabel {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  color: #303042;
+  margin-right: 58px;
+}
+.install__ProgressStatusName {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  color: #303042;
+  font-family: FuturaHeavy, Arial, sans-serif;
+}
+.install__ProgressBar {
+  height: 16px;
+  width: 100%;
+  max-width: 710px;
+  margin: 39px 0px;
+  background-image: url('./styles/images/ajax-loader.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% 100%;
+}
+.install__loader {
+  width: 70%;
+}
+.install__ProgressContainer {
+  flex-direction: column;
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+}
+.install__ProgressItem {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  color: #303042;
+  color: #000;
+  margin-bottom: 3px;
+}
+.install__ManageButton {
+  margin-top: 193px;
+}
+.install__ProgressRecord {
+  display: block;
+}
+@media screen and (max-width: 1250px) {
+  .install__container {
+    padding: 0px 15px;
+  }
+  .install__LogoScreens {
+    background-size: 300px auto;
+    min-height: 330px;
+  }
+  .install__FieldDescription {
+    min-width: 125px;
+    padding-right: 5px;
+  }
+  .install__LinkWrapper {
+    display: block;
+  }
+}
+@media screen and (max-width: 850px) {
+  .install__main,
+  .install__LogoImg {
+    margin-top: 50px;
+  }
+  .install__title {
+    font-size: 38px;
+    line-height: 38px;
+  }
+  .install__LogoTitle {
+    font-size: 32px;
+  }
+  .install__LogoScreens {
+    background-size: 240px auto;
+    min-height: 260px;
+  }
+  .install__ProgressLabel {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .install__logo {
+    display: none;
+  }
+  .install__container {
+    width: 100%;
+  }
+  .install__ProgressLabel {
+    margin-right: 15px;
+  }
+}
+.FontTitle {
+  font-family: FuturaHeavy, Arial, sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  color: #303042;
+  font-weight: 700;
+}
+.FontMedium {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  color: #303042;
+}
+.FontMain {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+}
+.FontSmall {
+  font-family: FuturaBook;
+  font-size: 12px;
+  line-height: 14px;
+  color: #414343;
+}
