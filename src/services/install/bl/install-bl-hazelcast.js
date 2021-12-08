@@ -9,7 +9,7 @@ import { HttpError } from '@kubernetes/client-node'
 import { readFileContent } from '../../../utils/fs'
 import path from 'path'
 
-const States = require('../../service-states.json')
+const Status = require('../../service-status.json')
 
 export async function installBlHazelcast({ version }) {
     const blK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/hazelcast.json')))
@@ -80,7 +80,7 @@ async function waitForInitConsulJobComplete() {
     installStatus.info('checking status of init config job')
     const status = await blJobStatus(blContainers.bl.initConfigValues.name)
 
-    if (status.state === States.complete)
+    if (status.status === Status.complete)
         return
 
     installStatus.info('init config job is not completed, waiting for 1 second to recheck')

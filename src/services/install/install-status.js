@@ -1,7 +1,7 @@
 import { Logger } from '../../logger'
 import { consul } from '../consul'
 import { blContainers } from '../bl-containers'
-import States from '../service-states.json'
+import Status from '../service-status.json'
 
 const logger = Logger('install-status')
 
@@ -37,7 +37,7 @@ class InstallStatus {
     async isServicesCreated() {
         if (this._servicesCreated === null) {
             try {
-                if (await blContainers.dependencies.consul.serviceStatus() === States.notInstalled) {
+                if (await blContainers.dependencies.consul.serviceStatus().status === Status.notInstalled) {
                     this._servicesCreated = false
                 } else {
                     this._servicesCreated = Boolean(await consul.get(_servicesCreatedConsulKey))
