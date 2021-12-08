@@ -1,9 +1,4 @@
 {
-  "running": "running",
-  "disabled": "disabled",
-  "notInstalled": "not installed",
-  "complete": "complete",
-  "changing": "changing",
   "restart": "restart",
   "stop": "stop",
   "start": "start"

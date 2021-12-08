@@ -1,12 +1,9 @@
 import { installStatus } from './install-status'
-import { installMysql } from './db/mysql'
 import { checkReadWriteAccess } from '../../utils/fs'
 import { blContainers } from '../bl-containers'
-import States from '../service-states.json'
+import Status from '../service-status.json'
 import { initConfigMap } from './init-config-map'
 import { Logger } from '../../logger'
-import { k8sAppsV1Api, k8sCoreV1Api } from '../k8s/k8s'
-import * as config from '../../../config/config.json'
 import { isWin } from '../../utils/os'
 import * as fs from 'fs'
 import { deleteService } from '../k8s/k8s-delete-service'
@@ -72,7 +69,7 @@ class InstallService {
 
         installStatus.info('checking status of bl-init-config-values job')
         const initConfigValuesContainer = blContainers.bl.initConfigValues
-        if ((await initConfigValuesContainer.serviceStatus()).state === States.notInstalled) {
+        if ((await initConfigValuesContainer.serviceStatus()).status === Status.notInstalled) {
             await initConfigValuesContainer.installService(install)
         } else {
             installStatus.info('bl-init-config-values job already created')
@@ -110,7 +107,7 @@ class InstallService {
         const status = await dependency.serviceStatus()
         installStatus.info(`status of ${dependency.name} is ${JSON.stringify(status)}`)
 
-        if (status.state === States.notInstalled) {
+        if (status.status === Status.notInstalled) {
             installStatus.info(`install container ${dependency.name}`)
 
             await dependency.installService(install)

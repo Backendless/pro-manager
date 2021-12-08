@@ -1,7 +1,7 @@
 import { Logger } from '../../logger'
 import { statefulsetStatus } from './k8s-statefulset-status'
 
-const States = require('../service-states.json')
+const status = require('../service-status.json')
 const logger = Logger('bl-statefulset-status')
 
 export async function blStatefulsetStatus(containerName) {
@@ -11,7 +11,7 @@ export async function blStatefulsetStatus(containerName) {
         serviceStatus = await statefulsetStatus(containerName)
     } catch (err) {
         if (err.statusCode === 404) {
-            blStatus.state = States.notInstalled
+            blStatus.status = status.notInstalled
             return blStatus
         }
 
@@ -21,12 +21,11 @@ export async function blStatefulsetStatus(containerName) {
     logger.verbose(`service status for '${containerName}' is ${JSON.stringify(serviceStatus)}`)
 
     if (serviceStatus.replicas < 1)
-        blStatus.state = States.disabled
-
-    if (serviceStatus.readyReplicas !== serviceStatus.replicas || serviceStatus.updatedReplicas !== serviceStatus.readyReplicas)
-        blStatus.state = States.changing
+        blStatus.status = status.stopped
+    else if (serviceStatus.readyReplicas !== serviceStatus.replicas || serviceStatus.updatedReplicas !== serviceStatus.readyReplicas)
+        blStatus.status = status.changing
     else
-        blStatus.state = States.running
+        blStatus.status = status.running
 
     return blStatus
 }

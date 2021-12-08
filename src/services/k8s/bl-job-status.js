@@ -1,7 +1,7 @@
 import { Logger } from '../../logger'
 import { jobStatus } from './k8s-job-status'
 
-const States = require('../service-states.json')
+const Status = require('../service-status.json')
 const logger = Logger('bl-job-status')
 
 export async function blJobStatus(containerName) {
@@ -11,7 +11,7 @@ export async function blJobStatus(containerName) {
         k8sJobStatus = await jobStatus(containerName)
     } catch (err) {
         if (err.statusCode === 404) {
-            blStatus.state = States.notInstalled
+            blStatus.status = Status.notInstalled
             return blStatus
         }
 
@@ -21,10 +21,10 @@ export async function blJobStatus(containerName) {
     logger.verbose(`job status for '${containerName} is ${JSON.stringify(k8sJobStatus)}`)
 
     if (k8sJobStatus.succeeded === 1) {
-        blStatus.state = States.complete
+        blStatus.status = Status.complete
         blStatus.message = `started at ${k8sJobStatus.startTime} completed at ${k8sJobStatus.completionTime}`
     } else {
-        blStatus.state = States.running
+        blStatus.status = Status.running
     }
     return blStatus
 }
