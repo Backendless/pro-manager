@@ -1,14 +1,15 @@
 import { Logger } from '../../logger'
 import { jobStatus } from './k8s-job-status'
+import { getVersionFromStatus } from './bl-get-version'
 
 const Status = require('../service-status.json')
 const logger = Logger('bl-job-status')
 
 export async function blJobStatus(containerName) {
     const blStatus = { name: containerName }
-    let k8sJobStatus
+    let status
     try {
-        k8sJobStatus = await jobStatus(containerName)
+        status = await jobStatus(containerName, true)
     } catch (err) {
         if (err.statusCode === 404) {
             blStatus.status = Status.notInstalled
@@ -17,6 +18,9 @@ export async function blJobStatus(containerName) {
 
         throw err
     }
+
+    const k8sJobStatus = status.body.status
+    blStatus.version = getVersionFromStatus(status)
 
     logger.verbose(`job status for '${containerName} is ${JSON.stringify(k8sJobStatus)}`)
 
