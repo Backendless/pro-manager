@@ -103,16 +103,6 @@
       "attrs": {},
       "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install\" data-uid=\"718d19932aa8b54f9344d4617c3585f8\" data-classes=\"install\" style=\"flex-grow:1;flex-direction:row;\"><div data-module-type=\"reusable\" data-module-id=\"r_136108f7a232cd8e581efe5a164824cf\" data-display=\"true\" data-uid=\"8f86d76af8b49acd25d44166a84e067f\" id=\"InstallLogo\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b00e27fa940c3fdbc9e9bf7e35922518\" data-classes=\"install__container\" id=\"install container\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ce08e4f41809083196ce9c9e036d761b\" data-classes=\"install__main\" id=\"install main\"><span data-content=\"Welcome to Backendless Pro installation\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d9dfee724847147c2be7624e53e947f5\" data-classes=\"install__title\" id=\"install title\" class=\"bl-text\"></span><span data-content=\"Make sure to enter all configuration parametres so that each item is marked as complete:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0c4540516b86ea1abe412cb510b7a155\" data-classes=\"install__notice\" id=\"install notice\" class=\"bl-text\"></span><form data-module-type=\"system\" data-module-id=\"form\" data-display data-uid=\"f6d6870f84ff49e3e53742fc6cf65719\" data-classes=\"install__form\" id=\"install form\" style=\"border:0 none rgba(0, 0, 0, 0.05);\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"4222383e7ebde755c61e113ac974a599\" data-classes=\"install__FormItem\" id=\"install FormItem\"><span data-content=\"Backendless Pro Version:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"f1459fdc6f32d35286df717dc81b47ed\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"bc5436041ad7f474015d91af598f211c\" data-classes=\"install__FormRow\" id=\"install FormRow\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c8fbdd1e0bafab47ed1b085c1f4fda88\" data-classes=\"install__FormGroup\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"34e44f5c92b925058875bc26cf2d0263\" data-classes=\"install__input\" id=\"install InputVersion\" data-binding_onvalueassignment=\"version\"></div><span data-content=\"You can enter a different version number to install an older version of the  product.\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e4e2ef847c228437a2bca54e536cd92a\" data-classes=\"install__InputHint\" id=\"install InputHint\" class=\"bl-text\"></span></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9f7934c39503931ea43f9ee94d1f6a42\" data-classes=\"install__RestoteIcon\" id=\"install RestoteIcon\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ee47232b11c9d6e4bd5332e93359af98\" data-classes=\"install__FormItem\" id=\"install FormItem\"><span data-content=\"Local mounting path:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"90716e0ff1ca9ffcbf6b7dc3c89532f6\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7b89534bc34f86aa4d18571df7479ba4\" data-classes=\"install__FormRow\" id=\"install FormRow\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ab31031143487be1f4f870cb70b5b788\" data-classes=\"install__FormGroup\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"b1f48edbdbb272bba9dbac0cb3fbcd07\" data-classes=\"install__input\" id=\"install InputPath\" data-binding_onvalueassignment=\"mountPath\"></div><span data-content=\"This is a local file storage path that will be used by Backendless to store configuration, files, logs, etc\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"01f23cdb07695cfb17c7b80f3e6d437e\" data-classes=\"install__InputHint\" id=\"install InputHint\" class=\"bl-text\"></span></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"2f0a1b82b8aead5435946a3ca6fac65d\" data-classes=\"install__RestoteIcon\" id=\"install RestoteIcon\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9efd03f7b87181f3ee78bc2779574c95\" data-classes=\"install__FormItem\" id=\"install FormItem\"><span data-content=\"Backendless license key:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e11524fe26ab8e4bdf6b7e4dec03f18e\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d3eb09419e0335d4315611f54f7347ab\" data-classes=\"install__FormGroup  install__FormRow install__FormGroupTextArea\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-rows=\"9\" data-rows-max=\"10\" data-module-type=\"system\" data-module-id=\"textarea\" data-display data-uid=\"1bc9a63c6a5cf4859bcb565804af920e\" data-classes=\"install__TextArea\" id=\"install__TextAreaKey\" data-binding_onvalueassignment=\"licence\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"55ecb1fa0d57673b9a26453eab219ad6\" data-classes=\"install__LinkWrapper\" id=\"install LinkWrapper\"><span data-content=\"Enter your license key. To request a license, fill out  the \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"dc3573ae277b8b0a2dcede6c66a84ac1\" data-classes=\"install__InputHint\" id=\"install InputHint\" class=\"bl-text\"></span><a href=\"\" data-text=\"Backendless license request form.\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"27e3f882f7a4833eb01da06a2accd051\" data-classes=\"install__InputHintLink install__InputHint\" id=\"install InputHintLink\" data-target-path=\"https://backendless.com/backendless-pro-license-request/\"></a></div></div></div><button type=\"button\" data-label=\"Begin installation\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"4726032dbb9b39a30239907c90c2aac7\" data-classes=\"install__BeginButton MainButton\" id=\"install BeginButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-disabled=\"false\"></button></form></div></div></div>"
     },
-    "manage": {
-      "components": {},
-      "dataBinding": {},
-      "usedComponentTypes": [
-        "text"
-      ],
-      "style": {},
-      "attrs": {},
-      "html": "<span data-content=\"Here will be the Manage page\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"c7a41beccd2f3c28ad935bdfcdd3ef5d\" class=\"bl-text\" style=\"font-size:48px;\"></span> "
-    },
     "progress": {
       "label": "Landing Page",
       "style": {},
@@ -160,7 +150,257 @@
       },
       "dataBinding": {},
       "attrs": {},
-      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install\" data-uid=\"718d19932aa8b54f9344d4617c3585f8\" data-classes=\"install\" style=\"flex-grow:1;flex-direction:row;\"><div data-module-type=\"reusable\" data-module-id=\"r_136108f7a232cd8e581efe5a164824cf\" data-display=\"true\" data-uid=\"8f86d76af8b49acd25d44166a84e067f\" id=\"InstallLogo\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b00e27fa940c3fdbc9e9bf7e35922518\" data-classes=\"install__container\" id=\"install container\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ce08e4f41809083196ce9c9e036d761b\" data-classes=\"install__progress\" id=\"install progress\"><span data-content=\"Welcome to Backendless Pro installation\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d9dfee724847147c2be7624e53e947f5\" data-classes=\"install__title\" id=\"install title\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressStatusBlock\" data-uid=\"44c3d5b788f824378f35d8fd699b2bab\" data-classes=\"install__ProgressStatusBlock\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressStatus\" data-uid=\"43c7b854f05193ffdcbb0c536ceafa72\" data-classes=\"install__ProgressStatus\"><span data-content=\"Installation Status:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6f0d8f44d55b9d43d0b7e738b7355172\" data-classes=\"install__ProgressLabel\" id=\"install ProgressLabel\" class=\"bl-text\"></span><span data-content=\"Starting consul.....\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"339a221b626d55b245b2b567865eba66\" data-classes=\"install__ProgressStatusName\" id=\"install ProgressStatusName\" data-binding_oncontentassignment=\"status\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressBar\" data-uid=\"88ffdb181f515ee98ee96741d0768c1d\" data-classes=\"install__ProgressBar\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressContainer\" data-uid=\"2a8169ce2ece7aa3c82531ac7feaa238\" data-classes=\"install__ProgressContainer\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"03073a71a2e45a6ea6e56abe95424e75\" data-classes=\"install__ProgressRecord\" id=\"install ProgressRecord\"><span data-content=\"13:33:10\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"df3c4a1a5dd57776c99bd62dbd53a59c\" data-classes=\"install__ProgressItem\" id=\"install ProgressItemime\" data-binding_oncontentassignment=\"time\" class=\"bl-text\"></span><span data-content=\"Pulling images.. \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d134b98ff7b636579ce7b3b62c623e25\" data-classes=\"install__ProgressItem\" id=\"install ProgressItemMessage\" data-binding_oncontentassignment=\"message\" class=\"bl-text\"></span></div></div><button type=\"button\" data-label=\"Manage Backendless\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display=\"false\" data-uid=\"6ec49b615f364fc25ba12557e2fb8e0f\" data-classes=\"install__ManageButton MainButton\" id=\"install ManageButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\"></button></div></div></div>"
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install\" data-uid=\"718d19932aa8b54f9344d4617c3585f8\" data-classes=\"install\" style=\"flex-grow:1;flex-direction:row;flex-basis:auto%;border-radius:0 0 0 0;\"><div data-module-type=\"reusable\" data-module-id=\"r_136108f7a232cd8e581efe5a164824cf\" data-display=\"true\" data-uid=\"8f86d76af8b49acd25d44166a84e067f\" id=\"InstallLogo\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b00e27fa940c3fdbc9e9bf7e35922518\" data-classes=\"install__container\" id=\"install container\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ce08e4f41809083196ce9c9e036d761b\" data-classes=\"install__progress\" id=\"install progress\"><span data-content=\"Welcome to Backendless Pro installation\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d9dfee724847147c2be7624e53e947f5\" data-classes=\"install__title\" id=\"install title\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressStatusBlock\" data-uid=\"44c3d5b788f824378f35d8fd699b2bab\" data-classes=\"install__ProgressStatusBlock\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressStatus\" data-uid=\"43c7b854f05193ffdcbb0c536ceafa72\" data-classes=\"install__ProgressStatus\"><span data-content=\"Installation Status:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6f0d8f44d55b9d43d0b7e738b7355172\" data-classes=\"install__ProgressLabel\" id=\"install ProgressLabel\" class=\"bl-text\"></span><span data-content=\"Starting consul.....\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"339a221b626d55b245b2b567865eba66\" data-classes=\"install__ProgressStatusName\" id=\"install ProgressStatusName\" data-binding_oncontentassignment=\"status\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressBar\" data-uid=\"88ffdb181f515ee98ee96741d0768c1d\" data-classes=\"install__ProgressBar\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install ProgressContainer\" data-uid=\"2a8169ce2ece7aa3c82531ac7feaa238\" data-classes=\"install__ProgressContainer\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"03073a71a2e45a6ea6e56abe95424e75\" data-classes=\"install__ProgressRecord\" id=\"install ProgressRecord\"><span data-content=\"13:33:10\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"df3c4a1a5dd57776c99bd62dbd53a59c\" data-classes=\"install__ProgressItem\" id=\"install ProgressItemime\" data-binding_oncontentassignment=\"time\" class=\"bl-text\"></span><span data-content=\"Pulling images.. \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d134b98ff7b636579ce7b3b62c623e25\" data-classes=\"install__ProgressItem\" id=\"install ProgressItemMessage\" data-binding_oncontentassignment=\"message\" class=\"bl-text\"></span></div></div><button type=\"button\" data-label=\"Manage Backendless\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display=\"false\" data-uid=\"6ec49b615f364fc25ba12557e2fb8e0f\" data-classes=\"install__ManageButton MainButton\" id=\"install ManageButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\"></button></div></div></div>"
+    },
+    "serverStatus": {
+      "components": {
+        "1fed8d3527f135219fb66d9de15adb04": {
+          "id": "aside TabHeaderStatus",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": [
+                "./functions/fd28fec45015ec48ca6812e77c486d29/code.js"
+              ]
+            }
+          }
+        },
+        "02f59a618f63b16eab9c8fcf60ac6e41": {
+          "id": "aside TabHeaderConfig",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": [
+                "./functions/fd28fec45015ec48ca6812e77c486d29/code.js"
+              ]
+            }
+          }
+        },
+        "c9ab1739404cb44b5b1b8bc263b8f966": {
+          "id": "aside TabContentItemDomains",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": [
+                "./functions/fd28fec45015ec48ca6812e77c486d29/code.js"
+              ]
+            }
+          }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onEnter": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            }
+          }
+        },
+        "acafba620bdcd139813c3e2a3613dfaf": {
+          "id": "header menu",
+          "type": "icon",
+          "moduleType": "system",
+          "moduleId": "icon",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "0742b98a516b8b31e62c9cfd5f371619": {
+          "id": "ServerStatus ItemStatusName",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            },
+            "onContentAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "24bf7b1a72e1b311f2ad3fe693ce165e": {
+          "id": "ServerStatus ItemBtnStop",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            },
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            }
+          }
+        },
+        "0856fd497a89d70cc7d2aa08ec3b5275": {
+          "id": "ServerStatus BtnIconStop",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "ff5a02b652d4cb723ed798626a4de138": {
+          "id": "ServerStatus ItemBtnRestart",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "3be4e93d5717c928d00382deffb4da86": {
+          "id": "ServerStatus__BtnIconRestart",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "637d6837ca5552e26e13e3fc9ed73b35": {
+          "id": "ServerStatus ItemBtnStart",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            },
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            }
+          }
+        },
+        "1ce66859038118bc4e55de0f56dff638": {
+          "id": "ServerStatus BtnIconStart",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "1d560e5d54b6275603bda32524bb311e": {
+          "id": "ServerStatus ItemProcessCheck",
+          "type": "checkbox",
+          "moduleType": "system",
+          "moduleId": "checkbox",
+          "handlers": {
+            "onChange": {
+              "dependencies": []
+            }
+          }
+        },
+        "6759802728a72cb9eab5aa54c34c639f": {
+          "id": "ServerStatus__HeaderProcessCheck",
+          "type": "checkbox",
+          "moduleType": "system",
+          "moduleId": "checkbox",
+          "handlers": {
+            "onChange": {
+              "dependencies": []
+            }
+          }
+        },
+        "3495ed1250d912224aad061bd17776b6": {
+          "id": "ServerStatus StopAllBtn",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "34d13e2e4e07a9777c29d843e202cb7e": {
+          "id": "ServerStatus RestartAllBtn",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "295fb372f529cba18d6db14ddb7d3d2e": {
+          "id": "ServerStatus StartAllBtn",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        }
+      },
+      "dataBinding": {},
+      "usedComponentTypes": [
+        "block",
+        "icon",
+        "text",
+        "link",
+        "checkbox"
+      ],
+      "style": {},
+      "attrs": {},
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"header\" data-uid=\"ab8f728fe1938ba4e3029b6740175139\" data-classes=\"header\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"header logo\" data-uid=\"a3dabbfae89a23b9e315d15d59f36ec7\" data-classes=\"header__logo\"><i data-icon=\"menu\" data-size=\"default\" data-module-type=\"system\" data-module-id=\"icon\" data-display data-uid=\"acafba620bdcd139813c3e2a3613dfaf\" data-classes=\"header__menu\" id=\"header menu\"></i></div><span data-content=\"PRO Manager\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"fc8ab951f66ed59cc4ce53b8ca2d13bf\" data-classes=\"header__title\" id=\"header title\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside\" data-uid=\"62182e6e6db9aecf974c9c65dfaea369\" data-classes=\"aside\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3168b81fda72273baf6579abc52906ac\" data-classes=\"aside__tab\" id=\"aside tab ServerStatus\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabHeaderStatus\" data-uid=\"1fed8d3527f135219fb66d9de15adb04\" data-classes=\"aside__TabHeader aside__TabHeaderStatus\"><span data-content=\"Server status\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0709b1ab1d44a34923b23f8dd0660cb6\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3c48282edad672c3a97414a89b3c15df\" data-classes=\"aside__TabContent\" id=\"aside TabContentStatus\" data-dynamic-list-behaviour=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"242a605e5b9ad51d7db207da080446ef\" data-classes=\"aside__TabContentItem aside__TabContentItem--active\" id=\"aside TabContentItemAll\"><span data-content=\"All\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d0382752c60982a4609e06413fa88785\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"eabb8cf45a71bcf1946dc53f30c31b8e\" data-dynamic-list-behaviour=\"true\" id=\"aside ContentItemContainer\" data-classes=\"aside__ContentItemContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItem\" data-uid=\"941dd0cd3b6497a91648a63b0e7bbec7\" data-classes=\"aside__TabContentItem\"><span data-content=\"Dynamic\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3a02bf2740ef7e59e30ca7fc254c2696\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" data-binding_oncontentassignment=\"name\" class=\"bl-text\"></span></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"2f06a68df56e770f8b5434d6ea52f684\" data-classes=\"aside__tab\" id=\"aside tab Config\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"02f59a618f63b16eab9c8fcf60ac6e41\" data-classes=\"aside__TabHeader aside__TabHeaderConfig\" id=\"aside TabHeaderConfig\"><span data-content=\"Configuration\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"83b4fcc3d9e7419c0d59253e9501d464\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ca8df858b6abfa78f849814f98cbadeb\" data-classes=\"aside__TabContent aside__TabContentConfig\" id=\"aside TabContentConfig\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside SubTabDomains\" data-uid=\"cef9dd8785beab6edb8d69b57a6957ce\" data-classes=\"aside__SubTab\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c9ab1739404cb44b5b1b8bc263b8f966\" data-classes=\"aside__TabContentItem aside__TabItemDomains\" id=\"aside TabContentItemDomains\"><span data-content=\"Domains\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"53083588acf7a7e59eef0d1e6dd143f1\" data-classes=\"aside__TabContentTitle \" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentDomains\" data-uid=\"82bfb23351e9fb6b2b482c3d040db27a\" data-classes=\"aside__TabContent aside__TabContentConfig\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItemSsl\" data-uid=\"4f8a44592e064cf3cf6c686767b9b44a\" data-classes=\"aside__TabContentItem \"><span data-content=\"Load balancing/SSL\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"530d6e7a91e5b323040a873d60dfa3cb\" data-classes=\"aside__TabContentTitle aside__TabSubContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"14ec284f978d75e2cd75db678d46df17\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemMysql\"><span data-content=\"Mysql\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"21242a4440710b760878f3d7932505e2\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e18fe2c44deb374fbddc1d8bc3f2848b\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemRedis\"><span data-content=\"Redis\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bfcd1b1f35bf396c5a23e46432a9e6bc\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"01553a7c2d381aa60e5ccf3789f368d7\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemDataService\"><span data-content=\"Data service\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"39cf857180318d5204a73ac8d8b41814\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5fffc4ac2d744ebb9031add1bb5c253a\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemRealTime\"><span data-content=\"Real time\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"a1b4a7c6578a9efd53cf2de88c06cc05\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"63b67c8e1d457917760c969eb372e04e\" data-classes=\"aside__tab\" id=\"aside tab Upgrade\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7d9115a5d5fa680bccbf5b04e8670af9\" data-classes=\"aside__TabHeader aside__TabHeaderUpgrade\" id=\"aside TabHeaderUpgrade\"><span data-content=\"Upgrade\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"367712aba0983e5b4912492df191dc5a\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ae5cf6b503145b247bb33b32df64d306\" data-classes=\"aside__tab\" id=\"aside tab Settings\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"03f4bd550b65418c743e04afe3aab9d9\" data-classes=\"aside__TabHeader aside__TabHeaderSettings\" id=\"aside TabHeaderSettings\"><span data-content=\"Settings\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"84234b3252582cd69ddffb135c531b1f\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"ServerStatus\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"205d24a93e3e11b81ca3097b328aadb5\" data-classes=\"ServerStatus__links\" id=\"ServerStatus links\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus LinkWrapper\" data-uid=\"b76e74e7fd91fd824b7858571f6a1a9d\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Web console:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"29079e624f1ee7260d71ccb5f48d2ff7\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32400\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"42755df4e55a88b2a2715db3b42462fa\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32400\"></a></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d18d0c97f463b16eb8f7c975ae4be5b\" id=\"ServerStatus LinkWrapper\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Api:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bd7c93376ad1fb83eba10dbbd69a9db2\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32300\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"1fbe945ac1dfe5ab6e5bd12b0ec251b1\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32300\"></a></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"fcde2535bb3595cbdf5ae6baf489f48b\" id=\"ServerStatus header\" data-classes=\"ServerStatus__header\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6e99873d269a57066f8e00b26d91932f\" data-classes=\"ServerStatus__ItemProcess ServerStatus__ProcessHeader\" id=\"ServerStatus ProcessHeader\"><span data-content=\"Process\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"82bb3065fd2627af980837e30d5ea2e1\" data-classes=\"ServerStatus__HeaderTitle ServerStatus__HeaderTitleProcess\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d7ef66ac256ce719dfc527ad9d9faf65\" data-classes=\"ServerStatus__HeaderControls\" id=\"ServerStatus HeaderControls\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"6759802728a72cb9eab5aa54c34c639f\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus__HeaderProcessCheck\" data-binding_oncheckedstateassignment=\"checkedAll\"></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3495ed1250d912224aad061bd17776b6\" data-classes=\"ServerStatus__StopAllBtn\" id=\"ServerStatus StopAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"34d13e2e4e07a9777c29d843e202cb7e\" data-classes=\"ServerStatus__RestartAllBtn\" id=\"ServerStatus RestartAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"295fb372f529cba18d6db14ddb7d3d2e\" data-classes=\"ServerStatus__StartAllBtn\" id=\"ServerStatus StartAllBtn\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"81f4a6ce0f77f50e1e72579ea0c1093e\" data-classes=\"ServerStatus__ItemProcessVersion\" id=\"ServerStatus ProcessVersionHeader\"><span data-content=\"Version\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"641d6c2996755d320927d93998b3515e\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d2867199c1ca43906c2c725257acf84\" data-classes=\"ServerStatus__ItemStatus\" id=\"ServerStatus StatusHeader\"><span data-content=\"Status\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"8db8b9d41877db042a1aa68306be6d04\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6127940f676d1a63a973d5879252d271\" data-classes=\"ServerStatus__ItemStatusControls\" id=\"ServerStatus ControlsHeader\"><span data-content=\"Actions\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"23ab37b9ba66b5741d12836cc73fb41b\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus container\" data-uid=\"0fbd34b64c4b8f271001b02635bd0324\" data-classes=\"ServerStatus__container\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e9118d25f3628ca2aa41dd74e6510651\" id=\"ServerStatus item\" data-classes=\"ServerStatus__item\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemProcess\" data-uid=\"dde20e9b22bd3a97576100dc3cfc011a\" data-classes=\"ServerStatus__ItemProcess\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"1d560e5d54b6275603bda32524bb311e\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus ItemProcessCheck\" data-binding_oncheckedstateassignment=\"checked\"></div><span data-content=\"bl-server\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"949223b896872815ef46fd64bba90498\" data-classes=\"ServerStatus__ItemProcessName\" id=\"ServerStatus ItemProcessName\" data-binding_oncontentassignment=\"name\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f56809ee01bd5501c0b8ec68b451d48b\" id=\"ServerStatus ItemProcessVersion\" data-classes=\"ServerStatus__ItemProcessVersion\"><span data-content=\"6.4.8\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"99989e349d970f9161942b0999b2b807\" data-classes=\"ServerStatus__ItemVersionName\" id=\"ServerStatus ItemVersionName\" data-binding_oncontentassignment=\"version\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0c9cf5f478d8d0ddd762dd588ed87501\" id=\"ServerStatus ItemStatus\" data-classes=\"ServerStatus__ItemStatus\"><span data-content=\"Running\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0742b98a516b8b31e62c9cfd5f371619\" data-classes=\"ServerStatus__ItemStatusName ServerStatus__ItemStatusName--running\" id=\"ServerStatus ItemStatusName\" data-binding_oncontentassignment=\"state\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"efb23146fac828b8b8d2babe379c94b1\" id=\"ServerStatus ItemStatusControls\" data-classes=\"ServerStatus__ItemStatusControls\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemBtnStop\" data-uid=\"24bf7b1a72e1b311f2ad3fe693ce165e\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0856fd497a89d70cc7d2aa08ec3b5275\" data-classes=\"ServerStatus__BtnIconStop\" id=\"ServerStatus BtnIconStop\" class=\"bl-text\"></span><span data-content=\"Stop\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6864be268f1a7b115c6246bbda7dec4d\" data-classes=\"ServerStatus__ItemBtnTitle ServerStatus__ItemBtnTitle--stop\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ff5a02b652d4cb723ed798626a4de138\" id=\"ServerStatus ItemBtnRestart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3be4e93d5717c928d00382deffb4da86\" data-classes=\"ServerStatus__BtnIconRestart\" id=\"ServerStatus__BtnIconRestart\" class=\"bl-text\"></span><span data-content=\"Restart\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"21baf943425a278c3fac45292c5b2d66\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"637d6837ca5552e26e13e3fc9ed73b35\" id=\"ServerStatus ItemBtnStart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"1ce66859038118bc4e55de0f56dff638\" data-classes=\"ServerStatus__BtnIconStart\" id=\"ServerStatus BtnIconStart\" class=\"bl-text\"></span><span data-content=\"Start\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9a45dd3d7a175488a867573bfc8db689\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div></div></div></div></div></div></div></div> "
+    },
+    "test": {
+      "components": {},
+      "dataBinding": {},
+      "usedComponentTypes": [],
+      "style": {},
+      "attrs": {},
+      "html": " "
     }
   }
 }
