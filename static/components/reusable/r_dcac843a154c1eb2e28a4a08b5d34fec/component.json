@@ -1,0 +1,101 @@
+{
+  "category": "Reusable Components",
+  "showInToolbox": true,
+  "name": "aside",
+  "components": {
+    "1fed8d3527f135219fb66d9de15adb04": {
+      "id": "aside TabHeaderStatus",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "941dd0cd3b6497a91648a63b0e7bbec7": {
+      "id": "aside TabContentItem",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "02f59a618f63b16eab9c8fcf60ac6e41": {
+      "id": "aside TabHeaderConfig",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "c9ab1739404cb44b5b1b8bc263b8f966": {
+      "id": "aside TabContentItemDomains",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "3c48282edad672c3a97414a89b3c15df": {
+      "id": "aside TabContentStatus",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "dependencies": [
+            "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+          ]
+        }
+      }
+    },
+    "242a605e5b9ad51d7db207da080446ef": {
+      "id": "aside TabContentItemAll",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "eabb8cf45a71bcf1946dc53f30c31b8e": {
+      "id": "aside ContentItemContainer",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDynamicItemsAssignment": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "id": "r_dcac843a154c1eb2e28a4a08b5d34fec",
+  "type": "reusable",
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "text"
+  ],
+  "style": {},
+  "attrs": {}
+}

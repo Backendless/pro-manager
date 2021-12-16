@@ -154,45 +154,6 @@
     },
     "serverStatus": {
       "components": {
-        "1fed8d3527f135219fb66d9de15adb04": {
-          "id": "aside TabHeaderStatus",
-          "type": "block",
-          "moduleType": "system",
-          "moduleId": "block",
-          "handlers": {
-            "onClick": {
-              "dependencies": [
-                "./functions/fd28fec45015ec48ca6812e77c486d29/code.js"
-              ]
-            }
-          }
-        },
-        "02f59a618f63b16eab9c8fcf60ac6e41": {
-          "id": "aside TabHeaderConfig",
-          "type": "block",
-          "moduleType": "system",
-          "moduleId": "block",
-          "handlers": {
-            "onClick": {
-              "dependencies": [
-                "./functions/fd28fec45015ec48ca6812e77c486d29/code.js"
-              ]
-            }
-          }
-        },
-        "c9ab1739404cb44b5b1b8bc263b8f966": {
-          "id": "aside TabContentItemDomains",
-          "type": "block",
-          "moduleType": "system",
-          "moduleId": "block",
-          "handlers": {
-            "onClick": {
-              "dependencies": [
-                "./functions/fd28fec45015ec48ca6812e77c486d29/code.js"
-              ]
-            }
-          }
-        },
         "page": {
           "type": "page",
           "moduleType": "system",
@@ -202,16 +163,8 @@
               "dependencies": [
                 "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
               ]
-            }
-          }
-        },
-        "acafba620bdcd139813c3e2a3613dfaf": {
-          "id": "header menu",
-          "type": "icon",
-          "moduleType": "system",
-          "moduleId": "icon",
-          "handlers": {
-            "onClick": {
+            },
+            "onLeave": {
               "dependencies": []
             }
           }
@@ -380,19 +333,199 @@
               "dependencies": []
             }
           }
+        },
+        "0fbd34b64c4b8f271001b02635bd0324": {
+          "id": "ServerStatus container",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDynamicItemsAssignment": {
+              "dependencies": []
+            }
+          }
         }
       },
       "dataBinding": {},
       "usedComponentTypes": [
         "block",
-        "icon",
+        "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+        "r_dcac843a154c1eb2e28a4a08b5d34fec",
         "text",
         "link",
         "checkbox"
       ],
       "style": {},
       "attrs": {},
-      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"header\" data-uid=\"ab8f728fe1938ba4e3029b6740175139\" data-classes=\"header\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"header logo\" data-uid=\"a3dabbfae89a23b9e315d15d59f36ec7\" data-classes=\"header__logo\"><i data-icon=\"menu\" data-size=\"default\" data-module-type=\"system\" data-module-id=\"icon\" data-display data-uid=\"acafba620bdcd139813c3e2a3613dfaf\" data-classes=\"header__menu\" id=\"header menu\"></i></div><span data-content=\"PRO Manager\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"fc8ab951f66ed59cc4ce53b8ca2d13bf\" data-classes=\"header__title\" id=\"header title\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside\" data-uid=\"62182e6e6db9aecf974c9c65dfaea369\" data-classes=\"aside\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3168b81fda72273baf6579abc52906ac\" data-classes=\"aside__tab\" id=\"aside tab ServerStatus\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabHeaderStatus\" data-uid=\"1fed8d3527f135219fb66d9de15adb04\" data-classes=\"aside__TabHeader aside__TabHeaderStatus\"><span data-content=\"Server status\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0709b1ab1d44a34923b23f8dd0660cb6\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3c48282edad672c3a97414a89b3c15df\" data-classes=\"aside__TabContent\" id=\"aside TabContentStatus\" data-dynamic-list-behaviour=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"242a605e5b9ad51d7db207da080446ef\" data-classes=\"aside__TabContentItem aside__TabContentItem--active\" id=\"aside TabContentItemAll\"><span data-content=\"All\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d0382752c60982a4609e06413fa88785\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"eabb8cf45a71bcf1946dc53f30c31b8e\" data-dynamic-list-behaviour=\"true\" id=\"aside ContentItemContainer\" data-classes=\"aside__ContentItemContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItem\" data-uid=\"941dd0cd3b6497a91648a63b0e7bbec7\" data-classes=\"aside__TabContentItem\"><span data-content=\"Dynamic\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3a02bf2740ef7e59e30ca7fc254c2696\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" data-binding_oncontentassignment=\"name\" class=\"bl-text\"></span></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"2f06a68df56e770f8b5434d6ea52f684\" data-classes=\"aside__tab\" id=\"aside tab Config\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"02f59a618f63b16eab9c8fcf60ac6e41\" data-classes=\"aside__TabHeader aside__TabHeaderConfig\" id=\"aside TabHeaderConfig\"><span data-content=\"Configuration\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"83b4fcc3d9e7419c0d59253e9501d464\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ca8df858b6abfa78f849814f98cbadeb\" data-classes=\"aside__TabContent aside__TabContentConfig\" id=\"aside TabContentConfig\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside SubTabDomains\" data-uid=\"cef9dd8785beab6edb8d69b57a6957ce\" data-classes=\"aside__SubTab\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c9ab1739404cb44b5b1b8bc263b8f966\" data-classes=\"aside__TabContentItem aside__TabItemDomains\" id=\"aside TabContentItemDomains\"><span data-content=\"Domains\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"53083588acf7a7e59eef0d1e6dd143f1\" data-classes=\"aside__TabContentTitle \" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentDomains\" data-uid=\"82bfb23351e9fb6b2b482c3d040db27a\" data-classes=\"aside__TabContent aside__TabContentConfig\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItemSsl\" data-uid=\"4f8a44592e064cf3cf6c686767b9b44a\" data-classes=\"aside__TabContentItem \"><span data-content=\"Load balancing/SSL\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"530d6e7a91e5b323040a873d60dfa3cb\" data-classes=\"aside__TabContentTitle aside__TabSubContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"14ec284f978d75e2cd75db678d46df17\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemMysql\"><span data-content=\"Mysql\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"21242a4440710b760878f3d7932505e2\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e18fe2c44deb374fbddc1d8bc3f2848b\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemRedis\"><span data-content=\"Redis\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bfcd1b1f35bf396c5a23e46432a9e6bc\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"01553a7c2d381aa60e5ccf3789f368d7\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemDataService\"><span data-content=\"Data service\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"39cf857180318d5204a73ac8d8b41814\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5fffc4ac2d744ebb9031add1bb5c253a\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemRealTime\"><span data-content=\"Real time\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"a1b4a7c6578a9efd53cf2de88c06cc05\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"63b67c8e1d457917760c969eb372e04e\" data-classes=\"aside__tab\" id=\"aside tab Upgrade\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7d9115a5d5fa680bccbf5b04e8670af9\" data-classes=\"aside__TabHeader aside__TabHeaderUpgrade\" id=\"aside TabHeaderUpgrade\"><span data-content=\"Upgrade\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"367712aba0983e5b4912492df191dc5a\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ae5cf6b503145b247bb33b32df64d306\" data-classes=\"aside__tab\" id=\"aside tab Settings\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"03f4bd550b65418c743e04afe3aab9d9\" data-classes=\"aside__TabHeader aside__TabHeaderSettings\" id=\"aside TabHeaderSettings\"><span data-content=\"Settings\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"84234b3252582cd69ddffb135c531b1f\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"ServerStatus\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"205d24a93e3e11b81ca3097b328aadb5\" data-classes=\"ServerStatus__links\" id=\"ServerStatus links\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus LinkWrapper\" data-uid=\"b76e74e7fd91fd824b7858571f6a1a9d\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Web console:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"29079e624f1ee7260d71ccb5f48d2ff7\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32400\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"42755df4e55a88b2a2715db3b42462fa\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32400\"></a></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d18d0c97f463b16eb8f7c975ae4be5b\" id=\"ServerStatus LinkWrapper\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Api:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bd7c93376ad1fb83eba10dbbd69a9db2\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32300\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"1fbe945ac1dfe5ab6e5bd12b0ec251b1\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32300\"></a></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"fcde2535bb3595cbdf5ae6baf489f48b\" id=\"ServerStatus header\" data-classes=\"ServerStatus__header\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6e99873d269a57066f8e00b26d91932f\" data-classes=\"ServerStatus__ItemProcess ServerStatus__ProcessHeader\" id=\"ServerStatus ProcessHeader\"><span data-content=\"Process\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"82bb3065fd2627af980837e30d5ea2e1\" data-classes=\"ServerStatus__HeaderTitle ServerStatus__HeaderTitleProcess\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d7ef66ac256ce719dfc527ad9d9faf65\" data-classes=\"ServerStatus__HeaderControls\" id=\"ServerStatus HeaderControls\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"6759802728a72cb9eab5aa54c34c639f\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus__HeaderProcessCheck\" data-binding_oncheckedstateassignment=\"checkedAll\"></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3495ed1250d912224aad061bd17776b6\" data-classes=\"ServerStatus__StopAllBtn\" id=\"ServerStatus StopAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"34d13e2e4e07a9777c29d843e202cb7e\" data-classes=\"ServerStatus__RestartAllBtn\" id=\"ServerStatus RestartAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"295fb372f529cba18d6db14ddb7d3d2e\" data-classes=\"ServerStatus__StartAllBtn\" id=\"ServerStatus StartAllBtn\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"81f4a6ce0f77f50e1e72579ea0c1093e\" data-classes=\"ServerStatus__ItemProcessVersion\" id=\"ServerStatus ProcessVersionHeader\"><span data-content=\"Version\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"641d6c2996755d320927d93998b3515e\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d2867199c1ca43906c2c725257acf84\" data-classes=\"ServerStatus__ItemStatus\" id=\"ServerStatus StatusHeader\"><span data-content=\"Status\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"8db8b9d41877db042a1aa68306be6d04\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6127940f676d1a63a973d5879252d271\" data-classes=\"ServerStatus__ItemStatusControls\" id=\"ServerStatus ControlsHeader\"><span data-content=\"Actions\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"23ab37b9ba66b5741d12836cc73fb41b\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus container\" data-uid=\"0fbd34b64c4b8f271001b02635bd0324\" data-classes=\"ServerStatus__container\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e9118d25f3628ca2aa41dd74e6510651\" id=\"ServerStatus item\" data-classes=\"ServerStatus__item\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemProcess\" data-uid=\"dde20e9b22bd3a97576100dc3cfc011a\" data-classes=\"ServerStatus__ItemProcess\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"1d560e5d54b6275603bda32524bb311e\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus ItemProcessCheck\" data-binding_oncheckedstateassignment=\"checked\"></div><span data-content=\"bl-server\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"949223b896872815ef46fd64bba90498\" data-classes=\"ServerStatus__ItemProcessName\" id=\"ServerStatus ItemProcessName\" data-binding_oncontentassignment=\"name\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f56809ee01bd5501c0b8ec68b451d48b\" id=\"ServerStatus ItemProcessVersion\" data-classes=\"ServerStatus__ItemProcessVersion\"><span data-content=\"6.4.8\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"99989e349d970f9161942b0999b2b807\" data-classes=\"ServerStatus__ItemVersionName\" id=\"ServerStatus ItemVersionName\" data-binding_oncontentassignment=\"version\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0c9cf5f478d8d0ddd762dd588ed87501\" id=\"ServerStatus ItemStatus\" data-classes=\"ServerStatus__ItemStatus\"><span data-content=\"Running\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0742b98a516b8b31e62c9cfd5f371619\" data-classes=\"ServerStatus__ItemStatusName ServerStatus__ItemStatusName--running\" id=\"ServerStatus ItemStatusName\" data-binding_oncontentassignment=\"state\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"efb23146fac828b8b8d2babe379c94b1\" id=\"ServerStatus ItemStatusControls\" data-classes=\"ServerStatus__ItemStatusControls\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemBtnStop\" data-uid=\"24bf7b1a72e1b311f2ad3fe693ce165e\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0856fd497a89d70cc7d2aa08ec3b5275\" data-classes=\"ServerStatus__BtnIconStop\" id=\"ServerStatus BtnIconStop\" class=\"bl-text\"></span><span data-content=\"Stop\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6864be268f1a7b115c6246bbda7dec4d\" data-classes=\"ServerStatus__ItemBtnTitle ServerStatus__ItemBtnTitle--stop\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ff5a02b652d4cb723ed798626a4de138\" id=\"ServerStatus ItemBtnRestart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3be4e93d5717c928d00382deffb4da86\" data-classes=\"ServerStatus__BtnIconRestart\" id=\"ServerStatus__BtnIconRestart\" class=\"bl-text\"></span><span data-content=\"Restart\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"21baf943425a278c3fac45292c5b2d66\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"637d6837ca5552e26e13e3fc9ed73b35\" id=\"ServerStatus ItemBtnStart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"1ce66859038118bc4e55de0f56dff638\" data-classes=\"ServerStatus__BtnIconStart\" id=\"ServerStatus BtnIconStart\" class=\"bl-text\"></span><span data-content=\"Start\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9a45dd3d7a175488a867573bfc8db689\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div></div></div></div></div></div></div></div> "
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"ServerStatus\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"205d24a93e3e11b81ca3097b328aadb5\" data-classes=\"ServerStatus__links\" id=\"ServerStatus links\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus LinkWrapper\" data-uid=\"b76e74e7fd91fd824b7858571f6a1a9d\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Web console:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"29079e624f1ee7260d71ccb5f48d2ff7\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32400\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"42755df4e55a88b2a2715db3b42462fa\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32400\"></a></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d18d0c97f463b16eb8f7c975ae4be5b\" id=\"ServerStatus LinkWrapper\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Api:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bd7c93376ad1fb83eba10dbbd69a9db2\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32300\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"1fbe945ac1dfe5ab6e5bd12b0ec251b1\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32300\"></a></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"fcde2535bb3595cbdf5ae6baf489f48b\" id=\"ServerStatus header\" data-classes=\"ServerStatus__header\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6e99873d269a57066f8e00b26d91932f\" data-classes=\"ServerStatus__ItemProcess ServerStatus__ProcessHeader\" id=\"ServerStatus ProcessHeader\"><span data-content=\"Process\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"82bb3065fd2627af980837e30d5ea2e1\" data-classes=\"ServerStatus__HeaderTitle ServerStatus__HeaderTitleProcess\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d7ef66ac256ce719dfc527ad9d9faf65\" data-classes=\"ServerStatus__HeaderControls\" id=\"ServerStatus HeaderControls\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"6759802728a72cb9eab5aa54c34c639f\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus__HeaderProcessCheck\" data-binding_oncheckedstateassignment=\"checkedAll\"></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3495ed1250d912224aad061bd17776b6\" data-classes=\"ServerStatus__StopAllBtn\" id=\"ServerStatus StopAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"34d13e2e4e07a9777c29d843e202cb7e\" data-classes=\"ServerStatus__RestartAllBtn\" id=\"ServerStatus RestartAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"295fb372f529cba18d6db14ddb7d3d2e\" data-classes=\"ServerStatus__StartAllBtn\" id=\"ServerStatus StartAllBtn\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"81f4a6ce0f77f50e1e72579ea0c1093e\" data-classes=\"ServerStatus__ItemProcessVersion\" id=\"ServerStatus ProcessVersionHeader\"><span data-content=\"Version\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"641d6c2996755d320927d93998b3515e\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d2867199c1ca43906c2c725257acf84\" data-classes=\"ServerStatus__ItemStatus\" id=\"ServerStatus StatusHeader\"><span data-content=\"Status\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"8db8b9d41877db042a1aa68306be6d04\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6127940f676d1a63a973d5879252d271\" data-classes=\"ServerStatus__ItemStatusControls\" id=\"ServerStatus ControlsHeader\"><span data-content=\"Actions\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"23ab37b9ba66b5741d12836cc73fb41b\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus container\" data-uid=\"0fbd34b64c4b8f271001b02635bd0324\" data-classes=\"ServerStatus__container\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e9118d25f3628ca2aa41dd74e6510651\" id=\"ServerStatus item\" data-classes=\"ServerStatus__item\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemProcess\" data-uid=\"dde20e9b22bd3a97576100dc3cfc011a\" data-classes=\"ServerStatus__ItemProcess\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"1d560e5d54b6275603bda32524bb311e\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus ItemProcessCheck\" data-binding_oncheckedstateassignment=\"checked\"></div><span data-content=\"bl-server\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"949223b896872815ef46fd64bba90498\" data-classes=\"ServerStatus__ItemProcessName\" id=\"ServerStatus ItemProcessName\" data-binding_oncontentassignment=\"name\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f56809ee01bd5501c0b8ec68b451d48b\" id=\"ServerStatus ItemProcessVersion\" data-classes=\"ServerStatus__ItemProcessVersion\"><span data-content=\"6.4.8\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"99989e349d970f9161942b0999b2b807\" data-classes=\"ServerStatus__ItemVersionName\" id=\"ServerStatus ItemVersionName\" data-binding_oncontentassignment=\"version\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0c9cf5f478d8d0ddd762dd588ed87501\" id=\"ServerStatus ItemStatus\" data-classes=\"ServerStatus__ItemStatus\"><span data-content=\"Running\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0742b98a516b8b31e62c9cfd5f371619\" data-classes=\"ServerStatus__ItemStatusName ServerStatus__ItemStatusName--running\" id=\"ServerStatus ItemStatusName\" data-binding_oncontentassignment=\"state\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"efb23146fac828b8b8d2babe379c94b1\" id=\"ServerStatus ItemStatusControls\" data-classes=\"ServerStatus__ItemStatusControls\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemBtnStop\" data-uid=\"24bf7b1a72e1b311f2ad3fe693ce165e\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0856fd497a89d70cc7d2aa08ec3b5275\" data-classes=\"ServerStatus__BtnIconStop\" id=\"ServerStatus BtnIconStop\" class=\"bl-text\"></span><span data-content=\"Stop\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6864be268f1a7b115c6246bbda7dec4d\" data-classes=\"ServerStatus__ItemBtnTitle ServerStatus__ItemBtnTitle--stop\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ff5a02b652d4cb723ed798626a4de138\" id=\"ServerStatus ItemBtnRestart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3be4e93d5717c928d00382deffb4da86\" data-classes=\"ServerStatus__BtnIconRestart\" id=\"ServerStatus__BtnIconRestart\" class=\"bl-text\"></span><span data-content=\"Restart\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"21baf943425a278c3fac45292c5b2d66\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"637d6837ca5552e26e13e3fc9ed73b35\" id=\"ServerStatus ItemBtnStart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"1ce66859038118bc4e55de0f56dff638\" data-classes=\"ServerStatus__BtnIconStart\" id=\"ServerStatus BtnIconStart\" class=\"bl-text\"></span><span data-content=\"Start\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9a45dd3d7a175488a867573bfc8db689\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div></div></div></div></div></div></div></div> "
+    },
+    "serviceLogs": {
+      "components": {
+        "7e437288f19344daa5a4bed75c728637": {
+          "id": "ServerLogs TabsLabelPod",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "64b6f006eead4076cacfac687291d9c6": {
+          "id": "ServerLogs__TabsLabelDeployment",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "184ed6e69bd6d8f1e8fc35c7403c36e5": {
+          "id": "ServerLogs TabsLabelLogs",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onContentAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "cc6c067e2b46da2502deb333245ebfc6": {
+          "id": "ServerLogs controls",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onBeforeUnmount": {
+              "dependencies": []
+            },
+            "onBeforeMount": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            }
+          }
+        },
+        "721f315c4f7e15987c55eda29943e742": {
+          "id": "ServerLogs BtnStop",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDisplayAssignment": {
+              "dependencies": []
+            },
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            }
+          }
+        },
+        "c0128152af0d6e8140ecf17af47e2651": {
+          "id": "ServerLogs ControlsIcon",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "ff639427cbb2fd7735982d312e54c2fb": {
+          "id": "ServerLogs BtnRestart",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDisplayAssignment": {
+              "dependencies": []
+            },
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            }
+          }
+        },
+        "17e15d26a59d2afecccd78a80f2b5081": {
+          "id": "ServerLogs BtnStart",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDisplayAssignment": {
+              "dependencies": []
+            },
+            "onClick": {
+              "dependencies": [
+                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              ]
+            }
+          }
+        },
+        "924202b19f0ef683e3940a99b258d565": {
+          "id": "ServerLogs",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDisplayAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "9051123f6b4f94ef192265039293d4cd": {
+          "id": "ServerLogs ContentLogs",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDynamicItemsAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "8bc4792e519b80bac6992c938c05b82a": {
+          "id": "ServerLogs ContentItem",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onEnter": {
+              "dependencies": []
+            }
+          }
+        }
+      },
+      "dataBinding": {},
+      "usedComponentTypes": [
+        "block",
+        "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+        "r_dcac843a154c1eb2e28a4a08b5d34fec",
+        "text"
+      ],
+      "style": {},
+      "attrs": {},
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerLogs\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"ServerLogs\" data-data-container=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"fa799668d94d70ab9251e2ad254c5bb1\" data-classes=\"ServerLogs__top\" id=\"ServerLogs top\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"94ca46d164caef644f83991edaf3b0c5\" data-classes=\"ServerLogs__tabs\" id=\"ServerLogs tabs\"><span data-content=\"Logs\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"184ed6e69bd6d8f1e8fc35c7403c36e5\" data-classes=\"ServerLogs__TabsLabel ServerLogs__TabsLabel--active\" id=\"ServerLogs TabsLabelLogs\" class=\"bl-text\"></span><span data-content=\"Pod Events\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"7e437288f19344daa5a4bed75c728637\" data-classes=\"ServerLogs__TabsLabel\" id=\"ServerLogs TabsLabelPod\" class=\"bl-text\"></span><span data-content=\"Deployment events\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"64b6f006eead4076cacfac687291d9c6\" data-classes=\"ServerLogs__TabsLabel\" id=\"ServerLogs__TabsLabelDeployment\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"cc6c067e2b46da2502deb333245ebfc6\" data-classes=\"ServerLogs__controls\" id=\"ServerLogs controls\" data-data-container=\"true\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"c0128152af0d6e8140ecf17af47e2651\" data-classes=\"ServerLogs__ControlsIcon ServerLogs__ControlsIconRunning\" id=\"ServerLogs ControlsIcon\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"721f315c4f7e15987c55eda29943e742\" data-classes=\"ServerLogs__btn\" id=\"ServerLogs BtnStop\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"1656b60bfd2416c42045e71a896768f1\" data-classes=\"ServerLogs__BtnIconStop\" id=\"ServerLogs BtnIconStop\"></div><span data-content=\"Stop\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"8d49d69ea1ccf31481e1c58b77517a43\" data-classes=\"ServerLogs__BtnILabel\" id=\"ServerLogs BtnILabelStop\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ff639427cbb2fd7735982d312e54c2fb\" data-classes=\"ServerLogs__btn\" id=\"ServerLogs BtnRestart\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"1fcc974758e2fbff2da2813a60f6eda9\" data-classes=\"ServerLogs__BtnIcon ServerLogs__BtnIconRestart\" id=\"ServerLogs__BtnIconRestart\" class=\"bl-text\"></span><span data-content=\"Restart\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"b78e635d6dd9241f5822ff844c630c8c\" data-classes=\"ServerLogs__BtnILabel\" id=\"ServerLogs BtnILabelRestart\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"17e15d26a59d2afecccd78a80f2b5081\" data-classes=\"ServerLogs__btn\" id=\"ServerLogs BtnStart\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"73d13dc212de6498e08352071b0d5075\" data-classes=\"ServerLogs__BtnIcon ServerLogs__BtnIconStart\" id=\"ServerLogs BtnIconStart\" class=\"bl-text\"></span><span data-content=\"Start\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"12f607397ac9db7b53f4efb93608594e\" data-classes=\"ServerLogs__BtnILabel\" id=\"ServerLogs BtnILabelStart\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerLogs ContentWrapper\" data-uid=\"b2b16f278a0d4d44db4cc3ac8be37377\" data-classes=\"ServerLogs__ContentWrapper\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerLogs ContentLogs\" data-uid=\"9051123f6b4f94ef192265039293d4cd\" data-classes=\"ServerLogs__content ServerLogs__ContentLogs\" data-dynamic-list-behaviour=\"true\"><span data-content=\"Log Data\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"8bc4792e519b80bac6992c938c05b82a\" data-classes=\"ServerLogs__ContentItem\" id=\"ServerLogs ContentItem\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"bf4ddcd624beb122ea9990fa10566b0f\" data-classes=\"ServerLogs__content ServerLogs__ContentPod\" id=\"ServerLogs ContentPodEvents\"><span data-content=\"Content PodEvents\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"5aecb6a1974c7a1c719df2ab35abd5bf\" data-classes=\"\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"232827adb9a5f36d5621ab56e377cca9\" data-classes=\"ServerLogs__content ServerLogs__ContentDeployment\" id=\"ServerLogs ContentDeployment\"><span data-content=\"Content Deployment events\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d6a74b281ba6ec2e9482fbc55a4d1df1\" data-classes=\"\" class=\"bl-text\"></span></div></div></div></div></div> "
     },
     "test": {
       "components": {},

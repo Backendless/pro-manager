@@ -1,0 +1,28 @@
+{
+  "category": "Reusable Components",
+  "showInToolbox": true,
+  "name": "header",
+  "components": {
+    "acafba620bdcd139813c3e2a3613dfaf": {
+      "id": "header menu",
+      "type": "icon",
+      "moduleType": "system",
+      "moduleId": "icon",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "id": "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+  "type": "reusable",
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "icon",
+    "text"
+  ],
+  "style": {},
+  "attrs": {}
+}

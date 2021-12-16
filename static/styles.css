@@ -231,64 +231,15 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
-/*********************************/
-/*********************************/
-/*****    component: chip    *****/
-.bl-chip {
-  border-radius: 16px;
-  width: max-content;
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
 }
-.bl-chip:not(.bl-chip--outlined) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
-  color: inherit;
-  width: auto;
-  height: auto;
-}
-.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
-  background: gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
-  width: auto;
-  height: auto;
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
-  color: gray;
-}
-.MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.MuiChip-iconSmall {
-  font-size: 18px;
-}
-/*****    component: chip    *****/
-/*********************************/
-/*********************************/
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
 /***********************************/
 /***********************************/
 /*****    component: button    *****/
@@ -338,18 +289,6 @@ body {
 /*****    component: button    *****/
 /***********************************/
 /***********************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
 /*************************************/
 /*************************************/
 /*****    component: checkbox    *****/
@@ -491,11 +430,14 @@ body {
 /***************************************/
 /**********************************/
 /**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-/*****    component: block    *****/
+/*****    component: chart    *****/
 /**********************************/
 /**********************************/
 /********************************************/
@@ -674,6 +616,79 @@ body {
 /*****    component: divider    *****/
 /************************************/
 /************************************/
+/*********************************/
+/*********************************/
+/*****    component: chip    *****/
+.bl-chip {
+  border-radius: 16px;
+  width: max-content;
+}
+.bl-chip:not(.bl-chip--outlined) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
+  color: inherit;
+  width: auto;
+  height: auto;
+}
+.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
+  background: gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
+  width: auto;
+  height: auto;
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
+  color: gray;
+}
+.MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.MuiChip-iconSmall {
+  font-size: 18px;
+}
+/*****    component: chip    *****/
+/*********************************/
+/*********************************/
+/*********************************/
+/*********************************/
+/*****    component: form    *****/
+.bl-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+/*****    component: form    *****/
+/*********************************/
+/*********************************/
 /***************************************/
 /***************************************/
 /*****    component: google-map    *****/
@@ -690,32 +705,6 @@ body {
 /***************************************/
 /*********************************/
 /*********************************/
-/*****    component: form    *****/
-.bl-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-/*****    component: form    *****/
-/*********************************/
-/*********************************/
-/**********************************/
-/**********************************/
-/*****    component: image    *****/
-.bl-image {
-  border: NULL;
-  border-radius: 4px;
-  box-shadow: NULL;
-}
-/*****    component: image    *****/
-/**********************************/
-/**********************************/
-/*********************************/
-/*********************************/
 /*****    component: icon    *****/
 .bl-icon {
   color: #337ab7;
@@ -723,6 +712,19 @@ body {
 /*****    component: icon    *****/
 /*********************************/
 /*********************************/
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+.bl-iframe {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -930,155 +932,17 @@ body {
 /*****    component: jumbotron    *****/
 /**************************************/
 /**************************************/
-/***********************************/
-/***********************************/
-/*****    component: iframe    *****/
-.bl-iframe {
-  flex: 1;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
+  border: NULL;
   border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: NULL;
 }
-/*****    component: iframe    *****/
-/***********************************/
-/***********************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
-}
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
-}
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
-/***************************************/
-/***************************************/
-/*****    component: layout-row    *****/
-.bl-layout-row {
-  display: grid;
-  margin: 0;
-  flex-flow: row wrap;
-  align-items: stretch;
-}
-@media (max-width: 479px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-row {
-    gap: 24px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
-/*****    component: layout-row    *****/
-/***************************************/
-/***************************************/
-/*********************************/
-/*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
+/*****    component: image    *****/
 /**********************************/
 /**********************************/
-/*****    component: panel    *****/
-.bl-panel {
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  padding: NULL;
-  margin: NULL;
-}
-/*****    component: panel    *****/
-/**********************************/
-/**********************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
-/*****************************************/
-/*****************************************/
-/*****    component: radio-button    *****/
-.bl-radio-button .bl-radio-button-label {
-  font-size: inherit;
-}
-.bl-radio-button .bl-radio-button-color-secondary.bl-radio-button--checked {
-  color: #337ab7;
-}
-.bl-radio-button.bl-radio-button--checked .bl-radio-button-label {
-  color: #000000;
-}
-.bl-radio-button.bl-radio-button--checked.bl-radio-button--disabled .bl-radio-button-label {
-  color: gray;
-}
-.bl-radio-button .bl-radio-button-label {
-  color: #000000;
-}
-.bl-radio-button .bl-radio-button-label.bl-radio-button--disabled {
-  color: gray;
-}
-.bl-radio-button .bl-radio-button-control.bl-radio-button-color-secondary.bl-radio-button--checked:hover {
-  background-color: rgba(51, 122, 183, 0.04);
-}
-.bl-radio-button .bl-radio-button-control.bl-radio-button-color-secondary:hover {
-  background-color: rgba(51, 122, 183, 0.04);
-}
-.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled.bl-radio-button--checked svg.MuiSvgIcon-root {
-  color: gray;
-}
-.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled.bl-radio-button--checked svg + svg.MuiSvgIcon-root {
-  color: gray;
-}
-.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled svg.MuiSvgIcon-root {
-  color: gray;
-}
-.bl-radio-button .bl-radio-button-control.bl-radio-button--checked svg.MuiSvgIcon-root {
-  color: #337ab7;
-}
-.bl-radio-button .bl-radio-button-control.bl-radio-button--checked svg + svg.MuiSvgIcon-root {
-  color: #337ab7;
-}
-.bl-radio-button .bl-radio-button-control svg.MuiSvgIcon-root {
-  color: #337ab7;
-}
-/*****    component: radio-button    *****/
-/*****************************************/
-/*****************************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1169,100 +1033,148 @@ body {
 /*****    component: layout-cell    *****/
 /****************************************/
 /****************************************/
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
+/***************************************/
+/***************************************/
+/*****    component: layout-row    *****/
+.bl-layout-row {
+  display: grid;
+  margin: 0;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+@media (max-width: 479px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-row {
+    gap: 24px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+/*****    component: layout-row    *****/
+/***************************************/
+/***************************************/
+/**********************************/
+/**********************************/
+/*****    component: panel    *****/
+.bl-panel {
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: NULL;
+  margin: NULL;
+}
+/*****    component: panel    *****/
+/**********************************/
+/**********************************/
+/*****************************************/
+/*****************************************/
+/*****    component: radio-button    *****/
+.bl-radio-button .bl-radio-button-label {
+  font-size: inherit;
+}
+.bl-radio-button .bl-radio-button-color-secondary.bl-radio-button--checked {
+  color: #337ab7;
+}
+.bl-radio-button.bl-radio-button--checked .bl-radio-button-label {
+  color: #000000;
+}
+.bl-radio-button.bl-radio-button--checked.bl-radio-button--disabled .bl-radio-button-label {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-label {
+  color: #000000;
+}
+.bl-radio-button .bl-radio-button-label.bl-radio-button--disabled {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button-color-secondary.bl-radio-button--checked:hover {
+  background-color: rgba(51, 122, 183, 0.04);
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button-color-secondary:hover {
+  background-color: rgba(51, 122, 183, 0.04);
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled.bl-radio-button--checked svg.MuiSvgIcon-root {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled.bl-radio-button--checked svg + svg.MuiSvgIcon-root {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--disabled svg.MuiSvgIcon-root {
+  color: gray;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--checked svg.MuiSvgIcon-root {
+  color: #337ab7;
+}
+.bl-radio-button .bl-radio-button-control.bl-radio-button--checked svg + svg.MuiSvgIcon-root {
+  color: #337ab7;
+}
+.bl-radio-button .bl-radio-button-control svg.MuiSvgIcon-root {
+  color: #337ab7;
+}
+/*****    component: radio-button    *****/
+/*****************************************/
+/*****************************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
 /************************************************/
 /************************************************/
 /*****    component: radio-buttons-group    *****/
 /*****    component: radio-buttons-group    *****/
 /************************************************/
 /************************************************/
-/***********************************/
-/***********************************/
-/*****    component: slider    *****/
-.bl-slider:hover .bl-slider-rail {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-track {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark-active {
-  background-color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider.bl-slider--disabled .bl-slider-rail {
-  color: rgba(128, 128, 128, 0.38);
-}
-.bl-slider.bl-slider--disabled .bl-slider-track {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
-  left: auto;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
-  background: gray;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-rail {
-  color: rgba(51, 122, 183, 0.38);
-  opacity: 1;
-}
-.bl-slider .bl-slider-track {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider .bl-slider-thumb {
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-}
-.bl-slider .bl-slider-thumb.bl-slider--active {
-  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-/*****    component: slider    *****/
-/***********************************/
-/***********************************/
 /*********************************/
 /*********************************/
 /*****    component: link    *****/
@@ -1274,42 +1186,6 @@ body {
 /*****    component: link    *****/
 /*********************************/
 /*********************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
-}
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
-  }
-}
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1501,6 +1377,130 @@ body {
 /***********************************/
 /***********************************/
 /***********************************/
+/*****    component: slider    *****/
+.bl-slider:hover .bl-slider-rail {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-track {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark-active {
+  background-color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider.bl-slider--disabled .bl-slider-rail {
+  color: rgba(128, 128, 128, 0.38);
+}
+.bl-slider.bl-slider--disabled .bl-slider-track {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
+  left: auto;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
+  background: gray;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-rail {
+  color: rgba(51, 122, 183, 0.38);
+  opacity: 1;
+}
+.bl-slider .bl-slider-track {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider .bl-slider-thumb {
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+}
+.bl-slider .bl-slider-thumb.bl-slider--active {
+  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: slider    *****/
+/***********************************/
+/***********************************/
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
+  color: #337ab7;
+}
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
+}
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
+/***********************************/
+/***********************************/
 /*****    component: switch    *****/
 .bl-switch .bl-switch-base {
   color: #337ab7;
@@ -1540,17 +1540,6 @@ body {
 /*****    component: text    *****/
 /*********************************/
 /*********************************/
-/**********************************/
-/**********************************/
-/*****    component: video    *****/
-.bl-video {
-  border: 4px;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: video    *****/
-/**********************************/
-/**********************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1684,6 +1673,155 @@ body {
 /*****    component: textarea    *****/
 /*************************************/
 /*************************************/
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+.bl-video {
+  border: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
+.ServerLogs {
+  width: 100%;
+  max-width: 967px;
+  flex-direction: column;
+}
+.ServerLogs__top {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+.ServerLogs__TabsLabel {
+  padding: 0px 20px 8px 20px;
+  margin-right: 20px;
+  color: #73808D;
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  cursor: pointer;
+}
+.ServerLogs__TabsLabel--active {
+  color: #18181F;
+  border-bottom: 2px solid #1B76BC;
+}
+.ServerLogs__controls {
+  align-items: center;
+  margin-top: -10px;
+}
+.ServerLogs__ControlsIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ServerLogs__ControlsIconRunning {
+  background-image: url('./styles/images/running.png');
+}
+.ServerLogs__ControlsIconComplete {
+  background-image: url('./styles/images/complete.png');
+}
+.ServerLogs__ControlsIconNotinstalled {
+  background-image: url('./styles/images/disaabled.png');
+}
+.ServerLogs__ControlsIconStopped {
+  background-image: url('./styles/images/down.png');
+}
+.ServerLogs__ControlsIconChanging {
+  background-image: url('./styles/images/changing.png');
+}
+.ServerLogs__btn {
+  padding: 6px 14px 6px 14px;
+  border: 2px solid #18181F;
+  border-radius: 6px;
+  margin-left: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.ServerLogs__btn:first-child {
+  margin-left: 0px;
+}
+.ServerLogs__BtnILabel {
+  color: #18181F;
+  font-family: FuturaHeavy, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+}
+.ServerLogs__BtnIconStop {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #18181F;
+  margin-right: 8px;
+}
+.ServerLogs__BtnIcon {
+  width: 10px;
+  height: 12px;
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ServerLogs__BtnIconRestart {
+  background-image: url('./styles/images/restartAll.svg');
+}
+.ServerLogs__BtnIconStart {
+  background-image: url('./styles/images/startAll.svg');
+}
+.ServerLogs__ContentWrapper {
+  border: 1px solid #DAE3F2;
+  padding: 8px 8px 8px 16px;
+  border-radius: 6px;
+}
+.ServerLogs__content {
+  height: 695px;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow: auto;
+  align-items: flex-start;
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  scrollbar-color: #ABB3BA #E3E6E8;
+  scrollbar-width: thin;
+}
+.ServerLogs__content::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #E3E6E8;
+  border-radius: 4px;
+}
+.ServerLogs__content::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #ABB3BA;
+}
+.ServerLogs__ContentPod,
+.ServerLogs__ContentDeployment {
+  display: none;
+}
+.ServerLogs__ContentLogs {
+  flex-direction: column;
+}
+@media screen and (max-width: 950px) {
+  .ServerLogs__top {
+    flex-direction: column;
+  }
+  .ServerLogs__controls {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .ServerLogs__TabsLabel {
+    padding: 0px 15px 8px 15px;
+    font-size: 15px;
+    line-height: 17px;
+    margin-right: 10px;
+  }
+}
 .ServerStatus {
   width: 100%;
   max-width: 967px;
@@ -1787,40 +1925,43 @@ body {
   align-items: center;
   margin-right: 10px;
 }
+.ServerStatus__ItemStatusName::before {
+  content: '';
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
 .ServerStatus__ItemStatusName--running {
   color: #2ECC71;
 }
-.ServerStatus__ItemStatusName--running:before {
-  content: url('./styles/images/running.png');
-  margin-right: 8px;
+.ServerStatus__ItemStatusName--running::before {
+  background-image: url('./styles/images/running.png');
 }
 .ServerStatus__ItemStatusName--complete {
   color: #2ECC71;
 }
-.ServerStatus__ItemStatusName--complete:before {
-  content: url('./styles/images/complete.png');
-  margin-right: 8px;
+.ServerStatus__ItemStatusName--complete::before {
+  background-image: url('./styles/images/complete.png');
 }
 .ServerStatus__ItemStatusName--notInstalled {
   color: #95A5A6;
 }
-.ServerStatus__ItemStatusName--notInstalled:before {
-  content: url('./styles/images/disaabled.png');
-  margin-right: 8px;
+.ServerStatus__ItemStatusName--notInstalled::before {
+  background-image: url('./styles/images/disaabled.png');
 }
 .ServerStatus__ItemStatusName--stopped {
   color: #E74C3C;
 }
-.ServerStatus__ItemStatusName--stopped:before {
-  content: url('./styles/images/down.png');
-  margin-right: 8px;
+.ServerStatus__ItemStatusName--stopped::before {
+  background-image: url('./styles/images/down.png');
 }
 .ServerStatus__ItemStatusName--changing {
   color: #E67E22;
 }
-.ServerStatus__ItemStatusName--changing:before {
-  content: url('./styles/images/changing.png');
-  margin-right: 8px;
+.ServerStatus__ItemStatusName--changing::before {
+  background-image: url('./styles/images/changing.png');
 }
 .ServerStatus__ItemBtn {
   width: 120px;
@@ -1870,33 +2011,33 @@ body {
 .ServerStatus__BtnIconStop--active {
   border: 1.3px solid #E74C3C;
 }
-.ServerStatus__BtnIconRestart {
-  height: 15px;
-}
-.ServerStatus__BtnIconRestart:before {
-  content: url('./styles/images/restartIcon.svg');
+.ServerStatus__BtnIconRestart,
+.ServerStatus__BtnIconRestart--active {
+  width: 14px;
+  height: 14px;
   margin-right: 11px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ServerStatus__BtnIconRestart {
+  background-image: url('./styles/images/restartIcon.svg');
 }
 .ServerStatus__BtnIconRestart--active {
-  height: 15px;
+  background-image: url('./styles/images/restartBtnActive.svg');
 }
-.ServerStatus__BtnIconRestart--active:before {
-  content: url('./styles/images/restartBtnActive.svg');
+.ServerStatus__BtnIconStart,
+.ServerStatus__BtnIconStart--active {
+  width: 14px;
+  height: 14px;
   margin-right: 11px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .ServerStatus__BtnIconStart {
-  height: 15px;
-}
-.ServerStatus__BtnIconStart:before {
-  content: url('./styles/images/startIcon.svg');
-  margin-right: 11px;
+  background-image: url('./styles/images/startIcon.svg');
 }
 .ServerStatus__BtnIconStart--active {
-  height: 15px;
-}
-.ServerStatus__BtnIconStart--active:before {
-  content: url('./styles/images/startBtnActive.svg');
-  margin-right: 11px;
+  background-image: url('./styles/images/startBtnActive.svg');
 }
 .ServerStatus__header {
   width: 100%;
@@ -1922,7 +2063,7 @@ body {
 .ServerStatus__HeaderTitleProcess {
   margin-left: 35px;
 }
-.ServerStatus__StopAllBtn:before {
+.ServerStatus__StopAllBtn::before {
   content: '';
   margin-left: 20px;
   margin-right: 8px;
@@ -1934,27 +2075,27 @@ body {
   display: block;
   box-sizing: border-box;
 }
-.ServerStatus__StopAllBtn--active:before {
+.ServerStatus__StopAllBtn--active::before {
   opacity: 1;
 }
-.ServerStatus__RestartAllBtn:before {
+.ServerStatus__RestartAllBtn::before {
   content: url('./styles/images/restartAll.svg');
   margin-right: 8px;
   cursor: pointer;
   opacity: 0.2;
 }
-.ServerStatus__RestartAllBtn--active:before {
+.ServerStatus__RestartAllBtn--active::before {
   opacity: 1;
 }
 .ServerStatus__StartAllBtn {
   height: 17px;
 }
-.ServerStatus__StartAllBtn:before {
+.ServerStatus__StartAllBtn::before {
   content: url('./styles/images/startAll.svg');
   cursor: pointer;
   opacity: 0.2;
 }
-.ServerStatus__StartAllBtn--active:before {
+.ServerStatus__StartAllBtn--active::before {
   opacity: 1;
 }
 .ServerStatus__HeaderControls {
@@ -1980,39 +2121,39 @@ body {
   position: relative;
   margin-bottom: 4px;
 }
-.aside__TabHeaderStatus:before {
+.aside__TabHeaderStatus::before {
   content: url('./styles/images/statusIcon.png');
   margin-left: 20px;
   margin-right: 16px;
 }
-.aside__TabHeaderStatus:after {
+.aside__TabHeaderStatus::after {
   position: absolute;
   right: 20px;
   top: 17px;
   content: url('./styles/images/upArrov.png');
 }
-.aside__TabHeaderConfig:before {
+.aside__TabHeaderConfig::before {
   content: url('./styles/images/configIcon.png');
   margin-left: 20px;
   margin-right: 16px;
 }
-.aside__TabHeaderConfig:after {
+.aside__TabHeaderConfig::after {
   position: absolute;
   right: 20px;
   top: 17px;
   content: url('./styles/images/downArrow.png');
 }
-.aside__TabHeaderUpgrade:before {
+.aside__TabHeaderUpgrade::before {
   content: url('./styles/images/upgradeIcon.png');
   margin-left: 20px;
   margin-right: 16px;
 }
-.aside__TabHeaderSettings:before {
+.aside__TabHeaderSettings::before {
   content: url('./styles/images/settingsIcon.png');
   margin-left: 20px;
   margin-right: 16px;
 }
-.aside__TabHeader--rotated:after {
+.aside__TabHeader--rotated::after {
   transform: rotate(180deg);
 }
 .aside__TabTitle {
@@ -2041,14 +2182,14 @@ body {
   cursor: pointer;
   margin-bottom: 9px;
 }
-.aside__TabContentItem:first-child {
+.aside__TabContentItem::first-child {
   margin-top: 4px;
 }
 .aside__TabContentItem--active {
   background-color: #1E222E;
   position: relative;
 }
-.aside__TabContentItem--active:after {
+.aside__TabContentItem--active::after {
   content: '';
   width: 12px;
   height: 12px;
@@ -2072,7 +2213,7 @@ body {
 .aside__TabItemDomains {
   position: relative;
 }
-.aside__TabItemDomains:after {
+.aside__TabItemDomains::after {
   position: absolute;
   right: 20px;
   top: 11px;
@@ -2121,7 +2262,7 @@ body {
 }
 .main {
   width: 100%;
-  padding: 50px 10px 0px 98px;
+  padding: 50px 10px 50px 98px;
   overflow: auto;
 }
 @media screen and (max-width: 1100px) {
@@ -2302,7 +2443,7 @@ body {
   cursor: pointer;
   margin-top: 5px;
 }
-.install__RestoteIcon:after {
+.install__RestoteIcon::after {
   content: url('./styles/images/BackIcon.png');
 }
 .install__FormGroupTextArea {
