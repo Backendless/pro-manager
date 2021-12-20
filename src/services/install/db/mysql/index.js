@@ -1,9 +1,9 @@
 import { createMysqlConfigMap } from './create-mysql-config-map'
 import { installStatus } from '../../install-status'
 import { k8sAppsV1Api, k8sCoreV1Api } from '../../../k8s/k8s'
-import config from '../../../../../config/config.json'
 import fileNames from './mysql-file-names.json'
 import { readFileContent } from '../../../../utils/fs'
+import { k8sConfig } from '../../../../config/k8s-config'
 import path from 'path'
 
 export async function installMysql({ version, mountPath }) {
@@ -61,8 +61,8 @@ export async function installMysql({ version, mountPath }) {
     // })
 
     installStatus.info('creating statefulset for mysql')
-    const createMysqlStateful = await k8sAppsV1Api.createNamespacedStatefulSet(config.k8s.namespace, workload)
+    const createMysqlStateful = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
     installStatus.info('creating service for mysql')
-    const createMysqlServiceResult = await k8sCoreV1Api.createNamespacedService(config.k8s.namespace, mysqlK8sConfig.service)
+    const createMysqlServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), mysqlK8sConfig.service)
     return { createMysqlStateful, createMysqlServiceResult }
 }

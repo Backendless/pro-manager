@@ -1,8 +1,8 @@
 import { k8sAppsV1Api } from '../../k8s/k8s'
-import config from '../../../../config/config.json'
 import { installStatus } from '../install-status'
 import { readFileContent } from '../../../utils/fs'
 import path from 'path'
+import { k8sConfig } from '../../../config/k8s-config'
 
 export async function installBlJavaCoderunner({ mountPath, version }) {
     const blK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/java-coderunner.json')))
@@ -26,5 +26,5 @@ export async function installBlJavaCoderunner({ mountPath, version }) {
     })
 
     installStatus.info('creating statefulset for bl-coderunner-java')
-    return await k8sAppsV1Api.createNamespacedStatefulSet(config.k8s.namespace, workload)
+    return await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
 }

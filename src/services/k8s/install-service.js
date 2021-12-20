@@ -2,9 +2,8 @@ import { Logger } from '../../logger'
 import { k8sAppsV1Api } from './k8s'
 import { k8sCoreV1Api } from './k8s'
 import { k8sBatchV1Api } from './k8s'
+import { k8sConfig } from '../../config/k8s-config'
 
-
-const config = require('../../../config/config.json')
 const logger = Logger('k8s-install-service')
 import { createService } from './k8s-create-service'
 
@@ -30,12 +29,12 @@ class InstallService {
 
         const consul = require('./config/consul.json')
 
-        const createConsulStateful = await k8sAppsV1Api.createNamespacedStatefulSet(config.k8s.namespace, consul.workload, true)
-        const createConsulServiceResult = await k8sCoreV1Api.createNamespacedService(config.k8s.namespace, consul.service, true)
+        const createConsulStateful = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), consul.workload, true)
+        const createConsulServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), consul.service, true)
 
         const initConfig = require('./config/init-config-values.json')
 
-        const createInitJob = await k8sBatchV1Api.createNamespacedJob(config.k8s.namespace, initConfig.job, true)
+        const createInitJob = await k8sBatchV1Api.createNamespacedJob(await k8sConfig.getNamespace(), initConfig.job, true)
 
         return { createConsulStateful, createConsulServiceResult, createInitJob }
 

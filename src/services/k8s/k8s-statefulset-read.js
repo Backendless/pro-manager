@@ -1,8 +1,7 @@
 import { k8sAppsV1Api } from './k8s'
 import { Logger } from '../../logger'
 import { V1StatefulSet } from '@kubernetes/client-node/dist/gen/model/v1StatefulSet'
-
-const config = require('../../../config/config.json')
+import { k8sConfig } from '../../config/k8s-config'
 const logger = Logger('k8s-statefulset-read')
 
 export async function statefulsetRead(name) {
@@ -25,6 +24,6 @@ export async function statefulsetRead(name) {
             }
         }
     }
-    return k8sAppsV1Api.readNamespacedStatefulSet(name, config.k8s.namespace)
+    return k8sAppsV1Api.readNamespacedStatefulSet(name, await k8sConfig.getNamespace())
 
 }
