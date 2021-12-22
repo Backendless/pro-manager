@@ -233,11 +233,14 @@ body {
 /*******************************************************/
 /**********************************/
 /**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-/*****    component: block    *****/
+/*****    component: chart    *****/
 /**********************************/
 /**********************************/
 /***********************************/
@@ -289,42 +292,73 @@ body {
 /*****    component: button    *****/
 /***********************************/
 /***********************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
+/*********************************/
+/*********************************/
+/*****    component: chip    *****/
+.bl-chip {
+  border-radius: 16px;
+  width: max-content;
 }
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
+.bl-chip:not(.bl-chip--outlined) {
+  background: #337ab7;
+  color: #ffffff;
 }
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
+  color: inherit;
+  width: auto;
+  height: auto;
+}
+.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
+  background: gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
+  background: transparent;
   color: #337ab7;
+  border: 2px solid #337ab7;
 }
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
+  color: inherit;
 }
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
+  width: auto;
+  height: auto;
+  color: inherit;
 }
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+.bl-chip.bl-chip--outlined.bl-chip--disabled {
+  border: 2px solid gray;
   color: gray;
 }
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
   color: gray;
 }
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
   color: gray;
 }
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
+.MuiChip-deleteIconSmall {
+  font-size: 16px;
 }
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
+.MuiChip-iconSmall {
+  font-size: 18px;
+}
+/*****    component: chip    *****/
+/*********************************/
+/*********************************/
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
 /***************************************/
 /***************************************/
 /*****    component: data-table    *****/
@@ -428,18 +462,6 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -606,6 +628,42 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
 /************************************/
 /************************************/
 /*****    component: divider    *****/
@@ -616,64 +674,6 @@ body {
 /*****    component: divider    *****/
 /************************************/
 /************************************/
-/*********************************/
-/*********************************/
-/*****    component: chip    *****/
-.bl-chip {
-  border-radius: 16px;
-  width: max-content;
-}
-.bl-chip:not(.bl-chip--outlined) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
-  color: inherit;
-  width: auto;
-  height: auto;
-}
-.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
-  background: gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
-  width: auto;
-  height: auto;
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
-  color: gray;
-}
-.MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.MuiChip-iconSmall {
-  font-size: 18px;
-}
-/*****    component: chip    *****/
-/*********************************/
-/*********************************/
 /*********************************/
 /*********************************/
 /*****    component: form    *****/
@@ -725,6 +725,17 @@ body {
 /*****    component: iframe    *****/
 /***********************************/
 /***********************************/
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
+  border: NULL;
+  border-radius: 4px;
+  box-shadow: NULL;
+}
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -932,17 +943,6 @@ body {
 /*****    component: jumbotron    *****/
 /**************************************/
 /**************************************/
-/**********************************/
-/**********************************/
-/*****    component: image    *****/
-.bl-image {
-  border: NULL;
-  border-radius: 4px;
-  box-shadow: NULL;
-}
-/*****    component: image    *****/
-/**********************************/
-/**********************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1089,6 +1089,23 @@ body {
 /*****    component: layout-row    *****/
 /***************************************/
 /***************************************/
+/*********************************/
+/*********************************/
+/*****    component: link    *****/
+.bl-link {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: link    *****/
+/*********************************/
+/*********************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
 /**********************************/
 /**********************************/
 /*****    component: panel    *****/
@@ -1104,6 +1121,17 @@ body {
 /*****    component: panel    *****/
 /**********************************/
 /**********************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
 /*****************************************/
 /*****************************************/
 /*****    component: radio-button    *****/
@@ -1152,40 +1180,12 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/*********************************/
-/*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
 /************************************************/
 /************************************************/
 /*****    component: radio-buttons-group    *****/
 /*****    component: radio-buttons-group    *****/
 /************************************************/
 /************************************************/
-/*********************************/
-/*********************************/
-/*****    component: link    *****/
-.bl-link {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: link    *****/
-/*********************************/
-/*********************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1463,42 +1463,6 @@ body {
 /*****    component: slider    *****/
 /***********************************/
 /***********************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
-}
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
-  }
-}
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
 /***********************************/
 /***********************************/
 /*****    component: switch    *****/
@@ -1540,6 +1504,42 @@ body {
 /*****    component: text    *****/
 /*********************************/
 /*********************************/
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
+  color: #337ab7;
+}
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
+}
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1684,6 +1684,66 @@ body {
 /*****    component: video    *****/
 /**********************************/
 /**********************************/
+.mysql {
+  width: 100%;
+  margin-bottom: 40px;
+  max-width: 629px;
+  flex-direction: column;
+}
+.mysql__container {
+  width: 100%;
+  flex-direction: column;
+}
+.mysql__block {
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.mysql__title {
+  margin-bottom: 24px;
+  font-family: FuturaHeavy, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  color: #18181F;
+}
+.mysql .mysql__title--second {
+  margin-top: 34px;
+}
+.mysql__item {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.mysql__item:last-child {
+  margin-bottom: 0;
+}
+.mysql__ItemToggle {
+  margin-top: 8px;
+  margin-bottom: 25px;
+}
+.mysql__ItemName {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  min-width: 80px;
+}
+.mysql__FormGroup {
+  width: 100%;
+  max-width: 491px;
+  align-items: center;
+  justify-content: space-between;
+}
+.mysql__loader {
+  display: none;
+  align-self: center;
+}
+@media screen and (max-width: 300px) {
+  .mysql__MainButton {
+    font-size: 13px !important;
+  }
+}
 .ServerLogs {
   width: 100%;
   max-width: 967px;
@@ -2107,6 +2167,7 @@ body {
   background-color: #1B1E28;
   flex-direction: column;
   flex-shrink: 0;
+  z-index: 100;
 }
 .aside__tab {
   width: 100%;
@@ -2224,8 +2285,8 @@ body {
 }
 @media screen and (max-width: 750px) {
   .aside {
-    position: fixed;
-    top: 80px;
+    position: absolute;
+    top: 0;
     height: 100%;
     left: -260px;
     transition: all, 0.4s;
@@ -2259,6 +2320,7 @@ body {
 .manage {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .main {
   width: 100%;
@@ -2271,6 +2333,11 @@ body {
     margin-right: 10px;
   }
 }
+.InputWrapper {
+  flex-direction: column;
+  width: 100%;
+  max-width: 454px;
+}
 .MuiOutlinedInput-notchedOutline {
   border: none !important;
   padding: 0 !important;
@@ -2280,10 +2347,17 @@ body {
   height: 34px;
   border: 1px solid #73808D;
   border-radius: 2px;
-  font-size: 13px;
-  padding: 0 10px;
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  padding: 0 14px;
   width: 100%;
   box-sizing: border-box;
+}
+.ValidationMessage {
+  font-size: 12px;
+  color: #ff0000;
 }
 .MuiOutlinedInput-multiline,
 .MuiInputBase-multiline {
@@ -2293,16 +2367,130 @@ body {
   height: 168px !important;
   padding-top: 5px;
 }
-.MainButton {
-  width: 217px;
+.MainButton,
+.SaveButton {
   height: 34px;
-  background: #1B76BC !important;
   border-radius: 2px !important;
-  color: #fff !important;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
+}
+.MainButton {
+  width: 217px;
+  background: #1B76BC !important;
+  color: #fff !important;
+}
+.SaveButton {
+  width: 118px;
+  color: #1B76BC !important;
+  border: 2px solid #1B76BC !important;
+  margin-left: 20px;
+}
+.toggle .MuiSwitch-root {
+  width: 27px;
+  height: 17px;
+  padding: 0px;
+  border-radius: 10px;
+}
+.toggle .MuiSwitch-thumb {
+  width: 15px;
+  height: 15px;
+}
+.toggle .MuiSwitch-switchBase {
+  top: -8px;
+  left: -8px;
+}
+.toggle .MuiSwitch-switchBase.Mui-checked {
+  transform: translateX(10px);
+}
+.toggle .MuiTouchRipple-root {
+  display: none;
+}
+.toggle .bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #fff;
+}
+.toggle .bl-switch.bl-switch--checked .bl-switch-track {
+  background: #1B76BC;
+  opacity: 1;
+}
+.toggle .bl-switch .bl-switch-track {
+  background: #18181F;
+}
+.toggle .MuiSwitch-track {
+  opacity: 0.2;
+}
+.QuestionIcon {
+  width: 17px;
+  height: 17px;
+  background-image: url('./styles/images/questionIcon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.loader,
+.loader:after {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1em solid rgba(101, 171, 248, 0.2);
+  border-right: 1em solid rgba(101, 171, 248, 0.2);
+  border-bottom: 1em solid rgba(101, 171, 248, 0.2);
+  border-left: 1em solid #65abf8;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.alert {
+  position: fixed;
+  bottom: -55px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  z-index: 200;
+  transition: bottom, 0.4s;
+}
+.alert__inner {
+  padding: 15px 25px;
+  background-color: #1B1E28;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  max-width: 600px;
+  opacity: 0.8;
+}
+.alert__text {
+  color: #fff;
+  font-size: 14px;
 }
 .header {
   width: 100%;

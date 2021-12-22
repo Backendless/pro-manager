@@ -7,6 +7,34 @@ require.config({
 
 define(['sdk'], BackendlessUI => BackendlessUI.startApp());
 
+define('./functions/4f8fe7d853c915840a67685fa058d83f/code.js', () => { 
+
+var item, tooltip;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+
+BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f'] = async function fn_4f8fe7d853c915840a67685fa058d83f(descriptionList, name) {
+
+
+  return (((await asyncListFilter(descriptionList, async (item) => {
+
+
+ return ((item['name']) == name);
+}))[0])['description'])
+}
+
+})
 define('./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js', () => { 
 
 BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5'] = async function fn_696a14dd8d2f85be7023c2c4441a65a5(method, path, body) {
@@ -111,6 +139,1745 @@ define('./pages/install/components/2f0a1b82b8aead5435946a3ca6fac65d/bundle.js', 
   /* content */
 }))
 
+define('./pages/mySql/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async onMounted(___arguments) {
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null));
+  ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null)));
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/mySql/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  onContentAssignment(___arguments) {
+    function textToTitleCase(str) {
+  return str.replace(/\S+/g,
+      function(txt) {return txt[0].toUpperCase() + txt.substring(1).toLowerCase();});
+}
+
+
+
+  return (textToTitleCase(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['shard']))
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'pattern'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/6ee9263676997e3caaa315452be887df/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'enabled'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/41bb79be796c056984caaba1dbfa3947/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'host'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/cb32ffe5c76e4f69d148911494c6952e/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'port'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/cd73b3928006379f77b53b870895e855/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'user'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/b11bd95b7c781e9ce31e01ee1b83b966/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'password'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/bd0ea983f0e13883fbd30ed292fbaafd/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'maxActive'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/429dacbd427245ceaee6938829c292ee/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'maxIdle'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/34554bc65ba52e5730d1070950f5862f/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'minIdle'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/7c8ed449452a8d2f6b5f821bbc77ab96/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'urlTemplate'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/d4d4cd6ab50980f1361d2201a3630184/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (___arguments.value) {
+    if ((new RegExp('jdbc:mysql://.*', '')).test(___arguments.value)) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', true);
+    }
+  } else {
+    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
+  }
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'urlTemplate');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* handler:onFocus */
+  onFocus(___arguments) {
+      if (!(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate'])) {
+    ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate'] = 'jdbc:mysql://';
+  }
+
+  },
+  /* handler:onFocus */
+  /* content */
+}))
+
+define('./pages/mySql/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+    var error, isValid, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  isValid = true;
+  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  for (var item_index in item_list) {
+    item = item_list[item_index];
+    if (item['urlTemplate']) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'pattern');
+    }))[0])['required']) {
+      if (!(item['pattern'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'host');
+    }))[0])['required']) {
+      if (!(item['host'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'port');
+    }))[0])['required']) {
+      if (!(item['port'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'user');
+    }))[0])['required']) {
+      if (!(item['user'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'password');
+    }))[0])['required']) {
+      if (!(item['password'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxActive');
+    }))[0])['required']) {
+      if (!(item['maxActive'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxIdle');
+    }))[0])['required']) {
+      if (!(item['maxIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'minIdle');
+    }))[0])['required']) {
+      if (!(item['minIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'urlTemplate');
+    }))[0])['required']) {
+      if (!(item['urlTemplate'])) {
+        isValid = false;
+      }
+    }
+  }
+  if (!isValid) {
+    return ;
+  }
+  ___arguments.context.pageData['btnSaveDisabled'] = true;
+  ___arguments.context.pageData['btnSave'] = 'Saving...';
+  try {
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=false', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    ___arguments.context.pageData['btnSave'] = 'Save';
+    ___arguments.context.pageData['btnSaveDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  } catch (error) {
+    ___arguments.context.pageData['btnSave'] = 'Save';
+    ___arguments.context.pageData['btnSaveDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = (error['message']);
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/mySql/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.pageData['btnSave'] = 'Save';
+  ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/mySql/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+    var error, isValid, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  isValid = true;
+  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  for (var item_index in item_list) {
+    item = item_list[item_index];
+    if (item['urlTemplate']) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'pattern');
+    }))[0])['required']) {
+      if (!(item['pattern'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'host');
+    }))[0])['required']) {
+      if (!(item['host'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'port');
+    }))[0])['required']) {
+      if (!(item['port'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'user');
+    }))[0])['required']) {
+      if (!(item['user'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'password');
+    }))[0])['required']) {
+      if (!(item['password'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxActive');
+    }))[0])['required']) {
+      if (!(item['maxActive'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxIdle');
+    }))[0])['required']) {
+      if (!(item['maxIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'minIdle');
+    }))[0])['required']) {
+      if (!(item['minIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'urlTemplate');
+    }))[0])['required']) {
+      if (!(item['urlTemplate'])) {
+        isValid = false;
+      }
+    }
+  }
+  if (!isValid) {
+    return ;
+  }
+  ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
+  ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
+  try {
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=true', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+    ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  } catch (error) {
+    ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+    ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = (error['message']);
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/mySql/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'pattern');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/fbe986386ed891b99ef2e631e208e495/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'host');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/57c1dbc34b1c989c67cdeee5b059df3e/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'port');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/febabf157a01b6cc64e1b8f62b1e1a32/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'user');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/826adfb80e9fa3f9c4d409ef7c4fb6a8/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'password');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/322d59330616d696920fec1cba3f5519/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxActive');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/4864c57e484b278e25943ae40cd58b96/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxIdle');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/34d8fb2e194a3b1c5a714e37b36481bf/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'minIdle');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/mySql/components/f6024c35a4be53e6b64b776ba73ce95c/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, vivsible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'password');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['password']) {
+      vivsible = false;
+    } else {
+      vivsible = true;
+    }
+  }
+
+  return vivsible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/f2cd77e13a5f3c9633a2a81f62910c09/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var visible, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'pattern');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['pattern']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/3989f1ccde5d70cf92a5dc8cec2591b6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'host');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['host']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/49cfbb2af051f87d5dccc9944ddcb7b2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'port');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['port']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/c37570257cfd551e117c464d74721426/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'user');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['user']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/2f64e73db50c4814bf82eaa10ad4dee9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxActive');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxActive']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/989b163823758fbffd4239ef9101b098/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxIdle');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxIdle']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/816a34cf65531e3fdfe61bed31eec1a2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'minIdle');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['minIdle']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mySql/components/5269130299dddc1234cb309f3437c093/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'urlTemplate');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  onContentAssignment(___arguments) {
+    function textToTitleCase(str) {
+  return str.replace(/\S+/g,
+      function(txt) {return txt[0].toUpperCase() + txt.substring(1).toLowerCase();});
+}
+
+
+
+  return (textToTitleCase(___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1')['shard']))
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+    var error, isValid, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  isValid = true;
+  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  for (var item_index in item_list) {
+    item = item_list[item_index];
+    if (item['urlTemplate']) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'pattern');
+    }))[0])['required']) {
+      if (!(item['pattern'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'host');
+    }))[0])['required']) {
+      if (!(item['host'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'port');
+    }))[0])['required']) {
+      if (!(item['port'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'user');
+    }))[0])['required']) {
+      if (!(item['user'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'password');
+    }))[0])['required']) {
+      if (!(item['password'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxActive');
+    }))[0])['required']) {
+      if (!(item['maxActive'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxIdle');
+    }))[0])['required']) {
+      if (!(item['maxIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'minIdle');
+    }))[0])['required']) {
+      if (!(item['minIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'urlTemplate');
+    }))[0])['required']) {
+      if (!(item['urlTemplate'])) {
+        isValid = false;
+      }
+    }
+  }
+  if (!isValid) {
+    return ;
+  }
+  ___arguments.context.pageData['btnSaveDisabled'] = true;
+  ___arguments.context.pageData['btnSave'] = 'Saving...';
+  try {
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=false', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    ___arguments.context.pageData['btnSave'] = 'Save';
+    ___arguments.context.pageData['btnSaveDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  } catch (error) {
+    ___arguments.context.pageData['btnSave'] = 'Save';
+    ___arguments.context.pageData['btnSaveDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = (error['message']);
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/mysql2/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.pageData['btnSave'] = 'Save';
+  ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/mysql2/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+    var error, isValid, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  isValid = true;
+  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  for (var item_index in item_list) {
+    item = item_list[item_index];
+    if (item['urlTemplate']) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'pattern');
+    }))[0])['required']) {
+      if (!(item['pattern'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'host');
+    }))[0])['required']) {
+      if (!(item['host'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'port');
+    }))[0])['required']) {
+      if (!(item['port'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'user');
+    }))[0])['required']) {
+      if (!(item['user'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'password');
+    }))[0])['required']) {
+      if (!(item['password'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxActive');
+    }))[0])['required']) {
+      if (!(item['maxActive'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxIdle');
+    }))[0])['required']) {
+      if (!(item['maxIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'minIdle');
+    }))[0])['required']) {
+      if (!(item['minIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'urlTemplate');
+    }))[0])['required']) {
+      if (!(item['urlTemplate'])) {
+        isValid = false;
+      }
+    }
+  }
+  if (!isValid) {
+    return ;
+  }
+  ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
+  ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
+  try {
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=true', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+    ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  } catch (error) {
+    ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+    ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = (error['message']);
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/mysql2/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'pattern');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* handler:onValueAssignment */
+  onValueAssignment(___arguments) {
+      return (___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1')[(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name'])])
+
+  },
+  /* handler:onValueAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/322d59330616d696920fec1cba3f5519/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxActive');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* handler:onValueAssignment */
+  onValueAssignment(___arguments) {
+      return (___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1')[(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name'])])
+
+  },
+  /* handler:onValueAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/f2cd77e13a5f3c9633a2a81f62910c09/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var visible, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'pattern');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['pattern']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/2f64e73db50c4814bf82eaa10ad4dee9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxActive');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxActive']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/5e3f611a895a0c48231e90eda783d117/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async onMounted(___arguments) {
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null));
+  ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('5e3f611a895a0c48231e90eda783d117', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null)));
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/mysql2/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDynamicItemsAssignment */
+  onDynamicItemsAssignment(___arguments) {
+      console.log(___arguments.context.pageData['description']);
+
+  return (___arguments.context.pageData['description'])
+
+  },
+  /* handler:onDynamicItemsAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/ef925676496420d56f57345d0dfd424e/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  onDisplayAssignment(___arguments) {
+    var visible;
+
+
+  visible = false;
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'pattern') {
+    visible = true;
+  }
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'host') {
+    visible = true;
+  }
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'user') {
+    visible = true;
+  }
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'password') {
+    visible = true;
+  }
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'urlTemplate') {
+    visible = true;
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/f5c48fa916fb2cbc6ffa89cc1a7213a1/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  onDisplayAssignment(___arguments) {
+      return ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'enabled')
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/e42148c2a25d4b52cd0dab7ff8f9ca6a/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  onDisplayAssignment(___arguments) {
+    var visible;
+
+
+  visible = false;
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'port') {
+    visible = true;
+  }
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'maxActive') {
+    visible = true;
+  }
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'maxIdle') {
+    visible = true;
+  }
+  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'minIdle') {
+    visible = true;
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/mysql2/components/ffb46f1e64ca651da533c08c9633f67d/bundle.js', [], () => ({
+  /* content */
+  /* handler:onCheckedStateAssignment */
+  onCheckedStateAssignment(___arguments) {
+      return (___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1')[(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name'])])
+
+  },
+  /* handler:onCheckedStateAssignment */
+  /* content */
+}))
+
 define('./pages/progress/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
@@ -190,6 +1957,1173 @@ define('./pages/progress/components/6ec49b615f364fc25ba12557e2fb8e0f/bundle.js',
 
   },
   /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/redis/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async onMounted(___arguments) {
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null));
+  ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null)));
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/redis/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  onContentAssignment(___arguments) {
+    function textToTitleCase(str) {
+  return str.replace(/\S+/g,
+      function(txt) {return txt[0].toUpperCase() + txt.substring(1).toLowerCase();});
+}
+
+
+
+  return (textToTitleCase(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['shard']))
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'pattern'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/6ee9263676997e3caaa315452be887df/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'enabled'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/41bb79be796c056984caaba1dbfa3947/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'host'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/cb32ffe5c76e4f69d148911494c6952e/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'port'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/cd73b3928006379f77b53b870895e855/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'user'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/b11bd95b7c781e9ce31e01ee1b83b966/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'password'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/bd0ea983f0e13883fbd30ed292fbaafd/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'maxActive'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/429dacbd427245ceaee6938829c292ee/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'maxIdle'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/34554bc65ba52e5730d1070950f5862f/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'minIdle'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/7c8ed449452a8d2f6b5f821bbc77ab96/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  async onTooltipTextAssignment(___arguments) {
+    var tooltip, item;
+
+
+  if (___arguments.context.pageData['description']) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'urlTemplate'));
+  }
+
+  return tooltip
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/d4d4cd6ab50980f1361d2201a3630184/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (___arguments.value) {
+    if ((new RegExp('jdbc:mysql://.*', '')).test(___arguments.value)) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', true);
+    }
+  } else {
+    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
+  }
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'urlTemplate');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* handler:onFocus */
+  onFocus(___arguments) {
+      if (!(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate'])) {
+    ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate'] = 'jdbc:mysql://';
+  }
+
+  },
+  /* handler:onFocus */
+  /* content */
+}))
+
+define('./pages/redis/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+    var error, isValid, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  isValid = true;
+  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  for (var item_index in item_list) {
+    item = item_list[item_index];
+    if (item['urlTemplate']) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'pattern');
+    }))[0])['required']) {
+      if (!(item['pattern'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'host');
+    }))[0])['required']) {
+      if (!(item['host'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'port');
+    }))[0])['required']) {
+      if (!(item['port'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'user');
+    }))[0])['required']) {
+      if (!(item['user'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'password');
+    }))[0])['required']) {
+      if (!(item['password'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxActive');
+    }))[0])['required']) {
+      if (!(item['maxActive'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxIdle');
+    }))[0])['required']) {
+      if (!(item['maxIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'minIdle');
+    }))[0])['required']) {
+      if (!(item['minIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'urlTemplate');
+    }))[0])['required']) {
+      if (!(item['urlTemplate'])) {
+        isValid = false;
+      }
+    }
+  }
+  if (!isValid) {
+    return ;
+  }
+  ___arguments.context.pageData['btnSaveDisabled'] = true;
+  ___arguments.context.pageData['btnSave'] = 'Saving...';
+  try {
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=false', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    ___arguments.context.pageData['btnSave'] = 'Save';
+    ___arguments.context.pageData['btnSaveDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  } catch (error) {
+    ___arguments.context.pageData['btnSave'] = 'Save';
+    ___arguments.context.pageData['btnSaveDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = (error['message']);
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/redis/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.pageData['btnSave'] = 'Save';
+  ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/redis/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+    var error, isValid, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  isValid = true;
+  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  for (var item_index in item_list) {
+    item = item_list[item_index];
+    if (item['urlTemplate']) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'pattern');
+    }))[0])['required']) {
+      if (!(item['pattern'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'host');
+    }))[0])['required']) {
+      if (!(item['host'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'port');
+    }))[0])['required']) {
+      if (!(item['port'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'user');
+    }))[0])['required']) {
+      if (!(item['user'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'password');
+    }))[0])['required']) {
+      if (!(item['password'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxActive');
+    }))[0])['required']) {
+      if (!(item['maxActive'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'maxIdle');
+    }))[0])['required']) {
+      if (!(item['maxIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'minIdle');
+    }))[0])['required']) {
+      if (!(item['minIdle'])) {
+        isValid = false;
+      }
+    }
+    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+     return ((item['name']) == 'urlTemplate');
+    }))[0])['required']) {
+      if (!(item['urlTemplate'])) {
+        isValid = false;
+      }
+    }
+  }
+  if (!isValid) {
+    return ;
+  }
+  ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
+  ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
+  try {
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=true', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+    ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  } catch (error) {
+    ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
+    ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
+    ___arguments.context.pageData['alertMessage'] = (error['message']);
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    await new Promise(r => setTimeout(r, 2000 || 0));
+    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/redis/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'pattern');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/fbe986386ed891b99ef2e631e208e495/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'host');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/57c1dbc34b1c989c67cdeee5b059df3e/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'port');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/febabf157a01b6cc64e1b8f62b1e1a32/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'user');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/826adfb80e9fa3f9c4d409ef7c4fb6a8/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'password');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/322d59330616d696920fec1cba3f5519/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxActive');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/4864c57e484b278e25943ae40cd58b96/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxIdle');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/34d8fb2e194a3b1c5a714e37b36481bf/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'minIdle');
+  }))[0])['required']) {
+    if (___arguments.value) {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', false);
+    } else {
+      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', true);
+    }
+  }
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/redis/components/f6024c35a4be53e6b64b776ba73ce95c/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, vivsible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'password');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['password']) {
+      vivsible = false;
+    } else {
+      vivsible = true;
+    }
+  }
+
+  return vivsible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/f2cd77e13a5f3c9633a2a81f62910c09/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var visible, item;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'pattern');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['pattern']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/3989f1ccde5d70cf92a5dc8cec2591b6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'host');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['host']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/49cfbb2af051f87d5dccc9944ddcb7b2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'port');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['port']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/c37570257cfd551e117c464d74721426/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'user');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['user']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/2f64e73db50c4814bf82eaa10ad4dee9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxActive');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxActive']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/989b163823758fbffd4239ef9101b098/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'maxIdle');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxIdle']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/816a34cf65531e3fdfe61bed31eec1a2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'minIdle');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['minIdle']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/redis/components/5269130299dddc1234cb309f3437c093/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var item, visible;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
+
+   return ((item['name']) == 'urlTemplate');
+  }))[0])['required']) {
+    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate']) {
+      visible = false;
+    } else {
+      visible = true;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
   /* content */
 }))
 

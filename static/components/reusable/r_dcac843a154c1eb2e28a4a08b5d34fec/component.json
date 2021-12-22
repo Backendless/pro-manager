@@ -87,6 +87,20 @@
           "dependencies": []
         }
       }
+    },
+    "14ec284f978d75e2cd75db678d46df17": {
+      "id": "aside TabContentItemMysql",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
     }
   },
   "id": "r_dcac843a154c1eb2e28a4a08b5d34fec",
@@ -97,5 +111,6 @@
     "text"
   ],
   "style": {},
-  "attrs": {}
+  "attrs": {},
+  "faIcon": "recycle"
 }
