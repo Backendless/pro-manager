@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./src",
     "start:prod": "NODE_ENV=production npm start",
-    "lint": "eslint src --fix"
+    "lint": "eslint src --fix",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,9 +30,11 @@
     "autolinker": "^3.14.3",
     "axios": "^0.21.1",
     "compression": "^1.7.4",
+    "config": "^3.3.6",
     "cors": "^2.8.5",
     "dockerode": "^3.3.0",
     "express": "^4.17.1",
+    "node-json-db": "^1.4.1",
     "socket.io": "^4.2.0",
     "stoppable": "^1.1.0",
     "winston": "^3.3.3"
@@ -39,6 +42,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.16",
     "@babel/eslint-plugin": "^7.12.13",
-    "eslint": "^7.18.0"
+    "eslint": "^7.18.0",
+    "jest": "^27.4.4"
   }
 }

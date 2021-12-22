@@ -5,7 +5,7 @@ import Status from '../service-status.json'
 
 const logger = Logger('install-status')
 
-const _servicesCreatedConsulKey = '/install/servicesCreated'
+const _servicesCreatedConsulKey = 'install/servicesCreated'
 
 class InstallStatus {
 

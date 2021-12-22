@@ -2,8 +2,7 @@ const k8s = require('@kubernetes/client-node')
 
 import { k8sCoreV1Api } from './k8s'
 import { Logger } from '../../logger'
-
-const config = require('../../../config/config.json')
+import { k8sConfig } from '../../config/k8s-config'
 const logger = Logger('k8s-create-service')
 
 export async function createService(config) {

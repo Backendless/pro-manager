@@ -1,11 +1,10 @@
-import { k8sCoreV1Api, k8sExec } from './k8s'
-// import * as stream from 'stream'
+import { k8sExec } from './k8s'
+import { k8sConfig } from '../../config/k8s-config'
 import { Logger } from '../../logger'
 
 const { Writable } = require('stream')
 
 
-const config = require('../../../config/config.json')
 const logger = Logger('k8s-execute-pod')
 
 export async function executeInPod(pod, args) {
@@ -31,7 +30,7 @@ export async function executeInPod(pod, args) {
 
     })
 
-    const ws = await k8sExec.exec(config.k8s.namespace, pod, '', args,
+    const ws = await k8sExec.exec(await k8sConfig.getNamespace(), pod, '', args,
         outStream, errStream, null,
         false /* tty */,
         status => {

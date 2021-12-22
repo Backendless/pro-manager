@@ -1,9 +1,9 @@
 import { Logger } from '../../../logger'
 import { listPods } from '../../k8s/k8s-list-pods'
+import { k8sConfig } from '../../../config/k8s-config'
 
 const stream = require('stream')
 const { k8sLog } = require('../../k8s/k8s')
-const config = require('../../../../config/config.json')
 
 const logger = Logger('service-log')
 
@@ -95,7 +95,7 @@ export class ServiceLog {
 
         logger.info(`Connecting to '${podName}' pod, to get logs for service '${serviceName}'`)
 
-        const req = await k8sLog.log(config.k8s.namespace, podName, serviceName, logStream,
+        const req = await k8sLog.log(await k8sConfig.getNamespace(), podName, serviceName, logStream,
             () => {
             },
             { follow: true, tailLines: 50, pretty: false, timestamps: true })

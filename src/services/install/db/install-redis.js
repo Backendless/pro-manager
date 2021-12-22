@@ -1,8 +1,8 @@
 import { k8sAppsV1Api, k8sCoreV1Api } from '../../k8s/k8s'
-import config from '../../../../config/config.json'
 import { installStatus } from '../install-status'
 import { Logger } from '../../../logger'
 import { readFileContent } from '../../../utils/fs'
+import { k8sConfig } from '../../../config/k8s-config'
 import path from 'path'
 
 const logger = Logger('install-redis')
@@ -29,7 +29,7 @@ export async function installRedis({ fullMountPath, internalPort, externalPort, 
 
     installStatus.info(`creating statefulset for ${name}`)
     logger.verbose(`creating statefulset for ${name} with workload '${JSON.stringify(workload)}'`)
-    const createStateful = await k8sAppsV1Api.createNamespacedStatefulSet(config.k8s.namespace, workload)
+    const createStateful = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
     logger.verbose(`result of create stateful set for ${name} is: ${JSON.stringify(createStateful)}`)
     installStatus.info(`creating service for ${name}`)
 
@@ -42,7 +42,7 @@ export async function installRedis({ fullMountPath, internalPort, externalPort, 
     service.spec.ports[0].port = internalPort
     service.spec.ports[0].targetPort = internalPort
 
-    const createServiceResult = await k8sCoreV1Api.createNamespacedService(config.k8s.namespace, service)
+    const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), service)
 
 
     return { createStateful, createServiceResult }

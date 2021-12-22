@@ -1,5 +1,4 @@
 import { k8sAppsV1Api, k8sCoreV1Api, k8sRbacAuthorizationV1Api } from '../../k8s/k8s'
-import config from '../../../../config/config.json'
 import { installStatus } from '../install-status'
 import axios from 'axios'
 import { blJobStatus } from '../../k8s/bl-job-status'
@@ -8,6 +7,7 @@ import { consul } from '../../consul'
 import { HttpError } from '@kubernetes/client-node'
 import { readFileContent } from '../../../utils/fs'
 import path from 'path'
+import { k8sConfig } from '../../../config/k8s-config'
 
 const Status = require('../../service-status.json')
 
@@ -63,9 +63,9 @@ export async function installBlHazelcast({ version }) {
 
 
     installStatus.info('creating statefulset for bl-hazelcast')
-    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedStatefulSet(config.k8s.namespace, workload)
+    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
     installStatus.info('creating service for bl-hazelcast')
-    const createServiceResult = await k8sCoreV1Api.createNamespacedService(config.k8s.namespace, blK8sConfig.service)
+    const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
 
 
     return { createStatefulSetResult, createServiceResult }
