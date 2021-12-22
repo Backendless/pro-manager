@@ -101,8 +101,11 @@ class MysqlConnectionConfigurationService {
     }
   }
 
-  async saveShardAndRestart({ shard, shouldRestart }) {
-    await this.saveShard(shard)
+  async saveShardAndRestart({ shards, shouldRestart }) {
+    for (const shard of shards) {
+      await this.saveShard(shard)
+    }
+
     if (shouldRestart) {
       manageService.restartService(blContainers.bl.server.name)
       manageService.restartService(blContainers.bl.taskman.name)
