@@ -8,5 +8,5 @@ router.get('/describe', handler(() => redisConfigurationService.describeConfigur
 router.get('/config', handler(() => redisConfigurationService.getRedisConfigs()))
 
 router.put('/config', handler(({ body, query }) => {
-    return redisConfigurationService.saveConfigAndRestart({ config: body, shouldRestart: query.restart })
+    return redisConfigurationService.saveConfigAndRestart({ configs: body, shouldRestart: query.restart })
 }))
