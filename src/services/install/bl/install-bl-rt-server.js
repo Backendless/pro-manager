@@ -3,6 +3,8 @@ import blK8sConfig from '../../k8s/config/rt-server.json'
 import { installStatus } from '../install-status'
 import { Logger } from '../../../logger'
 import { k8sConfig } from '../../../config/k8s-config'
+import { waitForInitConsulJobComplete } from '../wait-for-init-consul-job-complete'
+import { consul } from '../../consul'
 
 const logger = Logger('install-bl-rt-server')
 
@@ -32,6 +34,9 @@ export async function installBlRtServer({ mountPath, version }) {
     installStatus.info('creating service for bl-rt-server')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
 
+    await waitForInitConsulJobComplete()
+    await consul.put('config/rt-server/socketServer/connection-port', blK8sConfig.service.spec.ports.filter( port => port.name === 'bl-rt-server')[0].nodePort)
+    await consul.put('config/rt-server/socketServer/connection-host', '127.0.0.1')
 
     return { createStatefulSetResult, createServiceResult }
 }

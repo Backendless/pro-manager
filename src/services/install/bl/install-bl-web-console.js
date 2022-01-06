@@ -3,6 +3,8 @@ import { installStatus } from '../install-status'
 import { readFileContent } from '../../../utils/fs'
 import path from 'path'
 import { k8sConfig } from '../../../config/k8s-config'
+import { waitForInitConsulJobComplete } from '../wait-for-init-consul-job-complete'
+import { consul } from '../../consul'
 
 export async function installBlWebConsole({ mountPath, version }) {
     const blK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/console.json')))
@@ -30,6 +32,8 @@ export async function installBlWebConsole({ mountPath, version }) {
     installStatus.info('creating service for bl-web-console')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
 
+    await waitForInitConsulJobComplete()
+    await consul.put('config/console/rootUrl', `http://127.0.0.1:${blK8sConfig.service.spec.ports.filter( port => port.name === 'bl-web-console')[0].nodePort}`)
 
     return { createStatefulSetResult, createServiceResult }
 }

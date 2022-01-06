@@ -1,13 +1,12 @@
 import { k8sAppsV1Api, k8sCoreV1Api, k8sRbacAuthorizationV1Api } from '../../k8s/k8s'
 import { installStatus } from '../install-status'
 import axios from 'axios'
-import { blJobStatus } from '../../k8s/bl-job-status'
-import { blContainers } from '../../bl-containers'
 import { consul } from '../../consul'
 import { HttpError } from '@kubernetes/client-node'
 import { readFileContent } from '../../../utils/fs'
 import path from 'path'
 import { k8sConfig } from '../../../config/k8s-config'
+import { waitForInitConsulJobComplete } from '../wait-for-init-consul-job-complete'
 
 const Status = require('../../service-status.json')
 
@@ -73,21 +72,4 @@ export async function installBlHazelcast({ version }) {
 
 async function downloadFile(version, name) {
     return (await axios.get(`https://raw.githubusercontent.com/Backendless/BackendlessPro/release_${version}/kubernetes-doc/services/hazelcast/4.0.x-4.1.x/${name}`)).data
-
 }
-
-async function waitForInitConsulJobComplete() {
-    installStatus.info('checking status of init config job')
-    const status = await blJobStatus(blContainers.bl.initConfigValues.name)
-
-    if (status.status === Status.complete)
-        return
-
-    installStatus.info('init config job is not completed, waiting for 1 second to recheck')
-    await wait(1000)
-    await waitForInitConsulJobComplete()
-
-
-}
-
-const wait = time => new Promise(resolve => setTimeout(resolve, time))
