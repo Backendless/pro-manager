@@ -38,9 +38,13 @@
                 {
                   "name": "MYSQL_ROOT_PASSWORD",
                   "value": "rootpassword"
+                },
+                {
+                  "name": "MYSQL_ROOT_HOST",
+                  "value": "%"
                 }
               ],
-              "image": "mysql:5.7",
+              "image": "mysql/mysql-server:8.0",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-mysql",
               "ports": [
