@@ -4,6 +4,8 @@ import { readFileContent } from '../../../utils/fs'
 import path from 'path'
 import { Logger } from '../../../logger'
 import { k8sConfig } from '../../../config/k8s-config'
+import { waitForInitConsulJobComplete } from '../wait-for-init-consul-job-complete'
+import { consul } from '../../consul'
 
 const logger = Logger('install-bl-server')
 
@@ -34,6 +36,9 @@ export async function installBlServer({ mountPath, version }) {
     installStatus.info('creating service for bl-server')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blServerK8sConfig.service)
 
+    await waitForInitConsulJobComplete()
+    await consul.put('config/server/publicPort', blServerK8sConfig.service.spec.ports.filter( port => port.name === 'bl-server')[0].nodePort)
+    await consul.put('config/server/publicHost', '127.0.0.1')
 
     return { createStatefulSetResult, createServiceResult }
 }
