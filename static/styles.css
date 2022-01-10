@@ -22,6 +22,55 @@ body {
   color: NULL;
   visibility: NULL;
 }
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button.bl-button--contained {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined {
+  border-radius: 4px;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text {
+  border-radius: 4px;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -233,6 +282,15 @@ body {
 /*******************************************************/
 /**********************************/
 /**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 /*****    component: chart    *****/
 .bl-chart {
   position: relative;
@@ -243,55 +301,6 @@ body {
 /*****    component: chart    *****/
 /**********************************/
 /**********************************/
-/***********************************/
-/***********************************/
-/*****    component: button    *****/
-.bl-button.bl-button--contained {
-  border-radius: 4px;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained.bl-button--disabled {
-  background: gray;
-  color: #ffffff;
-}
-.bl-button.bl-button--outlined {
-  border-radius: 4px;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-button.bl-button--outlined.bl-button--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-button.bl-button--text {
-  border-radius: 4px;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
-  color: gray;
-}
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
 /*********************************/
 /*********************************/
 /*****    component: chip    *****/
@@ -350,15 +359,6 @@ body {
 /*****    component: chip    *****/
 /*********************************/
 /*********************************/
-/**********************************/
-/**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
-}
-/*****    component: block    *****/
-/**********************************/
-/**********************************/
 /***************************************/
 /***************************************/
 /*****    component: data-table    *****/
@@ -462,6 +462,52 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+.bl-divider {
+  border-color: #337ab7;
+  border-width: 2px;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -628,52 +674,6 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
-/************************************/
-/************************************/
-/*****    component: divider    *****/
-.bl-divider {
-  border-color: #337ab7;
-  border-width: 2px;
-}
-/*****    component: divider    *****/
-/************************************/
-/************************************/
 /*********************************/
 /*********************************/
 /*****    component: form    *****/
@@ -689,20 +689,6 @@ body {
 /*****    component: form    *****/
 /*********************************/
 /*********************************/
-/***************************************/
-/***************************************/
-/*****    component: google-map    *****/
-.bl-google-map {
-  display: flex;
-  flex-grow: 1;
-  background-color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: google-map    *****/
-/***************************************/
-/***************************************/
 /*********************************/
 /*********************************/
 /*****    component: icon    *****/
@@ -725,6 +711,37 @@ body {
 /*****    component: iframe    *****/
 /***********************************/
 /***********************************/
+/***************************************/
+/***************************************/
+/*****    component: google-map    *****/
+.bl-google-map {
+  display: flex;
+  flex-grow: 1;
+  background-color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: google-map    *****/
+/***************************************/
+/***************************************/
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+.bl-jumbotron {
+  display: flex;
+  flex-direction: column;
+  background: #dbdbdb;
+  box-shadow: NULL;
+  color: NULL;
+  border: NULL;
+  border-radius: 12px;
+  padding: 48px 24px 48px 24px;
+  margin: 0 0 48px 0;
+}
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
 /**********************************/
 /**********************************/
 /*****    component: image    *****/
@@ -736,6 +753,68 @@ body {
 /*****    component: image    *****/
 /**********************************/
 /**********************************/
+/***************************************/
+/***************************************/
+/*****    component: layout-row    *****/
+.bl-layout-row {
+  display: grid;
+  margin: 0;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+@media (max-width: 479px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-row {
+    gap: 24px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+/*****    component: layout-row    *****/
+/***************************************/
+/***************************************/
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -926,23 +1005,17 @@ body {
 /*****    component: input    *****/
 /**********************************/
 /**********************************/
-/**************************************/
-/**************************************/
-/*****    component: jumbotron    *****/
-.bl-jumbotron {
-  display: flex;
-  flex-direction: column;
-  background: #dbdbdb;
-  box-shadow: NULL;
-  color: NULL;
-  border: NULL;
-  border-radius: 12px;
-  padding: 48px 24px 48px 24px;
-  margin: 0 0 48px 0;
+/*********************************/
+/*********************************/
+/*****    component: link    *****/
+.bl-link {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
 }
-/*****    component: jumbotron    *****/
-/**************************************/
-/**************************************/
+/*****    component: link    *****/
+/*********************************/
+/*********************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1033,94 +1106,6 @@ body {
 /*****    component: layout-cell    *****/
 /****************************************/
 /****************************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
-}
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
-}
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
-/***************************************/
-/***************************************/
-/*****    component: layout-row    *****/
-.bl-layout-row {
-  display: grid;
-  margin: 0;
-  flex-flow: row wrap;
-  align-items: stretch;
-}
-@media (max-width: 479px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-row {
-    gap: 24px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
-/*****    component: layout-row    *****/
-/***************************************/
-/***************************************/
-/*********************************/
-/*********************************/
-/*****    component: link    *****/
-.bl-link {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: link    *****/
-/*********************************/
-/*********************************/
-/*********************************/
-/*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
-/**********************************/
-/**********************************/
-/*****    component: panel    *****/
-.bl-panel {
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  padding: NULL;
-  margin: NULL;
-}
-/*****    component: panel    *****/
-/**********************************/
-/**********************************/
 /**************************************/
 /**************************************/
 /*****    component: paragraph    *****/
@@ -1180,12 +1165,57 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/************************************************/
-/************************************************/
-/*****    component: radio-buttons-group    *****/
-/*****    component: radio-buttons-group    *****/
-/************************************************/
-/************************************************/
+/**********************************/
+/**********************************/
+/*****    component: panel    *****/
+.bl-panel {
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: NULL;
+  margin: NULL;
+}
+/*****    component: panel    *****/
+/**********************************/
+/**********************************/
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
+  color: #337ab7;
+}
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
+}
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1463,36 +1493,6 @@ body {
 /*****    component: slider    *****/
 /***********************************/
 /***********************************/
-/***********************************/
-/***********************************/
-/*****    component: switch    *****/
-.bl-switch .bl-switch-base {
-  color: #337ab7;
-}
-.bl-switch .bl-switch-track {
-  background: #000000;
-}
-.bl-switch .bl-switch-thumb {
-  background: #fff;
-}
-.bl-switch.bl-switch--checked .bl-switch-track {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--checked .bl-switch-thumb {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--disabled .bl-switch-root {
-  opacity: 0.38;
-}
-.bl-switch.bl-switch--disabled .bl-switch-track {
-  opacity: 0.54;
-}
-.bl-switch.bl-switch--disabled .bl-switch-thumb {
-  opacity: 1;
-}
-/*****    component: switch    *****/
-/***********************************/
-/***********************************/
 /*********************************/
 /*********************************/
 /*****    component: text    *****/
@@ -1504,42 +1504,23 @@ body {
 /*****    component: text    *****/
 /*********************************/
 /*********************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+.bl-video {
+  border: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
-  }
-}
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1673,17 +1654,36 @@ body {
 /*****    component: textarea    *****/
 /*************************************/
 /*************************************/
-/**********************************/
-/**********************************/
-/*****    component: video    *****/
-.bl-video {
-  border: 4px;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+.bl-switch .bl-switch-base {
+  color: #337ab7;
 }
-/*****    component: video    *****/
-/**********************************/
-/**********************************/
+.bl-switch .bl-switch-track {
+  background: #000000;
+}
+.bl-switch .bl-switch-thumb {
+  background: #fff;
+}
+.bl-switch.bl-switch--checked .bl-switch-track {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--disabled .bl-switch-root {
+  opacity: 0.38;
+}
+.bl-switch.bl-switch--disabled .bl-switch-track {
+  opacity: 0.54;
+}
+.bl-switch.bl-switch--disabled .bl-switch-thumb {
+  opacity: 1;
+}
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
 .mysql {
   width: 100%;
   margin-bottom: 40px;
@@ -2214,6 +2214,12 @@ body {
   margin-left: 20px;
   margin-right: 16px;
 }
+.aside__TabHeaderSettings::after {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  content: url('./styles/images/downArrow.png');
+}
 .aside__TabHeader--rotated::after {
   transform: rotate(180deg);
 }
@@ -2232,9 +2238,6 @@ body {
 }
 .aside__ContentItemContainer {
   flex-direction: column;
-}
-.aside__TabContentConfig {
-  max-height: 0;
 }
 .aside__TabContentItem {
   width: 100%;
@@ -2506,6 +2509,7 @@ body {
   background-position: 20px center;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .header__title {
   font-family: FuturaHeavy;
@@ -2740,6 +2744,154 @@ body {
   }
   .install__ProgressLabel {
     margin-right: 15px;
+  }
+}
+.ssl {
+  width: 100%;
+  margin-bottom: 40px;
+  max-width: 592px;
+  flex-direction: column;
+}
+.ssl__TabsWrapper {
+  overflow: auto;
+  margin-bottom: 50px;
+}
+.ssl__tabs {
+  width: 100%;
+  justify-content: space-between;
+  min-width: 435px;
+}
+.ssl__TabsItem {
+  padding: 0px 18px 8px 18px;
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  color: #73808D;
+  cursor: pointer;
+}
+.ssl__TabsItem--active {
+  border-bottom: 2px solid #1B76BC;
+  color: #18181F;
+}
+.ssl__nginx {
+  width: 100%;
+  flex-direction: column;
+}
+.ssl__info {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  color: #18181F;
+  margin-bottom: 50px;
+}
+.ssl__FormGroup {
+  width: 100%;
+  max-width: 454px;
+  align-items: center;
+  justify-content: space-between;
+}
+.ssl__hide {
+  display: none;
+}
+@media screen and (max-width: 1100px) {
+  .ssl__TabsItem {
+    padding: 0px 16px 7px 16px;
+    font-size: 16px;
+  }
+}
+.management__block {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.management__FormGroup {
+  max-width: 355px;
+}
+.management__MainButton {
+  margin-top: 25px;
+}
+.CreateUser {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity, 0.4s;
+}
+.CreateUser__main {
+  padding: 0px 15px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #1B76BC;
+  border-radius: 5px;
+  margin: 7px;
+  max-width: 500px;
+  width: 100%;
+  height: 285px;
+  align-items: center;
+}
+.CreateUser__form {
+  box-shadow: none;
+  border: none;
+  width: 100%;
+}
+.CreateUser__item {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.CreateUser__FormGroup {
+  max-width: 300px;
+  width: 100%;
+  flex-direction: column;
+}
+.CreateUser__CloseBtn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #ff0000;
+  cursor: pointer;
+}
+.CreateUser__title {
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.CreateUser__TitleText {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 21px;
+  color: #18181F;
+}
+.CreateUser__label {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  min-width: 100px;
+}
+.CreateUser__MainButton {
+  width: 140px;
+}
+@media screen and (max-width: 475px) {
+  .management__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .management__controls {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .management__SetPasswordBtn {
+    width: 145px;
+  }
+  .management__DeleteBtn {
+    width: 80px;
   }
 }
 .FontTitle {
