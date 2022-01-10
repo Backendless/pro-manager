@@ -56,7 +56,7 @@
       "moduleType": "system",
       "moduleId": "block",
       "handlers": {
-        "onMounted": {
+        "onBeforeMount": {
           "dependencies": [
             "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
           ]
@@ -90,6 +90,134 @@
     },
     "14ec284f978d75e2cd75db678d46df17": {
       "id": "aside TabContentItemMysql",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "e18fe2c44deb374fbddc1d8bc3f2848b": {
+      "id": "aside TabContentItemRedis",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "01553a7c2d381aa60e5ccf3789f368d7": {
+      "id": "aside TabContentItemDataService",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "4f8a44592e064cf3cf6c686767b9b44a": {
+      "id": "aside TabContentItemGeneral",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "82bfb23351e9fb6b2b482c3d040db27a": {
+      "id": "aside TabContentDomains",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "dependencies": []
+        }
+      }
+    },
+    "ca8df858b6abfa78f849814f98cbadeb": {
+      "id": "aside TabContentConfig",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "dependencies": []
+        }
+      }
+    },
+    "6cab43b49cea42f97ae16e6befa3a51e": {
+      "id": "aside TabContentItemSsl",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "03f4bd550b65418c743e04afe3aab9d9": {
+      "id": "aside TabHeaderSettings",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "b18be6db888c37d656d8a09b4db77b43": {
+      "id": "aside TabContentSettings",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "dependencies": []
+        }
+      }
+    },
+    "5478c0a1f053be3a3702c49522bc3f9f": {
+      "id": "aside TabContentItemManagement",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "28ba1a8199a4eecb2cd95d94ca4c9b79": {
+      "id": "aside TabContentItemKubernet",
       "type": "block",
       "moduleType": "system",
       "moduleId": "block",
