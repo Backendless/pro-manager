@@ -2,8 +2,8 @@ define([], () => ({
   /* content */
   /* handler:onClick */
   async onClick(___arguments) {
-      if ((___arguments.context.pageData['page']) != 'mySql') {
-    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('mySql', ({ 'page': 'mySql' }));
+      if ((___arguments.context.pageData['page']) != 'ssl') {
+    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('ssl', ({ 'page': 'ssl' }));
   }
 
   },
@@ -14,7 +14,7 @@ define([], () => ({
 
 
   classList = ['aside__TabContentItem'];
-  if ((___arguments.context.pageData['page']) == 'mySql') {
+  if ((___arguments.context.pageData['page']) == 'ssl') {
     classList = ['aside__TabContentItem', 'aside__TabContentItem--active'];
   }
 
