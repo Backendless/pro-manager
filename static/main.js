@@ -4564,7 +4564,8 @@ define('./pages/serviceLogs/components/721f315c4f7e15987c55eda29943e742/bundle.j
   /* content */
   /* handler:onDisplayAssignment */
   async onDisplayAssignment(___arguments) {
-    var classList, currentService, currentStatus, service, visible;
+
+    var visible, currentStatus, currentService, service;
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4573,6 +4574,7 @@ async function asyncListFilter(sourceList, callback) {
   })));
 
   const resultList = list.filter(item => item.value)
+
 
   return resultList.map(item => item.source)
 }
@@ -4587,12 +4589,17 @@ async function asyncListFilter(sourceList, callback) {
     }));
     currentStatus = ((currentService[0])['status']);
     if (currentStatus == 'stopped') {
+
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
       visible = false;
     }
     if (currentStatus == 'notInstalled') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
       visible = false;
     }
     if (currentStatus == 'complete') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+
       visible = false;
     }
   }
@@ -4603,10 +4610,20 @@ async function asyncListFilter(sourceList, callback) {
   /* handler:onDisplayAssignment */
   /* handler:onClick */
   async onClick(___arguments) {
-      console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'stop','hidden': false })));
+
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stopping...';
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'stop','hidden': false })));
+
 
   },
   /* handler:onClick */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+
+  },
+  /* handler:onMounted */
   /* content */
 }))
 
@@ -4653,24 +4670,6 @@ async function asyncListFilter(sourceList, callback) {
     }
   }
 
-  return classList
-
-  },
-  /* handler:onClassListAssignment */
-  /* content */
-}))
-
-define('./pages/serviceLogs/components/ff639427cbb2fd7735982d312e54c2fb/bundle.js', [], () => ({
-  /* content */
-  /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var classList, currentService, currentStatus, service, vivsible;
-
-async function asyncListFilter(sourceList, callback) {
-  const list = await Promise.all(sourceList.map(async source => ({
-    source,
-    value: await callback(source),
-  })));
 
   const resultList = list.filter(item => item.value)
 
@@ -4678,7 +4677,27 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  vivsible = true;
+define('./pages/serviceLogs/components/ff639427cbb2fd7735982d312e54c2fb/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var visible, currentStatus, currentService, service;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+
+  const resultList = list.filter(item => item.value)
+
+
+  return resultList.map(item => item.source)
+}
+
+
+  visible = true;
   if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
     currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
 
@@ -4687,34 +4706,61 @@ async function asyncListFilter(sourceList, callback) {
     }));
     currentStatus = ((currentService[0])['status']);
     if (currentStatus == 'stopped') {
-      vivsible = false;
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+      visible = false;
     }
     if (currentStatus == 'notInstalled') {
-      vivsible = false;
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+      visible = false;
     }
     if (currentStatus == 'complete') {
-      vivsible = false;
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+      visible = false;
+    }
+    if (___arguments.context.pageData['restarting']) {
+      if (currentStatus == 'changing') {
+        ___arguments.context.pageData['changed'] = true;
+      }
+      if (currentStatus == 'running') {
+        if (___arguments.context.pageData['changed']) {
+          ___arguments.context.pageData['restarting'] = false;
+          ___arguments.context.pageData['changed'] = false;
+          ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+        }
+      }
+
     }
   }
 
-  return vivsible
+  return visible
 
   },
   /* handler:onDisplayAssignment */
   /* handler:onClick */
   async onClick(___arguments) {
-      console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'restart','hidden': false })));
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restarting...';
+  ___arguments.context.pageData['restarting'] = true;
+  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'restart','hidden': false })));
 
   },
   /* handler:onClick */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+
+  },
+  /* handler:onMounted */
   /* content */
 }))
+
 
 define('./pages/serviceLogs/components/17e15d26a59d2afecccd78a80f2b5081/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
   async onDisplayAssignment(___arguments) {
-    var classList, currentService, currentStatus, service, visible;
+    var visible, currentStatus, currentService, service;
+
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4723,6 +4769,7 @@ async function asyncListFilter(sourceList, callback) {
   })));
 
   const resultList = list.filter(item => item.value)
+
 
   return resultList.map(item => item.source)
 }
@@ -4737,15 +4784,19 @@ async function asyncListFilter(sourceList, callback) {
     }));
     currentStatus = ((currentService[0])['status']);
     if (currentStatus == 'running') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
       visible = false;
     }
     if (currentStatus == 'notInstalled') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
       visible = false;
     }
     if (currentStatus == 'complete') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
       visible = false;
     }
     if (currentStatus == 'changing') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
       visible = false;
     }
   }
@@ -4756,10 +4807,17 @@ async function asyncListFilter(sourceList, callback) {
   /* handler:onDisplayAssignment */
   /* handler:onClick */
   async onClick(___arguments) {
-      console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'start','hidden': false })));
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Starting...';
+  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'start','hidden': false })));
 
   },
   /* handler:onClick */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
+
+  },
+  /* handler:onMounted */
   /* content */
 }))
 
@@ -4789,10 +4847,12 @@ define('./pages/serviceLogs/components/9051123f6b4f94ef192265039293d4cd/bundle.j
     }
   }
 
+
   },
   /* handler:onBeforeUnmount */
   /* content */
 }))
+
 
 define('./pages/serviceLogs/components/8bc4792e519b80bac6992c938c05b82a/bundle.js', [], () => ({
   /* content */
@@ -4962,12 +5022,15 @@ define('./pages/ssl/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', [], 
       ___arguments.context.pageData['btnSave'] = 'Save';
   ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
 
+
   },
   /* handler:onMounted */
   /* content */
 }))
 
+
 define('./pages/ssl/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
+
   /* content */
   /* handler:onClick */
   async onClick(___arguments) {
@@ -4991,6 +5054,7 @@ define('./pages/ssl/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], 
   if (!isValid) {
     return ;
   }
+
   ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
   ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
   try {
@@ -5010,6 +5074,7 @@ define('./pages/ssl/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], 
   /* handler:onClick */
   /* content */
 }))
+
 
 define('./pages/ssl/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
   /* content */
@@ -5039,6 +5104,7 @@ async function asyncListFilter(sourceList, callback) {
     } else {
       ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
     }
+
   }
 
   },
@@ -5046,7 +5112,9 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
+
 define('./pages/ssl/components/febabf157a01b6cc64e1b8f62b1e1a32/bundle.js', [], () => ({
+
   /* content */
   /* handler:onChange */
   async onChange(___arguments) {
@@ -5065,6 +5133,7 @@ async function asyncListFilter(sourceList, callback) {
 
 
   if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+
 
 
    return ((item['name']) == 'api domain');
@@ -5073,6 +5142,7 @@ async function asyncListFilter(sourceList, callback) {
       ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
     } else {
       ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
+
     }
   }
 
@@ -5081,7 +5151,9 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
+
 define('./pages/ssl/components/826adfb80e9fa3f9c4d409ef7c4fb6a8/bundle.js', [], () => ({
+
   /* content */
   /* handler:onChange */
   async onChange(___arguments) {
@@ -5102,12 +5174,14 @@ async function asyncListFilter(sourceList, callback) {
   if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
 
 
+
    return ((item['name']) == 'rt domain');
   }))[0])['required']) {
     if (___arguments.value) {
       ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
     } else {
       ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
+
     }
   }
 
@@ -5116,17 +5190,20 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
+
 define('./pages/ssl/components/f6024c35a4be53e6b64b776ba73ce95c/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
   async onDisplayAssignment(___arguments) {
     var vivsible, item;
 
+
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
     source,
     value: await callback(source),
   })));
+
 
   const resultList = list.filter(item => item.value)
 
@@ -5146,7 +5223,9 @@ async function asyncListFilter(sourceList, callback) {
     }
   }
 
+
   return vivsible
+
 
   },
   /* handler:onDisplayAssignment */
@@ -5169,6 +5248,7 @@ async function asyncListFilter(sourceList, callback) {
 
   return resultList.map(item => item.source)
 }
+
 
 
   if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
@@ -5270,7 +5350,9 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
   /* content */
 }))
 
+
 define('./pages/ssl/components/7d97d60a1f160c6604a8db8ab50c3281/bundle.js', [], () => ({
+
   /* content */
   /* handler:onClick */
   onClick(___arguments) {
@@ -5306,6 +5388,7 @@ define('./pages/ssl/components/0e6838cfa79de1a440dc2fd9ac29be19/bundle.js', [], 
   /* handler:onClick */
   onClick(___arguments) {
     var tabClasses, tabControlsClasses;
+
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
@@ -5368,6 +5451,9 @@ define('./pages/ssl/components/e846d674758698765e28762f57b71a46/bundle.js', [], 
   /* handler:onClick */
   onClick(___arguments) {
     var tabClasses, tabControlsClasses;
+
+function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
