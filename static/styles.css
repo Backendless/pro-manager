@@ -22,55 +22,6 @@ body {
   color: NULL;
   visibility: NULL;
 }
-/***********************************/
-/***********************************/
-/*****    component: button    *****/
-.bl-button.bl-button--contained {
-  border-radius: 4px;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained.bl-button--disabled {
-  background: gray;
-  color: #ffffff;
-}
-.bl-button.bl-button--outlined {
-  border-radius: 4px;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-button.bl-button--outlined.bl-button--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-button.bl-button--text {
-  border-radius: 4px;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
-  color: gray;
-}
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -280,6 +231,42 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
 /**********************************/
 /**********************************/
 /*****    component: block    *****/
@@ -462,52 +449,6 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
-/************************************/
-/************************************/
-/*****    component: divider    *****/
-.bl-divider {
-  border-color: #337ab7;
-  border-width: 2px;
-}
-/*****    component: divider    *****/
-/************************************/
-/************************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -674,6 +615,16 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+.bl-divider {
+  border-color: #337ab7;
+  border-width: 2px;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
 /*********************************/
 /*********************************/
 /*****    component: form    *****/
@@ -689,15 +640,55 @@ body {
 /*****    component: form    *****/
 /*********************************/
 /*********************************/
-/*********************************/
-/*********************************/
-/*****    component: icon    *****/
-.bl-icon {
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button.bl-button--contained {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined {
+  border-radius: 4px;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text {
+  border-radius: 4px;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
   color: #337ab7;
 }
-/*****    component: icon    *****/
-/*********************************/
-/*********************************/
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
 /***********************************/
 /***********************************/
 /*****    component: iframe    *****/
@@ -711,6 +702,26 @@ body {
 /*****    component: iframe    *****/
 /***********************************/
 /***********************************/
+/*********************************/
+/*********************************/
+/*****    component: icon    *****/
+.bl-icon {
+  color: #337ab7;
+}
+/*****    component: icon    *****/
+/*********************************/
+/*********************************/
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
+  border: NULL;
+  border-radius: 4px;
+  box-shadow: NULL;
+}
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
 /***************************************/
 /***************************************/
 /*****    component: google-map    *****/
@@ -742,79 +753,6 @@ body {
 /*****    component: jumbotron    *****/
 /**************************************/
 /**************************************/
-/**********************************/
-/**********************************/
-/*****    component: image    *****/
-.bl-image {
-  border: NULL;
-  border-radius: 4px;
-  box-shadow: NULL;
-}
-/*****    component: image    *****/
-/**********************************/
-/**********************************/
-/***************************************/
-/***************************************/
-/*****    component: layout-row    *****/
-.bl-layout-row {
-  display: grid;
-  margin: 0;
-  flex-flow: row wrap;
-  align-items: stretch;
-}
-@media (max-width: 479px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-row {
-    gap: 24px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
-/*****    component: layout-row    *****/
-/***************************************/
-/***************************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
-}
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
-}
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
-/*********************************/
-/*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -1005,17 +943,6 @@ body {
 /*****    component: input    *****/
 /**********************************/
 /**********************************/
-/*********************************/
-/*********************************/
-/*****    component: link    *****/
-.bl-link {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: link    *****/
-/*********************************/
-/*********************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1106,6 +1033,94 @@ body {
 /*****    component: layout-cell    *****/
 /****************************************/
 /****************************************/
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
+/***************************************/
+/***************************************/
+/*****    component: layout-row    *****/
+.bl-layout-row {
+  display: grid;
+  margin: 0;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+@media (max-width: 479px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-row {
+    gap: 24px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+/*****    component: layout-row    *****/
+/***************************************/
+/***************************************/
+/*********************************/
+/*********************************/
+/*****    component: link    *****/
+.bl-link {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: link    *****/
+/*********************************/
+/*********************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
+/**********************************/
+/**********************************/
+/*****    component: panel    *****/
+.bl-panel {
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: NULL;
+  margin: NULL;
+}
+/*****    component: panel    *****/
+/**********************************/
+/**********************************/
 /**************************************/
 /**************************************/
 /*****    component: paragraph    *****/
@@ -1165,57 +1180,12 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/**********************************/
-/**********************************/
-/*****    component: panel    *****/
-.bl-panel {
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  padding: NULL;
-  margin: NULL;
-}
-/*****    component: panel    *****/
-/**********************************/
-/**********************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
-}
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
-  }
-}
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1405,94 +1375,42 @@ body {
 /*****    component: select    *****/
 /***********************************/
 /***********************************/
-/***********************************/
-/***********************************/
-/*****    component: slider    *****/
-.bl-slider:hover .bl-slider-rail {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-track {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark-active {
-  background-color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider.bl-slider--disabled .bl-slider-rail {
-  color: rgba(128, 128, 128, 0.38);
-}
-.bl-slider.bl-slider--disabled .bl-slider-track {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
-  left: auto;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
-  background: gray;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-rail {
-  color: rgba(51, 122, 183, 0.38);
-  opacity: 1;
-}
-.bl-slider .bl-slider-track {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider .bl-slider-thumb {
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
   color: #337ab7;
 }
-.bl-slider .bl-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-  color: NULL;
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
 }
-.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.bl-slider .bl-slider-thumb .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
 }
-.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-}
-.bl-slider .bl-slider-thumb.bl-slider--active {
-  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-/*****    component: slider    *****/
-/***********************************/
-/***********************************/
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
 /*********************************/
 /*********************************/
 /*****    component: text    *****/
@@ -1504,23 +1422,36 @@ body {
 /*****    component: text    *****/
 /*********************************/
 /*********************************/
-/************************************************/
-/************************************************/
-/*****    component: radio-buttons-group    *****/
-/*****    component: radio-buttons-group    *****/
-/************************************************/
-/************************************************/
-/**********************************/
-/**********************************/
-/*****    component: video    *****/
-.bl-video {
-  border: 4px;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+.bl-switch .bl-switch-base {
+  color: #337ab7;
 }
-/*****    component: video    *****/
-/**********************************/
-/**********************************/
+.bl-switch .bl-switch-track {
+  background: #000000;
+}
+.bl-switch .bl-switch-thumb {
+  background: #fff;
+}
+.bl-switch.bl-switch--checked .bl-switch-track {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--disabled .bl-switch-root {
+  opacity: 0.38;
+}
+.bl-switch.bl-switch--disabled .bl-switch-track {
+  opacity: 0.54;
+}
+.bl-switch.bl-switch--disabled .bl-switch-thumb {
+  opacity: 1;
+}
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1656,34 +1587,103 @@ body {
 /*************************************/
 /***********************************/
 /***********************************/
-/*****    component: switch    *****/
-.bl-switch .bl-switch-base {
-  color: #337ab7;
+/*****    component: slider    *****/
+.bl-slider:hover .bl-slider-rail {
+  color: NULL;
 }
-.bl-switch .bl-switch-track {
-  background: #000000;
+.bl-slider:hover .bl-slider-track {
+  color: NULL;
 }
-.bl-switch .bl-switch-thumb {
-  background: #fff;
+.bl-slider:hover .bl-slider--mark {
+  color: NULL;
 }
-.bl-switch.bl-switch--checked .bl-switch-track {
-  background: #337ab7;
+.bl-slider:hover .bl-slider--mark-active {
+  background-color: NULL;
 }
-.bl-switch.bl-switch--checked .bl-switch-thumb {
-  background: #337ab7;
+.bl-slider:hover .bl-slider-thumb {
+  color: NULL;
 }
-.bl-switch.bl-switch--disabled .bl-switch-root {
-  opacity: 0.38;
+.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
 }
-.bl-switch.bl-switch--disabled .bl-switch-track {
-  opacity: 0.54;
+.bl-slider.bl-slider--disabled .bl-slider-rail {
+  color: rgba(128, 128, 128, 0.38);
 }
-.bl-switch.bl-switch--disabled .bl-switch-thumb {
+.bl-slider.bl-slider--disabled .bl-slider-track {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
+  left: auto;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
+  background: gray;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-rail {
+  color: rgba(51, 122, 183, 0.38);
   opacity: 1;
 }
-/*****    component: switch    *****/
+.bl-slider .bl-slider-track {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider .bl-slider-thumb {
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+}
+.bl-slider .bl-slider-thumb.bl-slider--active {
+  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: slider    *****/
 /***********************************/
 /***********************************/
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+.bl-video {
+  border: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
 .mysql {
   width: 100%;
   margin-bottom: 40px;
