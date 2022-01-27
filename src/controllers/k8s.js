@@ -5,6 +5,7 @@ import { consul } from '../services/consul'
 import { createConfigMap, replaceConfigMap } from '../services/k8s/k8s-config-map'
 import { statefulsetRead } from '../services/k8s/k8s-statefulset-read'
 import { BaseConfig } from '../config/base-config'
+import { listPods } from '../services/k8s/k8s-list-pods'
 
 export const router = new Router()
 
@@ -19,11 +20,16 @@ router.get('/statefulset/status', handler(async ({ query }) => {
 router.get('/statefulset', handler(({ query }) => statefulsetRead(query.name)))
 
 router.get('/job/status', handler(() => {
-    return jobStatus('bl-init-config-values1')
+    return jobStatus('bl-init-config-values', true)
 }))
 
 router.get('/pod/execute', handler(() => {
     return executeInPod('bl-consul-0', ['consul', 'kv', 'get', 'mode'])
+}))
+
+router.get('/pod/list/:serviceName', handler(({ params }) => {
+    const { serviceName } = params
+    return listPods(serviceName, true)
 }))
 
 router.get('/consul/get', handler(() => {
