@@ -8,7 +8,7 @@
       "install-redis": "verbose",
       "mysql-connection-configuration-service": "verbose",
       "fs-util": "verbose",
-      "bl-statefulset-status": "verbose",
+      "bl-statefulset-status": "info",
       "install-bl-rt-server": "verbose",
       "install-bl-server": "verbose"
     }

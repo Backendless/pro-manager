@@ -8,7 +8,7 @@ export async function listPods(name, resultAsIS = false) {
         .then(res => {
             return resultAsIS ? res : res.body.items.map(pod => {
                 return {
-                    name: pod.spec.hostname,
+                    name: pod.metadata.name,
                     state: pod.status.phase,
                 }
             })
