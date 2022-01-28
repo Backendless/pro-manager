@@ -37,7 +37,8 @@ class InstallStatus {
     async isServicesCreated() {
         if (this._servicesCreated === null) {
             try {
-                if (await blContainers.dependencies.consul.serviceStatus().status === Status.notInstalled) {
+                const consulStatus = (await blContainers.dependencies.consul.serviceStatus()).status
+                if (consulStatus === Status.notInstalled) {
                     this._servicesCreated = false
                 } else {
                     this._servicesCreated = Boolean(await consul.get(_servicesCreatedConsulKey))
