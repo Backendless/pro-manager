@@ -22,6 +22,63 @@ body {
   color: NULL;
   visibility: NULL;
 }
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -231,63 +288,6 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
-/**********************************/
-/**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
-}
-/*****    component: block    *****/
-/**********************************/
-/**********************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
 /*********************************/
 /*********************************/
 /*****    component: chip    *****/
@@ -346,109 +346,6 @@ body {
 /*****    component: chip    *****/
 /*********************************/
 /*********************************/
-/***************************************/
-/***************************************/
-/*****    component: data-table    *****/
-.bl-data-table {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  color: #000000;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-.bl-data-table .MuiButtonBase-root:not(.Mui-disabled) {
-  color: #000000;
-}
-.bl-data-table .MuiButtonBase-root:not(.Mui-disabled):hover {
-  color: #337ab7;
-}
-.bl-data-table .MuiInputBase-root {
-  color: #000000;
-}
-.bl-data-table .MuiInputBase-root .MuiInputAdornment-positionStart {
-  color: gray;
-}
-.bl-data-table .MuiInputBase-root input {
-  color: inherit;
-}
-.bl-data-table .MuiInputBase-root:before {
-  border-bottom: 1px solid gray;
-}
-.bl-data-table .MuiInputBase-root:hover:not(.Mui-disabled):before {
-  border-bottom: 1px solid #000000;
-}
-.bl-data-table .MuiInputBase-root:after {
-  border-bottom: 2px solid #337ab7;
-}
-.bl-data-table .bl-data-table-toolbar .bl-data-table-title {
-  color: NULL;
-}
-.bl-data-table .bl-data-table-toolbar .bl-data-table-search-field .MuiIconButton-root.Mui-disabled {
-  color: transparent;
-}
-.bl-data-table .bl-data-table-head-cell {
-  color: #000000;
-  font-size: NULL;
-  border-bottom: 1px solid gray;
-}
-.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root .MuiTableSortLabel-icon {
-  color: inherit;
-}
-.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active {
-  color: #337ab7;
-}
-.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
-  color: inherit;
-}
-.bl-data-table .bl-data-table-row td {
-  color: NULL;
-  border-bottom: 1px solid gray;
-}
-.bl-data-table .bl-data-table-row:nth-child(2n) {
-  background-color: NULL;
-}
-.bl-data-table .bl-data-table-row:nth-child(2n-1) {
-  background-color: NULL;
-}
-.bl-data-table .bl-data-table-row:hover {
-  background: NULL;
-}
-.bl-data-table .bl-data-table-row.Mui-selected {
-  background-color: NULL;
-}
-.bl-data-table .bl-data-table-edit-row .bl-data-table-field .MuiInputBase-root:before {
-  border-bottom: 1px solid #000000;
-}
-.bl-data-table .bl-data-table-pagination {
-  border-bottom: none;
-  color: #000000;
-}
-.bl-data-table .bl-data-table-pagination .MuiIconButton-root {
-  color: #000000;
-}
-.bl-data-table .bl-data-table-pagination .MuiIconButton-root.Mui-disabled {
-  color: gray;
-}
-.bl-data-table .bl-data-table-pagination .MuiTypography-caption {
-  color: gray;
-}
-.bl-data-table .bl-data-table-pagination .bl-data-table-pagination-select-icon {
-  color: inherit;
-}
-.bl-data-table ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-.bl-data-table ::-webkit-scrollbar {
-  width: 8px;
-}
-.bl-data-table ::-webkit-scrollbar-track {
-  background: transparent;
-}
-/*****    component: data-table    *****/
-/***************************************/
-/***************************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -615,6 +512,109 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
+/***************************************/
+/***************************************/
+/*****    component: data-table    *****/
+.bl-data-table {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000000;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.bl-data-table .MuiButtonBase-root:not(.Mui-disabled) {
+  color: #000000;
+}
+.bl-data-table .MuiButtonBase-root:not(.Mui-disabled):hover {
+  color: #337ab7;
+}
+.bl-data-table .MuiInputBase-root {
+  color: #000000;
+}
+.bl-data-table .MuiInputBase-root .MuiInputAdornment-positionStart {
+  color: gray;
+}
+.bl-data-table .MuiInputBase-root input {
+  color: inherit;
+}
+.bl-data-table .MuiInputBase-root:before {
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .MuiInputBase-root:hover:not(.Mui-disabled):before {
+  border-bottom: 1px solid #000000;
+}
+.bl-data-table .MuiInputBase-root:after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-data-table .bl-data-table-toolbar .bl-data-table-title {
+  color: NULL;
+}
+.bl-data-table .bl-data-table-toolbar .bl-data-table-search-field .MuiIconButton-root.Mui-disabled {
+  color: transparent;
+}
+.bl-data-table .bl-data-table-head-cell {
+  color: #000000;
+  font-size: NULL;
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root .MuiTableSortLabel-icon {
+  color: inherit;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: #337ab7;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+  color: inherit;
+}
+.bl-data-table .bl-data-table-row td {
+  color: NULL;
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .bl-data-table-row:nth-child(2n) {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-row:nth-child(2n-1) {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-row:hover {
+  background: NULL;
+}
+.bl-data-table .bl-data-table-row.Mui-selected {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-edit-row .bl-data-table-field .MuiInputBase-root:before {
+  border-bottom: 1px solid #000000;
+}
+.bl-data-table .bl-data-table-pagination {
+  border-bottom: none;
+  color: #000000;
+}
+.bl-data-table .bl-data-table-pagination .MuiIconButton-root {
+  color: #000000;
+}
+.bl-data-table .bl-data-table-pagination .MuiIconButton-root.Mui-disabled {
+  color: gray;
+}
+.bl-data-table .bl-data-table-pagination .MuiTypography-caption {
+  color: gray;
+}
+.bl-data-table .bl-data-table-pagination .bl-data-table-pagination-select-icon {
+  color: inherit;
+}
+.bl-data-table ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.bl-data-table ::-webkit-scrollbar {
+  width: 8px;
+}
+.bl-data-table ::-webkit-scrollbar-track {
+  background: transparent;
+}
+/*****    component: data-table    *****/
+/***************************************/
+/***************************************/
 /************************************/
 /************************************/
 /*****    component: divider    *****/
@@ -625,6 +625,29 @@ body {
 /*****    component: divider    *****/
 /************************************/
 /************************************/
+/*********************************/
+/*********************************/
+/*****    component: icon    *****/
+.bl-icon {
+  color: #337ab7;
+}
+/*****    component: icon    *****/
+/*********************************/
+/*********************************/
+/***************************************/
+/***************************************/
+/*****    component: google-map    *****/
+.bl-google-map {
+  display: flex;
+  flex-grow: 1;
+  background-color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: google-map    *****/
+/***************************************/
+/***************************************/
 /*********************************/
 /*********************************/
 /*****    component: form    *****/
@@ -642,55 +665,6 @@ body {
 /*********************************/
 /***********************************/
 /***********************************/
-/*****    component: button    *****/
-.bl-button.bl-button--contained {
-  border-radius: 4px;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained.bl-button--disabled {
-  background: gray;
-  color: #ffffff;
-}
-.bl-button.bl-button--outlined {
-  border-radius: 4px;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-button.bl-button--outlined.bl-button--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-button.bl-button--text {
-  border-radius: 4px;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
-  color: gray;
-}
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
-/***********************************/
-/***********************************/
 /*****    component: iframe    *****/
 .bl-iframe {
   flex: 1;
@@ -702,57 +676,6 @@ body {
 /*****    component: iframe    *****/
 /***********************************/
 /***********************************/
-/*********************************/
-/*********************************/
-/*****    component: icon    *****/
-.bl-icon {
-  color: #337ab7;
-}
-/*****    component: icon    *****/
-/*********************************/
-/*********************************/
-/**********************************/
-/**********************************/
-/*****    component: image    *****/
-.bl-image {
-  border: NULL;
-  border-radius: 4px;
-  box-shadow: NULL;
-}
-/*****    component: image    *****/
-/**********************************/
-/**********************************/
-/***************************************/
-/***************************************/
-/*****    component: google-map    *****/
-.bl-google-map {
-  display: flex;
-  flex-grow: 1;
-  background-color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: google-map    *****/
-/***************************************/
-/***************************************/
-/**************************************/
-/**************************************/
-/*****    component: jumbotron    *****/
-.bl-jumbotron {
-  display: flex;
-  flex-direction: column;
-  background: #dbdbdb;
-  box-shadow: NULL;
-  color: NULL;
-  border: NULL;
-  border-radius: 12px;
-  padding: 48px 24px 48px 24px;
-  margin: 0 0 48px 0;
-}
-/*****    component: jumbotron    *****/
-/**************************************/
-/**************************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -943,6 +866,150 @@ body {
 /*****    component: input    *****/
 /**********************************/
 /**********************************/
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button.bl-button--contained {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined {
+  border-radius: 4px;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text {
+  border-radius: 4px;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+.bl-jumbotron {
+  display: flex;
+  flex-direction: column;
+  background: #dbdbdb;
+  box-shadow: NULL;
+  color: NULL;
+  border: NULL;
+  border-radius: 12px;
+  padding: 48px 24px 48px 24px;
+  margin: 0 0 48px 0;
+}
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
+  border: NULL;
+  border-radius: 4px;
+  box-shadow: NULL;
+}
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
+/*********************************/
+/*********************************/
+/*****    component: link    *****/
+.bl-link {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: link    *****/
+/*********************************/
+/*********************************/
+/***************************************/
+/***************************************/
+/*****    component: layout-row    *****/
+.bl-layout-row {
+  display: grid;
+  margin: 0;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+@media (max-width: 479px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-row {
+    gap: 24px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+/*****    component: layout-row    *****/
+/***************************************/
+/***************************************/
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1033,79 +1100,23 @@ body {
 /*****    component: layout-cell    *****/
 /****************************************/
 /****************************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
-}
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
-}
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
-/***************************************/
-/***************************************/
-/*****    component: layout-row    *****/
-.bl-layout-row {
-  display: grid;
-  margin: 0;
-  flex-flow: row wrap;
-  align-items: stretch;
-}
-@media (max-width: 479px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-row {
-    gap: 24px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
-/*****    component: layout-row    *****/
-/***************************************/
-/***************************************/
 /*********************************/
 /*********************************/
-/*****    component: link    *****/
-.bl-link {
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
   color: #000000;
   font-size: NULL;
   font-weight: NULL;
 }
-/*****    component: link    *****/
-/*********************************/
-/*********************************/
-/*********************************/
-/*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
 /**********************************/
 /**********************************/
 /*****    component: panel    *****/
@@ -1121,17 +1132,6 @@ body {
 /*****    component: panel    *****/
 /**********************************/
 /**********************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
 /*****************************************/
 /*****************************************/
 /*****    component: radio-button    *****/
@@ -1411,17 +1411,94 @@ body {
 /*****    component: spinner    *****/
 /************************************/
 /************************************/
-/*********************************/
-/*********************************/
-/*****    component: text    *****/
-.bl-text {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
+/***********************************/
+/***********************************/
+/*****    component: slider    *****/
+.bl-slider:hover .bl-slider-rail {
+  color: NULL;
 }
-/*****    component: text    *****/
-/*********************************/
-/*********************************/
+.bl-slider:hover .bl-slider-track {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark-active {
+  background-color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider.bl-slider--disabled .bl-slider-rail {
+  color: rgba(128, 128, 128, 0.38);
+}
+.bl-slider.bl-slider--disabled .bl-slider-track {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
+  left: auto;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
+  background: gray;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-rail {
+  color: rgba(51, 122, 183, 0.38);
+  opacity: 1;
+}
+.bl-slider .bl-slider-track {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider .bl-slider-thumb {
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+}
+.bl-slider .bl-slider-thumb.bl-slider--active {
+  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: slider    *****/
+/***********************************/
+/***********************************/
 /***********************************/
 /***********************************/
 /*****    component: switch    *****/
@@ -1452,6 +1529,17 @@ body {
 /*****    component: switch    *****/
 /***********************************/
 /***********************************/
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+.bl-text {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1585,94 +1673,6 @@ body {
 /*****    component: textarea    *****/
 /*************************************/
 /*************************************/
-/***********************************/
-/***********************************/
-/*****    component: slider    *****/
-.bl-slider:hover .bl-slider-rail {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-track {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark-active {
-  background-color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider.bl-slider--disabled .bl-slider-rail {
-  color: rgba(128, 128, 128, 0.38);
-}
-.bl-slider.bl-slider--disabled .bl-slider-track {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
-  left: auto;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
-  background: gray;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-rail {
-  color: rgba(51, 122, 183, 0.38);
-  opacity: 1;
-}
-.bl-slider .bl-slider-track {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider .bl-slider-thumb {
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-}
-.bl-slider .bl-slider-thumb.bl-slider--active {
-  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-/*****    component: slider    *****/
-/***********************************/
-/***********************************/
 /**********************************/
 /**********************************/
 /*****    component: video    *****/

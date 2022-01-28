@@ -37,7 +37,7 @@ BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f'] = async fu
 })
 define('./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js', () => { 
 
-var currentOrigin, data, error, host, settingsOrigin;
+var data, host, currentOrigin, settingsOrigin, error;
 
 
 
@@ -3331,7 +3331,7 @@ define('./pages/progress/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-    var error, statusInit;
+    var error, statusInit, pollingIntervalMS;
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -3344,17 +3344,23 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
 
   try {
     statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null));
+    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
+      pollingIntervalMS = 2000;
+    }
 
   } catch (error) {
     ___arguments.context.pageData['status'] = (error['message']);
     return false;
 
   }
-  if ((((statusInit['messages']).slice(-1)[0])['level']) == 'error') {
+  if (!(statusInit['servicesCreated'])) {
+    if ((((statusInit['messages']).slice(-1)[0])['level']) == 'error') {
+      ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
+      return false;
+    }
     ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
-    return false;
   }
-  ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
   ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (statusInit['messages']));
 
   ;(function() {
@@ -3377,7 +3383,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     };
 
     const timerId = 'timer';
-    const timerDelay = 1000;
+    const timerDelay = pollingIntervalMS;
 
     runSetTimeout(timerId, callback, timerDelay)
   })()
@@ -3933,7 +3939,7 @@ define('./pages/serverStatus/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-    var error;
+    var error, pollingIntervalMS;
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -3946,6 +3952,10 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
 
   ___arguments.context.pageData['groupActionList'] = [];
   try {
+    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
+      pollingIntervalMS = 2000;
+    }
 
     ;(function() {
       const callback = async () => {
@@ -3954,7 +3964,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
       };
 
       const timerId = 'timer';
-      const timerDelay = 1500;
+      const timerDelay = pollingIntervalMS;
 
       runSetTimeout(timerId, callback, timerDelay)
     })()
@@ -4514,7 +4524,7 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
   /* handler:onBeforeUnmount */
   /* handler:onBeforeMount */
   async onBeforeMount(___arguments) {
-    var error;
+    var error, pollingIntervalMS;
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -4537,6 +4547,10 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     }
   }
   try {
+    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
+      pollingIntervalMS = 2000;
+    }
 
     ;(function() {
       const callback = async () => {
@@ -4545,7 +4559,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
       };
 
       const timerId = 'timerStatusData';
-      const timerDelay = 1500;
+      const timerDelay = pollingIntervalMS;
 
       runSetTimeout(timerId, callback, timerDelay)
     })()

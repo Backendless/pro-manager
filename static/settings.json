@@ -1,3 +1,4 @@
 {
-  "serverURL": "http://localhost:5050"
+  "serverURL": "http://localhost:5050",
+  "pollingIntervalMS": 2000
 }
