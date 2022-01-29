@@ -310,6 +310,19 @@
               ]
             }
           }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
+              "dependencies": []
+            }
+          }
         }
       },
       "dataBinding": {},
@@ -530,6 +543,19 @@
               "dependencies": []
             }
           }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
+              "dependencies": []
+            }
+          }
         }
       },
       "dataBinding": {},
@@ -556,6 +582,9 @@
               "dependencies": [
                 "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
               ]
+            },
+            "onLeave": {
+              "dependencies": []
             }
           }
         }
@@ -589,6 +618,9 @@
               "dependencies": [
                 "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
               ]
+            },
+            "onLeave": {
+              "dependencies": []
             }
           }
         },
@@ -755,6 +787,19 @@
           "moduleId": "text",
           "handlers": {
             "onDisplayAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
               "dependencies": []
             }
           }
@@ -1168,6 +1213,19 @@
               "dependencies": []
             }
           }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
+              "dependencies": []
+            }
+          }
         }
       },
       "dataBinding": {},
@@ -1348,6 +1406,19 @@
               "dependencies": []
             }
           }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
+              "dependencies": []
+            }
+          }
         }
       },
       "dataBinding": {},
@@ -1383,6 +1454,9 @@
               "dependencies": [
                 "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
               ]
+            },
+            "onLeave": {
+              "dependencies": []
             }
           }
         },
@@ -1627,6 +1701,19 @@
           "moduleId": "text",
           "handlers": {
             "onDisplayAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
               "dependencies": []
             }
           }
@@ -2007,6 +2094,9 @@
           "handlers": {
             "onEnter": {
               "dependencies": []
+            },
+            "onLeave": {
+              "dependencies": []
             }
           }
         }
@@ -2207,6 +2297,19 @@
               "dependencies": []
             }
           }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
+              "dependencies": []
+            }
+          }
         }
       },
       "dataBinding": {},
@@ -2350,6 +2453,19 @@
           "moduleId": "form",
           "handlers": {
             "onMounted": {
+              "dependencies": []
+            }
+          }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
               "dependencies": []
             }
           }
