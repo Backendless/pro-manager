@@ -37,7 +37,7 @@ BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f'] = async fu
 })
 define('./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js', () => { 
 
-var currentOrigin, data, error, host, settingsOrigin;
+var data, host, currentOrigin, settingsOrigin, error;
 
 
 
@@ -49,7 +49,12 @@ BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5'] = async fu
     })())) + String(path)))).setEncoding('utf8').send(body));
   } else {
     try {
-      settingsOrigin = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(currentOrigin) + String('/settings.json')))).setEncoding('utf8').send())['serverURL']);
+      if (!((function(){ try { return JSON.parse(localStorage.getItem('originLoad')) } catch(e){ return null }})())) {
+        settingsOrigin = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(currentOrigin) + String('/settings.json')))).setEncoding('utf8').send())['serverURL']);
+        localStorage.setItem('originLoad', JSON.stringify(true));
+        localStorage.setItem('settingsOrigin', JSON.stringify(settingsOrigin));
+      }
+      settingsOrigin = ((function(){ try { return JSON.parse(localStorage.getItem('settingsOrigin')) } catch(e){ return null }})());
 
     } catch (error) {
       console.log(error['message']);
@@ -775,6 +780,23 @@ define('./pages/dataService/components/731ff8f7e02b1f1b1ddd65954ca550ae/bundle.j
   /* content */
 }))
 
+define('./pages/dataService/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* content */
+}))
+
 define('./pages/domainsGeneral/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
@@ -1345,11 +1367,29 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
+define('./pages/domainsGeneral/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* content */
+}))
+
 define('./pages/home/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-      if ((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null))['servicesCreated']) {
+      localStorage.removeItem('originLoad');
+  if ((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null))['servicesCreated']) {
     ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('serverStatus', null);
   } else {
     ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('install', null);
@@ -1357,6 +1397,12 @@ define('./pages/home/components/page/bundle.js', [], () => ({
 
   },
   /* handler:onEnter */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
   /* content */
 }))
 
@@ -1367,6 +1413,7 @@ define('./pages/install/components/page/bundle.js', [], () => ({
     var error;
 
 
+  localStorage.removeItem('originLoad');
   try {
     ___arguments.context.pageData['defaults'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/default-arguments', null));
     ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version'] = ((___arguments.context.pageData['defaults'])['version']);
@@ -1379,6 +1426,12 @@ define('./pages/install/components/page/bundle.js', [], () => ({
 
   },
   /* handler:onEnter */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
   /* content */
 }))
 
@@ -1767,6 +1820,23 @@ async function asyncListFilter(sourceList, callback) {
 
   },
   /* handler:onDisplayAssignment */
+  /* content */
+}))
+
+define('./pages/kubernetes/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
   /* content */
 }))
 
@@ -2763,6 +2833,23 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
+define('./pages/mySql/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* content */
+}))
+
 define('./pages/mysql2/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
@@ -3327,11 +3414,28 @@ define('./pages/mysql2/components/ffb46f1e64ca651da533c08c9633f67d/bundle.js', [
   /* content */
 }))
 
+define('./pages/mysql2/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* content */
+}))
+
 define('./pages/progress/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-    var error, statusInit;
+    var error, statusInit, pollingIntervalMS;
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -3342,19 +3446,26 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
 function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEntitiesMap('setIntervals'); const timer = setInterval(callback, delay); if (timerId) {  stopSetTimeout(timerId);  timers[timerId] = timer }}
 
 
+  localStorage.removeItem('originLoad');
   try {
     statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null));
+    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
+      pollingIntervalMS = 2000;
+    }
 
   } catch (error) {
     ___arguments.context.pageData['status'] = (error['message']);
     return false;
 
   }
-  if ((((statusInit['messages']).slice(-1)[0])['level']) == 'error') {
+  if (!(statusInit['servicesCreated'])) {
+    if ((((statusInit['messages']).slice(-1)[0])['level']) == 'error') {
+      ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
+      return false;
+    }
     ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
-    return false;
   }
-  ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
   ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (statusInit['messages']));
 
   ;(function() {
@@ -3377,13 +3488,19 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     };
 
     const timerId = 'timer';
-    const timerDelay = 1000;
+    const timerDelay = pollingIntervalMS;
 
     runSetTimeout(timerId, callback, timerDelay)
   })()
 
   },
   /* handler:onEnter */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
   /* content */
 }))
 
@@ -3929,11 +4046,28 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
+define('./pages/redis/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* content */
+}))
+
 define('./pages/serverStatus/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-    var error;
+    var error, pollingIntervalMS;
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -3944,8 +4078,13 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
 function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEntitiesMap('setIntervals'); const timer = setInterval(callback, delay); if (timerId) {  stopSetTimeout(timerId);  timers[timerId] = timer }}
 
 
+  localStorage.removeItem('originLoad');
   ___arguments.context.pageData['groupActionList'] = [];
   try {
+    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
+      pollingIntervalMS = 2000;
+    }
 
     ;(function() {
       const callback = async () => {
@@ -3954,7 +4093,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
       };
 
       const timerId = 'timer';
-      const timerDelay = 1500;
+      const timerDelay = pollingIntervalMS;
 
       runSetTimeout(timerId, callback, timerDelay)
     })()
@@ -3976,6 +4115,7 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
 
 
   stopSetTimeout('timer');
+  localStorage.removeItem('originLoad');
 
   },
   /* handler:onLeave */
@@ -4050,8 +4190,17 @@ define('./pages/serverStatus/components/24bf7b1a72e1b311f2ad3fe693ce165e/bundle.
   /* handler:onClassListAssignment */
   /* handler:onClick */
   async onClick(___arguments) {
-      if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'running' || (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'changing') {
+    var i;
+
+
+  if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'running' || (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'changing') {
     console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['name']),'state': 'stop','hidden': false })));
+    for (var count = 0; count < 3; count++) {
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('24bf7b1a72e1b311f2ad3fe693ce165e'))['border'] = '3px solid blue';
+      await new Promise(r => setTimeout(r, 500 || 0));
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('24bf7b1a72e1b311f2ad3fe693ce165e'))['border'] = '';
+      await new Promise(r => setTimeout(r, 500 || 0));
+    }
   }
 
   },
@@ -4084,6 +4233,12 @@ define('./pages/serverStatus/components/ff5a02b652d4cb723ed798626a4de138/bundle.
   async onClick(___arguments) {
       if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'running' || (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'changing') {
     console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['name']),'state': 'restart','hidden': false })));
+    for (var count = 0; count < 3; count++) {
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('ff5a02b652d4cb723ed798626a4de138'))['border'] = '3px solid blue';
+      await new Promise(r => setTimeout(r, 500 || 0));
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('ff5a02b652d4cb723ed798626a4de138'))['border'] = '';
+      await new Promise(r => setTimeout(r, 500 || 0));
+    }
   }
 
   },
@@ -4144,6 +4299,12 @@ define('./pages/serverStatus/components/637d6837ca5552e26e13e3fc9ed73b35/bundle.
   async onClick(___arguments) {
       if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'stopped') {
     console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['name']),'state': 'start','hidden': false })));
+    for (var count = 0; count < 3; count++) {
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('637d6837ca5552e26e13e3fc9ed73b35'))['border'] = '3px solid blue';
+      await new Promise(r => setTimeout(r, 500 || 0));
+      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('637d6837ca5552e26e13e3fc9ed73b35'))['border'] = '';
+      await new Promise(r => setTimeout(r, 500 || 0));
+    }
   }
 
   },
@@ -4514,7 +4675,7 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
   /* handler:onBeforeUnmount */
   /* handler:onBeforeMount */
   async onBeforeMount(___arguments) {
-    var error;
+    var error, pollingIntervalMS;
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -4537,6 +4698,10 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     }
   }
   try {
+    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
+      pollingIntervalMS = 2000;
+    }
 
     ;(function() {
       const callback = async () => {
@@ -4545,7 +4710,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
       };
 
       const timerId = 'timerStatusData';
-      const timerDelay = 1500;
+      const timerDelay = pollingIntervalMS;
 
       runSetTimeout(timerId, callback, timerDelay)
     })()
@@ -4855,7 +5020,8 @@ define('./pages/serviceLogs/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-      if (!(___arguments.context.pageData['serviceName'])) {
+      localStorage.removeItem('originLoad');
+  if (!(___arguments.context.pageData['serviceName'])) {
     ___arguments.context.pageData['serviceName'] = 'bl-server';
   }
   if (!(___arguments.context.appData['logData'])) {
@@ -4890,6 +5056,12 @@ define('./pages/serviceLogs/components/page/bundle.js', [], () => ({
 
   },
   /* handler:onEnter */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
   /* content */
 }))
 
@@ -5440,6 +5612,23 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
   /* content */
 }))
 
+define('./pages/ssl/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* content */
+}))
+
 define('./pages/userManagement/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
@@ -5728,5 +5917,22 @@ define('./pages/userManagement/components/b4398d5c0048d80587b9664d8f5eac11/bundl
 
   },
   /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/userManagement/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
   /* content */
 }))

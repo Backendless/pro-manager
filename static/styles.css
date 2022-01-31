@@ -22,6 +22,76 @@ body {
   color: NULL;
   visibility: NULL;
 }
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button.bl-button--contained {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined {
+  border-radius: 4px;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text {
+  border-radius: 4px;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -231,63 +301,6 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: gray;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
-/**********************************/
-/**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
-}
-/*****    component: block    *****/
-/**********************************/
-/**********************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
 /*********************************/
 /*********************************/
 /*****    component: chip    *****/
@@ -346,6 +359,52 @@ body {
 /*****    component: chip    *****/
 /*********************************/
 /*********************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: gray;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+.bl-divider {
+  border-color: #337ab7;
+  border-width: 2px;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
 /***************************************/
 /***************************************/
 /*****    component: data-table    *****/
@@ -449,6 +508,48 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
+/*********************************/
+/*********************************/
+/*****    component: form    *****/
+.bl-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+/*****    component: form    *****/
+/*********************************/
+/*********************************/
+/***************************************/
+/***************************************/
+/*****    component: google-map    *****/
+.bl-google-map {
+  display: flex;
+  flex-grow: 1;
+  background-color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: google-map    *****/
+/***************************************/
+/***************************************/
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+.bl-iframe {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -615,93 +716,6 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
-/************************************/
-/************************************/
-/*****    component: divider    *****/
-.bl-divider {
-  border-color: #337ab7;
-  border-width: 2px;
-}
-/*****    component: divider    *****/
-/************************************/
-/************************************/
-/*********************************/
-/*********************************/
-/*****    component: form    *****/
-.bl-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-/*****    component: form    *****/
-/*********************************/
-/*********************************/
-/***********************************/
-/***********************************/
-/*****    component: button    *****/
-.bl-button.bl-button--contained {
-  border-radius: 4px;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained.bl-button--disabled {
-  background: gray;
-  color: #ffffff;
-}
-.bl-button.bl-button--outlined {
-  border-radius: 4px;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-button.bl-button--outlined.bl-button--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-button.bl-button--text {
-  border-radius: 4px;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
-  color: gray;
-}
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
-/***********************************/
-/***********************************/
-/*****    component: iframe    *****/
-.bl-iframe {
-  flex: 1;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: iframe    *****/
-/***********************************/
-/***********************************/
 /*********************************/
 /*********************************/
 /*****    component: icon    *****/
@@ -711,31 +725,96 @@ body {
 /*****    component: icon    *****/
 /*********************************/
 /*********************************/
-/**********************************/
-/**********************************/
-/*****    component: image    *****/
-.bl-image {
-  border: NULL;
-  border-radius: 4px;
-  box-shadow: NULL;
+/****************************************/
+/****************************************/
+/*****    component: layout-cell    *****/
+.bl-layout-cell {
+  width: auto;
+  grid-column-end: span 4;
+  margin: 0;
+  box-sizing: border-box;
 }
-/*****    component: image    *****/
-/**********************************/
-/**********************************/
-/***************************************/
-/***************************************/
-/*****    component: google-map    *****/
-.bl-google-map {
-  display: flex;
-  flex-grow: 1;
-  background-color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+@media (max-width: 479px) {
+  .bl-layout-cell--1-phone {
+    grid-column-end: span 1;
+  }
+  .bl-layout-cell--2-phone {
+    grid-column-end: span 2;
+  }
+  .bl-layout-cell--3-phone {
+    grid-column-end: span 3;
+  }
+  .bl-layout-cell--4-phone {
+    grid-column-end: span 4;
+  }
 }
-/*****    component: google-map    *****/
-/***************************************/
-/***************************************/
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-cell--1-tablet {
+    grid-column-end: span 1;
+  }
+  .bl-layout-cell--2-tablet {
+    grid-column-end: span 2;
+  }
+  .bl-layout-cell--3-tablet {
+    grid-column-end: span 3;
+  }
+  .bl-layout-cell--4-tablet {
+    grid-column-end: span 4;
+  }
+  .bl-layout-cell--5-tablet {
+    grid-column-end: span 5;
+  }
+  .bl-layout-cell--6-tablet {
+    grid-column-end: span 6;
+  }
+  .bl-layout-cell--7-tablet {
+    grid-column-end: span 7;
+  }
+  .bl-layout-cell--8-tablet {
+    grid-column-end: span 8;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-cell--1-desktop {
+    grid-column-end: span 1;
+  }
+  .bl-layout-cell--2-desktop {
+    grid-column-end: span 2;
+  }
+  .bl-layout-cell--3-desktop {
+    grid-column-end: span 3;
+  }
+  .bl-layout-cell--4-desktop {
+    grid-column-end: span 4;
+  }
+  .bl-layout-cell--5-desktop {
+    grid-column-end: span 5;
+  }
+  .bl-layout-cell--6-desktop {
+    grid-column-end: span 6;
+  }
+  .bl-layout-cell--7-desktop {
+    grid-column-end: span 7;
+  }
+  .bl-layout-cell--8-desktop {
+    grid-column-end: span 8;
+  }
+  .bl-layout-cell--9-desktop {
+    grid-column-end: span 9;
+  }
+  .bl-layout-cell--10-desktop {
+    grid-column-end: span 10;
+  }
+  .bl-layout-cell--11-desktop {
+    grid-column-end: span 11;
+  }
+  .bl-layout-cell--12-desktop {
+    grid-column-end: span 12;
+  }
+}
+/*****    component: layout-cell    *****/
+/****************************************/
+/****************************************/
 /**************************************/
 /**************************************/
 /*****    component: jumbotron    *****/
@@ -753,6 +832,17 @@ body {
 /*****    component: jumbotron    *****/
 /**************************************/
 /**************************************/
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
+  border: NULL;
+  border-radius: 4px;
+  box-shadow: NULL;
+}
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -943,96 +1033,6 @@ body {
 /*****    component: input    *****/
 /**********************************/
 /**********************************/
-/****************************************/
-/****************************************/
-/*****    component: layout-cell    *****/
-.bl-layout-cell {
-  width: auto;
-  grid-column-end: span 4;
-  margin: 0;
-  box-sizing: border-box;
-}
-@media (max-width: 479px) {
-  .bl-layout-cell--1-phone {
-    grid-column-end: span 1;
-  }
-  .bl-layout-cell--2-phone {
-    grid-column-end: span 2;
-  }
-  .bl-layout-cell--3-phone {
-    grid-column-end: span 3;
-  }
-  .bl-layout-cell--4-phone {
-    grid-column-end: span 4;
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-cell--1-tablet {
-    grid-column-end: span 1;
-  }
-  .bl-layout-cell--2-tablet {
-    grid-column-end: span 2;
-  }
-  .bl-layout-cell--3-tablet {
-    grid-column-end: span 3;
-  }
-  .bl-layout-cell--4-tablet {
-    grid-column-end: span 4;
-  }
-  .bl-layout-cell--5-tablet {
-    grid-column-end: span 5;
-  }
-  .bl-layout-cell--6-tablet {
-    grid-column-end: span 6;
-  }
-  .bl-layout-cell--7-tablet {
-    grid-column-end: span 7;
-  }
-  .bl-layout-cell--8-tablet {
-    grid-column-end: span 8;
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-cell--1-desktop {
-    grid-column-end: span 1;
-  }
-  .bl-layout-cell--2-desktop {
-    grid-column-end: span 2;
-  }
-  .bl-layout-cell--3-desktop {
-    grid-column-end: span 3;
-  }
-  .bl-layout-cell--4-desktop {
-    grid-column-end: span 4;
-  }
-  .bl-layout-cell--5-desktop {
-    grid-column-end: span 5;
-  }
-  .bl-layout-cell--6-desktop {
-    grid-column-end: span 6;
-  }
-  .bl-layout-cell--7-desktop {
-    grid-column-end: span 7;
-  }
-  .bl-layout-cell--8-desktop {
-    grid-column-end: span 8;
-  }
-  .bl-layout-cell--9-desktop {
-    grid-column-end: span 9;
-  }
-  .bl-layout-cell--10-desktop {
-    grid-column-end: span 10;
-  }
-  .bl-layout-cell--11-desktop {
-    grid-column-end: span 11;
-  }
-  .bl-layout-cell--12-desktop {
-    grid-column-end: span 12;
-  }
-}
-/*****    component: layout-cell    *****/
-/****************************************/
-/****************************************/
 /*********************************************/
 /*********************************************/
 /*****    component: layout-container    *****/
@@ -1121,6 +1121,12 @@ body {
 /*****    component: panel    *****/
 /**********************************/
 /**********************************/
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
 /**************************************/
 /**************************************/
 /*****    component: paragraph    *****/
@@ -1180,12 +1186,6 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/************************************************/
-/************************************************/
-/*****    component: radio-buttons-group    *****/
-/*****    component: radio-buttons-group    *****/
-/************************************************/
-/************************************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1411,17 +1411,6 @@ body {
 /*****    component: spinner    *****/
 /************************************/
 /************************************/
-/*********************************/
-/*********************************/
-/*****    component: text    *****/
-.bl-text {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: text    *****/
-/*********************************/
-/*********************************/
 /***********************************/
 /***********************************/
 /*****    component: switch    *****/
@@ -1452,6 +1441,116 @@ body {
 /*****    component: switch    *****/
 /***********************************/
 /***********************************/
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+.bl-text {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
+/***********************************/
+/***********************************/
+/*****    component: slider    *****/
+.bl-slider:hover .bl-slider-rail {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-track {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark-active {
+  background-color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider.bl-slider--disabled .bl-slider-rail {
+  color: rgba(128, 128, 128, 0.38);
+}
+.bl-slider.bl-slider--disabled .bl-slider-track {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
+  left: auto;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
+  background: gray;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-rail {
+  color: rgba(51, 122, 183, 0.38);
+  opacity: 1;
+}
+.bl-slider .bl-slider-track {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider .bl-slider-thumb {
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+}
+.bl-slider .bl-slider-thumb.bl-slider--active {
+  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: slider    *****/
+/***********************************/
+/***********************************/
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+.bl-video {
+  border: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1585,105 +1684,6 @@ body {
 /*****    component: textarea    *****/
 /*************************************/
 /*************************************/
-/***********************************/
-/***********************************/
-/*****    component: slider    *****/
-.bl-slider:hover .bl-slider-rail {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-track {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark-active {
-  background-color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider.bl-slider--disabled .bl-slider-rail {
-  color: rgba(128, 128, 128, 0.38);
-}
-.bl-slider.bl-slider--disabled .bl-slider-track {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
-  left: auto;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
-  background: gray;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-rail {
-  color: rgba(51, 122, 183, 0.38);
-  opacity: 1;
-}
-.bl-slider .bl-slider-track {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider .bl-slider-thumb {
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-}
-.bl-slider .bl-slider-thumb.bl-slider--active {
-  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-/*****    component: slider    *****/
-/***********************************/
-/***********************************/
-/**********************************/
-/**********************************/
-/*****    component: video    *****/
-.bl-video {
-  border: 4px;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: video    *****/
-/**********************************/
-/**********************************/
 .mysql {
   width: 100%;
   margin-bottom: 40px;
