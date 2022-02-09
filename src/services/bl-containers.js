@@ -19,42 +19,49 @@ class BlContainers {
     bl = {
         server: {
             name: 'bl-server',
+            imageName: 'bl-server',
             serviceStatus: () => blStatefulsetStatus('bl-server'),
             installService: installArguments => installBlServer(installArguments),
             deleteService: () => deleteService('bl-server')
         },
         rtServer: {
             name: 'bl-rt-server',
+            imageName: 'bl-rt-server',
             serviceStatus: () => blStatefulsetStatus('bl-rt-server'),
             installService: installArguments => installBlRtServer(installArguments),
             deleteService: () => deleteService('bl-rt-server')
         },
         taskman: {
             name: 'bl-taskman',
+            imageName: 'bl-server',
             serviceStatus: () => blStatefulsetStatus('bl-taskman'),
             installService: installArguments => installBlTaskman(installArguments),
             deleteService: () => deleteService('bl-taskman')
         },
         hazelcast: {
             name: 'bl-hazelcast-3125',
+            imageName: 'bl-hazelcast',
             serviceStatus: () => blStatefulsetStatus('bl-hazelcast-3125'),
             installService: installArguments => installBlHazelcast(installArguments),
             deleteService: () => deleteService('bl-hazelcast-3125')
         },
         javaCoderunner: {
             name: 'bl-coderunner-java',
+            imageName: 'bl-coderunner-java',
             serviceStatus: () => blStatefulsetStatus('bl-coderunner-java'),
             installService: installArguments => installBlJavaCoderunner(installArguments),
             deleteService: () => deleteService('bl-coderunner-java')
         },
         jsCoderunner: {
             name: 'bl-coderunner-js',
+            imageName: 'bl-coderunner-js',
             serviceStatus: () => blStatefulsetStatus('bl-coderunner-js'),
             installService: installArguments => installBlJsCoderunner(installArguments),
             deleteService: () => deleteService('bl-coderunner-js')
         },
         console: {
             name: 'bl-web-console',
+            imageName: 'bl-web-console',
             serviceStatus: () => blStatefulsetStatus('bl-web-console'),
             installService: installArguments => installBlWebConsole(installArguments),
             deleteService: () => deleteService('bl-web-console')

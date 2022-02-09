@@ -9,6 +9,7 @@
       "mysql-connection-configuration-service": "verbose",
       "fs-util": "verbose",
       "bl-statefulset-status": "info",
+      "run-upgrade-job": "verbose",
       "install-bl-rt-server": "verbose",
       "install-bl-server": "verbose"
     }
