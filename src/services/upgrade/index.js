@@ -5,6 +5,7 @@ import { k8sAppsV1Api, k8sCoreV1Api } from '../k8s/k8s'
 import { k8sConfig } from '../../config/k8s-config'
 import * as k8s from '@kubernetes/client-node'
 import { blContainers } from '../bl-containers'
+import { listPods } from '../k8s/k8s-list-pods'
 
 const logger = Logger('UpgradeService')
 
@@ -49,6 +50,20 @@ class UpgradeService {
         const options = { 'headers': { 'Content-type': k8s.PatchUtils.PATCH_FORMAT_STRATEGIC_MERGE_PATCH } }
         return await k8sAppsV1Api.patchNamespacedStatefulSet(serviceName, await k8sConfig.getNamespace(), body,
             undefined, undefined, undefined, undefined, options)
+    }
+
+    async getJobs() {
+        const upgradeJobConfig = require('../k8s/config/upgrade.json')
+        const pods = (await listPods(upgradeJobConfig.job.spec.template.metadata.labels.app, true)).body.items
+        return pods.map(pod => {
+            return {
+                jobName: pod.metadata.labels['job-name'],
+                podName: pod.metadata.name,
+                creationTimestamp: pod.metadata.creationTimestamp
+            }
+        }).sort((job1, job2) => {
+            return new Date(job2.creationTimestamp).getTime() - new Date(job1.creationTimestamp).getTime()
+        })
     }
 }
 
