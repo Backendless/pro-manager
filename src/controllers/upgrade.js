@@ -9,3 +9,7 @@ router.get('/status', handler(() => manageService.status()))
 router.put('/', handler(({ body }) => {
     return upgradeService.upgrade(body)
 }))
+
+router.get('/jobs', handler(() => {
+    return upgradeService.getJobs()
+}))
