@@ -8,6 +8,7 @@ import { isWin } from '../../utils/os'
 import * as fs from 'fs'
 import { deleteService } from '../k8s/k8s-delete-service'
 import { ApiError } from '../../error'
+import { mountPathConfig } from '../../config/mount-path-config'
 
 const logger = Logger('install-service')
 
@@ -82,6 +83,8 @@ class InstallService {
         for (const container of containers) {
             await this._installContainer(container, install)
         }
+
+        await mountPathConfig.save(install.mountPath)
 
         return installStatus.get(0)
     }
