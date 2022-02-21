@@ -17,8 +17,8 @@ export class ServiceLog {
         this.socketIO = socketIO
     }
 
-    async subscribe({ socketIOClientId, serviceName, channelName }) {
-        const subscriber = { serviceName, channelName }
+    async subscribe({ socketIOClientId, serviceName, podName, channelName }) {
+        const subscriber = { serviceName, channelName, podName }
 
         const subscribers = this.clients[serviceName] = this.clients[serviceName] || []
 
@@ -78,27 +78,43 @@ export class ServiceLog {
 
     async _subscribeToK8s(subscriber) {
         const { serviceName, channelName } = subscriber
+        let { podName } = subscriber
         const logStream = new stream.PassThrough()
 
         logStream.on('data', chunk => {
-            logger.verbose(`log message: ${chunk}`)
             this.socketIO.emit(channelName, chunk.toString())
         })
 
-        const pods = await listPods(serviceName)
+        logStream.on('error', e => {
+            logger.error(`error from subscriber [${subscriber}] is: ${e}`)
+        })
 
-        if (pods == null || pods.length < 1) {
-            throw new Error(`There is no pods for service '${serviceName}'`)
+        if (podName == null) {
+            const pods = await listPods(serviceName)
+
+            if (pods == null || pods.length < 1) {
+                throw new Error(`There is no pods for service '${serviceName}'`)
+            }
+
+            podName = pods[0].name
         }
-
-        const podName = pods[0].name
 
         logger.info(`Connecting to '${podName}' pod, to get logs for service '${serviceName}'`)
 
-        const req = await k8sLog.log(await k8sConfig.getNamespace(), podName, serviceName, logStream,
+        const req = await k8sLog.log(await k8sConfig.getNamespace(), podName, null, logStream,
             () => {
             },
-            { follow: true, tailLines: 50, pretty: false, timestamps: true })
+            { follow: true, pretty: false, timestamps: true })
+
+        req.on('response', resp => {
+            logger.info(`response on subscribe is: ${JSON.stringify(resp)}`)
+
+            if (resp.statusCode >= 400) {
+                this.socketIO.emit(channelName, `There is an error during subscription: ${JSON.stringify(resp)}. 
+                \nPlease disconnect and try reconnect again`)
+            }
+
+        })
 
         logger.info(`Connected to '${podName}' pod, to get logs for service '${serviceName}`)
 

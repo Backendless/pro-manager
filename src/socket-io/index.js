@@ -17,9 +17,9 @@ io.on('connection', client => {
     console.log(`a client with id '${client.id}  connected: ${JSON.stringify(client.handshake)}`)
 
     client.on('service-logs:subscribe', subscriber => {
-        const { serviceName, channelName } = subscriber
-        logger.info(`client ${client.id} subscribed for '${channelName}' for logs for service '${serviceName}'`)
-        serviceLog.subscribe({ socketIOClientId: client.id, serviceName, channelName })
+        const { serviceName, podName, channelName } = subscriber
+        logger.info(`client ${client.id} subscribed for '${channelName}' for logs for service '${serviceName}' and pod name is '${podName}'`)
+        serviceLog.subscribe({ socketIOClientId: client.id, serviceName, podName, channelName })
     })
 
     client.on('service-logs:unsubscribe', subscriber => {
