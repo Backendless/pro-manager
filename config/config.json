@@ -11,7 +11,8 @@
       "bl-statefulset-status": "info",
       "run-upgrade-job": "verbose",
       "install-bl-rt-server": "verbose",
-      "install-bl-server": "verbose"
+      "install-bl-server": "verbose",
+      "service-log": "verbose"
     }
   }
 }

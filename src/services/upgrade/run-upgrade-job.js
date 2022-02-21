@@ -11,7 +11,7 @@ export async function runUpgradeJob({ version }) {
     const job = upgradeConfig.job
     job.spec.template.spec.containers[0].image = `backendless/bl-upgrade:${version}`
     const date = new Date()
-    const jobName = `bl-upgrade-${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
+    const jobName = `bl-upgrade-${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}-${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
     logger.info(`job name is ${jobName}`)
     job.metadata.name = jobName
 
