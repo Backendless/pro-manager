@@ -2,11 +2,13 @@ import { k8sBatchV1Api } from '../k8s/k8s'
 import { k8sConfig } from '../../config/k8s-config'
 import { Logger } from '../../logger'
 import { mountPathConfig } from '../../config/mount-path-config'
+import { readFileContent } from '../../utils/fs'
+import path from 'path'
 
 const logger = Logger('run-upgrade-job')
 
 export async function runUpgradeJob({ version }) {
-    const upgradeConfig = require('../k8s/config/upgrade.json')
+    const upgradeConfig = JSON.parse(await readFileContent(path.resolve(__dirname, '../k8s/config/upgrade.json')))
     logger.info('initializing upgrade job...')
     const job = upgradeConfig.job
     job.spec.template.spec.containers[0].image = `backendless/bl-upgrade:${version}`
@@ -26,9 +28,16 @@ export async function runUpgradeJob({ version }) {
         name: 'logs'
     }]
 
+    job.spec.template.metadata = {
+        labels: {
+            app: 'bl-upgrade',
+            upgradeJobName: jobName
+        }
+    }
+
     const upgradeJobResult = await k8sBatchV1Api.createNamespacedJob(await k8sConfig.getNamespace(), job)
 
-    logger.verbose(`result of upgrade job is ${ JSON.stringify(upgradeJobResult)}`)
+    logger.verbose(`result of upgrade job is ${JSON.stringify(upgradeJobResult)}`)
 
     return upgradeJobResult
 }

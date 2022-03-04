@@ -10,11 +10,6 @@
       "completions": 1,
       "parallelism": 1,
       "template": {
-        "metadata": {
-          "labels": {
-            "app": "bl-upgrade"
-          }
-        },
         "spec": {
           "containers": [
             {

@@ -10,6 +10,7 @@
       "fs-util": "verbose",
       "bl-statefulset-status": "info",
       "run-upgrade-job": "verbose",
+      "UpgradeService": "verbose",
       "install-bl-rt-server": "verbose",
       "install-bl-server": "verbose",
       "service-log": "verbose"

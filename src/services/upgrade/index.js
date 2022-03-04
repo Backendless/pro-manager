@@ -11,26 +11,42 @@ const logger = Logger('UpgradeService')
 
 class UpgradeService {
     async upgrade({ version }) {
-        runUpgradeJob({ version })
-            .then(async result => {
-                const jobName = result.response.body.metadata.name
-                await waitForJobToComplete(jobName)
-                logger.info('upgrade job completed')
+        const result = await runUpgradeJob({ version })
+        const jobName = result.response.body.metadata.name
 
-                const containers = Object.entries(blContainers.bl)
-                    .filter(([key, container]) => container !== blContainers.bl.initConfigValues)
-                    .map(([key, container]) => container)
+        const jobPods = await k8sCoreV1Api.listNamespacedPod(await k8sConfig.getNamespace(), false, true, '', '', `upgradeJobName=${jobName}`)
+        logger.info('job started\n\n')
 
-                for (const container of containers) {
-                    logger.info(`upgrading ${container.name} to ${container.imageName}:${version}`)
-                    const result = await this._upgradeVersion(container.name, container.imageName, version)
-                    logger.info(`upgrade version for ${container.imageName} result is ${JSON.stringify(result)}`)
-                }
+        const jobPod = jobPods.body.items[0]
+        logger.verbose(`upgrade job pod is ${JSON.stringify(jobPod)}`)
 
-            })
-            .catch(err => {
-                logger.error(`Run upgrade job failed with error: ${JSON.stringify(err)}`)
-            })
+        setImmediate(() => this._waitJobCompleteAndUpgradeServices(version, jobName))
+
+        return {
+            jobName: jobName,
+            podName: jobPod.metadata.name,
+            creationTimestamp: jobPod.metadata.creationTimestamp
+        }
+    }
+
+    async _waitJobCompleteAndUpgradeServices(version, jobName) {
+        try {
+            await waitForJobToComplete(jobName)
+            logger.info('upgrade job completed')
+
+            const containers = Object.entries(blContainers.bl)
+                .filter(([key, container]) => container !== blContainers.bl.initConfigValues)
+                .map(([key, container]) => container)
+
+            for (const container of containers) {
+                logger.info(`upgrading ${container.name} to ${container.imageName}:${version}`)
+                const result = await this._upgradeVersion(container.name, container.imageName, version)
+                logger.info(`upgrade version for ${container.imageName} result is ${JSON.stringify(result)}`)
+            }
+
+        } catch (err) {
+            logger.error(`Run upgrade job failed with error: ${JSON.stringify(err)}`)
+        }
     }
 
     async _upgradeVersion(serviceName, imageName, version) {
