@@ -3,6 +3,7 @@ import { describeDataConfiguration } from './describe-data-configuration'
 import { Logger } from '../../../../logger'
 import { manageService } from '../../manage-service'
 import { blContainers } from '../../../bl-containers'
+import { getValueByDescription } from '../get-value-by-description'
 
 const logger = Logger('data-configuration-service')
 
@@ -27,7 +28,7 @@ class DataConfigurationService {
       }
 
       logger.verbose(`found value ${value} for key ${key}`)
-      config[description.name] = value
+      config[description.name] = getValueByDescription(description, value)
     }
 
     return config
