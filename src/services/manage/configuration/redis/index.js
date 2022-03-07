@@ -4,6 +4,7 @@ import { Logger } from '../../../../logger'
 import { manageService } from '../../manage-service'
 import { getRedisTypes } from './get-redis-types'
 import { blContainers } from '../../../bl-containers'
+import { getValueByDescription } from '../get-value-by-description'
 
 const logger = Logger('redis-configuration-service')
 
@@ -28,7 +29,7 @@ class RedisConfigurationService {
             }
 
             logger.verbose(`found value ${value} for key ${key}`)
-            config[description.name] = value
+            config[description.name] = getValueByDescription(description, value)
         }
 
         config.type = redisType

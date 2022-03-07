@@ -3,6 +3,7 @@ import { describeMysqlConfiguration } from './describe-mysql-configuration'
 import { Logger } from '../../../../logger'
 import { manageService } from '../../manage-service'
 import { blContainers } from '../../../bl-containers'
+import { getValueByDescription } from '../get-value-by-description'
 
 const logger = Logger('mysql-connection-configuration-service')
 
@@ -27,7 +28,7 @@ class MysqlConnectionConfigurationService {
       }
 
       logger.verbose(`found value ${value} for key ${key}`)
-      shard[description.name] = value
+      shard[description.name] = getValueByDescription(description, value)
     }
 
     shard.shard = shardName
