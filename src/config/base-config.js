@@ -1,6 +1,6 @@
-import { JsonDB } from 'node-json-db'
-import { Config } from 'node-json-db/dist/lib/JsonDBConfig'
 import { Logger } from '../logger'
+import { JsonDb } from '../json-db'
+import { get } from '@babel/register/lib/cache'
 
 const logger = Logger('base-config')
 
@@ -8,14 +8,15 @@ const logger = Logger('base-config')
 export class BaseConfig {
     static CONFIG_DIR = `${__dirname}/../../config/`
     _configFileName = null
-    _db = null
+    _jsonDb = null
 
     constructor(configFileName) {
         this._configFileName = `${BaseConfig.CONFIG_DIR}${configFileName}`
+        this._jsonDb = new JsonDb({ dbPath: this._configFileName })
     }
 
     async get(path) {
-        return this._getDb().then(db => new Promise((resolve, reject) => {
+        return this._jsonDb.getDb().then(db => new Promise((resolve, reject) => {
             try {
                 resolve(this._getSync(path, db))
             } catch (e) {
@@ -24,8 +25,20 @@ export class BaseConfig {
         }))
     }
 
+    async getNullable(path) {
+        try {
+            return await this.get(path)
+        } catch (e) {
+            if (e.message != null && e.message.includes('Can\'t find dataPath')) {
+                return null
+            }
+
+            throw e
+        }
+    }
+
     getSync(path) {
-        return this._getSync(path, this._getDbSync())
+        return this._getSync(path, this._jsonDb.getDbSync())
     }
 
     _getSync(path, db) {
@@ -40,7 +53,7 @@ export class BaseConfig {
     }
 
     async set(path, value) {
-        return this._getDb().then(db => new Promise((resolve, reject) => {
+        return this._jsonDb.getDb().then(db => new Promise((resolve, reject) => {
             logger.verbose(`trying to save value '${value}' for '${path}' to config ${this._configFileName}`)
             try {
                 const pushResult = db.push(path, value)
@@ -51,30 +64,5 @@ export class BaseConfig {
                 reject(e)
             }
         }))
-    }
-
-    _getDb() {
-        return new Promise((resolve, reject) => {
-            try {
-                resolve(this._getDbSync())
-            } catch (e) {
-                reject(e)
-            }
-        })
-    }
-
-    _getDbSync() {
-        if (this._db == null) {
-            logger.verbose(`creating json db for ${this._configFileName}`)
-            try {
-                this._db = new JsonDB(new Config(this._configFileName, true, false, '/'))
-                logger.verbose(`created json db for ${this._configFileName}`)
-            } catch (e) {
-                logger.error(`error during creating json db for ${this._configFileName}, error: ${e}`)
-                throw e
-            }
-        }
-
-        return this._db
     }
 }
