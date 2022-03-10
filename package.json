@@ -29,6 +29,7 @@
     "@webteks/bact": "git+https://github.com/webteks/backendless_schema_tools.git",
     "autolinker": "^3.14.3",
     "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
     "config": "^3.3.6",
     "cors": "^2.8.5",
