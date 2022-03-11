@@ -12,6 +12,7 @@ describe('user registration', () => {
         const user = await userService.register(userToCreate)
         expect(typeof user.id).toBe('string')
         expect(typeof user.created).toBe('number')
+        expect(typeof user.resetPasswordTime).toBe('number')
         expect(user.login).toBe(userToCreate.login)
         expect(user.password).not.toBe(userToCreate.password)
     })
