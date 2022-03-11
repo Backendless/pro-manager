@@ -79,7 +79,12 @@ class UserService {
     }
 
     async get() {
-
+        logger.info('getting users')
+        const db = await this._jsonDb.getDb()
+        return db.getData(`${_usersPath}`).map( user => {
+            delete user.password
+            return user
+        })
     }
 
     _getIndexByLogin(db, login) {
