@@ -9,3 +9,9 @@ UserError.DuplicateUserError = class DuplicateUserError extends ApiError.Duplica
         super(`User with login'${login}' already exists`)
     }
 }
+
+UserError.UserOrPasswordDoesNotMatchError = class UserOrPasswordDoesNotMatchError extends ApiError.NotAuthorizedError {
+    constructor() {
+        super('User or password is not correct')
+    }
+}
