@@ -20,3 +20,7 @@ router.post('/login', handler(async ({ res, body }) => {
 router.get('/', auth(), handler(() => {
     return userService.get()
 }))
+
+router.delete('/', auth(), handler(({ body }) => {
+    return userService.remove(body.id)
+}))

@@ -74,7 +74,17 @@ class UserService {
         return token
     }
 
-    async remove(login) {
+    async remove(id) {
+        logger.info(`removing user with id '${id}'`)
+        const db = await this._jsonDb.getDb()
+        const userIndex = this._getIndexById(db, id)
+
+        if (userIndex < 0) {
+            logger.info(`the user with login '${id}' does not exist`)
+        }else {
+            db.delete(`${_usersPath}/[${userIndex}]`)
+            logger.info(`user with id '${id}' removed`)
+        }
 
     }
 
