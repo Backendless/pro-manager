@@ -1,6 +1,5 @@
 import { handler, Router } from '../utils/router'
 import { installService } from '../services/install'
-import { installStatus } from '../services/install/install-status'
 
 export const router = new Router()
 

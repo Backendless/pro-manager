@@ -28,7 +28,7 @@ export class JsonDb {
         if (this._db == null) {
             logger.verbose(`creating json db for ${this._dbPath}`)
             try {
-                this._db = new JsonDB(new Config(this._dbPath, true, false, this._separator))
+                this._db = new JsonDB(new Config(this._dbPath, true, true, this._separator))
                 logger.verbose(`created json db for ${this._dbPath}`)
             } catch (e) {
                 logger.error(`error during creating json db for ${this._dbPath}, error: ${e}`)
