@@ -1,5 +1,6 @@
 import { handler, Router } from '../../utils/router'
 import { userService } from '../../services/user'
+import { auth } from '../middleware/auth'
 
 export const router = new Router()
 
@@ -9,12 +10,13 @@ router.post('/register', handler(({ body }) => {
     return userService.register(body)
 }))
 
-router.post('/login', handler(({ res, body }) => {
-    const token = userService.login(body)
-    res.cookie('auth-token', token, { maxAge: _maxCookieAge })
+router.post('/login', handler(async ({ res, body }) => {
+    const token = await userService.login(body)
+    console.log('token ', token)
+    res.cookie(userService.getTokenKey(), token, { maxAge: _maxCookieAge })
     return token
 }))
 
-router.get('/', handler(() => {
+router.get('/', auth(), handler(() => {
     return userService.get()
 }))

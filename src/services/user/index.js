@@ -81,19 +81,72 @@ class UserService {
     async get() {
         logger.info('getting users')
         const db = await this._jsonDb.getDb()
-        return db.getData(`${_usersPath}`).map( user => {
+        return db.getData(`${_usersPath}`).map(user => {
             delete user.password
             return user
         })
     }
 
-    _getIndexByLogin(db, login) {
-        let userIndex
+    async checkAuth(token) {
+        if (!await userConfig.getAuthEnabled()){
+            logger.verbose('Auth disabled, check skipped')
+            return
+        }
+
+        logger.verbose(`checking auth for token '${JSON.stringify(token)}'`)
+
+        if(token == null){
+            throw new UserError.InlaidTokenError()
+        }
+
+        let userFromJwt
         try {
-            userIndex = db.getIndex(_usersPath, login, 'login')
+            userFromJwt = jwt.verify(token, await userConfig.getJwtPass())
+        }catch (e)
+        {
+            logger.error(`Error during parsing JWT token [${token}]. Error: ${e}`)
+            throw new UserError.InlaidTokenError()
+        }
+        logger.verbose(`User from jwt is [${userFromJwt}]`)
+
+        const db = await this._jsonDb.getDb()
+        const userIndex = this._getIndexById(db, userFromJwt.id)
+
+        if (userIndex < 0) {
+            logger.warn(`the user with login '${userFromJwt.login}' does not exist`)
+            throw new UserError.InlaidTokenError()
+        }
+
+        const user = db.getData(`${_usersPath}[${userIndex}]`)
+        logger.verbose(`user [${JSON.stringify(user)}] found`)
+
+        if(user.resetPasswordTime > userFromJwt.resetPasswordTime){
+            logger.warn(`the user reset password time '${user.resetPasswordTime}' should the same as 
+            reset password from jwt '${userFromJwt.resetPasswordTime}'`)
+            throw new UserError.InlaidTokenError()
+        }
+    }
+
+    getTokenKey(){
+        return 'auth-token'
+    }
+
+    _getIndexByLogin(db, login) {
+        return this._getIndexByKey(db, 'login', login)
+    }
+
+    _getIndexById(db, id) {
+        return this._getIndexByKey(db, 'id', id)
+    }
+
+    _getIndexByKey(db, key, value) {
+        let userIndex = -1
+        try {
+            userIndex = db.getIndex(_usersPath, value, key)
         } catch (e) {
             logger.info(`User registration error: ${e}`)
         }
+
         return userIndex
     }
 }

@@ -2,11 +2,17 @@ import { BaseConfig } from './base-config'
 import uuidv1 from 'uuid/v1'
 
 const _configSalt = '/user/bcrypt/salt'
+const _configAuthEnabled = '/user/authEnabled'
 const _configJwtPass = '/user/jwt/pass'
 
 class UserConfig {
     _baseConfig = new BaseConfig('config.json')
     _jwtPass = null
+
+    async getAuthEnabled() {
+        const authEnabled = await this._baseConfig.getNullable(_configAuthEnabled)
+        return authEnabled == null ? true : authEnabled
+    }
 
     async getSalt() {
         const salt = await this._baseConfig.getNullable(_configSalt)

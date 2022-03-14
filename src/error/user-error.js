@@ -15,3 +15,15 @@ UserError.UserOrPasswordDoesNotMatchError = class UserOrPasswordDoesNotMatchErro
         super('User or password is not correct')
     }
 }
+
+UserError.AuthReqiredError = class AuthReqiredError extends ApiError.ForbiddenError {
+    constructor() {
+        super('Request is forbidden. Authorization is required')
+    }
+}
+
+UserError.InlaidTokenError = class InlaidTokenError extends ApiError.ForbiddenError {
+    constructor() {
+        super('The authentication token is invalid. Please re-login the user')
+    }
+}
