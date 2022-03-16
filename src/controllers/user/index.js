@@ -10,6 +10,10 @@ router.post('/register', handler(({ body }) => {
     return userService.register(body)
 }))
 
+router.put('/:id', handler(({ params, body }) => {
+    return userService.update({ id: params.id, ...body })
+}))
+
 router.post('/login', handler(async ({ res, body }) => {
     const token = await userService.login(body)
     console.log('token ', token)

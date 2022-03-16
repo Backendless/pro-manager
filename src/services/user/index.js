@@ -39,11 +39,59 @@ class UserService {
             password: hashedPassword,
             id: uuidv1(),
             created: new Date().getTime(),
+            updated: new Date().getTime(),
             resetPasswordTime: new Date().getTime()
         }
-        logger.info(`will be save user with login '${login}' and id '${user.id}'`)
+        logger.info(`the user will be save with login '${login}' and id '${user.id}'`)
         db.push(`${_usersPath}[]`, user, true)
-        return user
+
+        const userToReturn = { ...user }
+        delete userToReturn.password
+        return userToReturn
+    }
+
+    async update({ id, login, password }) {
+        logger.info(`updating user with id '${id}'`)
+        const db = await this._jsonDb.getDb()
+        const userIndex = this._getIndexById(db, id)
+
+        logger.info(`user index for id '${id}' is [${userIndex}]`)
+
+        if (userIndex < 0) {
+            logger.info(`the user with id '${id}' not found at index [${userIndex}]`)
+            throw new UserError.UserNotFoundByIdError()
+        }
+
+        const user = db.getData(`${_usersPath}[${userIndex}]`)
+        logger.info(`user to update found [${JSON.stringify(user)}] found`)
+
+        let updated = false
+
+        if (password != null) {
+            const hashedPassword = await bcrypt.hash(password, await userConfig.getSalt())
+            logger.info(`hashed password for user with login '${login}'`)
+            user.password = hashedPassword
+            user.resetPasswordTime = new Date().getTime()
+            updated = true
+        }
+
+        if (login != null && !user.login !== login) {
+            user.login = login
+            updated = true
+        }
+
+        if (updated) {
+            logger.info(`the user will be updated with id '${user.id}'`)
+            user.updated = new Date().getTime()
+            db.push(`${_usersPath}[${userIndex}]`, user, true)
+            logger.info(`the user is updated '${JSON.stringify(user)}'`)
+        } else {
+            logger.info(`the user is NOT updated with id '${user.id}'`)
+        }
+
+        const userToReturn = { ...user }
+        delete userToReturn.password
+        return userToReturn
     }
 
     async login({ login, password }) {

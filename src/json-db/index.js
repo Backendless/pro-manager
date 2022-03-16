@@ -36,6 +36,7 @@ export class JsonDb {
             }
         }
 
+        this._db.reload()
         return this._db
     }
 }
