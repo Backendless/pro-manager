@@ -89,9 +89,9 @@ class UserService {
             logger.info(`the user is NOT updated with id '${user.id}'`)
         }
 
-        delete user.password
-
-        return user
+        const userToReturn = { ...user }
+        delete userToReturn.password
+        return userToReturn
     }
 
     async login({ login, password }) {
