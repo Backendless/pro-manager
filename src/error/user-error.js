@@ -27,3 +27,9 @@ UserError.InlaidTokenError = class InlaidTokenError extends ApiError.ForbiddenEr
         super('The authentication token is invalid. Please re-login the user')
     }
 }
+
+UserError.UserNotFoundByIdError = class UserNotFoundByIdError extends ApiError.NotFoundError {
+    constructor() {
+        super('The user is not found by id')
+    }
+}
