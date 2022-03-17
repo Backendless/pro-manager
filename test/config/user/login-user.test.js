@@ -31,7 +31,7 @@ describe('user login', () => {
         await userService.register(userToCreate)
         userToCreate.password = 'wrong pass'
         const userFunction = async () => await userService.login(userToCreate)
-        await expect(userFunction).rejects.toThrow(UserError.DuplicateUserError )
+        await expect(userFunction).rejects.toThrow(UserError.DuplicateUserError   )
     })
 
 })
