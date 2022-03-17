@@ -23,7 +23,7 @@ describe('user registration', () => {
         const userToCreate = {login: 'testexists', password: 'test'}
         await userService.register(userToCreate)
         const userFunction = async () => await userService.register(userToCreate)
-        await expect(userFunction).rejects.toThrow(UserError.UserOrPasswordDoesNotMatchError)
+        await expect(userFunction).rejects.toThrow(UserError.DuplicateUserError)
     })
 
 })
