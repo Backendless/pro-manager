@@ -6,11 +6,11 @@ export const router = new Router()
 
 const _maxCookieAge = 1000*3600*24*60
 
-router.post('/register', handler(({ body }) => {
+router.post('/register', auth(), handler(({ body }) => {
     return userService.register(body)
 }))
 
-router.put('/:id', handler(({ params, body }) => {
+router.put('/:id', auth(), handler(({ params, body }) => {
     return userService.update({ id: params.id, ...body })
 }))
 
