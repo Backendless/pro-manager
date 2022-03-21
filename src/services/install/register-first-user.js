@@ -17,18 +17,19 @@ export async function registerFirstUser({ login, password }) {
 
         if (users.length > 0) {
             const user = users.find(u => u.login === login)
+
             if (!user) {
                 throw new InstallError.UserExistButLoginNotMatchError()
-            } else {
-                try {
-                    await userService.login({ login, password })
-                } catch (e) {
-                    if (e instanceof UserError.UserOrPasswordDoesNotMatchError) {
-                        throw new InstallError.UserExistButPasswordDoesNotMatch()
-                    }
+            }
 
-                    throw e
+            try {
+                await userService.login({ login, password })
+            } catch (e) {
+                if (e instanceof UserError.UserOrPasswordDoesNotMatchError) {
+                    throw new InstallError.UserExistButPasswordDoesNotMatch()
                 }
+
+                throw e
             }
         } else {
             await userService.register({ login, password })
