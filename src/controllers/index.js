@@ -6,7 +6,7 @@ export const mainRouter = new Router()
 
 mainRouter.use(cookieParser())
 mainRouter.use('/services/k8s', auth(), require('./k8s').router)
-mainRouter.use('/services/install', auth(), require('./install').router)
+mainRouter.use('/services/install', require('./install').router)
 mainRouter.use('/services/upgrade', auth(), require('./upgrade').router)
 mainRouter.use('/services/manage', auth(), require('./manager').router)
 mainRouter.use('/services/user', require('./user').router)

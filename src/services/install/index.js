@@ -9,6 +9,10 @@ import * as fs from 'fs'
 import { deleteService } from '../k8s/k8s-delete-service'
 import { ApiError } from '../../error'
 import { mountPathConfig } from '../../config/mount-path-config'
+import { userConfig } from '../../config/user-config'
+import { UserError } from '../../error/user-error'
+import { userService } from '../user'
+import { registerFirstUser } from './register-first-user'
 
 const logger = Logger('install-service')
 
@@ -40,6 +44,8 @@ class InstallService {
             throw new ApiError.BadRequestError(`Read write access is denied for ${install.mountPath}'`)
         }
 
+        await registerFirstUser( install )
+
         //install process should be async
         this._install(install).then(result => {
             installStatus.setServiceCreated(true)
@@ -51,8 +57,6 @@ class InstallService {
     }
 
     async _install(install) {
-
-
         if (isWin()) {
             //we should replace `C:` or `D:` or any other latter to /mnt/<latter> because docker paths will be mounted in this way
             const mountPathParts = install.mountPath.match(/(.)(:)(.*)/)
