@@ -17,7 +17,7 @@ export async function registerFirstUser({ login, password }) {
 
         if (users.length > 0) {
             const user = users.find(u => u.login === login)
-            if (user == null) {
+            if (!user) {
                 throw new InstallError.UserExistButLoginNotMatchError()
             } else {
                 try {

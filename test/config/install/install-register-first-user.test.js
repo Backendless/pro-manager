@@ -32,7 +32,7 @@ describe('register first user during installation', () => {
         const userToCreate = {login: 'testexists', password: 'test'}
         await userService.register(userToCreate)
         userToCreate.password = 'wrong pass'
-        const userFunction = async () => await registerFirstUser(userToCreate)
+        const userFunction = () => registerFirstUser(userToCreate)
         await expect(userFunction).rejects.toThrow(InstallError.UserExistButPasswordDoesNotMatch)
     })
 
@@ -40,7 +40,7 @@ describe('register first user during installation', () => {
         const userToCreate = {login: 'testexists', password: 'test'}
         await userService.register(userToCreate)
         userToCreate.login = 'bla'
-        const userFunction = async () => await registerFirstUser(userToCreate)
+        const userFunction = () => registerFirstUser(userToCreate)
         await expect(userFunction).rejects.toThrow(InstallError.UserExistButLoginNotMatchError)
     })
 
