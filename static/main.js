@@ -1388,11 +1388,32 @@ define('./pages/home/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
-  if ((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null))['servicesCreated']) {
-    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('serverStatus', null);
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (getObjectProperty((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null)), 'servicesCreated')) {
+    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('serverStatus', undefined);
   } else {
-    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('install', null);
+    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('install', undefined);
   }
 
   },
@@ -1412,15 +1433,35 @@ define('./pages/install/components/page/bundle.js', [], () => ({
   async onEnter(___arguments) {
     var error;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 
   localStorage.removeItem('originLoad');
   try {
     ___arguments.context.pageData['defaults'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/default-arguments', null));
-    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version'] = ((___arguments.context.pageData['defaults'])['version']);
-    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['mountPath'] = ((___arguments.context.pageData['defaults'])['mountPath']);
+    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version'));
+    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['mountPath'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath'));
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    await ( async function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
@@ -1441,13 +1482,34 @@ define('./pages/install/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', 
   async onClick(___arguments) {
     var error;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/install/', ({ 'version': (___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['version']),'mountPath': (___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['mountPath']),'licence': (___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['licence']) })));
-    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('progress', null);
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/install/', ({ 'version': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version')),'mountPath': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath')),'licence': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'licence')),'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) })));
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/login/', ({ 'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) })));
+    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('progress', undefined);
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    await ( async function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
@@ -1457,8 +1519,28 @@ define('./pages/install/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', 
   onDisabledStateAssignment(___arguments) {
     var disabled;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if ((((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version']) && (((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['mountPath']) && (((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['licence'])) {
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'version')) && (getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'mountPath')) && (getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'licence'))) {
     disabled = false;
     ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 1;
   } else {
@@ -4069,6 +4151,26 @@ define('./pages/serverStatus/components/page/bundle.js', [], () => ({
   async onEnter(___arguments) {
     var error, pollingIntervalMS;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
 function getGlobalEntitiesMap(mapName) { const globalScope = defineGlobalScope();return globalScope[mapName] = globalScope[mapName] || {};}
@@ -4081,7 +4183,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
   localStorage.removeItem('originLoad');
   ___arguments.context.pageData['groupActionList'] = [];
   try {
-    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    pollingIntervalMS = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(getObjectProperty((await ( async function () { return window.location })()), 'origin')) + String('/settings.json')))).setEncoding('utf8').send()), 'pollingIntervalMS'));
     if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
       pollingIntervalMS = 2000;
     }
@@ -4099,7 +4201,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     })()
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    await ( async function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
