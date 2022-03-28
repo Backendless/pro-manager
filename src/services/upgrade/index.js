@@ -1,4 +1,4 @@
-import { runUpgradeJob } from './run-upgrade-job'
+import { jobListLabel, runUpgradeJob } from './run-upgrade-job'
 import { Logger } from '../../logger'
 import { waitForJobToComplete } from '../../utils/job-waiter'
 import { k8sAppsV1Api, k8sCoreV1Api } from '../k8s/k8s'
@@ -69,8 +69,7 @@ class UpgradeService {
     }
 
     async getJobs() {
-        const upgradeJobConfig = require('../k8s/config/upgrade.json')
-        const pods = (await listPods(upgradeJobConfig.job.spec.template.metadata.labels.app, true)).body.items
+        const pods = (await listPods(jobListLabel, true)).body.items
         return pods.map(pod => {
             return {
                 jobName: pod.metadata.labels['job-name'],

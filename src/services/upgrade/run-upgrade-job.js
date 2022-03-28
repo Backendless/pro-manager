@@ -7,6 +7,8 @@ import path from 'path'
 
 const logger = Logger('run-upgrade-job')
 
+export const jobListLabel = 'bl-upgrade'
+
 export async function runUpgradeJob({ version }) {
     const upgradeConfig = JSON.parse(await readFileContent(path.resolve(__dirname, '../k8s/config/upgrade.json')))
     logger.info('initializing upgrade job...')
@@ -30,7 +32,7 @@ export async function runUpgradeJob({ version }) {
 
     job.spec.template.metadata = {
         labels: {
-            app: 'bl-upgrade',
+            app: jobListLabel,
             upgradeJobName: jobName
         }
     }
