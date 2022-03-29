@@ -2,8 +2,29 @@ define([], () => ({
   /* content */
   /* handler:onClick */
   async onClick(___arguments) {
-      if (___arguments.context.appData['previousService']) {
-    if ((___arguments.context.appData['openSocket'])['connected']) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.appData, 'previousService')) {
+    if (getObjectProperty((getObjectProperty(___arguments.context.appData, 'openSocket')), 'connected')) {
       await (async function(serviceName) {
 
       	  socket.emit ('service-logs:unsubscribe', {
@@ -15,10 +36,10 @@ define([], () => ({
 
 
 
-      })((___arguments.context.appData['previousService']));
+      })((getObjectProperty(___arguments.context.appData, 'previousService')));
     }
   }
-  ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('serviceLogs', ({ 'serviceName': (___arguments.context.dataModel['name']) }));
+  await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('serviceLogs', ({ 'serviceName': (getObjectProperty(___arguments.context.dataModel, 'name')),'pageServerStatus': 'ServerLogs' }));
   ___arguments.context.appData['logData'] = [];
   ___arguments.context.appData['openSocket'] = (await (async function(serviceName, logsArray) {
   	const io = await BackendlessUI.requireModule('https://cdn.jsdelivr.net/npm/socket.io-client@4.4.0/dist/socket.io.min.js');
@@ -38,8 +59,8 @@ define([], () => ({
   	  return socket
 
 
-  })((___arguments.context.dataModel['name']), (___arguments.context.appData['logData'])));
-  ___arguments.context.appData['previousService'] = (___arguments.context.dataModel['name']);
+  })((getObjectProperty(___arguments.context.dataModel, 'name')), (getObjectProperty(___arguments.context.appData, 'logData'))));
+  ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.dataModel, 'name'));
 
   },
   /* handler:onClick */

@@ -1,6 +1,8 @@
 {
   "category": "Reusable Components",
   "showInToolbox": true,
+  "type": "reusable",
+  "faIcon": "recycle",
   "name": "aside",
   "components": {
     "1fed8d3527f135219fb66d9de15adb04": {
@@ -229,16 +231,49 @@
           "dependencies": []
         }
       }
+    },
+    "7d9115a5d5fa680bccbf5b04e8670af9": {
+      "id": "aside TabHeaderUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        }
+      }
+    },
+    "a0ee549c33148fbe32998507d3e95d7c": {
+      "id": "aside TabContentUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeMount": {
+          "dependencies": [
+            "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+          ]
+        }
+      }
+    },
+    "5c9dbfe9dbd831d9236cdced4d2ee75e": {
+      "id": "aside TabContentTitle",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "dependencies": []
+        }
+      }
     }
   },
   "id": "r_dcac843a154c1eb2e28a4a08b5d34fec",
-  "type": "reusable",
   "dataBinding": {},
   "usedComponentTypes": [
     "block",
     "text"
   ],
   "style": {},
-  "attrs": {},
-  "faIcon": "recycle"
+  "attrs": {}
 }
