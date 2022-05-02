@@ -1388,11 +1388,32 @@ define('./pages/home/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
-  if ((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null))['servicesCreated']) {
-    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('serverStatus', null);
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (getObjectProperty((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null)), 'servicesCreated')) {
+    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('serverStatus', ({ 'pageServerStatus': 'ServerStatus' }));
   } else {
-    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('install', null);
+    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('install', undefined);
   }
 
   },
@@ -1412,15 +1433,35 @@ define('./pages/install/components/page/bundle.js', [], () => ({
   async onEnter(___arguments) {
     var error;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 
   localStorage.removeItem('originLoad');
   try {
     ___arguments.context.pageData['defaults'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/default-arguments', null));
-    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version'] = ((___arguments.context.pageData['defaults'])['version']);
-    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['mountPath'] = ((___arguments.context.pageData['defaults'])['mountPath']);
+    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version'));
+    ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['mountPath'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath'));
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    await ( async function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
@@ -1441,13 +1482,34 @@ define('./pages/install/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', 
   async onClick(___arguments) {
     var error;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/install/', ({ 'version': (___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['version']),'mountPath': (___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['mountPath']),'licence': (___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['licence']) })));
-    ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('progress', null);
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/install/', ({ 'version': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version')),'mountPath': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath')),'licence': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'licence')),'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) })));
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/login/', ({ 'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) })));
+    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('progress', undefined);
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    await ( async function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
@@ -1457,8 +1519,28 @@ define('./pages/install/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', 
   onDisabledStateAssignment(___arguments) {
     var disabled;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if ((((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version']) && (((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['mountPath']) && (((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['licence'])) {
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'version')) && (getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'mountPath')) && (getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'licence'))) {
     disabled = false;
     ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 1;
   } else {
@@ -3519,7 +3601,7 @@ define('./pages/progress/components/6ec49b615f364fc25ba12557e2fb8e0f/bundle.js',
   /* content */
   /* handler:onClick */
   async onClick(___arguments) {
-      ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('serverStatus', null);
+      await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('serverStatus', ({ 'pageServerStatus': 'ServerStatus' }));
 
   },
   /* handler:onClick */
@@ -3664,16 +3746,36 @@ define('./pages/redis/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', []
   async onClick(___arguments) {
     var error, isValid, item, descriptionItem;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 
   isValid = true;
   var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -3688,12 +3790,12 @@ define('./pages/redis/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', []
     console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/redis/config?restart=false', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -3720,16 +3822,36 @@ define('./pages/redis/components/33a848b796b77f762a2122974b1af0aa/bundle.js', []
   async onClick(___arguments) {
     var error, isValid, item, descriptionItem;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 
   isValid = true;
   var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -3744,12 +3866,12 @@ define('./pages/redis/components/33a848b796b77f762a2122974b1af0aa/bundle.js', []
     console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/redis/config?restart=true', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -4069,6 +4191,26 @@ define('./pages/serverStatus/components/page/bundle.js', [], () => ({
   async onEnter(___arguments) {
     var error, pollingIntervalMS;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
 function getGlobalEntitiesMap(mapName) { const globalScope = defineGlobalScope();return globalScope[mapName] = globalScope[mapName] || {};}
@@ -4081,7 +4223,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
   localStorage.removeItem('originLoad');
   ___arguments.context.pageData['groupActionList'] = [];
   try {
-    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    pollingIntervalMS = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(getObjectProperty((await ( async function () { return window.location })()), 'origin')) + String('/settings.json')))).setEncoding('utf8').send()), 'pollingIntervalMS'));
     if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
       pollingIntervalMS = 2000;
     }
@@ -4099,7 +4241,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     })()
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    await ( async function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
@@ -5626,6 +5768,98 @@ define('./pages/ssl/components/page/bundle.js', [], () => ({
 
   },
   /* handler:onEnter */
+  /* content */
+}))
+
+define('./pages/upgrade/components/9051123f6b4f94ef192265039293d4cd/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDynamicItemsAssignment */
+  onDynamicItemsAssignment(___arguments) {
+      return (___arguments.context.appData['logData'])
+
+  },
+  /* handler:onDynamicItemsAssignment */
+  /* handler:onBeforeUnmount */
+  async onBeforeUnmount(___arguments) {
+      if (___arguments.context.appData['previousService']) {
+    if ((___arguments.context.appData['openSocket'])['connected']) {
+      await (async function(serviceName) {
+
+      	  socket.emit ('service-logs:unsubscribe', {
+      	    "serviceName":`${serviceName}`,
+      	    "channelName":`${serviceName}-logs`
+      	  });
+
+      	  socket.disconnect();
+
+
+      })((___arguments.context.appData['previousService']));
+    }
+  }
+
+  },
+  /* handler:onBeforeUnmount */
+  /* content */
+}))
+
+define('./pages/upgrade/components/8bc4792e519b80bac6992c938c05b82a/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  onContentAssignment(___arguments) {
+      return ___arguments.context.dataModel
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/upgrade/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onEnter */
+  onEnter(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* content */
+}))
+
+define('./pages/upgrade/components/27d5660e3277d76c390ef4d5ebc32019/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+      await ( async function (component) { component.focus() })(((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('f0e46aefb9a7b07518bb18eea4713526')));
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/upgrade/components/f0e46aefb9a7b07518bb18eea4713526/bundle.js', [], () => ({
+  /* content */
+  /* handler:onFocus */
+  async onFocus(___arguments) {
+      console.log((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})('https://hub.docker.com/v2/repositories/backendless/bl-server/tags/?page_size=25&page=1&ordering=last_updated&name=6.5.3')).setEncoding('utf8').send()));
+
+  },
+  /* handler:onFocus */
+  /* content */
+}))
+
+define('./pages/upgrade/components/d61f05ceb764b89f8c44a8c320457ad6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
+      console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/upgrade/jobs', null));
+
+  },
+  /* handler:onClick */
   /* content */
 }))
 
