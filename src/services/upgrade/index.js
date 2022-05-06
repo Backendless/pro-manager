@@ -74,7 +74,8 @@ class UpgradeService {
             return {
                 jobName: pod.metadata.labels['job-name'],
                 podName: pod.metadata.name,
-                creationTimestamp: pod.metadata.creationTimestamp
+                creationTimestamp: pod.metadata.creationTimestamp,
+                version: pod.spec.containers[0].image.split(':')[1]
             }
         }).sort((job1, job2) => {
             return new Date(job2.creationTimestamp).getTime() - new Date(job1.creationTimestamp).getTime()
