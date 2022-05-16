@@ -1,52 +1,111 @@
 {
-  "apiVersion": "apps/v1",
-  "kind": "StatefulSet",
-  "metadata": {
-    "name": "bl-nginx"
-  },
-  "spec": {
-    "serviceName": "bl-nginx",
-    "replicas": 1,
-    "selector": {
-      "matchLabels": {
-        "app": "bl-nginx"
-      }
+  "workload": {
+    "apiVersion": "apps/v1",
+    "kind": "StatefulSet",
+    "metadata": {
+      "annotations": {
+        "name": "bl-nginx"
+      },
+      "name": "bl-nginx"
     },
-    "template": {
-      "metadata": {
-        "labels": {
+    "spec": {
+      "progressDeadlineSeconds": 60,
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
           "app": "bl-nginx"
         }
       },
-      "spec": {
-        "containers": [
-          {
-            "name": "bl-nginx",
-            "image": "k8s.gcr.io/nginx-slim:0.8",
-            "ports": [
-              {
-                "containerPort": 80,
-                "name": "bl-nginx"
-              }
-            ],
-            "volumeMounts": [
-              {
-                "name": "www",
-                "mountPath": "/home/ksv/dev/nginx",
-                "mountPath1": "/usr/share/nginx/html"
-              }
-            ]
+      "strategy": {
+        "rollingUpdate": {
+          "maxSurge": 1,
+          "maxUnavailable": 0
+        },
+        "type": "RollingUpdate"
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "bl-nginx"
           }
-        ],
-        "volumes": [
-          {
-            "hostPath": {
-              "path": "/home/ksv/dev/nginx",
-              "type": ""
-            },
-            "name": "www"
-          }
-        ]
+        },
+        "spec": {
+          "containers": [
+            {
+              "args": [
+                "play"
+              ],
+              "env": [
+
+              ],
+              "image": "backendless/bl-nginx",
+              "imagePullPolicy": "IfNotPresent",
+              "name": "bl-nginx",
+              "livenessProbe": {
+                "failureThreshold": 6,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 3333,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 60,
+                "periodSeconds": 2,
+                "successThreshold": 1,
+                "timeoutSeconds": 10
+              },
+              "readinessProbe": {
+                "failureThreshold": 60,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 3333,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 1,
+                "successThreshold": 2,
+                "timeoutSeconds": 1
+              },
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "name": "bl-nginx",
+                  "protocol": "TCP"
+                }
+              ],
+              "volumeMounts": [
+
+              ]
+            }
+          ],
+          "restartPolicy": "Always",
+          "volumes": [
+
+          ]
+        }
+      }
+    }
+  },
+  "service": {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "bl-nginx",
+      "labels": {
+        "app": "bl-nginx"
+      }
+    },
+    "spec": {
+      "type": "NodePort",
+      "ports": [
+        {
+          "port": 80,
+          "targetPort": 80,
+          "name": "bl-nginx",
+          "nodePort": 30000
+        }
+      ],
+      "selector": {
+        "app": "bl-nginx"
       }
     }
   }
