@@ -13,6 +13,7 @@ import { userConfig } from '../../config/user-config'
 import { UserError } from '../../error/user-error'
 import { userService } from '../user'
 import { registerFirstUser } from './register-first-user'
+import { defaultArguments } from './default-arguments'
 
 const logger = Logger('install-service')
 
@@ -153,10 +154,7 @@ class InstallService {
      * @return {InstallArgument}
      */
     async defaults() {
-        return {
-            version: '6.4.1.9',
-            mountPath: 'C:\\k8s-mount'
-        }
+        return defaultArguments()
     }
 }
 
