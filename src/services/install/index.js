@@ -14,6 +14,7 @@ import { UserError } from '../../error/user-error'
 import { userService } from '../user'
 import { registerFirstUser } from './register-first-user'
 import { defaultArguments } from './default-arguments'
+import { upgradeService } from '../upgrade'
 
 const logger = Logger('install-service')
 
@@ -48,8 +49,9 @@ class InstallService {
         await registerFirstUser( install )
 
         //install process should be async
-        this._install(install).then(result => {
+        this._install(install).then(async result => {
             installStatus.setServiceCreated(true)
+            await upgradeService.upgrade(install)
             installStatus.info('All services are created, you can see status of each service on Manage page')
         })
         .catch(error => {
