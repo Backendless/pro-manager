@@ -59,7 +59,9 @@ export class ServiceLog {
 
             if (subscribers.length < 1) {
                 logger.info('Last client unsubscribed, k8s request will be aborted')
-                this.serviceRequests[serviceName].abort()
+                if( this.serviceRequests[serviceName] != null ) {
+                    this.serviceRequests[serviceName].abort()
+                }
             }
         }
     }
