@@ -4,10 +4,18 @@ import { ingressLoadbalancerService } from '../../../services/manage/loadbalance
 
 export const router = new Router()
 
-router.post('/install', handler(({ body, query }) => {
-    return ingressLoadbalancerService.install()
+router.post('/', handler(({ body, query }) => {
+    return ingressLoadbalancerService.create( body )
+}))
+
+router.put('/', handler(({ body, query }) => {
+    return ingressLoadbalancerService.update( body )
+}))
+
+router.get('/', handler(() => {
+    return ingressLoadbalancerService.list(  )
 }))
 
 router.delete('/', handler(({ body, query }) => {
-    return ingressLoadbalancerService.delete()
+    return ingressLoadbalancerService.delete( body )
 }))

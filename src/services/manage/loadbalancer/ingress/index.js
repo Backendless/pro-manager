@@ -1,24 +1,74 @@
 import { k8sNetworkingV1Api } from '../../../k8s/k8s'
-import { ingressConfig } from '../../../k8s/config/ingress-config'
 import { k8sConfig } from '../../../../config/k8s-config'
 import { Logger } from '../../../../logger'
+import {
+    getIngressConfig,
+    getIngressLabelToSelect,
+    getIngressTypes,
+    getTypeFromLabels
+} from '../../../k8s/config/ingress'
+import { ApiError } from '../../../../error'
+import { create } from './create'
+import { update } from './update'
+import { certManager } from '../../cert'
 
 const logger = Logger('ingress-load-balancer')
 
 class IngressLoadbalancerService {
-    async install() {
-        logger.info('installing ingress rules...')
-        const workload = ingressConfig.service
-
-        logger.verbose(`creating ingress rule with config: ${JSON.stringify(workload)}`)
-        const createIngressResult = await k8sNetworkingV1Api.createNamespacedIngress(await k8sConfig.getNamespace(), workload)
-
-        return { createIngressResult }
+    async create({ type, domain, certName }) {
+        return create({ type, domain, certName })
     }
 
-    async delete() {
-        logger.info('deleting ingress rules...')
-        await k8sNetworkingV1Api.deleteNamespacedIngress(ingressConfig.service.metadata.name, await k8sConfig.getNamespace())
+    async update({ type, domain, certName }) {
+        return update({ type, domain, certName })
+    }
+
+    async list() {
+        const k8sResponse = await k8sNetworkingV1Api.listNamespacedIngress(await k8sConfig.getNamespace(), true, true, '', '', getIngressLabelToSelect())
+        return k8sResponse.body.items.map(item => { return {
+            domain: item.spec.rules[0].host,
+            type: getTypeFromLabels( item.metadata.labels),
+            sslEnabled: item.spec.tls ? item.spec.tls.length > 0 : false
+        }})
+    }
+
+    async delete({ type }) {
+        const ingressName = this._getConfigForTypeOrThrow(type).metadata.name
+        logger.info(`deleting ingress rules for '${type}' type`)
+        await k8sNetworkingV1Api.deleteNamespacedIngress(ingressName, await k8sConfig.getNamespace())
+    }
+
+    _getConfigForTypeOrThrow(type) {
+        const config = getIngressConfig(type)
+
+        if (!config) {
+            throw new ApiError.BadRequestError(`There is no config for '${type}' type. Available types is: ${getIngressTypes().join(', ')}`)
+        }
+        return config
+    }
+
+    async _getConfigWithValues({ type, domain, certName }) {
+        const config = this._getConfigForTypeOrThrow(type)
+        config.spec.rules[0].host = domain
+
+        if (certName) {
+
+            const certs = await certManager.list()
+
+            if (!certs.includes(certName)) {
+                throw new ApiError.BadRequestError(`certName '${certName}' does not exists`)
+            }
+
+            config.spec.tls = [
+                {
+                    'hosts': [
+                        domain
+                    ],
+                    'secretName': certName
+                }
+            ]
+        }
+        return config
     }
 }
 
