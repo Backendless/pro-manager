@@ -38,6 +38,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.4.0",
     "express-http-proxy": "^1.6.3",
+    "fs-extra": "^10.1.0",
     "jsonwebtoken": "^8.5.1",
     "node-json-db": "^1.4.1",
     "socket.io": "^4.2.0",

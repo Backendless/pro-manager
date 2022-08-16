@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { Logger } from '../../logger'
-import fs from 'fs'
+import fse from 'fs-extra'
 
 const logger = Logger('install-default-arguments')
 
@@ -18,8 +18,9 @@ export async function defaultArguments() {
 
     const mountPath = `${process.cwd()}/k8s-mount`
 
-    if (!fs.existsSync(mountPath)) {
-        fs.mkdirSync(mountPath)
+    if (!(await fse.exists(mountPath))) {
+        await fse.mkdirp(mountPath)
     }
+
     return { mountPath, version }
 }
