@@ -55,6 +55,7 @@ class DomainConfigurationService {
 
   async saveToConsul( descriptions, domain )
   {
+    logger.info(`Saving |${JSON.stringify(domain)}| domain for |${JSON.stringify(descriptions)}| descriptions`)
     for (const description of descriptions) {
       const name = description.name
       const value = domain[name]

@@ -5,7 +5,7 @@ export class IngressRtConfig {
         'apiVersion': 'networking.k8s.io/v1',
         'kind': 'Ingress',
         'metadata': {
-            'name': 'bl-console-ingress',
+            'name': 'bl-rt-ingress',
             'labels': { ...getIngressLabel() }
         },
         'spec': {
@@ -28,7 +28,7 @@ export class IngressRtConfig {
                                 'pathType': 'Prefix',
                                 'backend': {
                                     'service': {
-                                        'name': 'bl-rt-console',
+                                        'name': 'bl-rt-server',
                                         'port': {
                                             'number': 5000
                                         }
