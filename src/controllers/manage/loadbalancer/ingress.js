@@ -12,6 +12,10 @@ router.put('/', handler(({ body, query }) => {
     return ingressLoadbalancerService.update( body )
 }))
 
+router.put('/apply', handler(() => {
+    return ingressLoadbalancerService.apply(  )
+}))
+
 router.get('/', handler(() => {
     return ingressLoadbalancerService.list(  )
 }))

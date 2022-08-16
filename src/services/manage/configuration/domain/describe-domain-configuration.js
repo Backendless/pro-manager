@@ -7,7 +7,10 @@ export function describeDomainConfiguration() {
                 regex: '.*',
                 type: 'string',
                 consulPath: 'config/console/rootUrl',
-                required: true
+                required: true,
+                convertFromIngressObject: ({ domain, certName }) => {
+                    return { 'Console URL': `${certName ? 'https' : 'http'}://${domain}` }
+                }
             }
         ],
         api: [
@@ -17,7 +20,8 @@ export function describeDomainConfiguration() {
                 regex: '.*',
                 type: 'string',
                 consulPath: 'config/server/publicHost',
-                required: true
+                required: true,
+                convertFromIngressObject: ({ domain }) => { return { Host: domain } }
             }
             ,
             {
@@ -26,7 +30,9 @@ export function describeDomainConfiguration() {
                 regex: '[0-9]',
                 type: 'number',
                 consulPath: 'config/server/publicPort',
-                required: true
+                required: true,
+                convertFromIngressObject: ({ certName }) => { return { port: certName ? '443' : '80' }}
+
             },
             {
                 name: 'protocol',
@@ -34,7 +40,9 @@ export function describeDomainConfiguration() {
                 regex: 'https|http',
                 type: 'string',
                 consulPath: 'config/server/publicProtocol',
-                required: true
+                required: true,
+                convertFromIngressObject: ({ certName }) => { return { protocol: certName ? 'https' : 'http' }}
+
             }
         ],
         rt: [
@@ -44,7 +52,8 @@ export function describeDomainConfiguration() {
                 regex: '.*',
                 type: 'string',
                 consulPath: 'config/rt-server/socketServer/connection-host',
-                required: true
+                required: true,
+                convertFromIngressObject: ({ domain }) => { return { Host: domain } }
             }
             ,
             {
@@ -53,7 +62,8 @@ export function describeDomainConfiguration() {
                 regex: '[0-9]',
                 type: 'number',
                 consulPath: 'config/rt-server/socketServer/connection-port',
-                required: true
+                required: true,
+                convertFromIngressObject: ({ certName }) => { return { port: certName ? '443' : '80' }}
             },
             {
                 name: 'protocol',
@@ -61,7 +71,8 @@ export function describeDomainConfiguration() {
                 regex: 'https|http',
                 type: 'string',
                 consulPath: 'config/rt-server/socketServer/connection-protocol',
-                required: true
+                required: true,
+                convertFromIngressObject: ({ certName }) => { return { protocol: certName ? 'https' : 'http' }}
             }
         ],
         consul: [
