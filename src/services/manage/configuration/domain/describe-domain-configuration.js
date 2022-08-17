@@ -25,23 +25,23 @@ export function describeDomainConfiguration() {
             }
             ,
             {
-                name: 'port',
+                name: 'Port',
                 description: 'Port for connection',
                 regex: '[0-9]',
                 type: 'number',
                 consulPath: 'config/server/publicPort',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { port: certName ? '443' : '80' }}
+                convertFromIngressObject: ({ certName }) => { return { Port: certName ? '443' : '80' }}
 
             },
             {
-                name: 'protocol',
+                name: 'Protocol',
                 description: 'Protocol can be http or https',
                 regex: 'https|http',
                 type: 'string',
                 consulPath: 'config/server/publicProtocol',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { protocol: certName ? 'https' : 'http' }}
+                convertFromIngressObject: ({ certName }) => { return { Protocol: certName ? 'https' : 'http' }}
 
             }
         ],
@@ -57,51 +57,51 @@ export function describeDomainConfiguration() {
             }
             ,
             {
-                name: 'port',
+                name: 'Port',
                 description: 'Port for connection',
                 regex: '[0-9]',
                 type: 'number',
                 consulPath: 'config/rt-server/socketServer/connection-port',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { port: certName ? '443' : '80' }}
+                convertFromIngressObject: ({ certName }) => { return { Port: certName ? '443' : '80' }}
             },
             {
-                name: 'protocol',
+                name: 'Protocol',
                 description: 'Protocol can be http or https',
                 regex: 'https|http',
                 type: 'string',
                 consulPath: 'config/rt-server/socketServer/connection-protocol',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { protocol: certName ? 'https' : 'http' }}
+                convertFromIngressObject: ({ certName }) => { return { Protocol: certName ? 'https' : 'http' }}
             }
         ],
-        consul: [
-            {
-                name: 'Host',
-                description: '',
-                regex: '.*',
-                type: 'string',
-                consulPath: 'config/',
-                required: true
-            }
-            ,
-            {
-                name: 'port',
-                description: 'Port for connection',
-                regex: '[0-9]',
-                type: 'number',
-                consulPath: 'config/',
-                required: true
-            },
-            {
-                name: 'protocol',
-                description: 'Protocol can be http or https',
-                regex: 'https|http',
-                type: 'string',
-                consulPath: 'config/',
-                required: true
-            }
-        ]
+        // consul: [
+        //     {
+        //         name: 'Host',
+        //         description: '',
+        //         regex: '.*',
+        //         type: 'string',
+        //         consulPath: 'config/',
+        //         required: true
+        //     }
+        //     ,
+        //     {
+        //         name: 'port',
+        //         description: 'Port for connection',
+        //         regex: '[0-9]',
+        //         type: 'number',
+        //         consulPath: 'config/',
+        //         required: true
+        //     },
+        //     {
+        //         name: 'protocol',
+        //         description: 'Protocol can be http or https',
+        //         regex: 'https|http',
+        //         type: 'string',
+        //         consulPath: 'config/',
+        //         required: true
+        //     }
+        // ]
 
     }
 }
