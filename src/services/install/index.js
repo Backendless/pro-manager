@@ -9,12 +9,10 @@ import * as fs from 'fs'
 import { deleteService } from '../k8s/k8s-delete-service'
 import { ApiError } from '../../error'
 import { mountPathConfig } from '../../config/mount-path-config'
-import { userConfig } from '../../config/user-config'
-import { UserError } from '../../error/user-error'
-import { userService } from '../user'
 import { registerFirstUser } from './register-first-user'
 import { defaultArguments } from './default-arguments'
 import { upgradeService } from '../upgrade'
+import { consul } from '../consul'
 
 const logger = Logger('install-service')
 
@@ -81,6 +79,15 @@ class InstallService {
             await initConfigValuesContainer.installService(install)
         } else {
             installStatus.info('bl-init-config-values job already created')
+        }
+
+        if(install.license) {
+            await consul.put('license', install.license)
+        }
+
+        //TODO: remove the block after resolve BKNDLSS-29380
+        if(install.licence) {
+            await consul.put('license', install.licence)
         }
 
         const containers = Object.entries(blContainers.bl)
