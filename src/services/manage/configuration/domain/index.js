@@ -49,11 +49,21 @@ class DomainConfigurationService {
         throw new ApiError.NotFoundError(`Section '${section}' is not found`)
       }
 
-      await this.saveToConsul(description, domains[section])
+      await this._saveToConsul(description, domains[section])
     }
   }
 
-  async saveToConsul( descriptions, domain )
+  async saveConfigAndRestart({ config, shouldRestart }){
+    await this.saveAll(config)
+    if( shouldRestart === true ) {
+      await manageService.restartService('bl-server')
+      await manageService.restartService('bl-web-console')
+      await manageService.restartService('bl-taskman')
+      await manageService.restartService('bl-rt-server')
+    }
+  }
+
+  async _saveToConsul(descriptions, domain )
   {
     logger.info(`Saving |${JSON.stringify(domain)}| domain for |${JSON.stringify(descriptions)}| descriptions`)
     for (const description of descriptions) {

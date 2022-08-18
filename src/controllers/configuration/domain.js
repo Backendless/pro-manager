@@ -5,8 +5,8 @@ export const router = new Router()
 
 router.get('/describe', handler(() => domainConfigurationService.describeConfiguration()))
 
-router.get('/config', handler(() => domainConfigurationService.getAll()))
+router.get('/', handler(() => domainConfigurationService.getAll()))
 
-router.put('/config', handler(({ body, query }) => {
-    return domainConfigurationService.saveConfigAndRestart({ config: body, shouldRestart: query.restart })
+router.put('/', handler(({ body, query }) => {
+    return domainConfigurationService.saveConfigAndRestart({ config: body, shouldRestart: query.restart === 'true' })
 }))
