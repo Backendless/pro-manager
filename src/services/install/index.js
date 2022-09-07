@@ -13,6 +13,7 @@ import { registerFirstUser } from './register-first-user'
 import { defaultArguments } from './default-arguments'
 import { upgradeService } from '../upgrade'
 import { consul } from '../consul'
+import { circularReplacer } from '../../utils/circular-replacer'
 
 const logger = Logger('install-service')
 
@@ -53,7 +54,7 @@ class InstallService {
             installStatus.info('All services are created, you can see status of each service on Manage page')
         })
         .catch(error => {
-            installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error)}`)
+            installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error, circularReplacer())}`)
         })
     }
 

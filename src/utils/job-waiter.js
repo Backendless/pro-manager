@@ -2,6 +2,7 @@ import { blJobStatus } from '../services/k8s/bl-job-status'
 import Status from '../services/service-status.json'
 import { wait } from './waiter'
 import { Logger } from '../logger'
+import { circularReplacer } from './circular-replacer'
 
 const logger = Logger('job-waiter')
 
@@ -12,7 +13,7 @@ export async function waitForJobToComplete(jobName, jobNotCompleteCallback){
         if (status.status === Status.complete)
             return
     } catch (e) {
-        logger.error(`Error during status check. Error: ${e}, \nObject: ${JSON.stringify(e, getCircularReplacer())}`)
+        logger.error(`Error during status check. Error: ${e}, \nObject: ${JSON.stringify(e, circularReplacer())}`)
     }
 
     if (jobNotCompleteCallback !== undefined) {
@@ -22,17 +23,4 @@ export async function waitForJobToComplete(jobName, jobNotCompleteCallback){
     logger.info('job is not completed, waiting for 1 second to recheck')
     await wait(1000)
     await waitForJobToComplete(jobName, jobNotCompleteCallback)
-}
-
-function getCircularReplacer() {
-    const seen = new WeakSet()
-    return (key, value) => {
-        if (typeof value === 'object' && value !== null) {
-            if (seen.has(value)) {
-                return '[circular]'
-            }
-            seen.add(value)
-        }
-        return value
-    }
 }
