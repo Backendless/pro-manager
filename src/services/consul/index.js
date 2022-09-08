@@ -2,13 +2,14 @@ import { listPods } from '../k8s/k8s-list-pods'
 import { blContainers } from '../bl-containers'
 import { executeInPod } from '../k8s/k8s-execute-pod'
 import { Logger } from '../../logger'
+import { repeatOnFail } from '../../utils/repeat-on-fail'
 
 const logger = Logger('consul')
 
 class Consul {
     async get(key) {
         const podName = await this._getPodName()
-        return (await executeInPod(podName, ['consul', 'kv', 'get', key])).replace(/\n$/, '')
+        return (await repeatOnFail( () => executeInPod(podName, ['consul', 'kv', 'get', key]), 10, 100)).replace(/\n$/, '')
     }
 
     async getOrNull(key) {
@@ -28,7 +29,7 @@ class Consul {
 
     async put(key, value) {
         const podName = await this._getPodName()
-        return executeInPod(podName, ['consul', 'kv', 'put', key, value])
+        return repeatOnFail( () => executeInPod(podName, ['consul', 'kv', 'put', key, value]), 10, 100)
     }
 
     async _getPodName() {
