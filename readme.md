@@ -13,6 +13,10 @@ The Pro Manager is currently in **ALPHA** stage. There can be some breaking chan
 - Go to preference and enable kubernetes ![img_1.png](Doc/img/mac-os-enable-k8s.png)
 
 ### Ubuntu
+```
+curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
+```
+
 - Install node
   ```
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
