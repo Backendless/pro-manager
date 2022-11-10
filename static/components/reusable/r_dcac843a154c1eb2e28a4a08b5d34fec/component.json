@@ -253,6 +253,9 @@
           "dependencies": [
             "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
           ]
+        },
+        "onClassListAssignment": {
+          "dependencies": []
         }
       }
     },
@@ -263,6 +266,45 @@
       "moduleId": "text",
       "handlers": {
         "onContentAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "17ba156b5b49eae93175d437c9e8c1c2": {
+      "id": "aside TabContentItemUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "d03b9242444bed493a3f71c94029bfcc": {
+      "id": "aside TabContentItemUpgradeNow",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "3d81f4e11ffb3b99c18f1b83c9cfa36d": {
+      "id": "aside ContentItemContainerUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDynamicItemsAssignment": {
           "dependencies": []
         }
       }
