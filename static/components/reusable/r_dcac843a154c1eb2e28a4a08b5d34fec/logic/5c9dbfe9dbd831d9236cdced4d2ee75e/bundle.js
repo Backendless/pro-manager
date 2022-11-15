@@ -2,7 +2,7 @@ define([], () => ({
   /* content */
   /* handler:onContentAssignment */
   async onContentAssignment(___arguments) {
-    var date, day, hours, minutes, month, outputTimeItem, seconds, timeItem, x;
+    var date, month, day, seconds, minutes, hours, outputTimeItem, timeItem;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -44,7 +44,7 @@ async function formatTimeItem(timeItem) {
   minutes = await formatTimeItem((new Date(date).getMinutes()));
   seconds = await formatTimeItem((new Date(date).getSeconds()));
 
-  return ([day,'/',month,'/',(new Date(date).getFullYear()),' ',hours,':',minutes,':',seconds].join(''))
+  return ([day,'/',month,'/',(new Date(date).getFullYear()),' ','v. ',(getObjectProperty(___arguments.context.getComponentDataStoreByUid('17ba156b5b49eae93175d437c9e8c1c2'), 'version'))].join(''))
 
   },
   /* handler:onContentAssignment */

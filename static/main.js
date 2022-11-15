@@ -1,5 +1,5 @@
 require.config({
-    waitSeconds: 60,
+    waitSeconds: 180,
     paths: {
         'sdk': uiBuilderSDKPath + '/sdk',
     }
@@ -37,12 +37,31 @@ BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f'] = async fu
 })
 define('./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js', () => { 
 
+BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5'] = async function fn_696a14dd8d2f85be7023c2c4441a65a5(method, path, body) {
 var data, host, currentOrigin, settingsOrigin, error;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5'] = async function fn_696a14dd8d2f85be7023c2c4441a65a5(method, path, body) {
-    currentOrigin = ((await ( async function (){ return window.location })())['origin']);
+  currentOrigin = (getObjectProperty(((function () { return window.location })()), 'origin'));
   if (currentOrigin == 'https://teemingkitty.backendless.app') {
     data = (await Backendless.Request[method]((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await (async function() {
     	return BackendlessUI.config.settings.proManagerAPIURL || 'http://localhost:5050/services'
@@ -50,14 +69,14 @@ BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5'] = async fu
   } else {
     try {
       if (!((function(){ try { return JSON.parse(localStorage.getItem('originLoad')) } catch(e){ return null }})())) {
-        settingsOrigin = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(currentOrigin) + String('/settings.json')))).setEncoding('utf8').send())['serverURL']);
+        settingsOrigin = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(currentOrigin) + String('/settings.json')))).setEncoding('utf8').send()), 'serverURL'));
         localStorage.setItem('originLoad', JSON.stringify(true));
         localStorage.setItem('settingsOrigin', JSON.stringify(settingsOrigin));
       }
       settingsOrigin = ((function(){ try { return JSON.parse(localStorage.getItem('settingsOrigin')) } catch(e){ return null }})());
 
     } catch (error) {
-      console.log(error['message']);
+      console.log(getObjectProperty(error, 'message'));
 
     }
     if (settingsOrigin) {
@@ -68,8 +87,7 @@ BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5'] = async fu
     data = (await Backendless.Request[method]((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})(([host,'/services',path].join('')))).setEncoding('utf8').send(body));
   }
 
-
-  return data
+return data
 }
 
 })
@@ -1410,10 +1428,11 @@ define('./pages/home/components/page/bundle.js', [], () => ({
 
 
   localStorage.removeItem('originLoad');
+  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null));
   if (getObjectProperty((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null)), 'servicesCreated')) {
-    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('serverStatus', ({ 'pageServerStatus': 'ServerStatus' }));
+    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('serverStatus', ({ 'pageServerStatus': 'ServerStatus' }));
   } else {
-    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('install', undefined);
+    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('install', undefined);
   }
 
   },
@@ -1479,7 +1498,7 @@ function getObjectProperty(object, propPath) {
 define('./pages/install/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error;
 
 function getObjectProperty(object, propPath) {
@@ -1504,19 +1523,19 @@ function getObjectProperty(object, propPath) {
 
 
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/install/', ({ 'version': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version')),'mountPath': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath')),'licence': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'licence')),'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) })));
+    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/install/', ({ 'version': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version')),'mountPath': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath')),'license': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'license')),'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) })));
     console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/login/', ({ 'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) })));
-    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('progress', undefined);
+    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('progress', undefined);
 
   } catch (error) {
-    await ( async function (message) { alert(message) })((getObjectProperty(error, 'message')));
+    (function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
   },
   /* handler:onClick */
   /* handler:onDisabledStateAssignment */
-  onDisabledStateAssignment(___arguments) {
+  ['onDisabledStateAssignment'](___arguments) {
     var disabled;
 
 function getObjectProperty(object, propPath) {
@@ -1540,12 +1559,12 @@ function getObjectProperty(object, propPath) {
 }
 
 
-  if ((getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'version')) && (getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'mountPath')) && (getObjectProperty(((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'licence'))) {
+  if ((getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'version')) && (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'mountPath')) && (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'license'))) {
     disabled = false;
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 1;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 1;
   } else {
     disabled = true;
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 0.5;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 0.5;
   }
 
   return disabled
@@ -5775,30 +5794,80 @@ define('./pages/upgrade/components/9051123f6b4f94ef192265039293d4cd/bundle.js', 
   /* content */
   /* handler:onDynamicItemsAssignment */
   onDynamicItemsAssignment(___arguments) {
-      return (___arguments.context.appData['logData'])
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (getObjectProperty(___arguments.context.appData, 'logСurrentUpgradeData'))
 
   },
   /* handler:onDynamicItemsAssignment */
   /* handler:onBeforeUnmount */
   async onBeforeUnmount(___arguments) {
-      if (___arguments.context.appData['previousService']) {
-    if ((___arguments.context.appData['openSocket'])['connected']) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.appData, 'previousUpgrade')) {
+    if (getObjectProperty((getObjectProperty(___arguments.context.appData, 'opensSoketCurrentUpgrade')), 'connected')) {
       await (async function(serviceName) {
 
-      	  socket.emit ('service-logs:unsubscribe', {
+      	  socketCurrentUpgrade.emit ('service-logs:unsubscribe', {
       	    "serviceName":`${serviceName}`,
-      	    "channelName":`${serviceName}-logs`
+      	    "channelName":`${serviceName}-log`
       	  });
 
-      	  socket.disconnect();
+      	  socketCurrentUpgrade.disconnect();
 
 
-      })((___arguments.context.appData['previousService']));
+
+      })((getObjectProperty(___arguments.context.appData, 'previousUpgrade')));
     }
   }
 
   },
   /* handler:onBeforeUnmount */
+  /* handler:onBeforeMount */
+  onBeforeMount(___arguments) {
+      ___arguments.context.appData['logСurrentUpgradeData'] = [];
+
+  },
+  /* handler:onBeforeMount */
   /* content */
 }))
 
@@ -5818,6 +5887,9 @@ define('./pages/upgrade/components/page/bundle.js', [], () => ({
   /* handler:onEnter */
   onEnter(___arguments) {
       localStorage.removeItem('originLoad');
+  ___arguments.context.pageData['btnUpgradeLabel'] = 'Upgrade';
+  ___arguments.context.pageData['btnUpgradeDisabled'] = true;
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '0.5';
 
   },
   /* handler:onEnter */
@@ -5845,10 +5917,104 @@ define('./pages/upgrade/components/f0e46aefb9a7b07518bb18eea4713526/bundle.js', 
   /* content */
   /* handler:onFocus */
   async onFocus(___arguments) {
-      console.log((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})('https://hub.docker.com/v2/repositories/backendless/bl-server/tags/?page_size=25&page=1&ordering=last_updated&name=6.5.3')).setEncoding('utf8').send()));
+    var error;
+
+function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+function removeItemInList(l, i, c) {   const index = c ? l.findIndex(el => el[c] === i[c]) : l.indexOf(i);  if (index >= 0) { l.splice(index, 1); }  return l;}
+
+
+  addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('27d5660e3277d76c390ef4d5ebc32019')), 'UpgradeControl__icon--rotated');
+  if (!(getObjectProperty(___arguments.context.pageData, 'versions'))) {
+    ___arguments.context.pageData['versions'] = ({ 'results': [({ 'name': 'Loading...' })] });
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('e53b33b5ec0d46efbc5dda17843838aa')), 'UpgradeControl__results--open');
+    try {
+      ___arguments.context.pageData['versions'] = (await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})('http://localhost:5050/services/version/docker-hub/v2/repositories/backendless/bl-server/tags/')).query(({ 'page_size': 20,'page': 1,'ordering': 'last_updated' })).setEncoding('utf8').send());
+
+    } catch (error) {
+      await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4eda51021b746238c2714d9f1947b5c5')));
+      ___arguments.context.pageData['versions'] = '';
+      removeItemInList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('e53b33b5ec0d46efbc5dda17843838aa')), 'UpgradeControl__results--open', '');
+      removeItemInList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('27d5660e3277d76c390ef4d5ebc32019')), 'UpgradeControl__icon--rotated', '');
+
+    }
+  } else {
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('e53b33b5ec0d46efbc5dda17843838aa')), 'UpgradeControl__results--open');
+  }
 
   },
   /* handler:onFocus */
+  /* handler:onBlur */
+  onBlur(___arguments) {
+    function removeItemInList(l, i, c) {   const index = c ? l.findIndex(el => el[c] === i[c]) : l.indexOf(i);  if (index >= 0) { l.splice(index, 1); }  return l;}
+
+
+  removeItemInList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('e53b33b5ec0d46efbc5dda17843838aa')), 'UpgradeControl__results--open', '');
+  removeItemInList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('27d5660e3277d76c390ef4d5ebc32019')), 'UpgradeControl__icon--rotated', '');
+
+  },
+  /* handler:onBlur */
+  /* handler:onChange */
+  async onChange(___arguments) {
+    var versionsData;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (!___arguments.value) {
+    ___arguments.context.pageData['btnUpgradeDisabled'] = true;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '0.5';
+  } else {
+    ___arguments.context.pageData['btnUpgradeDisabled'] = false;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '1';
+    versionsData = (await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})('http://localhost:5050/services/version/docker-hub/v2/repositories/backendless/bl-server/tags/')).query(({ 'page_size': 100,'page': 1,'ordering': 'last_updated','name': ___arguments.value })).setEncoding('utf8').send());
+    if ((getObjectProperty(versionsData, 'results')).length == 0) {
+      ___arguments.context.pageData['versions'] = ({ 'results': [({ 'name': 'Nothing found' })] });
+    } else {
+      ___arguments.context.pageData['versions'] = versionsData;
+    }
+  }
+
+  },
+  /* handler:onChange */
   /* content */
 }))
 
@@ -5856,10 +6022,352 @@ define('./pages/upgrade/components/d61f05ceb764b89f8c44a8c320457ad6/bundle.js', 
   /* content */
   /* handler:onClick */
   async onClick(___arguments) {
+    var currentUpgradeJob, error;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.pageData['btnUpgradeDisabled'] = true;
+  ___arguments.context.pageData['btnUpgradeLabel'] = 'Upgrading...';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '0.5';
+  ___arguments.context.appData['logСurrentUpgradeData'] = ['Loading...'];
+  try {
+    currentUpgradeJob = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/upgrade', ({ 'version': (getObjectProperty(___arguments.context.pageData, 'version')) })));
+    ___arguments.context.pageData['startUpdateMenu'] = true;
+    ___arguments.context.appData['jobsList'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/upgrade/jobs', null));
+
+  } catch (error) {
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4eda51021b746238c2714d9f1947b5c5')));
+
+  } finally {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '1';
+    ___arguments.context.pageData['btnUpgradeLabel'] = 'Upgrade';
+    ___arguments.context.pageData['btnUpgradeDisabled'] = false;
+    ___arguments.context.pageData['startUpdateMenu'] = false;
+
+  }
+  await new Promise(r => setTimeout(r, 500 || 0));
+  ___arguments.context.appData['opensSoketCurrentUpgrade'] = (await (async function(logsArray, serviceName, podName) {
+  	const io = await BackendlessUI.requireModule('https://cdn.jsdelivr.net/npm/socket.io-client@4.4.0/dist/socket.io.min.js');
+
+  	  socketCurrentUpgrade = io.connect('http://localhost:5051', { transports : ['websocket'] });
+
+  	  socketCurrentUpgrade.on (`${serviceName}-log`, function (data) {
+  	    logsArray.push (data);
+  	  });
+
+  	  socketCurrentUpgrade.emit ('service-logs:subscribe', {
+  	    "serviceName":`${serviceName}`,
+  	    "podName":`${podName}`,
+  	    "channelName": `${serviceName}-log`
+  	  });
+
+
+  	  return socketCurrentUpgrade
+  })((getObjectProperty(___arguments.context.appData, 'logСurrentUpgradeData')), (getObjectProperty(currentUpgradeJob, 'jobName')), (getObjectProperty(currentUpgradeJob, 'podName'))));
+  ___arguments.context.appData['previousUpgrade'] = (getObjectProperty(currentUpgradeJob, 'jobName'));
+  await new Promise(r => setTimeout(r, 1000 || 0));
+  await (async function(serviceName) {
+
+  	  socketCurrentUpgrade.emit ('service-logs:unsubscribe', {
+  	    "serviceName":`${serviceName}`,
+  	    "channelName":`${serviceName}-log`
+  	  });
+
+  	  socketCurrentUpgrade.disconnect();
+
+
+
+  })((getObjectProperty(___arguments.context.appData, 'previousUpgrade')));
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/upgrade/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClassListAssignment */
+  async onClassListAssignment(___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'menuError')) {
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(___arguments.context.pageData, 'menuError')), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4eda51021b746238c2714d9f1947b5c5')));
+  }
+
+  return ['ServerLogs']
+
+  },
+  /* handler:onClassListAssignment */
+  /* content */
+}))
+
+define('./pages/upgrade/components/ea569f4f8251b46dc33c1bd6e0ce4a87/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  onClick(___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.context.dataModel, 'name')) != 'Loading...' && (getObjectProperty(___arguments.context.dataModel, 'name')) != 'Nothing found') {
+    ___arguments.context.pageData['version'] = (getObjectProperty(___arguments.context.dataModel, 'name'));
+    ___arguments.context.pageData['btnUpgradeDisabled'] = false;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '1';
+  } else {
+    ___arguments.context.pageData['btnUpgradeDisabled'] = true;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '0.5';
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/upgrade/components/eb6434e79025bd9d9718d195450cb59b/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async onClick(___arguments) {
       console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/upgrade/jobs', null));
 
   },
   /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/upgradeLogs/components/9051123f6b4f94ef192265039293d4cd/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDynamicItemsAssignment */
+  onDynamicItemsAssignment(___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (getObjectProperty(___arguments.context.appData, 'logUpgradeData'))
+
+  },
+  /* handler:onDynamicItemsAssignment */
+  /* handler:onBeforeUnmount */
+  async onBeforeUnmount(___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.appData, 'previousServiceUpgrade')) {
+    if (getObjectProperty((getObjectProperty(___arguments.context.appData, 'opensScketUpgrade')), 'connected')) {
+      await (async function(serviceName) {
+
+      	  socketUpgrade.emit ('service-logs:unsubscribe', {
+      	    "serviceName":`${serviceName}`,
+      	    "channelName":`${serviceName}-log`
+      	  });
+
+      	  socketUpgrade.disconnect();
+
+
+
+      })((getObjectProperty(___arguments.context.appData, 'previousServiceUpgrade')));
+    }
+  }
+
+  },
+  /* handler:onBeforeUnmount */
+  /* content */
+}))
+
+define('./pages/upgradeLogs/components/8bc4792e519b80bac6992c938c05b82a/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  onContentAssignment(___arguments) {
+      return ___arguments.context.dataModel
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/upgradeLogs/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onEnter */
+  async onEnter(___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'logUpgradeData')) && (getObjectProperty(___arguments.context.pageData, 'jobName'))) {
+    ___arguments.context.appData['logUpgradeData'] = [];
+    ___arguments.context.appData['opensScketUpgrade'] = (await (async function(logsArray, serviceName, podName) {
+    	const io = await BackendlessUI.requireModule('https://cdn.jsdelivr.net/npm/socket.io-client@4.4.0/dist/socket.io.min.js');
+
+    	  socketUpgrade = io.connect('http://localhost:5051', { transports : ['websocket'] });
+
+    	  socketUpgrade.on (`${serviceName}-log`, function (data) {
+    	    logsArray.push (data);
+    	  });
+
+    	  socketUpgrade.emit ('service-logs:subscribe', {
+    	    "serviceName":`${serviceName}`,
+    	    "podName":`${podName}`,
+    	    "channelName": `${serviceName}-log`
+    	  });
+
+
+    	  return socketUpgrade
+    })((getObjectProperty(___arguments.context.appData, 'logUpgradeData')), (getObjectProperty(___arguments.context.pageData, 'jobName')), (getObjectProperty(___arguments.context.pageData, 'podName'))));
+    ___arguments.context.appData['previousServiceUpgrade'] = (getObjectProperty(___arguments.context.pageData, 'jobName'));
+  }
+
+  },
+  /* handler:onEnter */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* content */
+}))
+
+define('./pages/upgradeLogs/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClassListAssignment */
+  async onClassListAssignment(___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'menuError')) {
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(___arguments.context.pageData, 'menuError')), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('1921a9cd7ebbed5892b11a47806e6baa')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4eda51021b746238c2714d9f1947b5c5')));
+  }
+
+  return ['ServerLogs']
+
+  },
+  /* handler:onClassListAssignment */
   /* content */
 }))
 
@@ -5910,6 +6418,26 @@ define('./pages/userManagement/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundl
   async onClick(___arguments) {
     var error, userName, user;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
     source,
@@ -5922,24 +6450,24 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  userName = (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['userName']);
+  userName = (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'userName'));
   ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnDeleteDisabled'] = true;
   ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnDelete'] = 'Deleting...';
   try {
     await new Promise(r => setTimeout(r, 1500 || 0));
-    ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await asyncListFilter(((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), async (user) => {
+    ;(function (componentUid, listItems){ ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await asyncListFilter(((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), async (user) => {
 
 
-     return ((user['userName']) != userName);
+     return ((getObjectProperty(user, 'userName')) != userName);
     })));
     ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnDelete'] = 'Delete';
     ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnDeleteDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'User deleted successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'User deleted successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnDelete'] = 'Delete';
     ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnDeleteDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -5964,8 +6492,29 @@ define('./pages/userManagement/components/33a848b796b77f762a2122974b1af0aa/bundl
   /* content */
   /* handler:onClick */
   onClick(___arguments) {
-      ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['modalTitle'] = 'Set password';
-  ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userName'] = (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['userName']);
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['modalTitle'] = 'Set password';
+  ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userName'] = (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'userName'));
   ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userNameDisabled'] = true;
   ((function (componentUid){ return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['createBtn'] = 'Set password';
   ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'visible';
@@ -6170,3 +6719,4 @@ define('./pages/userManagement/components/page/bundle.js', [], () => ({
   /* handler:onEnter */
   /* content */
 }))
+
