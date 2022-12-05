@@ -15,6 +15,7 @@ class K8sConfig {
     }
 
     async setNamespace(namespace) {
+        logger.info( `Saving namespace [${namespace}] to kube config `)
         await this._baseConfig.set(_namespaceKey, namespace)
     }
 
@@ -39,6 +40,7 @@ class K8sConfig {
     }
 
     async setConfigFile(path){
+        logger.info( `Saving path [${path}] to kube config `)
         if(this._getConfigPathFromEnv()){
             throw new K8sConfigError.ConfigFilePathInEnvError()
         }

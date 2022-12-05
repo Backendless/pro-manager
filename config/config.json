@@ -4,6 +4,7 @@
   "logger": {
     "levels": {
       "default": "info",
+      "base-config": "info",
       "install-mongo": "verbose",
       "install-redis": "verbose",
       "mysql-connection-configuration-service": "verbose",
