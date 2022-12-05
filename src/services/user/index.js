@@ -130,7 +130,8 @@ class UserService {
         if (userIndex < 0) {
             logger.info(`the user with login '${id}' does not exist`)
         }else {
-            db.delete(`${_usersPath}/[${userIndex}]`)
+            logger.info(`trying delete user with id '${id}' by '${_usersPath}[${userIndex}]' path`)
+            await db.delete(`${_usersPath}[${userIndex}]`)
             logger.info(`user with id '${id}' removed`)
         }
 
