@@ -354,8 +354,124 @@
           "moduleId": "block",
           "handlers": {
             "onMounted": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+              ]
+            }
+          }
+        },
+        "4038f86f5b6cacb8ee37a8efac3527aa": {
+          "id": "domains TitleMain",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "5a537424c7d5f0fa5c2169ba52cdc3b9": {
+          "id": "domains SaveBtn",
+          "type": "button",
+          "moduleType": "system",
+          "moduleId": "button",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+              ]
+            }
+          }
+        },
+        "b4ac65b40f178182007af4f16afe24d6": {
+          "id": "domains controls",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onMounted": {
+              "dependencies": []
+            }
+          }
+        },
+        "33a848b796b77f762a2122974b1af0aa": {
+          "id": "domains SaveRestartBtn",
+          "type": "button",
+          "moduleType": "system",
+          "moduleId": "button",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+              ]
+            }
+          }
+        },
+        "7e1ac109ebbe4db399af721c8b472bd2": {
+          "id": "InputHost",
+          "type": "input",
+          "moduleType": "system",
+          "moduleId": "input",
+          "handlers": {
+            "onChange": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "page": {
+          "type": "page",
+          "moduleType": "system",
+          "moduleId": "page",
+          "handlers": {
+            "onLeave": {
+              "dependencies": []
+            },
+            "onEnter": {
+              "dependencies": []
+            }
+          }
+        },
+        "3ed8f4e9c52b6277c808d7edf7577e56": {
+          "id": "domains ItemName",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "usedCustomFunctions": []
+            }
+          }
+        }
+      },
+      "dataBinding": {},
+      "usedComponentTypes": [
+        "block",
+        "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+        "r_dcac843a154c1eb2e28a4a08b5d34fec",
+        "text",
+        "input",
+        "button"
+      ],
+      "style": {},
+      "attrs": {},
+      "pods": {},
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"loader\" data-uid=\"4f334f9dc1010f33ff9a725c1781b1c7\" data-classes=\"loader mysql__loader\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"domains\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"mysql\" data-dynamic-list-behaviour=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"domains container\" data-uid=\"9f186f89932cdfe880554e43f4f916a1\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"domains block\" data-uid=\"8df5e86e263721a17d2eb9a2f1451d2c\" data-classes=\"mysql__block\"><span data-content=\"Console\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4038f86f5b6cacb8ee37a8efac3527aa\" data-classes=\"mysql__title\" id=\"domains TitleMain\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"domains ItemsContainer\" data-uid=\"6d6931fc69311fa41094b68325a62a1a\" data-classes=\"DomainsGeneral__ItemsContainer\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"dataItemList\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ef925676496420d56f57345d0dfd424e\" data-classes=\"mysql__item\" id=\"domains item\"><span data-content=\"Host\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3ed8f4e9c52b6277c808d7edf7577e56\" data-classes=\"mysql__ItemName\" id=\"domains ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0a8c314bf9d928fc2d18a4c3a7c92ee7\" data-classes=\"mysql__FormGroup\" id=\"domains FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"b5bc92257c94714ffeb51abac39cdbae\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"7e1ac109ebbe4db399af721c8b472bd2\" data-classes=\"FormInput\" id=\"InputHost\" data-binding_onvalueassignment=\"data\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f2cd77e13a5f3c9633a2a81f62910c09\" data-classes=\"ValidationMessage \" id=\"ValidationMessage\" data-binding_oncontentassignment=\"validationMsgContent\" data-binding_ondisplayassignment=\"validationMsgVisible\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"QuestionIcon\" data-uid=\"198c9c59e5389ad5ff37a4bb3e22bce5\" data-classes=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\" data-binding_ontooltiptextassignment=\"description\" data-binding_ondisplayassignment=\"description\"></div></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b4ac65b40f178182007af4f16afe24d6\" data-classes=\"mysql__controls\" id=\"domains controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"33a848b796b77f762a2122974b1af0aa\" id=\"domains SaveRestartBtn\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"5a537424c7d5f0fa5c2169ba52cdc3b9\" id=\"domains SaveBtn\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert\" data-uid=\"95980ee1806a02128292c7d76666d134\" data-classes=\"alert\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert inner\" data-uid=\"1d55dd0faa0def33e76622369f125a8d\" data-classes=\"alert__inner\"><span data-content=\"The data was saved successfully\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"56af2c373986c15715d6b101723d8d4f\" data-classes=\"alert__text\" id=\"alert text\" data-binding_oncontentassignment=\"alertMessage\" class=\"bl-text\"></span></div></div></div></div></div> "
+    },
+    "domainsGeneralCopy": {
+      "components": {
+        "9f186f89932cdfe880554e43f4f916a1": {
+          "id": "domains container",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onMounted": {
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
               ]
             }
           }
@@ -378,8 +494,8 @@
           "moduleId": "block",
           "handlers": {
             "onTooltipTextAssignment": {
-              "dependencies": [
-                "./functions/4f8fe7d853c915840a67685fa058d83f/code.js"
+              "usedCustomFunctions": [
+                "4f8fe7d853c915840a67685fa058d83f"
               ]
             }
           }
@@ -469,7 +585,7 @@
           "moduleId": "input",
           "handlers": {
             "onChange": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -480,7 +596,7 @@
           "moduleId": "input",
           "handlers": {
             "onChange": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -575,6 +691,7 @@
       ],
       "style": {},
       "attrs": {},
+      "pods": {},
       "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"loader\" data-uid=\"4f334f9dc1010f33ff9a725c1781b1c7\" data-classes=\"loader mysql__loader\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"domains\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"mysql\" data-dynamic-list-behaviour=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"domains container\" data-uid=\"9f186f89932cdfe880554e43f4f916a1\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"domains block\" data-uid=\"8df5e86e263721a17d2eb9a2f1451d2c\" data-classes=\"mysql__block\"><span data-content=\"Console\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4038f86f5b6cacb8ee37a8efac3527aa\" data-classes=\"mysql__title\" id=\"domains TitleMain\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ef925676496420d56f57345d0dfd424e\" data-classes=\"mysql__item\" id=\"domains item\"><span data-content=\"Host\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3ed8f4e9c52b6277c808d7edf7577e56\" data-classes=\"mysql__ItemName\" id=\"domains ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0a8c314bf9d928fc2d18a4c3a7c92ee7\" data-classes=\"mysql__FormGroup\" id=\"domains FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"b5bc92257c94714ffeb51abac39cdbae\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"7e1ac109ebbe4db399af721c8b472bd2\" data-classes=\"FormInput\" id=\"InputHost\" data-binding_onvalueassignment=\"host\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f2cd77e13a5f3c9633a2a81f62910c09\" data-classes=\"ValidationMessage \" id=\"ValidationMessageHost\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"QuestionIcon\" data-uid=\"198c9c59e5389ad5ff37a4bb3e22bce5\" data-classes=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6c4f8b7c24a4e4689f71957abbb7b11a\" data-classes=\"mysql__item\" id=\"domains item\"><span data-content=\"Port\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"be4ac994c4a19fb9cacbbc3754516ef8\" data-classes=\"mysql__ItemName\" id=\"domains ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9f8d271480c21d2f5f2e304e9f62a254\" data-classes=\"mysql__FormGroup\" id=\"domains FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"c93b6e39816e568326f93d9c32d54338\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"57c1dbc34b1c989c67cdeee5b059df3e\" data-classes=\"FormInput\" id=\"InputPort\" data-type=\"number\" data-binding_onvalueassignment=\"port\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"49cfbb2af051f87d5dccc9944ddcb7b2\" data-classes=\"ValidationMessage \" id=\"ValidationMessagePort\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"cb32ffe5c76e4f69d148911494c6952e\" data-classes=\"QuestionIcon\" id=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"219e5279ad145723d7c94119916d1bd6\" data-classes=\"mysql__item\" id=\"domains item\"><span data-content=\"Protocol\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"ded231cce071ac9fea43624a7a0c5846\" data-classes=\"mysql__ItemName\" id=\"domains ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e03f595dfa33300b09be9f414d733ead\" data-classes=\"mysql__FormGroup\" id=\"domains FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"f2ec77a6212988ce1c169c39be4b0a3d\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"febabf157a01b6cc64e1b8f62b1e1a32\" data-classes=\"FormInput\" id=\"InputRotocol\" data-binding_onvalueassignment=\"protocol\" data-type=\"text\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"c37570257cfd551e117c464d74721426\" data-classes=\"ValidationMessage \" id=\"ValidationMessageProtocol\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"cd73b3928006379f77b53b870895e855\" data-classes=\"QuestionIcon\" id=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"89d570fe983baa4cf873c049b7498352\" data-classes=\"mysql__item\" id=\"domains item\"><span data-content=\"bl-console port\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"70259e5f20f9b25c8ef93c8a3edc9eb4\" data-classes=\"mysql__ItemName\" id=\"domains ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b64d374fa58ed195b8445665845fdcd3\" data-classes=\"mysql__FormGroup\" id=\"domains FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"fd6f3f69d8a9cadf674c92a4ba7c402f\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"826adfb80e9fa3f9c4d409ef7c4fb6a8\" data-classes=\"FormInput\" id=\"InputPasswordBlConsole\" data-type=\"number\" data-binding_onvalueassignment=\"bl-console port\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f6024c35a4be53e6b64b776ba73ce95c\" data-classes=\"ValidationMessage \" id=\"ValidationMessageBlConsole\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b11bd95b7c781e9ce31e01ee1b83b966\" data-classes=\"QuestionIcon\" id=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b4ac65b40f178182007af4f16afe24d6\" data-classes=\"mysql__controls\" id=\"domains controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"33a848b796b77f762a2122974b1af0aa\" id=\"domains SaveRestartBtn\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"5a537424c7d5f0fa5c2169ba52cdc3b9\" id=\"domains SaveBtn\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert\" data-uid=\"95980ee1806a02128292c7d76666d134\" data-classes=\"alert\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert inner\" data-uid=\"1d55dd0faa0def33e76622369f125a8d\" data-classes=\"alert__inner\"><span data-content=\"The data was saved successfully\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"56af2c373986c15715d6b101723d8d4f\" data-classes=\"alert__text\" id=\"alert text\" data-binding_oncontentassignment=\"alertMessage\" class=\"bl-text\"></span></div></div></div></div></div> "
     },
     "home": {
@@ -585,8 +702,8 @@
           "moduleId": "page",
           "handlers": {
             "onEnter": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
               ]
             },
             "onLeave": {
@@ -599,6 +716,7 @@
       "usedComponentTypes": [],
       "style": {},
       "attrs": {},
+      "pods": {},
       "html": " "
     },
     "install": {
@@ -637,8 +755,8 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
               ]
             },
             "onDisabledStateAssignment": {
@@ -671,6 +789,7 @@
       },
       "dataBinding": {},
       "attrs": {},
+      "pods": {},
       "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install\" data-uid=\"718d19932aa8b54f9344d4617c3585f8\" data-classes=\"install\" style=\"flex-grow:1;flex-direction:row;\"><div data-module-type=\"reusable\" data-module-id=\"r_136108f7a232cd8e581efe5a164824cf\" data-display=\"true\" data-uid=\"8f86d76af8b49acd25d44166a84e067f\" id=\"InstallLogo\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b00e27fa940c3fdbc9e9bf7e35922518\" data-classes=\"install__container\" id=\"install container\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ce08e4f41809083196ce9c9e036d761b\" data-classes=\"install__main\" id=\"install main\"><span data-content=\"Welcome to Backendless Pro installation\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d9dfee724847147c2be7624e53e947f5\" data-classes=\"install__title\" id=\"install title\" class=\"bl-text\"></span><span data-content=\"Make sure to enter all configuration parametres so that each item is marked as complete:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0c4540516b86ea1abe412cb510b7a155\" data-classes=\"install__notice\" id=\"install notice\" class=\"bl-text\"></span><form data-module-type=\"system\" data-module-id=\"form\" data-display data-uid=\"f6d6870f84ff49e3e53742fc6cf65719\" data-classes=\"install__form\" id=\"install form\" style=\"border:0 none rgba(0, 0, 0, 0.05);\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"4222383e7ebde755c61e113ac974a599\" data-classes=\"install__FormItem\" id=\"install FormItem\"><span data-content=\"Backendless Pro Version:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"f1459fdc6f32d35286df717dc81b47ed\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"bc5436041ad7f474015d91af598f211c\" data-classes=\"install__FormRow\" id=\"install FormRow\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c8fbdd1e0bafab47ed1b085c1f4fda88\" data-classes=\"install__FormGroup\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"34e44f5c92b925058875bc26cf2d0263\" data-classes=\"install__input\" id=\"install InputVersion\" data-binding_onvalueassignment=\"version\"></div><span data-content=\"You can enter a different version number to install an older version of the  product.\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e4e2ef847c228437a2bca54e536cd92a\" data-classes=\"install__InputHint\" id=\"install InputHint\" class=\"bl-text\"></span></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9f7934c39503931ea43f9ee94d1f6a42\" data-classes=\"install__RestoteIcon\" id=\"install RestoteIcon\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ee47232b11c9d6e4bd5332e93359af98\" data-classes=\"install__FormItem\" id=\"install FormItem\"><span data-content=\"Local mounting path:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"90716e0ff1ca9ffcbf6b7dc3c89532f6\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7b89534bc34f86aa4d18571df7479ba4\" data-classes=\"install__FormRow\" id=\"install FormRow\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ab31031143487be1f4f870cb70b5b788\" data-classes=\"install__FormGroup\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"b1f48edbdbb272bba9dbac0cb3fbcd07\" data-classes=\"install__input\" id=\"install InputPath\" data-binding_onvalueassignment=\"mountPath\"></div><span data-content=\"This is a local file storage path that will be used by Backendless to store configuration, files, logs, etc\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"01f23cdb07695cfb17c7b80f3e6d437e\" data-classes=\"install__InputHint\" id=\"install InputHint\" class=\"bl-text\"></span></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"2f0a1b82b8aead5435946a3ca6fac65d\" data-classes=\"install__RestoteIcon\" id=\"install RestoteIcon\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9efd03f7b87181f3ee78bc2779574c95\" data-classes=\"install__FormItem\" id=\"install FormItem\"><span data-content=\"Backendless license key:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e11524fe26ab8e4bdf6b7e4dec03f18e\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d3eb09419e0335d4315611f54f7347ab\" data-classes=\"install__FormGroup  install__FormRow install__FormGroupTextArea\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-rows=\"9\" data-rows-max=\"10\" data-module-type=\"system\" data-module-id=\"textarea\" data-display data-uid=\"1bc9a63c6a5cf4859bcb565804af920e\" data-classes=\"install__TextArea\" id=\"install__TextAreaKey\" data-binding_onvalueassignment=\"license\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"55ecb1fa0d57673b9a26453eab219ad6\" data-classes=\"install__LinkWrapper\" id=\"install LinkWrapper\"><span data-content=\"Enter your license key. To request a license, fill out  the \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"dc3573ae277b8b0a2dcede6c66a84ac1\" data-classes=\"install__InputHint\" id=\"install InputHint\" class=\"bl-text\"></span><a href=\"\" data-text=\"Backendless license request form.\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"27e3f882f7a4833eb01da06a2accd051\" data-classes=\"install__InputHintLink install__InputHint\" id=\"install InputHintLink\" data-target-path=\"https://backendless.com/backendless-pro-license-request/\"></a></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install user\" data-uid=\"9cc5e1af3e3b6da1d7565e3fd4840517\" data-classes=\"install__user\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d4fdd08be36cd037eee96e1dcae8ea96\" data-classes=\"install__FormItem install__LoginItem\" id=\"install FormItem\"><span data-content=\"User Login:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"62ace399be19b909f7b665d8a79dd6cd\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install FormRow\" data-uid=\"740cb56bfd9ab708d4b38b81bbdf11b4\" data-classes=\"install__FormRow\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"2fa2d05b2a3b524758bbb93e0106b17c\" data-classes=\"install__FormGroup install__FormGroupTextArea\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"a6e841fc400190c72e765eadd01fd886\" data-classes=\"install__input\" id=\"install InputLogin\" data-binding_onvalueassignment=\"login\"></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"82b7ebea5ea465f54e59462a078bbcba\" data-classes=\"install__FormItem\" id=\"install FormItem\"><span data-content=\"User password:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0e5cdbca97e52e54285884235b4c42f9\" data-classes=\"install__FieldDescription\" id=\"install FieldDescription\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"641cc03abffd1bdc98294f5704598167\" data-classes=\"install__FormRow\" id=\"install FormRow\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d4f5e83abfc7b08166038197e40b5af2\" data-classes=\"install__FormGroup install__FormGroupTextArea\" id=\"install FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"4fa9f7ddbea8648a68589c2bdd118b95\" data-classes=\"install__input\" id=\"install InputPassword\" data-binding_onvalueassignment=\"password\"></div></div></div></div></div><button type=\"button\" data-label=\"Begin installation\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"4726032dbb9b39a30239907c90c2aac7\" data-classes=\"install__BeginButton MainButton\" id=\"install BeginButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-disabled=\"false\"></button></form></div></div></div>"
     },
     "kubernetes": {
@@ -721,9 +840,9 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js",
-                "./functions/8f16ba2ef5c9c7a7b32d569b3762f6c4/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
               ]
             }
           }
@@ -746,9 +865,9 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js",
-                "./functions/8f16ba2ef5c9c7a7b32d569b3762f6c4/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
               ]
             }
           }
@@ -822,6 +941,7 @@
       ],
       "style": {},
       "attrs": {},
+      "pods": {},
       "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"loader\" data-uid=\"4f334f9dc1010f33ff9a725c1781b1c7\" data-classes=\"loader mysql__loader\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"kubernetes\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"mysql\" data-dynamic-list-behaviour=\"false\"><span data-content=\"Kubernetes\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4038f86f5b6cacb8ee37a8efac3527aa\" data-classes=\"mysql__title\" id=\"kubernetes TitleMain\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"kubernetes container\" data-uid=\"9f186f89932cdfe880554e43f4f916a1\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"kubernetesContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"kubernetes block\" data-uid=\"8df5e86e263721a17d2eb9a2f1451d2c\" data-classes=\"mysql__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ef925676496420d56f57345d0dfd424e\" data-classes=\"mysql__item\" id=\"kubernetes item\"><span data-content=\"Config file path\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3ed8f4e9c52b6277c808d7edf7577e56\" data-classes=\"mysql__ItemName\" id=\"kubernetes ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0a8c314bf9d928fc2d18a4c3a7c92ee7\" data-classes=\"mysql__FormGroup\" id=\"kubernetes FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"b5bc92257c94714ffeb51abac39cdbae\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"7e1ac109ebbe4db399af721c8b472bd2\" data-classes=\"FormInput\" id=\"InputConfig\" data-binding_onvalueassignment=\"Config file path\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f2cd77e13a5f3c9633a2a81f62910c09\" data-classes=\"ValidationMessage \" id=\"ValidationMessageConfig\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"QuestionIcon\" data-uid=\"198c9c59e5389ad5ff37a4bb3e22bce5\" data-classes=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"232ab84f700a53bfc1734b039e93148f\" data-classes=\"mysql__item\" id=\"kubernetes item\"><span data-content=\"Namespace\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"83b6981a1b46fa4b6935730d70f31d79\" data-classes=\"mysql__ItemName\" id=\"kubernetes ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"77c656ba5669e12c29a2ed3c634ae54b\" data-classes=\"mysql__FormGroup\" id=\"kubernetes FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"6184add9877705b8cf4652778d5123da\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"4864c57e484b278e25943ae40cd58b96\" data-classes=\"FormInput\" id=\"InputNamespace\" data-binding_onvalueassignment=\"Namespace\" data-type=\"text\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"989b163823758fbffd4239ef9101b098\" data-classes=\"ValidationMessage \" id=\"ValidationMessageNamespace\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"429dacbd427245ceaee6938829c292ee\" data-classes=\"QuestionIcon\" id=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b4ac65b40f178182007af4f16afe24d6\" data-classes=\"mysql__controls\" id=\"kubernetes controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"33a848b796b77f762a2122974b1af0aa\" id=\"kubernetes SaveRestartBtn\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"5a537424c7d5f0fa5c2169ba52cdc3b9\" id=\"kubernetes SaveBtn\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert\" data-uid=\"95980ee1806a02128292c7d76666d134\" data-classes=\"alert\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert inner\" data-uid=\"1d55dd0faa0def33e76622369f125a8d\" data-classes=\"alert__inner\"><span data-content=\"The data was saved successfully\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"56af2c373986c15715d6b101723d8d4f\" data-classes=\"alert__text\" id=\"alert text\" data-binding_oncontentassignment=\"alertMessage\" class=\"bl-text\"></span></div></div></div></div></div> "
     },
     "mySql": {
@@ -1502,8 +1622,8 @@
           "moduleId": "block",
           "handlers": {
             "onMounted": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
               ]
             }
           }
@@ -1515,7 +1635,7 @@
           "moduleId": "text",
           "handlers": {
             "onContentAssignment": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -1591,9 +1711,9 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js",
-                "./functions/8f16ba2ef5c9c7a7b32d569b3762f6c4/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
               ]
             }
           }
@@ -1616,9 +1736,9 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js",
-                "./functions/8f16ba2ef5c9c7a7b32d569b3762f6c4/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
               ]
             }
           }
@@ -1630,7 +1750,7 @@
           "moduleId": "input",
           "handlers": {
             "onChange": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -1685,7 +1805,7 @@
           "moduleId": "text",
           "handlers": {
             "onDisplayAssignment": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -1737,6 +1857,7 @@
       ],
       "style": {},
       "attrs": {},
+      "pods": {},
       "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"loader\" data-uid=\"4f334f9dc1010f33ff9a725c1781b1c7\" data-classes=\"loader mysql__loader\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"redis\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"mysql\" data-dynamic-list-behaviour=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"redis container\" data-uid=\"9f186f89932cdfe880554e43f4f916a1\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"redisContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"redis block\" data-uid=\"8df5e86e263721a17d2eb9a2f1451d2c\" data-classes=\"mysql__block\"><span data-content=\"Default\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4038f86f5b6cacb8ee37a8efac3527aa\" data-classes=\"mysql__title\" id=\"redis TitleMain\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ef925676496420d56f57345d0dfd424e\" data-classes=\"mysql__item\" id=\"redis item\"><span data-content=\"Host\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3ed8f4e9c52b6277c808d7edf7577e56\" data-classes=\"mysql__ItemName\" id=\"redis ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0a8c314bf9d928fc2d18a4c3a7c92ee7\" data-classes=\"mysql__FormGroup\" id=\"redis FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"b5bc92257c94714ffeb51abac39cdbae\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"7e1ac109ebbe4db399af721c8b472bd2\" data-classes=\"FormInput\" id=\"InputHost\" data-binding_onvalueassignment=\"host\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f2cd77e13a5f3c9633a2a81f62910c09\" data-classes=\"ValidationMessage \" id=\"ValidationMessageHost\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"QuestionIcon\" data-uid=\"198c9c59e5389ad5ff37a4bb3e22bce5\" data-classes=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6c4f8b7c24a4e4689f71957abbb7b11a\" data-classes=\"mysql__item\" id=\"redis item\"><span data-content=\"Port\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"be4ac994c4a19fb9cacbbc3754516ef8\" data-classes=\"mysql__ItemName\" id=\"redis ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9f8d271480c21d2f5f2e304e9f62a254\" data-classes=\"mysql__FormGroup\" id=\"redis FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"c93b6e39816e568326f93d9c32d54338\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"57c1dbc34b1c989c67cdeee5b059df3e\" data-classes=\"FormInput\" id=\"InputPort\" data-type=\"number\" data-binding_onvalueassignment=\"port\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"49cfbb2af051f87d5dccc9944ddcb7b2\" data-classes=\"ValidationMessage \" id=\"ValidationMessagePort\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"cb32ffe5c76e4f69d148911494c6952e\" data-classes=\"QuestionIcon\" id=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"219e5279ad145723d7c94119916d1bd6\" data-classes=\"mysql__item\" id=\"redis item\"><span data-content=\"Pool size\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"ded231cce071ac9fea43624a7a0c5846\" data-classes=\"mysql__ItemName\" id=\"redis ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e03f595dfa33300b09be9f414d733ead\" data-classes=\"mysql__FormGroup\" id=\"redis FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"f2ec77a6212988ce1c169c39be4b0a3d\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"febabf157a01b6cc64e1b8f62b1e1a32\" data-classes=\"FormInput\" id=\"InputPool\" data-binding_onvalueassignment=\"pool\" data-type=\"number\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"c37570257cfd551e117c464d74721426\" data-classes=\"ValidationMessage \" id=\"ValidationMessagePool\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"cd73b3928006379f77b53b870895e855\" data-classes=\"QuestionIcon\" id=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"89d570fe983baa4cf873c049b7498352\" data-classes=\"mysql__item\" id=\"redis item\"><span data-content=\"Password\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"70259e5f20f9b25c8ef93c8a3edc9eb4\" data-classes=\"mysql__ItemName\" id=\"redis ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b64d374fa58ed195b8445665845fdcd3\" data-classes=\"mysql__FormGroup\" id=\"redis FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"fd6f3f69d8a9cadf674c92a4ba7c402f\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"826adfb80e9fa3f9c4d409ef7c4fb6a8\" data-classes=\"FormInput\" id=\"InputPassword\" data-type=\"text\" data-binding_onvalueassignment=\"password\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f6024c35a4be53e6b64b776ba73ce95c\" data-classes=\"ValidationMessage \" id=\"ValidationMessagePassword\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b11bd95b7c781e9ce31e01ee1b83b966\" data-classes=\"QuestionIcon\" id=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f5c48fa916fb2cbc6ffa89cc1a7213a1\" data-classes=\"mysql__item mysql__ItemToggle\" id=\"redis item\"><span data-content=\"Ssl\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"04057d829bf9f9a2cee5a34375126667\" data-classes=\"mysql__ItemName\" id=\"redis ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"97b7fc380e6104c2f5d60c97b80dc5f2\" data-classes=\"mysql__FormGroup\" id=\"redis FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9defbe7830c248fe9bc24975bfc8d10c\" data-classes=\"toggle\" id=\"WrapperToggle\"><div data-module-type=\"system\" data-module-id=\"switch\" data-display id=\"toggle\" data-uid=\"ffb46f1e64ca651da533c08c9633f67d\" data-binding_oncheckedstateassignment=\"ssl\"></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"QuestionIcon\" data-uid=\"6ee9263676997e3caaa315452be887df\" data-classes=\"QuestionIcon\" data-tooltip-text=\"Some Important Information\" data-tooltip-placement=\"top\"></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b4ac65b40f178182007af4f16afe24d6\" data-classes=\"mysql__controls\" id=\"redis controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"33a848b796b77f762a2122974b1af0aa\" id=\"redis SaveRestartBtn\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"5a537424c7d5f0fa5c2169ba52cdc3b9\" id=\"redis SaveBtn\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert\" data-uid=\"95980ee1806a02128292c7d76666d134\" data-classes=\"alert\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert inner\" data-uid=\"1d55dd0faa0def33e76622369f125a8d\" data-classes=\"alert__inner\"><span data-content=\"The data was saved successfully\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"56af2c373986c15715d6b101723d8d4f\" data-classes=\"alert__text\" id=\"alert text\" data-binding_oncontentassignment=\"alertMessage\" class=\"bl-text\"></span></div></div></div></div></div> "
     },
     "serverStatus": {
@@ -1747,8 +1868,8 @@
           "moduleId": "page",
           "handlers": {
             "onEnter": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
               ]
             },
             "onLeave": {
@@ -1763,7 +1884,7 @@
           "moduleId": "text",
           "handlers": {
             "onClassListAssignment": {
-              "dependencies": []
+              "usedCustomFunctions": []
             },
             "onContentAssignment": {
               "dependencies": []
@@ -1885,7 +2006,7 @@
               ]
             },
             "onClassListAssignment": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -1901,7 +2022,7 @@
               ]
             },
             "onClassListAssignment": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -1944,6 +2065,7 @@
       ],
       "style": {},
       "attrs": {},
+      "pods": {},
       "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"ServerStatus\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"205d24a93e3e11b81ca3097b328aadb5\" data-classes=\"ServerStatus__links\" id=\"ServerStatus links\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus LinkWrapper\" data-uid=\"b76e74e7fd91fd824b7858571f6a1a9d\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Web console:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"29079e624f1ee7260d71ccb5f48d2ff7\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32400\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"42755df4e55a88b2a2715db3b42462fa\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32400\"></a></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d18d0c97f463b16eb8f7c975ae4be5b\" id=\"ServerStatus LinkWrapper\" data-classes=\"ServerStatus__LinkWrapper\"><span data-content=\"Api:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bd7c93376ad1fb83eba10dbbd69a9db2\" data-classes=\"ServerStatus__LinkTitle\" id=\"ServerStatus LinkTitle\" class=\"bl-text\"></span><a href=\"\" data-text=\"http://localhost:32300\" data-target-type=\"_blank\" data-module-type=\"system\" data-module-id=\"link\" data-display data-uid=\"1fbe945ac1dfe5ab6e5bd12b0ec251b1\" data-classes=\"ServerStatus__link\" id=\"ServerStatus link\" data-target-path=\"http://localhost:32300\"></a></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"fcde2535bb3595cbdf5ae6baf489f48b\" id=\"ServerStatus header\" data-classes=\"ServerStatus__header\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6e99873d269a57066f8e00b26d91932f\" data-classes=\"ServerStatus__ItemProcess ServerStatus__ProcessHeader\" id=\"ServerStatus ProcessHeader\"><span data-content=\"Process\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"82bb3065fd2627af980837e30d5ea2e1\" data-classes=\"ServerStatus__HeaderTitle ServerStatus__HeaderTitleProcess\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d7ef66ac256ce719dfc527ad9d9faf65\" data-classes=\"ServerStatus__HeaderControls\" id=\"ServerStatus HeaderControls\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"6759802728a72cb9eab5aa54c34c639f\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus__HeaderProcessCheck\" data-binding_oncheckedstateassignment=\"checkedAll\"></div><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3495ed1250d912224aad061bd17776b6\" data-classes=\"ServerStatus__StopAllBtn\" id=\"ServerStatus StopAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"34d13e2e4e07a9777c29d843e202cb7e\" data-classes=\"ServerStatus__RestartAllBtn\" id=\"ServerStatus RestartAllBtn\" class=\"bl-text\"></span><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"295fb372f529cba18d6db14ddb7d3d2e\" data-classes=\"ServerStatus__StartAllBtn\" id=\"ServerStatus StartAllBtn\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"81f4a6ce0f77f50e1e72579ea0c1093e\" data-classes=\"ServerStatus__ItemProcessVersion\" id=\"ServerStatus ProcessVersionHeader\"><span data-content=\"Version\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"641d6c2996755d320927d93998b3515e\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5d2867199c1ca43906c2c725257acf84\" data-classes=\"ServerStatus__ItemStatus\" id=\"ServerStatus StatusHeader\"><span data-content=\"Status\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"8db8b9d41877db042a1aa68306be6d04\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6127940f676d1a63a973d5879252d271\" data-classes=\"ServerStatus__ItemStatusControls\" id=\"ServerStatus ControlsHeader\"><span data-content=\"Actions\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"23ab37b9ba66b5741d12836cc73fb41b\" data-classes=\"ServerStatus__HeaderTitle\" id=\"ServerStatus HeaderTitle\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus container\" data-uid=\"0fbd34b64c4b8f271001b02635bd0324\" data-classes=\"ServerStatus__container\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e9118d25f3628ca2aa41dd74e6510651\" id=\"ServerStatus item\" data-classes=\"ServerStatus__item\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemProcess\" data-uid=\"dde20e9b22bd3a97576100dc3cfc011a\" data-classes=\"ServerStatus__ItemProcess\"><div data-label=\"\" data-module-type=\"system\" data-module-id=\"checkbox\" data-display data-uid=\"1d560e5d54b6275603bda32524bb311e\" data-classes=\"ServerStatus__ItemProcessCheck\" id=\"ServerStatus ItemProcessCheck\" data-binding_oncheckedstateassignment=\"checked\"></div><span data-content=\"bl-server\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"949223b896872815ef46fd64bba90498\" data-classes=\"ServerStatus__ItemProcessName\" id=\"ServerStatus ItemProcessName\" data-binding_oncontentassignment=\"name\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f56809ee01bd5501c0b8ec68b451d48b\" id=\"ServerStatus ItemProcessVersion\" data-classes=\"ServerStatus__ItemProcessVersion\"><span data-content=\"6.4.8\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"99989e349d970f9161942b0999b2b807\" data-classes=\"ServerStatus__ItemVersionName\" id=\"ServerStatus ItemVersionName\" data-binding_oncontentassignment=\"version\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0c9cf5f478d8d0ddd762dd588ed87501\" id=\"ServerStatus ItemStatus\" data-classes=\"ServerStatus__ItemStatus\"><span data-content=\"Running\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0742b98a516b8b31e62c9cfd5f371619\" data-classes=\"ServerStatus__ItemStatusName ServerStatus__ItemStatusName--running\" id=\"ServerStatus ItemStatusName\" data-binding_oncontentassignment=\"state\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"efb23146fac828b8b8d2babe379c94b1\" id=\"ServerStatus ItemStatusControls\" data-classes=\"ServerStatus__ItemStatusControls\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ServerStatus ItemBtnStop\" data-uid=\"24bf7b1a72e1b311f2ad3fe693ce165e\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0856fd497a89d70cc7d2aa08ec3b5275\" data-classes=\"ServerStatus__BtnIconStop\" id=\"ServerStatus BtnIconStop\" class=\"bl-text\"></span><span data-content=\"Stop\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6864be268f1a7b115c6246bbda7dec4d\" data-classes=\"ServerStatus__ItemBtnTitle ServerStatus__ItemBtnTitle--stop\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ff5a02b652d4cb723ed798626a4de138\" id=\"ServerStatus ItemBtnRestart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3be4e93d5717c928d00382deffb4da86\" data-classes=\"ServerStatus__BtnIconRestart\" id=\"ServerStatus__BtnIconRestart\" class=\"bl-text\"></span><span data-content=\"Restart\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"21baf943425a278c3fac45292c5b2d66\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"637d6837ca5552e26e13e3fc9ed73b35\" id=\"ServerStatus ItemBtnStart\" data-classes=\"ServerStatus__ItemBtn\"><span data-content=\"\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"1ce66859038118bc4e55de0f56dff638\" data-classes=\"ServerStatus__BtnIconStart\" id=\"ServerStatus BtnIconStart\" class=\"bl-text\"></span><span data-content=\"Start\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9a45dd3d7a175488a867573bfc8db689\" data-classes=\"ServerStatus__ItemBtnTitle\" id=\"ServerStatus ItemBtnTitle\" class=\"bl-text\"></span></div></div></div></div></div></div></div></div> "
     },
     "serviceLogs": {
@@ -2330,6 +2452,7 @@
       ],
       "style": {},
       "attrs": {},
+      "pods": {},
       "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"loader\" data-uid=\"4f334f9dc1010f33ff9a725c1781b1c7\" data-classes=\"loader mysql__loader\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ssl\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"ssl\" data-dynamic-list-behaviour=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ssl TabsWrapper\" data-uid=\"9752f1f214ae52caca37d3cd08962dda\" data-classes=\"ssl__TabsWrapper\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ssl tabs\" data-uid=\"d566668555b919541cb3f322c4074f8e\" data-classes=\"ssl__tabs\"><span data-content=\"Nginx\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"7d97d60a1f160c6604a8db8ab50c3281\" data-classes=\"ssl__TabsItem ssl__TabsItem--active\" id=\"ssl TabsItemNgin[\" class=\"bl-text\"></span><span data-content=\"AWS ELB\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"b75382fe405e12aee1f1100fcbcf26d2\" data-classes=\"ssl__TabsItem\" id=\"ssl TabsItemAws\" class=\"bl-text\"></span><span data-content=\"GCE\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0e6838cfa79de1a440dc2fd9ac29be19\" data-classes=\"ssl__TabsItem\" id=\"ssl TabsItemGce\" class=\"bl-text\"></span><span data-content=\"Azure\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"35cf683c8b6df21bdab6d8418ca6285a\" data-classes=\"ssl__TabsItem\" id=\"ssl TabsItemAzure\" class=\"bl-text\"></span><span data-content=\"Digital Ocean\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e846d674758698765e28762f57b71a46\" data-classes=\"ssl__TabsItem\" id=\"ssl TabsItemDigital\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"bc363b1267216ba7fa3847177128a06a\" data-classes=\"ssl__nginx\" id=\"ssl nginx\"><span data-content=\"To enable Nginx and generate SSL certificate on your machine, port 80 should be available for external connection so Lets Encrypt may check if you are the owner of your domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4038f86f5b6cacb8ee37a8efac3527aa\" data-classes=\"ssl__info\" id=\"ssl info\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ssl container\" data-uid=\"9f186f89932cdfe880554e43f4f916a1\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"sslNginxContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ssl block\" data-uid=\"8df5e86e263721a17d2eb9a2f1451d2c\" data-classes=\"mysql__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f5c48fa916fb2cbc6ffa89cc1a7213a1\" data-classes=\"mysql__item mysql__ItemToggle\" id=\"ssl item\"><span data-content=\"Enabled:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"04057d829bf9f9a2cee5a34375126667\" data-classes=\"mysql__ItemName\" id=\"ssl ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"97b7fc380e6104c2f5d60c97b80dc5f2\" data-classes=\"ssl__FormGroup\" id=\"ssl FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9defbe7830c248fe9bc24975bfc8d10c\" data-classes=\"toggle\" id=\"WrapperToggle\"><div data-module-type=\"system\" data-module-id=\"switch\" data-display id=\"toggle\" data-uid=\"ffb46f1e64ca651da533c08c9633f67d\" data-binding_oncheckedstateassignment=\"enabled\"></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ef925676496420d56f57345d0dfd424e\" data-classes=\"mysql__item\" id=\"ssl item\"><span data-content=\"Console domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3ed8f4e9c52b6277c808d7edf7577e56\" data-classes=\"mysql__ItemName\" id=\"ssl ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0a8c314bf9d928fc2d18a4c3a7c92ee7\" data-classes=\"ssl__FormGroup\" id=\"ssl FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"b5bc92257c94714ffeb51abac39cdbae\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"7e1ac109ebbe4db399af721c8b472bd2\" data-classes=\"FormInput\" id=\"InputConsoleDomain\" data-binding_onvalueassignment=\"console domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f2cd77e13a5f3c9633a2a81f62910c09\" data-classes=\"ValidationMessage \" id=\"ValidationMessageConsole\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"219e5279ad145723d7c94119916d1bd6\" data-classes=\"mysql__item\" id=\"ssl item\"><span data-content=\"Api domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"ded231cce071ac9fea43624a7a0c5846\" data-classes=\"mysql__ItemName\" id=\"ssl ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e03f595dfa33300b09be9f414d733ead\" data-classes=\"ssl__FormGroup\" id=\"ssl FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"f2ec77a6212988ce1c169c39be4b0a3d\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"febabf157a01b6cc64e1b8f62b1e1a32\" data-classes=\"FormInput\" id=\"InputApiDomain\" data-type=\"text\" data-binding_onvalueassignment=\"api domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"c37570257cfd551e117c464d74721426\" data-classes=\"ValidationMessage \" id=\"ValidationMessageApi\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"89d570fe983baa4cf873c049b7498352\" data-classes=\"mysql__item\" id=\"ssl item\"><span data-content=\"RT domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"70259e5f20f9b25c8ef93c8a3edc9eb4\" data-classes=\"mysql__ItemName\" id=\"ssl ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b64d374fa58ed195b8445665845fdcd3\" data-classes=\"ssl__FormGroup\" id=\"ssl FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"InputWrapper\" data-uid=\"fd6f3f69d8a9cadf674c92a4ba7c402f\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"826adfb80e9fa3f9c4d409ef7c4fb6a8\" data-classes=\"FormInput\" id=\"InputRtDomain\" data-type=\"text\" data-binding_onvalueassignment=\"rt domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"f6024c35a4be53e6b64b776ba73ce95c\" data-classes=\"ValidationMessage \" id=\"ValidationMessageRt\" class=\"bl-text\"></span></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b4ac65b40f178182007af4f16afe24d6\" data-classes=\"mysql__controls\" id=\"sslNginx controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"33a848b796b77f762a2122974b1af0aa\" id=\"sslNgnx SaveRestartBtn\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"5a537424c7d5f0fa5c2169ba52cdc3b9\" id=\"sslNgnx SaveBtn\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"164cfbd566af90c36cb55581c799fced\" data-classes=\"ssl__nginx ssl__hide\" id=\"ssl aws\"><span data-content=\"AWS\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"714f78a8670891440316c2a4b4cebf38\" data-classes=\"ssl__info\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"294f8c58ab85770e96a708235721bcae\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"sslNginxContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"bf6239d8cbba90beb91949e380525e7d\" data-classes=\"mysql__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d1958033366e5c140ca9c60621034208\" data-classes=\"mysql__item mysql__ItemToggle\"><span data-content=\"Enabled:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"33ff86fc973e6b0d1b9b1115807bae66\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"83859732483a0842869e32ef9606ef95\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ba5d1ceae3d9ee67fcef62a1eb8705a1\" data-classes=\"toggle\"><div data-module-type=\"system\" data-module-id=\"switch\" data-display data-uid=\"a393b051345500fdf9ebce34558b7f36\" data-binding_oncheckedstateassignment=\"enabled\"></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3053aef4797fd435a98dd7564527738e\" data-classes=\"mysql__item\"><span data-content=\"Console domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"afdffa38c9114e98b3a3204fdf5b9ba7\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0f2a3eade4d4da0e3f33ea6e1d0a5631\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"275656a7eee24acbc3be7cc4f36db5a9\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"13b16a45f5d9941b3c62cda470f1d65c\" data-classes=\"FormInput\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"4daa7a24cd7894ff5266e046a9d3f256\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6d434248d1778178cc5da163d71d08fb\" data-classes=\"mysql__item\"><span data-content=\"Api domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e7f8b6be95b6b13963bb2789d61e51fd\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"24d22c5ae7b21684ac03cfed9075eae7\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"bd1720972c7d5da60575c71bc05840c6\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"142c8a8aecf16c38f76a09f671fa8121\" data-classes=\"FormInput\" data-type=\"text\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"2999d4ff0b5dc8a7976aab12d35734fd\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"49b81fd3a429c4777c67deaf4b0d3735\" data-classes=\"mysql__item\"><span data-content=\"RT domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"334c63c2bed99cb2a5471122772730f3\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c58d5a5700cfb974f0d255e351ee4a38\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d391068f05e1bf3376f68362ca04f321\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"e26d2b63e6a440f801d5edfb5b4b19c2\" data-classes=\"FormInput\" data-type=\"text\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"532692e1a35bb8abe53dd0a1c1bdea8a\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"df213728ce55f75f691ebd35e35b1e99\" data-classes=\"mysql__controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"7f56db0f0a3e82343cf5f2fe0d224895\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"422554d1985b8ce3cd95f51afbf62d53\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"8af5b433d6e758a12aac416fe632bfc2\" data-classes=\"ssl__nginx ssl__hide\" id=\"ssl gce\"><span data-content=\"GCE\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"ea7e5cc3b707d79d769e8ea242565e0c\" data-classes=\"ssl__info\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9ec5db6ee307775ab8dcac03d12d1237\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"sslNginxContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3a011d05612cbd6249cec3acf553ac15\" data-classes=\"mysql__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"026b732f4d8ac674f7a4bbeb7661b938\" data-classes=\"mysql__item mysql__ItemToggle\"><span data-content=\"Enabled:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9517c75deca4a467a93d16c432429d27\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"8bd725fb6614b66cc0ec2698980d66da\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"1ec76fc522c888d421dd3a78d575879e\" data-classes=\"toggle\"><div data-module-type=\"system\" data-module-id=\"switch\" data-display data-uid=\"7481619c0133718e1b9a3f418f7f4d72\" data-binding_oncheckedstateassignment=\"enabled\"></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"87171e9911bb1551593666f211ca885a\" data-classes=\"mysql__item\"><span data-content=\"Console domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"5f32f18d680ed5cc49481668f824f4ce\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c8bb4e9ab04369530e44d3f2a2be4743\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"92684557a04b6ca61b7ed978502c6665\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"2d2d4419f4da5a2eb6ab69adfab2f6da\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"console domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"710e9c9d041434abab5eb604a4c26d4e\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c1d9761aba25976dbc24a2ed96c62e92\" data-classes=\"mysql__item\"><span data-content=\"Api domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"02cca1b4d25cd82575b260390be917b8\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9b8146a3c4130ae9ef858a02f8686b6e\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"628a72a8f836fef4f4cd613d9b627a65\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"86bd6c53c147dc22f40f18193ab2a33d\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"api domain\" data-type=\"text\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"1aa1eb17c67cfeefec76192a57e9e768\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f9dd0aa6bb1a187d44de06cc1a89d9b9\" data-classes=\"mysql__item\"><span data-content=\"RT domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"708dfa78f8a57e510c1bcb6d013ff142\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d95d5f794f25b7aa666ad4cb0b2d3d01\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7f032c0d8def50a7fe9a627daa0dd3b7\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"95a31f77ebf19ffb1c19997355b2d25c\" data-classes=\"FormInput\" data-type=\"text\" data-binding_onvalueassignment=\"rt domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"b99e7723990975ada444e226b8387db2\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c5464a4c7c5a2704633d7bd37aab9012\" data-classes=\"mysql__controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"be5488b2823aa06c8d6cad1529acd4b6\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"36a9ba857b957f93f3bd138facbe9329\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"062ce57f4dfb9b98fc6f6af57eef8116\" data-classes=\"ssl__nginx ssl__hide\" id=\"ssl azure\"><span data-content=\"Azure\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e42a095ffd2fc9effea543559756d8e8\" data-classes=\"ssl__info\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e6a9ca97eed8aeeda45c707479539981\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"sslNginxContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"52f85baa31e3d5941a4d2b41e46dff57\" data-classes=\"mysql__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"54be988112ba85196e77fb8793ada117\" data-classes=\"mysql__item mysql__ItemToggle\"><span data-content=\"Enabled:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"346e49b8922b0f54e733f8e40efbb226\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"56b787db8b9f681922e708eca1cb17fe\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b314e95ec329efddb54efc031569d838\" data-classes=\"toggle\"><div data-module-type=\"system\" data-module-id=\"switch\" data-display data-uid=\"62559cfefbd636a7bc75b6a181690442\" data-binding_oncheckedstateassignment=\"enabled\"></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"fd3a1de435e5ad6b8f345b2470728cdf\" data-classes=\"mysql__item\"><span data-content=\"Console domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6dd46c7e1db3d22743fcb2aa3d18b78c\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"28458d45603a23e4c2fb9aa4a9bfd2ab\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"257c0ef2ec07a213408a197bc2227d0f\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"128e93699389292e0c894147a16b33b2\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"console domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"66ced8b517a2de4a7c21b3ebd9fb5933\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"2e64eb4cbca9932513062f36a0e3820a\" data-classes=\"mysql__item\"><span data-content=\"Api domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6ac39f2fdebf3957dca955636f4f1cb7\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"21090eca24a6bf918a1cb7f40b1d3a14\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b6237f1963aa6eb3af3d97b2c6721b54\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"3532f7180514dddbbcbb1fc1efee3c6a\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"api domain\" data-type=\"text\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"57bb451b63b7946e77742ce8d9eb6b58\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"624d137aef45ea8797db65a86a41f02e\" data-classes=\"mysql__item\"><span data-content=\"RT domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6196dca218d13b2a0eac4297e96b4606\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f2e24559de7ca6031072534e595a4a35\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"0fa6aec66b63fbcf95f3afcd857f819f\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"824ff69f9b36bd3a1252e412b3acaa5c\" data-classes=\"FormInput\" data-type=\"text\" data-binding_onvalueassignment=\"rt domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"6b280c7d327f674f1c3629429ff58f7c\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"2bad5b396e2ad46d585313134a9d4fb9\" data-classes=\"mysql__controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"c127561bd855585e36dee55d0eae650f\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"e47f9238766c94b7869a6638d3b51a02\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"8acc8597ccc851b89eed36c68d48d033\" data-classes=\"ssl__nginx ssl__hide\" id=\"ssl digital\"><span data-content=\"Digital\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9828a36e5c413f7686c7face61ccd98c\" data-classes=\"ssl__info\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"a9bc4f0a46d458f2e3f23d7fd41d8c25\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"sslNginxContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d6c83385978931458bdcc516841e1808\" data-classes=\"mysql__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"20c3b391d7b366569fba0d477a7ab461\" data-classes=\"mysql__item mysql__ItemToggle\"><span data-content=\"Enabled:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"08d1e05e7b4486a26fe9a334af78b9ba\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"65869997a6fecb84d822acd5811c5b2f\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"86844e9abd3c0c07dad1b44aafeaa4d3\" data-classes=\"toggle\"><div data-module-type=\"system\" data-module-id=\"switch\" data-display data-uid=\"e40a98f138eaa4f8fc8920f3b191c3ca\" data-binding_oncheckedstateassignment=\"enabled\"></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"8e67045d85014a0e66390bfd54966962\" data-classes=\"mysql__item\"><span data-content=\"Console domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"23cd21132b48a674ce66f472f523e756\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7b16570897dec23a44fec3a8f8392dd1\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"796b7651dcaf229efd44bdf1d6858363\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"21bb0db99f22fc1e4b0e7b345b2c8b73\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"console domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"4ed4b775d97950e21eb97ef3a1e57c6a\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6078ff5b68ed08936d9eef28280d8982\" data-classes=\"mysql__item\"><span data-content=\"Api domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"a932ca5dff05419d74ecb53c13447572\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ca07e3b42449d00279113d5a0db4c547\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d6be84bdf2fa74e923cdfb1441e50344\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"4732c782c756a2d1716dcd21901184db\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"api domain\" data-type=\"text\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"cc8a8bc91a7a2b2b8454ca74906e1aa9\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c53e16c60faf0bd10836a4470adca6f5\" data-classes=\"mysql__item\"><span data-content=\"RT domain\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"2fe241f8896c058cb73f14ef0c6b4817\" data-classes=\"mysql__ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9962915c8e9bde4a4007b196af9f36e5\" data-classes=\"ssl__FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"07e7b182726502e41bed87c4f42654b6\" data-classes=\"InputWrapper\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"8bcaaa1dc10da381ff5fc02c3d6a6671\" data-classes=\"FormInput\" data-type=\"text\" data-binding_onvalueassignment=\"rt domain\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"bb04634a7f0179680d3a9e217de5a9a9\" data-classes=\"ValidationMessage \" class=\"bl-text\"></span></div></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"33a666cd2d56e082119173930fe9ee73\" data-classes=\"mysql__controls\"><button type=\"button\" data-label=\"Save and Restart\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"1923a8134aee9e69e12b07050fe5bdc1\" data-classes=\"MainButton mysql__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSaveRestart\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Save\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"531785c34c5495dae0ecbac2244794ef\" data-classes=\"SaveButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSave\" data-binding_ondisabledstateassignment=\"btnSaveDisabled\"></button></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert\" data-uid=\"95980ee1806a02128292c7d76666d134\" data-classes=\"alert\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert inner\" data-uid=\"1d55dd0faa0def33e76622369f125a8d\" data-classes=\"alert__inner\"><span data-content=\"The data was saved successfully\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"56af2c373986c15715d6b101723d8d4f\" data-classes=\"alert__text\" id=\"alert text\" data-binding_oncontentassignment=\"alertMessage\" class=\"bl-text\"></span></div></div></div></div></div> "
     },
     "upgrade": {
@@ -2548,8 +2671,8 @@
           "moduleId": "block",
           "handlers": {
             "onMounted": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
               ]
             }
           }
@@ -2561,10 +2684,7 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js",
-                "./functions/8f16ba2ef5c9c7a7b32d569b3762f6c4/code.js"
-              ]
+              "usedCustomFunctions": []
             }
           }
         },
@@ -2586,7 +2706,7 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -2597,7 +2717,7 @@
           "moduleId": "icon",
           "handlers": {
             "onClick": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -2608,7 +2728,7 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": []
+              "usedCustomFunctions": []
             }
           }
         },
@@ -2619,9 +2739,9 @@
           "moduleId": "button",
           "handlers": {
             "onClick": {
-              "dependencies": [
-                "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js",
-                "./functions/8f16ba2ef5c9c7a7b32d569b3762f6c4/code.js"
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
               ]
             }
           }
@@ -2682,6 +2802,75 @@
               "dependencies": []
             }
           }
+        },
+        "8927183bdee3889fa44288bf76731ebd": {
+          "id": "ModalConfirm CloseBtn",
+          "type": "icon",
+          "moduleType": "system",
+          "moduleId": "icon",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "8238b1fa04db49ac4312630541517244": {
+          "id": "ModalConfirm btn cancel",
+          "type": "button",
+          "moduleType": "system",
+          "moduleId": "button",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "e27668188bad5334c6aa19d148437bbe": {
+          "id": "ModalConfirm btn delete",
+          "type": "button",
+          "moduleType": "system",
+          "moduleId": "button",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5",
+                "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+              ]
+            }
+          }
+        },
+        "bff4d8ac579f78a648132998464e4919": {
+          "id": "ModalConfirm",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "6b0596ebe49ddb2479778e1710a582ae": {
+          "id": "ModalConfirm message",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "1744db9f250d6ba85e3435fc3be3660e": {
+          "id": "CreateUser",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": []
+            }
+          }
         }
       },
       "dataBinding": {},
@@ -2690,7 +2879,6 @@
         "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
         "r_dcac843a154c1eb2e28a4a08b5d34fec",
         "text",
-        "switch",
         "button",
         "icon",
         "form",
@@ -2698,7 +2886,392 @@
       ],
       "style": {},
       "attrs": {},
-      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"loader\" data-uid=\"4f334f9dc1010f33ff9a725c1781b1c7\" data-classes=\"loader mysql__loader\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"management\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"mysql\" data-dynamic-list-behaviour=\"false\"><span data-content=\"User management\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4038f86f5b6cacb8ee37a8efac3527aa\" data-classes=\"mysql__title\" id=\"management TitleMain\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f5c48fa916fb2cbc6ffa89cc1a7213a1\" data-classes=\"mysql__item mysql__ItemToggle\" id=\"management item\"><span data-content=\"Enabled:\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"04057d829bf9f9a2cee5a34375126667\" data-classes=\"mysql__ItemName\" id=\"management ItemName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"97b7fc380e6104c2f5d60c97b80dc5f2\" data-classes=\"mysql__FormGroup management__FormGroup\" id=\"management FormGroup\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"9defbe7830c248fe9bc24975bfc8d10c\" data-classes=\"toggle\" id=\"WrapperToggle\"><div data-module-type=\"system\" data-module-id=\"switch\" data-display id=\"toggle\" data-uid=\"ffb46f1e64ca651da533c08c9633f67d\" data-binding_oncheckedstateassignment=\"userManagement\"></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"management container\" data-uid=\"9f186f89932cdfe880554e43f4f916a1\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"managementContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"management block\" data-uid=\"8df5e86e263721a17d2eb9a2f1451d2c\" data-classes=\"management__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"a2038923dfdf21b786ffb0c4b4f2d80b\" data-classes=\"mysql__item management__item\" id=\"management item\"><span data-content=\"User Name\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"5399014a520f0ec3bacb891a7a32c591\" data-classes=\"mysql__ItemName\" id=\"management user\" data-binding_oncontentassignment=\"userName\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b4ac65b40f178182007af4f16afe24d6\" data-classes=\"mysql__controls management__controls\" id=\"management controls\"><button type=\"button\" data-label=\"Set Password\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"33a848b796b77f762a2122974b1af0aa\" id=\"management SaveRestartBtn\" data-classes=\"MainButton  management__SetPasswordBtn\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSetPassword\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Delete\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"5a537424c7d5f0fa5c2169ba52cdc3b9\" id=\"management SaveBtn\" data-classes=\"SaveButton management__DeleteBtn\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnDelete\" data-binding_ondisabledstateassignment=\"btnDeleteDisabled\"></button></div></div></div></div><button type=\"button\" data-label=\"Create User\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"8f4c69df692fc0b15ebc79a8b25418e6\" data-classes=\"MainButton management__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" id=\"management CreateUser\"></button></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert\" data-uid=\"95980ee1806a02128292c7d76666d134\" data-classes=\"alert\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert inner\" data-uid=\"1d55dd0faa0def33e76622369f125a8d\" data-classes=\"alert__inner\"><span data-content=\"The data was saved successfully\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"56af2c373986c15715d6b101723d8d4f\" data-classes=\"alert__text\" id=\"alert text\" data-binding_oncontentassignment=\"alertMessage\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser\" data-uid=\"1744db9f250d6ba85e3435fc3be3660e\" data-classes=\"CreateUser\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser main\" data-uid=\"5269a39feba9cc0310393a7a5f193c6b\" data-classes=\"CreateUser__main\"><i data-icon=\"close\" data-size=\"default\" data-module-type=\"system\" data-module-id=\"icon\" data-display data-uid=\"ea1df98b3023353c2169a1abea133c3b\" data-classes=\"CreateUser__CloseBtn\" id=\"CreateUser CloseBtn\"></i><form data-module-type=\"system\" data-module-id=\"form\" data-display id=\"CreateUser form\" data-uid=\"b4398d5c0048d80587b9664d8f5eac11\" data-classes=\"CreateUser__form\"><div data-module-type=\"block\" data-display id=\"CreateUser title\" data-uid=\"8c4a002d7884a3ee2a214f49f5f56b08\" data-classes=\"CreateUser__title\"><span data-module-type=\"text\" data-content=\"Create User\" data-display id=\"CreateUser TitleText\" data-uid=\"cf1197d9e13bb745d16412c522dada3d\" data-classes=\"CreateUser__TitleText\" data-binding_oncontentassignment=\"modalTitle\" style=\"align-self:center;font-size:22px;\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser item\" data-uid=\"4f35489e90078bbd7d2466f45ac2fb76\" data-classes=\"CreateUser__item\"><span data-content=\"Name\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0e58d81c2c8aa79f720bbf1dfa317d56\" data-classes=\"CreateUser__label\" id=\"CreateUser label\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser FormGroup\" data-uid=\"f62897a2a2f6712f21f495d110d829a4\" data-classes=\"CreateUser__FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display id=\"InputName\" data-uid=\"0681c698ed65058599f21cdecce92e8d\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"userName\" data-binding_ondisabledstateassignment=\"userNameDisabled\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"42fc2f835fa3bf01cbaf06e27b5b5e3b\" data-classes=\"ValidationMessage\" id=\"CreateUser ValidationMessageName\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d355013440a32b73e47c6a11061d5572\" data-classes=\"CreateUser__item\" id=\"CreateUser item\"><span data-content=\"Password\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e38921a399e3f0c68307535c0469ec14\" data-classes=\"CreateUser__label\" id=\"CreateUser label\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f7edf2b192988c63506a5bd3ba641abf\" data-classes=\"CreateUser__FormGroup\" id=\"CreateUser FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"a6868ac85ed520f809ceb0b4830d26ed\" data-classes=\"FormInput\" id=\"InputPassword\" data-type=\"password\" data-binding_onvalueassignment=\"password\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"d50a1aa5921ba06c583457a897f2a8f7\" data-classes=\"ValidationMessage\" id=\"CreateUser ValidationMessagePassword\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7c0ed286585b5632bda678f971549847\" data-classes=\"CreateUser__item\" id=\"CreateUser item\"><span data-content=\"Password confirmation\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"1cabef343588f59f6167bf6ad6081ab6\" data-classes=\"CreateUser__label\" id=\"CreateUser label\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"deb6766894dfeec884987fe90697b95c\" data-classes=\"CreateUser__FormGroup\" id=\"CreateUser FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"45d92809be072fc19a6f16beadcb1cd3\" data-classes=\"FormInput\" id=\"InputConfirm\" data-type=\"password\" data-binding_onvalueassignment=\"confirmPassword\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"400fba0802880a93bb759cb7cbb9123f\" data-classes=\"ValidationMessage\" id=\"CreateUser ValidationMessageConfirm\" class=\"bl-text\"></span><span data-content=\"Password mismatch\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"76b375976525da5784a688f366843054\" data-classes=\"ValidationMessage\" id=\"ValidationMessageMismatch\" class=\"bl-text\"></span></div></div><button type=\"button\" data-label=\"Create\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"363a0a2a92aa5bcb62b17eba85b1d7a8\" data-classes=\"MainButton CreateUser__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" id=\"CreateUser__CreateBtn\" data-binding_onlabelassignment=\"createBtn\" data-binding_ondisabledstateassignment=\"createBtnDisabled\"></button></form></div></div></div></div></div> "
+      "pods": {},
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"wrapper\" data-uid=\"766bf461796308dbbad8e8489727e7c2\" data-classes=\"wrapper\" style=\"display:flex;flex-direction:column;flex-grow:1;\"><div data-module-type=\"reusable\" data-module-id=\"r_eecdebf7a73f3c5e1cffd6bc92dbd289\" data-display=\"true\" data-uid=\"68bf43fb148883dff4233a927f3792cd\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"manage\" data-uid=\"47cc830a1ad1e666739f1415eab9b31b\" data-classes=\"manage\"><div data-module-type=\"reusable\" data-module-id=\"r_dcac843a154c1eb2e28a4a08b5d34fec\" data-display=\"true\" data-uid=\"0368ba9f6eb832149ce8ab4ea3c685d4\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"36696f35570c2953b381e057b4475c87\" data-classes=\"main\" id=\"main\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"loader\" data-uid=\"4f334f9dc1010f33ff9a725c1781b1c7\" data-classes=\"loader mysql__loader\"></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"management\" data-uid=\"924202b19f0ef683e3940a99b258d565\" data-classes=\"mysql\" data-dynamic-list-behaviour=\"false\"><span data-content=\"User management\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4038f86f5b6cacb8ee37a8efac3527aa\" data-classes=\"mysql__title\" id=\"management TitleMain\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f5c48fa916fb2cbc6ffa89cc1a7213a1\" data-classes=\"management__WrraperTextItem\" id=\"management item\"><span data-content=\"To disable user management set \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"04057d829bf9f9a2cee5a34375126667\" data-classes=\"management__ItemText\" id=\"management ItemName\" class=\"bl-text\"></span><span data-content=\"user.authEnabled = false \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"fe2b5ae522ba951d45a2b8581b691aee\" data-classes=\"management__ItemText management__ItemText--bold\" class=\"bl-text\"></span><span data-content=\"in the \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bd9f56bafbd8bccb5404f71539341522\" data-classes=\"management__ItemText\" class=\"bl-text\"></span><span data-content=\"config/config.json \" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"fbf57c87eb0a99cbfb0360593ac4938b\" data-classes=\"management__ItemText management__ItemText--bold\" class=\"bl-text\"></span><span data-content=\"file\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"9bdb1f913569e5bfb49ef03f0c492765\" data-classes=\"management__ItemText\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"management container\" data-uid=\"9f186f89932cdfe880554e43f4f916a1\" data-classes=\"mysql__container\" data-dynamic-list-behaviour=\"true\" data-binding_ondynamicitemsassignment=\"managementContainer\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"management block\" data-uid=\"8df5e86e263721a17d2eb9a2f1451d2c\" data-classes=\"management__block\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"a2038923dfdf21b786ffb0c4b4f2d80b\" data-classes=\"mysql__item management__item\" id=\"management item\"><span data-content=\"User Name\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"5399014a520f0ec3bacb891a7a32c591\" data-classes=\"mysql__ItemName management__ItemName\" id=\"management user\" data-binding_oncontentassignment=\"login\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"b4ac65b40f178182007af4f16afe24d6\" data-classes=\"mysql__controls management__controls\" id=\"management controls\"><button type=\"button\" data-label=\"Set Password\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"33a848b796b77f762a2122974b1af0aa\" id=\"management SaveRestartBtn\" data-classes=\"MainButton  management__SetPasswordBtn\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnSetPassword\" data-binding_ondisabledstateassignment=\"btnSaveRestartDisabled\"></button><button type=\"button\" data-label=\"Delete\" data-variant=\"outlined\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"5a537424c7d5f0fa5c2169ba52cdc3b9\" id=\"management SaveBtn\" data-classes=\"SaveButton management__DeleteBtn\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnDelete\" data-binding_ondisabledstateassignment=\"btnDeleteDisabled\"></button></div></div></div></div><span data-content=\"To create a user, click the &quot;Create User&quot; button\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"021e00cdea5ed7777ec5343fabd7d3ed\" data-binding_ondisplayassignment=\"noUserMessage\" data-classes=\"management__NoUsersMessage\" id=\"management NoUsersMessage\" class=\"bl-text\"></span><button type=\"button\" data-label=\"Create User\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"8f4c69df692fc0b15ebc79a8b25418e6\" data-classes=\"MainButton management__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" id=\"management CreateUser\"></button></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert\" data-uid=\"95980ee1806a02128292c7d76666d134\" data-classes=\"alert\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"alert inner\" data-uid=\"1d55dd0faa0def33e76622369f125a8d\" data-classes=\"alert__inner\"><span data-content=\"The data was saved successfully\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"56af2c373986c15715d6b101723d8d4f\" data-classes=\"alert__text\" id=\"alert text\" data-binding_oncontentassignment=\"alertMessage\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser\" data-uid=\"1744db9f250d6ba85e3435fc3be3660e\" data-classes=\"CreateUser\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser main\" data-uid=\"5269a39feba9cc0310393a7a5f193c6b\" data-classes=\"CreateUser__main\"><i data-icon=\"close\" data-size=\"default\" data-module-type=\"system\" data-module-id=\"icon\" data-display data-uid=\"ea1df98b3023353c2169a1abea133c3b\" data-classes=\"CreateUser__CloseBtn\" id=\"CreateUser CloseBtn\"></i><form data-module-type=\"system\" data-module-id=\"form\" data-display id=\"CreateUser form\" data-uid=\"b4398d5c0048d80587b9664d8f5eac11\" data-classes=\"CreateUser__form\"><div data-module-type=\"block\" data-display id=\"CreateUser title\" data-uid=\"8c4a002d7884a3ee2a214f49f5f56b08\" data-classes=\"CreateUser__title\"><span data-module-type=\"text\" data-content=\"Create User\" data-display id=\"CreateUser TitleText\" data-uid=\"cf1197d9e13bb745d16412c522dada3d\" data-classes=\"CreateUser__TitleText\" data-binding_oncontentassignment=\"modalTitle\" style=\"align-self:center;font-size:22px;\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser item\" data-uid=\"4f35489e90078bbd7d2466f45ac2fb76\" data-classes=\"CreateUser__item\"><span data-content=\"Name\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0e58d81c2c8aa79f720bbf1dfa317d56\" data-classes=\"CreateUser__label\" id=\"CreateUser label\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"CreateUser FormGroup\" data-uid=\"f62897a2a2f6712f21f495d110d829a4\" data-classes=\"CreateUser__FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display id=\"InputName\" data-uid=\"0681c698ed65058599f21cdecce92e8d\" data-classes=\"FormInput\" data-binding_onvalueassignment=\"userName\" data-binding_ondisabledstateassignment=\"userNameDisabled\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"42fc2f835fa3bf01cbaf06e27b5b5e3b\" data-classes=\"ValidationMessage\" id=\"CreateUser ValidationMessageName\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d355013440a32b73e47c6a11061d5572\" data-classes=\"CreateUser__item\" id=\"CreateUser item\"><span data-content=\"Password\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"e38921a399e3f0c68307535c0469ec14\" data-classes=\"CreateUser__label\" id=\"CreateUser label\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"f7edf2b192988c63506a5bd3ba641abf\" data-classes=\"CreateUser__FormGroup\" id=\"CreateUser FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"a6868ac85ed520f809ceb0b4830d26ed\" data-classes=\"FormInput\" id=\"InputPassword\" data-type=\"password\" data-binding_onvalueassignment=\"password\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"d50a1aa5921ba06c583457a897f2a8f7\" data-classes=\"ValidationMessage\" id=\"CreateUser ValidationMessagePassword\" class=\"bl-text\"></span></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7c0ed286585b5632bda678f971549847\" data-classes=\"CreateUser__item\" id=\"CreateUser item\"><span data-content=\"Password confirmation\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"1cabef343588f59f6167bf6ad6081ab6\" data-classes=\"CreateUser__label\" id=\"CreateUser label\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"deb6766894dfeec884987fe90697b95c\" data-classes=\"CreateUser__FormGroup\" id=\"CreateUser FormGroup\"><div data-label=\"\" data-variant=\"outlined\" data-module-type=\"system\" data-module-id=\"input\" data-display data-uid=\"45d92809be072fc19a6f16beadcb1cd3\" data-classes=\"FormInput\" id=\"InputConfirm\" data-type=\"password\" data-binding_onvalueassignment=\"confirmPassword\"></div><span data-content=\"This field is required\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"400fba0802880a93bb759cb7cbb9123f\" data-classes=\"ValidationMessage\" id=\"CreateUser ValidationMessageConfirm\" class=\"bl-text\"></span><span data-content=\"Password mismatch\" data-module-type=\"system\" data-module-id=\"text\" data-display=\"false\" data-uid=\"76b375976525da5784a688f366843054\" data-classes=\"ValidationMessage\" id=\"ValidationMessageMismatch\" class=\"bl-text\"></span></div></div><button type=\"button\" data-label=\"Create\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"363a0a2a92aa5bcb62b17eba85b1d7a8\" data-classes=\"MainButton CreateUser__MainButton\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" id=\"CreateUser__CreateBtn\" data-binding_onlabelassignment=\"createBtn\" data-binding_ondisabledstateassignment=\"createBtnDisabled\"></button></form></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ModalConfirm\" data-uid=\"bff4d8ac579f78a648132998464e4919\" data-classes=\"ModalConfirm\" data-data-container=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"ModalConfirm content\" data-uid=\"67a847a68533422e34ef175759084638\" data-classes=\"ModalConfirm__content\"><i data-icon=\"close\" data-size=\"default\" data-module-type=\"system\" data-module-id=\"icon\" data-display data-uid=\"8927183bdee3889fa44288bf76731ebd\" data-classes=\"ModalConfirm__CloseBtn\" id=\"ModalConfirm CloseBtn\"></i><span data-content=\"Are you sure you want to delete user: Admin?\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6b0596ebe49ddb2479778e1710a582ae\" data-classes=\"ModalConfirm__message\" id=\"ModalConfirm message\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"43de31e621f3853f674d897a4512ee2a\" data-classes=\"ModalConfirm__controls\" id=\"ModalConfirm controls\"><button type=\"button\" data-label=\"Delete\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"e27668188bad5334c6aa19d148437bbe\" data-classes=\"ModalConfirm__btn\" id=\"ModalConfirm btn delete\" data-disable-elevation=\"true\" data-disable-ripple=\"true\" data-binding_onlabelassignment=\"btnLabel\" data-binding_ondisabledstateassignment=\"btnDeleteDisabled\"></button><button type=\"button\" data-label=\"Cancel\" data-variant=\"contained\" data-size=\"medium\" data-module-type=\"system\" data-module-id=\"button\" data-display data-uid=\"8238b1fa04db49ac4312630541517244\" data-classes=\"ModalConfirm__btn\" id=\"ModalConfirm btn cancel\" data-disable-elevation=\"true\" data-disable-ripple=\"true\"></button></div></div></div></div></div></div> "
     }
-  }
+  },
+  "reusableComponents": {
+    "r_136108f7a232cd8e581efe5a164824cf": {
+      "category": "Reusable Components",
+      "showInToolbox": true,
+      "name": "install logo (r_136)",
+      "components": {},
+      "type": "reusable",
+      "id": "r_136108f7a232cd8e581efe5a164824cf",
+      "dataBinding": {},
+      "usedComponentTypes": [
+        "block",
+        "text"
+      ],
+      "style": {},
+      "attrs": {},
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"4cdd6a7953798c67c7ae0773052eacc8\" data-classes=\"install__logo\" id=\"install logo\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install LogoImg\" data-uid=\"4d44be5daa9e9239edced7ab96c5c811\" data-classes=\"install__LogoImg\"></div><span data-content=\"PRO Manager\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"356b4fb5753f730e7f4735b6a77b2fd2\" data-classes=\"install__LogoTitle\" id=\"install LogoTitle\" class=\"bl-text\"></span><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"install LogoScreens\" data-uid=\"8786d60554e98de2ab741c977be2e447\" data-classes=\"install__LogoScreens\"></div></div>"
+    },
+    "r_dcac843a154c1eb2e28a4a08b5d34fec": {
+      "category": "Reusable Components",
+      "showInToolbox": true,
+      "type": "reusable",
+      "faIcon": "recycle",
+      "name": "aside",
+      "components": {
+        "1fed8d3527f135219fb66d9de15adb04": {
+          "id": "aside TabHeaderStatus",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "941dd0cd3b6497a91648a63b0e7bbec7": {
+          "id": "aside TabContentItem",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "02f59a618f63b16eab9c8fcf60ac6e41": {
+          "id": "aside TabHeaderConfig",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "c9ab1739404cb44b5b1b8bc263b8f966": {
+          "id": "aside TabContentItemDomains",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "3c48282edad672c3a97414a89b3c15df": {
+          "id": "aside TabContentStatus",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onBeforeMount": {
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
+              ]
+            }
+          }
+        },
+        "242a605e5b9ad51d7db207da080446ef": {
+          "id": "aside TabContentItemAll",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "eabb8cf45a71bcf1946dc53f30c31b8e": {
+          "id": "aside ContentItemContainer",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDynamicItemsAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "14ec284f978d75e2cd75db678d46df17": {
+          "id": "aside TabContentItemMysql",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "e18fe2c44deb374fbddc1d8bc3f2848b": {
+          "id": "aside TabContentItemRedis",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "01553a7c2d381aa60e5ccf3789f368d7": {
+          "id": "aside TabContentItemDataService",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "4f8a44592e064cf3cf6c686767b9b44a": {
+          "id": "aside TabContentItemGeneral",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "82bfb23351e9fb6b2b482c3d040db27a": {
+          "id": "aside TabContentDomains",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onMounted": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "ca8df858b6abfa78f849814f98cbadeb": {
+          "id": "aside TabContentConfig",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onMounted": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "6cab43b49cea42f97ae16e6befa3a51e": {
+          "id": "aside TabContentItemSsl",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "03f4bd550b65418c743e04afe3aab9d9": {
+          "id": "aside TabHeaderSettings",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "b18be6db888c37d656d8a09b4db77b43": {
+          "id": "aside TabContentSettings",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onMounted": {
+              "usedCustomFunctions": []
+            }
+          }
+        },
+        "5478c0a1f053be3a3702c49522bc3f9f": {
+          "id": "aside TabContentItemManagement",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "28ba1a8199a4eecb2cd95d94ca4c9b79": {
+          "id": "aside TabContentItemKubernet",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "7d9115a5d5fa680bccbf5b04e8670af9": {
+          "id": "aside TabHeaderUpgrade",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "a0ee549c33148fbe32998507d3e95d7c": {
+          "id": "aside TabContentUpgrade",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onBeforeMount": {
+              "usedCustomFunctions": [
+                "696a14dd8d2f85be7023c2c4441a65a5"
+              ]
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "5c9dbfe9dbd831d9236cdced4d2ee75e": {
+          "id": "aside TabContentTitle",
+          "type": "text",
+          "moduleType": "system",
+          "moduleId": "text",
+          "handlers": {
+            "onContentAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "17ba156b5b49eae93175d437c9e8c1c2": {
+          "id": "aside TabContentItemUpgrade",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "d03b9242444bed493a3f71c94029bfcc": {
+          "id": "aside TabContentItemUpgradeNow",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            },
+            "onClassListAssignment": {
+              "dependencies": []
+            }
+          }
+        },
+        "3d81f4e11ffb3b99c18f1b83c9cfa36d": {
+          "id": "aside ContentItemContainerUpgrade",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onDynamicItemsAssignment": {
+              "dependencies": []
+            }
+          }
+        }
+      },
+      "id": "r_dcac843a154c1eb2e28a4a08b5d34fec",
+      "dataBinding": {},
+      "usedComponentTypes": [
+        "block",
+        "text"
+      ],
+      "style": {},
+      "attrs": {},
+      "pods": {},
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside\" data-uid=\"62182e6e6db9aecf974c9c65dfaea369\" data-classes=\"aside\" style=\"flex-basis:auto%;border-radius:0 0 0 0;\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3168b81fda72273baf6579abc52906ac\" data-classes=\"aside__tab\" id=\"aside tab ServerStatus\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabHeaderStatus\" data-uid=\"1fed8d3527f135219fb66d9de15adb04\" data-classes=\"aside__TabHeader aside__TabHeaderStatus\"><span data-content=\"Server status\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0709b1ab1d44a34923b23f8dd0660cb6\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"3c48282edad672c3a97414a89b3c15df\" data-classes=\"aside__TabContent\" id=\"aside TabContentStatus\" data-dynamic-list-behaviour=\"false\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"242a605e5b9ad51d7db207da080446ef\" data-classes=\"aside__TabContentItem aside__TabContentItem--active\" id=\"aside TabContentItemAll\"><span data-content=\"All\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"d0382752c60982a4609e06413fa88785\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"eabb8cf45a71bcf1946dc53f30c31b8e\" data-dynamic-list-behaviour=\"true\" id=\"aside ContentItemContainer\" data-classes=\"aside__ContentItemContainer\" style=\"flex-basis:auto%;border-radius:0 0 0 0;\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItem\" data-uid=\"941dd0cd3b6497a91648a63b0e7bbec7\" data-classes=\"aside__TabContentItem\" style=\"flex-basis:auto%;border-radius:0 0 0 0;\"><span data-content=\"Dynamic\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"3a02bf2740ef7e59e30ca7fc254c2696\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" data-binding_oncontentassignment=\"name\" class=\"bl-text\"></span></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"2f06a68df56e770f8b5434d6ea52f684\" data-classes=\"aside__tab\" id=\"aside tab Config\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"02f59a618f63b16eab9c8fcf60ac6e41\" data-classes=\"aside__TabHeader aside__TabHeaderConfig\" id=\"aside TabHeaderConfig\"><span data-content=\"Configuration\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"83b4fcc3d9e7419c0d59253e9501d464\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ca8df858b6abfa78f849814f98cbadeb\" data-classes=\"aside__TabContent aside__TabContentConfig\" id=\"aside TabContentConfig\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside SubTabDomains\" data-uid=\"cef9dd8785beab6edb8d69b57a6957ce\" data-classes=\"aside__SubTab\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"c9ab1739404cb44b5b1b8bc263b8f966\" data-classes=\"aside__TabContentItem aside__TabItemDomains\" id=\"aside TabContentItemDomains\"><span data-content=\"Domains\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"53083588acf7a7e59eef0d1e6dd143f1\" data-classes=\"aside__TabContentTitle \" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentDomains\" data-uid=\"82bfb23351e9fb6b2b482c3d040db27a\" data-classes=\"aside__TabContent aside__TabContentConfig\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItemGeneral\" data-uid=\"4f8a44592e064cf3cf6c686767b9b44a\" data-classes=\"aside__TabContentItem \"><span data-content=\"General\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"530d6e7a91e5b323040a873d60dfa3cb\" data-classes=\"aside__TabContentTitle aside__TabSubContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"6cab43b49cea42f97ae16e6befa3a51e\" data-classes=\"aside__TabContentItem \" id=\"aside TabContentItemSsl\"><span data-content=\"Load balancing/SSL\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"6d691de2900c6e9b276dd59e8be6d661\" data-classes=\"aside__TabContentTitle aside__TabSubContentTitle\" id=\"aside TabContentTitle \" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"14ec284f978d75e2cd75db678d46df17\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemMysql\"><span data-content=\"Mysql\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"21242a4440710b760878f3d7932505e2\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"e18fe2c44deb374fbddc1d8bc3f2848b\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemRedis\"><span data-content=\"Redis\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"bfcd1b1f35bf396c5a23e46432a9e6bc\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"01553a7c2d381aa60e5ccf3789f368d7\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemDataService\"><span data-content=\"Data service\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"39cf857180318d5204a73ac8d8b41814\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"5fffc4ac2d744ebb9031add1bb5c253a\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemRealTime\"><span data-content=\"Real time\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"a1b4a7c6578a9efd53cf2de88c06cc05\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"63b67c8e1d457917760c969eb372e04e\" data-classes=\"aside__tab\" id=\"aside tab Upgrade\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"7d9115a5d5fa680bccbf5b04e8670af9\" data-classes=\"aside__TabHeader aside__TabHeaderUpgrade\" id=\"aside TabHeaderUpgrade\"><span data-content=\"Upgrade\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"367712aba0983e5b4912492df191dc5a\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentUpgrade\" data-uid=\"a0ee549c33148fbe32998507d3e95d7c\" data-classes=\"aside__TabContent aside__TabContentUpgrade\" data-dynamic-list-behaviour=\"false\" data-binding_ondynamicitemsassignment=\"jobsList\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"d03b9242444bed493a3f71c94029bfcc\" data-classes=\"aside__TabContentItem\" data-dynamic-list-behaviour=\"false\" id=\"aside TabContentItemUpgradeNow\"><span data-content=\"Upgrade Now\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"4e3967bd1f78fd56706fa84f565bf4a6\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside ContentItemContainerUpgrade\" data-uid=\"3d81f4e11ffb3b99c18f1b83c9cfa36d\" data-classes=\"aside__ContentItemContainer\" data-dynamic-list-behaviour=\"true\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItemUpgrade\" data-uid=\"17ba156b5b49eae93175d437c9e8c1c2\" data-classes=\"aside__TabContentItem\" data-dynamic-list-behaviour=\"false\"><span data-content=\"Pro Version\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"5c9dbfe9dbd831d9236cdced4d2ee75e\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div></div></div></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"ae5cf6b503145b247bb33b32df64d306\" data-classes=\"aside__tab\" id=\"aside tab Settings\"><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"03f4bd550b65418c743e04afe3aab9d9\" data-classes=\"aside__TabHeader aside__TabHeaderSettings\" id=\"aside TabHeaderSettings\"><span data-content=\"Settings\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"84234b3252582cd69ddffb135c531b1f\" data-classes=\"aside__TabTitle\" id=\"aside TabTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentSettings\" data-uid=\"b18be6db888c37d656d8a09b4db77b43\" data-classes=\"aside__TabContent aside__TabContentSettings\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"aside TabContentItemManagement\" data-uid=\"5478c0a1f053be3a3702c49522bc3f9f\" data-classes=\"aside__TabContentItem\"><span data-content=\"User Management\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"2754f6f59ffc2de2d9e4f1cb649fdd34\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div><div data-module-type=\"system\" data-module-id=\"block\" data-display data-uid=\"28ba1a8199a4eecb2cd95d94ca4c9b79\" data-classes=\"aside__TabContentItem\" id=\"aside TabContentItemKubernet\"><span data-content=\"Kubernetes\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"0af6b2a3cf87513d34eae5d6c923778c\" data-classes=\"aside__TabContentTitle\" id=\"aside TabContentTitle\" class=\"bl-text\"></span></div></div></div></div>"
+    },
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289": {
+      "category": "Reusable Components",
+      "showInToolbox": true,
+      "type": "reusable",
+      "faIcon": "recycle",
+      "name": "header",
+      "components": {
+        "acafba620bdcd139813c3e2a3613dfaf": {
+          "id": "header menu",
+          "type": "icon",
+          "moduleType": "system",
+          "moduleId": "icon",
+          "handlers": {
+            "onClick": {
+              "dependencies": []
+            }
+          }
+        },
+        "a3dabbfae89a23b9e315d15d59f36ec7": {
+          "id": "header logo",
+          "type": "block",
+          "moduleType": "system",
+          "moduleId": "block",
+          "handlers": {
+            "onClick": {
+              "usedCustomFunctions": []
+            }
+          }
+        }
+      },
+      "id": "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+      "dataBinding": {},
+      "usedComponentTypes": [
+        "block",
+        "icon",
+        "text"
+      ],
+      "style": {},
+      "attrs": {},
+      "pods": {},
+      "html": "<div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"header\" data-uid=\"ab8f728fe1938ba4e3029b6740175139\" data-classes=\"header\"><div data-module-type=\"system\" data-module-id=\"block\" data-display id=\"header logo\" data-uid=\"a3dabbfae89a23b9e315d15d59f36ec7\" data-classes=\"header__logo\"><i data-icon=\"menu\" data-size=\"default\" data-module-type=\"system\" data-module-id=\"icon\" data-display data-uid=\"acafba620bdcd139813c3e2a3613dfaf\" data-classes=\"header__menu\" id=\"header menu\"></i></div><span data-content=\"PRO Manager\" data-module-type=\"system\" data-module-id=\"text\" data-display data-uid=\"fc8ab951f66ed59cc4ce53b8ca2d13bf\" data-classes=\"header__title\" id=\"header title\" class=\"bl-text\"></span></div>"
+    }
+  },
+  "customComponents": {}
 }

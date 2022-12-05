@@ -18,7 +18,13 @@
     <link rel="stylesheet" href="./styles.css"/>
 
 
-    <script data-main="./main.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script>
+        var require = {
+            waitSeconds: 180,
+        };
+    </script>
+
+    <script data-main="./main.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" defer></script>
 </head>
 <body>
 <div id="app">
