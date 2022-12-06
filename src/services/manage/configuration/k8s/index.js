@@ -18,8 +18,8 @@ class K8sConfigurationService {
 
     async saveConfigAndRestart({ config, shouldRestart }) {
         const configDescription = describeK8sConfiguration()
-        const namespace = config[configDescription.configFile.name]
-        const configFile = config[configDescription.namespace.name]
+        const configFile = config[configDescription.configFile.name]
+        const namespace = config[configDescription.namespace.name]
 
         await k8sConfig.setConfigFile(configFile)
         await k8sConfig.setNamespace(namespace)
