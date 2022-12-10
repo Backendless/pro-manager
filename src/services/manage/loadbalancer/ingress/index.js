@@ -14,6 +14,7 @@ import { certManager } from '../../cert'
 import { domainConfigurationService } from '../../configuration/domain'
 import { describeDomainConfiguration } from '../../configuration/domain/describe-domain-configuration'
 import { manageService } from '../../manage-service'
+import { describeIngressConfiguration } from './describe-ingress-configuration'
 
 const logger = Logger('ingress-load-balancer')
 
@@ -39,6 +40,10 @@ class IngressLoadbalancerService {
                 sslEnabled: item.spec.tls ? item.spec.tls.length > 0 : false
             }
         })
+    }
+
+    describe() {
+        return describeIngressConfiguration()
     }
 
     async delete({ type }) {

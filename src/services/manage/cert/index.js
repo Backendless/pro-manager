@@ -4,6 +4,7 @@ import { ApiError } from '../../../error'
 import { Logger } from '../../../logger'
 import { K8sError } from '../../../error/k8s-error'
 import * as k8s from '@kubernetes/client-node'
+import { describeCertConfiguration } from './describe-cert-configuration'
 
 const logger = Logger('CertManager')
 
@@ -38,6 +39,10 @@ class CertManager {
     async list() {
         const k8sResponse = await k8sCoreV1Api.listNamespacedSecret(await k8sConfig.getNamespace(), true, true, '', '', 'bl-secret=tls')
         return k8sResponse.body.items.map(item => item.metadata.name)
+    }
+
+    describe() {
+        return describeCertConfiguration()
     }
 
     async delete(certName) {

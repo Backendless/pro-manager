@@ -9,17 +9,21 @@ router.post('/', handler(({ body, query }) => {
 }))
 
 router.put('/', handler(({ body, query }) => {
-    return ingressLoadbalancerService.update( body )
+    return ingressLoadbalancerService.update(body)
 }))
 
 router.put('/apply', handler(() => {
-    return ingressLoadbalancerService.apply(  )
+    return ingressLoadbalancerService.apply()
 }))
 
 router.get('/', handler(() => {
-    return ingressLoadbalancerService.list(  )
+    return ingressLoadbalancerService.list()
+}))
+
+router.get('/describe', handler(() => {
+    return ingressLoadbalancerService.describe()
 }))
 
 router.delete('/', handler(({ body, query }) => {
-    return ingressLoadbalancerService.delete( body )
+    return ingressLoadbalancerService.delete(body)
 }))
