@@ -194,7 +194,7 @@ class UserService {
     }
 
     async authEnabled() {
-        return await userConfig.getAuthEnabled()
+        return userConfig.getAuthEnabled()
     }
 
     getTokenKey() {
