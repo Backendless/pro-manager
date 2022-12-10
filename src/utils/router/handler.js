@@ -45,7 +45,7 @@ export function handler(cb) {
 
                 if (result && (Array.isArray(result) || typeof result === 'object')) {
                     res.json(result)
-                } else if (result) {
+                } else if (result || typeof result === 'boolean') {
                     res.send(result)
                 } else {
                     res.end()

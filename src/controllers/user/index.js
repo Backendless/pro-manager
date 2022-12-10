@@ -21,6 +21,10 @@ router.post('/login', handler(async ({ res, body }) => {
     return token
 }))
 
+router.get('/auth/enabled', handler(() => {
+    return userService.authEnabled()
+}))
+
 router.get('/', auth(), handler(() => {
     return userService.get()
 }))
