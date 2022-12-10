@@ -44,6 +44,10 @@ router.get('/', handler(({ body, query }) => {
     return certManager.list()
 }))
 
+router.get('/describe', handler(() => {
+    return certManager.describe()
+}))
+
 router.delete('/', handler(async ({ body, query }) => {
     const certName = body.certName
 
