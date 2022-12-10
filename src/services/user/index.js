@@ -186,14 +186,18 @@ class UserService {
         const user = db.getData(`${_usersPath}[${userIndex}]`)
         logger.verbose(`user [${JSON.stringify(user)}] found`)
 
-        if(user.resetPasswordTime > userFromJwt.resetPasswordTime){
+        if (user.resetPasswordTime > userFromJwt.resetPasswordTime) {
             logger.warn(`the user reset password time '${user.resetPasswordTime}' should the same as 
             reset password from jwt '${userFromJwt.resetPasswordTime}'`)
             throw new UserError.InlaidTokenError()
         }
     }
 
-    getTokenKey(){
+    async authEnabled() {
+        return userConfig.getAuthEnabled()
+    }
+
+    getTokenKey() {
         return 'auth-token'
     }
 
