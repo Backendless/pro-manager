@@ -24,6 +24,32 @@ body {
 }
 /**********************************/
 /**********************************/
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/************************************************/
+/************************************************/
+/*****    component: chart-visualization    *****/
+.bl-chart-visualization {
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.bl-chart-visualization .bl-chart-visualization-preview {
+  background-color: #fff;
+}
+/*****    component: chart-visualization    *****/
+/************************************************/
+/************************************************/
+/**********************************/
+/**********************************/
 /*****    component: block    *****/
 .bl-block {
   display: flex;
@@ -31,55 +57,6 @@ body {
 /*****    component: block    *****/
 /**********************************/
 /**********************************/
-/***********************************/
-/***********************************/
-/*****    component: button    *****/
-.bl-button.bl-button--contained {
-  border-radius: 4px;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained.bl-button--disabled {
-  background: gray;
-  color: #ffffff;
-}
-.bl-button.bl-button--outlined {
-  border-radius: 4px;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-button.bl-button--outlined.bl-button--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-button.bl-button--text {
-  border-radius: 4px;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
-  color: gray;
-}
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -289,32 +266,54 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
 }
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
-/************************************************/
-/************************************************/
-/*****    component: chart-visualization    *****/
-.bl-chart-visualization {
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
 }
-.bl-chart-visualization .bl-chart-visualization-preview {
-  background-color: #fff;
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) {
+  color: #000000;
 }
-/*****    component: chart-visualization    *****/
-/************************************************/
-/************************************************/
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: inherit;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
 /*********************************/
 /*********************************/
 /*****    component: chip    *****/
@@ -623,54 +622,6 @@ body {
 /*****    component: data-grid-visualization    *****/
 /****************************************************/
 /****************************************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) {
-  color: #000000;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: inherit;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
 /***************************************/
 /***************************************/
 /*****    component: data-table    *****/
@@ -775,16 +726,6 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
-/************************************/
-/************************************/
-/*****    component: divider    *****/
-.bl-divider {
-  border-color: #337ab7;
-  border-width: 2px;
-}
-/*****    component: divider    *****/
-/************************************/
-/************************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -952,6 +893,55 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button.bl-button--contained {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined {
+  border-radius: 4px;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text {
+  border-radius: 4px;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
 /*********************************/
 /*********************************/
 /*****    component: form    *****/
@@ -967,6 +957,16 @@ body {
 /*****    component: form    *****/
 /*********************************/
 /*********************************/
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+.bl-divider {
+  border-color: #337ab7;
+  border-width: 2px;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
 /*********************************/
 /*********************************/
 /*****    component: icon    *****/
@@ -976,30 +976,6 @@ body {
 /*****    component: icon    *****/
 /*********************************/
 /*********************************/
-/***********************************/
-/***********************************/
-/*****    component: iframe    *****/
-.bl-iframe {
-  flex: 1;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: iframe    *****/
-/***********************************/
-/***********************************/
-/**********************************/
-/**********************************/
-/*****    component: image    *****/
-.bl-image {
-  border: NULL;
-  border-radius: 4px;
-  box-shadow: NULL;
-}
-/*****    component: image    *****/
-/**********************************/
-/**********************************/
 /***************************************/
 /***************************************/
 /*****    component: google-map    *****/
@@ -1014,6 +990,19 @@ body {
 /*****    component: google-map    *****/
 /***************************************/
 /***************************************/
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+.bl-iframe {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -1214,23 +1203,17 @@ body {
 /*****    component: input    *****/
 /**********************************/
 /**********************************/
-/**************************************/
-/**************************************/
-/*****    component: jumbotron    *****/
-.bl-jumbotron {
-  display: flex;
-  flex-direction: column;
-  background: #dbdbdb;
-  box-shadow: NULL;
-  color: NULL;
+/**********************************/
+/**********************************/
+/*****    component: image    *****/
+.bl-image {
   border: NULL;
-  border-radius: 12px;
-  padding: 48px 24px 48px 24px;
-  margin: 0 0 48px 0;
+  border-radius: 4px;
+  box-shadow: NULL;
 }
-/*****    component: jumbotron    *****/
-/**************************************/
-/**************************************/
+/*****    component: image    *****/
+/**********************************/
+/**********************************/
 /*********************************************/
 /*********************************************/
 /*****    component: layout-container    *****/
@@ -1257,6 +1240,53 @@ body {
 /*****    component: layout-container    *****/
 /*********************************************/
 /*********************************************/
+/***************************************/
+/***************************************/
+/*****    component: layout-row    *****/
+.bl-layout-row {
+  display: grid;
+  margin: 0;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+@media (max-width: 479px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-row {
+    gap: 16px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-row {
+    gap: 24px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+/*****    component: layout-row    *****/
+/***************************************/
+/***************************************/
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+.bl-jumbotron {
+  display: flex;
+  flex-direction: column;
+  background: #dbdbdb;
+  box-shadow: NULL;
+  color: NULL;
+  border: NULL;
+  border-radius: 12px;
+  padding: 48px 24px 48px 24px;
+  margin: 0 0 48px 0;
+}
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1347,6 +1377,17 @@ body {
 /*****    component: layout-cell    *****/
 /****************************************/
 /****************************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
 /*********************************/
 /*********************************/
 /*****    component: link    *****/
@@ -1373,47 +1414,12 @@ body {
 /*****    component: panel    *****/
 /**********************************/
 /**********************************/
-/***************************************/
-/***************************************/
-/*****    component: layout-row    *****/
-.bl-layout-row {
-  display: grid;
-  margin: 0;
-  flex-flow: row wrap;
-  align-items: stretch;
-}
-@media (max-width: 479px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-row {
-    gap: 16px;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-row {
-    gap: 24px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
-/*****    component: layout-row    *****/
-/***************************************/
-/***************************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
 /*****************************************/
 /*****************************************/
 /*****    component: radio-button    *****/
@@ -1462,18 +1468,78 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/*********************************/
-/*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
 /************************************************/
 /************************************************/
 /*****    component: radio-buttons-group    *****/
 /*****    component: radio-buttons-group    *****/
 /************************************************/
 /************************************************/
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
+  color: #337ab7;
+}
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
+}
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+.bl-switch .bl-switch-base {
+  color: #337ab7;
+}
+.bl-switch .bl-switch-track {
+  background: #000000;
+}
+.bl-switch .bl-switch-thumb {
+  background: #fff;
+}
+.bl-switch.bl-switch--checked .bl-switch-track {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--disabled .bl-switch-root {
+  opacity: 0.38;
+}
+.bl-switch.bl-switch--disabled .bl-switch-track {
+  opacity: 0.54;
+}
+.bl-switch.bl-switch--disabled .bl-switch-thumb {
+  opacity: 1;
+}
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
 /***********************************/
 /***********************************/
 /*****    component: slider    *****/
@@ -1562,47 +1628,6 @@ body {
 /*****    component: slider    *****/
 /***********************************/
 /***********************************/
-/***********************************/
-/***********************************/
-/*****    component: switch    *****/
-.bl-switch .bl-switch-base {
-  color: #337ab7;
-}
-.bl-switch .bl-switch-track {
-  background: #000000;
-}
-.bl-switch .bl-switch-thumb {
-  background: #fff;
-}
-.bl-switch.bl-switch--checked .bl-switch-track {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--checked .bl-switch-thumb {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--disabled .bl-switch-root {
-  opacity: 0.38;
-}
-.bl-switch.bl-switch--disabled .bl-switch-track {
-  opacity: 0.54;
-}
-.bl-switch.bl-switch--disabled .bl-switch-thumb {
-  opacity: 1;
-}
-/*****    component: switch    *****/
-/***********************************/
-/***********************************/
-/*********************************/
-/*********************************/
-/*****    component: text    *****/
-.bl-text {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: text    *****/
-/*********************************/
-/*********************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1807,139 +1832,6 @@ body {
 /*****    component: select    *****/
 /***********************************/
 /***********************************/
-/*************************************/
-/*************************************/
-/*****    component: textarea    *****/
-.bl-textarea.bl-textarea--outlined fieldset {
-  border-radius: 4px 4px 4px 4px;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-label {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-label--disabled {
-  color: gray;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-label--focused {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover fieldset {
-  border: NULL;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused fieldset {
-  border: 2px solid #337ab7;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled {
-  background-color: NULL;
-  color: gray;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled fieldset {
-  border: 2px solid gray;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root fieldset {
-  border: 2px solid #337ab7;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--filled ::after {
-  border-bottom-color: #337ab7;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-label {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-label--disabled {
-  color: gray;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-label--focused {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root {
-  border-radius: 4px 4px 0 0;
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #eee;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--focused {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #f1f1f1;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--disabled {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #dbdbdb;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-label {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-label--disabled {
-  color: gray;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-label--focused {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root::after {
-  border-bottom: 2px solid #337ab7;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root::before {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover::before {
-  border-bottom: calc(2px + 1px) solid #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--focused {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled {
-  box-shadow: NULL;
-  color: gray;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled::before {
-  border-bottom: 2px solid gray;
-}
-/*****    component: textarea    *****/
-/*************************************/
-/*************************************/
 /**********************************/
 /**********************************/
 /*****    component: video    *****/
@@ -1951,6 +1843,17 @@ body {
 /*****    component: video    *****/
 /**********************************/
 /**********************************/
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+.bl-text {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
 /*******************************************/
 /*******************************************/
 /*****    component: view-data-grid    *****/
@@ -2201,42 +2104,139 @@ body {
 /*****    component: view-data-grid    *****/
 /*******************************************/
 /*******************************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
+/*************************************/
+/*************************************/
+/*****    component: textarea    *****/
+.bl-textarea.bl-textarea--outlined fieldset {
+  border-radius: 4px 4px 4px 4px;
 }
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
+.bl-textarea.bl-textarea--outlined .bl-textarea-label {
+  color: #000000;
 }
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+.bl-textarea.bl-textarea--outlined:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
 }
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
-  }
+.bl-textarea.bl-textarea--outlined .bl-textarea-label--disabled {
+  color: gray;
 }
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
+.bl-textarea.bl-textarea--outlined .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled {
+  background-color: NULL;
+  color: gray;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled fieldset {
+  border: 2px solid gray;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--filled ::after {
+  border-bottom-color: #337ab7;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root {
+  border-radius: 4px 4px 0 0;
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #eee;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--focused {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #f1f1f1;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--disabled {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #dbdbdb;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root::before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover::before {
+  border-bottom: calc(2px + 1px) solid #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--focused {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled {
+  box-shadow: NULL;
+  color: gray;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled::before {
+  border-bottom: 2px solid gray;
+}
+/*****    component: textarea    *****/
+/*************************************/
+/*************************************/
 .mysql {
   width: 100%;
   margin-bottom: 40px;
@@ -2857,6 +2857,9 @@ body {
     overflow: auto;
   }
 }
+.DomainsGeneral__ItemsContainer {
+  flex-direction: column;
+}
 @font-face {
   font-family: 'FuturaHeavy';
   src: url('./styles/fonts/futura/FuturaHeavyfont.ttf') format('truetype');
@@ -3055,6 +3058,62 @@ body {
 .alert__text {
   color: #fff;
   font-size: 14px;
+}
+.ModalConfirm {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity, 0.4s;
+}
+.ModalConfirm__content {
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 450px;
+  padding: 10px;
+  margin: 5px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.ModalConfirm__message {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  color: #303042;
+  margin: 20px 0px;
+}
+.ModalConfirm__CloseBtn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #ff0000;
+  cursor: pointer;
+}
+.ModalConfirm__controls {
+  margin-bottom: 10px;
+}
+.ModalConfirm__btn {
+  height: 34px;
+  border-radius: 2px !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  width: 217px;
+  background: #1B76BC !important;
+  color: #fff !important;
+  width: 115px;
+}
+.ModalConfirm__btn:last-child {
+  margin-left: 10px;
 }
 .header {
   width: 100%;
@@ -3489,6 +3548,33 @@ body {
 }
 .management__MainButton {
   margin-top: 25px;
+}
+.management__WrraperTextItem {
+  display: block;
+  margin-bottom: 25px;
+}
+.management__ItemText {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+}
+.management__ItemText--bold {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  font-weight: 700;
+}
+.management__ItemName {
+  font-size: 22px;
+}
+.management__NoUsersMessage {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  font-size: 19px;
 }
 .CreateUser {
   visibility: hidden;
