@@ -14,6 +14,8 @@ import { defaultArguments } from './default-arguments'
 import { upgradeService } from '../upgrade'
 import { consul } from '../consul'
 import { circularReplacer } from '../../utils/circular-replacer'
+import { installK3s } from './install-k3s'
+import { checkK8sAvailable } from './check-k8s-available'
 
 const logger = Logger('install-service')
 
@@ -45,7 +47,13 @@ class InstallService {
             throw new ApiError.BadRequestError(`Read write access is denied for ${install.mountPath}'`)
         }
 
-        await registerFirstUser( install )
+        if (!await checkK8sAvailable()) {
+            const k3sInstallResult = await installK3s()
+            logger.info(`k3s install result is [${k3sInstallResult}]`)
+        }
+        return
+
+        await registerFirstUser(install)
 
         //install process should be async
         this._install(install).then(async result => {
@@ -53,7 +61,7 @@ class InstallService {
             await upgradeService.upgrade(install)
             installStatus.info('All services are created, you can see status of each service on Manage page')
         })
-        .catch(error => {
+            .catch(error => {
             installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error, circularReplacer())}`)
         })
     }
