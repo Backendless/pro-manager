@@ -10,12 +10,13 @@ import { Logger } from './logger'
 import { mainRouter } from './controllers'
 // import { swaggerUIController } from './swagger'
 import { notFoundHandler, errorsHandler } from './error'
+import { reloadK8sConfig } from './services/k8s/k8s'
 
 const logger = Logger.Server
 
 export function start() {
   console.log('Start server...')
-
+  reloadK8sConfig()
   const app = express()
 
   // app.use(helmet({

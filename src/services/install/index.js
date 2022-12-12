@@ -16,6 +16,7 @@ import { consul } from '../consul'
 import { circularReplacer } from '../../utils/circular-replacer'
 import { installK3s } from './install-k3s'
 import { checkK8sAvailable } from './check-k8s-available'
+import { reloadK8sConfig } from '../k8s/k8s'
 
 const logger = Logger('install-service')
 
@@ -50,6 +51,7 @@ class InstallService {
         if (!await checkK8sAvailable()) {
             const k3sInstallResult = await installK3s()
             logger.info(`k3s install result is [${k3sInstallResult}]`)
+            reloadK8sConfig()
         }
         return
 
