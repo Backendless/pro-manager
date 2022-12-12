@@ -4,10 +4,8 @@ import { executeInShell } from '../../utils/shell'
 const logger = Logger('install-k3s')
 export const installK3s = async () => {
     logger.info('installing k3s')
-    return executeInShell('curl -sfL https://get.k3s.io | sh - ' +
-        '&& mkdir ~/.kube ' +
-        '&& echo "export KUBECONFIG=~/.kube/config" >> ~/.bashrc ' +
-        '&& source ~/.bashrc ' +
-        '&& sudo k3s kubectl config view --raw > "$KUBECONFIG" ' +
-        '&& kubectl get nodes')
+    await executeInShell('curl -sfL https://get.k3s.io | sh - ')
+    await executeInShell('mkdir /root/.kube ')
+    await executeInShell('echo "export KUBECONFIG=/root/.kube/config" >> /root/.bashrc ')
+    await executeInShell('k3s kubectl config view --raw > "$KUBECONFIG" ')
 }

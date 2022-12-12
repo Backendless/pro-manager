@@ -49,8 +49,8 @@ class InstallService {
         }
 
         if (!await checkK8sAvailable()) {
-            const k3sInstallResult = await installK3s()
-            logger.info(`k3s install result is [${k3sInstallResult}]`)
+            await installK3s()
+            logger.info('k3s installed')
             reloadK8sConfig()
         }
         return
