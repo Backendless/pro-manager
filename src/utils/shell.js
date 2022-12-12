@@ -8,17 +8,17 @@ export const executeInShell = async command => {
 
         exec(command, (error, stdout, stderr) => {
             if (error) {
-                logger.error(`general error: ${error.message}`)
+                logger.error(`command [${command}] failed with general error: ${error.message}`)
                 reject(new Error(error))
                 return
             }
             if (stderr) {
-                logger.error(`stderr: ${stderr}`)
+                logger.error(`command [${command}] failed with stderr: ${stderr}`)
                 reject(new Error(stderr))
                 return
             }
 
-            logger.info(`stdout: ${stdout}`)
+            logger.info(`command [${command}] SUCCESS with stdout: ${stdout}`)
             resolve(stdout)
         })
     })
