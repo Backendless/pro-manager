@@ -4,8 +4,9 @@
 The Pro Manager is currently in **ALPHA** stage. There can be some breaking changes and you can use it on your own risk. 
 
 # Requirements
-4Gb memory
-4 CPU
+- 4Gb memory
+- 4 CPU
+- 20 GB disk space
 
 # Pre requirements
 ### Mac OS
@@ -39,7 +40,8 @@ curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-
     dev-k3s.us.backendless.com   Ready    control-plane,master   19h   v1.24.3+k3s1
     ```
 
-
+### AWS EC2
+[AWS EC2 basic installation](./Doc/aws-ec2-basic.md)
 
 # Start Pro Manager
 - Clone Pro Manager

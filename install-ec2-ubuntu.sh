@@ -16,9 +16,11 @@ mkdir $work_dir
 cd $work_dir
 
 curl -sfL https://get.k3s.io | sh -
+
 mkdir $work_dir/.kube
-#echo "export KUBECONFIG=~/.kube/config" >> ~/.bashrc
-#export KUBECONFIG=~/.kube/config
+
+echo "export KUBECONFIG=$work_dir/.kube/config" >> /home/ubuntu/.bashrc
+
 sudo k3s kubectl config view --raw > $work_dir/.kube/config
 
 git clone https://github.com/Backendless/pro-manager.git
@@ -27,6 +29,22 @@ cd pro-manager
 
 npm i
 
-chmod +x ./app
+echo "systemd: Creating service file pro-manager"
+sudo tee /etc/systemd/system/pro-manager.service > /dev/null << EOF
+[Unit]
+Description=Backendless Pro Manager
+Documentation=https://github.com/Backendless/pro-manager#readme
 
-KUBECONFIG=$work_dir/.kube/config ./app start
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Environment="KUBECONFIG=/opt/backendless/.kube/config"
+WorkingDirectory=/opt/backendless/pro-manager
+ExecStart=/.nvm/versions/node/v14.18.2/bin/node ./src
+Restart=always
+
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl start pro-manager.service

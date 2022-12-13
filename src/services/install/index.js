@@ -14,9 +14,6 @@ import { defaultArguments } from './default-arguments'
 import { upgradeService } from '../upgrade'
 import { consul } from '../consul'
 import { circularReplacer } from '../../utils/circular-replacer'
-import { installK3s } from './install-k3s'
-import { checkK8sAvailable } from './check-k8s-available'
-import { reloadK8sConfig } from '../k8s/k8s'
 
 const logger = Logger('install-service')
 
@@ -47,13 +44,6 @@ class InstallService {
         if (!(await checkReadWriteAccess(install.mountPath))) {
             throw new ApiError.BadRequestError(`Read write access is denied for ${install.mountPath}'`)
         }
-
-        if (!await checkK8sAvailable()) {
-            await installK3s()
-            logger.info('k3s installed')
-            reloadK8sConfig()
-        }
-        return
 
         await registerFirstUser(install)
 
