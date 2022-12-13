@@ -10,16 +10,11 @@ export NVM_DIR="$HOME/.nvm"
 nvm install v14.18.2
 nvm use v14.18.2
 
-work_dir=/opt/backendless
-
-mkdir $work_dir
-cd $work_dir
-
 curl -sfL https://get.k3s.io | sh -
-mkdir $work_dir/.kube
-#echo "export KUBECONFIG=~/.kube/config" >> ~/.bashrc
-#export KUBECONFIG=~/.kube/config
-sudo k3s kubectl config view --raw > $work_dir/.kube/config
+mkdir ~/.kube
+echo "export KUBECONFIG=~/.kube/config" >> ~/.bashrc
+export KUBECONFIG=~/.kube/config
+sudo k3s kubectl config view --raw > ~/.kube/config
 
 git clone https://github.com/Backendless/pro-manager.git
 
@@ -29,4 +24,4 @@ npm i
 
 chmod +x ./app
 
-KUBECONFIG=$work_dir/.kube/config ./app start
+KUBECONFIG=~/.kube/config ./app start
