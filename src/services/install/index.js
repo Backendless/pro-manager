@@ -45,7 +45,7 @@ class InstallService {
             throw new ApiError.BadRequestError(`Read write access is denied for ${install.mountPath}'`)
         }
 
-        await registerFirstUser( install )
+        await registerFirstUser(install)
 
         //install process should be async
         this._install(install).then(async result => {
@@ -53,7 +53,7 @@ class InstallService {
             await upgradeService.upgrade(install)
             installStatus.info('All services are created, you can see status of each service on Manage page')
         })
-        .catch(error => {
+            .catch(error => {
             installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error, circularReplacer())}`)
         })
     }
