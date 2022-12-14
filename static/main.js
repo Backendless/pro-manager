@@ -2088,7 +2088,7 @@ function getObjectProperty(object, propPath) {
       successMessage = 'Successfully updated';
     }
     (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'repeaterItem'))['domain'] = (getObjectProperty(dataToSend, 'domain'));
-    (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'repeaterItem'))['sslEnabled'] = ((getObjectProperty(dataToSend, 'sertName')) == null ? false : true);
+    (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'repeaterItem'))['sslEnabled'] = ((getObjectProperty(dataToSend, 'certName')) == null ? false : true);
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
     await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, successMessage, '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
@@ -2153,7 +2153,7 @@ define('./pages/ingress/components/page/bundle.js', [], () => ({
   /* handler:onLeave */
   /* handler:onEnter */
   async ['onEnter'](___arguments) {
-    var error, item, certificatesFromServer;
+    var error, item, certificatesFromServer, j, certificatesDescription;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -2178,11 +2178,38 @@ function getObjectProperty(object, propPath) {
 
   await (async function() {
   	const inputCertName   = document.querySelector('.inputCertName input');
-  	const crtFileWrapper = document.querySelector('.ingress__CustomFileCrt');
-  	const keyFileWrapper = document.querySelector('.ingress__CustomFileKey');
+  	const crtFileWrapper  = document.querySelector('.CreateUpdateModal__CrtFileWrapper');
+  	const keyFileWrapper  = document.querySelector('.CreateUpdateModal__KeyFileWrapper');
+
   	inputCertName.setAttribute('name', 'certName');
-  	crtFileWrapper.innerHTML = `<input type="file" name="crtFile" id="crtFile">`
-  	keyFileWrapper.innerHTML = `<input type="file" name="keyFile" id="keyFile">`
+
+  	crtFileWrapper.innerHTML = `<span class='CreateUpdateModal__FileNameLabel' id='fileLabelCrt'></span>
+  	                            <label class='CreateUpdateModal__UploadFileBtn' for="crtFile">Choose file</label>
+  	                            <input type="file" name="crtFile" id="crtFile" style='display:none'>`;
+
+  	keyFileWrapper.innerHTML = `<span class='CreateUpdateModal__FileNameLabel' id='fileLabelKey'></span>
+  	                            <label class='CreateUpdateModal__UploadFileBtn' for="keyFile">Choose file</label>
+  	                            <input type="file" name="keyFile" id="keyFile" style='display:none'>`;
+
+  	const inputCrtFile = document.querySelector('#crtFile');
+  	inputCrtFile.addEventListener('change', (e) => {
+  	  document.querySelector('#fileLabelCrt').innerHTML = e.target.files[0].name;
+  	  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
+  	  const operation = getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('c285fdb7425cfedb989a67dd73e1e756')), 'btnLabel');
+  	  if (operation == 'Update') {
+  	    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
+  	  }
+  	});
+
+  	const inputKeyFile = document.querySelector('#keyFile');
+  	inputKeyFile.addEventListener('change', (e) => {
+  	  document.querySelector('#fileLabelKey').innerHTML = e.target.files[0].name;
+  	  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
+  	  const operation = getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('c285fdb7425cfedb989a67dd73e1e756')), 'btnLabel');
+  	  if (operation == 'Update'){
+  	   (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
+  	  }
+  	});
 
 
   })();
@@ -2190,6 +2217,11 @@ function getObjectProperty(object, propPath) {
   localStorage.removeItem('originLoad');
   try {
     certificatesFromServer = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/cert', null, null));
+    certificatesDescription = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/cert/describe', null, null));
+    for (var j_index in certificatesDescription) {
+      j = certificatesDescription[j_index];
+      ___arguments.context.pageData[(String(getObjectProperty(j, 'name')) + String('Description'))] = (getObjectProperty(j, 'description'));
+    }
     certificatesFromServer.push('NO SSL');
     ___arguments.context.pageData['certificates'] = (await Promise.all(certificatesFromServer.map(async item => {; return ({ 'name': item,'value': item });})));
 
@@ -2679,39 +2711,6 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
-define('./pages/ingress/components/d9c72bac76362b93a853bdde50a37c87/bundle.js', [], () => ({
-  /* content */
-  /* handler:onDisplayAssignment */
-  ['onDisplayAssignment'](___arguments) {
-    function getObjectProperty(object, propPath) {
-  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
-    return object[propPath]
-  }
-
-  const propsNamesList = propPath.split('.')
-
-  let result = object
-
-  for (let i = 0; i < propsNamesList.length; i++) {
-    if (!result || result[propsNamesList[i]] === undefined) {
-      return
-    }
-
-    result = result[propsNamesList[i]]
-  }
-
-  return result
-}
-
-
-
-  return ((getObjectProperty(___arguments.context.pageData, 'certificates')) ? (getObjectProperty(___arguments.context.pageData, 'certificates')).length <= 1 : true)
-
-  },
-  /* handler:onDisplayAssignment */
-  /* content */
-}))
-
 define('./pages/ingress/components/9f848c2a622bc58ceea737de94f1f8b8/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
@@ -2739,7 +2738,7 @@ define('./pages/ingress/components/9f848c2a622bc58ceea737de94f1f8b8/bundle.js', 
 
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['opacity'] = 1;
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['visibility'] = 'visible';
-  (function (componentUid, dataModel) { ___arguments.context.setComponentDataStoreByUid(componentUid, dataModel) })('c285fdb7425cfedb989a67dd73e1e756', ({ 'name': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')),'value': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'value')),'btnLabel': 'Update' }));
+  (function (componentUid, dataModel) { ___arguments.context.setComponentDataStoreByUid(componentUid, dataModel) })('c285fdb7425cfedb989a67dd73e1e756', ({ 'name': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')),'value': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'value')),'btnLabel': 'Update','nameDescription': (getObjectProperty(___arguments.context.pageData, 'nameDescription')),'crtFileDescription': (getObjectProperty(___arguments.context.pageData, 'crtFileDescription')),'keyFileDescription': (getObjectProperty(___arguments.context.pageData, 'keyFileDescription')) }));
 
   },
   /* handler:onClick */
@@ -2759,7 +2758,12 @@ define('./pages/ingress/components/107c1b36cb46b45f3df3afbaf3bb0181/bundle.js', 
   	inputCrtFile.value = '';
   	inputKeyFile.value = '';
 
+  	document.querySelector('#fileLabelCrt').innerHTML = '';
+  	document.querySelector('#fileLabelKey').innerHTML = '';
+
   })();
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
   (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
 
   },
@@ -2771,7 +2775,7 @@ define('./pages/ingress/components/11ceb076bd3d97070c8458323141e6a8/bundle.js', 
   /* content */
   /* handler:onClick */
   async ['onClick'](___arguments) {
-    var messageColor, message, error, item, data, method, isFormValid, keyFilePath, crtFilePath;
+    var messageColor, message, error, item, path, method, isFormValid, keyFilePath, crtFilePath, currentPath, currentOrigin, settingsOrigin;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -2793,6 +2797,24 @@ function getObjectProperty(object, propPath) {
   return result
 }
 
+/**
+ * Describe this function...
+ */
+async function getOrigin() {
+  currentOrigin = (getObjectProperty(((function () { return window.location })()), 'origin'));
+  if (currentOrigin == 'https://teemingkitty.backendless.app') {
+    currentPath = 'http://localhost:5050';
+  } else {
+    settingsOrigin = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(currentOrigin) + String('/settings.json')))).setEncoding('utf8').send()), 'serverURL'));
+    if (settingsOrigin) {
+      currentPath = settingsOrigin;
+    } else {
+      currentPath = currentOrigin;
+    }
+  }
+  return currentPath
+}
+
 
   isFormValid = true;
   crtFilePath = (await (async function() {
@@ -2806,38 +2828,27 @@ function getObjectProperty(object, propPath) {
 
   })());
   if (!(getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'name'))) {
+    ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['validationMessageName'] = 'This field is required';
     (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', true);
     isFormValid = false;
+  } else {
+    if (!((new RegExp('^[a-z0-9.-]+$', '')).test((getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'name'))))) {
+      isFormValid = false;
+    }
   }
   if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'btnLabel')) == 'Create') {
     if (!crtFilePath) {
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', true);
-      ;(async () => {
-          await new Promise(r => setTimeout(r, 2000 || 0));
-        (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
-
-      })();
       isFormValid = false;
     }
     if (!keyFilePath) {
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', true);
-      ;(async () => {
-          await new Promise(r => setTimeout(r, 2000 || 0));
-        (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
-
-      })();
       isFormValid = false;
     }
   } else {
     if (!crtFilePath && !keyFilePath) {
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', true);
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', true);
-      ;(async () => {
-          await new Promise(r => setTimeout(r, 2000 || 0));
-        (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
-        (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
-
-      })();
       isFormValid = false;
     }
   }
@@ -2855,6 +2866,7 @@ function getObjectProperty(object, propPath) {
     message = 'Certificate successfully updated';
   }
   try {
+    path = String(await getOrigin()) + String('/services/manage/cert');
     await (async function(method, path) {
     	const form = document.querySelector('.ForrmCert');
     	const data = new FormData(form);
@@ -2877,7 +2889,7 @@ function getObjectProperty(object, propPath) {
 
 
 
-    })(method, 'http://localhost:5050/services/manage/cert');
+    })(method, path);
     if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'btnLabel')) == 'Creating...') {
       (getObjectProperty(___arguments.context.pageData, 'certificates')).push(({ 'name': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'name')),'value': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'name')) }));
     } else {
@@ -2898,6 +2910,9 @@ function getObjectProperty(object, propPath) {
 
     	inputCrtFile.value = '';
     	inputKeyFile.value = '';
+
+    	document.querySelector('#fileLabelCrt').innerHTML = '';
+    	document.querySelector('#fileLabelKey').innerHTML = '';
 
     })();
     await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, message, messageColor, ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
@@ -2944,7 +2959,12 @@ define('./pages/ingress/components/2296afff5b9ced6febcee034fa4def5b/bundle.js', 
     	inputCrtFile.value = '';
     	inputKeyFile.value = '';
 
+    	document.querySelector('#fileLabelCrt').innerHTML = '';
+    	document.querySelector('#fileLabelKey').innerHTML = '';
+
     })();
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
     (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
   }
 
@@ -2957,9 +2977,30 @@ define('./pages/ingress/components/62fa8a24f9ef9c1402bcbe4f48cd164e/bundle.js', 
   /* content */
   /* handler:onClick */
   ['onClick'](___arguments) {
-      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['opacity'] = 1;
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['opacity'] = 1;
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['visibility'] = 'visible';
-  (function (componentUid, dataModel) { ___arguments.context.setComponentDataStoreByUid(componentUid, dataModel) })('c285fdb7425cfedb989a67dd73e1e756', ({ 'name': null,'btnLabel': 'Create' }));
+  (function (componentUid, dataModel) { ___arguments.context.setComponentDataStoreByUid(componentUid, dataModel) })('c285fdb7425cfedb989a67dd73e1e756', ({ 'name': null,'btnLabel': 'Create','nameDescription': (getObjectProperty(___arguments.context.pageData, 'nameDescription')),'crtFileDescription': (getObjectProperty(___arguments.context.pageData, 'crtFileDescription')),'keyFileDescription': (getObjectProperty(___arguments.context.pageData, 'keyFileDescription')) }));
 
   },
   /* handler:onClick */
@@ -2970,54 +3011,270 @@ define('./pages/ingress/components/d235317ad00a42688c4f78c55ce72282/bundle.js', 
   /* content */
   /* handler:onChange */
   ['onChange'](___arguments) {
-      if (___arguments.value) {
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
-  } else {
+      if (!___arguments.value) {
+    ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['validationMessageName'] = 'This field is required';
     (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', true);
+  } else {
+    if ((new RegExp('^[a-z0-9.-]+$', '')).test(___arguments.value)) {
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
+    } else {
+      ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['validationMessageName'] = 'Certificate name must consist of lower case  alphanumeric characters, \'-\' or \'.\'';
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', true);
+    }
   }
 
   },
   /* handler:onChange */
+  /* handler:onReadOnlyStateAssignment */
+  ['onReadOnlyStateAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (!((getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'btnLabel')) == 'Create'))
+
+  },
+  /* handler:onReadOnlyStateAssignment */
   /* content */
 }))
 
-define('./pages/ingress/components/f58c5657e34721b69a960bd479388123/bundle.js', [], () => ({
+define('./pages/ingress/components/08eeca24e142146f1894a98264378b8e/bundle.js', [], () => ({
   /* content */
-  /* handler:onBeforeUpload */
-  ['onBeforeUpload'](___arguments) {
-    
-  },
-  /* handler:onBeforeUpload */
-  /* handler:onUploadSuccess */
-  ['onUploadSuccess'](___arguments) {
-      console.log(___arguments.uploadedFiles);
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.event, 'target')) == (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('08eeca24e142146f1894a98264378b8e')), 'el'))) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'hidden';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['opacity'] = 0;
+  }
 
   },
-  /* handler:onUploadSuccess */
-  /* handler:onUploadFail */
-  ['onUploadFail'](___arguments) {
-      (function (componentUid) { ___arguments.context.getComponentByUid(componentUid).reset() })('f58c5657e34721b69a960bd479388123');
-
-  },
-  /* handler:onUploadFail */
+  /* handler:onClick */
   /* content */
 }))
 
-define('./pages/ingress/components/ba31d9f22fe6212698ed8209791bf2ab/bundle.js', [], () => ({
+define('./pages/ingress/components/27b6d3b3194341bfb66aea36bd4cba1f/bundle.js', [], () => ({
   /* content */
-  /* handler:onBeforeUpload */
-  ['onBeforeUpload'](___arguments) {
-      ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['keyFile'] = (___arguments.files[0]);
-  throw (new Error('stop'))
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['opacity'] = 0;
 
   },
-  /* handler:onBeforeUpload */
-  /* handler:onUploadFail */
-  ['onUploadFail'](___arguments) {
-      (function (componentUid) { ___arguments.context.getComponentByUid(componentUid).reset() })('ba31d9f22fe6212698ed8209791bf2ab');
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/ingress/components/662e15f17bda8c865906fc475c1f9fff/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['opacity'] = 0;
 
   },
-  /* handler:onUploadFail */
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/ingress/components/ccef5f3b9342ba8c2e5e5e75fc6e79a5/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+    var error, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  ___arguments.context.getComponentDataStoreByUid('08eeca24e142146f1894a98264378b8e')['btnDeleteDisabled'] = true;
+  ___arguments.context.getComponentDataStoreByUid('08eeca24e142146f1894a98264378b8e')['btnLabel'] = 'Deleting...';
+  try {
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('delete', '/manage/cert', ({ 'certName': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('08eeca24e142146f1894a98264378b8e'), 'certName')) }), null);
+    ___arguments.context.pageData['certificates'] = (await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'certificates')), async (item) => {
+
+
+     return ((getObjectProperty(item, 'name')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('08eeca24e142146f1894a98264378b8e'), 'certName')));
+    }));
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'hidden';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['opacity'] = 0;
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'Certificate removed successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+
+  } catch (error) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'hidden';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['opacity'] = 0;
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ff0000', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/ingress/components/82af6d9999477d672654d1635113a769/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  (function (componentUid, dataModel) { ___arguments.context.setComponentDataStoreByUid(componentUid, dataModel) })('08eeca24e142146f1894a98264378b8e', ({ 'certName': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')),'btnLabel': 'Delete' }));
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'visible';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['opacity'] = 1;
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/ingress/components/7ac33161eed44262a0235eab7e5ff067/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  ['onContentAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('08eeca24e142146f1894a98264378b8e'), 'certName')) + String('?'))
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/ingress/components/3695b1abfcbf01cc719c117732cdc949/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  ['onDisplayAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.pageData, 'certificates')) ? (getObjectProperty(___arguments.context.pageData, 'certificates')).length <= 1 : false)
+
+  },
+  /* handler:onDisplayAssignment */
   /* content */
 }))
 
@@ -5950,7 +6207,7 @@ define('./pages/serverStatus/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async ['onEnter'](___arguments) {
-    var error, pollingIntervalMS;
+    var configuration, error, pollingIntervalMS;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -5984,6 +6241,8 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
   localStorage.removeItem('originLoad');
   ___arguments.context.pageData['groupActionList'] = [];
   try {
+    configuration = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/domain', null, null));
+    (function (componentUid, dataModel) { ___arguments.context.setComponentDataStoreByUid(componentUid, dataModel) })('205d24a93e3e11b81ca3097b328aadb5', ({ 'console': (getObjectProperty((getObjectProperty(configuration, 'console')), 'Console URL')),'api': (getObjectProperty(configuration, 'api')) }));
     pollingIntervalMS = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(getObjectProperty(((function () { return window.location })()), 'origin')) + String('/settings.json')))).setEncoding('utf8').send()), 'pollingIntervalMS'));
     if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
       pollingIntervalMS = 2000;
@@ -5991,7 +6250,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
 
     ;(function() {
       const callback = async () => {
-          ___arguments.context.appData['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+          ___arguments.context.appData['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null, null));
 
       };
 
@@ -6537,6 +6796,130 @@ define('./pages/serverStatus/components/0fbd34b64c4b8f271001b02635bd0324/bundle.
 
   },
   /* handler:onDynamicItemsAssignment */
+  /* content */
+}))
+
+define('./pages/serverStatus/components/42755df4e55a88b2a2715db3b42462fa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTextAssignment */
+  ['onTextAssignment'](___arguments) {
+    var content2;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5') ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'console')) : '')
+
+  },
+  /* handler:onTextAssignment */
+  /* handler:onTargetPathAssignment */
+  ['onTargetPathAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5') ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'console')) : '')
+
+  },
+  /* handler:onTargetPathAssignment */
+  /* content */
+}))
+
+define('./pages/serverStatus/components/1fbe945ac1dfe5ab6e5bd12b0ec251b1/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTextAssignment */
+  ['onTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')) ? [(getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')), 'Protocol')),'://',(getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')), 'Host')),':',(getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')), 'Port'))].join('') : '')
+
+  },
+  /* handler:onTextAssignment */
+  /* handler:onTargetPathAssignment */
+  ['onTargetPathAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')) ? [(getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')), 'Protocol')),'://',(getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')), 'Host')),':',(getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('205d24a93e3e11b81ca3097b328aadb5'), 'api')), 'Port'))].join('') : '')
+
+  },
+  /* handler:onTargetPathAssignment */
   /* content */
 }))
 
