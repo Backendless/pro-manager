@@ -14,6 +14,7 @@ import { defaultArguments } from './default-arguments'
 import { upgradeService } from '../upgrade'
 import { consul } from '../consul'
 import { circularReplacer } from '../../utils/circular-replacer'
+import { repeatOnFail } from '../../utils/repeat-on-fail'
 
 const logger = Logger('install-service')
 
@@ -52,8 +53,7 @@ class InstallService {
             installStatus.setServiceCreated(true)
             await upgradeService.upgrade(install)
             installStatus.info('All services are created, you can see status of each service on Manage page')
-        })
-            .catch(error => {
+        }).catch(error => {
             installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error, circularReplacer())}`)
         })
     }
@@ -82,12 +82,12 @@ class InstallService {
             installStatus.info('bl-init-config-values job already created')
         }
 
-        if(install.license) {
+        if (install.license) {
             await consul.put('license', install.license)
         }
 
         //TODO: remove the block after resolve BKNDLSS-29380
-        if(install.licence) {
+        if (install.licence) {
             await consul.put('license', install.licence)
         }
 
@@ -96,7 +96,11 @@ class InstallService {
             .map(([key, container]) => container)
 
         for (const container of containers) {
-            await this._installContainer(container, install)
+            await repeatOnFail(
+                () => this._installContainer(container, install),
+                10,
+                1000,
+                error => installStatus.warn(`Failed to install ${container.name} service, waiting 1 second, and retry`))
         }
 
         await mountPathConfig.save(install.mountPath)
