@@ -6,6 +6,8 @@ echo "creating user bl-pro-manger"
 sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
 sudo passwd -d bl-pro-manager
 sudo adduser bl-pro-manager sudo
+sudo adduser bl-pro-manager adm
+sudo adduser bl-pro-manager systemd-journal
 su bl-pro-manager
 
 work_dir="/home/bl-pro-manager"
@@ -54,7 +56,7 @@ WantedBy=multi-user.target
 [Service]
 Environment="KUBECONFIG=/home/bl-pro-manager/.kube/config"
 WorkingDirectory=/home/bl-pro-manager/pro-manager
-ExecStart=/home/bl-pro-manager.nvm/versions/node/v14.18.2/bin/node ./src
+ExecStart=/home/bl-pro-manager/.nvm/versions/node/v14.18.2/bin/node ./src
 Restart=always
 
 EOF
