@@ -4,7 +4,7 @@ set -e
 
 work_dir="/opt/backendless"
 
-mkdir -p $work_dir
+sudo mkdir -p $work_dir
 
 nvm_dir="$work_dir/.nvm"
 
@@ -17,7 +17,9 @@ nvm install v14.18.2
 nvm use v14.18.2
 
 curl -sfL https://get.k3s.io | sh -
-mkdir $work_dir/.kube
+
+sudo mkdir $work_dir/.kube
+
 echo "export KUBECONFIG=$work_dir/.kube/config" >> ~/.bashrc
 export KUBECONFIG=$work_dir/.kube/config
 sudo k3s kubectl config view --raw > $work_dir/.kube/config
