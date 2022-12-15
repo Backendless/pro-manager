@@ -5,7 +5,7 @@ set -e
 echo "creating user bl-pro-manger"
 sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
 sudo passwd -d bl-pro-manager
-sudo su bl-pro-manager
+su bl-pro-manager
 
 work_dir="/home/bl-pro-manager"
 
