@@ -4,11 +4,14 @@ set -e
 
 work_dir="/opt/backendless"
 
+echo "creating working folder $work_dir"
+
 sudo mkdir -p $work_dir
 
 nvm_dir="$work_dir/.nvm"
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash | NVM_DIR=nvm_dir
+echo "installing nvm to $nvm_dir ..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash | NVM_DIR=$nvm_dir
+echo "nvm installed"
 
 export NVM_DIR=$nvm_dir
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -16,13 +19,17 @@ export NVM_DIR=$nvm_dir
 nvm install v14.18.2
 nvm use v14.18.2
 
+echo "installing k3s..."
 curl -sfL https://get.k3s.io | sh -
+echo "k3s installed"
 
 sudo mkdir $work_dir/.kube
 
 echo "export KUBECONFIG=$work_dir/.kube/config" >> ~/.bashrc
 export KUBECONFIG=$work_dir/.kube/config
 sudo k3s kubectl config view --raw > $work_dir/.kube/config
+
+echo "saved k3s config to work dir"
 
 cd $work_dir
 
@@ -50,4 +57,6 @@ Restart=always
 EOF
 
 sudo systemctl daemon-reload
+echo "system daemon reloaded. Starting pro manager"
 sudo systemctl start pro-manager.service
+systemctl status pro-manager.service
