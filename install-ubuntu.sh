@@ -10,7 +10,7 @@ sudo mkdir -p $work_dir
 
 nvm_dir="$work_dir/.nvm"
 echo "installing nvm to $nvm_dir ..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash | NVM_DIR=$nvm_dir
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | NVM_DIR=$nvm_dir | bash
 echo "nvm installed"
 
 export NVM_DIR=$nvm_dir
