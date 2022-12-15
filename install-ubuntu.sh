@@ -58,6 +58,7 @@ Restart=always
 
 EOF
 
+
 sudo systemctl daemon-reload
 echo "system daemon reloaded. Starting pro manager"
 sudo systemctl start pro-manager.service
