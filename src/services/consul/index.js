@@ -9,7 +9,7 @@ const logger = Logger('consul')
 class Consul {
     async get(key) {
         const podName = await this._getPodName()
-        return (await repeatOnFail( () => executeInPod(podName, ['consul', 'kv', 'get', key]), 10, 100)).replace(/\n$/, '')
+        return (await repeatOnFail( () => executeInPod(podName, ['consul', 'kv', 'get', key]), 20, 1000)).replace(/\n$/, '')
     }
 
     async getOrNull(key) {
@@ -29,7 +29,7 @@ class Consul {
 
     async put(key, value) {
         const podName = await this._getPodName()
-        return repeatOnFail( () => executeInPod(podName, ['consul', 'kv', 'put', key, value]), 10, 100)
+        return repeatOnFail( () => executeInPod(podName, ['consul', 'kv', 'put', key, value]), 20, 1000)
     }
 
     async _getPodName() {

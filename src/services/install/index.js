@@ -82,6 +82,8 @@ class InstallService {
             installStatus.info('bl-init-config-values job already created')
         }
 
+        installStatus.info('bl-init-config-values job created')
+
         if (install.license) {
             await consul.put('license', install.license)
         }
