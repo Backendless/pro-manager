@@ -111,7 +111,7 @@
                   "name": "repo"
                 },
                 {
-                  "mountPath": "/opt/backendless/console/logs",
+                  "mountPath": "/opt/backendless/logs",
                   "name": "logs"
                 }
               ]
