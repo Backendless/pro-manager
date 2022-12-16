@@ -22,6 +22,29 @@ body {
   color: NULL;
   visibility: NULL;
 }
+/************************************************/
+/************************************************/
+/*****    component: chart-visualization    *****/
+.bl-chart-visualization {
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.bl-chart-visualization .bl-chart-visualization-preview {
+  background-color: #fff;
+}
+/*****    component: chart-visualization    *****/
+/************************************************/
+/************************************************/
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
 /***********************************/
 /***********************************/
 /*****    component: button    *****/
@@ -71,15 +94,6 @@ body {
 /*****    component: button    *****/
 /***********************************/
 /***********************************/
-/**********************************/
-/**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
-}
-/*****    component: block    *****/
-/**********************************/
-/**********************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -289,305 +303,6 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) {
-  color: #000000;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: inherit;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
-/*********************************/
-/*********************************/
-/*****    component: chip    *****/
-.bl-chip {
-  border-radius: 16px;
-  width: max-content;
-}
-.bl-chip:not(.bl-chip--outlined) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
-  color: inherit;
-  width: auto;
-  height: auto;
-}
-.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
-  background: gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
-  width: auto;
-  height: auto;
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
-  color: gray;
-}
-.MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.MuiChip-iconSmall {
-  font-size: 18px;
-}
-/*****    component: chip    *****/
-/*********************************/
-/*********************************/
-/************************************************/
-/************************************************/
-/*****    component: chart-visualization    *****/
-.bl-chart-visualization {
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-.bl-chart-visualization .bl-chart-visualization-preview {
-  background-color: #fff;
-}
-/*****    component: chart-visualization    *****/
-/************************************************/
-/************************************************/
-/********************************************/
-/********************************************/
-/*****    component: datetime-picker    *****/
-.bl-datetime-picker .MuiFormLabel-root {
-  color: #000000;
-}
-.bl-datetime-picker .MuiFormLabel-root.Mui-focused {
-  color: #000000;
-}
-.bl-datetime-picker .MuiFormLabel-root.Mui-disabled {
-  color: gray;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root {
-  border-radius: NULL;
-  background-color: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root .MuiInputBase-input {
-  color: #000000;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root .MuiInputBase-input:hover {
-  color: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled) .MuiOutlinedInput-notchedOutline {
-  border: 2px solid #337ab7;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled).Mui-focused .MuiOutlinedInput-notchedOutline {
-  border: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled):hover .MuiOutlinedInput-notchedOutline {
-  border: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
-  border: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiInput-underline .MuiInputBase-input {
-  color: #000000;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiInput-underline .MuiInputBase-input:hover {
-  color: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:before {
-  border-bottom-color: #337ab7;
-  border-bottom-width: NULL;
-  border-bottom-style: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:after {
-  border-bottom-color: #337ab7;
-  border-bottom-width: NULL;
-  border-bottom-style: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:hover:not(.Mui-disabled):not(.Mui-focused):before {
-  border-bottom-color: #337ab7;
-  border-bottom-width: NULL;
-  border-bottom-style: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiInput-underline.Mui-disabled:before {
-  border-bottom-color: gray;
-  border-bottom-width: NULL;
-  border-bottom-style: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker .MuiInputBase-root.MuiFilledInput-root {
-  background-color: #eee;
-}
-.bl-datetime-picker-dialog .MuiPaper-root {
-  color: #337ab7;
-  background: #fff;
-}
-.bl-datetime-picker-dialog .MuiDialog-paper {
-  background: #fff;
-  border: 1px solid #337ab7;
-  border-radius: NULL;
-  box-shadow: NULL;
-}
-.bl-datetime-picker-dialog .MuiToolbar-root {
-  background: #337ab7;
-}
-.bl-datetime-picker-dialog .MuiToolbar-root .MuiPickersToolbarText-toolbarTxt {
-  color: #ffffff;
-}
-.bl-datetime-picker-dialog .MuiToolbar-root .MuiPickersToolbarText-toolbarBtnSelected {
-  color: #fff;
-}
-.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader {
-  margin: 5px;
-}
-.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root {
-  background: transparent;
-  color: #000000;
-}
-.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root:hover {
-  background-color: NULL;
-  color: NULL;
-}
-.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root.Mui-disabled {
-  background: transparent;
-  color: transparent;
-}
-.bl-datetime-picker-dialog .MuiPickersCalendarHeader-dayLabel {
-  color: #000000;
-}
-.bl-datetime-picker-dialog .MuiPickersDay-day {
-  color: inherit;
-  border-radius: NULL;
-}
-.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-current {
-  background: rgba(51, 122, 183, 0.2);
-  color: #ffffff;
-}
-.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-daySelected {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-dayDisabled {
-  background: transparent;
-  color: gray;
-}
-.bl-datetime-picker-dialog .MuiPickersYear-root:focus,
-.bl-datetime-picker-dialog .MuiPickersYear-root:hover {
-  background: rgba(51, 122, 183, 0.4);
-  color: #ffffff;
-}
-.bl-datetime-picker-dialog .MuiPickersYear-root.MuiPickersYear-yearSelected {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-datetime-picker-dialog .MuiPickersClockNumber-clockNumber {
-  color: inherit;
-}
-.bl-datetime-picker-dialog .MuiPickersClockNumber-clockNumber.MuiPickersClockNumber-clockNumberSelected {
-  color: #fff;
-}
-.bl-datetime-picker-dialog .MuiPickersClock-pin,
-.bl-datetime-picker-dialog .MuiPickersClockPointer-pointer {
-  background: #cccccc;
-}
-.bl-datetime-picker-dialog .MuiPickersClockPointer-thumb {
-  background: #cccccc;
-  border: 14px solid #cccccc;
-}
-.bl-datetime-picker-dialog .MuiTabs-root .MuiTab-root {
-  background-color: #337ab7;
-  opacity: 1;
-}
-.bl-datetime-picker-dialog .MuiTabs-root .MuiTabs-indicator {
-  background-color: #ffffff;
-}
-.bl-datetime-picker-dialog .MuiTabs-root .MuiSvgIcon-root {
-  fill: #ffffff;
-}
-.bl-datetime-picker-dialog .MuiDialogActions-root {
-  background: rgba(0, 0, 0, 0.2);
-}
-.bl-datetime-picker-dialog .MuiDialogActions-root .MuiButton-root {
-  background: #337ab7;
-  color: #ffffff;
-}
-/*****    component: datetime-picker    *****/
-/********************************************/
-/********************************************/
 /***************************************/
 /***************************************/
 /*****    component: data-table    *****/
@@ -692,23 +407,122 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
-/************************************/
-/************************************/
-/*****    component: divider    *****/
-.bl-divider {
-  border-color: #337ab7;
-  border-width: 2px;
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
 }
-/*****    component: divider    *****/
-/************************************/
-/************************************/
-/*********************************/
-/*********************************/
-/*****    component: icon    *****/
-.bl-icon {
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) {
+  color: #000000;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
   color: #337ab7;
 }
-/*****    component: icon    *****/
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: inherit;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/*********************************/
+/*********************************/
+/*****    component: chip    *****/
+.bl-chip {
+  border-radius: 16px;
+  width: max-content;
+}
+.bl-chip:not(.bl-chip--outlined) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
+  color: inherit;
+  width: auto;
+  height: auto;
+}
+.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
+  background: gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
+  width: auto;
+  height: auto;
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
+  color: gray;
+}
+.MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.MuiChip-iconSmall {
+  font-size: 18px;
+}
+/*****    component: chip    *****/
 /*********************************/
 /*********************************/
 /****************************************************/
@@ -961,6 +775,251 @@ body {
 /*****    component: data-grid-visualization    *****/
 /****************************************************/
 /****************************************************/
+/********************************************/
+/********************************************/
+/*****    component: datetime-picker    *****/
+.bl-datetime-picker .MuiFormLabel-root {
+  color: #000000;
+}
+.bl-datetime-picker .MuiFormLabel-root.Mui-focused {
+  color: #000000;
+}
+.bl-datetime-picker .MuiFormLabel-root.Mui-disabled {
+  color: gray;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root {
+  border-radius: NULL;
+  background-color: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root .MuiInputBase-input {
+  color: #000000;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root .MuiInputBase-input:hover {
+  color: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled) .MuiOutlinedInput-notchedOutline {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled).Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root:not(.Mui-disabled):hover .MuiOutlinedInput-notchedOutline {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline .MuiInputBase-input {
+  color: #000000;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline .MuiInputBase-input:hover {
+  color: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:before {
+  border-bottom-color: #337ab7;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:after {
+  border-bottom-color: #337ab7;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline:hover:not(.Mui-disabled):not(.Mui-focused):before {
+  border-bottom-color: #337ab7;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiInput-underline.Mui-disabled:before {
+  border-bottom-color: gray;
+  border-bottom-width: NULL;
+  border-bottom-style: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker .MuiInputBase-root.MuiFilledInput-root {
+  background-color: #eee;
+}
+.bl-datetime-picker-dialog .MuiPaper-root {
+  color: #337ab7;
+  background: #fff;
+}
+.bl-datetime-picker-dialog .MuiDialog-paper {
+  background: #fff;
+  border: 1px solid #337ab7;
+  border-radius: NULL;
+  box-shadow: NULL;
+}
+.bl-datetime-picker-dialog .MuiToolbar-root {
+  background: #337ab7;
+}
+.bl-datetime-picker-dialog .MuiToolbar-root .MuiPickersToolbarText-toolbarTxt {
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiToolbar-root .MuiPickersToolbarText-toolbarBtnSelected {
+  color: #fff;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader {
+  margin: 5px;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root {
+  background: transparent;
+  color: #000000;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root:hover {
+  background-color: NULL;
+  color: NULL;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-switchHeader .MuiButtonBase-root.Mui-disabled {
+  background: transparent;
+  color: transparent;
+}
+.bl-datetime-picker-dialog .MuiPickersCalendarHeader-dayLabel {
+  color: #000000;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day {
+  color: inherit;
+  border-radius: NULL;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-current {
+  background: rgba(51, 122, 183, 0.2);
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-daySelected {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersDay-day.MuiPickersDay-dayDisabled {
+  background: transparent;
+  color: gray;
+}
+.bl-datetime-picker-dialog .MuiPickersYear-root:focus,
+.bl-datetime-picker-dialog .MuiPickersYear-root:hover {
+  background: rgba(51, 122, 183, 0.4);
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersYear-root.MuiPickersYear-yearSelected {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiPickersClockNumber-clockNumber {
+  color: inherit;
+}
+.bl-datetime-picker-dialog .MuiPickersClockNumber-clockNumber.MuiPickersClockNumber-clockNumberSelected {
+  color: #fff;
+}
+.bl-datetime-picker-dialog .MuiPickersClock-pin,
+.bl-datetime-picker-dialog .MuiPickersClockPointer-pointer {
+  background: #cccccc;
+}
+.bl-datetime-picker-dialog .MuiPickersClockPointer-thumb {
+  background: #cccccc;
+  border: 14px solid #cccccc;
+}
+.bl-datetime-picker-dialog .MuiTabs-root .MuiTab-root {
+  background-color: #337ab7;
+  opacity: 1;
+}
+.bl-datetime-picker-dialog .MuiTabs-root .MuiTabs-indicator {
+  background-color: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiTabs-root .MuiSvgIcon-root {
+  fill: #ffffff;
+}
+.bl-datetime-picker-dialog .MuiDialogActions-root {
+  background: rgba(0, 0, 0, 0.2);
+}
+.bl-datetime-picker-dialog .MuiDialogActions-root .MuiButton-root {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: datetime-picker    *****/
+/********************************************/
+/********************************************/
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+.bl-divider {
+  border-color: #337ab7;
+  border-width: 2px;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+.bl-iframe {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
+/*********************************/
+/*********************************/
+/*****    component: icon    *****/
+.bl-icon {
+  color: #337ab7;
+}
+/*****    component: icon    *****/
+/*********************************/
+/*********************************/
+/***************************************/
+/***************************************/
+/*****    component: google-map    *****/
+.bl-google-map {
+  display: flex;
+  flex-grow: 1;
+  background-color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: google-map    *****/
+/***************************************/
+/***************************************/
+/*********************************/
+/*********************************/
+/*****    component: form    *****/
+.bl-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+/*****    component: form    *****/
+/*********************************/
+/*********************************/
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+.bl-jumbotron {
+  display: flex;
+  flex-direction: column;
+  background: #dbdbdb;
+  box-shadow: NULL;
+  color: NULL;
+  border: NULL;
+  border-radius: 12px;
+  padding: 48px 24px 48px 24px;
+  margin: 0 0 48px 0;
+}
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
 /**********************************/
 /**********************************/
 /*****    component: image    *****/
@@ -1172,65 +1231,32 @@ body {
 /*****    component: input    *****/
 /**********************************/
 /**********************************/
-/***************************************/
-/***************************************/
-/*****    component: google-map    *****/
-.bl-google-map {
-  display: flex;
-  flex-grow: 1;
-  background-color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
 }
-/*****    component: google-map    *****/
-/***************************************/
-/***************************************/
-/***********************************/
-/***********************************/
-/*****    component: iframe    *****/
-.bl-iframe {
-  flex: 1;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
 }
-/*****    component: iframe    *****/
-/***********************************/
-/***********************************/
-/**************************************/
-/**************************************/
-/*****    component: jumbotron    *****/
-.bl-jumbotron {
-  display: flex;
-  flex-direction: column;
-  background: #dbdbdb;
-  box-shadow: NULL;
-  color: NULL;
-  border: NULL;
-  border-radius: 12px;
-  padding: 48px 24px 48px 24px;
-  margin: 0 0 48px 0;
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
 }
-/*****    component: jumbotron    *****/
-/**************************************/
-/**************************************/
-/*********************************/
-/*********************************/
-/*****    component: form    *****/
-.bl-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
 }
-/*****    component: form    *****/
-/*********************************/
-/*********************************/
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1353,23 +1379,6 @@ body {
 /***************************************/
 /*********************************/
 /*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
-/*********************************/
-/*********************************/
 /*****    component: link    *****/
 .bl-link {
   color: #000000;
@@ -1379,6 +1388,27 @@ body {
 /*****    component: link    *****/
 /*********************************/
 /*********************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
+/**********************************/
+/**********************************/
+/*****    component: panel    *****/
+.bl-panel {
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: NULL;
+  margin: NULL;
+}
+/*****    component: panel    *****/
+/**********************************/
+/**********************************/
 /*****************************************/
 /*****************************************/
 /*****    component: radio-button    *****/
@@ -1427,32 +1457,111 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
 }
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
+/***********************************/
+/***********************************/
+/*****    component: slider    *****/
+.bl-slider:hover .bl-slider-rail {
+  color: NULL;
 }
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
+.bl-slider:hover .bl-slider-track {
+  color: NULL;
 }
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
+.bl-slider:hover .bl-slider--mark {
+  color: NULL;
 }
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
+.bl-slider:hover .bl-slider--mark-active {
+  background-color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider.bl-slider--disabled .bl-slider-rail {
+  color: rgba(128, 128, 128, 0.38);
+}
+.bl-slider.bl-slider--disabled .bl-slider-track {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
+  left: auto;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
+  background: gray;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-rail {
+  color: rgba(51, 122, 183, 0.38);
+  opacity: 1;
+}
+.bl-slider .bl-slider-track {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider .bl-slider-thumb {
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+}
+.bl-slider .bl-slider-thumb.bl-slider--active {
+  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: slider    *****/
+/***********************************/
+/***********************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1657,6 +1766,17 @@ body {
 /*****    component: select    *****/
 /***********************************/
 /***********************************/
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+.bl-text {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
 /************************************/
 /************************************/
 /*****    component: spinner    *****/
@@ -1695,94 +1815,6 @@ body {
 /************************************/
 /***********************************/
 /***********************************/
-/*****    component: slider    *****/
-.bl-slider:hover .bl-slider-rail {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-track {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark-active {
-  background-color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider.bl-slider--disabled .bl-slider-rail {
-  color: rgba(128, 128, 128, 0.38);
-}
-.bl-slider.bl-slider--disabled .bl-slider-track {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
-  left: auto;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
-  background: gray;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-rail {
-  color: rgba(51, 122, 183, 0.38);
-  opacity: 1;
-}
-.bl-slider .bl-slider-track {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider .bl-slider-thumb {
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider .bl-slider-thumb .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-}
-.bl-slider .bl-slider-thumb.bl-slider--active {
-  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-/*****    component: slider    *****/
-/***********************************/
-/***********************************/
-/***********************************/
-/***********************************/
 /*****    component: switch    *****/
 .bl-switch .bl-switch-base {
   color: #337ab7;
@@ -1811,21 +1843,6 @@ body {
 /*****    component: switch    *****/
 /***********************************/
 /***********************************/
-/**********************************/
-/**********************************/
-/*****    component: panel    *****/
-.bl-panel {
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  padding: NULL;
-  margin: NULL;
-}
-/*****    component: panel    *****/
-/**********************************/
-/**********************************/
 /**********************************/
 /**********************************/
 /*****    component: video    *****/
@@ -1970,23 +1987,6 @@ body {
 /*****    component: textarea    *****/
 /*************************************/
 /*************************************/
-/*********************************/
-/*********************************/
-/*****    component: text    *****/
-.bl-text {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: text    *****/
-/*********************************/
-/*********************************/
-/************************************************/
-/************************************************/
-/*****    component: radio-buttons-group    *****/
-/*****    component: radio-buttons-group    *****/
-/************************************************/
-/************************************************/
 /*******************************************/
 /*******************************************/
 /*****    component: view-data-grid    *****/
@@ -3106,6 +3106,10 @@ body {
   line-height: 23px;
   color: #303042;
   margin: 20px 0px;
+  text-align: center;
+}
+.ModalConfirm__message--second {
+  margin: -20px 0 20px 0;
 }
 .ModalConfirm__CloseBtn {
   position: absolute;
@@ -3207,6 +3211,7 @@ body {
 .ingress__sslEnabledLabel {
   width: 50px;
   color: #ff0000;
+  flex-shrink: 0;
 }
 .ingress__CertificateLabel {
   max-width: 400px;
@@ -3247,9 +3252,14 @@ body {
   border-radius: 5px;
   margin: 7px;
   max-width: 500px;
-  height: 250px;
+  height: 270px;
   width: 100%;
   align-items: center;
+}
+@media screen and (max-width: 350px) {
+  .CreateUpdateModal__main {
+    height: 300px;
+  }
 }
 .CreateUpdateModal__form {
   box-shadow: none;
@@ -3297,8 +3307,51 @@ body {
 .CreateUpdateModal__MainButton {
   width: 140px;
 }
-.CreateUpdateModal__MainButton--AlignRight {
-  align-self: flex-end;
+.CreateUpdateModal__UploadFileBtn {
+  height: 34px;
+  border-radius: 2px !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  width: 217px;
+  background: #1B76BC !important;
+  color: #fff !important;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 350px) {
+  .CreateUpdateModal__UploadFileBtn {
+    width: 75px;
+    font-size: 11px;
+  }
+}
+.CreateUpdateModal__FormGroup--AlignRight {
+  align-items: flex-end;
+}
+.CreateUpdateModal__CrtFileWrapper,
+.CreateUpdateModal__KeyFileWrapper {
+  justify-content: flex-end;
+  align-items: center;
+}
+.CreateUpdateModal__ValidMsgFile {
+  margin-right: 43px;
+  margin-top: 3px;
+}
+@media screen and (max-width: 350px) {
+  .CreateUpdateModal__ValidMsgFile {
+    margin-right: 0;
+  }
+}
+.CreateUpdateModal__FileNameLabel {
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #414343;
+  margin-right: 5px;
 }
 .install__logo {
   flex-direction: column;
