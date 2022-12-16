@@ -8,7 +8,7 @@
 1. Start ec2 instance with ubuntu with the following `User data`
 ```
 #!/bin/bash
-curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ec2-ubuntu.sh  | bash
+curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
 ```
 Make sure the following ports are available for you:
 ```
