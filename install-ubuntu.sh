@@ -13,7 +13,7 @@ su bl-pro-manager
 work_dir="/home/bl-pro-manager"
 
 cd $work_dir
-echo "creating working folder $work_dir"
+echo "in working folder $work_dir"
 
 
 nvm_dir="$work_dir/.nvm"
