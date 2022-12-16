@@ -51,7 +51,11 @@ class InstallService {
         //install process should be async
         this._install(install).then(async result => {
             installStatus.setServiceCreated(true)
-            await upgradeService.upgrade(install)
+            repeatOnFail(() => upgradeService.upgrade(install), 10, 1000)
+                .then(result => logger.info('upgrade job finished'))
+                .catch(error => logger.error(`upgrade job failed after 10 retries with error. Error: ${error}, \nObject: ${JSON.stringify(error, circularReplacer())}`))
+
+            installStatus.info('Upgrade job scheduled')
             installStatus.info('All services are created, you can see status of each service on Manage page')
         }).catch(error => {
             installStatus.error(`Error during install process. Error: ${error}, \nObject: ${JSON.stringify(error, circularReplacer())}`)
