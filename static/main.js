@@ -3621,6 +3621,74 @@ function removeItemInList(l, i, c) {   const index = c ? l.findIndex(el => el[c]
   /* content */
 }))
 
+define('./pages/install/components/90d8c3571dc2b58b3ce53fd97a5af9d9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4fa9f7ddbea8648a68589c2bdd118b95')), 'el'))['type'] = 'text';
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('90d8c3571dc2b58b3ce53fd97a5af9d9', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('891bf3ca729d37cf46cc1e6329c36163', true);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/install/components/891bf3ca729d37cf46cc1e6329c36163/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4fa9f7ddbea8648a68589c2bdd118b95')), 'el'))['type'] = 'password';
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('891bf3ca729d37cf46cc1e6329c36163', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('90d8c3571dc2b58b3ce53fd97a5af9d9', true);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
 define('./pages/kubernetes/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
@@ -6923,6 +6991,17 @@ define('./pages/serverStatus/components/1fbe945ac1dfe5ab6e5bd12b0ec251b1/bundle.
   /* content */
 }))
 
+define('./pages/serverStatus/components/4848343c5f6a32b44795b38ac773dad8/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('domainsGeneral', ({ 'pageConfiguration': 'domainsGeneral' }));
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
 define('./pages/serviceLogs/components/7e437288f19344daa5a4bed75c728637/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
@@ -7322,9 +7401,640 @@ async function asyncListFilter(sourceList, callback) {
 
 define('./pages/serviceLogs/components/9051123f6b4f94ef192265039293d4cd/bundle.js', [], () => ({
   /* content */
+  /* handler:onBeforeUnmount */
+  async ['onBeforeUnmount'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.appData, 'previousService')) {
+    if (getObjectProperty((getObjectProperty(___arguments.context.appData, 'openSocket')), 'connected')) {
+      await (async function(serviceName) {
+
+      	  socket.emit ('service-logs:unsubscribe', {
+      	    "serviceName":`${serviceName}`,
+      	    "channelName":`${serviceName}-logs`
+      	  });
+
+      	  socket.disconnect();
+
+
+      })((getObjectProperty(___arguments.context.appData, 'previousService')));
+    }
+  }
+
+  },
+  /* handler:onBeforeUnmount */
+  /* content */
+}))
+
+define('./pages/serviceLogs/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onEnter */
+  async ['onEnter'](___arguments) {
+    var origin;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  await (async function() {
+  	logClear = false;
+  	logStopFollow = false;
+  	logOriginalText = '';
+  	logFileText = ''
+  })();
+  ___arguments.context.pageData['followBtnLabel'] = 'Stop Follow';
+  ___arguments.context.pageData['downloadBtnLabel'] = 'Download';
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.pageData, 'serviceName'))) {
+    ___arguments.context.pageData['serviceName'] = 'bl-server';
+  }
+  origin = (await BackendlessUI.Functions.Custom['fn_1e23a48a29f82b3fc1f647fd98cb53f6']());
+  ___arguments.context.appData['openSocket'] = (await (async function(serviceName, host) {
+  	const io = await BackendlessUI.requireModule('https://cdn.jsdelivr.net/npm/socket.io-client@4.4.0/dist/socket.io.min.js');
+
+  	  const output = document.querySelector('.ServerLogs__ContentLogs');
+  	  output.innerHTML = '';
+
+  	  logOriginalText = '';
+  	  logFileText = ''
+
+
+  	  socket = io.connect(`${host}`, { transports : ['websocket'] });
+
+  	  socket.on (`${serviceName}-logs`, function (data) {
+
+  	    logFileText = logFileText + data;
+  	    let dataWithBr = insertBr(data);
+  	    logOriginalText = logOriginalText + dataWithBr;
+
+  	     output.innerHTML = `${output.innerHTML}${dataWithBr}`;
+
+  	     if(!logStopFollow) {
+  	       output.scrollTop = output.scrollHeight;
+  	     }
+  	  });
+
+  	  socket.emit ('service-logs:subscribe', {
+  	    "serviceName":`${serviceName}`,
+  	    "channelName": `${serviceName}-logs`
+  	  });
+
+
+  	  return socket
+
+  	  function insertBr (str) {
+  	    const regex = /\n/g;
+  	    return str.replace(regex, '<br>');
+  	  }
+
+
+
+  })((getObjectProperty(___arguments.context.pageData, 'serviceName')), origin));
+  ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.pageData, 'serviceName'));
+
+  },
+  /* handler:onEnter */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* content */
+}))
+
+define('./pages/serviceLogs/components/8a65b938894c447674af5ac1fe34b1b8/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      await (async function() {
+  	const output = document.querySelector('.ServerLogs__ContentLogs');
+  	output.innerHTML = '';
+  	//logClear = false;
+  	logOriginalText = '';
+  })();
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/serviceLogs/components/7121511100ee1817f78309a7f31d0a72/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      ___arguments.context.pageData['followBtnLabel'] = ((await (async function() {
+  	logStopFollow = !logStopFollow;
+  	return logStopFollow
+  })()) ? 'Follow' : 'Stop Follow');
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/serviceLogs/components/4e13749fcca8dd9a1a09e5035b35b04e/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  async ['onChange'](___arguments) {
+      await (async function(inputValue) {
+  	const output      = document.querySelector('.ServerLogs__ContentLogs');
+  	if (inputValue.length > 2) {
+  	  const regex       = new RegExp(inputValue, "g");
+  	  const replacement = `<span class="ServerLogs__marker">${inputValue}</span>`;
+  	  const text        =  logOriginalText;
+  	  output.innerHTML  = text.replace(regex, replacement);
+  	} else {
+  	  output.innerHTML = logOriginalText;
+  	}
+  })(___arguments.value);
+
+  },
+  /* handler:onChange */
+  /* content */
+}))
+
+define('./pages/serviceLogs/components/a5c83209f9141b769232623c80466917/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      ___arguments.context.pageData['downloadBtnDisabled'] = true;
+  ___arguments.context.pageData['downloadBtnLabel'] = 'Downloading...';
+  await (async function() {
+  	var _global="object"==typeof window&&window.window===window?window:"object"==typeof self&&self.self===self?self:"object"==typeof global&&global.global===global?global:this;function bom(e,t){return(void 0===t?t={autoBom:!1}:"object"!=typeof t&&(console.warn("Deprecated: Expected third argument to be a object"),t={autoBom:!t}),t.autoBom&&/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(e.type))?new Blob(["\uFEFF",e],{type:e.type}):e}function download(e,t,o){var n=new XMLHttpRequest;n.open("GET",e),n.responseType="blob",n.onload=function(){saveAs(n.response,t,o)},n.onerror=function(){console.error("could not download file")},n.send()}function corsEnabled(e){var t=new XMLHttpRequest;t.open("HEAD",e,!1);try{t.send()}catch(o){}return t.status>=200&&t.status<=299}function click(e){try{e.dispatchEvent(new MouseEvent("click"))}catch(t){var o=document.createEvent("MouseEvents");o.initMouseEvent("click",!0,!0,window,0,0,0,80,20,!1,!1,!1,!1,0,null),e.dispatchEvent(o)}}var isMacOSWebView=_global.navigator&&/Macintosh/.test(navigator.userAgent)&&/AppleWebKit/.test(navigator.userAgent)&&!/Safari/.test(navigator.userAgent),saveAs=_global.saveAs||("object"!=typeof window||window!==_global?function e(){}:"download"in HTMLAnchorElement.prototype&&!isMacOSWebView?function e(t,o,n){var a=_global.URL||_global.webkitURL,l=document.createElementNS("http://www.w3.org/1999/xhtml","a");o=o||t.name||"download",l.download=o,l.rel="noopener","string"==typeof t?(l.href=t,l.origin!==location.origin?corsEnabled(l.href)?download(t,o,n):click(l,l.target="_blank"):click(l)):(l.href=a.createObjectURL(t),setTimeout(function(){a.revokeObjectURL(l.href)},4e4),setTimeout(function(){click(l)},0))}:"msSaveOrOpenBlob"in navigator?function e(t,o,n){if(o=o||t.name||"download","string"==typeof t){if(corsEnabled(t))download(t,o,n);else{var a=document.createElement("a");a.href=t,a.target="_blank",setTimeout(function(){click(a)})}}else navigator.msSaveOrOpenBlob(bom(t,n),o)}:function e(t,o,n,a){if((a=a||open("","_blank"))&&(a.document.title=a.document.body.innerText="downloading..."),"string"==typeof t)return download(t,o,n);var l="application/octet-stream"===t.type,r=/constructor/i.test(_global.HTMLElement)||_global.safari,c=/CriOS\/[\d]+/.test(navigator.userAgent);if((c||l&&r||isMacOSWebView)&&"undefined"!=typeof FileReader){var i=new FileReader;i.onloadend=function(){var e=i.result;e=c?e:e.replace(/^data:[^;]*;/,"data:attachment/file;"),a?a.location.href=e:location=e,a=null},i.readAsDataURL(t)}else{var s=_global.URL||_global.webkitURL,d=s.createObjectURL(t);a?a.location=d:location.href=d,a=null,setTimeout(function(){s.revokeObjectURL(d)},4e4)}});_global.saveAs=saveAs.saveAs=saveAs,"undefined"!=typeof module&&(module.exports=saveAs);
+
+  	let textForSave = logFileText;
+  	let blob = new Blob([textForSave], { type: "text/plain;charset=utf-8" });
+  	saveAs(blob, "log-file.txt");
+  })();
+  ___arguments.context.pageData['downloadBtnLabel'] = 'Download';
+  ___arguments.context.pageData['downloadBtnDisabled'] = false;
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/7e437288f19344daa5a4bed75c728637/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  onClick(___arguments) {
+    function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+
+
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'flex';
+  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length == 1) {
+    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
+      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
+    }
+    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
+      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
+    }
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/64b6f006eead4076cacfac687291d9c6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  onClick(___arguments) {
+    function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+
+
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'flex';
+  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length == 1) {
+    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
+      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
+    }
+    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
+      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
+    }
+  }
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/184ed6e69bd6d8f1e8fc35c7403c36e5/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  onClick(___arguments) {
+    function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+
+
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
+  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'flex';
+  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length == 1) {
+    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
+      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
+    }
+    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
+      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
+    }
+  }
+
+  },
+  /* handler:onClick */
+  /* handler:onContentAssignment */
+  onContentAssignment(___arguments) {
+      return 'Logs'
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/cc6c067e2b46da2502deb333245ebfc6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onBeforeUnmount */
+  onBeforeUnmount(___arguments) {
+    function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
+
+function getGlobalEntitiesMap(mapName) { const globalScope = defineGlobalScope();return globalScope[mapName] = globalScope[mapName] || {};}
+
+function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setIntervals'); if (timerId && timers[timerId]) {    clearInterval(timers[timerId]);    delete timers[timerId]; }}
+
+
+  stopSetTimeout('timerStatusData');
+
+  },
+  /* handler:onBeforeUnmount */
+  /* handler:onBeforeMount */
+  async onBeforeMount(___arguments) {
+    var error, pollingIntervalMS;
+
+function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
+
+function getGlobalEntitiesMap(mapName) { const globalScope = defineGlobalScope();return globalScope[mapName] = globalScope[mapName] || {};}
+
+function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setIntervals'); if (timerId && timers[timerId]) {    clearInterval(timers[timerId]);    delete timers[timerId]; }}
+
+function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEntitiesMap('setIntervals'); const timer = setInterval(callback, delay); if (timerId) {  stopSetTimeout(timerId);  timers[timerId] = timer }}
+
+
+  if (___arguments.context.appData['statusData']) {
+    ___arguments.context.dataModel['statusData'] = (___arguments.context.appData['statusData']);
+  } else {
+    try {
+      ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+
+    } catch (error) {
+      ;await ( async function (message){ alert(message) })((error['message']));
+
+    }
+  }
+  try {
+    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
+      pollingIntervalMS = 2000;
+    }
+
+    ;(function() {
+      const callback = async () => {
+          ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+
+      };
+
+      const timerId = 'timerStatusData';
+      const timerDelay = pollingIntervalMS;
+
+      runSetTimeout(timerId, callback, timerDelay)
+    })()
+
+  } catch (error) {
+    ;await ( async function (message){ alert(message) })((error['message']));
+
+  }
+
+  },
+  /* handler:onBeforeMount */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/721f315c4f7e15987c55eda29943e742/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var visible, currentStatus, currentService, service;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  visible = true;
+  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
+    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+
+
+     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+    }));
+    currentStatus = ((currentService[0])['status']);
+    if (currentStatus == 'stopped') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+      visible = false;
+    }
+    if (currentStatus == 'notInstalled') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+      visible = false;
+    }
+    if (currentStatus == 'complete') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+      visible = false;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* handler:onClick */
+  async onClick(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stopping...';
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'stop','hidden': false })));
+
+  },
+  /* handler:onClick */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/c0128152af0d6e8140ecf17af47e2651/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClassListAssignment */
+  async onClassListAssignment(___arguments) {
+    var classList, currentStatus, currentService, service;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  classList = ['ServerLogs__ControlsIcon'];
+  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
+    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+
+
+     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+    }));
+    currentStatus = ((currentService[0])['status']);
+    if (currentStatus == 'running') {
+      classList = ['ServerLogs__ControlsIcon', 'ServerLogs__ControlsIconRunning'];
+    }
+    if (currentStatus == 'stopped') {
+      classList = ['ServerLogs__ControlsIcon', 'ServerLogs__ControlsIconStopped'];
+    }
+    if (currentStatus == 'notInstalled') {
+      classList = ['ServerLogs__ControlsIcon', 'ServerLogs__ControlsIconNotinstalled'];
+    }
+    if (currentStatus == 'complete') {
+      classList = ['ServerLogs__ControlsIcon', 'ServerLogs__ControlsIconComplete'];
+    }
+    if (currentStatus == 'changing') {
+      classList = ['ServerLogs__ControlsIcon', 'ServerLogs__ControlsIconChanging'];
+    }
+  }
+
+  return classList
+
+  },
+  /* handler:onClassListAssignment */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/ff639427cbb2fd7735982d312e54c2fb/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var visible, currentStatus, currentService, service;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  visible = true;
+  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
+    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+
+
+     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+    }));
+    currentStatus = ((currentService[0])['status']);
+    if (currentStatus == 'stopped') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+      visible = false;
+    }
+    if (currentStatus == 'notInstalled') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+      visible = false;
+    }
+    if (currentStatus == 'complete') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+      visible = false;
+    }
+    if (___arguments.context.pageData['restarting']) {
+      if (currentStatus == 'changing') {
+        ___arguments.context.pageData['changed'] = true;
+      }
+      if (currentStatus == 'running') {
+        if (___arguments.context.pageData['changed']) {
+          ___arguments.context.pageData['restarting'] = false;
+          ___arguments.context.pageData['changed'] = false;
+          ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+        }
+      }
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* handler:onClick */
+  async onClick(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restarting...';
+  ___arguments.context.pageData['restarting'] = true;
+  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'restart','hidden': false })));
+
+  },
+  /* handler:onClick */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/17e15d26a59d2afecccd78a80f2b5081/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async onDisplayAssignment(___arguments) {
+    var visible, currentStatus, currentService, service;
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  visible = true;
+  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
+    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+
+
+     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+    }));
+    currentStatus = ((currentService[0])['status']);
+    if (currentStatus == 'running') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
+      visible = false;
+    }
+    if (currentStatus == 'notInstalled') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
+      visible = false;
+    }
+    if (currentStatus == 'complete') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
+      visible = false;
+    }
+    if (currentStatus == 'changing') {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
+      visible = false;
+    }
+  }
+
+  return visible
+
+  },
+  /* handler:onDisplayAssignment */
+  /* handler:onClick */
+  async onClick(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Starting...';
+  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'start','hidden': false })));
+
+  },
+  /* handler:onClick */
+  /* handler:onMounted */
+  onMounted(___arguments) {
+      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/9051123f6b4f94ef192265039293d4cd/bundle.js', [], () => ({
+  /* content */
   /* handler:onDynamicItemsAssignment */
-  onDynamicItemsAssignment(___arguments) {
-      return (___arguments.context.appData['logData'])
+  ['onDynamicItemsAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (getObjectProperty(___arguments.context.appData, 'logData'))
 
   },
   /* handler:onDynamicItemsAssignment */
@@ -7372,7 +8082,7 @@ define('./pages/serviceLogs/components/9051123f6b4f94ef192265039293d4cd/bundle.j
   /* content */
 }))
 
-define('./pages/serviceLogs/components/8bc4792e519b80bac6992c938c05b82a/bundle.js', [], () => ({
+define('./pages/serviceLogsCopy/components/8bc4792e519b80bac6992c938c05b82a/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
   ['onContentAssignment'](___arguments) {
@@ -7383,15 +8093,40 @@ define('./pages/serviceLogs/components/8bc4792e519b80bac6992c938c05b82a/bundle.j
   /* content */
 }))
 
-define('./pages/serviceLogs/components/page/bundle.js', [], () => ({
+define('./pages/serviceLogsCopy/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
-  async onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
-  if (!(___arguments.context.pageData['serviceName'])) {
+  async ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  await (async function() {
+  	logClear = false;
+  	stopFollow = false;
+  })();
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.pageData, 'serviceName'))) {
     ___arguments.context.pageData['serviceName'] = 'bl-server';
   }
-  if (!(___arguments.context.appData['logData'])) {
+  if (!(getObjectProperty(___arguments.context.appData, 'logData'))) {
     ___arguments.context.appData['logData'] = [];
     ___arguments.context.appData['openSocket'] = (await (async function(serviceName, logsArray) {
     	const io = await BackendlessUI.requireModule('https://cdn.jsdelivr.net/npm/socket.io-client@4.4.0/dist/socket.io.min.js');
@@ -7417,8 +8152,8 @@ define('./pages/serviceLogs/components/page/bundle.js', [], () => ({
 
 
 
-    })((___arguments.context.pageData['serviceName']), (___arguments.context.appData['logData'])));
-    ___arguments.context.appData['previousService'] = (___arguments.context.pageData['serviceName']);
+    })((getObjectProperty(___arguments.context.pageData, 'serviceName')), (getObjectProperty(___arguments.context.appData, 'logData'))));
+    ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.pageData, 'serviceName'));
   }
 
   },
@@ -7429,6 +8164,35 @@ define('./pages/serviceLogs/components/page/bundle.js', [], () => ({
 
   },
   /* handler:onLeave */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/8a65b938894c447674af5ac1fe34b1b8/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      await (async function() {
+  	const output = document.querySelector('#logOutput');
+  	output.value = '';
+  	logClear = true;
+  })();
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/serviceLogsCopy/components/7121511100ee1817f78309a7f31d0a72/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      await (async function() {
+
+  	stopFollow = !stopFollow;
+  })();
+
+  },
+  /* handler:onClick */
   /* content */
 }))
 
@@ -8474,7 +9238,7 @@ define('./pages/upgradeLogs/components/8bc4792e519b80bac6992c938c05b82a/bundle.j
 define('./pages/upgradeLogs/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
-  async onEnter(___arguments) {
+  async ['onEnter'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -9168,16 +9932,31 @@ function getObjectProperty(object, propPath) {
       })((getObjectProperty(___arguments.context.appData, 'previousService')));
     }
   }
-  (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('serviceLogs', ({ 'serviceName': (getObjectProperty(___arguments.context.dataModel, 'name')),'pageServerStatus': 'ServerLogs' }));
-  ___arguments.context.appData['logData'] = [];
+  (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('serviceLogs', ({ 'serviceName': (getObjectProperty(___arguments.context.dataModel, 'name')),'pageServerStatus': 'ServerLogs','followBtnLabel': (getObjectProperty(___arguments.context.pageData, 'followBtnLabel')),'downloadBtnLabel': 'Download' }));
   origin = (await BackendlessUI.Functions.Custom['fn_1e23a48a29f82b3fc1f647fd98cb53f6']());
-  ___arguments.context.appData['openSocket'] = (await (async function(serviceName, logsArray, host) {
+  ___arguments.context.appData['openSocket'] = (await (async function(serviceName, host) {
   	const io = await BackendlessUI.requireModule('https://cdn.jsdelivr.net/npm/socket.io-client@4.4.0/dist/socket.io.min.js');
+
+  	  const output = document.querySelector('.ServerLogs__ContentLogs');
+  	  output.innerHTML = '';
+
+  	  logOriginalText = '';
+  	  logFileText = ''
+
 
   	  socket = io.connect(`${host}`, { transports : ['websocket'] });
 
   	  socket.on (`${serviceName}-logs`, function (data) {
-  	    logsArray.push (data);
+
+  	    logFileText = logFileText + data;
+  	    let dataWithBr = insertBr(data);
+  	    logOriginalText = logOriginalText + dataWithBr;
+
+  	     output.innerHTML = `${output.innerHTML}${dataWithBr}`;
+
+  	     if(!logStopFollow) {
+  	       output.scrollTop = output.scrollHeight;
+  	     }
   	  });
 
   	  socket.emit ('service-logs:subscribe', {
@@ -9188,8 +9967,14 @@ function getObjectProperty(object, propPath) {
 
   	  return socket
 
+  	  function insertBr (str) {
+  	    const regex = /\n/g;
+  	    return str.replace(regex, '<br>');
+  	  }
 
-  })((getObjectProperty(___arguments.context.dataModel, 'name')), (getObjectProperty(___arguments.context.appData, 'logData')), origin));
+
+
+  })((getObjectProperty(___arguments.context.dataModel, 'name')), origin));
   ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.dataModel, 'name'));
 
   },
