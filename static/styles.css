@@ -2417,7 +2417,31 @@ body {
   display: none;
 }
 .ServerLogs__ContentLogs {
-  flex-direction: column;
+  display: block;
+}
+.ServerLogs__ControlsWrapper {
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.ServerLogs__ControlsBtn {
+  height: 34px;
+  border-radius: 2px !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  width: 217px;
+  background: #1B76BC !important;
+  color: #fff !important;
+  margin-right: 10px;
+  width: 115px;
+}
+.ServerLogs__marker {
+  background-color: yellow;
+}
+.ServerLogs__ControlsBtn--disabled {
+  opacity: 0.5;
 }
 @media screen and (max-width: 950px) {
   .ServerLogs__top {
@@ -2443,8 +2467,11 @@ body {
 .ServerStatus__links {
   margin-left: 20px;
 }
-.ServerStatus__LinkWrapper:first-child {
+.ServerStatus__LinkWrapper {
   margin-right: 97px;
+}
+.ServerStatus__LinkWrapper:last-child {
+  margin-right: 0;
 }
 .ServerStatus__LinkTitle {
   font-family: FuturaBook, Arial, sans-serif;
@@ -3462,6 +3489,9 @@ body {
 .install__FormGroupTextArea {
   padding-right: 37px;
 }
+.install__FormGroupPassword {
+  padding-right: 7px;
+}
 .install__TextArea {
   width: 100%;
 }
@@ -3532,6 +3562,20 @@ body {
 }
 .install__results {
   z-index: 5;
+}
+.install__IconEye {
+  width: 32px;
+  height: 32px;
+  background-position: center, center;
+  opacity: 0.5;
+  cursor: pointer;
+  margin-top: 1px;
+}
+.install__IconEye--open {
+  background-image: url('./styles/images/eye_visible.png');
+}
+.install__IconEye--close {
+  background-image: url('./styles/images/eye_hidden.png');
 }
 @media screen and (max-width: 1250px) {
   .install__container {
