@@ -15,6 +15,7 @@ import { upgradeService } from '../upgrade'
 import { consul } from '../consul'
 import { circularReplacer } from '../../utils/circular-replacer'
 import { repeatOnFail } from '../../utils/repeat-on-fail'
+import { setupPublicDomain } from './setup-public-domain'
 
 const logger = Logger('install-service')
 
@@ -92,10 +93,7 @@ class InstallService {
             await consul.put('license', install.license)
         }
 
-        //TODO: remove the block after resolve BKNDLSS-29380
-        if (install.licence) {
-            await consul.put('license', install.licence)
-        }
+        await setupPublicDomain(installStatus)
 
         const containers = Object.entries(blContainers.bl)
             .filter(([key, container]) => container !== initConfigValuesContainer)
