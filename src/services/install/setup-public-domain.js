@@ -22,21 +22,24 @@ export const setupPublicDomain = async statusLogger => {
 
     logger.info(`pro manager is ${isProManagerAvailableWithPublicIp ? '' : 'NOT '}available by the endpoint [${proManagerEndpoint}]`)
 
-    if (isProManagerAvailableWithPublicIp) {
-        logger.info(`domains will be changed to public ip ${publicIp}`)
-        const consoleDomainDescription = (await domainConfigurationService.describeConfiguration()).console
-        const domains = await domainConfigurationService.getAll()
-        localLogger.info(`found domains ${domains}`)
+    const ip = isProManagerAvailableWithPublicIp ? publicIp : '127.0.0.1'
+    logger.info(`will be used ip [${ip}]`)
 
-        domains.rt.Host = publicIp
-        domains.api.Host = publicIp
-        const consoleUrl = domains.console[consoleDomainDescription[0].name]
-        domains.console[consoleDomainDescription[0].name] = consoleUrl.replaceAll('127.0.0.1', publicIp)
-        await domainConfigurationService.saveAll(domains)
-        logger.info(`domains CHANGED to public ip ${publicIp}`)
-    } else {
-        logger.info('127.0.0.1 will be used as domain')
-    }
+    const domains = await domainConfigurationService.getAll()
+    localLogger.info(`found domains ${JSON.stringify(domains)}`)
+
+    domains.rt.Port = 32700
+    domains.rt.Host = ip
+
+    domains.api.Port = 32300
+    domains.api.Host = ip
+
+    const domainDescription = await domainConfigurationService.describeConfiguration()
+    const consoleUrlName = domainDescription.console[0].name
+    localLogger.info(`consoleUrlName is [${consoleUrlName}]`)
+    domains.console[consoleUrlName] = `http://${ip}:32400`
+
+    await domainConfigurationService.saveAll(domains)
 
     logger.info('finished setup public domains')
 }

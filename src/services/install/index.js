@@ -16,6 +16,7 @@ import { consul } from '../consul'
 import { circularReplacer } from '../../utils/circular-replacer'
 import { repeatOnFail } from '../../utils/repeat-on-fail'
 import { setupPublicDomain } from './setup-public-domain'
+import { waitForInitConsulJobComplete } from './wait-for-init-consul-job-complete'
 
 const logger = Logger('install-service')
 
@@ -93,6 +94,7 @@ class InstallService {
             await consul.put('license', install.license)
         }
 
+        await waitForInitConsulJobComplete()
         await setupPublicDomain(installStatus)
 
         const containers = Object.entries(blContainers.bl)
