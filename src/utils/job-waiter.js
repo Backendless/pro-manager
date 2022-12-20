@@ -6,12 +6,14 @@ import { circularReplacer } from './circular-replacer'
 
 const logger = Logger('job-waiter')
 
-export async function waitForJobToComplete(jobName, jobNotCompleteCallback){
+export async function waitForJobToComplete(jobName, jobNotCompleteCallback) {
     try {
         const status = await blJobStatus(jobName)
 
-        if (status.status === Status.complete)
+        if (status.status === Status.complete) {
+            logger.info(`job [${jobName}] completed`)
             return
+        }
     } catch (e) {
         logger.error(`Error during status check. Error: ${e}, \nObject: ${JSON.stringify(e, circularReplacer())}`)
     }

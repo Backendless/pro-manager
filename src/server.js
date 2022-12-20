@@ -47,7 +47,7 @@ export function start() {
 
   console.log('Start listening port:', Config.port)
 
-  const server = stoppable(app.listen(Config.port, err => {
+  const server = stoppable(app.listen(Config.port, '0.0.0.0', err => {
     if (err) {
       logger.error(err)
       process.exit(1)

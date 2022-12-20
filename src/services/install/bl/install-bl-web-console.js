@@ -32,8 +32,5 @@ export async function installBlWebConsole({ mountPath, version }) {
     installStatus.info('creating service for bl-web-console')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
 
-    await waitForInitConsulJobComplete()
-    await consul.put('config/console/rootUrl', `http://127.0.0.1:${blK8sConfig.service.spec.ports.filter( port => port.name === 'bl-web-console')[0].nodePort}`)
-
     return { createStatefulSetResult, createServiceResult }
 }

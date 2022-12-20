@@ -40,6 +40,7 @@ class DomainConfigurationService {
   }
 
   async saveAll(domains) {
+    logger.info(`saving domains [${JSON.stringify(domains)}]`)
     const descriptions = describeDomainConfiguration()
 
     for (const section of Object.keys(domains)) {
