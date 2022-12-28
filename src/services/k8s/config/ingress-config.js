@@ -14,7 +14,6 @@ class IngressConfig {
                     }
                 }
             },
-            'ingressClassName': 'nginx',
             'rules': [
                 {
                     'host': 'api.backendless.local',
