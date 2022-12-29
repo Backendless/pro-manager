@@ -28,7 +28,7 @@ nvm install v14.18.2
 nvm use v14.18.2
 
 echo "installing k3s..."
-curl -sfL https://get.k3s.io | sh -
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable traefik" sh -
 echo "k3s installed"
 
 mkdir ~/.kube
@@ -65,3 +65,9 @@ sudo systemctl daemon-reload
 echo "system daemon reloaded. Starting pro manager"
 sudo systemctl start pro-manager.service
 systemctl status pro-manager.service
+
+echo 'installing ingress'
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
+
+kubectl get pods --namespace=ingress-nginx
