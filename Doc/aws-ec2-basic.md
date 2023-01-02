@@ -18,6 +18,7 @@ Make sure the following ports are available for you:
 32400 - Web console
 32600 - Consul( configuration values )
 ```
+The script form user data will do all the same as for [ubuntu](https://github.com/Backendless/pro-manager#ubuntu)
 ![](img/EC2-laucnh-instamce.png)
 2. Wait until the instance became available and copy public ip or url
 ![](img/EC2-ready.png)

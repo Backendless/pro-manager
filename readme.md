@@ -8,17 +8,55 @@ The Pro Manager is currently in **ALPHA** stage. There can be some breaking chan
 - 4 CPU
 - 20 GB disk space
 
-
-### Mac OS
-- Install Docker desktop https://www.docker.com/products/docker-desktop/
-- Go to preference and enable kubernetes ![img_1.png](Doc/img/mac-os-enable-k8s.png)
+### AWS EC2
+[AWS EC2 basic installation](./Doc/aws-ec2-basic.md)
 
 ### Ubuntu
+The following way if installation should work for any debian based OS.
+
+Open terminal and execute the following command
 ```
 curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
 ```
+At the end Pro Manager will be available in browser by the follwoing link `http://<your-ip>:5050`.
 
-- Install node
+The following steps will be done during the installation:
+- `bl-pro-manager` user will be created
+- installed node v14.18.2
+- installed k3s without traefik
+- installed ingress-nginx
+- current project cloned to the following folder `/home/bl-pro-manager/pro-manager`
+- created service `pro-manager.service`
+
+Pro Manager will be automatically started. To stop/start/restart use `systemctl`.
+```
+sudo systemctl start pro-manager.service
+sudo systemctl restart pro-manager.service
+sudo systemctl stop pro-manager.service
+sudo systemctl status pro-manager.service
+```
+
+To get Pro Manager logs use `journalctl` 
+```
+journalctl -u pro-manager.service -f
+```
+
+
+### Mac OS / Windows
+- Install Docker desktop https://www.docker.com/products/docker-desktop/
+- Go to preference and enable kubernetes ![img_1.png](Doc/img/mac-os-enable-k8s.png)
+- Make sure kubectl is available and works in terminal
+```
+ksv510@Sergeys-MacBook-Pro ~ % kubectl get nodes
+NAME             STATUS   ROLES           AGE    VERSION
+docker-desktop   Ready    control-plane   117d   v1.24.2
+```
+- If you suppose to use domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+- Follow instructions to [start Pro Manager](#start-pro-manager) 
+
+### Installation on any other platform
+
+- Install node v14.18.2
   ```
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
     && source ~/.bashrc \
@@ -40,22 +78,18 @@ curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-
     dev-k3s.us.backendless.com   Ready    control-plane,master   19h   v1.24.3+k3s1
     ```
 
-### AWS EC2
-[AWS EC2 basic installation](./Doc/aws-ec2-basic.md)
-
 # Start Pro Manager
 - Clone Pro Manager
 ```
 git clone https://github.com/Backendless/pro-manager.git
 ```
-- ```
+- Go to the folder code
+- Execute 
+```
   npm i
   ```
-- ```
+- Execute 
+```
   npm run start
-  ``` 
-
-
-
-# Ingress load balancer
-https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+  ```
+- Open the following link in browser http://localhost:5050
