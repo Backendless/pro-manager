@@ -28,3 +28,6 @@ Watch the video:
 ```
 //TODO: add video
 ```
+
+### Domain configuration
+Follow [documentation](aws-elb-configuration.md) to configure domains
