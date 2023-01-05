@@ -93,3 +93,10 @@ git clone https://github.com/Backendless/pro-manager.git
   npm run start
   ```
 - Open the following link in browser http://localhost:5050
+
+# Upgrade Pro Manager
+1. Stop Pro Manager
+2. Goto `pro-manager` folder for example on ubuntu it is `/home/bl-pro-manager/pro-manager`
+3. Execute `git pull` command
+4. Execute `npm i`
+5. Start Pro Manager
