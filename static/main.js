@@ -2530,6 +2530,37 @@ define('./pages/ingress/components/c8254d6521a90cd2709c9b2f25d7cdeb/bundle.js', 
 
   },
   /* handler:onContentAssignment */
+  /* handler:onClassListAssignment */
+  ['onClassListAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'sslEnabled')) {
+    return ['ingress__sslEnabledLabel', 'ingress__sslEnabledLabel--success'];
+  }
+
+  return ['ingress__sslEnabledLabel']
+
+  },
+  /* handler:onClassListAssignment */
   /* content */
 }))
 
@@ -3944,6 +3975,152 @@ define('./pages/kubernetes/components/page/bundle.js', [], () => ({
 
   },
   /* handler:onEnter */
+  /* content */
+}))
+
+define('./pages/login/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+    var error;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  try {
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/login', ({ 'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) }), null);
+    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('serverStatus', undefined);
+
+  } catch (error) {
+    (function (message) { alert(message) })((getObjectProperty(error, 'message')));
+
+  }
+
+  },
+  /* handler:onClick */
+  /* handler:onDisabledStateAssignment */
+  ['onDisabledStateAssignment'](___arguments) {
+    var disabled;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password'))) {
+    disabled = false;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 1;
+  } else {
+    disabled = true;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 0.5;
+  }
+
+  return disabled
+
+  },
+  /* handler:onDisabledStateAssignment */
+  /* content */
+}))
+
+define('./pages/login/components/90d8c3571dc2b58b3ce53fd97a5af9d9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4fa9f7ddbea8648a68589c2bdd118b95')), 'el'))['type'] = 'text';
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('90d8c3571dc2b58b3ce53fd97a5af9d9', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('891bf3ca729d37cf46cc1e6329c36163', true);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/login/components/891bf3ca729d37cf46cc1e6329c36163/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4fa9f7ddbea8648a68589c2bdd118b95')), 'el'))['type'] = 'password';
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('891bf3ca729d37cf46cc1e6329c36163', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('90d8c3571dc2b58b3ce53fd97a5af9d9', true);
+
+  },
+  /* handler:onClick */
   /* content */
 }))
 
@@ -5541,8 +5718,28 @@ define('./pages/mysql2/components/page/bundle.js', [], () => ({
 define('./pages/progress/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
-  async onEnter(___arguments) {
+  async ['onEnter'](___arguments) {
     var error, statusInit, pollingIntervalMS;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -5555,40 +5752,40 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
 
   localStorage.removeItem('originLoad');
   try {
-    statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null));
-    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null, null));
+    pollingIntervalMS = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(getObjectProperty(((function () { return window.location })()), 'origin')) + String('/settings.json')))).setEncoding('utf8').send()), 'pollingIntervalMS'));
     if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
       pollingIntervalMS = 2000;
     }
 
   } catch (error) {
-    ___arguments.context.pageData['status'] = (error['message']);
+    ___arguments.context.pageData['status'] = (getObjectProperty(error, 'message'));
     return false;
 
   }
-  if (!(statusInit['servicesCreated'])) {
-    if ((((statusInit['messages']).slice(-1)[0])['level']) == 'error') {
-      ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
+  if (!(getObjectProperty(statusInit, 'servicesCreated'))) {
+    if ((getObjectProperty(((getObjectProperty(statusInit, 'messages')).slice(-1)[0]), 'level')) == 'error') {
+      ___arguments.context.pageData['status'] = (getObjectProperty(((getObjectProperty(statusInit, 'messages')).slice(-1)[0]), 'message'));
       return false;
     }
-    ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
+    ___arguments.context.pageData['status'] = (getObjectProperty(((getObjectProperty(statusInit, 'messages')).slice(-1)[0]), 'message'));
   }
-  ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (statusInit['messages']));
+  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (getObjectProperty(statusInit, 'messages')));
 
   ;(function() {
     const callback = async () => {
         try {
-      statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null));
-      ___arguments.context.pageData['status'] = (((statusInit['messages']).slice(-1)[0])['message']);
-      ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (statusInit['messages']));
-      if (statusInit['servicesCreated']) {
+      statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null, null));
+      ___arguments.context.pageData['status'] = (getObjectProperty(((getObjectProperty(statusInit, 'messages')).slice(-1)[0]), 'message'));
+      (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('2a8169ce2ece7aa3c82531ac7feaa238', (getObjectProperty(statusInit, 'messages')));
+      if (getObjectProperty(statusInit, 'servicesCreated')) {
         stopSetTimeout('timer');
-        ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('88ffdb181f515ee98ee96741d0768c1d', false);
-        ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('6ec49b615f364fc25ba12557e2fb8e0f', true);
+        (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('88ffdb181f515ee98ee96741d0768c1d', false);
+        (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('6ec49b615f364fc25ba12557e2fb8e0f', true);
       }
 
     } catch (error) {
-      ___arguments.context.pageData['status'] = (error['message']);
+      ___arguments.context.pageData['status'] = (getObjectProperty(error, 'message'));
 
     }
 
@@ -5614,8 +5811,30 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
 define('./pages/progress/components/df3c4a1a5dd57776c99bd62dbd53a59c/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
-  onContentAssignment(___arguments) {
-      return (String(((new Date((___arguments.context.getComponentDataStoreByUid('03073a71a2e45a6ea6e56abe95424e75')['time']))).toTimeString()).slice(0, 8)) + String(' '))
+  ['onContentAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (String(((new Date((getObjectProperty(___arguments.context.getComponentDataStoreByUid('03073a71a2e45a6ea6e56abe95424e75'), 'time')))).toTimeString()).slice(0, 8)) + String(' '))
 
   },
   /* handler:onContentAssignment */
@@ -5630,6 +5849,21 @@ define('./pages/progress/components/6ec49b615f364fc25ba12557e2fb8e0f/bundle.js',
 
   },
   /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/progress/components/2a8169ce2ece7aa3c82531ac7feaa238/bundle.js', [], () => ({
+  /* content */
+  /* handler:onStyleAssignment */
+  async ['onStyleAssignment'](___arguments) {
+      await (async function() {
+  	const elemList = document.querySelector('.install__ProgressContainer')
+
+  	elemList.scrollTop = elemList.scrollHeight;
+  })();
+
+  },
+  /* handler:onStyleAssignment */
   /* content */
 }))
 
@@ -6275,7 +6509,7 @@ define('./pages/serverStatus/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async ['onEnter'](___arguments) {
-    var configuration, error, pollingIntervalMS;
+    var error, pollingIntervalMS, configuration;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -6329,7 +6563,12 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     })()
 
   } catch (error) {
-    (function (message) { alert(message) })((getObjectProperty(error, 'message')));
+    if ((getObjectProperty(error, 'message')) == 'The authentication token is invalid. Please re-login the user') {
+      (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('login', undefined);
+      return ;
+    } else {
+      (function (message) { alert(message) })((getObjectProperty(error, 'message')));
+    }
 
   }
 
@@ -7099,8 +7338,28 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
   },
   /* handler:onBeforeUnmount */
   /* handler:onBeforeMount */
-  async onBeforeMount(___arguments) {
+  async ['onBeforeMount'](___arguments) {
     var error, pollingIntervalMS;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -7111,26 +7370,31 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
 function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEntitiesMap('setIntervals'); const timer = setInterval(callback, delay); if (timerId) {  stopSetTimeout(timerId);  timers[timerId] = timer }}
 
 
-  if (___arguments.context.appData['statusData']) {
-    ___arguments.context.dataModel['statusData'] = (___arguments.context.appData['statusData']);
+  if (getObjectProperty(___arguments.context.appData, 'statusData')) {
+    ___arguments.context.dataModel['statusData'] = (getObjectProperty(___arguments.context.appData, 'statusData'));
   } else {
     try {
-      ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+      ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null, null));
 
     } catch (error) {
-      ;await ( async function (message){ alert(message) })((error['message']));
+      if ((getObjectProperty(error, 'message')) == 'The authentication token is invalid. Please re-login the user') {
+        (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('login', undefined);
+        return ;
+      } else {
+        (function (message) { alert(message) })((getObjectProperty(error, 'message')));
+      }
 
     }
   }
   try {
-    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    pollingIntervalMS = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(getObjectProperty(((function () { return window.location })()), 'origin')) + String('/settings.json')))).setEncoding('utf8').send()), 'pollingIntervalMS'));
     if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
       pollingIntervalMS = 2000;
     }
 
     ;(function() {
       const callback = async () => {
-          ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+          ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null, null));
 
       };
 
@@ -7141,7 +7405,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     })()
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    (function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
@@ -7384,9 +7648,30 @@ async function asyncListFilter(sourceList, callback) {
   },
   /* handler:onDisplayAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Starting...';
-  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'start','hidden': false })));
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Starting...';
+  console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.pageData, 'serviceName')),'state': 'start','hidden': false }), null)));
 
   },
   /* handler:onClick */
@@ -10099,7 +10384,7 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 
   try {
     if (!(getObjectProperty(___arguments.context.appData, 'statusData'))) {
-      ___arguments.context.appData['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+      ___arguments.context.appData['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null, null));
       await new Promise(r => setTimeout(r, 20 || 0));
       ___arguments.context.appData['height'] = (String((await (async function(element) {
       	return element.el.scrollHeight
@@ -10113,7 +10398,12 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
     }
 
   } catch (error) {
-    (function (message) { alert(message) })((getObjectProperty(error, 'message')));
+    if ((getObjectProperty(error, 'message')) == 'The authentication token is invalid. Please re-login the user') {
+      (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('login', undefined);
+      return ;
+    } else {
+      (function (message) { alert(message) })((getObjectProperty(error, 'message')));
+    }
 
   }
 

@@ -22,78 +22,6 @@ body {
   color: NULL;
   visibility: NULL;
 }
-/************************************************/
-/************************************************/
-/*****    component: chart-visualization    *****/
-.bl-chart-visualization {
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-.bl-chart-visualization .bl-chart-visualization-preview {
-  background-color: #fff;
-}
-/*****    component: chart-visualization    *****/
-/************************************************/
-/************************************************/
-/**********************************/
-/**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
-}
-/*****    component: block    *****/
-/**********************************/
-/**********************************/
-/***********************************/
-/***********************************/
-/*****    component: button    *****/
-.bl-button.bl-button--contained {
-  border-radius: 4px;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained.bl-button--disabled {
-  background: gray;
-  color: #ffffff;
-}
-.bl-button.bl-button--outlined {
-  border-radius: 4px;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-button.bl-button--outlined.bl-button--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-button.bl-button--text {
-  border-radius: 4px;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
-  color: gray;
-}
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
 /*******************************************************/
 /*******************************************************/
 /*****    component: autocomplete-google-places    *****/
@@ -303,6 +231,383 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button {
+  border-radius: 4px;
+}
+.bl-button .bl-icon {
+  color: inherit;
+}
+.bl-button.bl-button--small {
+  border-radius: 4px;
+}
+.bl-button.bl-button--large {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+.bl-chart {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
+/***************************************************/
+/***************************************************/
+/*****    component: calendar-visualization    *****/
+.bl-calendar-visualization {
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.bl-calendar-visualization .bl-calendar-visualization-container {
+  background-color: #fff;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-visualization-toolbar {
+  background-color: #f5f5f5;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-visualization-toolbar__btn-container {
+  color: hsl(0, 0%, 63%);
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-visualization-toolbar__btn-container:hover {
+  color: #22527b;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-visualization-toolbar__btn-container__active {
+  color: #337ab7;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-visualization-toolbar__btn-container__disabled {
+  color: #d0d0d0;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-visualization-toolbar__progress-bar {
+  background-color: #e0e0e0;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-visualization-toolbar__progress-bar-slider {
+  background-color: #337ab7;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--navigator-title {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--navigator-control-panel .bl-calendar-visualization--navigator-control {
+  background-color: #f5f5f5;
+  color: #828282;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-weeks-day {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-weeks-day-date {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-weeks-day-date--today {
+  background-color: #337ab7;
+  color: #FFF;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--all-day-events-container {
+  color: #808080;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--all-day-events--item {
+  border-color: #f2f2f2;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--all-day-events--item .bl-calendar-visualization--grid-row-cell--show-more {
+  color: #808080;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--all-day-events--item--with-value:hover {
+  background-color: #f2f2f2;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--grid-row-cell {
+  border-color: #f2f2f2;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--grid-row-cell--today .bl-calendar-visualization--grid-row-cell--date {
+  background-color: #337ab7;
+  color: #FFF;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--grid-row-cell--weekend {
+  background-color: #fafafa;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--grid-row-cell--timeline-mode:first-child {
+  border-left-color: #f2f2f2;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--grid-row-cell--hovered {
+  background-color: hsl(207.72727273, 56.41025641%, 96%);
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--grid-row-cell--header--add-btn:hover {
+  background-color: #f2f2f2;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--grid-row-cell--show-more {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--timeline-item-label {
+  color: #808080;
+}
+.bl-calendar-visualization .bl-calendar-visualization-container .bl-calendar-visualization--timeline-item-border {
+  border-color: #f2f2f2;
+}
+.bl-calendar-visualization--show-more-menu .bl-calendar-visualization--grid-row-cell--show-more-menu {
+  background-color: #fff;
+  border-color: hsla(0, 0%, 0%, 0.05);
+}
+.bl-calendar-visualization--show-more-menu .bl-calendar-visualization--grid-row-cell--show-more-menu-container-header-content {
+  color: hsl(0, 0%, 20%);
+  border-bottom-color: hsla(0, 0%, 0%, 0.05);
+}
+.bl-calendar-visualization--show-more-menu .bl-calendar-visualization--grid-row-cell--show-more-menu-container-header-content .bl-visualization-icon {
+  color: hsl(0, 0%, 63%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .Mui-error,
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-visualizations-text-danger {
+  color: #f44336;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-header {
+  background-color: #fff;
+  border-bottom-color: #e8e8e8;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-header .bl-modal-header-title {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-header .bl-modal-header-button:before {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body {
+  background-color: #fff;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-modal-field-label,
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-label,
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-field {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-visualization--data-table-records-editor--column-type {
+  color: hsl(0, 0%, 20%);
+  opacity: 0.4;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-field .bl-visualization-icon {
+  color: hsl(0, 0%, 40%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-multiple .remove-control {
+  color: hsl(0, 0%, 40%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-multiple .add-control {
+  color: #5BC069;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer {
+  background-color: #f5f5f5;
+  border-top-color: #e8e8e8;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .Mui-error,
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .bl-visualizations-text-danger {
+  color: #f44336;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal.bl-visualizations-accordion--root-error {
+  border-color: #f44336;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .bl-modal-body > * {
+  background-color: #f5f5f5;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .bl-visualizations-accordion-header--content i {
+  color: hsl(0, 0%, 40%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .bl-visualizations-accordion-header--content .bl-visualizations-accordion-header--content-describe {
+  color: hsl(0, 0%, 40%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .bl-visualizations-accordion-header--content-label {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .bl-visualizations-accordion-header--expand-icon {
+  color: hsl(0, 0%, 40%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-calendar-visualization--labels-color-modal .bl-calendar-visualization--labels-color-modal--by-condition--item {
+  background-color: #fff;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-visualization--geo-editor .bl-modal-body {
+  color: hsl(0, 0%, 20%);
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-visualization--geo-editor .bl-visualization--tabs-menu-container {
+  border-bottom-color: #e8e8e8;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal.bl-visualization--geo-editor .bl-visualization--tabs-menu-indicator {
+  background-color: #337ab7;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-visualization--data-table-records-editor--data-type-render-switcher span {
+  color: #337ab7;
+}
+.bl-calendar-visualization-modal.bl-ui-sdk-modal .bl-visualization--data-table-records-editor--data-type-render-switcher span.bl-visualization--checked {
+  color: hsl(0, 0%, 20%);
+}
+/*****    component: calendar-visualization    *****/
+/***************************************************/
+/***************************************************/
+/************************************************/
+/************************************************/
+/*****    component: chart-visualization    *****/
+.bl-chart-visualization {
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.bl-chart-visualization .bl-chart-visualization-preview {
+  background-color: #fff;
+}
+/*****    component: chart-visualization    *****/
+/************************************************/
+/************************************************/
+/*********************************/
+/*********************************/
+/*****    component: chip    *****/
+.bl-chip {
+  border-radius: 16px;
+  width: max-content;
+}
+.bl-chip:not(.bl-chip--outlined) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
+  color: inherit;
+  width: auto;
+  height: auto;
+}
+.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
+  background: gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
+  width: auto;
+  height: auto;
+  color: inherit;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
+  color: gray;
+}
+.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
+  color: gray;
+}
+.MuiChip-deleteIconSmall {
+  font-size: 16px;
+}
+.MuiChip-iconSmall {
+  font-size: 18px;
+}
+/*****    component: chip    *****/
+/*********************************/
+/*********************************/
+/*************************************/
+/*************************************/
+/*****    component: checkbox    *****/
+.bl-checkbox .bl-checkbox-root svg {
+  color: currentColor;
+}
+.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
+  background-color: rgba(51, 122, 183, 0.1);
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) {
+  color: #000000;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) {
+  color: #000000;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
+  color: #337ab7;
+}
+.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
+  color: inherit;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
+  color: gray;
+}
+.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
+  color: inherit;
+}
+/*****    component: checkbox    *****/
+/*************************************/
+/*************************************/
 /***************************************/
 /***************************************/
 /*****    component: data-table    *****/
@@ -407,128 +712,11 @@ body {
 /*****    component: data-table    *****/
 /***************************************/
 /***************************************/
-/*************************************/
-/*************************************/
-/*****    component: checkbox    *****/
-.bl-checkbox .bl-checkbox-root svg {
-  color: currentColor;
-}
-.bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover {
-  background-color: rgba(51, 122, 183, 0.1);
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) {
-  color: #000000;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox:not(.bl-checkbox--checked):not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) {
-  color: #000000;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-root {
-  color: #337ab7;
-}
-.bl-checkbox.bl-checkbox--checked:not(.bl-checkbox--disabled) .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox.bl-checkbox--checked.bl-checkbox--disabled .bl-checkbox-label {
-  color: inherit;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-root {
-  color: gray;
-}
-.bl-checkbox:not(.bl-checkbox--checked).bl-checkbox--disabled .bl-checkbox-label {
-  color: inherit;
-}
-/*****    component: checkbox    *****/
-/*************************************/
-/*************************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
-/*********************************/
-/*********************************/
-/*****    component: chip    *****/
-.bl-chip {
-  border-radius: 16px;
-  width: max-content;
-}
-.bl-chip:not(.bl-chip--outlined) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip:not(.bl-chip--outlined) .bl-chip-delete-icon {
-  color: inherit;
-  width: auto;
-  height: auto;
-}
-.bl-chip:not(.bl-chip--outlined) .MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.bl-chip:not(.bl-chip--outlined).bl-chip--disabled {
-  background: gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-front-icon {
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined:not(.bl-chip--disabled) .bl-chip-delete-icon {
-  width: auto;
-  height: auto;
-  color: inherit;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-front-icon {
-  color: gray;
-}
-.bl-chip.bl-chip--outlined.bl-chip--disabled .bl-chip-delete-icon {
-  color: gray;
-}
-.MuiChip-deleteIconSmall {
-  font-size: 16px;
-}
-.MuiChip-iconSmall {
-  font-size: 18px;
-}
-/*****    component: chip    *****/
-/*********************************/
-/*********************************/
 /****************************************************/
 /****************************************************/
 /*****    component: data-grid-visualization    *****/
 .bl-data-grid-visualization {
+  position: relative;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -539,20 +727,23 @@ body {
 .bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar {
   background-color: #f5f5f5;
 }
-.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls {
+.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar__btn-container {
   color: hsl(0, 0%, 63%);
 }
-.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div:not(.disabled) button {
-  color: hsl(0, 0%, 63%);
-}
-.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div:not(.disabled) button:hover {
+.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar__btn-container:hover {
   color: #22527b;
 }
-.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div.active button {
+.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar__btn-container__active {
   color: #337ab7;
 }
-.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div.disabled button {
+.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar__btn-container__disabled {
   color: #d0d0d0;
+}
+.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar__progress-bar {
+  background-color: #e0e0e0;
+}
+.bl-data-grid-visualization .bl-data-grid .bl-visualization-toolbar__progress-bar-slider {
+  background-color: #337ab7;
 }
 .bl-data-grid-visualization .bl-data-grid .bl-data-grid-container {
   background-color: #fff;
@@ -666,7 +857,7 @@ body {
   background-color: #f5f5f5;
   border-top: 1px solid #e8e8e8;
 }
-.bl-data-grid-visualization .bl-data-grid .bl-data-grid-pagination .bl-data-grid-pagination-page-controls > i.not-allowed {
+.bl-data-grid-visualization .bl-data-grid .bl-data-grid-pagination .bl-data-grid-pagination-page-controls > i.bl-visualization-icon--disabled {
   color: #d0d0d0;
 }
 .bl-data-grid-visualization .bl-data-grid .bl-data-grid-pagination .bl-data-grid-pagination-page-controls .bl-data-grid-pagination-page {
@@ -720,7 +911,7 @@ body {
   background-color: #22527b;
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .Mui-error,
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-text-danger {
+.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-visualizations-text-danger {
   color: #f44336;
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-header {
@@ -737,7 +928,8 @@ body {
   background-color: #fff;
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-modal-field-label,
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-label {
+.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-label,
+.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-field {
   color: hsl(0, 0%, 20%);
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-multiple .remove-control {
@@ -749,28 +941,6 @@ body {
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer {
   background-color: #f5f5f5;
   border-top-color: #e8e8e8;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn {
-  background-color: #fff;
-  border: 1px solid #999;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained {
-  background-color: #fff;
-  border: 1px solid #999;
-  color: hsl(0, 0%, 20%);
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained:hover {
-  background-color: #f2f2f2;
-  border-color: #808080;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained.bl-btn-primary {
-  background-color: #337ab7;
-  color: #fff;
-  border-color: #2d6da3;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained.bl-btn-primary:hover {
-  background-color: #2d6da3;
-  border-color: #285f8f;
 }
 /*****    component: data-grid-visualization    *****/
 /****************************************************/
@@ -952,26 +1122,19 @@ body {
 /*****    component: divider    *****/
 /************************************/
 /************************************/
-/***********************************/
-/***********************************/
-/*****    component: iframe    *****/
-.bl-iframe {
-  flex: 1;
-  overflow: hidden;
+/*********************************/
+/*********************************/
+/*****    component: form    *****/
+.bl-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-/*****    component: iframe    *****/
-/***********************************/
-/***********************************/
-/*********************************/
-/*********************************/
-/*****    component: icon    *****/
-.bl-icon {
-  color: #337ab7;
-}
-/*****    component: icon    *****/
+/*****    component: form    *****/
 /*********************************/
 /*********************************/
 /***************************************/
@@ -990,36 +1153,58 @@ body {
 /***************************************/
 /*********************************/
 /*********************************/
-/*****    component: form    *****/
-.bl-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
+/*****    component: icon    *****/
+.bl-icon {
+  color: #337ab7;
+}
+/*****    component: icon    *****/
+/*********************************/
+/*********************************/
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+.bl-iframe {
+  flex: 1;
+  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-/*****    component: form    *****/
-/*********************************/
-/*********************************/
-/**************************************/
-/**************************************/
-/*****    component: jumbotron    *****/
-.bl-jumbotron {
-  display: flex;
-  flex-direction: column;
-  background: #dbdbdb;
-  box-shadow: NULL;
-  color: NULL;
-  border: NULL;
-  border-radius: 12px;
-  padding: 48px 24px 48px 24px;
-  margin: 0 0 48px 0;
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
+/****************************************/
+/****************************************/
+/*****    component: icon-button    *****/
+.bl-button.bl-icon-button {
+  border-radius: 50%;
+  min-width: initial;
+  padding: 12px;
 }
-/*****    component: jumbotron    *****/
-/**************************************/
-/**************************************/
+.bl-button.bl-icon-button .bl-icon {
+  font-size: 1.5em;
+}
+.bl-button.bl-icon-button.bl-button--small {
+  padding: 8px;
+  border-radius: 50%;
+}
+.bl-button.bl-icon-button.bl-button--small .bl-icon {
+  font-size: 1.3em;
+}
+.bl-button.bl-icon-button.bl-button--large {
+  padding: 16px;
+  border-radius: 50%;
+}
+.bl-button.bl-icon-button.bl-button--large .bl-icon {
+  font-size: 2em;
+}
+.bl-button.bl-icon-button.bl-button--outlined .bl-icon,
+.bl-button.bl-icon-button.bl-button--text .bl-icon {
+  color: inherit;
+}
+/*****    component: icon-button    *****/
+/****************************************/
+/****************************************/
 /**********************************/
 /**********************************/
 /*****    component: image    *****/
@@ -1031,6 +1216,32 @@ body {
 /*****    component: image    *****/
 /**********************************/
 /**********************************/
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
+  }
+}
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -1231,32 +1442,6 @@ body {
 /*****    component: input    *****/
 /**********************************/
 /**********************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
-}
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
-}
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
-}
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
 /****************************************/
 /****************************************/
 /*****    component: layout-cell    *****/
@@ -1409,6 +1594,40 @@ body {
 /*****    component: panel    *****/
 /**********************************/
 /**********************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+.bl-jumbotron {
+  display: flex;
+  flex-direction: column;
+  background: #dbdbdb;
+  box-shadow: NULL;
+  color: NULL;
+  border: NULL;
+  border-radius: 12px;
+  padding: 48px 24px 48px 24px;
+  margin: 0 0 48px 0;
+}
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
 /*****************************************/
 /*****************************************/
 /*****    component: radio-button    *****/
@@ -1457,111 +1676,42 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
-/************************************************/
-/************************************************/
-/*****    component: radio-buttons-group    *****/
-/*****    component: radio-buttons-group    *****/
-/************************************************/
-/************************************************/
-/***********************************/
-/***********************************/
-/*****    component: slider    *****/
-.bl-slider:hover .bl-slider-rail {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-track {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider--mark-active {
-  background-color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb {
-  color: NULL;
-}
-.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
-}
-.bl-slider.bl-slider--disabled .bl-slider-rail {
-  color: rgba(128, 128, 128, 0.38);
-}
-.bl-slider.bl-slider--disabled .bl-slider-track {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb {
-  color: gray;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
-  left: auto;
-}
-.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
-  background: gray;
-  color: #ffffff;
-}
-.bl-slider .bl-slider-rail {
-  color: rgba(51, 122, 183, 0.38);
-  opacity: 1;
-}
-.bl-slider .bl-slider-track {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark {
-  color: #337ab7;
-  opacity: 1;
-}
-.bl-slider .bl-slider--mark-active {
-  background-color: #ffffff;
-}
-.bl-slider .bl-slider-thumb {
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
   color: #337ab7;
 }
-.bl-slider .bl-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-  color: NULL;
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
 }
-.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
-  background: NULL;
-  color: NULL;
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.bl-slider .bl-slider-thumb .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
 }
-.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
-  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
-}
-.bl-slider .bl-slider-thumb.bl-slider--active {
-  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
-  color: #337ab7;
-}
-.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
-  background: #337ab7;
-  color: #ffffff;
-}
-/*****    component: slider    *****/
-/***********************************/
-/***********************************/
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1777,83 +1927,6 @@ body {
 /*****    component: text    *****/
 /*********************************/
 /*********************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
-}
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
-  }
-}
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
-/***********************************/
-/***********************************/
-/*****    component: switch    *****/
-.bl-switch .bl-switch-base {
-  color: #337ab7;
-}
-.bl-switch .bl-switch-track {
-  background: #000000;
-}
-.bl-switch .bl-switch-thumb {
-  background: #fff;
-}
-.bl-switch.bl-switch--checked .bl-switch-track {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--checked .bl-switch-thumb {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--disabled .bl-switch-root {
-  opacity: 0.38;
-}
-.bl-switch.bl-switch--disabled .bl-switch-track {
-  opacity: 0.54;
-}
-.bl-switch.bl-switch--disabled .bl-switch-thumb {
-  opacity: 1;
-}
-/*****    component: switch    *****/
-/***********************************/
-/***********************************/
-/**********************************/
-/**********************************/
-/*****    component: video    *****/
-.bl-video {
-  border: 4px;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: video    *****/
-/**********************************/
-/**********************************/
 /*************************************/
 /*************************************/
 /*****    component: textarea    *****/
@@ -1987,6 +2060,135 @@ body {
 /*****    component: textarea    *****/
 /*************************************/
 /*************************************/
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+.bl-switch .bl-switch-base {
+  color: #337ab7;
+}
+.bl-switch .bl-switch-track {
+  background: #000000;
+}
+.bl-switch .bl-switch-thumb {
+  background: #fff;
+}
+.bl-switch.bl-switch--checked .bl-switch-track {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--disabled .bl-switch-root {
+  opacity: 0.38;
+}
+.bl-switch.bl-switch--disabled .bl-switch-track {
+  opacity: 0.54;
+}
+.bl-switch.bl-switch--disabled .bl-switch-thumb {
+  opacity: 1;
+}
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+.bl-video {
+  border: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
+/***********************************/
+/***********************************/
+/*****    component: slider    *****/
+.bl-slider:hover .bl-slider-rail {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-track {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider--mark-active {
+  background-color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb {
+  color: NULL;
+}
+.bl-slider:hover .bl-slider-thumb .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider.bl-slider--disabled .bl-slider-rail {
+  color: rgba(128, 128, 128, 0.38);
+}
+.bl-slider.bl-slider--disabled .bl-slider-track {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb {
+  color: gray;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label {
+  left: auto;
+}
+.bl-slider.bl-slider--disabled .bl-slider-thumb .bl-slider--value-label * {
+  background: gray;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-rail {
+  color: rgba(51, 122, 183, 0.38);
+  opacity: 1;
+}
+.bl-slider .bl-slider-track {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark {
+  color: #337ab7;
+  opacity: 1;
+}
+.bl-slider .bl-slider--mark-active {
+  background-color: #ffffff;
+}
+.bl-slider .bl-slider-thumb {
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb:hover .bl-slider--value-label * {
+  background: NULL;
+  color: NULL;
+}
+.bl-slider .bl-slider-thumb .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-slider .bl-slider-thumb.bl-slider-thumb--focus {
+  box-shadow: 0px 0px 0px 8px rgba(51, 122, 183, 0.16);
+}
+.bl-slider .bl-slider-thumb.bl-slider--active {
+  box-shadow: 0px 0px 0px 14px rgba(51, 122, 183, 0.16);
+  color: #337ab7;
+}
+.bl-slider .bl-slider-thumb.bl-slider--active .bl-slider--value-label * {
+  background: #337ab7;
+  color: #ffffff;
+}
+/*****    component: slider    *****/
+/***********************************/
+/***********************************/
 /*******************************************/
 /*******************************************/
 /*****    component: view-data-grid    *****/
@@ -2001,20 +2203,23 @@ body {
 .bl-view-data-grid .bl-data-grid .bl-visualization-toolbar {
   background-color: #f5f5f5;
 }
-.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls {
+.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar__btn-container {
   color: hsl(0, 0%, 63%);
 }
-.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div:not(.disabled) button {
-  color: hsl(0, 0%, 63%);
-}
-.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div:not(.disabled) button:hover {
+.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar__btn-container:hover {
   color: #22527b;
 }
-.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div.active button {
+.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar__btn-container__active {
   color: #337ab7;
 }
-.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar .bl-visualization-toolbar__controls div.disabled button {
+.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar__btn-container__disabled {
   color: #d0d0d0;
+}
+.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar__progress-bar {
+  background-color: #e0e0e0;
+}
+.bl-view-data-grid .bl-data-grid .bl-visualization-toolbar__progress-bar-slider {
+  background-color: #337ab7;
 }
 .bl-view-data-grid .bl-data-grid .bl-data-grid-container {
   background-color: #fff;
@@ -2128,7 +2333,7 @@ body {
   background-color: #f5f5f5;
   border-top: 1px solid #e8e8e8;
 }
-.bl-view-data-grid .bl-data-grid .bl-data-grid-pagination .bl-data-grid-pagination-page-controls > i.not-allowed {
+.bl-view-data-grid .bl-data-grid .bl-data-grid-pagination .bl-data-grid-pagination-page-controls > i.bl-visualization-icon--disabled {
   color: #d0d0d0;
 }
 .bl-view-data-grid .bl-data-grid .bl-data-grid-pagination .bl-data-grid-pagination-page-controls .bl-data-grid-pagination-page {
@@ -2182,7 +2387,7 @@ body {
   background-color: #22527b;
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .Mui-error,
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-text-danger {
+.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-visualizations-text-danger {
   color: #f44336;
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-header {
@@ -2199,7 +2404,8 @@ body {
   background-color: #fff;
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-modal-field-label,
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-label {
+.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-label,
+.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-control-field {
   color: hsl(0, 0%, 20%);
 }
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-body .bl-multiple .remove-control {
@@ -2211,28 +2417,6 @@ body {
 .bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer {
   background-color: #f5f5f5;
   border-top-color: #e8e8e8;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn {
-  background-color: #fff;
-  border: 1px solid #999;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained {
-  background-color: #fff;
-  border: 1px solid #999;
-  color: hsl(0, 0%, 20%);
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained:hover {
-  background-color: #f2f2f2;
-  border-color: #808080;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained.bl-btn-primary {
-  background-color: #337ab7;
-  color: #fff;
-  border-color: #2d6da3;
-}
-.bl-data-grid-modal.bl-ui-sdk-modal .bl-modal-content .bl-modal-footer .bl-btn.MuiButton-contained.bl-btn-primary:hover {
-  background-color: #2d6da3;
-  border-color: #285f8f;
 }
 /*****    component: view-data-grid    *****/
 /*******************************************/
@@ -3240,6 +3424,9 @@ body {
   color: #ff0000;
   flex-shrink: 0;
 }
+.ingress__sslEnabledLabel--success {
+  color: #2ECC71;
+}
 .ingress__CertificateLabel {
   max-width: 400px;
   word-break: break-all;
@@ -3535,6 +3722,16 @@ body {
   width: 100%;
   max-height: 300px;
   overflow: auto;
+}
+.install__ProgressContainer::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #E3E6E8;
+  border-radius: 4px;
+}
+.install__ProgressContainer::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #ABB3BA;
 }
 .install__ProgressItem {
   font-family: FuturaBook, Arial, sans-serif;
