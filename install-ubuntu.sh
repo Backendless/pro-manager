@@ -17,11 +17,15 @@ echo "in working folder $work_dir"
 
 
 nvm_dir="$work_dir/.nvm"
+export NVM_DIR="$work_dir/.nvm"
+
+#mkdir $nvm_dir
+
 echo "installing nvm to $nvm_dir ..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 echo "nvm installed"
 
-export NVM_DIR="$HOME/.nvm"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install v14.18.2
