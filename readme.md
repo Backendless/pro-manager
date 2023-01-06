@@ -100,3 +100,19 @@ git clone https://github.com/Backendless/pro-manager.git
 3. Execute `git pull` command
 4. Execute `npm i`
 5. Start Pro Manager
+
+# Remove Backendless Pro and Pro Manager
+### Remove Backendless Pro
+```
+curl -X DELETE 'http://localhost:5050/services/install/delete' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: auth-token=<auth-token>' \
+```
+### Remove Pro Manager
+For ubuntu call the following commands:
+```
+sudo systemctl stop pro-manager
+```
+```
+sudo deluser --remove-home bl-pro-manager
+```
