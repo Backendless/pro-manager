@@ -19,8 +19,6 @@ echo "in working folder $work_dir"
 nvm_dir="$work_dir/.nvm"
 export NVM_DIR="$work_dir/.nvm"
 
-#mkdir $nvm_dir
-
 echo "installing nvm to $nvm_dir ..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 echo "nvm installed"
