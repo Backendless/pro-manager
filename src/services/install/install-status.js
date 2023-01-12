@@ -41,7 +41,7 @@ class InstallStatus {
                 if (consulStatus === Status.notInstalled) {
                     this._servicesCreated = false
                 } else {
-                    this._servicesCreated = Boolean(await consul.get(_servicesCreatedConsulKey))
+                    this._servicesCreated = Boolean(await consul.getOrNull(_servicesCreatedConsulKey))
                 }
             } catch (error) {
                 logger.error(`Error during retrieve status from consul: ${error}`)
