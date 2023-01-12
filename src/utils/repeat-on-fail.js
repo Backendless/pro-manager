@@ -19,7 +19,7 @@ export async function repeatOnFail(func, repeatTimes, waitInMillis, failCallback
                 await wait(waitInMillis)
             }
 
-            return await repeatOnFail(func, repeatTimes - 1, waitInMillis)
+            return await repeatOnFail(func, repeatTimes - 1, waitInMillis, failCallback)
         } else {
             throw e
         }

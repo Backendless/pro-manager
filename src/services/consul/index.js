@@ -9,7 +9,15 @@ const logger = Logger('consul')
 class Consul {
     async get(key) {
         const podName = await this._getPodName()
-        return (await repeatOnFail( () => executeInPod(podName, ['consul', 'kv', 'get', key]), 20, 1000)).replace(/\n$/, '')
+        return (await repeatOnFail(() => executeInPod(podName, ['consul', 'kv', 'get', key]),
+            20,
+            1000,
+            error => {
+                logger.error(`failed to get key [${key}] error: [${error}]`)
+                if (error !== null && error.message != null && error.message.includes('No key exists at')) {
+                    throw error
+                }
+            })).replace(/\n$/, '')
     }
 
     async getOrNull(key) {

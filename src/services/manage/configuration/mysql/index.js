@@ -38,7 +38,7 @@ class MysqlConnectionConfigurationService {
 
   async getShards() {
     const shards = []
-    const enabledShardNamesStr = await consul.get(this._enabledShardsNamesKey)
+    const enabledShardNamesStr = await consul.getOrNull(this._enabledShardsNamesKey)
     const enabledShardNames = enabledShardNamesStr.trim().split(';')
     for (const shardName of enabledShardNames) {
       const shard = await this._getShardFromConsul(shardName)
@@ -48,7 +48,7 @@ class MysqlConnectionConfigurationService {
 
     let disabledShardsStr = null
     try {
-      disabledShardsStr = await consul.get(this._disabledShardsNamesKey)
+      disabledShardsStr = await consul.getOrNull(this._disabledShardsNamesKey)
     } catch (err) {
       if (err !== null && err.message != null && err.message.includes('No key exists at')) {
         logger.warn(`Error during getting disabled shards by key ${this._disabledShardsNamesKey}. Message: ${err}`)
@@ -88,13 +88,13 @@ class MysqlConnectionConfigurationService {
     const enabled = shard.enabled
 
     if (enabled === true) {
-      const enabledShardNames = (await consul.get(this._enabledShardsNamesKey)).split(';')
+      const enabledShardNames = (await consul.getOrNull(this._enabledShardsNamesKey)).split(';')
       if (!enabledShardNames.includes(shardName)) {
         enabledShardNames.push(shardName)
         await consul.put(this._enabledShardsNamesKey, enabledShardNames)
       }
     } else {
-      const disabledShardNames = (await consul.get(this._disabledShardsNamesKey)).split(';')
+      const disabledShardNames = (await consul.getOrNull(this._disabledShardsNamesKey)).split(';')
       if (!disabledShardNames.includes(shardName)) {
         disabledShardNames.push(shardName)
         await consul.put(this._disabledShardsNamesKey, disabledShardNames)
