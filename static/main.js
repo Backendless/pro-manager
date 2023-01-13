@@ -151,9 +151,9 @@ define('./functions/8f16ba2ef5c9c7a7b32d569b3762f6c4/code.js', () => {
 BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'] = async function fn_8f16ba2ef5c9c7a7b32d569b3762f6c4(pageData, message, color, alert, styleAlert, styleAlertText) {
   pageData['alertMessage'] = message;
   styleAlertText['color'] = color;
-  styleAlert['bottom'] = 0;
+  styleAlert['top'] = 0;
   await new Promise(r => setTimeout(r, 3000 || 0));
-  styleAlert['bottom'] = (String(-((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', alert))) + String('px'));
+  styleAlert['top'] = (String(-((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', alert))) + String('px'));
 
 }
 
@@ -162,11 +162,11 @@ define('./pages/404/components/902c9641de4ec9e73427e7192a118d14/bundle.js', [], 
   /* content */
 
   /* handler:onClick */
-  async onClick(___arguments) {
-      ;await ( async function (pageName, pageData){ BackendlessUI.goToPage(pageName, pageData) })('', null);
+  ['onClick'](___arguments) {
+      (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('', undefined);
 
-  },  
-/* handler:onClick *//* content */
+  },
+  /* handler:onClick *//* content */
 }));
 
 define('./pages/certificates/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
@@ -179,7 +179,7 @@ define('./pages/certificates/components/9f186f89932cdfe880554e43f4f916a1/bundle.
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
   }
-  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/user', null)));
+  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/user', null, null)));
   ___arguments.context.pageData['noUserMessage'] = (((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')).length == 0);
   ___arguments.context.pageData['userManagement'] = true;
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
@@ -233,7 +233,7 @@ function getObjectProperty(object, propPath) {
 define('./pages/certificates/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnSetPassword'] = 'Set password';
   ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['btnDelete'] = 'Delete';
 
@@ -369,18 +369,18 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
   try {
     if (!(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userNameDisabled'))) {
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['createBtn'] = 'Creating...';
-      newUser = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/register', userData));
+      newUser = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/register', userData, null));
       userData['id'] = (getObjectProperty(newUser, 'id'));
     } else {
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['createBtn'] = 'Setting...';
-      await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', (String('/user/') + String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userId'))), userData);
+      await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', (String('/user/') + String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userId'))), userData, null);
     }
     if (!(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userNameDisabled'))) {
       addItemToList(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), userData);
       ___arguments.context.pageData['noUserMessage'] = false;
-      currentMessage = 'User has been successfully created';
+      currentMessage = 'User has been created successfully';
     } else {
-      currentMessage = 'Password was set successfully';
+      currentMessage = 'Password has been set successfully';
     }
     ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['userName'] = '';
     ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['password'] = '';
@@ -412,11 +412,11 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 define('./pages/certificates/components/0681c698ed65058599f21cdecce92e8d/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  onChange(___arguments) {
+  ['onChange'](___arguments) {
       if (!___arguments.value) {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', true);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', true);
   } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
   }
 
   },
@@ -427,17 +427,38 @@ define('./pages/certificates/components/0681c698ed65058599f21cdecce92e8d/bundle.
 define('./pages/certificates/components/a6868ac85ed520f809ceb0b4830d26ed/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  onChange(___arguments) {
-      if (!___arguments.value) {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', true);
-  } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  ['onChange'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
   }
-  if (___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['confirmPassword']) {
-    if ((___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['password']) != (___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['confirmPassword'])) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (!___arguments.value) {
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', true);
+  } else {
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  }
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'confirmPassword')) {
+    if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'password')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'confirmPassword'))) {
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
     }
   }
 
@@ -449,20 +470,41 @@ define('./pages/certificates/components/a6868ac85ed520f809ceb0b4830d26ed/bundle.
 define('./pages/certificates/components/45d92809be072fc19a6f16beadcb1cd3/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  onChange(___arguments) {
-      if (!___arguments.value) {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', true);
+  ['onChange'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (!___arguments.value) {
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', true);
   } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
   }
   if (___arguments.value) {
-    if ((___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['password']) != (___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['confirmPassword'])) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
+    if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'password')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'confirmPassword'))) {
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
     }
   } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
   }
 
   },
@@ -473,7 +515,7 @@ define('./pages/certificates/components/45d92809be072fc19a6f16beadcb1cd3/bundle.
 define('./pages/certificates/components/b4398d5c0048d80587b9664d8f5eac11/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.dataModel['createBtn'] = 'Create';
 
   },
@@ -572,7 +614,7 @@ async function closeModal(message, color) {
   ___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919')['btnDeleteDisabled'] = true;
   ___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919')['btnLabel'] = 'Deleting...';
   try {
-    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('delete', '/user', ({ 'id': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'id')) }));
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('delete', '/user', ({ 'id': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'id')) }), null);
     (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await asyncListFilter(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), async (user) => {
 
 
@@ -581,7 +623,7 @@ async function closeModal(message, color) {
     if (((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')).length == 0) {
       ___arguments.context.pageData['noUserMessage'] = true;
     }
-    await closeModal('User deleted successfully', '#fff');
+    await closeModal('User has been deleted successfully', '#fff');
 
   } catch (error) {
     await closeModal((getObjectProperty(error, 'message')), '#ff0000');
@@ -706,20 +748,20 @@ define('./pages/certificates/components/1744db9f250d6ba85e3435fc3be3660e/bundle.
 define('./pages/dataService/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  async onMounted(___arguments) {
-      if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  async ['onMounted'](___arguments) {
+      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
   }
-  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/describe', null));
-  ___arguments.context.pageData['dataContainer'] = [(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/config', null))];
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/describe', null, null));
+  ___arguments.context.pageData['dataContainer'] = [(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/config', null, null))];
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
   }
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
   }
 
   },
@@ -730,12 +772,32 @@ define('./pages/dataService/components/9f186f89932cdfe880554e43f4f916a1/bundle.j
 define('./pages/dataService/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'Max page size'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'Max page size'));
   }
 
   return tooltip
@@ -748,12 +810,32 @@ define('./pages/dataService/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.j
 define('./pages/dataService/components/6ee9263676997e3caaa315452be887df/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'Count for console'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'Count for console'));
   }
 
   return tooltip
@@ -766,12 +848,32 @@ define('./pages/dataService/components/6ee9263676997e3caaa315452be887df/bundle.j
 define('./pages/dataService/components/cb32ffe5c76e4f69d148911494c6952e/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'Default page size'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'Default page size'));
   }
 
   return tooltip
@@ -784,12 +886,32 @@ define('./pages/dataService/components/cb32ffe5c76e4f69d148911494c6952e/bundle.j
 define('./pages/dataService/components/cd73b3928006379f77b53b870895e855/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'Max bulk create'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'Max bulk create'));
   }
 
   return tooltip
@@ -802,12 +924,32 @@ define('./pages/dataService/components/cd73b3928006379f77b53b870895e855/bundle.j
 define('./pages/dataService/components/b11bd95b7c781e9ce31e01ee1b83b966/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'Max counters retrieve size'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'Max counters retrieve size'));
   }
 
   return tooltip
@@ -820,19 +962,39 @@ define('./pages/dataService/components/b11bd95b7c781e9ce31e01ee1b83b966/bundle.j
 define('./pages/dataService/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item, descriptionItem;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -844,15 +1006,15 @@ define('./pages/dataService/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.j
   ___arguments.context.pageData['btnSaveDisabled'] = true;
   ___arguments.context.pageData['btnSave'] = 'Saving...';
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/data/config?restart=false', (((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))[0])));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/data/config?restart=false', (((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))[0]), null)));
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -876,19 +1038,39 @@ define('./pages/dataService/components/b4ac65b40f178182007af4f16afe24d6/bundle.j
 define('./pages/dataService/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item, descriptionItem;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -900,15 +1082,15 @@ define('./pages/dataService/components/33a848b796b77f762a2122974b1af0aa/bundle.j
   ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
   ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/data/config?restart=true', (((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))[0])));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/data/config?restart=true', (((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))[0]), null)));
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -920,8 +1102,28 @@ define('./pages/dataService/components/33a848b796b77f762a2122974b1af0aa/bundle.j
 define('./pages/dataService/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -935,15 +1137,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max page size');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'Max page size');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
     }
   }
 
@@ -955,8 +1157,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/57c1dbc34b1c989c67cdeee5b059df3e/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -970,15 +1192,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Default page size');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'Default page size');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
     }
   }
 
@@ -990,8 +1212,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/febabf157a01b6cc64e1b8f62b1e1a32/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1005,15 +1247,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max bulk create');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'Max bulk create');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
     }
   }
 
@@ -1025,8 +1267,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/826adfb80e9fa3f9c4d409ef7c4fb6a8/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1040,15 +1302,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max counters retrieve size');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'Max counters retrieve size');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
     }
   }
 
@@ -1060,8 +1322,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/f6024c35a4be53e6b64b776ba73ce95c/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1075,12 +1357,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max counters retrieve size');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['Max counters retrieve size']) {
+   return ((getObjectProperty(item, 'name')) == 'Max counters retrieve size');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'Max counters retrieve size')) {
       visible = false;
     } else {
       visible = true;
@@ -1097,8 +1379,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/f2cd77e13a5f3c9633a2a81f62910c09/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1112,12 +1414,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max page size');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['Max page size']) {
+   return ((getObjectProperty(item, 'name')) == 'Max page size');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'Max page size')) {
       visible = false;
     } else {
       visible = true;
@@ -1134,8 +1436,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/49cfbb2af051f87d5dccc9944ddcb7b2/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1149,12 +1471,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Default page size');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['Default page size']) {
+   return ((getObjectProperty(item, 'name')) == 'Default page size');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'Default page size')) {
       visible = false;
     } else {
       visible = true;
@@ -1171,8 +1493,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/c37570257cfd551e117c464d74721426/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1186,12 +1528,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max bulk create');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['Max bulk create']) {
+   return ((getObjectProperty(item, 'name')) == 'Max bulk create');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'Max bulk create')) {
       visible = false;
     } else {
       visible = true;
@@ -1208,8 +1550,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/da5a9fb94b4e945b59defc3358320e88/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1223,15 +1585,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max relation page size');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'Max relation page size');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('956da196f07cacfdc983a7562c693e0a', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('956da196f07cacfdc983a7562c693e0a', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('956da196f07cacfdc983a7562c693e0a', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('956da196f07cacfdc983a7562c693e0a', true);
     }
   }
 
@@ -1243,8 +1605,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/956da196f07cacfdc983a7562c693e0a/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1258,12 +1640,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Max relation page size');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['Max relation page size']) {
+   return ((getObjectProperty(item, 'name')) == 'Max relation page size');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'Max relation page size')) {
       visible = false;
     } else {
       visible = true;
@@ -1280,12 +1662,32 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/b54572a4aa5d9a730e6821542c7efb6f/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'Max relation page size'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'Max relation page size'));
   }
 
   return tooltip
@@ -1298,8 +1700,28 @@ define('./pages/dataService/components/b54572a4aa5d9a730e6821542c7efb6f/bundle.j
 define('./pages/dataService/components/f509c2ebe2c76cbdccb7691d1526a5f6/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1313,15 +1735,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Default relation page size');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'Default relation page size');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('547f9fdb3364fb2edd716f81ac797da7', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('547f9fdb3364fb2edd716f81ac797da7', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('547f9fdb3364fb2edd716f81ac797da7', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('547f9fdb3364fb2edd716f81ac797da7', true);
     }
   }
 
@@ -1333,8 +1755,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/547f9fdb3364fb2edd716f81ac797da7/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -1348,12 +1790,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'Default relation page size');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['Default relation page size']) {
+   return ((getObjectProperty(item, 'name')) == 'Default relation page size');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'Default relation page size')) {
       visible = false;
     } else {
       visible = true;
@@ -1370,12 +1812,32 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/dataService/components/731ff8f7e02b1f1b1ddd65954ca550ae/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'Default relation page size'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'Default relation page size'));
   }
 
   return tooltip
@@ -1511,7 +1973,7 @@ define('./pages/domainsGeneral/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundl
   /* content */
   /* handler:onClick */
   async ['onClick'](___arguments) {
-    var dataItem, dataToSave, error, field, isValid;
+    var error, dataToSave, isValid, field, dataItem;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -1564,10 +2026,10 @@ function getObjectProperty(object, propPath) {
   ___arguments.context.pageData['btnSaveDisabled'] = true;
   ___arguments.context.pageData['btnSave'] = 'Saving...';
   try {
-    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/domain?restart=false', dataToSave);
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/domain?restart=false', dataToSave, null);
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
@@ -1650,10 +2112,10 @@ function getObjectProperty(object, propPath) {
   ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
   ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
   try {
-    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/domain?restart=true', dataToSave);
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/domain?restart=true', dataToSave, null);
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
@@ -2122,7 +2584,7 @@ define('./pages/ingress/components/a6868ac85ed520f809ceb0b4830d26ed/bundle.js', 
     if ((new RegExp('^[a-z0-9.-]+$', '')).test(___arguments.value)) {
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
     } else {
-      ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['validationMessage'] = 'Domain must consist of lower case  alphanumeric characters, \'-\' or \'.\'';
+      ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['validationMessage'] = 'Domain must consist of lowercase alphanumeric characters, \'-\' or \'.\'';
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', true);
     }
   }
@@ -2135,7 +2597,7 @@ define('./pages/ingress/components/a6868ac85ed520f809ceb0b4830d26ed/bundle.js', 
 define('./pages/ingress/components/b4398d5c0048d80587b9664d8f5eac11/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.dataModel['createBtn'] = 'Create';
 
   },
@@ -2649,7 +3111,7 @@ define('./pages/ingress/components/8c8b4c5132d10461d6ca623fece82e2f/bundle.js', 
   /* content */
   /* handler:onClick */
   async ['onClick'](___arguments) {
-    var color, error;
+    var error;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -2676,7 +3138,7 @@ function getObjectProperty(object, propPath) {
   ___arguments.context.pageData['applyBtnLabel'] = 'Applying...';
   try {
     await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/loadbalancer/ingress/apply', null, null);
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'Changes applied successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'Changes have been applied successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ff0000', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
@@ -2890,11 +3352,11 @@ async function getOrigin() {
   if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756'), 'btnLabel')) == 'Create') {
     ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['btnLabel'] = 'Creating...';
     method = 'post';
-    message = 'Certificate successfully created';
+    message = 'Certificate has been created successfully';
   } else {
     ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['btnLabel'] = 'Updating...';
     method = 'put';
-    message = 'Certificate successfully updated';
+    message = 'Certificate has been updated successfully';
   }
   try {
     path = String(await getOrigin()) + String('/services/manage/cert');
@@ -3049,7 +3511,7 @@ define('./pages/ingress/components/d235317ad00a42688c4f78c55ce72282/bundle.js', 
     if ((new RegExp('^[a-z0-9.-]+$', '')).test(___arguments.value)) {
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
     } else {
-      ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['validationMessageName'] = 'Certificate name must consist of lower case  alphanumeric characters, \'-\' or \'.\'';
+      ___arguments.context.getComponentDataStoreByUid('c285fdb7425cfedb989a67dd73e1e756')['validationMessageName'] = 'Certificate name must consist of lowercase alphanumeric characters, \'-\' or \'.\'';
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', true);
     }
   }
@@ -3195,7 +3657,7 @@ async function asyncListFilter(sourceList, callback) {
     }));
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'hidden';
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['opacity'] = 0;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'Certificate removed successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'Certificate has been removed successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('08eeca24e142146f1894a98264378b8e'))['visibility'] = 'hidden';
@@ -3829,10 +4291,10 @@ function getObjectProperty(object, propPath) {
   ___arguments.context.pageData['btnSaveDisabled'] = true;
   ___arguments.context.pageData['btnSave'] = 'Saving...';
   try {
-    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/k8s?restart=false', dataToSave);
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/k8s?restart=false', dataToSave, null);
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
@@ -3862,7 +4324,7 @@ define('./pages/kubernetes/components/33a848b796b77f762a2122974b1af0aa/bundle.js
   /* content */
   /* handler:onClick */
   async ['onClick'](___arguments) {
-    var error, isValid, item, descriptionItem, dataToSave;
+    var error, dataToSave, isValid, item;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -3906,10 +4368,10 @@ function getObjectProperty(object, propPath) {
   ___arguments.context.pageData['btnSaveDisabled'] = true;
   ___arguments.context.pageData['btnSave'] = 'Saving...';
   try {
-    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/k8s?restart=true', dataToSave);
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/k8s?restart=true', dataToSave, null);
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
@@ -4127,20 +4589,20 @@ define('./pages/login/components/891bf3ca729d37cf46cc1e6329c36163/bundle.js', []
 define('./pages/mySql/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  async onMounted(___arguments) {
-      if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  async ['onMounted'](___arguments) {
+      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
   }
-  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null));
-  ___arguments.context.pageData['mysqlContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null));
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null, null));
+  ___arguments.context.pageData['mysqlContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null, null));
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
   }
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
   }
 
   },
@@ -4151,15 +4613,36 @@ define('./pages/mySql/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', []
 define('./pages/mySql/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
-  onContentAssignment(___arguments) {
-    function textToTitleCase(str) {
-  return str.replace(/\S+/g,
-      function(txt) {return txt[0].toUpperCase() + txt.substring(1).toLowerCase();});
+  ['onContentAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+function textToTitleCase(str) {
+ return str.replace(/\S+/g, function(txt) {
+   return txt[0].toUpperCase() + txt.substring(1).toLowerCase()
+ })
 }
 
 
 
-  return (textToTitleCase(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['shard']))
+  return (textToTitleCase(getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'shard')))
 
   },
   /* handler:onContentAssignment */
@@ -4169,12 +4652,32 @@ define('./pages/mySql/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', []
 define('./pages/mySql/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'pattern'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'pattern'));
   }
 
   return tooltip
@@ -4187,12 +4690,32 @@ define('./pages/mySql/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', []
 define('./pages/mySql/components/6ee9263676997e3caaa315452be887df/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'enabled'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'enabled'));
   }
 
   return tooltip
@@ -4205,12 +4728,32 @@ define('./pages/mySql/components/6ee9263676997e3caaa315452be887df/bundle.js', []
 define('./pages/mySql/components/41bb79be796c056984caaba1dbfa3947/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'host'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'host'));
   }
 
   return tooltip
@@ -4223,12 +4766,32 @@ define('./pages/mySql/components/41bb79be796c056984caaba1dbfa3947/bundle.js', []
 define('./pages/mySql/components/cb32ffe5c76e4f69d148911494c6952e/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'port'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'port'));
   }
 
   return tooltip
@@ -4241,12 +4804,32 @@ define('./pages/mySql/components/cb32ffe5c76e4f69d148911494c6952e/bundle.js', []
 define('./pages/mySql/components/cd73b3928006379f77b53b870895e855/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'user'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'user'));
   }
 
   return tooltip
@@ -4259,12 +4842,32 @@ define('./pages/mySql/components/cd73b3928006379f77b53b870895e855/bundle.js', []
 define('./pages/mySql/components/b11bd95b7c781e9ce31e01ee1b83b966/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'password'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'password'));
   }
 
   return tooltip
@@ -4277,12 +4880,32 @@ define('./pages/mySql/components/b11bd95b7c781e9ce31e01ee1b83b966/bundle.js', []
 define('./pages/mySql/components/bd0ea983f0e13883fbd30ed292fbaafd/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'maxActive'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'maxActive'));
   }
 
   return tooltip
@@ -4295,12 +4918,32 @@ define('./pages/mySql/components/bd0ea983f0e13883fbd30ed292fbaafd/bundle.js', []
 define('./pages/mySql/components/429dacbd427245ceaee6938829c292ee/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'maxIdle'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'maxIdle'));
   }
 
   return tooltip
@@ -4313,12 +4956,32 @@ define('./pages/mySql/components/429dacbd427245ceaee6938829c292ee/bundle.js', []
 define('./pages/mySql/components/34554bc65ba52e5730d1070950f5862f/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'minIdle'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'minIdle'));
   }
 
   return tooltip
@@ -4331,12 +4994,32 @@ define('./pages/mySql/components/34554bc65ba52e5730d1070950f5862f/bundle.js', []
 define('./pages/mySql/components/7c8ed449452a8d2f6b5f821bbc77ab96/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'urlTemplate'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'urlTemplate'));
   }
 
   return tooltip
@@ -4349,8 +5032,28 @@ define('./pages/mySql/components/7c8ed449452a8d2f6b5f821bbc77ab96/bundle.js', []
 define('./pages/mySql/components/d4d4cd6ab50980f1361d2201a3630184/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4366,30 +5069,51 @@ async function asyncListFilter(sourceList, callback) {
 
   if (___arguments.value) {
     if ((new RegExp('jdbc:mysql://.*', '')).test(___arguments.value)) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', true);
     }
   } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4ddb9a48191e6aca47bc4ecbb75abe0a', false);
   }
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'urlTemplate');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'urlTemplate');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('5269130299dddc1234cb309f3437c093', true);
     }
   }
 
   },
   /* handler:onChange */
   /* handler:onFocus */
-  onFocus(___arguments) {
-      if (!(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate'])) {
+  ['onFocus'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (!(getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'urlTemplate'))) {
     ___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate'] = 'jdbc:mysql://';
   }
 
@@ -4401,22 +5125,42 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item, descriptionItem;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    if (item['urlTemplate']) {
-      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    if (getObjectProperty(item, 'urlTemplate')) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((getObjectProperty(item, 'urlTemplate'))));
     }
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -4428,15 +5172,15 @@ define('./pages/mySql/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', []
   ___arguments.context.pageData['btnSaveDisabled'] = true;
   ___arguments.context.pageData['btnSave'] = 'Saving...';
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=false', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=false', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), null)));
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -4460,22 +5204,42 @@ define('./pages/mySql/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', []
 define('./pages/mySql/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item, descriptionItem;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    if (item['urlTemplate']) {
-      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    if (getObjectProperty(item, 'urlTemplate')) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((getObjectProperty(item, 'urlTemplate'))));
     }
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -4487,15 +5251,15 @@ define('./pages/mySql/components/33a848b796b77f762a2122974b1af0aa/bundle.js', []
   ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
   ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=true', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=true', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), null)));
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -4507,8 +5271,28 @@ define('./pages/mySql/components/33a848b796b77f762a2122974b1af0aa/bundle.js', []
 define('./pages/mySql/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4522,15 +5306,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'pattern');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'pattern');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
     }
   }
 
@@ -4542,8 +5326,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/fbe986386ed891b99ef2e631e208e495/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4557,15 +5361,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'host');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'host');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('3989f1ccde5d70cf92a5dc8cec2591b6', true);
     }
   }
 
@@ -4577,8 +5381,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/57c1dbc34b1c989c67cdeee5b059df3e/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4592,15 +5416,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'port');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'port');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
     }
   }
 
@@ -4612,8 +5436,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/febabf157a01b6cc64e1b8f62b1e1a32/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4627,15 +5471,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'user');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'user');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
     }
   }
 
@@ -4647,8 +5491,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/826adfb80e9fa3f9c4d409ef7c4fb6a8/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4662,15 +5526,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'password');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'password');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
     }
   }
 
@@ -4682,8 +5546,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/322d59330616d696920fec1cba3f5519/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4697,15 +5581,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'maxActive');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'maxActive');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', true);
     }
   }
 
@@ -4717,8 +5601,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/4864c57e484b278e25943ae40cd58b96/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4732,15 +5636,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'maxIdle');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'maxIdle');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('989b163823758fbffd4239ef9101b098', true);
     }
   }
 
@@ -4752,8 +5656,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/34d8fb2e194a3b1c5a714e37b36481bf/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4767,15 +5691,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'minIdle');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'minIdle');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('816a34cf65531e3fdfe61bed31eec1a2', true);
     }
   }
 
@@ -4787,8 +5711,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/f6024c35a4be53e6b64b776ba73ce95c/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, vivsible;
+  async ['onDisplayAssignment'](___arguments) {
+    var vivsible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4802,12 +5746,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'password');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['password']) {
+   return ((getObjectProperty(item, 'name')) == 'password');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'password')) {
       vivsible = false;
     } else {
       vivsible = true;
@@ -4824,8 +5768,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/f2cd77e13a5f3c9633a2a81f62910c09/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4839,12 +5803,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'pattern');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['pattern']) {
+   return ((getObjectProperty(item, 'name')) == 'pattern');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'pattern')) {
       visible = false;
     } else {
       visible = true;
@@ -4861,8 +5825,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/3989f1ccde5d70cf92a5dc8cec2591b6/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4876,12 +5860,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'host');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['host']) {
+   return ((getObjectProperty(item, 'name')) == 'host');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'host')) {
       visible = false;
     } else {
       visible = true;
@@ -4898,8 +5882,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/49cfbb2af051f87d5dccc9944ddcb7b2/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4913,12 +5917,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'port');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['port']) {
+   return ((getObjectProperty(item, 'name')) == 'port');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'port')) {
       visible = false;
     } else {
       visible = true;
@@ -4935,8 +5939,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/c37570257cfd551e117c464d74721426/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4950,12 +5974,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'user');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['user']) {
+   return ((getObjectProperty(item, 'name')) == 'user');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'user')) {
       visible = false;
     } else {
       visible = true;
@@ -4972,8 +5996,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/2f64e73db50c4814bf82eaa10ad4dee9/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -4987,12 +6031,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'maxActive');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxActive']) {
+   return ((getObjectProperty(item, 'name')) == 'maxActive');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'maxActive')) {
       visible = false;
     } else {
       visible = true;
@@ -5009,8 +6053,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/989b163823758fbffd4239ef9101b098/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5024,12 +6088,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'maxIdle');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxIdle']) {
+   return ((getObjectProperty(item, 'name')) == 'maxIdle');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'maxIdle')) {
       visible = false;
     } else {
       visible = true;
@@ -5046,8 +6110,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/816a34cf65531e3fdfe61bed31eec1a2/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5061,12 +6145,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'minIdle');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['minIdle']) {
+   return ((getObjectProperty(item, 'name')) == 'minIdle');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'minIdle')) {
       visible = false;
     } else {
       visible = true;
@@ -5083,8 +6167,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mySql/components/5269130299dddc1234cb309f3437c093/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5098,12 +6202,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'urlTemplate');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['urlTemplate']) {
+   return ((getObjectProperty(item, 'name')) == 'urlTemplate');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'urlTemplate')) {
       visible = false;
     } else {
       visible = true;
@@ -5137,15 +6241,36 @@ define('./pages/mySql/components/page/bundle.js', [], () => ({
 define('./pages/mysql2/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
-  onContentAssignment(___arguments) {
-    function textToTitleCase(str) {
-  return str.replace(/\S+/g,
-      function(txt) {return txt[0].toUpperCase() + txt.substring(1).toLowerCase();});
+  ['onContentAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+function textToTitleCase(str) {
+ return str.replace(/\S+/g, function(txt) {
+   return txt[0].toUpperCase() + txt.substring(1).toLowerCase()
+ })
 }
 
 
 
-  return (textToTitleCase(___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1')['shard']))
+  return (textToTitleCase(getObjectProperty(___arguments.context.dataModel, 'shard')))
 
   },
   /* handler:onContentAssignment */
@@ -5155,8 +6280,28 @@ define('./pages/mysql2/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [
 define('./pages/mysql2/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5171,90 +6316,90 @@ async function asyncListFilter(sourceList, callback) {
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    if (item['urlTemplate']) {
-      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    if (getObjectProperty(item, 'urlTemplate')) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((getObjectProperty(item, 'urlTemplate'))));
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'pattern');
-    }))[0])['required']) {
-      if (!(item['pattern'])) {
+     return ((getObjectProperty(item, 'name')) == 'pattern');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'pattern'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'host');
-    }))[0])['required']) {
-      if (!(item['host'])) {
+     return ((getObjectProperty(item, 'name')) == 'host');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'host'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'port');
-    }))[0])['required']) {
-      if (!(item['port'])) {
+     return ((getObjectProperty(item, 'name')) == 'port');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'port'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'user');
-    }))[0])['required']) {
-      if (!(item['user'])) {
+     return ((getObjectProperty(item, 'name')) == 'user');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'user'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'password');
-    }))[0])['required']) {
-      if (!(item['password'])) {
+     return ((getObjectProperty(item, 'name')) == 'password');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'password'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'maxActive');
-    }))[0])['required']) {
-      if (!(item['maxActive'])) {
+     return ((getObjectProperty(item, 'name')) == 'maxActive');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'maxActive'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'maxIdle');
-    }))[0])['required']) {
-      if (!(item['maxIdle'])) {
+     return ((getObjectProperty(item, 'name')) == 'maxIdle');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'maxIdle'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'minIdle');
-    }))[0])['required']) {
-      if (!(item['minIdle'])) {
+     return ((getObjectProperty(item, 'name')) == 'minIdle');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'minIdle'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'urlTemplate');
-    }))[0])['required']) {
-      if (!(item['urlTemplate'])) {
+     return ((getObjectProperty(item, 'name')) == 'urlTemplate');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'urlTemplate'))) {
         isValid = false;
       }
     }
@@ -5265,23 +6410,23 @@ async function asyncListFilter(sourceList, callback) {
   ___arguments.context.pageData['btnSaveDisabled'] = true;
   ___arguments.context.pageData['btnSave'] = 'Saving...';
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=false', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=false', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), null)));
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    ___arguments.context.pageData['alertMessage'] = 'The data has been saved successfully';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
     await new Promise(r => setTimeout(r, 2000 || 0));
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    ___arguments.context.pageData['alertMessage'] = (error['message']);
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    ___arguments.context.pageData['alertMessage'] = (getObjectProperty(error, 'message'));
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
     await new Promise(r => setTimeout(r, 2000 || 0));
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
 
   }
 
@@ -5305,8 +6450,28 @@ define('./pages/mysql2/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', [
 define('./pages/mysql2/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5321,90 +6486,90 @@ async function asyncListFilter(sourceList, callback) {
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    if (item['urlTemplate']) {
-      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((item['urlTemplate'])));
+    if (getObjectProperty(item, 'urlTemplate')) {
+      isValid = ((new RegExp('jdbc:mysql://.*', '')).test((getObjectProperty(item, 'urlTemplate'))));
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'pattern');
-    }))[0])['required']) {
-      if (!(item['pattern'])) {
+     return ((getObjectProperty(item, 'name')) == 'pattern');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'pattern'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'host');
-    }))[0])['required']) {
-      if (!(item['host'])) {
+     return ((getObjectProperty(item, 'name')) == 'host');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'host'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'port');
-    }))[0])['required']) {
-      if (!(item['port'])) {
+     return ((getObjectProperty(item, 'name')) == 'port');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'port'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'user');
-    }))[0])['required']) {
-      if (!(item['user'])) {
+     return ((getObjectProperty(item, 'name')) == 'user');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'user'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'password');
-    }))[0])['required']) {
-      if (!(item['password'])) {
+     return ((getObjectProperty(item, 'name')) == 'password');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'password'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'maxActive');
-    }))[0])['required']) {
-      if (!(item['maxActive'])) {
+     return ((getObjectProperty(item, 'name')) == 'maxActive');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'maxActive'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'maxIdle');
-    }))[0])['required']) {
-      if (!(item['maxIdle'])) {
+     return ((getObjectProperty(item, 'name')) == 'maxIdle');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'maxIdle'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'minIdle');
-    }))[0])['required']) {
-      if (!(item['minIdle'])) {
+     return ((getObjectProperty(item, 'name')) == 'minIdle');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'minIdle'))) {
         isValid = false;
       }
     }
-    if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+    if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-     return ((item['name']) == 'urlTemplate');
-    }))[0])['required']) {
-      if (!(item['urlTemplate'])) {
+     return ((getObjectProperty(item, 'name')) == 'urlTemplate');
+    }))[0]), 'required')) {
+      if (!(getObjectProperty(item, 'urlTemplate'))) {
         isValid = false;
       }
     }
@@ -5415,23 +6580,23 @@ async function asyncListFilter(sourceList, callback) {
   ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
   ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
   try {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=true', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'))));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/mysql/shard?restart=true', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), null)));
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    ___arguments.context.pageData['alertMessage'] = 'The data was saved successfully';
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    ___arguments.context.pageData['alertMessage'] = 'The data has been saved successfully';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#fff';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
     await new Promise(r => setTimeout(r, 2000 || 0));
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
 
   } catch (error) {
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    ___arguments.context.pageData['alertMessage'] = (error['message']);
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
+    ___arguments.context.pageData['alertMessage'] = (getObjectProperty(error, 'message'));
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f'))['color'] = '#ffa500';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = 0;
     await new Promise(r => setTimeout(r, 2000 || 0));
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-(await ( async function (typeSize, component){ return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))['bottom'] = (String(-((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134'))))) + String('px'));
 
   }
 
@@ -5443,8 +6608,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mysql2/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5458,15 +6643,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'pattern');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'pattern');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
     }
   }
 
@@ -5478,8 +6663,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mysql2/components/322d59330616d696920fec1cba3f5519/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5493,23 +6698,45 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'maxActive');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'maxActive');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('2f64e73db50c4814bf82eaa10ad4dee9', true);
     }
   }
 
   },
   /* handler:onChange */
   /* handler:onValueAssignment */
-  onValueAssignment(___arguments) {
-      return (___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1')[(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name'])])
+  ['onValueAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (getObjectProperty(___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1'), (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name'))))
 
   },
   /* handler:onValueAssignment */
@@ -5519,8 +6746,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mysql2/components/f2cd77e13a5f3c9633a2a81f62910c09/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5534,12 +6781,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'pattern');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['pattern']) {
+   return ((getObjectProperty(item, 'name')) == 'pattern');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'pattern')) {
       visible = false;
     } else {
       visible = true;
@@ -5556,8 +6803,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mysql2/components/2f64e73db50c4814bf82eaa10ad4dee9/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
-    var item, visible;
+  async ['onDisplayAssignment'](___arguments) {
+    var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -5571,12 +6838,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'maxActive');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['maxActive']) {
+   return ((getObjectProperty(item, 'name')) == 'maxActive');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'maxActive')) {
       visible = false;
     } else {
       visible = true;
@@ -5593,13 +6860,13 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/mysql2/components/5e3f611a895a0c48231e90eda783d117/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  async onMounted(___arguments) {
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
-  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null));
-  ;(function (componentUid, listItems){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('5e3f611a895a0c48231e90eda783d117', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null)));
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  async ['onMounted'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null, null));
+  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('5e3f611a895a0c48231e90eda783d117', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null, null)));
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
 
   },
   /* handler:onMounted */
@@ -5620,24 +6887,44 @@ define('./pages/mysql2/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [
 define('./pages/mysql2/components/ef925676496420d56f57345d0dfd424e/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  onDisplayAssignment(___arguments) {
+  ['onDisplayAssignment'](___arguments) {
     var visible;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   visible = false;
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'pattern') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'pattern') {
     visible = true;
   }
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'host') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'host') {
     visible = true;
   }
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'user') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'user') {
     visible = true;
   }
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'password') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'password') {
     visible = true;
   }
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'urlTemplate') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'urlTemplate') {
     visible = true;
   }
 
@@ -5651,8 +6938,30 @@ define('./pages/mysql2/components/ef925676496420d56f57345d0dfd424e/bundle.js', [
 define('./pages/mysql2/components/f5c48fa916fb2cbc6ffa89cc1a7213a1/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  onDisplayAssignment(___arguments) {
-      return ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'enabled')
+  ['onDisplayAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'enabled')
 
   },
   /* handler:onDisplayAssignment */
@@ -5662,21 +6971,41 @@ define('./pages/mysql2/components/f5c48fa916fb2cbc6ffa89cc1a7213a1/bundle.js', [
 define('./pages/mysql2/components/e42148c2a25d4b52cd0dab7ff8f9ca6a/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  onDisplayAssignment(___arguments) {
+  ['onDisplayAssignment'](___arguments) {
     var visible;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   visible = false;
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'port') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'port') {
     visible = true;
   }
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'maxActive') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'maxActive') {
     visible = true;
   }
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'maxIdle') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'maxIdle') {
     visible = true;
   }
-  if ((___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name']) == 'minIdle') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name')) == 'minIdle') {
     visible = true;
   }
 
@@ -5690,8 +7019,30 @@ define('./pages/mysql2/components/e42148c2a25d4b52cd0dab7ff8f9ca6a/bundle.js', [
 define('./pages/mysql2/components/ffb46f1e64ca651da533c08c9633f67d/bundle.js', [], () => ({
   /* content */
   /* handler:onCheckedStateAssignment */
-  onCheckedStateAssignment(___arguments) {
-      return (___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1')[(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['name'])])
+  ['onCheckedStateAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (getObjectProperty(___arguments.context.getComponentDataStoreByUid('9f186f89932cdfe880554e43f4f916a1'), (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'name'))))
 
   },
   /* handler:onCheckedStateAssignment */
@@ -5933,12 +7284,32 @@ function textToTitleCase(str) {
 define('./pages/redis/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'host'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'host'));
   }
 
   return tooltip
@@ -5951,12 +7322,32 @@ define('./pages/redis/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', []
 define('./pages/redis/components/6ee9263676997e3caaa315452be887df/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'ssl'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'ssl'));
   }
 
   return tooltip
@@ -5969,12 +7360,32 @@ define('./pages/redis/components/6ee9263676997e3caaa315452be887df/bundle.js', []
 define('./pages/redis/components/cb32ffe5c76e4f69d148911494c6952e/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'port'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'port'));
   }
 
   return tooltip
@@ -5987,12 +7398,32 @@ define('./pages/redis/components/cb32ffe5c76e4f69d148911494c6952e/bundle.js', []
 define('./pages/redis/components/cd73b3928006379f77b53b870895e855/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
+  async ['onTooltipTextAssignment'](___arguments) {
     var tooltip;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'pool'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'pool'));
   }
 
   return tooltip
@@ -6005,12 +7436,32 @@ define('./pages/redis/components/cd73b3928006379f77b53b870895e855/bundle.js', []
 define('./pages/redis/components/b11bd95b7c781e9ce31e01ee1b83b966/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
-  async onTooltipTextAssignment(___arguments) {
-    var tooltip, item;
+  async ['onTooltipTextAssignment'](___arguments) {
+    var tooltip;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if (___arguments.context.pageData['description']) {
-    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((___arguments.context.pageData['description']), 'password'));
+  if (getObjectProperty(___arguments.context.pageData, 'description')) {
+    tooltip = (await BackendlessUI.Functions.Custom['fn_4f8fe7d853c915840a67685fa058d83f']((getObjectProperty(___arguments.context.pageData, 'description')), 'password'));
   }
 
   return tooltip
@@ -6067,10 +7518,10 @@ function getObjectProperty(object, propPath) {
   ___arguments.context.pageData['btnSaveDisabled'] = true;
   ___arguments.context.pageData['btnSave'] = 'Saving...';
   try {
-    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/redis/config?restart=false', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')))));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/redis/config?restart=false', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), null)));
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
@@ -6143,10 +7594,10 @@ function getObjectProperty(object, propPath) {
   ___arguments.context.pageData['btnSaveRestartDisabled'] = true;
   ___arguments.context.pageData['btnSaveRestart'] = 'Saving...';
   try {
-    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/redis/config?restart=true', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')))));
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/configuration/redis/config?restart=true', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), null)));
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
@@ -6218,8 +7669,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/redis/components/57c1dbc34b1c989c67cdeee5b059df3e/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -6233,15 +7704,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'port');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'port');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('49cfbb2af051f87d5dccc9944ddcb7b2', true);
     }
   }
 
@@ -6253,8 +7724,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/redis/components/febabf157a01b6cc64e1b8f62b1e1a32/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -6268,15 +7759,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'pool');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'pool');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
     }
   }
 
@@ -6288,8 +7779,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/redis/components/826adfb80e9fa3f9c4d409ef7c4fb6a8/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -6303,15 +7814,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'password');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'password');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
     }
   }
 
@@ -6323,8 +7834,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/redis/components/f6024c35a4be53e6b64b776ba73ce95c/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var vivsible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -6338,12 +7869,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'password');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['password']) {
+   return ((getObjectProperty(item, 'name')) == 'password');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'password')) {
       vivsible = false;
     } else {
       vivsible = true;
@@ -6417,8 +7948,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/redis/components/49cfbb2af051f87d5dccc9944ddcb7b2/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -6432,12 +7983,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'port');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['port']) {
+   return ((getObjectProperty(item, 'name')) == 'port');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'port')) {
       visible = false;
     } else {
       visible = true;
@@ -6454,8 +8005,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/redis/components/c37570257cfd551e117c464d74721426/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -6469,12 +8040,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'pool');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['pool']) {
+   return ((getObjectProperty(item, 'name')) == 'pool');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'pool')) {
       visible = false;
     } else {
       visible = true;
@@ -6639,19 +8210,40 @@ function getObjectProperty(object, propPath) {
   },
   /* handler:onClassListAssignment */
   /* handler:onContentAssignment */
-  onContentAssignment(___arguments) {
+  ['onContentAssignment'](___arguments) {
     var content2;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
 function textToTitleCase(str) {
-  return str.replace(/\S+/g,
-      function(txt) {return txt[0].toUpperCase() + txt.substring(1).toLowerCase();});
+ return str.replace(/\S+/g, function(txt) {
+   return txt[0].toUpperCase() + txt.substring(1).toLowerCase()
+ })
 }
 
 
-  if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'notInstalled') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'notInstalled') {
     content2 = 'Not Installed';
   } else {
-    content2 = textToTitleCase(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']);
+    content2 = textToTitleCase(getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status'));
   }
 
   return content2
@@ -6664,12 +8256,32 @@ function textToTitleCase(str) {
 define('./pages/serverStatus/components/24bf7b1a72e1b311f2ad3fe693ce165e/bundle.js', [], () => ({
   /* content */
   /* handler:onClassListAssignment */
-  onClassListAssignment(___arguments) {
+  ['onClassListAssignment'](___arguments) {
     var classList;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   classList = ['ServerStatus__ItemBtn'];
-  if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'running' || (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'changing') {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'running' || (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'changing') {
     classList = ['ServerStatus__ItemBtn', 'ServerStatus__ItemBtn--StopActive'];
   }
 
@@ -6678,16 +8290,34 @@ define('./pages/serverStatus/components/24bf7b1a72e1b311f2ad3fe693ce165e/bundle.
   },
   /* handler:onClassListAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-    var i;
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'running' || (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'changing') {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['name']),'state': 'stop','hidden': false })));
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'running' || (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'changing') {
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'name')),'state': 'stop','hidden': false }), null)));
     for (var count = 0; count < 3; count++) {
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('24bf7b1a72e1b311f2ad3fe693ce165e'))['border'] = '3px solid blue';
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('24bf7b1a72e1b311f2ad3fe693ce165e'))['border'] = '3px solid blue';
       await new Promise(r => setTimeout(r, 500 || 0));
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('24bf7b1a72e1b311f2ad3fe693ce165e'))['border'] = '';
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('24bf7b1a72e1b311f2ad3fe693ce165e'))['border'] = '';
       await new Promise(r => setTimeout(r, 500 || 0));
     }
   }
@@ -6719,13 +8349,34 @@ define('./pages/serverStatus/components/0856fd497a89d70cc7d2aa08ec3b5275/bundle.
 define('./pages/serverStatus/components/ff5a02b652d4cb723ed798626a4de138/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
-      if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'running' || (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'changing') {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['name']),'state': 'restart','hidden': false })));
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'running' || (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'changing') {
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'name')),'state': 'restart','hidden': false }), null)));
     for (var count = 0; count < 3; count++) {
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('ff5a02b652d4cb723ed798626a4de138'))['border'] = '3px solid blue';
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('ff5a02b652d4cb723ed798626a4de138'))['border'] = '3px solid blue';
       await new Promise(r => setTimeout(r, 500 || 0));
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('ff5a02b652d4cb723ed798626a4de138'))['border'] = '';
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('ff5a02b652d4cb723ed798626a4de138'))['border'] = '';
       await new Promise(r => setTimeout(r, 500 || 0));
     }
   }
@@ -6785,13 +8436,34 @@ define('./pages/serverStatus/components/637d6837ca5552e26e13e3fc9ed73b35/bundle.
   },
   /* handler:onClassListAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-      if ((___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['status']) == 'stopped') {
-    console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['name']),'state': 'start','hidden': false })));
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'status')) == 'stopped') {
+    console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'name')),'state': 'start','hidden': false }), null)));
     for (var count = 0; count < 3; count++) {
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('637d6837ca5552e26e13e3fc9ed73b35'))['border'] = '3px solid blue';
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('637d6837ca5552e26e13e3fc9ed73b35'))['border'] = '3px solid blue';
       await new Promise(r => setTimeout(r, 500 || 0));
-      ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('637d6837ca5552e26e13e3fc9ed73b35'))['border'] = '';
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('637d6837ca5552e26e13e3fc9ed73b35'))['border'] = '';
       await new Promise(r => setTimeout(r, 500 || 0));
     }
   }
@@ -6823,8 +8495,28 @@ define('./pages/serverStatus/components/1ce66859038118bc4e55de0f56dff638/bundle.
 define('./pages/serverStatus/components/1d560e5d54b6275603bda32524bb311e/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
@@ -6841,12 +8533,12 @@ async function asyncListFilter(sourceList, callback) {
 
 
   if (___arguments.value) {
-    addItemToList((___arguments.context.pageData['groupActionList']), ___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'));
+    addItemToList((getObjectProperty(___arguments.context.pageData, 'groupActionList')), ___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'));
   } else {
-    ___arguments.context.pageData['groupActionList'] = (await asyncListFilter((___arguments.context.pageData['groupActionList']), async (item) => {
+    ___arguments.context.pageData['groupActionList'] = (await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'groupActionList')), async (item) => {
 
 
-     return ((item['name']) != (___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['name']));
+     return ((getObjectProperty(item, 'name')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'name')));
     }));
   }
 
@@ -6858,16 +8550,16 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/serverStatus/components/6759802728a72cb9eab5aa54c34c639f/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  onChange(___arguments) {
+  ['onChange'](___arguments) {
     var j;
 
 
   if (___arguments.value) {
-    ___arguments.context.pageData['groupActionList'] = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
+    ___arguments.context.pageData['groupActionList'] = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
   } else {
     ___arguments.context.pageData['groupActionList'] = [];
   }
-  var j_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
+  var j_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
   for (var j_index in j_list) {
     j = j_list[j_index];
     j['checked'] = ___arguments.value;
@@ -6881,36 +8573,56 @@ define('./pages/serverStatus/components/6759802728a72cb9eab5aa54c34c639f/bundle.
 define('./pages/serverStatus/components/3495ed1250d912224aad061bd17776b6/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, item, groupActionList, currentItem, checkedItem;
 
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
 
-  var checkedItem_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  var checkedItem_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
   for (var checkedItem_index in checkedItem_list) {
     checkedItem = checkedItem_list[checkedItem_index];
     checkedItem['checked'] = false;
   }
   ___arguments.context.pageData['checkedAll'] = false;
-  groupActionList = (___arguments.context.pageData['groupActionList']);
+  groupActionList = (getObjectProperty(___arguments.context.pageData, 'groupActionList'));
   ___arguments.context.pageData['groupActionList'] = [];
   for (var checkedItem_index2 in groupActionList) {
     checkedItem = groupActionList[checkedItem_index2];
-    var currentItem_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('eabb8cf45a71bcf1946dc53f30c31b8e'));
+    var currentItem_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('eabb8cf45a71bcf1946dc53f30c31b8e'));
     for (var currentItem_index in currentItem_list) {
       currentItem = currentItem_list[currentItem_index];
-      if ((checkedItem['name']) == (currentItem['name'])) {
-        checkedItem['status'] = (currentItem['status']);
+      if ((getObjectProperty(checkedItem, 'name')) == (getObjectProperty(currentItem, 'name'))) {
+        checkedItem['status'] = (getObjectProperty(currentItem, 'status'));
       }
     }
   }
   for (var item_index in groupActionList) {
     item = groupActionList[item_index];
-    if ((item['status']) == 'running' || (item['status']) == 'changing') {
+    if ((getObjectProperty(item, 'status')) == 'running' || (getObjectProperty(item, 'status')) == 'changing') {
       try {
-        console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (item['name']),'state': 'stop','hidden': false })));
+        console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(item, 'name')),'state': 'stop','hidden': false }), null)));
 
       } catch (error) {
-        ;await ( async function (message){ alert(message) })((error['message']));
+        (function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
       }
     }
@@ -6946,7 +8658,7 @@ function getObjectProperty(object, propPath) {
   classList = ['ServerStatus__StopAllBtn'];
   if (getObjectProperty(___arguments.context.pageData, 'groupActionList')) {
     if ((getObjectProperty(___arguments.context.pageData, 'groupActionList')).length != 0) {
-      classList = ['ServerStatus__StopAllBtn bl-text', 'ServerStatus__StopAllBtn--active'];
+      classList = ['ServerStatus__StopAllBtn', 'ServerStatus__StopAllBtn--active'];
     }
   }
 
@@ -6960,36 +8672,56 @@ function getObjectProperty(object, propPath) {
 define('./pages/serverStatus/components/34d13e2e4e07a9777c29d843e202cb7e/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
-    var error, item, groupActionList, j, currentItem, checkedItem;
+  async ['onClick'](___arguments) {
+    var error, item, groupActionList, currentItem, checkedItem, j;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  var j_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
+  var j_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
   for (var j_index in j_list) {
     j = j_list[j_index];
     j['checked'] = false;
   }
   ___arguments.context.pageData['checkedAll'] = false;
-  groupActionList = (___arguments.context.pageData['groupActionList']);
+  groupActionList = (getObjectProperty(___arguments.context.pageData, 'groupActionList'));
   ___arguments.context.pageData['groupActionList'] = [];
   for (var checkedItem_index in groupActionList) {
     checkedItem = groupActionList[checkedItem_index];
-    var currentItem_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('eabb8cf45a71bcf1946dc53f30c31b8e'));
+    var currentItem_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('eabb8cf45a71bcf1946dc53f30c31b8e'));
     for (var currentItem_index in currentItem_list) {
       currentItem = currentItem_list[currentItem_index];
-      if ((checkedItem['name']) == (currentItem['name'])) {
-        checkedItem['status'] = (currentItem['status']);
+      if ((getObjectProperty(checkedItem, 'name')) == (getObjectProperty(currentItem, 'name'))) {
+        checkedItem['status'] = (getObjectProperty(currentItem, 'status'));
       }
     }
   }
   for (var item_index in groupActionList) {
     item = groupActionList[item_index];
-    if ((item['status']) == 'running' || (item['status']) == 'changing') {
+    if ((getObjectProperty(item, 'status')) == 'running' || (getObjectProperty(item, 'status')) == 'changing') {
       try {
-        console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (item['name']),'state': 'restart','hidden': false })));
+        console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(item, 'name')),'state': 'restart','hidden': false }), null)));
 
       } catch (error) {
-        ;await ( async function (message){ alert(message) })((error['message']));
+        (function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
       }
     }
@@ -7039,36 +8771,56 @@ function getObjectProperty(object, propPath) {
 define('./pages/serverStatus/components/295fb372f529cba18d6db14ddb7d3d2e/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
-    var error, item, groupActionList, j, currentItem, checkedItem;
+  async ['onClick'](___arguments) {
+    var error, item, groupActionList, currentItem, checkedItem, j;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
-  var j_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
+  var j_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
   for (var j_index in j_list) {
     j = j_list[j_index];
     j['checked'] = false;
   }
   ___arguments.context.pageData['checkedAll'] = false;
-  groupActionList = (___arguments.context.pageData['groupActionList']);
+  groupActionList = (getObjectProperty(___arguments.context.pageData, 'groupActionList'));
   ___arguments.context.pageData['groupActionList'] = [];
   for (var checkedItem_index in groupActionList) {
     checkedItem = groupActionList[checkedItem_index];
-    var currentItem_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('eabb8cf45a71bcf1946dc53f30c31b8e'));
+    var currentItem_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('eabb8cf45a71bcf1946dc53f30c31b8e'));
     for (var currentItem_index in currentItem_list) {
       currentItem = currentItem_list[currentItem_index];
-      if ((checkedItem['name']) == (currentItem['name'])) {
-        checkedItem['status'] = (currentItem['status']);
+      if ((getObjectProperty(checkedItem, 'name')) == (getObjectProperty(currentItem, 'name'))) {
+        checkedItem['status'] = (getObjectProperty(currentItem, 'status'));
       }
     }
   }
   for (var item_index in groupActionList) {
     item = groupActionList[item_index];
-    if ((item['status']) == 'stopped') {
+    if ((getObjectProperty(item, 'status')) == 'stopped') {
       try {
-        console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (item['name']),'state': 'start','hidden': false })));
+        console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(item, 'name')),'state': 'start','hidden': false }), null)));
 
       } catch (error) {
-        ;await ( async function (message){ alert(message) })((error['message']));
+        (function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
       }
     }
@@ -7241,23 +8993,122 @@ define('./pages/serverStatus/components/4848343c5f6a32b44795b38ac773dad8/bundle.
   /* content */
 }))
 
+define('./pages/serverStatus/components/1048939bfada9b55f6c9c9046d5faedf/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.pageData, 'groupActionList')) && (getObjectProperty(___arguments.context.pageData, 'groupActionList')).length != 0 ? 'Stop containers' : '')
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/serverStatus/components/23338c8d333a51f2b8126fbfdf8db3f8/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.pageData, 'groupActionList')) && (getObjectProperty(___arguments.context.pageData, 'groupActionList')).length != 0 ? 'Restart containers' : '')
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/serverStatus/components/85718c440461bd8656d8c51a19366fc2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.pageData, 'groupActionList')) && (getObjectProperty(___arguments.context.pageData, 'groupActionList')).length != 0 ? 'Start containers' : '')
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
 define('./pages/serviceLogs/components/7e437288f19344daa5a4bed75c728637/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'flex';
-  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length == 1) {
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')), 'ServerLogs__TabsLabel--active');
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'flex';
+  if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length == 1) {
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
     }
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
     }
   }
 
@@ -7269,20 +9120,20 @@ define('./pages/serviceLogs/components/7e437288f19344daa5a4bed75c728637/bundle.j
 define('./pages/serviceLogs/components/64b6f006eead4076cacfac687291d9c6/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'flex';
-  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length == 1) {
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')), 'ServerLogs__TabsLabel--active');
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'flex';
+  if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length == 1) {
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
     }
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
     }
   }
 
@@ -7294,27 +9145,27 @@ define('./pages/serviceLogs/components/64b6f006eead4076cacfac687291d9c6/bundle.j
 define('./pages/serviceLogs/components/184ed6e69bd6d8f1e8fc35c7403c36e5/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'flex';
-  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length == 1) {
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')), 'ServerLogs__TabsLabel--active');
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'flex';
+  if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length == 1) {
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
     }
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
     }
   }
 
   },
   /* handler:onClick */
   /* handler:onContentAssignment */
-  onContentAssignment(___arguments) {
+  ['onContentAssignment'](___arguments) {
       return 'Logs'
 
   },
@@ -7417,8 +9268,28 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
 define('./pages/serviceLogs/components/721f315c4f7e15987c55eda29943e742/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, currentStatus, currentService, service;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -7433,13 +9304,13 @@ async function asyncListFilter(sourceList, callback) {
 
 
   visible = true;
-  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
-    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')) {
+    currentService = (await asyncListFilter((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')), async (service) => {
 
 
-     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+     return ((getObjectProperty(service, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName')));
     }));
-    currentStatus = ((currentService[0])['status']);
+    currentStatus = (getObjectProperty((currentService[0]), 'status'));
     if (currentStatus == 'stopped') {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
       visible = false;
@@ -7459,15 +9330,36 @@ async function asyncListFilter(sourceList, callback) {
   },
   /* handler:onDisplayAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stopping...';
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stopping...';
   ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
-  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'stop','hidden': false })));
+  console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.pageData, 'serviceName')),'state': 'stop','hidden': false }), null)));
 
   },
   /* handler:onClick */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
 
   },
@@ -7478,8 +9370,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/serviceLogs/components/c0128152af0d6e8140ecf17af47e2651/bundle.js', [], () => ({
   /* content */
   /* handler:onClassListAssignment */
-  async onClassListAssignment(___arguments) {
+  async ['onClassListAssignment'](___arguments) {
     var classList, currentStatus, currentService, service;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -7494,13 +9406,13 @@ async function asyncListFilter(sourceList, callback) {
 
 
   classList = ['ServerLogs__ControlsIcon'];
-  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
-    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')) {
+    currentService = (await asyncListFilter((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')), async (service) => {
 
 
-     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+     return ((getObjectProperty(service, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName')));
     }));
-    currentStatus = ((currentService[0])['status']);
+    currentStatus = (getObjectProperty((currentService[0]), 'status'));
     if (currentStatus == 'running') {
       classList = ['ServerLogs__ControlsIcon', 'ServerLogs__ControlsIconRunning'];
     }
@@ -7582,16 +9494,37 @@ async function asyncListFilter(sourceList, callback) {
   },
   /* handler:onDisplayAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
   ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restarting...';
   ___arguments.context.pageData['restarting'] = true;
-  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'restart','hidden': false })));
+  console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.pageData, 'serviceName')),'state': 'restart','hidden': false }), null)));
 
   },
   /* handler:onClick */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
 
   },
@@ -7676,7 +9609,7 @@ async function asyncListFilter(sourceList, callback) {
   },
   /* handler:onClick */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
 
   },
@@ -7896,23 +9829,142 @@ define('./pages/serviceLogs/components/a5c83209f9141b769232623c80466917/bundle.j
   /* content */
 }))
 
+define('./pages/serviceLogs/components/b2ab50636f9e59e467a99f6b681d1001/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  async ['onDisplayAssignment'](___arguments) {
+    var currentService, currentStatus, service;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  currentStatus = '';
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')) {
+    currentService = (await asyncListFilter((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')), async (service) => {
+
+
+     return ((getObjectProperty(service, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName')));
+    }));
+    currentStatus = (getObjectProperty((currentService[0]), 'status'));
+  }
+
+  return (currentStatus && currentStatus != '')
+
+  },
+  /* handler:onDisplayAssignment */
+  /* handler:onTooltipTextAssignment */
+  async ['onTooltipTextAssignment'](___arguments) {
+    var currentStatus, currentService, service;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')) {
+    currentService = (await asyncListFilter((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')), async (service) => {
+
+
+     return ((getObjectProperty(service, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName')));
+    }));
+    currentStatus = (getObjectProperty((currentService[0]), 'status'));
+    if (currentStatus == 'running') {
+      return 'Running';
+    }
+    if (currentStatus == 'stopped') {
+      return 'Stopped';
+    }
+    if (currentStatus == 'notInstalled') {
+      return 'Not installed';
+    }
+    if (currentStatus == 'complete') {
+      return 'Complete';
+    }
+    if (currentStatus == 'changing') {
+      return 'Changing';
+    }
+  }
+
+  return ''
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
 define('./pages/serviceLogsCopy/components/7e437288f19344daa5a4bed75c728637/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'flex';
-  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length == 1) {
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')), 'ServerLogs__TabsLabel--active');
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'flex';
+  if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length == 1) {
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
     }
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
     }
   }
 
@@ -7924,20 +9976,20 @@ define('./pages/serviceLogsCopy/components/7e437288f19344daa5a4bed75c728637/bund
 define('./pages/serviceLogsCopy/components/64b6f006eead4076cacfac687291d9c6/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'flex';
-  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length == 1) {
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')), 'ServerLogs__TabsLabel--active');
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'flex';
+  if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length == 1) {
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).pop();
     }
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
     }
   }
 
@@ -7949,27 +10001,27 @@ define('./pages/serviceLogsCopy/components/64b6f006eead4076cacfac687291d9c6/bund
 define('./pages/serviceLogsCopy/components/184ed6e69bd6d8f1e8fc35c7403c36e5/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
-  ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'flex';
-  if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length == 1) {
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')), 'ServerLogs__TabsLabel--active');
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'flex';
+  if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length == 1) {
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')), 'ServerLogs__TabsLabel--active');
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).pop();
     }
-    if (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
+    if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length > 1) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).pop();
     }
   }
 
   },
   /* handler:onClick */
   /* handler:onContentAssignment */
-  onContentAssignment(___arguments) {
+  ['onContentAssignment'](___arguments) {
       return 'Logs'
 
   },
@@ -7993,8 +10045,28 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
   },
   /* handler:onBeforeUnmount */
   /* handler:onBeforeMount */
-  async onBeforeMount(___arguments) {
+  async ['onBeforeMount'](___arguments) {
     var error, pollingIntervalMS;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
 
@@ -8005,26 +10077,26 @@ function stopSetTimeout(timerId) {  const timers = getGlobalEntitiesMap('setInte
 function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEntitiesMap('setIntervals'); const timer = setInterval(callback, delay); if (timerId) {  stopSetTimeout(timerId);  timers[timerId] = timer }}
 
 
-  if (___arguments.context.appData['statusData']) {
-    ___arguments.context.dataModel['statusData'] = (___arguments.context.appData['statusData']);
+  if (getObjectProperty(___arguments.context.appData, 'statusData')) {
+    ___arguments.context.dataModel['statusData'] = (getObjectProperty(___arguments.context.appData, 'statusData'));
   } else {
     try {
-      ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+      ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null, null));
 
     } catch (error) {
-      ;await ( async function (message){ alert(message) })((error['message']));
+      (function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
     }
   }
   try {
-    pollingIntervalMS = ((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String((await ( async function (){ return window.location })())['origin']) + String('/settings.json')))).setEncoding('utf8').send())['pollingIntervalMS']);
+    pollingIntervalMS = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(getObjectProperty(((function () { return window.location })()), 'origin')) + String('/settings.json')))).setEncoding('utf8').send()), 'pollingIntervalMS'));
     if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
       pollingIntervalMS = 2000;
     }
 
     ;(function() {
       const callback = async () => {
-          ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null));
+          ___arguments.context.dataModel['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null, null));
 
       };
 
@@ -8035,7 +10107,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     })()
 
   } catch (error) {
-    ;await ( async function (message){ alert(message) })((error['message']));
+    (function (message) { alert(message) })((getObjectProperty(error, 'message')));
 
   }
 
@@ -8089,15 +10161,36 @@ async function asyncListFilter(sourceList, callback) {
   },
   /* handler:onDisplayAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stopping...';
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stopping...';
   ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
-  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'stop','hidden': false })));
+  console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.pageData, 'serviceName')),'state': 'stop','hidden': false }), null)));
 
   },
   /* handler:onClick */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
 
   },
@@ -8108,8 +10201,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/serviceLogsCopy/components/c0128152af0d6e8140ecf17af47e2651/bundle.js', [], () => ({
   /* content */
   /* handler:onClassListAssignment */
-  async onClassListAssignment(___arguments) {
+  async ['onClassListAssignment'](___arguments) {
     var classList, currentStatus, currentService, service;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -8124,13 +10237,13 @@ async function asyncListFilter(sourceList, callback) {
 
 
   classList = ['ServerLogs__ControlsIcon'];
-  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
-    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')) {
+    currentService = (await asyncListFilter((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')), async (service) => {
 
 
-     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+     return ((getObjectProperty(service, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName')));
     }));
-    currentStatus = ((currentService[0])['status']);
+    currentStatus = (getObjectProperty((currentService[0]), 'status'));
     if (currentStatus == 'running') {
       classList = ['ServerLogs__ControlsIcon', 'ServerLogs__ControlsIconRunning'];
     }
@@ -8212,16 +10325,37 @@ async function asyncListFilter(sourceList, callback) {
   },
   /* handler:onDisplayAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['stopBtnLabel'] = 'Stop';
   ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restarting...';
   ___arguments.context.pageData['restarting'] = true;
-  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'restart','hidden': false })));
+  console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.pageData, 'serviceName')),'state': 'restart','hidden': false }), null)));
 
   },
   /* handler:onClick */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
 
   },
@@ -8278,14 +10412,35 @@ async function asyncListFilter(sourceList, callback) {
   },
   /* handler:onDisplayAssignment */
   /* handler:onClick */
-  async onClick(___arguments) {
-      ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Starting...';
-  console.log(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (___arguments.context.pageData['serviceName']),'state': 'start','hidden': false })));
+  async ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Starting...';
+  console.log((await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/state', ({ 'serviceName': (getObjectProperty(___arguments.context.pageData, 'serviceName')),'state': 'start','hidden': false }), null)));
 
   },
   /* handler:onClick */
   /* handler:onMounted */
-  onMounted(___arguments) {
+  ['onMounted'](___arguments) {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
 
   },
@@ -8484,12 +10639,12 @@ define('./pages/serviceLogsCopy/components/7121511100ee1817f78309a7f31d0a72/bund
 define('./pages/ssl/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  async onMounted(___arguments) {
-      if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  async ['onMounted'](___arguments) {
+      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
   }
   await new Promise(r => setTimeout(r, 1000 || 0));
   ___arguments.context.pageData['description'] = (await (async function() {
@@ -8533,11 +10688,11 @@ define('./pages/ssl/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], 
 
   	  return data
   })());
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
   }
-  if ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
   }
 
   },
@@ -8548,19 +10703,39 @@ define('./pages/ssl/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], 
 define('./pages/ssl/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item, descriptionItem;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -8575,12 +10750,12 @@ define('./pages/ssl/components/5a537424c7d5f0fa5c2169ba52cdc3b9/bundle.js', [], 
     await new Promise(r => setTimeout(r, 1000 || 0));
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSave'] = 'Save';
     ___arguments.context.pageData['btnSaveDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -8604,19 +10779,39 @@ define('./pages/ssl/components/b4ac65b40f178182007af4f16afe24d6/bundle.js', [], 
 define('./pages/ssl/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     var error, isValid, item, descriptionItem;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   isValid = true;
-  var item_list = ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
+  var item_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1'));
   for (var item_index in item_list) {
     item = item_list[item_index];
-    var descriptionItem_list = (___arguments.context.pageData['description']);
+    var descriptionItem_list = (getObjectProperty(___arguments.context.pageData, 'description'));
     for (var descriptionItem_index in descriptionItem_list) {
       descriptionItem = descriptionItem_list[descriptionItem_index];
-      if (descriptionItem['required']) {
-        if (!(item[(descriptionItem['name'])])) {
+      if (getObjectProperty(descriptionItem, 'required')) {
+        if (!(getObjectProperty(item, (getObjectProperty(descriptionItem, 'name'))))) {
           isValid = false;
         }
       }
@@ -8631,12 +10826,12 @@ define('./pages/ssl/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], 
     await new Promise(r => setTimeout(r, 1000 || 0));
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data was saved successfully', '#fff', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, 'The data has been saved successfully', '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } catch (error) {
     ___arguments.context.pageData['btnSaveRestart'] = 'Save and Restart';
     ___arguments.context.pageData['btnSaveRestartDisabled'] = false;
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (error['message']), '#ffa500', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')))
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   }
 
@@ -8648,8 +10843,28 @@ define('./pages/ssl/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], 
 define('./pages/ssl/components/7e1ac109ebbe4db399af721c8b472bd2/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -8663,15 +10878,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'console domain');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'console domain');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f2cd77e13a5f3c9633a2a81f62910c09', true);
     }
   }
 
@@ -8683,8 +10898,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/ssl/components/febabf157a01b6cc64e1b8f62b1e1a32/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -8698,15 +10933,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'api domain');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'api domain');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('c37570257cfd551e117c464d74721426', true);
     }
   }
 
@@ -8718,8 +10953,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/ssl/components/826adfb80e9fa3f9c4d409ef7c4fb6a8/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  async onChange(___arguments) {
+  async ['onChange'](___arguments) {
     var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -8733,15 +10988,15 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'rt domain');
-  }))[0])['required']) {
+   return ((getObjectProperty(item, 'name')) == 'rt domain');
+  }))[0]), 'required')) {
     if (___arguments.value) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', false);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('f6024c35a4be53e6b64b776ba73ce95c', true);
     }
   }
 
@@ -8790,8 +11045,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/ssl/components/f2cd77e13a5f3c9633a2a81f62910c09/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -8805,12 +11080,12 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
-  if (((await asyncListFilter((___arguments.context.pageData['description']), async (item) => {
+  if (getObjectProperty(((await asyncListFilter((getObjectProperty(___arguments.context.pageData, 'description')), async (item) => {
 
 
-   return ((item['name']) == 'console domain');
-  }))[0])['required']) {
-    if (___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c')['console domain']) {
+   return ((getObjectProperty(item, 'name')) == 'console domain');
+  }))[0]), 'required')) {
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'console domain')) {
       visible = false;
     } else {
       visible = true;
@@ -8864,9 +11139,9 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/ssl/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  onMounted(___arguments) {
-      ___arguments.context.pageData['sslTabsControlsClassList'] = [((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7d97d60a1f160c6604a8db8ab50c3281')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('b75382fe405e12aee1f1100fcbcf26d2')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('0e6838cfa79de1a440dc2fd9ac29be19')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('35cf683c8b6df21bdab6d8418ca6285a')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('e846d674758698765e28762f57b71a46'))];
-  ___arguments.context.pageData['sslTabsClassList'] = [((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('bc363b1267216ba7fa3847177128a06a')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('164cfbd566af90c36cb55581c799fced')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('8af5b433d6e758a12aac416fe632bfc2')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('062ce57f4dfb9b98fc6f6af57eef8116')), ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('8acc8597ccc851b89eed36c68d48d033'))];
+  ['onMounted'](___arguments) {
+      ___arguments.context.pageData['sslTabsControlsClassList'] = [((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d97d60a1f160c6604a8db8ab50c3281')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('b75382fe405e12aee1f1100fcbcf26d2')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('0e6838cfa79de1a440dc2fd9ac29be19')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('35cf683c8b6df21bdab6d8418ca6285a')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('e846d674758698765e28762f57b71a46'))];
+  ___arguments.context.pageData['sslTabsClassList'] = [((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('bc363b1267216ba7fa3847177128a06a')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('164cfbd566af90c36cb55581c799fced')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('8af5b433d6e758a12aac416fe632bfc2')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('062ce57f4dfb9b98fc6f6af57eef8116')), ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('8acc8597ccc851b89eed36c68d48d033'))];
 
   },
   /* handler:onMounted */
@@ -8876,28 +11151,48 @@ define('./pages/ssl/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], 
 define('./pages/ssl/components/b75382fe405e12aee1f1100fcbcf26d2/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
-    var tabClasses, tabControlsClasses, list;
+  ['onClick'](___arguments) {
+    var tabClasses, tabControlsClasses;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  var tabControlsClasses_list = (___arguments.context.pageData['sslTabsControlsClassList']);
+  var tabControlsClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsControlsClassList'));
   for (var tabControlsClasses_index in tabControlsClasses_list) {
     tabControlsClasses = tabControlsClasses_list[tabControlsClasses_index];
     if (tabControlsClasses.length > 1) {
       tabControlsClasses.pop();
     }
   }
-  addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('b75382fe405e12aee1f1100fcbcf26d2')), 'ssl__TabsItem--active');
-  var tabClasses_list = (___arguments.context.pageData['sslTabsClassList']);
+  addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('b75382fe405e12aee1f1100fcbcf26d2')), 'ssl__TabsItem--active');
+  var tabClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsClassList'));
   for (var tabClasses_index in tabClasses_list) {
     tabClasses = tabClasses_list[tabClasses_index];
     if (tabClasses.length == 1) {
       addItemToList(tabClasses, 'ssl__hide');
     }
   }
-  ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('164cfbd566af90c36cb55581c799fced')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('164cfbd566af90c36cb55581c799fced')).pop();
 
   },
   /* handler:onClick */
@@ -8907,28 +11202,48 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 define('./pages/ssl/components/7d97d60a1f160c6604a8db8ab50c3281/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     var tabClasses, tabControlsClasses;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  var tabControlsClasses_list = (___arguments.context.pageData['sslTabsControlsClassList']);
+  var tabControlsClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsControlsClassList'));
   for (var tabControlsClasses_index in tabControlsClasses_list) {
     tabControlsClasses = tabControlsClasses_list[tabControlsClasses_index];
     if (tabControlsClasses.length > 1) {
       tabControlsClasses.pop();
     }
   }
-  addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7d97d60a1f160c6604a8db8ab50c3281')), 'ssl__TabsItem--active');
-  var tabClasses_list = (___arguments.context.pageData['sslTabsClassList']);
+  addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d97d60a1f160c6604a8db8ab50c3281')), 'ssl__TabsItem--active');
+  var tabClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsClassList'));
   for (var tabClasses_index in tabClasses_list) {
     tabClasses = tabClasses_list[tabClasses_index];
     if (tabClasses.length == 1) {
       addItemToList(tabClasses, 'ssl__hide');
     }
   }
-  ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('bc363b1267216ba7fa3847177128a06a')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('bc363b1267216ba7fa3847177128a06a')).pop();
 
   },
   /* handler:onClick */
@@ -8938,28 +11253,48 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 define('./pages/ssl/components/0e6838cfa79de1a440dc2fd9ac29be19/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     var tabClasses, tabControlsClasses;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  var tabControlsClasses_list = (___arguments.context.pageData['sslTabsControlsClassList']);
+  var tabControlsClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsControlsClassList'));
   for (var tabControlsClasses_index in tabControlsClasses_list) {
     tabControlsClasses = tabControlsClasses_list[tabControlsClasses_index];
     if (tabControlsClasses.length > 1) {
       tabControlsClasses.pop();
     }
   }
-  addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('0e6838cfa79de1a440dc2fd9ac29be19')), 'ssl__TabsItem--active');
-  var tabClasses_list = (___arguments.context.pageData['sslTabsClassList']);
+  addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('0e6838cfa79de1a440dc2fd9ac29be19')), 'ssl__TabsItem--active');
+  var tabClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsClassList'));
   for (var tabClasses_index in tabClasses_list) {
     tabClasses = tabClasses_list[tabClasses_index];
     if (tabClasses.length == 1) {
       addItemToList(tabClasses, 'ssl__hide');
     }
   }
-  ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('8af5b433d6e758a12aac416fe632bfc2')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('8af5b433d6e758a12aac416fe632bfc2')).pop();
 
   },
   /* handler:onClick */
@@ -9000,28 +11335,48 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 define('./pages/ssl/components/e846d674758698765e28762f57b71a46/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  onClick(___arguments) {
+  ['onClick'](___arguments) {
     var tabClasses, tabControlsClasses;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  var tabControlsClasses_list = (___arguments.context.pageData['sslTabsControlsClassList']);
+  var tabControlsClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsControlsClassList'));
   for (var tabControlsClasses_index in tabControlsClasses_list) {
     tabControlsClasses = tabControlsClasses_list[tabControlsClasses_index];
     if (tabControlsClasses.length > 1) {
       tabControlsClasses.pop();
     }
   }
-  addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('e846d674758698765e28762f57b71a46')), 'ssl__TabsItem--active');
-  var tabClasses_list = (___arguments.context.pageData['sslTabsClassList']);
+  addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('e846d674758698765e28762f57b71a46')), 'ssl__TabsItem--active');
+  var tabClasses_list = (getObjectProperty(___arguments.context.pageData, 'sslTabsClassList'));
   for (var tabClasses_index in tabClasses_list) {
     tabClasses = tabClasses_list[tabClasses_index];
     if (tabClasses.length == 1) {
       addItemToList(tabClasses, 'ssl__hide');
     }
   }
-  ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('8acc8597ccc851b89eed36c68d48d033')).pop();
+  ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('8acc8597ccc851b89eed36c68d48d033')).pop();
 
   },
   /* handler:onClick */
@@ -9076,7 +11431,7 @@ define('./pages/upgrade/components/9051123f6b4f94ef192265039293d4cd/bundle.js', 
   },
   /* handler:onDynamicItemsAssignment */
   /* handler:onBeforeUnmount */
-  async onBeforeUnmount(___arguments) {
+  async ['onBeforeUnmount'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -9129,7 +11484,7 @@ define('./pages/upgrade/components/9051123f6b4f94ef192265039293d4cd/bundle.js', 
 define('./pages/upgrade/components/8bc4792e519b80bac6992c938c05b82a/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
-  onContentAssignment(___arguments) {
+  ['onContentAssignment'](___arguments) {
       return ___arguments.context.dataModel
 
   },
@@ -9465,7 +11820,7 @@ define('./pages/upgradeLogs/components/9051123f6b4f94ef192265039293d4cd/bundle.j
   },
   /* handler:onDynamicItemsAssignment */
   /* handler:onBeforeUnmount */
-  async onBeforeUnmount(___arguments) {
+  async ['onBeforeUnmount'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -9816,18 +12171,18 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
   try {
     if (!(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userNameDisabled'))) {
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['createBtn'] = 'Creating...';
-      newUser = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/register', userData));
+      newUser = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/register', userData, null));
       userData['id'] = (getObjectProperty(newUser, 'id'));
     } else {
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['createBtn'] = 'Setting...';
-      await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', (String('/user/') + String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userId'))), userData);
+      await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', (String('/user/') + String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userId'))), userData, null);
     }
     if (!(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userNameDisabled'))) {
       addItemToList(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), userData);
       ___arguments.context.pageData['noUserMessage'] = false;
-      currentMessage = 'User has been successfully created';
+      currentMessage = 'User has been created successfully';
     } else {
-      currentMessage = 'Password was set successfully';
+      currentMessage = 'Password has been set successfully';
     }
     ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['userName'] = '';
     ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['password'] = '';
@@ -9859,11 +12214,11 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 define('./pages/userManagement/components/0681c698ed65058599f21cdecce92e8d/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  onChange(___arguments) {
+  ['onChange'](___arguments) {
       if (!___arguments.value) {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', true);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', true);
   } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
   }
 
   },
@@ -9874,17 +12229,38 @@ define('./pages/userManagement/components/0681c698ed65058599f21cdecce92e8d/bundl
 define('./pages/userManagement/components/a6868ac85ed520f809ceb0b4830d26ed/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  onChange(___arguments) {
-      if (!___arguments.value) {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', true);
-  } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  ['onChange'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
   }
-  if (___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['confirmPassword']) {
-    if ((___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['password']) != (___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['confirmPassword'])) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (!___arguments.value) {
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', true);
+  } else {
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  }
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'confirmPassword')) {
+    if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'password')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'confirmPassword'))) {
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
     }
   }
 
@@ -9896,20 +12272,41 @@ define('./pages/userManagement/components/a6868ac85ed520f809ceb0b4830d26ed/bundl
 define('./pages/userManagement/components/45d92809be072fc19a6f16beadcb1cd3/bundle.js', [], () => ({
   /* content */
   /* handler:onChange */
-  onChange(___arguments) {
-      if (!___arguments.value) {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', true);
+  ['onChange'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (!___arguments.value) {
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', true);
   } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
   }
   if (___arguments.value) {
-    if ((___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['password']) != (___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['confirmPassword'])) {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
+    if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'password')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'confirmPassword'))) {
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', true);
     } else {
-      ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+      (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
     }
   } else {
-    ;(function (componentUid, visible){ (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
   }
 
   },
@@ -10019,7 +12416,7 @@ async function closeModal(message, color) {
   ___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919')['btnDeleteDisabled'] = true;
   ___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919')['btnLabel'] = 'Deleting...';
   try {
-    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('delete', '/user', ({ 'id': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'id')) }));
+    await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('delete', '/user', ({ 'id': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'id')) }), null);
     (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await asyncListFilter(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')), async (user) => {
 
 
@@ -10028,7 +12425,7 @@ async function closeModal(message, color) {
     if (((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')).length == 0) {
       ___arguments.context.pageData['noUserMessage'] = true;
     }
-    await closeModal('User deleted successfully', '#fff');
+    await closeModal('User has been deleted successfully', '#fff');
 
   } catch (error) {
     await closeModal((getObjectProperty(error, 'message')), '#ff0000');
