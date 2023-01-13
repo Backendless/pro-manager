@@ -163,6 +163,8 @@ class InstallService {
         for (const [key, dependency] of Object.entries(blContainers.bl)) {
             await dependency.deleteService()
         }
+
+        installStatus.setServiceCreated(false)
     }
 
     async deleteService(serviceName) {
