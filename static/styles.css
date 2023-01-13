@@ -2509,10 +2509,12 @@ body {
   align-items: center;
   margin-top: -10px;
 }
+.ServerLogs__ControlsIconWrap {
+  margin-right: 16px;
+}
 .ServerLogs__ControlsIcon {
   width: 20px;
   height: 20px;
-  margin-right: 16px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -2538,6 +2540,18 @@ body {
   margin-left: 8px;
   align-items: center;
   cursor: pointer;
+}
+.ServerLogs__btn:hover {
+  background-color: #e6e6e6 !important;
+  transition: 0.5s;
+}
+.ServerLogs__btn:active {
+  background-color: #e6e6e6 !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 8px 1px;
+  transition: 0.2s;
+}
+.ServerLogs__btn:focus {
+  background-color: #e6e6e6 !important;
 }
 .ServerLogs__btn:first-child {
   margin-left: 0px;
@@ -2620,6 +2634,17 @@ body {
   color: #fff !important;
   margin-right: 10px;
   width: 115px;
+}
+.ServerLogs__ControlsBtn:hover {
+  background: #2a6597 !important;
+  transition: 0.5s;
+}
+.ServerLogs__ControlsBtn:active {
+  background: #2a6597 !important;
+}
+.ServerLogs__ControlsBtn:focus {
+  border: 2px solid #2a6597;
+  transition: 0.5s;
 }
 .ServerLogs__marker {
   background-color: yellow;
@@ -2887,10 +2912,17 @@ body {
 .ServerStatus__HeaderTitleProcess {
   margin-left: 35px;
 }
+.ServerStatus__BtnWrap {
+  margin-right: 8px;
+}
+.ServerStatus__StopAllBtnWrap {
+  margin-left: 20px;
+}
+.ServerStatus__StopAllBtn {
+  margin: 4px 0;
+}
 .ServerStatus__StopAllBtn::before {
   content: '';
-  margin-left: 20px;
-  margin-right: 8px;
   cursor: pointer;
   opacity: 0.2;
   border: 2px solid #303042;
@@ -2904,7 +2936,6 @@ body {
 }
 .ServerStatus__RestartAllBtn::before {
   content: url('./styles/images/restartAll.svg');
-  margin-right: 8px;
   cursor: pointer;
   opacity: 0.2;
 }
@@ -2928,10 +2959,12 @@ body {
 }
 .aside {
   width: 257px;
+  height: calc(100vh - 80px);
   background-color: #1B1E28;
   flex-direction: column;
   flex-shrink: 0;
   z-index: 100;
+  overflow-y: auto;
 }
 .aside__tab {
   width: 100%;
@@ -3102,13 +3135,13 @@ body {
 }
 .main {
   width: 100%;
+  height: calc(100vh - 80px);
   padding: 50px 10px 50px 98px;
   overflow: auto;
 }
 @media screen and (max-width: 1100px) {
   .main {
-    padding: 15px 0px 0px 10px;
-    margin-right: 10px;
+    padding: 15px 10px 0px 10px;
   }
 }
 .InputWrapper {
@@ -3175,11 +3208,34 @@ body {
   background: #1B76BC !important;
   color: #fff !important;
 }
+.MainButton:hover {
+  background: #2a6597 !important;
+  transition: 0.5s;
+}
+.MainButton:active {
+  background: #2a6597 !important;
+}
+.MainButton:focus {
+  border: 2px solid #2a6597;
+  transition: 0.5s;
+}
 .SaveButton {
   width: 118px;
   color: #1B76BC !important;
   border: 2px solid #1B76BC !important;
   margin-left: 20px;
+}
+.SaveButton:hover {
+  background-color: #e6e6e6 !important;
+  transition: 0.5s;
+}
+.SaveButton:active {
+  background-color: #e6e6e6 !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 8px 1px;
+  transition: 0.2s;
+}
+.SaveButton:focus {
+  background-color: #e6e6e6 !important;
 }
 .toggle .MuiSwitch-root {
   width: 27px;
@@ -3268,8 +3324,7 @@ body {
 }
 .alert {
   position: fixed;
-  bottom: -55px;
-  left: 0;
+  top: -55px;
   right: 0;
   justify-content: center;
   z-index: 200;
@@ -3277,11 +3332,10 @@ body {
 }
 .alert__inner {
   padding: 15px 25px;
-  background-color: #1B1E28;
-  border-radius: 5px;
+  background-color: #252B39;
   margin-bottom: 5px;
   max-width: 600px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .alert__text {
   color: #fff;
@@ -3343,6 +3397,17 @@ body {
   background: #1B76BC !important;
   color: #fff !important;
   width: 115px;
+}
+.ModalConfirm__btn:hover {
+  background: #2a6597 !important;
+  transition: 0.5s;
+}
+.ModalConfirm__btn:active {
+  background: #2a6597 !important;
+}
+.ModalConfirm__btn:focus {
+  border: 2px solid #2a6597;
+  transition: 0.5s;
 }
 .ModalConfirm__btn:last-child {
   margin-left: 10px;
@@ -3537,6 +3602,17 @@ body {
   align-items: center;
   cursor: pointer;
 }
+.CreateUpdateModal__UploadFileBtn:hover {
+  background: #2a6597 !important;
+  transition: 0.5s;
+}
+.CreateUpdateModal__UploadFileBtn:active {
+  background: #2a6597 !important;
+}
+.CreateUpdateModal__UploadFileBtn:focus {
+  border: 2px solid #2a6597;
+  transition: 0.5s;
+}
 @media screen and (max-width: 350px) {
   .CreateUpdateModal__UploadFileBtn {
     width: 75px;
@@ -3577,15 +3653,18 @@ body {
 .install__container {
   width: 65.76%;
 }
+.install__main {
+  margin: 80px auto 10px auto;
+}
 .install__main,
 .install__progress {
   width: 100%;
   max-width: 745px;
-  margin: 100px auto 50px auto;
   flex-direction: column;
 }
 .install__progress {
   align-items: flex-start;
+  margin: 100px auto 50px auto;
 }
 .install__LogoTitle {
   font-family: FuturaHeavy;
@@ -3698,6 +3777,7 @@ body {
   margin-right: 58px;
 }
 .install__ProgressStatusName {
+  word-break: ;
   font-family: FuturaBook, Arial, sans-serif;
   font-size: 20px;
   line-height: 23px;
@@ -3720,7 +3800,8 @@ body {
 .install__ProgressContainer {
   flex-direction: column;
   width: 100%;
-  max-height: 300px;
+  max-height: 430px;
+  overflow: hidden;
   overflow: auto;
 }
 .install__ProgressContainer::-webkit-scrollbar {
@@ -3734,6 +3815,7 @@ body {
   background-color: #ABB3BA;
 }
 .install__ProgressItem {
+  word-break: break-word;
   font-family: FuturaBook, Arial, sans-serif;
   font-size: 20px;
   line-height: 23px;
@@ -3742,7 +3824,7 @@ body {
   margin-bottom: 3px;
 }
 .install__ManageButton {
-  margin-top: 193px;
+  margin-top: 63px;
 }
 .install__ProgressRecord {
   display: block;
@@ -3987,6 +4069,9 @@ body {
   flex-direction: column;
   margin-bottom: 25px;
 }
+.management {
+  max-width: 100%;
+}
 .management__block {
   width: 100%;
   margin-bottom: 25px;
@@ -4014,8 +4099,14 @@ body {
   color: #414343;
   font-weight: 700;
 }
+.management__item {
+  justify-content: flex-start;
+}
 .management__ItemName {
   font-size: 22px;
+  margin-right: 100px;
+  line-height: 1.5;
+  word-break: break-word;
 }
 .management__NoUsersMessage {
   font-family: FuturaBook, Arial, sans-serif;
@@ -4092,7 +4183,7 @@ body {
 .CreateUser__MainButton {
   width: 140px;
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 990px) {
   .management__item {
     flex-direction: column;
     align-items: flex-start;
