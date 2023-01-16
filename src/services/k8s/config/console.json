@@ -103,7 +103,7 @@
                 }
               ],
               "readinessProbe": {
-                "failureThreshold": 80,
+                "failureThreshold": 40,
                 "httpGet": {
                   "path": "/health",
                   "port": 80,
