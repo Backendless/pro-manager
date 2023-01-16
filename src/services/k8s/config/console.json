@@ -73,6 +73,15 @@
               ],
               "image": "backendless/bl-web-console:6.4.7.2",
               "imagePullPolicy": "IfNotPresent",
+              "startupProbe": {
+                "failureThreshold": 80,
+                "periodSeconds": 10,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 80,
+                  "scheme": "HTTP"
+                }
+              },
               "livenessProbe": {
                 "failureThreshold": 2,
                 "httpGet": {
@@ -94,7 +103,7 @@
                 }
               ],
               "readinessProbe": {
-                "failureThreshold": 40,
+                "failureThreshold": 80,
                 "httpGet": {
                   "path": "/health",
                   "port": 80,

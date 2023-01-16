@@ -67,6 +67,15 @@
               "image": "backendless/bl-rt-server",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-rt-server",
+              "startupProbe": {
+                "failureThreshold": 80,
+                "periodSeconds": 10,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 2992,
+                  "scheme": "HTTP"
+                }
+              },
               "livenessProbe": {
                 "failureThreshold": 5,
                 "httpGet": {

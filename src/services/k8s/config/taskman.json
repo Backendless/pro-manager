@@ -113,6 +113,15 @@
               "image": "backendless/bl-server",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-taskman",
+              "startupProbe": {
+                "failureThreshold": 80,
+                "periodSeconds": 10,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 2400,
+                  "scheme": "HTTP"
+                }
+              },
               "livenessProbe": {
                 "failureThreshold": 6,
                 "httpGet": {
