@@ -80,6 +80,15 @@
               ],
               "image": "backendless/bl-coderunner-js:",
               "imagePullPolicy": "IfNotPresent",
+              "startupProbe": {
+                "failureThreshold": 80,
+                "periodSeconds": 10,
+                "httpGet": {
+                  "path": "/health",
+                  "port": 2400,
+                  "scheme": "HTTP"
+                }
+              },
               "livenessProbe": {
                 "failureThreshold": 3,
                 "httpGet": {

@@ -109,6 +109,15 @@
               "image": "backendless/bl-server",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-server",
+              "startupProbe": {
+                "failureThreshold": 80,
+                "periodSeconds": 10,
+                "httpGet": {
+                  "path": "/",
+                  "port": 9000,
+                  "scheme": "HTTP"
+                }
+              },
               "livenessProbe": {
                 "failureThreshold": 6,
                 "httpGet": {
