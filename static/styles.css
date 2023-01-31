@@ -231,79 +231,6 @@ body {
 /*****    component: autocomplete-google-places    *****/
 /*******************************************************/
 /*******************************************************/
-/***********************************/
-/***********************************/
-/*****    component: button    *****/
-.bl-button {
-  border-radius: 4px;
-}
-.bl-button .bl-icon {
-  color: inherit;
-}
-.bl-button.bl-button--small {
-  border-radius: 4px;
-}
-.bl-button.bl-button--large {
-  border-radius: 4px;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled) {
-  background: #337ab7;
-  color: #ffffff;
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
-.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-.bl-button.bl-button--contained.bl-button--disabled {
-  background: gray;
-  color: #ffffff;
-}
-.bl-button.bl-button--outlined:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-  border: 2px solid #337ab7;
-}
-.bl-button.bl-button--outlined.bl-button--disabled {
-  border: 2px solid gray;
-  color: gray;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled) {
-  background: transparent;
-  color: #337ab7;
-}
-.bl-button.bl-button--text:not(.bl-button--disabled):hover {
-  background: rgba(51, 122, 183, 0.04);
-}
-.bl-button.bl-button--text.bl-button--disabled {
-  color: gray;
-}
-/*****    component: button    *****/
-/***********************************/
-/***********************************/
-/**********************************/
-/**********************************/
-/*****    component: chart    *****/
-.bl-chart {
-  position: relative;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: chart    *****/
-/**********************************/
-/**********************************/
-/**********************************/
-/**********************************/
-/*****    component: block    *****/
-.bl-block {
-  display: flex;
-}
-/*****    component: block    *****/
-/**********************************/
-/**********************************/
 /***************************************************/
 /***************************************************/
 /*****    component: calendar-visualization    *****/
@@ -487,21 +414,79 @@ body {
 /*****    component: calendar-visualization    *****/
 /***************************************************/
 /***************************************************/
-/************************************************/
-/************************************************/
-/*****    component: chart-visualization    *****/
-.bl-chart-visualization {
+/**********************************/
+/**********************************/
+/*****    component: block    *****/
+.bl-block {
+  display: flex;
+}
+/*****    component: block    *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+/*****    component: chart    *****/
+.bl-chart {
   position: relative;
+  background-color: #FFF;
   border-radius: 4px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
-.bl-chart-visualization .bl-chart-visualization-preview {
-  background-color: #fff;
+/*****    component: chart    *****/
+/**********************************/
+/**********************************/
+/***********************************/
+/***********************************/
+/*****    component: button    *****/
+.bl-button {
+  border-radius: 4px;
 }
-/*****    component: chart-visualization    *****/
-/************************************************/
-/************************************************/
+.bl-button .bl-icon {
+  color: inherit;
+}
+.bl-button.bl-button--small {
+  border-radius: 4px;
+}
+.bl-button.bl-button--large {
+  border-radius: 4px;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled) {
+  background: #337ab7;
+  color: #ffffff;
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):active,
+.bl-button.bl-button--contained:not(.bl-button--disabled):not(.bl-button--unelevated):focus {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.bl-button.bl-button--contained.bl-button--disabled {
+  background: gray;
+  color: #ffffff;
+}
+.bl-button.bl-button--outlined:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+  border: 2px solid #337ab7;
+}
+.bl-button.bl-button--outlined.bl-button--disabled {
+  border: 2px solid gray;
+  color: gray;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled) {
+  background: transparent;
+  color: #337ab7;
+}
+.bl-button.bl-button--text:not(.bl-button--disabled):hover {
+  background: rgba(51, 122, 183, 0.04);
+}
+.bl-button.bl-button--text.bl-button--disabled {
+  color: gray;
+}
+/*****    component: button    *****/
+/***********************************/
+/***********************************/
 /*********************************/
 /*********************************/
 /*****    component: chip    *****/
@@ -560,6 +545,21 @@ body {
 /*****    component: chip    *****/
 /*********************************/
 /*********************************/
+/************************************************/
+/************************************************/
+/*****    component: chart-visualization    *****/
+.bl-chart-visualization {
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.bl-chart-visualization .bl-chart-visualization-preview {
+  background-color: #fff;
+}
+/*****    component: chart-visualization    *****/
+/************************************************/
+/************************************************/
 /*************************************/
 /*************************************/
 /*****    component: checkbox    *****/
@@ -608,110 +608,6 @@ body {
 /*****    component: checkbox    *****/
 /*************************************/
 /*************************************/
-/***************************************/
-/***************************************/
-/*****    component: data-table    *****/
-.bl-data-table {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  color: #000000;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-.bl-data-table .MuiButtonBase-root:not(.Mui-disabled) {
-  color: #000000;
-}
-.bl-data-table .MuiButtonBase-root:not(.Mui-disabled):hover {
-  color: #337ab7;
-}
-.bl-data-table .MuiInputBase-root {
-  color: #000000;
-}
-.bl-data-table .MuiInputBase-root .MuiInputAdornment-positionStart {
-  color: gray;
-}
-.bl-data-table .MuiInputBase-root input {
-  color: inherit;
-}
-.bl-data-table .MuiInputBase-root:before {
-  border-bottom: 1px solid gray;
-}
-.bl-data-table .MuiInputBase-root:hover:not(.Mui-disabled):before {
-  border-bottom: 1px solid #000000;
-}
-.bl-data-table .MuiInputBase-root:after {
-  border-bottom: 2px solid #337ab7;
-}
-.bl-data-table .bl-data-table-toolbar .bl-data-table-title {
-  color: NULL;
-}
-.bl-data-table .bl-data-table-toolbar .bl-data-table-search-field .MuiIconButton-root.Mui-disabled {
-  color: transparent;
-}
-.bl-data-table .bl-data-table-head-cell {
-  color: #000000;
-  font-size: NULL;
-  border-bottom: 1px solid gray;
-}
-.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root .MuiTableSortLabel-icon {
-  color: inherit;
-}
-.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active {
-  color: #337ab7;
-}
-.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
-  color: inherit;
-}
-.bl-data-table .bl-data-table-row td {
-  overflow-wrap: anywhere;
-  color: NULL;
-  border-bottom: 1px solid gray;
-}
-.bl-data-table .bl-data-table-row:nth-child(2n) {
-  background-color: NULL;
-}
-.bl-data-table .bl-data-table-row:nth-child(2n-1) {
-  background-color: NULL;
-}
-.bl-data-table .bl-data-table-row:hover {
-  background: NULL;
-}
-.bl-data-table .bl-data-table-row.Mui-selected {
-  background-color: NULL;
-}
-.bl-data-table .bl-data-table-edit-row .bl-data-table-field .MuiInputBase-root:before {
-  border-bottom: 1px solid #000000;
-}
-.bl-data-table .bl-data-table-pagination {
-  border-bottom: none;
-  color: #000000;
-}
-.bl-data-table .bl-data-table-pagination .MuiIconButton-root {
-  color: #000000;
-}
-.bl-data-table .bl-data-table-pagination .MuiIconButton-root.Mui-disabled {
-  color: gray;
-}
-.bl-data-table .bl-data-table-pagination .MuiTypography-caption {
-  color: gray;
-}
-.bl-data-table .bl-data-table-pagination .bl-data-table-pagination-select-icon {
-  color: inherit;
-}
-.bl-data-table ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-.bl-data-table ::-webkit-scrollbar {
-  width: 8px;
-}
-.bl-data-table ::-webkit-scrollbar-track {
-  background: transparent;
-}
-/*****    component: data-table    *****/
-/***************************************/
-/***************************************/
 /****************************************************/
 /****************************************************/
 /*****    component: data-grid-visualization    *****/
@@ -945,6 +841,135 @@ body {
 /*****    component: data-grid-visualization    *****/
 /****************************************************/
 /****************************************************/
+/***************************************/
+/***************************************/
+/*****    component: data-table    *****/
+.bl-data-table {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000000;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.bl-data-table .MuiButtonBase-root:not(.Mui-disabled) {
+  color: #000000;
+}
+.bl-data-table .MuiButtonBase-root:not(.Mui-disabled):hover {
+  color: #337ab7;
+}
+.bl-data-table .MuiInputBase-root {
+  color: #000000;
+}
+.bl-data-table .MuiInputBase-root .MuiInputAdornment-positionStart {
+  color: gray;
+}
+.bl-data-table .MuiInputBase-root input {
+  color: inherit;
+}
+.bl-data-table .MuiInputBase-root:before {
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .MuiInputBase-root:hover:not(.Mui-disabled):before {
+  border-bottom: 1px solid #000000;
+}
+.bl-data-table .MuiInputBase-root:after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-data-table .bl-data-table-toolbar .bl-data-table-title {
+  color: NULL;
+}
+.bl-data-table .bl-data-table-toolbar .bl-data-table-search-field .MuiIconButton-root.Mui-disabled {
+  color: transparent;
+}
+.bl-data-table .bl-data-table-head-cell {
+  color: #000000;
+  font-size: NULL;
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root .MuiTableSortLabel-icon {
+  color: inherit;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: #337ab7;
+}
+.bl-data-table .bl-data-table-head-cell .MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+  color: inherit;
+}
+.bl-data-table .bl-data-table-row td {
+  overflow-wrap: anywhere;
+  color: NULL;
+  border-bottom: 1px solid gray;
+}
+.bl-data-table .bl-data-table-row:nth-child(2n) {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-row:nth-child(2n-1) {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-row:hover {
+  background: NULL;
+}
+.bl-data-table .bl-data-table-row.Mui-selected {
+  background-color: NULL;
+}
+.bl-data-table .bl-data-table-edit-row .bl-data-table-field .MuiInputBase-root:before {
+  border-bottom: 1px solid #000000;
+}
+.bl-data-table .bl-data-table-pagination {
+  border-bottom: none;
+  color: #000000;
+}
+.bl-data-table .bl-data-table-pagination .MuiIconButton-root {
+  color: #000000;
+}
+.bl-data-table .bl-data-table-pagination .MuiIconButton-root.Mui-disabled {
+  color: gray;
+}
+.bl-data-table .bl-data-table-pagination .MuiTypography-caption {
+  color: gray;
+}
+.bl-data-table .bl-data-table-pagination .bl-data-table-pagination-select-icon {
+  color: inherit;
+}
+.bl-data-table ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.bl-data-table ::-webkit-scrollbar {
+  width: 8px;
+}
+.bl-data-table ::-webkit-scrollbar-track {
+  background: transparent;
+}
+/*****    component: data-table    *****/
+/***************************************/
+/***************************************/
+/************************************/
+/************************************/
+/*****    component: divider    *****/
+.bl-divider {
+  border-color: #337ab7;
+  border-width: 2px;
+}
+/*****    component: divider    *****/
+/************************************/
+/************************************/
+/*********************************/
+/*********************************/
+/*****    component: form    *****/
+.bl-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+/*****    component: form    *****/
+/*********************************/
+/*********************************/
 /********************************************/
 /********************************************/
 /*****    component: datetime-picker    *****/
@@ -1112,31 +1137,6 @@ body {
 /*****    component: datetime-picker    *****/
 /********************************************/
 /********************************************/
-/************************************/
-/************************************/
-/*****    component: divider    *****/
-.bl-divider {
-  border-color: #337ab7;
-  border-width: 2px;
-}
-/*****    component: divider    *****/
-/************************************/
-/************************************/
-/*********************************/
-/*********************************/
-/*****    component: form    *****/
-.bl-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-/*****    component: form    *****/
-/*********************************/
-/*********************************/
 /***************************************/
 /***************************************/
 /*****    component: google-map    *****/
@@ -1160,19 +1160,6 @@ body {
 /*****    component: icon    *****/
 /*********************************/
 /*********************************/
-/***********************************/
-/***********************************/
-/*****    component: iframe    *****/
-.bl-iframe {
-  flex: 1;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: iframe    *****/
-/***********************************/
-/***********************************/
 /****************************************/
 /****************************************/
 /*****    component: icon-button    *****/
@@ -1216,32 +1203,47 @@ body {
 /*****    component: image    *****/
 /**********************************/
 /**********************************/
-/*********************************************/
-/*********************************************/
-/*****    component: layout-container    *****/
-.bl-layout-container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  flex-shrink: 0;
+/***********************************/
+/***********************************/
+/*****    component: iframe    *****/
+.bl-iframe {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-@media (max-width: 479px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
+/*****    component: iframe    *****/
+/***********************************/
+/***********************************/
+/**************************************/
+/**************************************/
+/*****    component: jumbotron    *****/
+.bl-jumbotron {
+  display: flex;
+  flex-direction: column;
+  background: #dbdbdb;
+  box-shadow: NULL;
+  color: NULL;
+  border: NULL;
+  border-radius: 12px;
+  padding: 48px 24px 48px 24px;
+  margin: 0 0 48px 0;
 }
-@media (max-width: 839px) and (min-width: 480px) {
-  .bl-layout-container {
-    padding: 16px;
-  }
+/*****    component: jumbotron    *****/
+/**************************************/
+/**************************************/
+/*********************************/
+/*********************************/
+/*****    component: link    *****/
+.bl-link {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
 }
-@media (min-width: 840px) {
-  .bl-layout-container {
-    padding: 24px;
-  }
-}
-/*****    component: layout-container    *****/
-/*********************************************/
-/*********************************************/
+/*****    component: link    *****/
+/*********************************/
+/*********************************/
 /**********************************/
 /**********************************/
 /*****    component: input    *****/
@@ -1562,72 +1564,6 @@ body {
 /*****    component: layout-row    *****/
 /***************************************/
 /***************************************/
-/*********************************/
-/*********************************/
-/*****    component: link    *****/
-.bl-link {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: link    *****/
-/*********************************/
-/*********************************/
-/*********************************/
-/*********************************/
-/*****    component: page    *****/
-/*****    component: page    *****/
-/*********************************/
-/*********************************/
-/**********************************/
-/**********************************/
-/*****    component: panel    *****/
-.bl-panel {
-  background-color: #fff;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  padding: NULL;
-  margin: NULL;
-}
-/*****    component: panel    *****/
-/**********************************/
-/**********************************/
-/**************************************/
-/**************************************/
-/*****    component: paragraph    *****/
-.bl-paragraph {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: paragraph    *****/
-/**************************************/
-/**************************************/
-/************************************************/
-/************************************************/
-/*****    component: radio-buttons-group    *****/
-/*****    component: radio-buttons-group    *****/
-/************************************************/
-/************************************************/
-/**************************************/
-/**************************************/
-/*****    component: jumbotron    *****/
-.bl-jumbotron {
-  display: flex;
-  flex-direction: column;
-  background: #dbdbdb;
-  box-shadow: NULL;
-  color: NULL;
-  border: NULL;
-  border-radius: 12px;
-  padding: 48px 24px 48px 24px;
-  margin: 0 0 48px 0;
-}
-/*****    component: jumbotron    *****/
-/**************************************/
-/**************************************/
 /*****************************************/
 /*****************************************/
 /*****    component: radio-button    *****/
@@ -1676,42 +1612,70 @@ body {
 /*****    component: radio-button    *****/
 /*****************************************/
 /*****************************************/
-/************************************/
-/************************************/
-/*****    component: spinner    *****/
-.base-spinner {
-  position: relative;
-  animation: base-spinner_rotate 2s linear infinite;
-  color: #337ab7;
+/*********************************************/
+/*********************************************/
+/*****    component: layout-container    *****/
+.bl-layout-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-shrink: 0;
 }
-.base-spinner circle {
-  stroke-dasharray: 2, 400;
-  stroke-dashoffset: 0;
-  animation: base-spinner_dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-@keyframes base-spinner_rotate {
-  100% {
-    transform: rotate(360deg);
+@media (max-width: 479px) {
+  .bl-layout-container {
+    padding: 16px;
   }
 }
-@keyframes base-spinner_dash {
-  0% {
-    stroke-dasharray: 2, 400;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89, 400;
-    stroke-dashoffset: -124;
+@media (max-width: 839px) and (min-width: 480px) {
+  .bl-layout-container {
+    padding: 16px;
   }
 }
-/*****    component: spinner    *****/
-/************************************/
-/************************************/
+@media (min-width: 840px) {
+  .bl-layout-container {
+    padding: 24px;
+  }
+}
+/*****    component: layout-container    *****/
+/*********************************************/
+/*********************************************/
+/*********************************/
+/*********************************/
+/*****    component: page    *****/
+/*****    component: page    *****/
+/*********************************/
+/*********************************/
+/**************************************/
+/**************************************/
+/*****    component: paragraph    *****/
+.bl-paragraph {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: paragraph    *****/
+/**************************************/
+/**************************************/
+/**********************************/
+/**********************************/
+/*****    component: panel    *****/
+.bl-panel {
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: NULL;
+  margin: NULL;
+}
+/*****    component: panel    *****/
+/**********************************/
+/**********************************/
+/************************************************/
+/************************************************/
+/*****    component: radio-buttons-group    *****/
+/*****    component: radio-buttons-group    *****/
+/************************************************/
+/************************************************/
 /***********************************/
 /***********************************/
 /*****    component: select    *****/
@@ -1916,191 +1880,42 @@ body {
 /*****    component: select    *****/
 /***********************************/
 /***********************************/
-/*********************************/
-/*********************************/
-/*****    component: text    *****/
-.bl-text {
-  color: #000000;
-  font-size: NULL;
-  font-weight: NULL;
-}
-/*****    component: text    *****/
-/*********************************/
-/*********************************/
-/*************************************/
-/*************************************/
-/*****    component: textarea    *****/
-.bl-textarea.bl-textarea--outlined fieldset {
-  border-radius: 4px 4px 4px 4px;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-label {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-label--disabled {
-  color: gray;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-label--focused {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover fieldset {
-  border: NULL;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused {
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused fieldset {
-  border: 2px solid #337ab7;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled {
-  background-color: NULL;
-  color: gray;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled fieldset {
-  border: 2px solid gray;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--outlined .bl-textarea-input-root fieldset {
-  border: 2px solid #337ab7;
-  box-shadow: NULL;
-}
-.bl-textarea.bl-textarea--filled ::after {
-  border-bottom-color: #337ab7;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-label {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-label--disabled {
-  color: gray;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-label--focused {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root {
-  border-radius: 4px 4px 0 0;
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #eee;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--focused {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #f1f1f1;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--disabled {
-  border: NULL;
-  box-shadow: NULL;
-  background-color: #dbdbdb;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-label {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-label--disabled {
-  color: gray;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-label--focused {
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root::after {
-  border-bottom: 2px solid #337ab7;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root::before {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover::before {
-  border-bottom: calc(2px + 1px) solid #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--focused {
-  box-shadow: NULL;
-  color: #000000;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled {
-  box-shadow: NULL;
-  color: gray;
-}
-.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled::before {
-  border-bottom: 2px solid gray;
-}
-/*****    component: textarea    *****/
-/*************************************/
-/*************************************/
-/***********************************/
-/***********************************/
-/*****    component: switch    *****/
-.bl-switch .bl-switch-base {
+/************************************/
+/************************************/
+/*****    component: spinner    *****/
+.base-spinner {
+  position: relative;
+  animation: base-spinner_rotate 2s linear infinite;
   color: #337ab7;
 }
-.bl-switch .bl-switch-track {
-  background: #000000;
+.base-spinner circle {
+  stroke-dasharray: 2, 400;
+  stroke-dashoffset: 0;
+  animation: base-spinner_dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
 }
-.bl-switch .bl-switch-thumb {
-  background: #fff;
+@keyframes base-spinner_rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.bl-switch.bl-switch--checked .bl-switch-track {
-  background: #337ab7;
+@keyframes base-spinner_dash {
+  0% {
+    stroke-dasharray: 2, 400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 400;
+    stroke-dashoffset: -124;
+  }
 }
-.bl-switch.bl-switch--checked .bl-switch-thumb {
-  background: #337ab7;
-}
-.bl-switch.bl-switch--disabled .bl-switch-root {
-  opacity: 0.38;
-}
-.bl-switch.bl-switch--disabled .bl-switch-track {
-  opacity: 0.54;
-}
-.bl-switch.bl-switch--disabled .bl-switch-thumb {
-  opacity: 1;
-}
-/*****    component: switch    *****/
-/***********************************/
-/***********************************/
-/**********************************/
-/**********************************/
-/*****    component: video    *****/
-.bl-video {
-  border: 4px;
-  border-radius: 4px;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-/*****    component: video    *****/
-/**********************************/
-/**********************************/
+/*****    component: spinner    *****/
+/************************************/
+/************************************/
 /***********************************/
 /***********************************/
 /*****    component: slider    *****/
@@ -2189,6 +2004,58 @@ body {
 /*****    component: slider    *****/
 /***********************************/
 /***********************************/
+/***********************************/
+/***********************************/
+/*****    component: switch    *****/
+.bl-switch .bl-switch-base {
+  color: #337ab7;
+}
+.bl-switch .bl-switch-track {
+  background: #000000;
+}
+.bl-switch .bl-switch-thumb {
+  background: #fff;
+}
+.bl-switch.bl-switch--checked .bl-switch-track {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--checked .bl-switch-thumb {
+  background: #337ab7;
+}
+.bl-switch.bl-switch--disabled .bl-switch-root {
+  opacity: 0.38;
+}
+.bl-switch.bl-switch--disabled .bl-switch-track {
+  opacity: 0.54;
+}
+.bl-switch.bl-switch--disabled .bl-switch-thumb {
+  opacity: 1;
+}
+/*****    component: switch    *****/
+/***********************************/
+/***********************************/
+/**********************************/
+/**********************************/
+/*****    component: video    *****/
+.bl-video {
+  border: 4px;
+  border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+/*****    component: video    *****/
+/**********************************/
+/**********************************/
+/*********************************/
+/*********************************/
+/*****    component: text    *****/
+.bl-text {
+  color: #000000;
+  font-size: NULL;
+  font-weight: NULL;
+}
+/*****    component: text    *****/
+/*********************************/
+/*********************************/
 /*******************************************/
 /*******************************************/
 /*****    component: view-data-grid    *****/
@@ -2421,11 +2288,185 @@ body {
 /*****    component: view-data-grid    *****/
 /*******************************************/
 /*******************************************/
+/*************************************/
+/*************************************/
+/*****    component: textarea    *****/
+.bl-textarea.bl-textarea--outlined fieldset {
+  border-radius: 4px 4px 4px 4px;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover fieldset {
+  border: NULL;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused {
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--focused fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled {
+  background-color: NULL;
+  color: gray;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root.bl-textarea-input--disabled fieldset {
+  border: 2px solid gray;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--outlined .bl-textarea-input-root fieldset {
+  border: 2px solid #337ab7;
+  box-shadow: NULL;
+}
+.bl-textarea.bl-textarea--filled ::after {
+  border-bottom-color: #337ab7;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root {
+  border-radius: 4px 4px 0 0;
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #eee;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--focused {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #f1f1f1;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--filled .bl-textarea-input-root.bl-textarea-input--disabled {
+  border: NULL;
+  box-shadow: NULL;
+  background-color: #dbdbdb;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard:hover .bl-textarea-label:not(.bl-textarea-label--disabled):not(.bl-textarea-label--focused) {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label--disabled {
+  color: gray;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-label--focused {
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root::after {
+  border-bottom: 2px solid #337ab7;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root::before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root:not(.bl-textarea-input--focused):not(.bl-textarea-input--disabled):hover::before {
+  border-bottom: calc(2px + 1px) solid #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--focused {
+  box-shadow: NULL;
+  color: #000000;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled {
+  box-shadow: NULL;
+  color: gray;
+}
+.bl-textarea.bl-textarea--standard .bl-textarea-input-root.bl-textarea-input--disabled::before {
+  border-bottom: 2px solid gray;
+}
+/*****    component: textarea    *****/
+/*************************************/
+/*************************************/
 .mysql {
   width: 100%;
-  margin-bottom: 40px;
   max-width: 629px;
+  height: fit-content;
+  margin-bottom: 40px;
   flex-direction: column;
+}
+.mysql__wrap {
+  max-width: 380px;
+  flex-direction: column;
+}
+.mysql__KubernetesWrap {
+  max-width: 355px;
+}
+.mysql__RemoveWrap {
+  max-width: 550px;
+}
+@media screen and (max-width: 1100px) {
+  .mysql__RemoveWrap {
+    padding: 35px 15px;
+  }
+}
+.mysql__RemoveWrap .MainButton {
+  width: 140px;
+}
+.mysql__DataServiceWrap {
+  max-width: 480px;
+}
+.mysql__DataServiceWrap .mysql__FormGroup {
+  min-width: 245px;
+  width: 245px;
+}
+@media screen and (max-width: 380px) {
+  .mysql__DataServiceWrap .mysql__FormGroup {
+    min-width: 200px;
+    width: 200px;
+  }
+}
+.mysql__DataServiceWrap .mysql__ItemToggle .mysql__FormGroup {
+  min-width: auto;
+  width: auto;
+}
+@media screen and (max-width: 420px) {
+  .mysql__DomainsGeneralWrap .MainButton {
+    width: 162px;
+  }
 }
 .mysql__container {
   width: 100%;
@@ -2442,6 +2483,14 @@ body {
   font-size: 18px;
   line-height: 21px;
   color: #18181F;
+}
+.mysql__subtitle {
+  margin-bottom: 20px;
+  font-family: FuturaBook, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  color: #18181F;
+  text-align: justify;
 }
 .mysql .mysql__title--second {
   margin-top: 34px;
@@ -2465,16 +2514,19 @@ body {
   line-height: 16px;
   color: #414343;
   min-width: 80px;
+  margin-right: 10px;
 }
 .mysql__FormGroup {
-  width: 100%;
-  max-width: 491px;
   align-items: center;
   justify-content: space-between;
 }
 .mysql__loader {
   display: none;
   align-self: center;
+}
+.mysql .InputWrapper {
+  flex-direction: column;
+  position: relative;
 }
 @media screen and (max-width: 300px) {
   .mysql__MainButton {
@@ -2485,6 +2537,7 @@ body {
   width: 100%;
   max-width: 967px;
   flex-direction: column;
+  height: fit-content;
 }
 .ServerLogs__top {
   width: 100%;
@@ -2616,6 +2669,8 @@ body {
 }
 .ServerLogs__ContentLogs {
   display: block;
+  word-break: break-word;
+  flex-direction: column;
 }
 .ServerLogs__ControlsWrapper {
   margin-top: 20px;
@@ -2659,18 +2714,45 @@ body {
   .ServerLogs__controls {
     margin-top: 15px;
   }
+  .ServerLogs__ControlsWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ServerLogs__ControlsBtns {
+    order: 2;
+  }
+  .ServerLogs__ControlsFilter {
+    margin-bottom: 10px;
+    order: 1;
+  }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 490px) {
+  .ServerLogs__tabs {
+    justify-content: space-between;
+  }
   .ServerLogs__TabsLabel {
     padding: 0px 15px 8px 15px;
     font-size: 15px;
     line-height: 17px;
-    margin-right: 10px;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  .ServerLogs__ControlsBtns {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .ServerLogs__ControlsBtn {
+    width: 70%;
+    margin-bottom: 10px;
   }
 }
 .ServerStatus {
   width: 100%;
+  min-width: 740px;
   max-width: 967px;
+  height: fit-content;
   flex-direction: column;
 }
 .ServerStatus__links {
@@ -2678,6 +2760,8 @@ body {
 }
 .ServerStatus__LinkWrapper {
   margin-right: 97px;
+  margin-bottom: 10px;
+  max-width: 200px;
 }
 .ServerStatus__LinkWrapper:last-child {
   margin-right: 0;
@@ -2698,6 +2782,7 @@ body {
   cursor: pointer;
   color: #1B76BC;
   text-decoration: underline;
+  word-break: break-word;
 }
 .ServerStatus__item {
   width: 100%;
@@ -2706,7 +2791,7 @@ body {
   border-radius: 6px;
   align-items: center;
   margin-bottom: 8px;
-  min-width: 670px;
+  min-width: 740px;
 }
 .ServerStatus__item:last-child {
   margin-bottom: 0;
@@ -2716,7 +2801,7 @@ body {
 }
 .ServerStatus__ItemProcess {
   width: 25.57%;
-  min-width: 120px;
+  min-width: 170px;
   align-items: center;
 }
 .ServerStatus__ItemProcessVersion {
@@ -2725,7 +2810,7 @@ body {
 }
 .ServerStatus__ItemStatus {
   width: 18.45%;
-  min-width: 90px;
+  min-width: 100px;
 }
 .ServerStatus__ItemStatusControls {
   width: 40.56%;
@@ -2988,7 +3073,7 @@ body {
   position: absolute;
   right: 20px;
   top: 17px;
-  content: url('./styles/images/upArrov.png');
+  content: url('./styles/images/downArrow.png');
 }
 .aside__TabHeaderConfig::before {
   content: url('./styles/images/configIcon.png');
@@ -3104,6 +3189,19 @@ body {
 .DomainsGeneral__ItemsContainer {
   flex-direction: column;
 }
+.DomainsGeneral__ItemsContainer .mysql__item {
+  justify-content: flex-start;
+}
+.DomainsGeneral__ItemsContainer .mysql__ItemName {
+  margin-right: 55px;
+}
+@media screen and (max-width: 420px) {
+  .DomainsGeneral__ItemsContainer .mysql__ItemName {
+    margin-right: 10px;
+    min-width: 50px;
+    width: 50px;
+  }
+}
 @font-face {
   font-family: 'FuturaHeavy';
   src: url('./styles/fonts/futura/FuturaHeavyfont.ttf') format('truetype');
@@ -3128,6 +3226,51 @@ body {
   font-weight: 600;
   src: local(''), url('./styles/fonts/OpenSans/open-sans-v27-latin-600.woff2') format('woff2'), url('./styles/fonts/OpenSans/open-sans-v27-latin-600.woff') format('woff');
 }
+.text {
+  color: inherit;
+}
+.btn {
+  height: 34px;
+  border-radius: 2px !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  box-shadow: none;
+  border: 1px solid;
+  cursor: pointer;
+}
+.btn--default {
+  color: #333 !important;
+  background-color: #fff !important;
+  border-color: #ccc;
+}
+.btn--default:hover {
+  color: #333 !important;
+  background-color: #e6e6e6 !important;
+  border-color: #adadad;
+  box-shadow: none !important;
+}
+.btn--default:focus {
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+  box-shadow: none !important;
+}
+.btn--danger {
+  color: #fff !important;
+  background-color: #d9534f !important;
+  border-color: #d43f3a;
+}
+.btn--danger:hover {
+  background-color: #c9302c;
+  border-color: #ac2925;
+  box-shadow: none !important;
+}
+.btn--danger:focus {
+  background-color: #c9302c;
+  border-color: #761c19;
+  box-shadow: none !important;
+}
 .manage {
   width: 100%;
   flex-grow: 1;
@@ -3139,32 +3282,15 @@ body {
   padding: 50px 10px 50px 98px;
   overflow: auto;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1400px) {
   .main {
-    padding: 15px 10px 0px 10px;
+    padding: 50px 25px 50px 25px;
   }
 }
-.InputWrapper {
-  flex-direction: column;
-  width: 100%;
-  max-width: 454px;
-}
-.MuiOutlinedInput-notchedOutline {
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.MuiInputBase-input {
-  height: 34px;
-  border: 1px solid #73808D;
-  border-radius: 2px;
-  font-family: FuturaBook, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 16px;
-  color: #414343;
-  padding: 0 14px;
-  width: 100%;
-  box-sizing: border-box;
+@media screen and (max-width: 1100px) {
+  .main {
+    padding: 15px 10px 15px 10px;
+  }
 }
 .ValidationMessage {
   font-size: 12px;
@@ -3279,6 +3405,20 @@ body {
   cursor: pointer;
   margin-left: 5px;
   flex-shrink: 0;
+}
+.LoaderWrap {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.LoaderWrap .loader {
+  display: flex;
 }
 .loader,
 .loader:after {
@@ -3412,6 +3552,101 @@ body {
 .ModalConfirm__btn:last-child {
   margin-left: 10px;
 }
+.ModalRemove {
+  font-family: 'Open Sans', sans-serif;
+}
+.ModalRemove__content {
+  width: 600px;
+  align-items: flex-start;
+}
+.ModalRemove__header {
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #db6f6f;
+  color: #fff;
+  background-color: #fc8181;
+}
+.ModalRemove__HeaderIcon {
+  background-image: url('./styles/images/warning-exclamation.svg');
+  width: 20px;
+  height: 18px;
+}
+.ModalRemove__title {
+  padding-left: 5px;
+}
+.ModalRemove__CloseIcon {
+  text-shadow: 0 1px 0 #fff;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  appearance: none;
+  opacity: 0.2;
+}
+.ModalRemove__body {
+  width: 100%;
+  flex-direction: column;
+  padding: 15px;
+}
+.ModalRemove__BodyTitle {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #333333;
+}
+.ModalRemove__ItemBl {
+  flex-direction: column;
+}
+.ModalRemove__InputBl {
+  flex-direction: column;
+}
+.ModalRemove__InputTitle {
+  margin: 15px 0 5px;
+  font-size: 12px;
+  color: #777777;
+}
+.ModalRemove__InputField .MuiInputBase-input {
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  box-sizing: border-box;
+}
+.ModalRemove__InputField fieldset {
+  border: 0 !important;
+}
+.ModalRemove__footer {
+  width: 100%;
+  justify-content: flex-end;
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+  background: #f4f4f4;
+}
+.ModalRemove__footer .btn {
+  margin-left: 10px;
+  text-transform: uppercase !important;
+}
+.ModalRemove .ModalConfirm__content {
+  max-width: initial;
+  padding: 0;
+}
+.ModalRemove .ModalConfirm__btn {
+  text-transform: uppercase !important;
+}
+.open {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 .header {
   width: 100%;
   min-height: 80px;
@@ -3484,6 +3719,12 @@ body {
   width: 280px;
   word-break: break-all;
 }
+@media screen and (max-width: 990px) {
+  .ingress__DomainLabel {
+    width: auto;
+    padding-right: 20px;
+  }
+}
 .ingress__sslEnabledLabel {
   width: 50px;
   color: #ff0000;
@@ -3494,6 +3735,7 @@ body {
 }
 .ingress__CertificateLabel {
   max-width: 400px;
+  margin-right: 10px;
   word-break: break-all;
 }
 .ingress__disabled {
@@ -3531,7 +3773,6 @@ body {
   border-radius: 5px;
   margin: 7px;
   max-width: 500px;
-  height: 270px;
   width: 100%;
   align-items: center;
 }
@@ -3558,6 +3799,7 @@ body {
 .CreateUpdateModal__FormGroup {
   width: 100%;
   flex-direction: column;
+  margin-left: 10px;
 }
 .CreateUpdateModal__CloseBtn {
   position: absolute;
@@ -3582,9 +3824,11 @@ body {
   line-height: 16px;
   color: #414343;
   min-width: 100px;
+  width: 100px;
 }
 .CreateUpdateModal__MainButton {
   width: 140px;
+  margin-top: 15px;
 }
 .CreateUpdateModal__UploadFileBtn {
   height: 34px;
@@ -3744,22 +3988,29 @@ body {
   text-decoration: underline;
   color: #1B76BC;
 }
+.install__IconWrap {
+  margin: 15px 0 0 19px;
+}
 .install__RestoteIcon {
-  margin-left: 20px;
+  opacity: 1;
   cursor: pointer;
-  margin-top: 5px;
 }
 .install__RestoteIcon::after {
   content: url('./styles/images/BackIcon.png');
 }
+.install__RestoteIcon.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
 .install__FormGroupTextArea {
   padding-right: 37px;
 }
-.install__FormGroupPassword {
-  padding-right: 7px;
-}
 .install__TextArea {
   width: 100%;
+}
+.install__LinkWrapper {
+  margin: 5px 0 20px 0px;
+  line-height: 1;
 }
 .install__BeginButton {
   margin-top: 73px;
@@ -3843,12 +4094,14 @@ body {
   z-index: 5;
 }
 .install__IconEye {
-  width: 32px;
-  height: 32px;
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
   background-position: center, center;
   opacity: 0.5;
   cursor: pointer;
   margin-top: 1px;
+  margin-left: -7px;
 }
 .install__IconEye--open {
   background-image: url('./styles/images/eye_visible.png');
@@ -3903,6 +4156,20 @@ body {
     margin-right: 15px;
   }
 }
+@media screen and (max-width: 420px) {
+  .install__FormItem {
+    flex-direction: column;
+  }
+  .install__FieldDescription {
+    padding-bottom: 15px;
+  }
+}
+.login .install__FormGroupPassword {
+  margin-right: 20px;
+}
+.login .install__IconEye {
+  margin-top: 14px;
+}
 .ssl {
   width: 100%;
   margin-bottom: 40px;
@@ -3946,6 +4213,10 @@ body {
   max-width: 454px;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+.ssl__FormGroup .InputWrapper {
+  flex-direction: column;
 }
 .ssl__hide {
   display: none;
@@ -4004,7 +4275,7 @@ body {
 .UpgradeControl__icon {
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: calc(50% - 12px);
   color: #18181F;
   cursor: pointer;
 }
@@ -4130,15 +4401,14 @@ body {
   transition: opacity, 0.4s;
 }
 .CreateUser__main {
-  padding: 0px 15px;
+  padding: 20px;
   position: relative;
   background-color: #fff;
   border: 1px solid #1B76BC;
   border-radius: 5px;
   margin: 7px;
-  max-width: 500px;
+  max-width: 460px;
   width: 100%;
-  height: 285px;
   align-items: center;
 }
 .CreateUser__form {
@@ -4152,9 +4422,9 @@ body {
   margin-bottom: 15px;
 }
 .CreateUser__FormGroup {
-  max-width: 300px;
   width: 100%;
   flex-direction: column;
+  margin-left: 10px;
 }
 .CreateUser__CloseBtn {
   position: absolute;
@@ -4164,14 +4434,16 @@ body {
   cursor: pointer;
 }
 .CreateUser__title {
-  justify-content: center;
   margin-bottom: 15px;
 }
 .CreateUser__TitleText {
+  margin: 0px 0px 20px;
   font-family: FuturaBook, Arial, sans-serif;
   font-size: 17px;
   line-height: 21px;
   color: #18181F;
+  font-size: 26px;
+  text-transform: uppercase;
 }
 .CreateUser__label {
   font-family: FuturaBook, Arial, sans-serif;
@@ -4179,9 +4451,11 @@ body {
   line-height: 16px;
   color: #414343;
   min-width: 100px;
+  width: 100px;
 }
 .CreateUser__MainButton {
   width: 140px;
+  margin-top: 15px;
 }
 @media screen and (max-width: 990px) {
   .management__item {
@@ -4195,9 +4469,6 @@ body {
 @media screen and (max-width: 375px) {
   .management__SetPasswordBtn {
     width: 145px;
-  }
-  .management__DeleteBtn {
-    width: 80px;
   }
 }
 .FontTitle {

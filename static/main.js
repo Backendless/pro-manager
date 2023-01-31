@@ -745,30 +745,6 @@ define('./pages/certificates/components/1744db9f250d6ba85e3435fc3be3660e/bundle.
   /* content */
 }))
 
-define('./pages/dataService/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
-  /* content */
-  /* handler:onMounted */
-  async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
-  }
-  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/describe', null, null));
-  ___arguments.context.pageData['dataContainer'] = [(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/config', null, null))];
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
-  }
-
-  },
-  /* handler:onMounted */
-  /* content */
-}))
-
 define('./pages/dataService/components/198c9c59e5389ad5ff37a4bb3e22bce5/bundle.js', [], () => ({
   /* content */
   /* handler:onTooltipTextAssignment */
@@ -1864,60 +1840,18 @@ define('./pages/dataService/components/page/bundle.js', [], () => ({
   /* content */
 }))
 
-define('./pages/domainsGeneral/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
+define('./pages/dataService/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-    var mainListData, item, dataObject, dataKey, descriptionObject, dataKeys, error;
-
-function getObjectProperty(object, propPath) {
-  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
-    return object[propPath]
-  }
-
-  const propsNamesList = propPath.split('.')
-
-  let result = object
-
-  for (let i = 0; i < propsNamesList.length; i++) {
-    if (!result || result[propsNamesList[i]] === undefined) {
-      return
-    }
-
-    result = result[propsNamesList[i]]
-  }
-
-  return result
-}
-
-
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
   }
-  try {
-    descriptionObject = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/domain/describe', null));
-    dataObject = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/domain', null));
-
-  } catch (error) {
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
-    if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-    }
-    return ;
-
-  }
-  dataKeys = (Object.keys(dataObject));
-  mainListData = [];
-  for (var dataKey_index in dataKeys) {
-    dataKey = dataKeys[dataKey_index];
-    mainListData.push(({ 'itemName': dataKey,'dataItemList': (await Promise.all((getObjectProperty(descriptionObject, dataKey)).map(async item => {  item['data'] = (getObjectProperty((getObjectProperty(dataObject, dataKey)), (getObjectProperty(item, 'name'))));
-      item['isValid'] = true;
-    ; return item;}))) }));
-  }
-  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', mainListData);
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/describe', null, null));
+  ___arguments.context.pageData['dataContainer'] = [(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/config', null, null))];
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
   }
@@ -2245,6 +2179,72 @@ function textToTitleCase(str) {
   /* content */
 }))
 
+define('./pages/domainsGeneral/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async ['onMounted'](___arguments) {
+    var mainListData, item, dataObject, dataKey, descriptionObject, dataKeys, error;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  }
+  try {
+    descriptionObject = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/domain/describe', null, null));
+    dataObject = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/domain', null, null));
+
+  } catch (error) {
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+    }
+    return ;
+
+  }
+  dataKeys = (Object.keys(dataObject));
+  mainListData = [];
+  for (var dataKey_index in dataKeys) {
+    dataKey = dataKeys[dataKey_index];
+    mainListData.push(({ 'itemName': dataKey,'dataItemList': (await Promise.all((getObjectProperty(descriptionObject, dataKey)).map(async item => {  item['data'] = (getObjectProperty((getObjectProperty(dataObject, dataKey)), (getObjectProperty(item, 'name'))));
+      item['isValid'] = true;
+    ; return item;}))) }));
+  }
+  ___arguments.context.pageData['mainListData'] = mainListData;
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  }
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
 define('./pages/home/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
@@ -2292,7 +2292,7 @@ define('./pages/ingress/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', 
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-    var descriptions, item, j, mainData, serverData, voidData;
+    var mainData, item, j, descriptions, serverData, voidData;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -3775,7 +3775,7 @@ define('./pages/install/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async ['onEnter'](___arguments) {
-    var error;
+    var error, item;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -3797,6 +3797,17 @@ function getObjectProperty(object, propPath) {
   return result
 }
 
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
 
   localStorage.removeItem('originLoad');
   try {
@@ -3805,7 +3816,19 @@ function getObjectProperty(object, propPath) {
     ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['version'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version'));
     ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['mountPath'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath'));
     ___arguments.context.pageData['initialVersions'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/version/docker-hub/v2/repositories/backendless/bl-server/tags/', null, ({ 'page_size': 20,'page': 1,'ordering': 'last_updated' })));
-    ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['versions'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'initialVersions')), 'results'));
+    ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['versions'] = (await asyncListFilter((getObjectProperty((getObjectProperty(___arguments.context.pageData, 'initialVersions')), 'results')), async (item) => {
+
+
+     return (!(await (async function(str) {
+    	let stage = str.includes('stage')
+    	return stage
+    })((getObjectProperty(item, 'name')))) && !(await (async function(str) {
+    	let dev = str.includes('dev')
+    	return dev
+
+
+    })((getObjectProperty(item, 'name')))));
+    }));
 
   } catch (error) {
     (function (message) { alert(message) })((getObjectProperty(error, 'message')));
@@ -3907,7 +3930,64 @@ function getObjectProperty(object, propPath) {
 define('./pages/install/components/9f7934c39503931ea43f9ee94d1f6a42/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  ['onClick'](___arguments) {
+  async ['onClick'](___arguments) {
+    var item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
+
+  if ((getObjectProperty(___arguments.context.pageData, 'defaults')) && (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version'))) {
+    ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['version'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version'));
+    if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'versionsData')) {
+      ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['versions'] = (await asyncListFilter((getObjectProperty((getObjectProperty(___arguments.context.pageData, 'initialVersions')), 'results')), async (item) => {
+
+
+       return (!(await (async function(str) {
+      	let stage = str.includes('stage')
+      	return stage
+      })((getObjectProperty(item, 'name')))) && !(await (async function(str) {
+      	let dev = str.includes('dev')
+      	return dev
+
+
+      })((getObjectProperty(item, 'name')))) ? (getObjectProperty(___arguments.context.pageData, 'initialVersions')) : []);
+      }));
+    }
+  }
+
+  },
+  /* handler:onClick */
+  /* handler:onClassListAssignment */
+  ['onClassListAssignment'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -3929,11 +4009,14 @@ define('./pages/install/components/9f7934c39503931ea43f9ee94d1f6a42/bundle.js', 
 }
 
 
-  ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['version'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version'));
-  ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['versions'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'initialVersions')), 'results'));
+  if ((getObjectProperty(___arguments.context.pageData, 'defaults')) && (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version')) == (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version'))) {
+    return ['install__RestoteIcon', 'disabled'];
+  }
+
+  return ['install__RestoteIcon']
 
   },
-  /* handler:onClick */
+  /* handler:onClassListAssignment */
   /* content */
 }))
 
@@ -3962,10 +4045,43 @@ define('./pages/install/components/2f0a1b82b8aead5435946a3ca6fac65d/bundle.js', 
 }
 
 
-  ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['mountPath'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath'));
+  if ((getObjectProperty(___arguments.context.pageData, 'defaults')) && (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath'))) {
+    ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['mountPath'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath'));
+  }
 
   },
   /* handler:onClick */
+  /* handler:onClassListAssignment */
+  ['onClassListAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.context.pageData, 'defaults')) && (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath')) == (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath'))) {
+    return ['install__RestoteIcon', 'disabled'];
+  }
+
+  return ['install__RestoteIcon']
+
+  },
+  /* handler:onClassListAssignment */
   /* content */
 }))
 
@@ -3973,7 +4089,9 @@ define('./pages/install/components/34e44f5c92b925058875bc26cf2d0263/bundle.js', 
   /* content */
   /* handler:onFocus */
   ['onFocus'](___arguments) {
-    function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+    var item;
+
+function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
   if (!(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('223a2e183edd48bf16b8c1016369be95')).includes('UpgradeControl__icon--rotated'))) {
@@ -3985,7 +4103,7 @@ define('./pages/install/components/34e44f5c92b925058875bc26cf2d0263/bundle.js', 
   /* handler:onFocus */
   /* handler:onChange */
   async ['onChange'](___arguments) {
-    var versionsData;
+    var item, versionsData;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -4007,12 +4125,35 @@ function getObjectProperty(object, propPath) {
   return result
 }
 
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
+}
+
 
   versionsData = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/version/docker-hub/v2/repositories/backendless/bl-server/tags/', null, ({ 'page_size': 100,'page': 1,'ordering': 'last_updated','name': ___arguments.value })));
   if ((getObjectProperty(versionsData, 'results')).length == 0) {
     ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['versions'] = [({ 'name': 'Nothing found' })];
   } else {
-    ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['versions'] = (getObjectProperty(versionsData, 'results'));
+    ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['versions'] = (await asyncListFilter((getObjectProperty(versionsData, 'results')), async (item) => {
+
+
+     return (!(await (async function(str) {
+    	let stage = str.includes('stage')
+    	return stage
+    })((getObjectProperty(item, 'name')))) && !(await (async function(str) {
+    	let dev = str.includes('dev')
+    	return dev
+
+
+    })((getObjectProperty(item, 'name')))));
+    }));
   }
 
   },
@@ -4145,6 +4286,12 @@ define('./pages/install/components/90d8c3571dc2b58b3ce53fd97a5af9d9/bundle.js', 
 
   },
   /* handler:onClick */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+      return 'Show password'
+
+  },
+  /* handler:onTooltipTextAssignment */
   /* content */
 }))
 
@@ -4179,16 +4326,20 @@ define('./pages/install/components/891bf3ca729d37cf46cc1e6329c36163/bundle.js', 
 
   },
   /* handler:onClick */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+      return 'Hide password'
+
+  },
+  /* handler:onTooltipTextAssignment */
   /* content */
 }))
 
-define('./pages/kubernetes/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
+define('./pages/install/components/c6d2148f184aa7717695db627f187321/bundle.js', [], () => ({
   /* content */
-  /* handler:onMounted */
-  async ['onMounted'](___arguments) {
-    var mainListData, item, dataObject, descriptionList, error;
-
-function getObjectProperty(object, propPath) {
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
   }
@@ -4209,37 +4360,44 @@ function getObjectProperty(object, propPath) {
 }
 
 
-  ___arguments.context.pageData[''] = undefined;
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
-  }
-  try {
-    descriptionList = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/k8s/describe', null, null));
-    dataObject = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/k8s', null, null));
 
-  } catch (error) {
-    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
-    if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-    }
-    return ;
-
-  }
-  mainListData = (await Promise.all(descriptionList.map(async item => {  item['data'] = (getObjectProperty(dataObject, (getObjectProperty(item, 'name'))));
-  ; return item;})));
-  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', mainListData);
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
-  }
+  return ((getObjectProperty(___arguments.context.pageData, 'defaults')) && (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'version')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version')) ? 'Reset the field' : '')
 
   },
-  /* handler:onMounted */
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/install/components/e89f7b895a6d5681874178743592f9fc/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.pageData, 'defaults')) && (getObjectProperty((getObjectProperty(___arguments.context.pageData, 'defaults')), 'mountPath')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath')) ? 'Reset the field' : '')
+
+  },
+  /* handler:onTooltipTextAssignment */
   /* content */
 }))
 
@@ -4440,6 +4598,67 @@ define('./pages/kubernetes/components/page/bundle.js', [], () => ({
   /* content */
 }))
 
+define('./pages/kubernetes/components/58215f27f7419a5df7ae20bd1328d871/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async ['onMounted'](___arguments) {
+    var mainListData, item, dataObject, descriptionList, error;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.pageData[''] = undefined;
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  }
+  try {
+    descriptionList = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/k8s/describe', null, null));
+    dataObject = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/k8s', null, null));
+
+  } catch (error) {
+    await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), '#ffa500', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
+    if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+    }
+    return ;
+
+  }
+  mainListData = (await Promise.all(descriptionList.map(async item => {  item['data'] = (getObjectProperty(dataObject, (getObjectProperty(item, 'name'))));
+  ; return item;})));
+  ___arguments.context.pageData['mainListData'] = mainListData;
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  }
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
 define('./pages/login/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
@@ -4549,6 +4768,12 @@ define('./pages/login/components/90d8c3571dc2b58b3ce53fd97a5af9d9/bundle.js', []
 
   },
   /* handler:onClick */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+      return 'Show password'
+
+  },
+  /* handler:onTooltipTextAssignment */
   /* content */
 }))
 
@@ -4583,30 +4808,12 @@ define('./pages/login/components/891bf3ca729d37cf46cc1e6329c36163/bundle.js', []
 
   },
   /* handler:onClick */
-  /* content */
-}))
-
-define('./pages/mySql/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
-  /* content */
-  /* handler:onMounted */
-  async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
-  }
-  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null, null));
-  ___arguments.context.pageData['mysqlContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null, null));
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
-  }
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+      return 'Hide password'
 
   },
-  /* handler:onMounted */
+  /* handler:onTooltipTextAssignment */
   /* content */
 }))
 
@@ -6238,6 +6445,30 @@ define('./pages/mySql/components/page/bundle.js', [], () => ({
   /* content */
 }))
 
+define('./pages/mySql/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async ['onMounted'](___arguments) {
+      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  }
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null, null));
+  ___arguments.context.pageData['mysqlContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null, null));
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  }
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
 define('./pages/mysql2/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
@@ -7218,30 +7449,6 @@ define('./pages/progress/components/2a8169ce2ece7aa3c82531ac7feaa238/bundle.js',
   /* content */
 }))
 
-define('./pages/redis/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
-  /* content */
-  /* handler:onMounted */
-  async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
-  }
-  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/redis/describe', null));
-  ___arguments.context.pageData['redisContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/redis/config', null));
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
-  }
-
-  },
-  /* handler:onMounted */
-  /* content */
-}))
-
 define('./pages/redis/components/4038f86f5b6cacb8ee37a8efac3527aa/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
@@ -8073,6 +8280,254 @@ define('./pages/redis/components/page/bundle.js', [], () => ({
 
   },
   /* handler:onEnter */
+  /* content */
+}))
+
+define('./pages/redis/components/924202b19f0ef683e3940a99b258d565/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async ['onMounted'](___arguments) {
+      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  }
+  ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/redis/describe', null, null));
+  ___arguments.context.pageData['redisContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/redis/config', null, null));
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  }
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/remove/components/page/bundle.js', [], () => ({
+  /* content */
+  /* handler:onLeave */
+  onLeave(___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onLeave */
+  /* handler:onEnter */
+  ['onEnter'](___arguments) {
+      localStorage.removeItem('originLoad');
+
+  },
+  /* handler:onEnter */
+  /* content */
+}))
+
+define('./pages/remove/components/169ca04218c3102f67d1f8aef66f25f5/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.event, 'target')) == (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5')), 'el'))) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['visibility'] = 'hidden';
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['opacity'] = 0;
+    ___arguments.context.pageData['btnRemoveDisabled'] = true;
+    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('169ca04218c3102f67d1f8aef66f25f5', false);
+  }
+
+  },
+  /* handler:onClick */
+  /* handler:onBeforeUnmount */
+  ['onBeforeUnmount'](___arguments) {
+      ___arguments.context.pageData['btnRemoveDisabled'] = true;
+
+  },
+  /* handler:onBeforeUnmount */
+  /* handler:onBeforeMount */
+  ['onBeforeMount'](___arguments) {
+      ___arguments.context.pageData['btnRemoveDisabled'] = true;
+
+  },
+  /* handler:onBeforeMount */
+  /* content */
+}))
+
+define('./pages/remove/components/a9f794c30478c545e5b58c5659bf8611/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['opacity'] = 0;
+  ___arguments.context.pageData['btnRemoveDisabled'] = true;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('169ca04218c3102f67d1f8aef66f25f5', false);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/remove/components/a8ced2d9f85be027230dd814ee1fdb8b/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['opacity'] = 0;
+  ___arguments.context.pageData['btnRemoveDisabled'] = true;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('169ca04218c3102f67d1f8aef66f25f5', false);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/remove/components/33a848b796b77f762a2122974b1af0aa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['visibility'] = 'visible';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['opacity'] = 1;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('169ca04218c3102f67d1f8aef66f25f5', true);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/remove/components/d1bed328af1f6f344afc053369cdf082/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+    var error;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  try {
+    if ((getObjectProperty(___arguments.context.pageData, 'removePro')) == 'Remove Backendless Pro') {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('542a15a3053fbec66b25842623f7bac6'))['display'] = 'flex';
+      await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('delete', '/install/delete', null, null);
+      (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('install', undefined);
+    }
+
+  } catch (error) {
+    console.log(error);
+
+  } finally {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('542a15a3053fbec66b25842623f7bac6'))['display'] = 'none';
+
+  }
+
+  },
+  /* handler:onClick */
+  /* handler:onStyleAssignment */
+  ['onStyleAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'btnRemoveDisabled')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d1bed328af1f6f344afc053369cdf082'))['opacity'] = 0.65;
+  } else {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d1bed328af1f6f344afc053369cdf082'))['opacity'] = 1;
+  }
+
+  return ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d1bed328af1f6f344afc053369cdf082'))
+
+  },
+  /* handler:onStyleAssignment */
+  /* content */
+}))
+
+define('./pages/remove/components/471922b322bd59973d9f11b3f3f36f1f/bundle.js', [], () => ({
+  /* content */
+  /* handler:onChange */
+  ['onChange'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.pageData['removePro'] = ___arguments.value;
+  if ((getObjectProperty(___arguments.context.pageData, 'removePro')) == 'Remove Backendless Pro') {
+    ___arguments.context.pageData['btnRemoveDisabled'] = false;
+  } else {
+    ___arguments.context.pageData['btnRemoveDisabled'] = true;
+  }
+
+  },
+  /* handler:onChange */
   /* content */
 }))
 
@@ -9099,6 +9554,7 @@ define('./pages/serviceLogs/components/7e437288f19344daa5a4bed75c728637/bundle.j
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
+  ___arguments.context.pageData['logsTab'] = false;
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'flex';
@@ -9124,6 +9580,7 @@ define('./pages/serviceLogs/components/64b6f006eead4076cacfac687291d9c6/bundle.j
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
+  ___arguments.context.pageData['logsTab'] = false;
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'flex';
@@ -9149,6 +9606,7 @@ define('./pages/serviceLogs/components/184ed6e69bd6d8f1e8fc35c7403c36e5/bundle.j
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
+  ___arguments.context.pageData['logsTab'] = true;
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'flex';
@@ -9745,6 +10203,7 @@ function getObjectProperty(object, propPath) {
 
   })((getObjectProperty(___arguments.context.pageData, 'serviceName')), origin));
   ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.pageData, 'serviceName'));
+  ___arguments.context.pageData['logsTab'] = true;
 
   },
   /* handler:onEnter */
@@ -9945,6 +10404,39 @@ async function asyncListFilter(sourceList, callback) {
 
   },
   /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/serviceLogs/components/983986cbcdcc689ff2fa7b44739c6eaa/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  ['onDisplayAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (getObjectProperty(___arguments.context.pageData, 'logsTab'))
+
+  },
+  /* handler:onDisplayAssignment */
   /* content */
 }))
 
@@ -11403,7 +11895,7 @@ define('./pages/ssl/components/page/bundle.js', [], () => ({
 define('./pages/upgrade/components/9051123f6b4f94ef192265039293d4cd/bundle.js', [], () => ({
   /* content */
   /* handler:onDynamicItemsAssignment */
-  onDynamicItemsAssignment(___arguments) {
+  ['onDynamicItemsAssignment'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -11789,6 +12281,39 @@ define('./pages/upgrade/components/ea569f4f8251b46dc33c1bd6e0ce4a87/bundle.js', 
   /* content */
 }))
 
+define('./pages/upgrade/components/b2b16f278a0d4d44db4cc3ac8be37377/bundle.js', [], () => ({
+  /* content */
+  /* handler:onDisplayAssignment */
+  ['onDisplayAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.appData, 'logСurrentUpgradeData')) > 0)
+
+  },
+  /* handler:onDisplayAssignment */
+  /* content */
+}))
+
 define('./pages/upgradeLogs/components/9051123f6b4f94ef192265039293d4cd/bundle.js', [], () => ({
   /* content */
   /* handler:onDynamicItemsAssignment */
@@ -11974,23 +12499,8 @@ define('./pages/upgradeLogs/components/924202b19f0ef683e3940a99b258d565/bundle.j
 define('./pages/userManagement/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], () => ({
   /* content */
   /* handler:onMounted */
-  async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
-  }
-  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/user', null)));
-  ___arguments.context.pageData['noUserMessage'] = (((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')).length == 0);
-  ___arguments.context.pageData['userManagement'] = true;
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
-  }
-  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
-  }
-
+  ['onMounted'](___arguments) {
+    
   },
   /* handler:onMounted */
   /* content */
@@ -12547,23 +13057,81 @@ define('./pages/userManagement/components/1744db9f250d6ba85e3435fc3be3660e/bundl
   /* content */
 }))
 
+define('./pages/userManagement/components/a5853e49311937a3bc25880a9482c964/bundle.js', [], () => ({
+  /* content */
+  /* handler:onMounted */
+  async ['onMounted'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+  }
+  ___arguments.context.pageData['managementContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/user', null, null));
+  ___arguments.context.pageData['noUserMessage'] = ((getObjectProperty(___arguments.context.pageData, 'managementContainer')).length == 0);
+  ___arguments.context.pageData['userManagement'] = true;
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
+  }
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'flex';
+  }
+
+  },
+  /* handler:onMounted */
+  /* content */
+}))
+
 define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/1fed8d3527f135219fb66d9de15adb04/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  if ((await ( async function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df')))) == 0) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (String((await (async function(element) {
+  if (((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df')))) == 0) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (String((await (async function(element) {
     	return element.el.scrollHeight
-    })(((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))))) + String('px'));
-    while (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).length > 2) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).pop();
+    })(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))))) + String('px'));
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')), 'aside__TabHeader--rotated');
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('ca8df858b6abfa78f849814f98cbadeb'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('b18be6db888c37d656d8a09b4db77b43'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')).pop();
     }
   } else {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (String(0) + String('px'));
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')), 'aside__TabHeader--rotated');
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).pop();
+    }
   }
 
   },
@@ -12710,6 +13278,18 @@ define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/02f59a618
     	return element.el.scrollHeight
     })(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('ca8df858b6abfa78f849814f98cbadeb'))))) + String('px'));
     addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')), 'aside__TabHeader--rotated');
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('b18be6db888c37d656d8a09b4db77b43'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')).pop();
+    }
   } else {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('ca8df858b6abfa78f849814f98cbadeb'))['maxHeight'] = (String(0) + String('px'));
     while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')).length > 2) {
@@ -12776,8 +13356,6 @@ function getObjectProperty(object, propPath) {
   return result
 }
 
-function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
-
 
   try {
     if (!(getObjectProperty(___arguments.context.appData, 'statusData'))) {
@@ -12786,12 +13364,6 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
       ___arguments.context.appData['height'] = (String((await (async function(element) {
       	return element.el.scrollHeight
       })(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))))) + String('px'));
-    }
-    if (getObjectProperty(___arguments.context.pageData, 'pageServerStatus')) {
-      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (getObjectProperty(___arguments.context.appData, 'height'));
-    } else {
-      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = 0;
-      addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')), 'aside__TabHeader--rotated');
     }
 
   } catch (error) {
@@ -12806,6 +13378,40 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 
   },
   /* handler:onBeforeMount */
+  /* handler:onMounted */
+  ['onMounted'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'pageServerStatus')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (getObjectProperty(___arguments.context.appData, 'height'));
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')), 'aside__TabHeader--rotated');
+  } else {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = 0;
+  }
+
+  },
+  /* handler:onMounted */
   /* content */
 }))
 
@@ -12841,7 +13447,7 @@ define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/242a605e5
   },
   /* handler:onClick */
   /* handler:onClassListAssignment */
-  onClassListAssignment(___arguments) {
+  ['onClassListAssignment'](___arguments) {
     var classList;
 
 function getObjectProperty(object, propPath) {
@@ -13325,6 +13931,18 @@ define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/03f4bd550
     	return element.el.scrollHeight
     })(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('b18be6db888c37d656d8a09b4db77b43'))))) + String('px'));
     addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')), 'aside__TabHeader--rotated');
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('ca8df858b6abfa78f849814f98cbadeb'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).pop();
+    }
   } else {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('b18be6db888c37d656d8a09b4db77b43'))['maxHeight'] = (String(0) + String('px'));
     while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')).length > 2) {
@@ -13410,12 +14028,32 @@ define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/5478c0a1f
   },
   /* handler:onClick */
   /* handler:onClassListAssignment */
-  onClassListAssignment(___arguments) {
+  ['onClassListAssignment'](___arguments) {
     var classList;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   classList = ['aside__TabContentItem'];
-  if ((___arguments.context.pageData['pageSettings']) == 'userManagement') {
+  if ((getObjectProperty(___arguments.context.pageData, 'pageSettings')) == 'userManagement') {
     classList = ['aside__TabContentItem', 'aside__TabContentItem--active'];
   }
 
@@ -13477,19 +14115,31 @@ define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/28ba1a819
 define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/7d9115a5d5fa680bccbf5b04e8670af9/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  async ['onClick'](___arguments) {
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  if ((await ( async function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c')))) == 0) {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (String((await (async function(element) {
+  if (((function (typeSize, component) { return component && component.el ? component.el[`${typeSize}`] : null })('clientHeight', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c')))) == 0) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1fed8d3527f135219fb66d9de15adb04')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('ca8df858b6abfa78f849814f98cbadeb'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('02f59a618f63b16eab9c8fcf60ac6e41')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('b18be6db888c37d656d8a09b4db77b43'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('03f4bd550b65418c743e04afe3aab9d9')).pop();
+    }
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (String((await (async function(element) {
     	return element.el.scrollHeight
-    })(((function (componentUid){ return ___arguments.context.getComponentByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))))) + String('px'));
-    addItemToList(((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')), 'aside__TabHeader--rotated');
+    })(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))))) + String('px'));
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')), 'aside__TabHeader--rotated');
   } else {
-    ((function (componentUid){ return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (String(0) + String('px'));
-    while (((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).length > 2) {
-      ((function (componentUid){ return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).pop();
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (String(0) + String('px'));
+    while (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).length > 2) {
+      ((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')).pop();
     }
   }
 
@@ -13524,12 +14174,10 @@ function getObjectProperty(object, propPath) {
   return result
 }
 
-function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
-
 
   try {
     if (!(getObjectProperty(___arguments.context.appData, 'jobsList'))) {
-      ___arguments.context.appData['jobsList'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/upgrade/jobs', null));
+      ___arguments.context.appData['jobsList'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/upgrade/jobs', null, null));
       await new Promise(r => setTimeout(r, 20 || 0));
       ___arguments.context.appData['heightUpgradeContent'] = (String((await (async function(element) {
       	return element.el.scrollHeight
@@ -13539,12 +14187,6 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
   } catch (error) {
     ___arguments.context.pageData['menuError'] = (getObjectProperty(error, 'message'));
 
-  }
-  if (getObjectProperty(___arguments.context.pageData, 'pageUpgrade')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (getObjectProperty(___arguments.context.appData, 'heightUpgradeContent'));
-    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')), 'aside__TabHeader--rotated');
-  } else {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = 0;
   }
 
   },
@@ -13582,6 +14224,40 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
 
   },
   /* handler:onClassListAssignment */
+  /* handler:onMounted */
+  ['onMounted'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'pageUpgrade')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = (getObjectProperty(___arguments.context.appData, 'heightUpgradeContent'));
+    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7d9115a5d5fa680bccbf5b04e8670af9')), 'aside__TabHeader--rotated');
+  } else {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('a0ee549c33148fbe32998507d3e95d7c'))['maxHeight'] = 0;
+  }
+
+  },
+  /* handler:onMounted */
   /* content */
 }))
 
@@ -13899,6 +14575,74 @@ function getObjectProperty(object, propPath) {
 
   classList = ['aside__TabContentItem'];
   if ((getObjectProperty(___arguments.context.pageData, 'pageConfiguration')) == 'ingress') {
+    classList = ['aside__TabContentItem', 'aside__TabContentItem--active'];
+  }
+
+  return classList
+
+  },
+  /* handler:onClassListAssignment */
+  /* content */
+}))
+
+define('./components/reusable/r_dcac843a154c1eb2e28a4a08b5d34fec/logic/5698979b878d62056302bf1c9e3a87b6/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.context.pageData, 'pageSettings')) != 'remove') {
+    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('remove', ({ 'pageSettings': 'remove' }));
+  }
+
+  },
+  /* handler:onClick */
+  /* handler:onClassListAssignment */
+  ['onClassListAssignment'](___arguments) {
+    var classList;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  classList = ['aside__TabContentItem'];
+  if ((getObjectProperty(___arguments.context.pageData, 'pageSettings')) == 'remove') {
     classList = ['aside__TabContentItem', 'aside__TabContentItem--active'];
   }
 
