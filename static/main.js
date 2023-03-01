@@ -173,11 +173,37 @@ define('./pages/certificates/components/9f186f89932cdfe880554e43f4f916a1/bundle.
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageСertificates'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/user', null, null)));
   ___arguments.context.pageData['noUserMessage'] = (((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('9f186f89932cdfe880554e43f4f916a1')).length == 0);
@@ -532,8 +558,32 @@ define('./pages/certificates/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageСertificates'))) {
+    ___arguments.context.appData['pageСertificates'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -703,42 +753,38 @@ define('./pages/certificates/components/6b0596ebe49ddb2479778e1710a582ae/bundle.
   /* content */
 }))
 
-define('./pages/certificates/components/1744db9f250d6ba85e3435fc3be3660e/bundle.js', [], () => ({
+define('./pages/certificates/components/bea77ef1099423458bfa0a819f8edaf9/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
   ['onClick'](___arguments) {
-    function getObjectProperty(object, propPath) {
-  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
-    return object[propPath]
-  }
+      ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userName'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['password'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['confirmPassword'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
 
-  const propsNamesList = propPath.split('.')
+  },
+  /* handler:onClick */
+  /* content */
+}))
 
-  let result = object
-
-  for (let i = 0; i < propsNamesList.length; i++) {
-    if (!result || result[propsNamesList[i]] === undefined) {
-      return
-    }
-
-    result = result[propsNamesList[i]]
-  }
-
-  return result
-}
-
-
-  if ((getObjectProperty(___arguments.event, 'target')) == (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e')), 'el'))) {
-    ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userName'] = '';
-    ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['password'] = '';
-    ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['confirmPassword'] = '';
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
-  }
+define('./pages/certificates/components/2489ed16e1b1007f4cd2a26d191c97ed/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userName'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['password'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['confirmPassword'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
 
   },
   /* handler:onClick */
@@ -1832,8 +1878,32 @@ define('./pages/dataService/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageDataService'))) {
+    ___arguments.context.appData['pageDataService'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -1844,11 +1914,37 @@ define('./pages/dataService/components/924202b19f0ef683e3940a99b258d565/bundle.j
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageDataService'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/describe', null, null));
   ___arguments.context.pageData['dataContainer'] = [(await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/data/config', null, null))];
@@ -2132,8 +2228,32 @@ define('./pages/domainsGeneral/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageDomainsGeneral'))) {
+    ___arguments.context.appData['pageDomainsGeneral'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -2210,7 +2330,12 @@ function getObjectProperty(object, propPath) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageDomainsGeneral'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   try {
     descriptionObject = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/domain/describe', null, null));
@@ -2292,7 +2417,7 @@ define('./pages/ingress/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', 
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-    var mainData, item, j, descriptions, serverData, voidData;
+    var descriptions, item, j, mainData, serverData, voidData;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -2319,7 +2444,12 @@ function getObjectProperty(object, propPath) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageIngress'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   voidData = [({ 'domain': null,'type': 'api','sslEnabled': null }), ({ 'domain': null,'type': 'console','sslEnabled': null }), ({ 'domain': null,'type': 'rt','sslEnabled': null })];
   descriptions = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/loadbalancer/ingress/describe', null, null));
@@ -2336,7 +2466,7 @@ function getObjectProperty(object, propPath) {
       item[(String(getObjectProperty(j, 'name')) + String('Description'))] = (getObjectProperty(j, 'description'));
     }
   ; return item;})));
-  (function (componentUid, listItems) { ___arguments.context.getComponentByUid(componentUid).dynamicListItems = listItems })('9f186f89932cdfe880554e43f4f916a1', mainData);
+  ___arguments.context.pageData['mainIngressData'] = mainData;
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'none';
   }
@@ -2505,7 +2635,7 @@ define('./pages/ingress/components/363a0a2a92aa5bcb62b17eba85b1d7a8/bundle.js', 
   /* content */
   /* handler:onClick */
   async ['onClick'](___arguments) {
-    var dataToSend, error, successMessage;
+    var error, successMessage, dataToSend;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -2537,20 +2667,24 @@ function getObjectProperty(object, propPath) {
       return ;
     }
   }
-  dataToSend = ({ 'type': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'type')),'domain': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'domain')),'certName': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'certName')) == 'NO SSL' ? null : (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'certName')) });
+  dataToSend = ({ 'type': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'type')),'domain': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'domain')),'certName': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'certName')) == 'NO SSL' ? null : (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'certName')),'sslEnabled': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'certName')) == 'NO SSL' ? false : true });
   ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['createBtnDisabled'] = true;
   try {
     if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'btnLabel')) == 'Create') {
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['btnLabel'] = 'Creating...';
       await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/manage/loadbalancer/ingress', dataToSend, null);
-      successMessage = 'Successfully created';
+      successMessage = String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'domain')) + String(' domain has been created successfully');
     } else {
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['btnLabel'] = 'Updating...';
       await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('put', '/manage/loadbalancer/ingress', dataToSend, null);
-      successMessage = 'Successfully updated';
+      if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'certName')) == 'NO SSL') {
+        (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'repeaterItem'))['sslEnabled'] = false;
+      }
+      successMessage = String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'domain')) + String(' domain has been updated successfully');
     }
     (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'repeaterItem'))['domain'] = (getObjectProperty(dataToSend, 'domain'));
-    (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'repeaterItem'))['sslEnabled'] = ((getObjectProperty(dataToSend, 'certName')) == null ? false : true);
+    console.log(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'));
+    console.log(getObjectProperty(dataToSend, 'domain'));
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
     await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, successMessage, '#fff', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
@@ -2582,6 +2716,7 @@ define('./pages/ingress/components/a6868ac85ed520f809ceb0b4830d26ed/bundle.js', 
     (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', true);
   } else {
     if ((new RegExp('^[a-z0-9.-]+$', '')).test(___arguments.value)) {
+      ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['domain'] = ___arguments.value;
       (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
     } else {
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['validationMessage'] = 'Domain must consist of lowercase alphanumeric characters, \'-\' or \'.\'';
@@ -2615,7 +2750,7 @@ define('./pages/ingress/components/page/bundle.js', [], () => ({
   /* handler:onLeave */
   /* handler:onEnter */
   async ['onEnter'](___arguments) {
-    var error, item, certificatesFromServer, j, certificatesDescription;
+    var certificatesDescription, certificatesFromServer, error, item, j;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -2677,6 +2812,9 @@ function getObjectProperty(object, propPath) {
   })();
   ___arguments.context.pageData['applyBtnLabel'] = 'Apply';
   localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageIngress'))) {
+    ___arguments.context.appData['pageIngress'] = true;
+  }
   try {
     certificatesFromServer = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/cert', null, null));
     certificatesDescription = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/cert/describe', null, null));
@@ -2761,10 +2899,9 @@ async function closeModal(message, color) {
   ___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919')['btnLabel'] = 'Deleting...';
   try {
     await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('delete', '/manage/loadbalancer/ingress', ({ 'type': (getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'repeaterItem')), 'type')) }), null);
+    await closeModal(String(getObjectProperty((getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'repeaterItem')), 'domain')) + String(' domain has been deleted successfully'), '#fff');
     (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'repeaterItem'))['domain'] = null;
-    (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'repeaterItem'))['sslEnabled'] = null;
     (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'repeaterItem'))['description'] = 'Default description';
-    await closeModal('Deleted successfully', '#fff');
 
   } catch (error) {
     await closeModal((getObjectProperty(error, 'message')), '#ff0000');
@@ -2850,46 +2987,6 @@ function textToTitleCase(str) {
   /* content */
 }))
 
-define('./pages/ingress/components/1744db9f250d6ba85e3435fc3be3660e/bundle.js', [], () => ({
-  /* content */
-  /* handler:onClick */
-  async ['onClick'](___arguments) {
-    function getObjectProperty(object, propPath) {
-  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
-    return object[propPath]
-  }
-
-  const propsNamesList = propPath.split('.')
-
-  let result = object
-
-  for (let i = 0; i < propsNamesList.length; i++) {
-    if (!result || result[propsNamesList[i]] === undefined) {
-      return
-    }
-
-    result = result[propsNamesList[i]]
-  }
-
-  return result
-}
-
-
-  if ((getObjectProperty(___arguments.event, 'target')) == (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e')), 'el'))) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
-    await (async function() {
-    	const body = document.querySelector('body');
-    	body.style.overflow = 'auto';
-    })();
-  }
-
-  },
-  /* handler:onClick */
-  /* content */
-}))
-
 define('./pages/ingress/components/5399014a520f0ec3bacb891a7a32c591/bundle.js', [], () => ({
   /* content */
   /* handler:onContentAssignment */
@@ -2922,7 +3019,7 @@ function textToTitleCase(str) {
 
 
 
-  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'type')) == 'rt' ? 'Real-time' : String(textToTitleCase(getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'type'))) + String(':'))
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'type')) == 'rt' ? 'Real-time:' : String(textToTitleCase(getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'type'))) + String(':'))
 
   },
   /* handler:onContentAssignment */
@@ -2966,7 +3063,9 @@ define('./pages/ingress/components/c8254d6521a90cd2709c9b2f25d7cdeb/bundle.js', 
   /* content */
   /* handler:onContentAssignment */
   ['onContentAssignment'](___arguments) {
-    function getObjectProperty(object, propPath) {
+    var item;
+
+function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
   }
@@ -3417,55 +3516,6 @@ async function getOrigin() {
   /* content */
 }))
 
-define('./pages/ingress/components/2296afff5b9ced6febcee034fa4def5b/bundle.js', [], () => ({
-  /* content */
-  /* handler:onClick */
-  async ['onClick'](___arguments) {
-    function getObjectProperty(object, propPath) {
-  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
-    return object[propPath]
-  }
-
-  const propsNamesList = propPath.split('.')
-
-  let result = object
-
-  for (let i = 0; i < propsNamesList.length; i++) {
-    if (!result || result[propsNamesList[i]] === undefined) {
-      return
-    }
-
-    result = result[propsNamesList[i]]
-  }
-
-  return result
-}
-
-
-  if ((getObjectProperty(___arguments.event, 'target')) == (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b')), 'el'))) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['opacity'] = 0;
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['visibility'] = 'hidden';
-    await (async function() {
-    	const inputCrtFile   = document.querySelector('#crtFile');
-    	const inputKeyFile   = document.querySelector('#keyFile');
-
-    	inputCrtFile.value = '';
-    	inputKeyFile.value = '';
-
-    	document.querySelector('#fileLabelCrt').innerHTML = '';
-    	document.querySelector('#fileLabelKey').innerHTML = '';
-
-    })();
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
-  }
-
-  },
-  /* handler:onClick */
-  /* content */
-}))
-
 define('./pages/ingress/components/62fa8a24f9ef9c1402bcbe4f48cd164e/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
@@ -3804,6 +3854,158 @@ define('./pages/ingress/components/9a66f3068e4ef7c7a2977ab3e64344be/bundle.js', 
   /* content */
 }))
 
+define('./pages/ingress/components/c0a438e25335f35f554157adb7872811/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['opacity'] = 0;
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['visibility'] = 'hidden';
+  await (async function() {
+  	const inputCrtFile   = document.querySelector('#crtFile');
+  	const inputKeyFile   = document.querySelector('#keyFile');
+
+  	inputCrtFile.value = '';
+  	inputKeyFile.value = '';
+
+  	document.querySelector('#fileLabelCrt').innerHTML = '';
+  	document.querySelector('#fileLabelKey').innerHTML = '';
+
+  })();
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/ingress/components/5e9d815e7909cb0f619e0dff9064e1af/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  await (async function() {
+  	const body = document.querySelector('body');
+  	body.style.overflow = 'auto';
+  })();
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/ingress/components/740709bba31e2cb44e3e5baa810b301a/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  ['onContentAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')).length <= 30 ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')) : String((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')).slice(0, 30)) + String('...'))
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/ingress/components/a912130d7a06f401afcf148b70c9a5ec/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')).length > 30 ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cbcd2b9a94586ade25e3f3d98cd44ee8'), 'name')) : '')
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/ingress/components/2e813babcbc820ed00454eb5cbd496e1/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  await (async function() {
+  	const body = document.querySelector('body');
+  	body.style.overflow = 'auto';
+  })();
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/ingress/components/6d6a8c4211ee29462de1a5474b3d2c09/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['opacity'] = 0;
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('2296afff5b9ced6febcee034fa4def5b'))['visibility'] = 'hidden';
+  await (async function() {
+  	const inputCrtFile   = document.querySelector('#crtFile');
+  	const inputKeyFile   = document.querySelector('#keyFile');
+
+  	inputCrtFile.value = '';
+  	inputKeyFile.value = '';
+
+  	document.querySelector('#fileLabelCrt').innerHTML = '';
+  	document.querySelector('#fileLabelKey').innerHTML = '';
+
+  })();
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('fb3b28c8ecb422c9d789a3d5b17a989f', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('bd6a0655e9f42f64a20ea5b9ef4e75db', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('4b695664b7e53de7f71eeca54673416a', false);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
 define('./pages/install/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
@@ -3883,7 +4085,7 @@ define('./pages/install/components/4726032dbb9b39a30239907c90c2aac7/bundle.js', 
   /* content */
   /* handler:onClick */
   async ['onClick'](___arguments) {
-    var error, authorization, bodyRequest, path, currentOrigin, settingsOrigin;
+    var error;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -3945,7 +4147,7 @@ function getObjectProperty(object, propPath) {
 }
 
 
-  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'license')) && ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'authEnabled')) ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) : true)) {
+  if ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'version')) && !(getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'invalidVersion')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'mountPath')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'license')) && ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'authEnabled')) ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'login')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'password')) : true)) {
     disabled = false;
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4726032dbb9b39a30239907c90c2aac7'))['opacity'] = 1;
   } else {
@@ -4122,14 +4324,34 @@ define('./pages/install/components/34e44f5c92b925058875bc26cf2d0263/bundle.js', 
   /* content */
   /* handler:onFocus */
   ['onFocus'](___arguments) {
-    var item;
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  if (!(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('223a2e183edd48bf16b8c1016369be95')).includes('UpgradeControl__icon--rotated'))) {
-    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('223a2e183edd48bf16b8c1016369be95')), 'UpgradeControl__icon--rotated');
-    addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1872cc19fb1130ab8d66e9ca4f4fce93')), 'UpgradeControl__results--open');
+  if ((getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'versions')) && (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719')), 'versions')).length > 0) {
+    if (!(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('223a2e183edd48bf16b8c1016369be95')).includes('UpgradeControl__icon--rotated')) && !(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1872cc19fb1130ab8d66e9ca4f4fce93')).includes('UpgradeControl__results--open'))) {
+      addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('223a2e183edd48bf16b8c1016369be95')), 'UpgradeControl__icon--rotated');
+      addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('1872cc19fb1130ab8d66e9ca4f4fce93')), 'UpgradeControl__results--open');
+    }
   }
 
   },
@@ -4171,8 +4393,10 @@ async function asyncListFilter(sourceList, callback) {
 
 
   versionsData = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/version/docker-hub/v2/repositories/backendless/bl-server/tags/', null, ({ 'page_size': 100,'page': 1,'ordering': 'last_updated','name': ___arguments.value })));
+  ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['invalidVersion'] = false;
   if ((getObjectProperty(versionsData, 'results')).length == 0) {
     ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['versions'] = [({ 'name': 'Nothing found' })];
+    ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['invalidVersion'] = true;
   } else {
     ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('f6d6870f84ff49e3e53742fc6cf65719'))['versions'] = (await asyncListFilter((getObjectProperty(versionsData, 'results')), async (item) => {
 
@@ -4187,10 +4411,42 @@ async function asyncListFilter(sourceList, callback) {
 
     })((getObjectProperty(item, 'name')))));
     }));
+    ___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719')['invalidVersion'] = false;
   }
 
   },
   /* handler:onChange */
+  /* handler:onStyleAssignment */
+  ['onStyleAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('f6d6870f84ff49e3e53742fc6cf65719'), 'invalidVersion')) {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bd58bb58d5afe492c5999cdc5e76c28a'))['background-color'] = 'rgb(241 241 241)';
+  } else {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bd58bb58d5afe492c5999cdc5e76c28a'))['background-color'] = 'inherit';
+  }
+
+  },
+  /* handler:onStyleAssignment */
   /* content */
 }))
 
@@ -4623,8 +4879,32 @@ define('./pages/kubernetes/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageKubernetes'))) {
+    ___arguments.context.appData['pageKubernetes'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -4663,7 +4943,12 @@ function getObjectProperty(object, propPath) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageKubernetes'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   try {
     descriptionList = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/k8s/describe', null, null));
@@ -6470,8 +6755,32 @@ define('./pages/mySql/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageMySql'))) {
+    ___arguments.context.appData['pageMySql'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -6482,11 +6791,37 @@ define('./pages/mySql/components/924202b19f0ef683e3940a99b258d565/bundle.js', []
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageMySql'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/describe', null, null));
   ___arguments.context.pageData['mysqlContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/mysql/shard', null, null));
@@ -7366,12 +7701,14 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
 
 
   localStorage.removeItem('originLoad');
+  ___arguments.context.pageData['servicesNotCreated'] = true;
   try {
     statusInit = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/install/status', null, null));
     pollingIntervalMS = (getObjectProperty((await Backendless.Request['get']((function(url){ if( !url ) { throw new Error('Url must be specified.')} if( !url.startsWith('http://') && !url.startsWith('https://')) { return 'https://' + url } return url})((String(getObjectProperty(((function () { return window.location })()), 'origin')) + String('/settings.json')))).setEncoding('utf8').send()), 'pollingIntervalMS'));
     if (!(typeof pollingIntervalMS === 'number' && !isNaN(pollingIntervalMS))) {
       pollingIntervalMS = 2000;
     }
+    ___arguments.context.pageData['servicesNotCreated'] = false;
 
   } catch (error) {
     ___arguments.context.pageData['status'] = (getObjectProperty(error, 'message'));
@@ -7397,6 +7734,7 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
         stopSetTimeout('timer');
         (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('88ffdb181f515ee98ee96741d0768c1d', false);
         (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('6ec49b615f364fc25ba12557e2fb8e0f', true);
+        ___arguments.context.pageData['servicesNotCreated'] = false;
       }
 
     } catch (error) {
@@ -7479,6 +7817,17 @@ define('./pages/progress/components/2a8169ce2ece7aa3c82531ac7feaa238/bundle.js',
 
   },
   /* handler:onStyleAssignment */
+  /* content */
+}))
+
+define('./pages/progress/components/d44bf99bb6b601814b1ae6dc2f7b91d9/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('install', undefined);
+
+  },
+  /* handler:onClick */
   /* content */
 }))
 
@@ -8308,8 +8657,32 @@ define('./pages/redis/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageRedis'))) {
+    ___arguments.context.appData['pageRedis'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -8320,11 +8693,37 @@ define('./pages/redis/components/924202b19f0ef683e3940a99b258d565/bundle.js', []
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageRedis'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   ___arguments.context.pageData['description'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/redis/describe', null, null));
   ___arguments.context.pageData['redisContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/configuration/redis/config', null, null));
@@ -8350,17 +8749,6 @@ define('./pages/remove/components/page/bundle.js', [], () => ({
   /* handler:onLeave */
   /* handler:onEnter */
   ['onEnter'](___arguments) {
-      localStorage.removeItem('originLoad');
-
-  },
-  /* handler:onEnter */
-  /* content */
-}))
-
-define('./pages/remove/components/169ca04218c3102f67d1f8aef66f25f5/bundle.js', [], () => ({
-  /* content */
-  /* handler:onClick */
-  ['onClick'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -8382,15 +8770,18 @@ define('./pages/remove/components/169ca04218c3102f67d1f8aef66f25f5/bundle.js', [
 }
 
 
-  if ((getObjectProperty(___arguments.event, 'target')) == (getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5')), 'el'))) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['visibility'] = 'hidden';
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['opacity'] = 0;
-    ___arguments.context.pageData['btnRemoveDisabled'] = true;
-    (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('169ca04218c3102f67d1f8aef66f25f5', false);
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageRemove'))) {
+    ___arguments.context.appData['pageRemove'] = true;
   }
 
   },
-  /* handler:onClick */
+  /* handler:onEnter */
+  /* content */
+}))
+
+define('./pages/remove/components/169ca04218c3102f67d1f8aef66f25f5/bundle.js', [], () => ({
+  /* content */
   /* handler:onBeforeUnmount */
   ['onBeforeUnmount'](___arguments) {
       ___arguments.context.pageData['btnRemoveDisabled'] = true;
@@ -8564,11 +8955,25 @@ define('./pages/remove/components/471922b322bd59973d9f11b3f3f36f1f/bundle.js', [
   /* content */
 }))
 
+define('./pages/remove/components/4d93e6c9abe30946ada853ed213184d2/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('169ca04218c3102f67d1f8aef66f25f5'))['opacity'] = 0;
+  ___arguments.context.pageData['btnRemoveDisabled'] = true;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('169ca04218c3102f67d1f8aef66f25f5', false);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
 define('./pages/serverStatus/components/page/bundle.js', [], () => ({
   /* content */
   /* handler:onEnter */
   async ['onEnter'](___arguments) {
-    var error, pollingIntervalMS, configuration;
+    var error, item, checkedItem, pollingIntervalMS, configuration;
 
 function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
@@ -8588,6 +8993,17 @@ function getObjectProperty(object, propPath) {
   }
 
   return result
+}
+
+async function asyncListFilter(sourceList, callback) {
+  const list = await Promise.all(sourceList.map(async source => ({
+    source,
+    value: await callback(source),
+  })));
+
+  const resultList = list.filter(item => item.value)
+
+  return resultList.map(item => item.source)
 }
 
 function defineGlobalScope() { const root = (typeof window !== 'undefined' ? window : global);root.codelessScope = root.codelessScope || {};return root.codelessScope;}
@@ -8612,6 +9028,17 @@ function runSetTimeout(timerId, callback, delay) {  const timers = getGlobalEnti
     ;(function() {
       const callback = async () => {
           ___arguments.context.appData['statusData'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/manage/status', null, null));
+      checkedItem = (await asyncListFilter((getObjectProperty(___arguments.context.appData, 'statusData')), async (item) => {
+         if (getObjectProperty(___arguments.context.pageData, 'allChecked')) {
+          item['checked'] = (getObjectProperty(___arguments.context.pageData, 'allChecked'));
+        }
+        if ((getObjectProperty(___arguments.context.pageData, (String('checkedItem-') + String(getObjectProperty(item, 'name'))))) && (getObjectProperty((getObjectProperty(___arguments.context.pageData, (String('checkedItem-') + String(getObjectProperty(item, 'name'))))), 'id')) == (getObjectProperty(item, 'name'))) {
+          item['checked'] = (getObjectProperty((getObjectProperty(___arguments.context.pageData, (String('checkedItem-') + String(getObjectProperty(item, 'name'))))), 'checked'));
+        }
+
+
+       return ;
+      }));
 
       };
 
@@ -9020,6 +9447,7 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
+  ___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651')['checked'] = ___arguments.value;
   if (___arguments.value) {
     addItemToList((getObjectProperty(___arguments.context.pageData, 'groupActionList')), ___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'));
   } else {
@@ -9029,6 +9457,7 @@ async function asyncListFilter(sourceList, callback) {
      return ((getObjectProperty(item, 'name')) != (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'name')));
     }));
   }
+  ___arguments.context.pageData[(String('checkedItem-') + String(getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'name')))] = ({ 'id': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('e9118d25f3628ca2aa41dd74e6510651'), 'name')),'checked': ___arguments.value });
 
   },
   /* handler:onChange */
@@ -9039,7 +9468,27 @@ define('./pages/serverStatus/components/6759802728a72cb9eab5aa54c34c639f/bundle.
   /* content */
   /* handler:onChange */
   ['onChange'](___arguments) {
-    var j;
+    var j, item;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   if (___arguments.value) {
@@ -9050,8 +9499,12 @@ define('./pages/serverStatus/components/6759802728a72cb9eab5aa54c34c639f/bundle.
   var j_list = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('0fbd34b64c4b8f271001b02635bd0324'));
   for (var j_index in j_list) {
     j = j_list[j_index];
+    if (getObjectProperty(___arguments.context.pageData, (String('checkedItem-') + String(getObjectProperty(j, 'name'))))) {
+      (getObjectProperty(___arguments.context.pageData, (String('checkedItem-') + String(getObjectProperty(j, 'name')))))['checked'] = ___arguments.value;
+    }
     j['checked'] = ___arguments.value;
   }
+  ___arguments.context.pageData['allChecked'] = ___arguments.value;
 
   },
   /* handler:onChange */
@@ -9317,13 +9770,33 @@ function getObjectProperty(object, propPath) {
   },
   /* handler:onClick */
   /* handler:onClassListAssignment */
-  onClassListAssignment(___arguments) {
-    var classList, item;
+  ['onClassListAssignment'](___arguments) {
+    var classList;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 
   classList = ['ServerStatus__StartAllBtn'];
-  if (___arguments.context.pageData['groupActionList']) {
-    if ((___arguments.context.pageData['groupActionList']).length != 0) {
+  if (getObjectProperty(___arguments.context.pageData, 'groupActionList')) {
+    if ((getObjectProperty(___arguments.context.pageData, 'groupActionList')).length != 0) {
       classList = ['ServerStatus__StartAllBtn', 'ServerStatus__StartAllBtn--active'];
     }
   }
@@ -9338,8 +9811,30 @@ function getObjectProperty(object, propPath) {
 define('./pages/serverStatus/components/0fbd34b64c4b8f271001b02635bd0324/bundle.js', [], () => ({
   /* content */
   /* handler:onDynamicItemsAssignment */
-  onDynamicItemsAssignment(___arguments) {
-      return (___arguments.context.appData['statusData'])
+  ['onDynamicItemsAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return (getObjectProperty(___arguments.context.appData, 'statusData'))
 
   },
   /* handler:onDynamicItemsAssignment */
@@ -9580,6 +10075,39 @@ define('./pages/serverStatus/components/85718c440461bd8656d8c51a19366fc2/bundle.
   /* content */
 }))
 
+define('./pages/serverStatus/components/bd1e28666cbc0fe3a115eeca1f8ff86f/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.pageData, 'groupActionList')) ? 'Select all' : '')
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
 define('./pages/serviceLogs/components/7e437288f19344daa5a4bed75c728637/bundle.js', [], () => ({
   /* content */
   /* handler:onClick */
@@ -9587,10 +10115,10 @@ define('./pages/serviceLogs/components/7e437288f19344daa5a4bed75c728637/bundle.j
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ___arguments.context.pageData['logsTab'] = false;
-  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ___arguments.context.appData['logsTab'] = false;
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('b2b16f278a0d4d44db4cc3ac8be37377'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
-  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'flex';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('983986cbcdcc689ff2fa7b44739c6eaa'))['display'] = 'none';
   if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length == 1) {
     addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')), 'ServerLogs__TabsLabel--active');
     if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
@@ -9613,10 +10141,10 @@ define('./pages/serviceLogs/components/64b6f006eead4076cacfac687291d9c6/bundle.j
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ___arguments.context.pageData['logsTab'] = false;
-  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'none';
+  ___arguments.context.appData['logsTab'] = false;
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('b2b16f278a0d4d44db4cc3ac8be37377'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
-  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'flex';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('983986cbcdcc689ff2fa7b44739c6eaa'))['display'] = 'none';
   if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')).length == 1) {
     addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('64b6f006eead4076cacfac687291d9c6')), 'ServerLogs__TabsLabel--active');
     if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length > 1) {
@@ -9639,10 +10167,11 @@ define('./pages/serviceLogs/components/184ed6e69bd6d8f1e8fc35c7403c36e5/bundle.j
     function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
-  ___arguments.context.pageData['logsTab'] = true;
+  ___arguments.context.appData['logsTab'] = true;
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('bf4ddcd624beb122ea9990fa10566b0f'))['display'] = 'none';
   ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('232827adb9a5f36d5621ab56e377cca9'))['display'] = 'none';
-  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('9051123f6b4f94ef192265039293d4cd'))['display'] = 'flex';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('b2b16f278a0d4d44db4cc3ac8be37377'))['display'] = 'flex';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('983986cbcdcc689ff2fa7b44739c6eaa'))['display'] = 'flex';
   if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')).length == 1) {
     addItemToList(((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('184ed6e69bd6d8f1e8fc35c7403c36e5')), 'ServerLogs__TabsLabel--active');
     if (((function (componentUid) { return ___arguments.context.getComponentClassesByUid(componentUid) })('7e437288f19344daa5a4bed75c728637')).length > 1) {
@@ -9931,8 +10460,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/serviceLogs/components/ff639427cbb2fd7735982d312e54c2fb/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, currentStatus, currentService, service;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -9947,13 +10496,13 @@ async function asyncListFilter(sourceList, callback) {
 
 
   visible = true;
-  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
-    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')) {
+    currentService = (await asyncListFilter((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')), async (service) => {
 
 
-     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+     return ((getObjectProperty(service, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName')));
     }));
-    currentStatus = ((currentService[0])['status']);
+    currentStatus = (getObjectProperty((currentService[0]), 'status'));
     if (currentStatus == 'stopped') {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
       visible = false;
@@ -9966,12 +10515,12 @@ async function asyncListFilter(sourceList, callback) {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
       visible = false;
     }
-    if (___arguments.context.pageData['restarting']) {
+    if (getObjectProperty(___arguments.context.pageData, 'restarting')) {
       if (currentStatus == 'changing') {
         ___arguments.context.pageData['changed'] = true;
       }
       if (currentStatus == 'running') {
-        if (___arguments.context.pageData['changed']) {
+        if (getObjectProperty(___arguments.context.pageData, 'changed')) {
           ___arguments.context.pageData['restarting'] = false;
           ___arguments.context.pageData['changed'] = false;
           ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['restartBtnLabel'] = 'Restart';
@@ -10026,8 +10575,28 @@ async function asyncListFilter(sourceList, callback) {
 define('./pages/serviceLogs/components/17e15d26a59d2afecccd78a80f2b5081/bundle.js', [], () => ({
   /* content */
   /* handler:onDisplayAssignment */
-  async onDisplayAssignment(___arguments) {
+  async ['onDisplayAssignment'](___arguments) {
     var visible, currentStatus, currentService, service;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
 
 async function asyncListFilter(sourceList, callback) {
   const list = await Promise.all(sourceList.map(async source => ({
@@ -10042,13 +10611,13 @@ async function asyncListFilter(sourceList, callback) {
 
 
   visible = true;
-  if (___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']) {
-    currentService = (await asyncListFilter((___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['statusData']), async (service) => {
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')) {
+    currentService = (await asyncListFilter((getObjectProperty(___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6'), 'statusData')), async (service) => {
 
 
-     return ((service['name']) == (___arguments.context.pageData['serviceName']));
+     return ((getObjectProperty(service, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName')));
     }));
-    currentStatus = ((currentService[0])['status']);
+    currentStatus = (getObjectProperty((currentService[0]), 'status'));
     if (currentStatus == 'running') {
       ___arguments.context.getComponentDataStoreByUid('cc6c067e2b46da2502deb333245ebfc6')['startBtnLabel'] = 'Start';
       visible = false;
@@ -10203,11 +10772,9 @@ function getObjectProperty(object, propPath) {
   	  logOriginalText = '';
   	  logFileText = ''
 
-
   	  socket = io.connect(`${host}`, { transports : ['websocket'] });
 
   	  socket.on (`${serviceName}-logs`, function (data) {
-
   	    logFileText = logFileText + data;
   	    let dataWithBr = insertBr(data);
   	    logOriginalText = logOriginalText + dataWithBr;
@@ -10224,7 +10791,6 @@ function getObjectProperty(object, propPath) {
   	    "channelName": `${serviceName}-logs`
   	  });
 
-
   	  return socket
 
   	  function insertBr (str) {
@@ -10237,6 +10803,7 @@ function getObjectProperty(object, propPath) {
   })((getObjectProperty(___arguments.context.pageData, 'serviceName')), origin));
   ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.pageData, 'serviceName'));
   ___arguments.context.pageData['logsTab'] = true;
+  ___arguments.context.appData['logsTab'] = (getObjectProperty(___arguments.context.pageData, 'logsTab'));
 
   },
   /* handler:onEnter */
@@ -10283,7 +10850,30 @@ define('./pages/serviceLogs/components/4e13749fcca8dd9a1a09e5035b35b04e/bundle.j
   /* content */
   /* handler:onChange */
   async ['onChange'](___arguments) {
-      await (async function(inputValue) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  ___arguments.context.pageData['clearInputValue'] = false;
+  ___arguments.context.pageData['inputValue'] = ___arguments.value;
+  await (async function(inputValue) {
   	const output      = document.querySelector('.ServerLogs__ContentLogs');
   	if (inputValue.length > 2) {
   	  const regex       = new RegExp(inputValue, "g");
@@ -10293,10 +10883,41 @@ define('./pages/serviceLogs/components/4e13749fcca8dd9a1a09e5035b35b04e/bundle.j
   	} else {
   	  output.innerHTML = logOriginalText;
   	}
-  })(___arguments.value);
+  })((getObjectProperty(___arguments.context.pageData, 'inputValue')));
 
   },
   /* handler:onChange */
+  /* handler:onValueAssignment */
+  ['onValueAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (getObjectProperty(___arguments.context.pageData, 'clearInputValue')) {
+    ___arguments.context.pageData['inputValue'] = '';
+  }
+
+  return (getObjectProperty(___arguments.context.pageData, 'inputValue'))
+
+  },
+  /* handler:onValueAssignment */
   /* content */
 }))
 
@@ -10440,10 +11061,10 @@ async function asyncListFilter(sourceList, callback) {
   /* content */
 }))
 
-define('./pages/serviceLogs/components/983986cbcdcc689ff2fa7b44739c6eaa/bundle.js', [], () => ({
+define('./pages/serviceLogs/components/76672eb5e30a988d34ed50f8321e8405/bundle.js', [], () => ({
   /* content */
-  /* handler:onDisplayAssignment */
-  ['onDisplayAssignment'](___arguments) {
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -10465,11 +11086,22 @@ define('./pages/serviceLogs/components/983986cbcdcc689ff2fa7b44739c6eaa/bundle.j
 }
 
 
-
-  return (getObjectProperty(___arguments.context.pageData, 'logsTab'))
+  ___arguments.context.pageData['clearInputValue'] = true;
+  ___arguments.context.pageData['inputValue'] = '';
+  await (async function(inputValue) {
+  	const output      = document.querySelector('.ServerLogs__ContentLogs');
+  	if (inputValue.length > 2) {
+  	  const regex       = new RegExp(inputValue, "g");
+  	  const replacement = `<span class="ServerLogs__marker">${inputValue}</span>`;
+  	  const text        =  logOriginalText;
+  	  output.innerHTML  = text.replace(regex, replacement);
+  	} else {
+  	  output.innerHTML = logOriginalText;
+  	}
+  })((getObjectProperty(___arguments.context.pageData, 'inputValue')));
 
   },
-  /* handler:onDisplayAssignment */
+  /* handler:onClick */
   /* content */
 }))
 
@@ -11165,11 +11797,37 @@ define('./pages/ssl/components/9f186f89932cdfe880554e43f4f916a1/bundle.js', [], 
   /* content */
   /* handler:onMounted */
   async ['onMounted'](___arguments) {
-      if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('924202b19f0ef683e3940a99b258d565')) {
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageSSL'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   await new Promise(r => setTimeout(r, 1000 || 0));
   ___arguments.context.pageData['description'] = (await (async function() {
@@ -11917,8 +12575,32 @@ define('./pages/ssl/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageSSL'))) {
+    ___arguments.context.appData['pageSSL'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -12746,6 +13428,7 @@ function getObjectProperty(object, propPath) {
 function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? v : [v]);return l;}
 
 
+  console.log(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'));
   isValid = true;
   if (!(getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userName'))) {
     (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', true);
@@ -12784,6 +13467,7 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
       currentMessage = 'User has been created successfully';
     } else {
       currentMessage = 'Password has been set successfully';
+      await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('post', '/user/login', ({ 'login': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'userName')),'password': (getObjectProperty(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'), 'password')) }), null);
     }
     ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['userName'] = '';
     ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['password'] = '';
@@ -12804,6 +13488,7 @@ function addItemToList(l, v) { Array.prototype.push.apply(l, Array.isArray(v) ? 
       ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['createBtn'] = 'Set password';
     }
     ___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11')['createBtnDisabled'] = false;
+    console.log(___arguments.context.getComponentDataStoreByUid('b4398d5c0048d80587b9664d8f5eac11'));
 
   }
 
@@ -12935,8 +13620,32 @@ define('./pages/userManagement/components/page/bundle.js', [], () => ({
   },
   /* handler:onLeave */
   /* handler:onEnter */
-  onEnter(___arguments) {
-      localStorage.removeItem('originLoad');
+  ['onEnter'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  localStorage.removeItem('originLoad');
+  if (!(getObjectProperty(___arguments.context.appData, 'pageUserManagement'))) {
+    ___arguments.context.appData['pageUserManagement'] = true;
+  }
 
   },
   /* handler:onEnter */
@@ -13098,8 +13807,9 @@ define('./pages/userManagement/components/6b0596ebe49ddb2479778e1710a582ae/bundl
 }
 
 
-
-  return (['Are you sure you want to delete user: ',(getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'login')),'?'].join(''))
+  if (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'login')) {
+    return (['Are you sure you want to delete user: ',(getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'login')).length <= 30 ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'login')) : String((getObjectProperty(___arguments.context.getComponentDataStoreByUid('bff4d8ac579f78a648132998464e4919'), 'login')).slice(0, 30)) + String('...'),'?'].join(''));
+  }
 
   },
   /* handler:onContentAssignment */
@@ -13177,7 +13887,12 @@ define('./pages/userManagement/components/a5853e49311937a3bc25880a9482c964/bundl
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('924202b19f0ef683e3940a99b258d565'))['display'] = 'none';
   }
   if ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7')) {
-    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    if (!(getObjectProperty(___arguments.context.appData, 'pageUserManagement'))) {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+      await new Promise(r => setTimeout(r, 1000 || 0));
+    } else {
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('4f334f9dc1010f33ff9a725c1781b1c7'))['display'] = 'flex';
+    }
   }
   ___arguments.context.pageData['managementContainer'] = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/user', null, null));
   ___arguments.context.pageData['noUserMessage'] = ((getObjectProperty(___arguments.context.pageData, 'managementContainer')).length == 0);
@@ -13191,6 +13906,112 @@ define('./pages/userManagement/components/a5853e49311937a3bc25880a9482c964/bundl
 
   },
   /* handler:onMounted */
+  /* content */
+}))
+
+define('./pages/userManagement/components/066a5ef5529c08d9341aa44dc36260ec/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userName'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['password'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['confirmPassword'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+
+  },
+  /* handler:onClick */
+  /* content */
+}))
+
+define('./pages/userManagement/components/5399014a520f0ec3bacb891a7a32c591/bundle.js', [], () => ({
+  /* content */
+  /* handler:onContentAssignment */
+  ['onContentAssignment'](___arguments) {
+    var text;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'login')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'login')).length <= 30 ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'login')) : String((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'login')).slice(0, 30)) + String('...'))
+
+  },
+  /* handler:onContentAssignment */
+  /* content */
+}))
+
+define('./pages/userManagement/components/f2282001e30ff43276faecf92f1b46d7/bundle.js', [], () => ({
+  /* content */
+  /* handler:onTooltipTextAssignment */
+  ['onTooltipTextAssignment'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+
+  return ((getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'login')) && (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'login')).length > 30 ? (getObjectProperty(___arguments.context.getComponentDataStoreByUid('8df5e86e263721a17d2eb9a2f1451d2c'), 'login')) : '')
+
+  },
+  /* handler:onTooltipTextAssignment */
+  /* content */
+}))
+
+define('./pages/userManagement/components/19ea6e59877f7e14bb0707168bf97c88/bundle.js', [], () => ({
+  /* content */
+  /* handler:onClick */
+  ['onClick'](___arguments) {
+      ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['userName'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['password'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentDataStoreByUid(componentUid) })('b4398d5c0048d80587b9664d8f5eac11'))['confirmPassword'] = '';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['visibility'] = 'hidden';
+  ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('1744db9f250d6ba85e3435fc3be3660e'))['opacity'] = 0;
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('42fc2f835fa3bf01cbaf06e27b5b5e3b', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('d50a1aa5921ba06c583457a897f2a8f7', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('400fba0802880a93bb759cb7cbb9123f', false);
+  (function (componentUid, visible) { (function(component){ component.display = !!(typeof visible === 'boolean' ? visible : !component.display ) })(___arguments.context.getComponentByUid(componentUid)) })('76b375976525da5784a688f366843054', false);
+
+  },
+  /* handler:onClick */
   /* content */
 }))
 
@@ -13267,9 +14088,6 @@ function getObjectProperty(object, propPath) {
       	  });
 
       	  socket.disconnect();
-
-
-
       })((getObjectProperty(___arguments.context.appData, 'previousService')));
     }
   }
@@ -13288,7 +14106,6 @@ function getObjectProperty(object, propPath) {
   	  socket = io.connect(`${host}`, { transports : ['websocket'] });
 
   	  socket.on (`${serviceName}-logs`, function (data) {
-
   	    logFileText = logFileText + data;
   	    let dataWithBr = insertBr(data);
   	    logOriginalText = logOriginalText + dataWithBr;
