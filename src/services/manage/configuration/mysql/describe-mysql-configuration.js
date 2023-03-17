@@ -25,19 +25,11 @@ export function describeMysqlConfiguration() {
             required: false
         },
         {
-            name: 'host',
-            description: 'Host for connection',
+            name: 'endpoints',
+            description: 'Host and port value for connection',
             regex: '.*',
             type: 'string',
-            consulPath: shardName => `config/connection/${shardName}/host`,
-            required: false
-        },
-        {
-            name: 'port',
-            description: 'Port for connection',
-            regex: '[0-9]',
-            type: 'number',
-            consulPath: shardName => `config/connection/${shardName}/port`,
+            consulPath: shardName => `config/connection/${shardName}/endpoints`,
             required: false
         },
         {
