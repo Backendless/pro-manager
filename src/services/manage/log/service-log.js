@@ -87,6 +87,16 @@ export class ServiceLog {
             this.socketIO.emit(channelName, chunk.toString())
         })
 
+        logStream.on('close', () => {
+            logger.info(`stream to the channel [${channelName}] is closed `)
+            this.socketIO.emit(channelName, '\nConnection to the pod is closed. Please disconnect and try reconnect again')
+        })
+
+        logStream.on('end', () => {
+            logger.info(`stream to the channel [${channelName}] is ended `)
+            this.socketIO.emit(channelName, '\nConnection to the pod is ended. Please disconnect and try reconnect again')
+        })
+
         logStream.on('error', e => {
             logger.error(`error from subscriber [${subscriber}] is: ${e}`)
         })
