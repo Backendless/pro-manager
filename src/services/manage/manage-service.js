@@ -3,6 +3,7 @@ import States from '../service-states.json'
 import { statefulsetRestart } from '../k8s/k8s-statefulset-restart'
 import { statefulsetScale } from '../k8s/k8s-statefulset-scale'
 import { Logger } from '../../logger'
+import { listPods } from '../k8s/k8s-list-pods'
 
 const logger = Logger('manage-service')
 
@@ -22,10 +23,15 @@ export class ManageService {
         }
     }
 
-    restartService(name){
+    restartService(name) {
         return manageService.changeState({ serviceName: name, state: States.restart })
             .then(result => logger.verbose(`restart for ${name} sent`))
             .catch(error => logger.error(`Error during restarting ${name}: ${error}`))
+    }
+
+    async listPods({ serviceName }) {
+        logger.info(`listing pods for service with name [${serviceName}]`)
+        return listPods(serviceName)
     }
 
     async status() {
