@@ -6,6 +6,7 @@ import { readFileContent } from '../../utils/fs'
 import path from 'path'
 
 const logger = Logger('run-upgrade-job')
+const TEN_DAYS_IN_SECONDS = 3600 * 24 * 10
 
 export const jobListLabel = 'bl-upgrade'
 
@@ -14,6 +15,7 @@ export async function runUpgradeJob({ version }) {
     logger.info('initializing upgrade job...')
     const job = upgradeConfig.job
     job.spec.template.spec.containers[0].image = `backendless/bl-upgrade:${version}`
+    job.spec.ttlSecondsAfterFinished = TEN_DAYS_IN_SECONDS
     const date = new Date()
     const jobName = `bl-upgrade-${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}-${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
     logger.info(`job name is ${jobName}`)
