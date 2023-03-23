@@ -51,7 +51,7 @@ export function describeMysqlConfiguration() {
         {
             name: 'maxActive',
             description: 'Maximum connection to Mysql server, that bl-server creates',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: shardName => `config/connection/${shardName}/maxActive`,
             required: false
@@ -59,7 +59,7 @@ export function describeMysqlConfiguration() {
         {
             name: 'maxIdle',
             description: 'Maximum connection to Mysql server that will be opened even if they are not used',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: shardName => `config/connection/${shardName}/maxIdle`,
             required: false
@@ -67,7 +67,7 @@ export function describeMysqlConfiguration() {
         {
             name: 'minIdle',
             description: 'Minimum connection to Mysql server that always will be opened regardless of whether they are used or not',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: shardName => `config/connection/${shardName}/minIdle`,
             required: false

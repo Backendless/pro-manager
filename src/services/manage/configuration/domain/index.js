@@ -80,16 +80,6 @@ class DomainConfigurationService {
     }
   }
 
-  async saveShardAndRestart({ config, shouldRestart }) {
-    await this.saveAll( config )
-
-    if (shouldRestart) {
-      await manageService.restartService(blContainers.bl.console.name)
-      await manageService.restartService(blContainers.bl.server.name)
-      await manageService.restartService(blContainers.bl.taskman.name)
-    }
-  }
-
   async describeConfiguration() {
     return describeDomainConfiguration()
   }

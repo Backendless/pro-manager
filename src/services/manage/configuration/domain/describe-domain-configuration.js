@@ -27,7 +27,7 @@ export function describeDomainConfiguration() {
             {
                 name: 'Port',
                 description: 'Port for connection',
-                regex: '[0-9]',
+                regex: '[0-9]*$',
                 type: 'number',
                 consulPath: 'config/server/publicPort',
                 required: true,
@@ -59,7 +59,7 @@ export function describeDomainConfiguration() {
             {
                 name: 'Port',
                 description: 'Port for connection',
-                regex: '[0-9]',
+                regex: '[0-9]*$',
                 type: 'number',
                 consulPath: 'config/rt-server/socketServer/connection-port',
                 required: true,
@@ -88,7 +88,7 @@ export function describeDomainConfiguration() {
         //     {
         //         name: 'port',
         //         description: 'Port for connection',
-        //         regex: '[0-9]',
+        //         regex: '[0-9]*$',
         //         type: 'number',
         //         consulPath: 'config/',
         //         required: true

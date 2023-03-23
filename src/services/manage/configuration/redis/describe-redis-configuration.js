@@ -11,7 +11,7 @@ export function describeRedisConfiguration() {
         {
             name: 'port',
             description: 'Port for connection',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: type => `config/redis/${type}/port`,
             required: false
@@ -27,7 +27,7 @@ export function describeRedisConfiguration() {
         {
             name: 'pool',
             description: 'Maximum connection to Redis server, that service creates',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: type => `config/redis/${type}/pool/size`,
             required: false
