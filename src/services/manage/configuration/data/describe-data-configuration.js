@@ -3,42 +3,42 @@ export function describeDataConfiguration() {
         {
             name: 'Max page size',
             description: 'Maximum value that can be used for data service as page size',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: () => 'pagesize/max'
         },
         {
             name: 'Default page size',
             description: 'Page size that will be used if the value not provided explicitly',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: () => 'pagesize/default'
         },
         {
             name: 'Max bulk create',
             description: 'Maximum records that can be saved during bulk operation',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: () => 'bulkcreate/max'
         },
         {
             name: 'Max relation page size',
             description: 'Maximum number of relations that can be retrieved during find with related properties or with relation depth',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: () => 'config/data/relationsPageSize/max'
         },
         {
             name: 'Default relation page size',
             description: 'Default number of relations that will be retrieved during find with related properties or with relation depth',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: () => 'config/data/relationsPageSize/max'
         },
         {
             name: 'Max counters retrieve size',
             description: 'Maximum number of counters that can be retrieved at once',
-            regex: '[0-9]',
+            regex: '[0-9]*$',
             type: 'number',
             consulPath: () => 'config/counters/retrieve/max'
         },
