@@ -5,7 +5,7 @@
 - 20 GB disk space
 
 ### Installation
-1. Start ec2 instance with ubuntu with the following `User data`
+1. Start ec2 instance with **ubuntu** with the following `User data`
 ```
 #!/bin/bash
 curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
