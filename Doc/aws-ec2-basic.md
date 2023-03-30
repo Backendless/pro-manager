@@ -1,11 +1,12 @@
 # Setup basic Backendless PRO for AWS EC2
 ### Requirements
+Amazon Machine Image (AMI) must comply with the following requirements:
 - 8Gb memory
 - 4 CPU
 - 20 GB disk space
 
 ### Installation
-1. Start ec2 instance with **ubuntu** with the following `User data`
+1. Start EC2 instance with **Ubuntu** OS instance with the following `User data`
 ```
 #!/bin/bash
 curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
@@ -19,10 +20,11 @@ Make sure the following ports are available for you:
 32600 - Consul( configuration values )
 ```
 The script form user data will do all the same as for [ubuntu](https://github.com/Backendless/pro-manager#ubuntu)
-![](img/EC2-laucnh-instamce.png)
+![EC2-laucnh-instamce](https://user-images.githubusercontent.com/70748708/228957152-d9ac5c58-b7c1-4d1a-8f25-69b9de70cd9f.png)
+
 2. Wait until the instance became available and copy public ip or url
 ![](img/EC2-ready.png)
-3. Open browser by the following link http://<your-public-ip>:5050 and follow the wizard to install Backendless PRO
+3. Open browser by the following link `http://<your-public-ip>:5050` and follow the wizard to install Backendless PRO
 
 Watch the video:
 ```
