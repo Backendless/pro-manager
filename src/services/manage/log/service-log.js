@@ -122,8 +122,10 @@ export class ServiceLog {
             logger.info(`response on subscribe is: ${JSON.stringify(resp)}`)
 
             if (resp.statusCode >= 400) {
-                this.socketIO.emit(channelName, `There is an error during subscription: ${JSON.stringify(resp)}. 
-                \nPlease disconnect and try reconnect again`)
+                const message = `There is an error during subscription: ${JSON.stringify(resp)}. 
+                \nPlease disconnect and try reconnect again`
+                this.socketIO.emit(channelName, message)
+                logger.info(`message [${message}] emited to channel [${channelName}]`)
             }
 
         })
