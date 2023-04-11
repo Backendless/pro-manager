@@ -26,7 +26,7 @@ export async function registerFirstUser({ login, password }) {
                 await userService.login({ login, password })
             } catch (e) {
                 if (e instanceof UserError.UserOrPasswordDoesNotMatchError) {
-                    throw new InstallError.UserExistButPasswordDoesNotMatch()
+                    throw new InstallError.UserExistButPasswordDoesNotMatch(login)
                 }
 
                 throw e
