@@ -6,8 +6,8 @@ export class InstallError {
 
 InstallError.UserExistButPasswordDoesNotMatch = class UserExistButPasswordDoesNotMatch extends ApiError.BadRequestError{
     constructor(login) {
-        super(`There was an error during creating first user. 
-        The user with login'${login}' already exists, but password does not match`)
+        super(`An error occurred while creating a user. 
+        The user with the login "${login}" already exists, but the password does not match`)
     }
 }
 
