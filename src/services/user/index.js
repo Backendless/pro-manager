@@ -124,6 +124,10 @@ class UserService {
 
     async remove(id) {
         logger.info(`removing user with id '${id}'`)
+        if( (await this.get()).length < 2 ){
+            throw new UserError.FailToRemoveLastUserError()
+        }
+
         const db = await this._jsonDb.getDb()
         const userIndex = this._getIndexById(db, id)
 
@@ -153,15 +157,15 @@ class UserService {
         }
     }
 
-    async checkAuth(token) {
-        if (!await userConfig.getAuthEnabled()){
+    async checkAuthAndGetUserId(token) {
+        if (!await userConfig.getAuthEnabled()) {
             logger.verbose('Auth disabled, check skipped')
-            return
+            return ''
         }
 
         logger.verbose(`checking auth for token '${JSON.stringify(token)}'`)
 
-        if(token == null){
+        if (token == null) {
             throw new UserError.InlaidTokenError()
         }
 
@@ -191,6 +195,8 @@ class UserService {
             reset password from jwt '${userFromJwt.resetPasswordTime}'`)
             throw new UserError.InlaidTokenError()
         }
+
+        return user.id
     }
 
     async authEnabled() {

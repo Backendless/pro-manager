@@ -1,10 +1,12 @@
 import { Router } from '../utils/router'
 import { auth } from './middleware/auth'
 import cookieParser from 'cookie-parser'
+import { initContext } from './init-context'
 
 export const mainRouter = new Router()
 
 mainRouter.use(cookieParser())
+mainRouter.use(initContext())
 mainRouter.use('/services/k8s', auth(), require('./k8s').router)
 mainRouter.use('/services/install', require('./install').router)
 mainRouter.use('/services/upgrade', auth(), require('./upgrade').router)

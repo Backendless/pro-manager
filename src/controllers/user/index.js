@@ -1,6 +1,7 @@
 import { handler, Router } from '../../utils/router'
 import { userService } from '../../services/user'
 import { auth } from '../middleware/auth'
+import { UserError } from '../../error/user-error'
 
 export const router = new Router()
 
@@ -29,6 +30,10 @@ router.get('/', auth(), handler(() => {
     return userService.get()
 }))
 
-router.delete('/', auth(), handler(({ body }) => {
+router.delete('/', auth(), handler(({ body, userId }) => {
+    if (userId === body.id) {
+        throw new UserError.FailToRemoveYourSelfError()
+    }
+
     return userService.remove(body.id)
 }))
