@@ -4,6 +4,18 @@ export class UserError {
 
 }
 
+UserError.FailToRemoveLastUserError = class DuplicateUserError extends ApiError.BadRequestError {
+    constructor() {
+        super('You are trying to remove the last user, atleast one user should be present')
+    }
+}
+
+UserError.FailToRemoveYourSelfError = class DuplicateUserError extends ApiError.BadRequestError {
+    constructor() {
+        super('User can\'t remove him self, ask someone else to do that')
+    }
+}
+
 UserError.DuplicateUserError = class DuplicateUserError extends ApiError.DuplicateEntryError {
     constructor(login) {
         super(`User with login'${login}' already exists`)
