@@ -77,13 +77,21 @@ docker-desktop   Ready    control-plane   117d   v1.24.2
     NAME                         STATUS   ROLES                  AGE   VERSION
     dev-k3s.us.backendless.com   Ready    control-plane,master   19h   v1.24.3+k3s1
     ```
+# Checking available ports  
+Make sure the following ports are available for you:
+
+5050  - Pro manager web
+5051  - Pro manager web socket
+32300 - API
+32400 - Web console
+32600 - Consul( configuration values )
 
 # Start Pro Manager
 - Clone Pro Manager
 ```
 git clone https://github.com/Backendless/pro-manager.git
 ```
-- Go to the folder code
+- Go to the folder pro-manager
 - Execute 
 ```
   npm i
@@ -106,9 +114,9 @@ git clone https://github.com/Backendless/pro-manager.git
 ```
 curl -X DELETE 'http://localhost:5050/services/install/delete' \
 --header 'Content-Type: application/json' \
---header 'Cookie: auth-token=<auth-token>' \
+--header 'Cookie: auth-token=<auth-token>'
 ```
-### Remove Pro Manager
+### Remove Pro Manager in Ubuntu
 For ubuntu call the following commands:
 ```
 sudo systemctl stop pro-manager
