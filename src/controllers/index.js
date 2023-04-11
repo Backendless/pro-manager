@@ -8,7 +8,6 @@ mainRouter.use(cookieParser())
 mainRouter.use('/services/k8s', auth(), require('./k8s').router)
 mainRouter.use('/services/install', require('./install').router)
 mainRouter.use('/services/upgrade', auth(), require('./upgrade').router)
-mainRouter.use('/services/manage', auth(), require('./manager').router)
 mainRouter.use('/services/user', require('./user').router)
 mainRouter.use('/services/version', require('./version').router)
 
@@ -22,5 +21,7 @@ mainRouter.use('/services/manage/configuration/k8s', auth(), require('./configur
 mainRouter.use('/services/manage/loadbalancer/nginx', auth(), require('./manage/loadbalancer/nginx').router)
 mainRouter.use('/services/manage/loadbalancer/ingress', auth(), require('./manage/loadbalancer/ingress').router)
 mainRouter.use('/services/manage/cert', auth(), require('./manage/cert').router)
+
+mainRouter.use('/services/manage', auth(), require('./manager').router)
 
 mainRouter.use('/health', require('./health').router)

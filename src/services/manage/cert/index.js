@@ -38,6 +38,7 @@ class CertManager {
 
     async list() {
         const k8sResponse = await k8sCoreV1Api.listNamespacedSecret(await k8sConfig.getNamespace(), true, true, '', '', 'bl-secret=tls')
+        logger.verbose(`secrets response is ${JSON.stringify(k8sResponse)}`)
         return k8sResponse.body.items.map(item => item.metadata.name)
     }
 
