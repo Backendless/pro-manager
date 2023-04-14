@@ -65,7 +65,9 @@ EOF
 
 sudo systemctl daemon-reload
 echo "system daemon reloaded. Starting pro manager"
+sudo systemctl enable pro-manager.service
 sudo systemctl start pro-manager.service
+echo "pro-manager.service enabled"
 systemctl status pro-manager.service
 
 echo 'installing ingress'
