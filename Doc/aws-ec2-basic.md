@@ -13,11 +13,11 @@ curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-
 ```
 Make sure the following ports are available for you:
 ```
-5050  - Pro manager web
-5051  - Pro manager web socket
-32300 - API
-32400 - Web console
-32600 - Consul( configuration values )
+- 5050  - Pro manager web
+- 5051  - Pro manager web socket
+- 32300 - API
+- 32400 - Web console
+- 32600 - Consul( configuration values )
 ```
 The script form user data will do all the same as for [ubuntu](https://github.com/Backendless/pro-manager#ubuntu)
 ![EC2-laucnh-instamce](https://user-images.githubusercontent.com/70748708/228957152-d9ac5c58-b7c1-4d1a-8f25-69b9de70cd9f.png)
