@@ -33,6 +33,7 @@
           "containers": [
             {
               "args": [
+                "--sql-mode="
               ],
               "env": [
                 {
