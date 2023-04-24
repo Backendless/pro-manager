@@ -20,7 +20,7 @@ Make sure the following ports are available for you:
 - 32600 - Consul( configuration values )
 ```
 The script form user data will do all the same as for [ubuntu](https://github.com/Backendless/pro-manager#ubuntu)
-![EC2-launch-instance](/pro-manager/Doc/img/EC2-launch-instance.png)
+![EC2-launch-instance](img/EC2-launch-instance.png)
 
 2. Wait until the instance became available and copy public ip or url
 ![](img/EC2-ready.png)
