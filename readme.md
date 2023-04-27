@@ -80,11 +80,11 @@ docker-desktop   Ready    control-plane   117d   v1.24.2
 # Checking available ports  
 Make sure the following ports are available for you:
 
-5050  - Pro manager web
-5051  - Pro manager web socket
-32300 - API
-32400 - Web console
-32600 - Consul( configuration values )
+- 5050  - Pro manager web
+- 5051  - Pro manager web socket
+- 32300 - API
+- 32400 - Web console
+- 32600 - Consul( configuration values )
 
 # Start Pro Manager
 - Clone Pro Manager
