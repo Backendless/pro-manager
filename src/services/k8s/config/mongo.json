@@ -35,7 +35,7 @@
               "args": [
 
               ],
-              "image": "mongo:4",
+              "image": "mongo:5",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-mongo",
               "ports": [
