@@ -1,0 +1,301 @@
+{
+  "components": {
+    "198c9c59e5389ad5ff37a4bb3e22bce5": {
+      "id": "QuestionIcon",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": [
+            "4f8fe7d853c915840a67685fa058d83f"
+          ]
+        }
+      }
+    },
+    "cb32ffe5c76e4f69d148911494c6952e": {
+      "id": "QuestionIcon",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": [
+            "4f8fe7d853c915840a67685fa058d83f"
+          ]
+        }
+      }
+    },
+    "cd73b3928006379f77b53b870895e855": {
+      "id": "QuestionIcon",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": [
+            "4f8fe7d853c915840a67685fa058d83f"
+          ]
+        }
+      }
+    },
+    "b11bd95b7c781e9ce31e01ee1b83b966": {
+      "id": "QuestionIcon",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": [
+            "4f8fe7d853c915840a67685fa058d83f"
+          ]
+        }
+      }
+    },
+    "5a537424c7d5f0fa5c2169ba52cdc3b9": {
+      "id": "data SaveBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onDisabledStateAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b4ac65b40f178182007af4f16afe24d6": {
+      "id": "data controls",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "dependencies": []
+        }
+      }
+    },
+    "33a848b796b77f762a2122974b1af0aa": {
+      "id": "data SaveRestartBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onDisabledStateAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "7e1ac109ebbe4db399af721c8b472bd2": {
+      "id": "InputTimeout",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "57c1dbc34b1c989c67cdeee5b059df3e": {
+      "id": "InputPassword",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "826adfb80e9fa3f9c4d409ef7c4fb6a8": {
+      "id": "InputSendTimeout",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "da5a9fb94b4e945b59defc3358320e88": {
+      "id": "InputSendFrom",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b54572a4aa5d9a730e6821542c7efb6f": {
+      "id": "QuestionIcon",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": [
+            "4f8fe7d853c915840a67685fa058d83f"
+          ]
+        }
+      }
+    },
+    "f509c2ebe2c76cbdccb7691d1526a5f6": {
+      "id": "InputFromEmail",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "731ff8f7e02b1f1b1ddd65954ca550ae": {
+      "id": "QuestionIcon",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": [
+            "4f8fe7d853c915840a67685fa058d83f"
+          ]
+        }
+      }
+    },
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onLeave": {
+          "dependencies": []
+        },
+        "onEnter": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "924202b19f0ef683e3940a99b258d565": {
+      "id": "email",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "bbc392e35b1784c1cc7c948730017baa": {
+      "id": "InputSMTPPort",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "efdf97964412fe09a4543c3742d61def": {
+      "id": "InputSMTPHost",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "d4e29701d1c7a7d49786b18ca3055dd9": {
+      "id": "InputUserID",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "0bb8b95410de45982f75d608ad7b0f66": {
+      "id": "InputWrapper__icon",
+      "type": "icon",
+      "moduleType": "system",
+      "moduleId": "icon",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "43de92c3d9013b8c2e6e6b62e1f4df5d": {
+      "id": "InputWrapper__select",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDynamicItemsAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "c59cfbc6d031a3486a59c375a0c7bf5a": {
+      "id": "InputWrapper__selectItem",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        },
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "21e1be695ae329a98ddc535f083e4ebf": {
+      "id": "InputProtocol",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onFocus": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+    "r_dcac843a154c1eb2e28a4a08b5d34fec",
+    "text",
+    "input",
+    "icon",
+    "button"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

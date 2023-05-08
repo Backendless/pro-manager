@@ -1,0 +1,366 @@
+
+.install {
+  
+  &__logo {
+    flex-direction: column;
+    align-items: center;
+    width: 34.24%;
+    height: 100%;
+    background: @BgDeepDark;
+  }
+  
+  &__container {
+    width: 65.76%;
+  }
+  
+  &__main {
+    margin: 55px auto 10px auto;
+  }
+  
+  &__main,
+  &__progress {
+    width: 100%;
+    max-width: 745px;
+    flex-direction: column;
+  }
+  
+  &__progress {
+    align-items: flex-start;
+    margin: 80px auto 50px auto;
+  }
+  
+  &__LogoTitle {
+    font-family: FuturaHeavy;
+    font-size: 36px;
+    line-height: 42px;
+    color: #FFFFFF;
+  }
+  
+  &__LogoImg {
+    margin-top: 110px;
+    margin-bottom: 27px;
+    width: 100%;
+    min-height: 15px;
+    background-image: url('./styles/images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__LogoScreens {
+    margin-top: 75px;
+    width: 100%;
+    min-height: 551px;
+    background-image: url('./styles/images/screens.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__title {
+    .FontTitle;
+    font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+  }
+  
+  &__notice {
+    .FontMedium;
+    margin-bottom: 20px;
+  }
+  
+  &__form {
+    box-shadow: none;
+    align-items: flex-start;
+  }
+  
+  &__FormItem {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  &__FormRow {
+    width: 100%;
+    max-width: 529px;
+    align-items: flex-start;
+  }
+  
+  &__FormGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  &__FieldDescription {
+    .FontMain;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  &__InputHint {
+    .FontSmall;
+    margin: 5px 0px 20px 0px;
+  }
+  
+  &__InputHintLink {
+    .FontSmall;
+    text-decoration: underline;
+    color: #1B76BC;
+  }
+  
+  &__IconWrap {
+    margin-left: 19px;
+    height: 34px;
+    align-items: center;
+  }
+  
+  &__RestoteIcon {
+    width: 16px; 
+    height: 16px;
+    background: url(https://teemingkitty.backendless.app/api/files/ui-builder/containers/default/styles/images/BackIcon.png) no-repeat;
+    background-size: contain;
+    opacity: 1;
+    cursor: pointer;
+    
+    &.disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+  
+  &__FormGroupTextArea {
+    padding-right: 37px;
+  }
+  
+  &__TextArea {
+    width: 100%;
+  }
+  
+  &__LinkWrapper {
+    display: inline-block;
+    margin: 5px 0 20px;
+    line-height: 1;
+  }
+  
+  &__BeginButton {
+    margin: 40px 0;
+    width: 165px;
+  }
+  
+  &__ProgressStatusBlock {
+    width: 100%;
+    max-width: 710px;
+  }
+  
+  &__ProgressLabel {
+    .FontMedium;
+    margin-right: 58px;
+    padding-bottom: 10px;
+  }
+  
+  &__ProgressStatus {
+    &--error {
+      flex-direction: column;
+    }
+  }
+  
+  &__ProgressStatusName {
+    word-break: break-word;
+    padding-bottom: 10px;
+    
+    .FontMedium;
+    font-family: FuturaHeavy, Arial, sans-serif;
+    font-size: 18px;
+  }
+  
+  &__ProgressBar {
+    height: 16px;
+    width: 100%;
+    max-width: 710px;
+    margin: 39px 0px;
+    background-image: url('./styles/images/ajax-loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% 100%;
+  }
+  
+  &__loader {
+    width: 70%;
+  }
+  
+  &__ProgressContainer {
+    flex-direction: column;
+    width: 100%;
+    max-height: 430px;
+    overflow: hidden;
+    overflow: auto;
+    
+    &::-webkit-scrollbar {
+      .WebkitScrollbar();
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      .WebkitScrollbarThumb();
+    }
+  }
+  
+  &__ProgressItem {
+    word-break: break-word;
+    
+    .FontMedium;
+    color: #000;
+    margin-bottom: 3px;
+  }
+  
+  &__BtnWrap {
+    margin-top: 63px;
+  }
+  
+  &__ManageButton {
+    width: 190px;
+    margin-right: 10px;
+  }
+  
+  &__ReturnButton {
+    width: 190px;
+    
+    &:hover {
+      border-color: @BgDarkBlue;
+    }
+  }
+  
+  &__ProgressRecord {
+    display: block;
+  }
+  
+  &__user {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  &__UserTitle {
+    font-size: 16px;
+    font-family: FuturaHeavy, Arial, sans-serif;
+    padding-bottom: 10px;
+  }
+  
+  &__LoginItem {
+    margin-bottom: 15px;
+  }
+  
+  &__search {
+    width: 100% !important;
+    
+    .MuiInputBase-input {
+      cursor: context-menu;
+      padding-right: 30px;
+    }
+  }
+  
+  &__results {
+    z-index: 5;
+  }
+  
+  &__IconEye {
+    width: 16px;
+    height: 16px;
+    min-width: 25px;
+    background-position: center, center;
+    background-size: 21px;
+    background-repeat: no-repeat;
+    opacity: .5;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-left: -7px;
+  }
+  
+  &__IconEye--open {
+    background-image: url('./styles/images/eye_visible.png');
+  }
+  
+  &__IconEye--close {
+    background-image: url('./styles/images/eye_hidden.png');
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  
+  .install {
+    
+    &__container {
+      padding: 0px 15px;
+    }
+    
+    &__LogoScreens {
+      background-size: 300px auto;
+      min-height: 330px;
+    }
+    
+    &__FieldDescription {
+      width: 165px;
+      padding-right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  
+  .install {
+    
+    &__main,
+    &__LogoImg {
+      margin-top: 50px;
+    }
+    
+    &__title {
+      font-size: 35px;
+      line-height: 1;
+    }
+    
+    &__LogoTitle {
+      font-size: 32px;
+    }
+    
+    &__LogoScreens {
+      background-size: 240px auto;
+      min-height: 260px;
+    }
+    
+    &__ProgressLabel {
+      margin-right: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  
+  .install {
+    
+    &__logo {
+      display: none;
+    }
+    
+    &__container {
+      width: 100%;
+    }
+    
+    &__ProgressLabel {
+      margin-right: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  .install {
+    
+    &__FormItem {
+      flex-direction: column;
+    }
+    
+    &__FieldDescription {
+      width: auto;
+      padding-bottom: 15px;
+    }
+  }
+  
+}
+
