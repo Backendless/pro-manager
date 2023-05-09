@@ -1,7 +1,7 @@
 define([], () => ({
   /* content */
   /* handler:onClick */
-  async onClick(___arguments) {
+  ['onClick'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -24,13 +24,13 @@ define([], () => ({
 
 
   if ((getObjectProperty(___arguments.context.pageData, 'pageServerStatus')) != 'ServerStatus') {
-    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('serverStatus', ({ 'pageServerStatus': 'ServerStatus' }));
+    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('serverStatus', ({ 'pageServerStatus': 'ServerStatus' }));
   }
 
   },
   /* handler:onClick */
   /* handler:onClassListAssignment */
-  onClassListAssignment(___arguments) {
+  ['onClassListAssignment'](___arguments) {
     var classList;
 
 function getObjectProperty(object, propPath) {
