@@ -1,10 +1,8 @@
 define([], () => ({
   /* content */
   /* handler:onClick */
-  ['onClick'](___arguments) {
-      if (((function (typeSize) { return document.documentElement[`${typeSize}`] })('clientWidth')) > 990) {
-    (function (url, isExternal, params) { BackendlessUI.Navigator.openWebPage(url, isExternal, params); })('https://backendless.com', true, undefined);
-  }
+  async onClick(___arguments) {
+      ;await ( async function (url, isExternal, params){ const queryString = BackendlessUI.QueryString.stringify(params); const targetUrl = `${url}${queryString ? '?' + queryString : ''}`; isExternal ? window.open(targetUrl, '_blank') : window.location = targetUrl; })('https://backendless.com', true, null);
 
   },
   /* handler:onClick */

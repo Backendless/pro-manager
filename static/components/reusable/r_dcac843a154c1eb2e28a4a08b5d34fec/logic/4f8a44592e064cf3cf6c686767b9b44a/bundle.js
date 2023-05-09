@@ -1,7 +1,7 @@
 define([], () => ({
   /* content */
   /* handler:onClick */
-  ['onClick'](___arguments) {
+  async onClick(___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -24,13 +24,13 @@ define([], () => ({
 
 
   if ((getObjectProperty(___arguments.context.pageData, 'pageConfiguration')) != 'domainsGeneral') {
-    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('domainsGeneral', ({ 'pageConfiguration': 'domainsGeneral' }));
+    await ( async function (pageName, pageData) { BackendlessUI.goToPage(pageName, pageData) })('domainsGeneral', ({ 'pageConfiguration': 'domainsGeneral' }));
   }
 
   },
   /* handler:onClick */
   /* handler:onClassListAssignment */
-  ['onClassListAssignment'](___arguments) {
+  onClassListAssignment(___arguments) {
     var classList;
 
 function getObjectProperty(object, propPath) {
