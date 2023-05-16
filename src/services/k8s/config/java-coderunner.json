@@ -1,7 +1,7 @@
 {
   "workload": {
     "apiVersion": "apps/v1",
-    "kind": "StatefulSet",
+    "kind": "Deployment",
     "metadata": {
       "annotations": {
         "name": "bl-coderunner-java"

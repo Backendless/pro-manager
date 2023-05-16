@@ -61,8 +61,8 @@ export async function installBlHazelcast({ version }) {
     workload.spec.template.spec.containers[0].image = `backendless/bl-hazelcast:${version}`
 
 
-    installStatus.info('creating statefulset for bl-hazelcast')
-    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
+    installStatus.info('creating deployment for bl-hazelcast')
+    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedDeployment(await k8sConfig.getNamespace(), workload)
     installStatus.info('creating service for bl-hazelcast')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
 

@@ -25,8 +25,8 @@ export async function installBlTaskman({ mountPath, version }) {
         name: 'logs'
     })
 
-    installStatus.info('creating statefulset for bl-taskman')
-    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
+    installStatus.info('creating deployment for bl-taskman')
+    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedDeployment(await k8sConfig.getNamespace(), workload)
     installStatus.info('creating service for bl-taskman')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
 

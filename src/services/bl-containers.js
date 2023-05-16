@@ -31,56 +31,56 @@ class BlContainers {
         rtServer: {
             name: 'bl-rt-server',
             imageName: 'bl-rt-server',
-            serviceStatus: () => blStatefulsetStatus('bl-rt-server'),
+            serviceStatus: () => blDeploymentStatus('bl-rt-server'),
             installService: installArguments => installBlRtServer(installArguments),
-            deleteService: () => deleteStatefulsetAndService('bl-rt-server'),
-            scale: replicas => statefulsetScale('bl-rt-server', replicas),
-            restart: () => statefulsetRestart('bl-rt-server')
+            deleteService: () => deleteDeploymentAndService('bl-rt-server'),
+            scale: replicas => deploymentScale('bl-rt-server', replicas),
+            restart: () => deploymentRestart('bl-rt-server')
         },
         taskman: {
             name: 'bl-taskman',
             imageName: 'bl-server',
-            serviceStatus: () => blStatefulsetStatus('bl-taskman'),
+            serviceStatus: () => blDeploymentStatus('bl-taskman'),
             installService: installArguments => installBlTaskman(installArguments),
-            deleteService: () => deleteStatefulsetAndService('bl-taskman'),
-            scale: replicas => statefulsetScale('bl-taskman', replicas),
-            restart: () => statefulsetRestart('bl-taskman')
+            deleteService: () => deleteDeploymentAndService('bl-taskman'),
+            scale: replicas => deploymentScale('bl-taskman', replicas),
+            restart: () => deploymentRestart('bl-taskman')
         },
         hazelcast: {
             name: 'bl-hazelcast-3125',
             imageName: 'bl-hazelcast',
-            serviceStatus: () => blStatefulsetStatus('bl-hazelcast-3125'),
+            serviceStatus: () => blDeploymentStatus('bl-hazelcast-3125'),
             installService: installArguments => installBlHazelcast(installArguments),
-            deleteService: () => deleteStatefulsetAndService('bl-hazelcast-3125'),
-            scale: replicas => statefulsetScale('bl-hazelcast-3125', replicas),
-            restart: () => statefulsetRestart('bl-hazelcast-3125')
+            deleteService: () => deleteDeploymentAndService('bl-hazelcast-3125'),
+            scale: replicas => deploymentScale('bl-hazelcast-3125', replicas),
+            restart: () => deploymentRestart('bl-hazelcast-3125')
         },
         javaCoderunner: {
             name: 'bl-coderunner-java',
             imageName: 'bl-coderunner-java',
-            serviceStatus: () => blStatefulsetStatus('bl-coderunner-java'),
+            serviceStatus: () => blDeploymentStatus('bl-coderunner-java'),
             installService: installArguments => installBlJavaCoderunner(installArguments),
-            deleteService: () => deleteStatefulsetAndService('bl-coderunner-java'),
-            scale: replicas => statefulsetScale('bl-coderunner-java', replicas),
-            restart: () => statefulsetRestart('bl-coderunner-java')
+            deleteService: () => deleteDeploymentAndService('bl-coderunner-java'),
+            scale: replicas => deploymentScale('bl-coderunner-java', replicas),
+            restart: () => deploymentRestart('bl-coderunner-java')
         },
         jsCoderunner: {
             name: 'bl-coderunner-js',
             imageName: 'bl-coderunner-js',
-            serviceStatus: () => blStatefulsetStatus('bl-coderunner-js'),
+            serviceStatus: () => blDeploymentStatus('bl-coderunner-js'),
             installService: installArguments => installBlJsCoderunner(installArguments),
-            deleteService: () => deleteStatefulsetAndService('bl-coderunner-js'),
-            scale: replicas => statefulsetScale('bl-coderunner-js', replicas),
-            restart: () => statefulsetRestart('bl-coderunner-js')
+            deleteService: () => deleteDeploymentAndService('bl-coderunner-js'),
+            scale: replicas => deploymentScale('bl-coderunner-js', replicas),
+            restart: () => deploymentRestart('bl-coderunner-js')
         },
         console: {
             name: 'bl-web-console',
             imageName: 'bl-web-console',
-            serviceStatus: () => blStatefulsetStatus('bl-web-console'),
+            serviceStatus: () => blDeploymentStatus('bl-web-console'),
             installService: installArguments => installBlWebConsole(installArguments),
-            deleteService: () => deleteStatefulsetAndService('bl-web-console'),
-            scale: replicas => statefulsetScale('bl-web-console', replicas),
-            restart: () => statefulsetRestart('bl-web-console')
+            deleteService: () => deleteDeploymentAndService('bl-web-console'),
+            scale: replicas => deploymentScale('bl-web-console', replicas),
+            restart: () => deploymentRestart('bl-web-console')
         },
         initConfigValues: {
             name: 'bl-init-config-values',
