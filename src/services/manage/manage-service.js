@@ -1,7 +1,5 @@
 import { blContainers } from '../bl-containers'
 import States from '../service-states.json'
-import { statefulsetRestart } from '../k8s/k8s-statefulset-restart'
-import { statefulsetScale } from '../k8s/k8s-statefulset-scale'
 import { Logger } from '../../logger'
 import { listPods } from '../k8s/k8s-list-pods'
 
@@ -10,15 +8,16 @@ const logger = Logger('manage-service')
 export class ManageService {
 
     async changeState({ serviceName, state }) {
+        const container = blContainers.findByName(serviceName)
         switch (state) {
             case States.restart:
-                await statefulsetRestart(serviceName)
+                await container.restart()
                 break
             case States.stop:
-                await statefulsetScale(serviceName, 0)
+                await container.scale(0)
                 break
             case States.start:
-                await statefulsetScale(serviceName, 1)
+                await container.scale(1)
                 break
         }
     }

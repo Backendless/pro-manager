@@ -14,7 +14,8 @@
       "UpgradeService": "verbose",
       "install-bl-rt-server": "verbose",
       "install-bl-server": "verbose",
-      "service-log": "verbose"
+      "service-log": "verbose",
+      "k8s-scale": "debug"
     }
   },
   "user": {

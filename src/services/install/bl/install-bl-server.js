@@ -32,7 +32,7 @@ export async function installBlServer({ mountPath, version }) {
 
     installStatus.info('creating statefulset for bl-server')
     logger.verbose(`creating workload for bl-server with config: ${JSON.stringify(workload)}`)
-    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
+    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedDeployment(await k8sConfig.getNamespace(), workload)
     installStatus.info('creating service for bl-server')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blServerK8sConfig.service)
 

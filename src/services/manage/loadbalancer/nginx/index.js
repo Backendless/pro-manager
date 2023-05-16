@@ -3,7 +3,7 @@ import blK8sConfig from '../../../k8s/config/nginx.json'
 import { k8sAppsV1Api, k8sCoreV1Api } from '../../../k8s/k8s'
 import { k8sConfig } from '../../../../config/k8s-config'
 import { Logger } from '../../../../logger'
-import { deleteService } from '../../../k8s/k8s-delete-service'
+import { deleteStatefulsetAndService } from '../../../k8s/k8s-delete-service'
 
 const logger = Logger('nginx-load-balancer')
 
@@ -27,7 +27,7 @@ class NginxLoadBalancerService{
     }
 
     async delete(){
-        await deleteService('bl-nginx')
+        await deleteStatefulsetAndService('bl-nginx')
     }
 }
 
