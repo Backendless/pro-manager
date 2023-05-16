@@ -1,5 +1,5 @@
-import { blStatefulsetStatus } from './k8s/bl-statefulset-status'
-import { deleteService } from './k8s/k8s-delete-service'
+import { blDeploymentStatus, blStatefulsetStatus } from './k8s/bl-status'
+import { deleteDeploymentAndService, deleteStatefulsetAndService } from './k8s/k8s-delete-service'
 import { blJobStatus } from './k8s/bl-job-status'
 import { installConsul } from './install/db/install-consul'
 import { installMysql } from './install/db/mysql'
@@ -14,57 +14,73 @@ import { installBlJsCoderunner } from './install/bl/install-bl-js-coderunner'
 import { installBlWebConsole } from './install/bl/install-bl-web-console'
 import { installBlRtServer } from './install/bl/install-bl-rt-server'
 import { deleteJob } from './k8s/k8s-delete-job'
+import { deploymentScale, statefulsetScale } from './k8s/k8s-scale'
+import { deploymentRestart, statefulsetRestart } from './k8s/k8s-restart'
 
 class BlContainers {
     bl = {
         server: {
             name: 'bl-server',
             imageName: 'bl-server',
-            serviceStatus: () => blStatefulsetStatus('bl-server'),
+            serviceStatus: () => blDeploymentStatus('bl-server'),
             installService: installArguments => installBlServer(installArguments),
-            deleteService: () => deleteService('bl-server')
+            deleteService: () => deleteDeploymentAndService('bl-server'),
+            scale: replicas => deploymentScale('bl-server', replicas),
+            restart: () => deploymentRestart('bl-server')
         },
         rtServer: {
             name: 'bl-rt-server',
             imageName: 'bl-rt-server',
-            serviceStatus: () => blStatefulsetStatus('bl-rt-server'),
+            serviceStatus: () => blDeploymentStatus('bl-rt-server'),
             installService: installArguments => installBlRtServer(installArguments),
-            deleteService: () => deleteService('bl-rt-server')
+            deleteService: () => deleteDeploymentAndService('bl-rt-server'),
+            scale: replicas => deploymentScale('bl-rt-server', replicas),
+            restart: () => deploymentRestart('bl-rt-server')
         },
         taskman: {
             name: 'bl-taskman',
             imageName: 'bl-server',
-            serviceStatus: () => blStatefulsetStatus('bl-taskman'),
+            serviceStatus: () => blDeploymentStatus('bl-taskman'),
             installService: installArguments => installBlTaskman(installArguments),
-            deleteService: () => deleteService('bl-taskman')
+            deleteService: () => deleteDeploymentAndService('bl-taskman'),
+            scale: replicas => deploymentScale('bl-taskman', replicas),
+            restart: () => deploymentRestart('bl-taskman')
         },
         hazelcast: {
             name: 'bl-hazelcast-3125',
             imageName: 'bl-hazelcast',
-            serviceStatus: () => blStatefulsetStatus('bl-hazelcast-3125'),
+            serviceStatus: () => blDeploymentStatus('bl-hazelcast-3125'),
             installService: installArguments => installBlHazelcast(installArguments),
-            deleteService: () => deleteService('bl-hazelcast-3125')
+            deleteService: () => deleteDeploymentAndService('bl-hazelcast-3125'),
+            scale: replicas => deploymentScale('bl-hazelcast-3125', replicas),
+            restart: () => deploymentRestart('bl-hazelcast-3125')
         },
         javaCoderunner: {
             name: 'bl-coderunner-java',
             imageName: 'bl-coderunner-java',
-            serviceStatus: () => blStatefulsetStatus('bl-coderunner-java'),
+            serviceStatus: () => blDeploymentStatus('bl-coderunner-java'),
             installService: installArguments => installBlJavaCoderunner(installArguments),
-            deleteService: () => deleteService('bl-coderunner-java')
+            deleteService: () => deleteDeploymentAndService('bl-coderunner-java'),
+            scale: replicas => deploymentScale('bl-coderunner-java', replicas),
+            restart: () => deploymentRestart('bl-coderunner-java')
         },
         jsCoderunner: {
             name: 'bl-coderunner-js',
             imageName: 'bl-coderunner-js',
-            serviceStatus: () => blStatefulsetStatus('bl-coderunner-js'),
+            serviceStatus: () => blDeploymentStatus('bl-coderunner-js'),
             installService: installArguments => installBlJsCoderunner(installArguments),
-            deleteService: () => deleteService('bl-coderunner-js')
+            deleteService: () => deleteDeploymentAndService('bl-coderunner-js'),
+            scale: replicas => deploymentScale('bl-coderunner-js', replicas),
+            restart: () => deploymentRestart('bl-coderunner-js')
         },
         console: {
             name: 'bl-web-console',
             imageName: 'bl-web-console',
-            serviceStatus: () => blStatefulsetStatus('bl-web-console'),
+            serviceStatus: () => blDeploymentStatus('bl-web-console'),
             installService: installArguments => installBlWebConsole(installArguments),
-            deleteService: () => deleteService('bl-web-console')
+            deleteService: () => deleteDeploymentAndService('bl-web-console'),
+            scale: replicas => deploymentScale('bl-web-console', replicas),
+            restart: () => deploymentRestart('bl-web-console')
         },
         initConfigValues: {
             name: 'bl-init-config-values',
@@ -79,15 +95,19 @@ class BlContainers {
             name: 'bl-consul',
             serviceStatus: () => blStatefulsetStatus('bl-consul'),
             installService: installArguments => installConsul(installArguments),
+            scale: replicas => statefulsetScale('bl-consul', replicas),
+            restart: () => statefulsetRestart('bl-consul'),
             order: 0,
-            deleteService: () => deleteService('bl-consul')
+            deleteService: () => deleteStatefulsetAndService('bl-consul')
         },
         mysql: {
             name: 'bl-mysql',
             serviceStatus: () => blStatefulsetStatus('bl-mysql'),
             installService: installArguments => installMysql(installArguments),
+            scale: replicas => statefulsetScale('bl-mysql', replicas),
+            restart: () => statefulsetRestart('bl-mysql'),
             order: 1,
-            deleteService: () => deleteService('bl-mysql')
+            deleteService: () => deleteStatefulsetAndService('bl-mysql')
         },
         redis: {
             name: 'bl-redis',
@@ -98,8 +118,10 @@ class BlContainers {
                 externalPort: 32379,
                 name: 'bl-redis'
             }),
+            scale: replicas => statefulsetScale('bl-redis', replicas),
+            restart: () => statefulsetRestart('bl-redis'),
             order: 2,
-            deleteService: () => deleteService('bl-redis')
+            deleteService: () => deleteStatefulsetAndService('bl-redis')
         },
         debugRedis: {
             name: 'bl-redis-debug',
@@ -110,15 +132,19 @@ class BlContainers {
                 externalPort: 32380,
                 name: 'bl-redis-debug'
             }),
+            scale: replicas => statefulsetScale('bl-redis-debug', replicas),
+            restart: () => statefulsetRestart('bl-redis-debug'),
             order: 3,
-            deleteService: () => deleteService('bl-redis-debug')
+            deleteService: () => deleteStatefulsetAndService('bl-redis-debug')
         },
         mongo: {
             name: 'bl-mongo',
             serviceStatus: () => blStatefulsetStatus('bl-mongo'),
             installService: installArguments => installMongo(installArguments),
+            scale: replicas => statefulsetScale('bl-mongo', replicas),
+            restart: () => statefulsetRestart('bl-mongo'),
             order: 4,
-            deleteService: () => deleteService('bl-mongo')
+            deleteService: () => deleteStatefulsetAndService('bl-mongo')
         },
 
     }
@@ -127,6 +153,22 @@ class BlContainers {
         return Object.entries(this.dependencies)
             .sort(([key1, dependency1], [key2, dependency2]) => dependency1.order - dependency2.order)
             .map(([key, dependency]) => dependency)
+    }
+
+    findByName(name) {
+        for (const containerKey in this.bl) {
+            const container = this.bl[containerKey]
+            if (container.name === name) {
+                return container
+            }
+        }
+
+        for (const containerKey in this.dependencies) {
+            const container = this.dependencies[containerKey]
+            if (container.name === name) {
+                return container
+            }
+        }
     }
 }
 

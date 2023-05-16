@@ -64,7 +64,7 @@ class UpgradeService {
             }
         }
         const options = { 'headers': { 'Content-type': k8s.PatchUtils.PATCH_FORMAT_STRATEGIC_MERGE_PATCH } }
-        return await k8sAppsV1Api.patchNamespacedStatefulSet(serviceName, await k8sConfig.getNamespace(), body,
+        return await k8sAppsV1Api.patchNamespacedDeployment(serviceName, await k8sConfig.getNamespace(), body,
             undefined, undefined, undefined, undefined, options)
     }
 

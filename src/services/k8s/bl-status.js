@@ -1,15 +1,23 @@
 import { Logger } from '../../logger'
-import { statefulsetStatus } from './k8s-statefulset-status'
+import { deploymentStatus, statefulsetStatus } from './k8s-status'
 import { getVersionFromStatus } from './bl-get-version'
 
 const Status = require('../service-status.json')
-const logger = Logger('bl-statefulset-status')
+const logger = Logger('bl-status')
 
 export async function blStatefulsetStatus(containerName) {
+    return blStatus(containerName, () => statefulsetStatus(containerName, true))
+}
+
+export async function blDeploymentStatus(containerName) {
+    return blStatus(containerName, () => deploymentStatus(containerName, true))
+}
+
+async function blStatus(containerName, getK8sStatus) {
     const blStatus = { name: containerName }
     let status
     try {
-        status = await statefulsetStatus(containerName, true)
+        status = await getK8sStatus()
     } catch (err) {
         if (err.statusCode === 404) {
             blStatus.status = Status.notInstalled
@@ -25,7 +33,7 @@ export async function blStatefulsetStatus(containerName) {
 
     logger.verbose(`service status for '${containerName}' is ${JSON.stringify(serviceStatus)}`)
 
-    if (serviceStatus.replicas < 1)
+    if (!serviceStatus.replicas)
         blStatus.status = Status.stopped
     else if (serviceStatus.readyReplicas !== serviceStatus.replicas || serviceStatus.updatedReplicas !== serviceStatus.readyReplicas)
         blStatus.status = Status.changing

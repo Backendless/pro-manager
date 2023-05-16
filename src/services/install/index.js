@@ -6,7 +6,7 @@ import { initConfigMap } from './init-config-map'
 import { Logger } from '../../logger'
 import { isWin } from '../../utils/os'
 import * as fs from 'fs'
-import { deleteService } from '../k8s/k8s-delete-service'
+import { deleteStatefulsetAndService } from '../k8s/k8s-delete-service'
 import { ApiError } from '../../error'
 import { mountPathConfig } from '../../config/mount-path-config'
 import { registerFirstUser } from './register-first-user'
@@ -168,7 +168,8 @@ class InstallService {
     }
 
     async deleteService(serviceName) {
-        return deleteService(serviceName)
+        const container = blContainers.findByName( serviceName )
+        return container.deleteService()
     }
 
     /**

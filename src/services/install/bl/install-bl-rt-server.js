@@ -28,9 +28,9 @@ export async function installBlRtServer({ mountPath, version }) {
         name: 'logs'
     })
 
-    installStatus.info('creating statefulset for bl-rt-server')
+    installStatus.info('creating deployment for bl-rt-server')
     logger.verbose(`creating workload for bl-rt-server with config: ${JSON.stringify(workload)}`)
-    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
+    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedDeployment(await k8sConfig.getNamespace(), workload)
     installStatus.info('creating service for bl-rt-server')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
 

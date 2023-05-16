@@ -25,6 +25,6 @@ export async function installBlJavaCoderunner({ mountPath, version }) {
         name: 'logs'
     })
 
-    installStatus.info('creating statefulset for bl-coderunner-java')
-    return await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), workload)
+    installStatus.info('creating deployment for bl-coderunner-java')
+    return await k8sAppsV1Api.createNamespacedDeployment(await k8sConfig.getNamespace(), workload)
 }
