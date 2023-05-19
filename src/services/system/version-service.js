@@ -1,6 +1,11 @@
 import simpleGit from 'simple-git'
 import { Logger } from '../../logger'
 
+import util from 'node:util'
+import { ApiError } from '../../error'
+
+const exec = util.promisify(require('node:child_process').exec)
+
 const logger = Logger('version-service')
 
 function convertTagToVersion(tag) {
@@ -23,6 +28,25 @@ class VersionService {
         tags.all = tags.all.map(tag => convertTagToVersion(tag))
         tags.latest = convertTagToVersion(tags.latest)
         return tags
+    }
+
+    async changeVersion({ newVersion }) {
+        logger.info(`changing to version [${JSON.stringify(newVersion)}]...`)
+        const tagName = `release_${newVersion}`
+        try {
+            const checkoutResult = await simpleGit().checkout(tagName)
+            logger.info(`checkout result is [${JSON.stringify(checkoutResult)}]`)
+        } catch (e) {
+            logger.error(`error during checkout to tag [${tagName}]: [${e}]`)
+            throw new ApiError.BadRequestError(`The following error occurred during version ${newVersion} checkout:
+            ${e} \nProbably you have some local change, commit or stash it and try again`)
+        }
+
+        const npmInstallResult = await exec('npm install')
+        logger.info(`npm install result is [${JSON.stringify(npmInstallResult)}]`)
+
+        logger.info(`checked out tag ${tagName} and executed npm install. Exiting...`)
+        process.exit(0)
     }
 }
 
