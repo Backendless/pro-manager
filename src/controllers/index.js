@@ -26,4 +26,6 @@ mainRouter.use('/services/manage/cert', auth(), require('./manage/cert').router)
 
 mainRouter.use('/services/manage', auth(), require('./manager').router)
 
+mainRouter.use('/services/system', auth(), require('./system').systemRouter)
+
 mainRouter.use('/health', require('./health').router)
