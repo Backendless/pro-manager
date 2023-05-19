@@ -42,7 +42,7 @@ journalctl -u pro-manager.service -f
 ```
 
 
-### Mac OS / Windows
+### Mac OS / Windows 
 - Install Docker desktop https://www.docker.com/products/docker-desktop/
 - Go to preference and enable kubernetes ![img_1.png](Doc/img/mac-os-enable-k8s.png)
 - Make sure kubectl is available and works in terminal
