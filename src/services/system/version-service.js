@@ -44,6 +44,8 @@ class VersionService {
 
         const npmInstallResult = await exec('npm install')
         logger.info(`npm install result is [${JSON.stringify(npmInstallResult)}]`)
+
+        process.exit(0)
     }
 }
 
