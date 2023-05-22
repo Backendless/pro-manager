@@ -44,6 +44,8 @@ git clone https://github.com/Backendless/pro-manager.git
 
 cd pro-manager
 
+git config --global --add safe.directory /home/bl-pro-manager/pro-manager
+
 npm i
 
 echo "systemd: Creating service file pro-manager"
