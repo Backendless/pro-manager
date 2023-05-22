@@ -18,7 +18,7 @@ Open terminal and execute the following command
 ```
 curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
 ```
-At the end Pro Manager will be available in browser by the follwoing link `http://<your-ip>:5050`.
+At the end Pro Manager will be available in browser by the following link `http://<your-ip>:5050`.
 
 The following steps will be done during the installation:
 - `bl-pro-manager` user will be created
