@@ -1,4 +1,11 @@
-# Setup basic Backendless PRO for AWS EC2
+# Installing Backendless PRO in AWS EC2
+Watch the video below with instructions for how to install, configure and run Backendless Pro in the Azure environment.
+<div align="left">
+      <a href="https://youtu.be/Lz3vh_oy27o">
+         <img src="https://img.youtube.com/vi/Lz3vh_oy27o/0.jpg" style="width:70%;">
+      </a>
+</div>
+
 ### Requirements
 Amazon Machine Image (AMI) must comply with the following requirements:
 - 8Gb memory
@@ -24,12 +31,8 @@ The script form user data will do all the same as for [ubuntu](https://github.co
 
 2. Wait until the instance became available and copy public ip or url
 ![](img/EC2-ready.png)
-3. Open browser by the following link `http://<your-public-ip>:5050` and follow the wizard to install Backendless PRO
-
-Watch the video:
-```
-//TODO: add video
-```
+3. Open a browser and navigate to `http://<your-public-ip>:5050` to access Backendless PRO Manager. 
+4. Fill out the form and start the installation of the product.
 
 ### Domain configuration
 Follow [documentation](aws-elb-configuration.md) to configure domains
