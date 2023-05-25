@@ -61,7 +61,7 @@ WantedBy=multi-user.target
 Environment="KUBECONFIG=/home/bl-pro-manager/.kube/config"
 Environment="HOME=/home/bl-pro-manager"
 WorkingDirectory=/home/bl-pro-manager/pro-manager
-ExecStart=/home/bl-pro-manager/.nvm/versions/node/v14.18.2/bin/node ./src
+ExecStart=/bin/bash -c "PATH=$PATH:/home/bl-pro-manager/.nvm/versions/node/v14.18.2/bin exec /home/bl-pro-manager/.nvm/versions/node/v14.18.2/bin/node ./src"
 Restart=always
 
 EOF
