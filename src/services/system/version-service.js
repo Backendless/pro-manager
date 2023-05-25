@@ -46,7 +46,8 @@ class VersionService {
         logger.info(`npm install result is [${JSON.stringify(npmInstallResult)}]`)
 
         logger.info(`checked out tag ${tagName} and executed npm install. Exiting...`)
-        process.exit(0)
+        //shutdown pro-manager after response send
+        setTimeout(() => process.exit(0), 500)
     }
 }
 
