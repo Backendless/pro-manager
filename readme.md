@@ -1,7 +1,5 @@
-# About (BETA phase)
+# About
 **Pro Manager** is a backendless product created to simplify installation and managing on-premise Backendless version.
-
-The Pro Manager is currently in **BETA** stage. There can be some breaking changes, but it should not impact on your installation itself. You should use it carefully. 
 
 # Requirements
 - 4Gb memory
