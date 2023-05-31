@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: 'bl-api-ingress-prod'
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ksv-api.backendless.app
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: bl-server
+            port:
+              number: 9000
+  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+  - hosts:
+    - ksv-api.backendless.app
+    secretName: myingress-cert-api-prod # < cert-manager will store the created certificate in this secret.

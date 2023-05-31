@@ -1,5 +1,5 @@
 import { handler, Router } from '../../utils/router'
-import { certManager } from '../../services/manage/cert'
+import { localCertManager } from '../../services/manage/cert/local-cert-manager'
 import { ApiError } from '../../error'
 import fileUpload from 'express-fileupload'
 
@@ -18,7 +18,7 @@ uploadRouter.post('/', handler(({ body, query, files }) => {
         throw new ApiError.BadRequestError('certName field is required to create TLS certificate')
     }
 
-    return certManager.upload({ crtBytes: crtFile.data, keyBytes: keyFile.data, certName: body.certName })
+    return localCertManager.upload({ crtBytes: crtFile.data, keyBytes: keyFile.data, certName: body.certName })
 }))
 
 uploadRouter.put('/', handler(({ body, query, files }) => {
@@ -33,7 +33,7 @@ uploadRouter.put('/', handler(({ body, query, files }) => {
         throw new ApiError.BadRequestError('certName field is required to update TLS certificate')
     }
 
-    return certManager.update({
+    return localCertManager.update({
         crtBytes: crtFile ? crtFile.data : null,
         keyBytes: keyFile ? keyFile.data : null,
         certName: body.certName
@@ -41,11 +41,11 @@ uploadRouter.put('/', handler(({ body, query, files }) => {
 }))
 
 router.get('/', handler(({ body, query }) => {
-    return certManager.list()
+    return localCertManager.list()
 }))
 
 router.get('/describe', handler(() => {
-    return certManager.describe()
+    return localCertManager.describe()
 }))
 
 router.delete('/', handler(async ({ body, query }) => {
@@ -55,5 +55,5 @@ router.delete('/', handler(async ({ body, query }) => {
         throw new ApiError.BadRequestError('certName field is required to delete TLS certificate')
     }
 
-    return certManager.delete(certName)
+    return localCertManager.delete(certName)
 }))

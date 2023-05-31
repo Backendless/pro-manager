@@ -50,6 +50,13 @@ NAME             STATUS   ROLES           AGE    VERSION
 docker-desktop   Ready    control-plane   117d   v1.24.2
 ```
 - If you suppose to use domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
+```
+- If you suppose to use letsencrypt certificates install cert-manager
+```
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
+```
 - Follow instructions to [start Pro Manager](#start-pro-manager) 
 
 ### Installation on any other platform
