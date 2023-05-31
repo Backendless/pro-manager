@@ -2,20 +2,22 @@
 **Pro Manager** is a backendless product created to simplify installation and managing on-premise Backendless version.
 
 # Requirements
-- 4Gb memory
+- 8Gb memory
 - 4 CPU
 - 20 GB disk space
 
-### AWS EC2
-[AWS EC2 basic installation](./Doc/aws-ec2-basic.md)
+## Installation
+### [AWS EC2 basic installation](./Doc/aws-ec2-basic.md)
 
-### Ubuntu
+<details>
+<summary>Ubuntu</summary>
 The following way if installation should work for any debian based OS.
 
 Open terminal and execute the following command
 ```
 curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
 ```
+
 At the end Pro Manager will be available in browser by the following link `http://<your-ip>:5050`.
 
 The following steps will be done during the installation:
@@ -38,9 +40,11 @@ To get Pro Manager logs use `journalctl`
 ```
 journalctl -u pro-manager.service -f
 ```
+</details>
 
+<details>
+<summary>Mac OS / Windows</summary>
 
-### Mac OS / Windows 
 - Install Docker desktop https://www.docker.com/products/docker-desktop/
 - Go to preference and enable kubernetes ![img_1.png](Doc/img/mac-os-enable-k8s.png)
 - Make sure kubectl is available and works in terminal
@@ -58,8 +62,10 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
 ```
 - Follow instructions to [start Pro Manager](#start-pro-manager) 
+</details>
 
-### Installation on any other platform
+<details>
+<summary>Installation on any other platform</summary>  
 
 - Install node v14.18.2
   ```
@@ -76,13 +82,27 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
      && sudo k3s kubectl config view --raw > "$KUBECONFIG"
      && kubectl get nodes
     ```
-  Make sure that you have access to kubectl. Execute `kubectl get nodes`. The result should as the following:
+ - Make sure that you have access to kubectl. Execute `kubectl get nodes`. The result should as the following:
     ```
     sergey.kukurudzyak@dev-k3s:~/pro-manager$ kubectl get nodes
     NAME                         STATUS   ROLES                  AGE   VERSION
     dev-k3s.us.backendless.com   Ready    control-plane,master   19h   v1.24.3+k3s1
     ```
-# Checking available ports  
+
+  - If you suppose to use domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
+```
+- If you suppose to use letsencrypt certificates install cert-manager
+```
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
+```  
+</details>  
+
+# Managemet
+  <details>
+<summary>Checking available ports</summary>
+ 
 Make sure the following ports are available for you:
 
 - 5050  - Pro manager web
@@ -90,8 +110,12 @@ Make sure the following ports are available for you:
 - 32300 - API
 - 32400 - Web console
 - 32600 - Consul( configuration values )
+</details>  
 
-# Start Pro Manager
+<details>
+<summary>Start pro-manager from repository</summary>
+  
+### Start Pro Manager
 - Clone Pro Manager
 ```
 git clone https://github.com/Backendless/pro-manager.git
@@ -106,15 +130,22 @@ git clone https://github.com/Backendless/pro-manager.git
   npm run start
   ```
 - Open the following link in browser http://localhost:5050
+</details>  
 
-# Upgrade Pro Manager
+<details>
+<summary>Upgrade Pro Manager from repository</summary>
+  
+### Upgrade Pro Manager
 1. Stop Pro Manager
 2. Goto `pro-manager` folder for example on ubuntu it is `/home/bl-pro-manager/pro-manager`
 3. Execute `git pull` command
 4. Execute `npm i`
 5. Start Pro Manager
+</details>   
 
-# Remove Backendless Pro and Pro Manager
+  <details>
+<summary>Remove Backendless Pro and Pro Manager</summary>
+
 ### Remove Backendless Pro
 ```
 curl -X DELETE 'http://localhost:5050/services/install/delete' \
@@ -129,3 +160,4 @@ sudo systemctl stop pro-manager
 ```
 sudo deluser --remove-home bl-pro-manager
 ```
+</details>
