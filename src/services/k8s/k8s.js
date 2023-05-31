@@ -11,4 +11,5 @@ export const k8sNetworkingV1Api = kc.makeApiClient(k8s.NetworkingV1Api)
 export const k8sRbacAuthorizationV1Api = kc.makeApiClient(k8s.RbacAuthorizationV1Api)
 export const k8sExec = new k8s.Exec(kc)
 export const k8sLog = new k8s.Log(kc)
+export const k8sObjectApi = k8s.KubernetesObjectApi.makeApiClient(kc)
 

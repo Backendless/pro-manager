@@ -10,7 +10,7 @@ import {
 import { ApiError } from '../../../../error'
 import { create } from './create'
 import { update } from './update'
-import { certManager } from '../../cert'
+import { localCertManager } from '../../cert/local-cert-manager'
 import { domainConfigurationService } from '../../configuration/domain'
 import { describeDomainConfiguration } from '../../configuration/domain/describe-domain-configuration'
 import { manageService } from '../../manage-service'
@@ -88,7 +88,7 @@ class IngressLoadbalancerService {
 
         if (certName) {
 
-            const certs = await certManager.list()
+            const certs = await localCertManager.list()
 
             if (!certs.includes(certName)) {
                 throw new ApiError.BadRequestError(`certName '${certName}' does not exists`)

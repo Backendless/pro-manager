@@ -8,7 +8,7 @@ import { describeCertConfiguration } from './describe-cert-configuration'
 
 const logger = Logger('CertManager')
 
-class CertManager {
+class LocalCertManager {
     async upload({ crtBytes, keyBytes, certName }) {
         const k8sNamespace = await k8sConfig.getNamespace()
         const v1Secret = {
@@ -91,4 +91,4 @@ class CertManager {
     }
 }
 
-export const certManager = new CertManager()
+export const localCertManager = new LocalCertManager()
