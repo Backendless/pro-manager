@@ -4,13 +4,14 @@ import { k8sNetworkingV1Api } from '../../../k8s/k8s'
 import { K8sError } from '../../../../error/k8s-error'
 import { Logger } from '../../../../logger'
 import { ingressLoadbalancerService } from './index'
+import { createIngressConfig } from './create-ingress-config'
 
 const logger = Logger('ingress-load-balancer-update')
 
 export async function update( { type, domain, certName } ){
     const k8sNamespace = await k8sConfig.getNamespace()
 
-    const config = await ingressLoadbalancerService._getConfigWithValues({ type, domain, certName })
+    const config = await createIngressConfig({ type, domain, certName })
 
     const ingressName = config.metadata.name
 

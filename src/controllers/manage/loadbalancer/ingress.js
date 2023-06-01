@@ -20,6 +20,10 @@ router.get('/', handler(() => {
     return ingressLoadbalancerService.list()
 }))
 
+router.get('/certs', handler(() => {
+    return ingressLoadbalancerService.getCerts()
+}))
+
 router.get('/describe', handler(() => {
     return ingressLoadbalancerService.describe()
 }))
