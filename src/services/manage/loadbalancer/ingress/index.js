@@ -15,6 +15,7 @@ import { domainConfigurationService } from '../../configuration/domain'
 import { describeDomainConfiguration } from '../../configuration/domain/describe-domain-configuration'
 import { manageService } from '../../manage-service'
 import { describeIngressConfiguration } from './describe-ingress-configuration'
+import { certManager } from '../../cert-manager/cert-manager'
 
 const logger = Logger('ingress-load-balancer')
 
@@ -40,6 +41,25 @@ class IngressLoadbalancerService {
                 sslEnabled: item.spec.tls ? item.spec.tls.length > 0 : false
             }
         })
+    }
+
+    async getCerts() {
+        const localCerts = await localCertManager.list()
+        logger.info(`local certificates is [${localCerts}]`)
+        const letsencryptCerts = await certManager.getIssuers()
+        logger.info(`letsencrypt certificates is [${JSON.stringify(letsencryptCerts)}]`)
+
+        const result = [].concat(localCerts)
+
+        if (letsencryptCerts.prod.name) {
+            result.push(letsencryptCerts.prod.name)
+        }
+
+        if (letsencryptCerts.stage.name) {
+            result.push(letsencryptCerts.stage.name)
+        }
+
+        return result
     }
 
     describe() {
@@ -82,28 +102,8 @@ class IngressLoadbalancerService {
         return config
     }
 
-    async _getConfigWithValues({ type, domain, certName }) {
-        const config = this._getConfigForTypeOrThrow(type)
-        config.spec.rules[0].host = domain
+    async _getConfigWithValues() {
 
-        if (certName) {
-
-            const certs = await localCertManager.list()
-
-            if (!certs.includes(certName)) {
-                throw new ApiError.BadRequestError(`certName '${certName}' does not exists`)
-            }
-
-            config.spec.tls = [
-                {
-                    'hosts': [
-                        domain
-                    ],
-                    'secretName': certName
-                }
-            ]
-        }
-        return config
     }
 }
 
