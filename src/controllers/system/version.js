@@ -10,7 +10,7 @@ router.get('/current', handler(() => {
 }))
 
 router.get('/', handler(({ query }) => {
-    return versionService.list()
+    return versionService.list( query )
 }))
 
 router.put('/change', handler(({ body }) => {

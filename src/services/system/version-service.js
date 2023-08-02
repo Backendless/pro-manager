@@ -20,14 +20,15 @@ class VersionService {
         return convertTagToVersion(tag)
     }
 
-    async list() {
-        const fetchResult = await simpleGit().fetch(['--tags'])
-        logger.info(`fetch result is [${JSON.stringify(fetchResult)}]`)
-        const tags = await simpleGit().tags(['-l', 'release_*'])
-        logger.info(`available release tags is [${JSON.stringify(tags)}]`)
-        tags.all = tags.all.map(tag => convertTagToVersion(tag))
-        tags.latest = convertTagToVersion(tags.latest)
-        return tags
+    async list( {name} ) {
+      const fetchResult = await simpleGit().fetch( ['--tags'] )
+      logger.info( `fetch result is [${JSON.stringify( fetchResult )}]` )
+      let tagFilter = name ? `release_*${name}*` : 'release_*';
+      const tags = await simpleGit().tags( ['-l', tagFilter] )
+      logger.info( `available release tags is [${JSON.stringify( tags )}]` )
+      tags.all = tags.all.length === 0 ? [] : tags.all.map( tag => convertTagToVersion( tag ) )
+      tags.latest = tags.latest ? convertTagToVersion( tags.latest ) : null
+      return tags
     }
 
     async changeVersion({ newVersion }) {
