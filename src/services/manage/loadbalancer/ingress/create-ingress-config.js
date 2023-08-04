@@ -34,6 +34,9 @@ export async function createIngressConfig({ type, domain, certName }) {
         } else {
             throw new ApiError.BadRequestError(`certName '${certName}' does not exists`)
         }
+    } else {
+      config.spec.tls = []
     }
+
     return config
 }
