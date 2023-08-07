@@ -16,6 +16,7 @@ import { describeDomainConfiguration } from '../../configuration/domain/describe
 import { manageService } from '../../manage-service'
 import { describeIngressConfiguration } from './describe-ingress-configuration'
 import { certManager } from '../../cert-manager/cert-manager'
+import { extractCertNameFromSecretName } from './tls-name'
 
 const logger = Logger('ingress-load-balancer')
 
@@ -35,11 +36,13 @@ class IngressLoadbalancerService {
     async list() {
         const k8sResponse = await k8sNetworkingV1Api.listNamespacedIngress(await k8sConfig.getNamespace(), true, true, '', '', getIngressLabelToSelect())
         return k8sResponse.body.items.map(item => {
-            return {
-                domain: item.spec.rules[0].host,
-                type: getTypeFromLabels(item.metadata.labels),
-                sslEnabled: item.spec.tls ? item.spec.tls.length > 0 : false
-            }
+          const certName = item.spec.tls && item.spec.tls.length > 0 ? extractCertNameFromSecretName( item.spec.tls[0].secretName ) : null
+          return {
+            domain: item.spec.rules[0].host,
+            type: getTypeFromLabels( item.metadata.labels ),
+            sslEnabled: certName !== null,
+            certName: certName
+          }
         })
     }
 

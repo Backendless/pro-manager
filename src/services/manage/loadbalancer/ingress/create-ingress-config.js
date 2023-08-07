@@ -2,6 +2,7 @@ import { localCertManager } from '../../cert/local-cert-manager'
 import { ApiError } from '../../../../error'
 import { ingressLoadbalancerService } from './index'
 import { certManager } from '../../cert-manager/cert-manager'
+import { createSecretName } from './tls-name'
 
 export async function createIngressConfig({ type, domain, certName }) {
     const config = ingressLoadbalancerService._getConfigForTypeOrThrow(type)
@@ -28,7 +29,7 @@ export async function createIngressConfig({ type, domain, certName }) {
                     'hosts': [
                         domain
                     ],
-                    'secretName': `${certName}-${domain.replace(/\./g, '-')}`
+                    'secretName': createSecretName( certName, domain )
                 }
             ]
         } else {

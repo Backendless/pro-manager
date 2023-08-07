@@ -76,6 +76,7 @@
     "object-curly-spacing": [
       "warn",
       "always"
-    ]
+    ],
+    "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": true }]
   }
 }
