@@ -23,3 +23,6 @@ spec:
   - hosts:
     - ksv-api.backendless.app
     secretName: myingress-cert-api-prod # < cert-manager will store the created certificate in this secret.
+  - hosts:
+    - my-new-domain.com
+    secretName: new-domain-cert-api-prod
