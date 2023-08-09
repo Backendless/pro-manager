@@ -49,7 +49,7 @@
       "single",
       "avoid-escape"
     ],
-    // require space before/after arrow function"s arrow
+    // require space before/after arrow functions arrow
     "arrow-spacing": [
       "warn",
       {
