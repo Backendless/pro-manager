@@ -1,17 +1,15 @@
 import { k8sAppsV1Api, k8sCoreV1Api, k8sRbacAuthorizationV1Api } from '../../k8s/k8s'
 import { installStatus } from '../install-status'
-import axios from 'axios'
 import { consul } from '../../consul'
 import { HttpError } from '@kubernetes/client-node'
-import { readFileContent } from '../../../utils/fs'
-import path from 'path'
 import { k8sConfig } from '../../../config/k8s-config'
 import { waitForInitConsulJobComplete } from '../wait-for-init-consul-job-complete'
+import { HazelcastConfig } from '../../k8s/config/hazelcast-config'
 
 const Status = require('../../service-status.json')
 
 export async function installBlHazelcast({ version }) {
-    const blK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/hazelcast.json')))
+    const blK8sConfig = new HazelcastConfig()
     await waitForInitConsulJobComplete()
 
     const clusterRoleName = blK8sConfig.permissions.clusterRole.metadata.name
@@ -51,10 +49,12 @@ export async function installBlHazelcast({ version }) {
         await k8sRbacAuthorizationV1Api.createClusterRoleBinding(blK8sConfig.permissions.clusterRoleBinding)
     }
 
+    const namespace = await k8sConfig.getNamespace()
+
     installStatus.info('setting config for hazelcast server...')
-    await consul.put('config/hazelcast/xml', await downloadFile(version, 'hazelcast.xml'))
+    await consul.put('config/hazelcast/xml', blK8sConfig.hazelcastXml(namespace))
     installStatus.info('setting config for hazelcast client...')
-    await consul.put('config/hazelcast/client/xml', await downloadFile(version, 'hazelcast-client.xml'))
+    await consul.put('config/hazelcast/client/xml', blK8sConfig.hazelcastClientXml(namespace))
 
     installStatus.info('installing bl-hazelcast...')
     const workload = blK8sConfig.workload
@@ -62,14 +62,14 @@ export async function installBlHazelcast({ version }) {
 
 
     installStatus.info('creating deployment for bl-hazelcast')
-    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedDeployment(await k8sConfig.getNamespace(), workload)
+
+    const createStatefulSetResult = await k8sAppsV1Api.createNamespacedDeployment(namespace, workload)
     installStatus.info('creating service for bl-hazelcast')
-    const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), blK8sConfig.service)
+    const createServiceResult = await k8sCoreV1Api.createNamespacedService(namespace, blK8sConfig.service)
 
 
-    return { createStatefulSetResult, createServiceResult }
-}
-
-async function downloadFile(version, name) {
-    return (await axios.get(`https://raw.githubusercontent.com/Backendless/BackendlessPro/release_${version}/kubernetes-doc/services/hazelcast/4.0.x-4.1.x/${name}`)).data
+    return {
+        createStatefulSetResult,
+        createServiceResult
+    }
 }
