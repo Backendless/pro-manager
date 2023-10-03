@@ -16,6 +16,9 @@ import { installBlRtServer } from './install/bl/install-bl-rt-server'
 import { deleteJob } from './k8s/k8s-delete-job'
 import { deploymentScale, statefulsetScale } from './k8s/k8s-scale'
 import { deploymentRestart, statefulsetRestart } from './k8s/k8s-restart'
+import { createClusterRoleAndServiceAccount } from './install/create-cluster-role-and-service-account'
+import { IngressHazelcastClusterRole } from './k8s/config/roles/ingress-hazelcast-cluster-role'
+import { removeClusterRoleAndServiceAccount } from './install/remove-cluster-role-and-service-account'
 
 class BlContainers {
     bl = {
@@ -147,6 +150,15 @@ class BlContainers {
             deleteService: () => deleteStatefulsetAndService('bl-mongo')
         },
 
+    }
+
+    roles = {
+        ingressHazelcastClusterRole: {
+            name:    'bl-ingress-hazelcast-cluster-role',
+            install: () => createClusterRoleAndServiceAccount({ blRole: new IngressHazelcastClusterRole() }),
+            delete: () => removeClusterRoleAndServiceAccount({ blRole: new IngressHazelcastClusterRole() })
+
+        }
     }
 
     getSortedDependencies() {

@@ -80,6 +80,8 @@ class InstallService {
             await this._installContainer(dependency, install)
         }
 
+        await blContainers.roles.ingressHazelcastClusterRole.install()
+
         installStatus.info('checking status of bl-init-config-values job')
         const initConfigValuesContainer = blContainers.bl.initConfigValues
         if ((await initConfigValuesContainer.serviceStatus()).status === Status.notInstalled) {
@@ -163,6 +165,8 @@ class InstallService {
         for (const [key, dependency] of Object.entries(blContainers.bl)) {
             await dependency.deleteService()
         }
+
+        await blContainers.roles.ingressHazelcastClusterRole.delete()
 
         installStatus.setServiceCreated(false)
     }
