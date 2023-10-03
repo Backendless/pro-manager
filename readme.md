@@ -53,6 +53,9 @@ ksv510@Sergeys-MacBook-Pro ~ % kubectl get nodes
 NAME             STATUS   ROLES           AGE    VERSION
 docker-desktop   Ready    control-plane   117d   v1.24.2
 ```
+
+## Domains
+
 - If you suppose to use domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
@@ -88,6 +91,8 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
     NAME                         STATUS   ROLES                  AGE   VERSION
     dev-k3s.us.backendless.com   Ready    control-plane,master   19h   v1.24.3+k3s1
     ```
+
+## Domains
 
   - If you suppose to use domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
