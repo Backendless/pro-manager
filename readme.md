@@ -11,14 +11,14 @@
 
 <details>
 <summary>Ubuntu</summary>
-The following way if installation should work for any debian based OS.
+The following way of installation should work for any Debian-based OS.
 
 Open terminal and execute the following command
 ```
 curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
 ```
 
-At the end Pro Manager will be available in browser by the following link `http://<your-ip>:5050`.
+At the end, Pro Manager will be available in a browser by the following link `http://<your-ip>:5050`.
 
 The following steps will be done during the installation:
 - `bl-pro-manager` user will be created
@@ -56,11 +56,11 @@ docker-desktop   Ready    control-plane   117d   v1.24.2
 
 ## Domains
 
-- If you suppose to use domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+- If you plan to use custom domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
 ```
-- If you suppose to use letsencrypt certificates install cert-manager
+- If you plan to use a letsencrypt certificate, install cert-manager
 ```
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
 ```
@@ -94,11 +94,11 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 
 ## Domains
 
-  - If you suppose to use domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+  - If you plan to use custom domains, you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
 ```
-- If you suppose to use letsencrypt certificates install cert-manager
+- If you plan to use a letsencrypt certificate, install cert-manager
 ```
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
 ```  
