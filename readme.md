@@ -104,7 +104,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 ```  
 </details>  
 
-# Managemet
+# Management
   <details>
 <summary>Checking available ports</summary>
  
