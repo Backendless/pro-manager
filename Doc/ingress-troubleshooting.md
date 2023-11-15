@@ -1,5 +1,4 @@
-<details>
-<summary>Ubuntu with one command installation</summary>
+# Ubuntu with one command installation
 1. At first you should login as `bl-pro-manager` user, use the following command:
    
 ```
@@ -32,4 +31,3 @@ Rules:
 Annotations:             <none>
 Events:                  <none>
 ```
-</details>
