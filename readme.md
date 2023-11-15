@@ -166,3 +166,9 @@ sudo systemctl stop pro-manager
 sudo deluser --remove-home bl-pro-manager
 ```
 </details>
+
+<details>
+<summary>Troubleshooting</summary>
+
+[Ingress](Doc/ingress-troubleshooting.md)
+</details>
