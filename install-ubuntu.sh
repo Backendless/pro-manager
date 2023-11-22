@@ -86,9 +86,11 @@ echo 'installing cert manager'
 
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml  | tee ./cert-manager-install.log
 
+echo 'list Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Challenges'
 kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Challenges --all-namespaces  | tee ./cert-manager-info.txt
 
-kubectl get events -A > events.txt
+echo 'list kubernetes events'
+kubectl get events -A | tee ./kubernetes-event.txt
 
 cat << EOF
 
