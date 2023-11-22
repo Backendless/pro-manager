@@ -75,15 +75,17 @@ systemctl status pro-manager.service
 
 echo 'installing ingress'
 
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml  | tee ./ingress-nginx-install.log
 
-kubectl get pods --namespace=ingress-nginx
+kubectl get pods --namespace=ingress-nginx | tee ./ingress-nginx-info.txt  
 
 echo 'installing cert manager'
 
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml  | tee ./cert-manager-install.log
 
-kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Challenges --all-namespaces
+kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Challenges --all-namespaces  | tee ./cert-manager-info.txt
+
+kubectl get events -A > events.txt
 
 cat << EOF
 
