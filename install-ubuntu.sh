@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# Split script output to stdout and to the logfile
-exec 1> >(tee -a "/var/log/pro-manager-install.log")
-
 set -e
-echo "Backendless Pro Manager installation started at `date`"
 
 echo "creating user bl-pro-manger"
 sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
@@ -15,6 +11,9 @@ sudo adduser bl-pro-manager systemd-journal
 su bl-pro-manager
 
 work_dir="/home/bl-pro-manager"
+
+exec 1> >(tee -a "/home/bl-pro-manager/pro-manager-install.log")
+echo "Backendless Pro Manager installation started at `date`"
 
 cd $work_dir
 echo "in working folder $work_dir"
