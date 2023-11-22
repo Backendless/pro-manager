@@ -1,6 +1,10 @@
 #!/bin/bash
 
+# Split script output to stdout and to the logfile
+exec 1> >(tee -a "/var/log/pro-manager-install.log")
+
 set -e
+echo "Backendless Pro Manager installation started at `date`"
 
 echo "creating user bl-pro-manger"
 sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
@@ -77,7 +81,7 @@ echo 'installing ingress'
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml  | tee ./ingress-nginx-install.log
 
-kubectl get pods --namespace=ingress-nginx | tee ./ingress-nginx-info.txt  
+kubectl get pods --namespace=ingress-nginx | tee ./ingress-nginx-info.txt
 
 echo 'installing cert manager'
 
@@ -104,3 +108,6 @@ Copyright 2012-2023, Backendless Corp. All rights reserved.
 Congratulations, the initial part of the Backendless Pro installation is complete. To proceed with the installation,
 open a web browser and navigate to <instance IP address>:5050
 EOF
+
+sleep 1
+exit 0
