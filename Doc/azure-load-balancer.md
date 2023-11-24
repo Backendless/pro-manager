@@ -8,6 +8,7 @@
    ![](img/azure-backend-pool-lb.png)
    
 4. Add load balancing rule for port 80
+
    ![](img/azure-lb-balancing-rule.png)
 
 5. Add load balancing rule for port 443 in the same way as for port 80
