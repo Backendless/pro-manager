@@ -162,7 +162,7 @@ export class HazelcastConfig {
 
 <hazelcast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://www.hazelcast.com/schema/config
-                               http://www.hazelcast.com/schema/config/hazelcast-config-4.1.xsd"
+                               http://www.hazelcast.com/schema/config/hazelcast-config-5.3.xsd"
            xmlns="http://www.hazelcast.com/schema/config">
 
     <properties>
@@ -176,7 +176,7 @@ export class HazelcastConfig {
 
     <instance-name>hz-backendless</instance-name>
 
-    <management-center scripting-enabled="false">http://localhost:8080/mancenter</management-center>
+    <management-center scripting-enabled="false"/>
     <network>
         <join>
             <multicast enabled="false"/>
@@ -251,7 +251,7 @@ export class HazelcastConfig {
 
 <hazelcast-client xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://www.hazelcast.com/schema/client-config
-                               http://www.hazelcast.com/schema/client-config/hazelcast-client-config-4.1.xsd"
+                               http://www.hazelcast.com/schema/client-config/hazelcast-client-config-5.3.xsd"
                   xmlns="http://www.hazelcast.com/schema/client-config">
 
     <properties>
