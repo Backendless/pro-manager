@@ -54,13 +54,11 @@ NAME             STATUS   ROLES           AGE    VERSION
 docker-desktop   Ready    control-plane   117d   v1.24.2
 ```
 
-## Domains
-
-- If you plan to use custom domains you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+- Install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
 ```
-- If you plan to use a letsencrypt certificate, install cert-manager
+- Install cert-manager
 ```
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
 ```
@@ -91,17 +89,15 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
     NAME                         STATUS   ROLES                  AGE   VERSION
     dev-k3s.us.backendless.com   Ready    control-plane,master   19h   v1.24.3+k3s1
     ```
-
-## Domains
-
-  - If you plan to use custom domains, you need to install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
+  - Install ingress https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
 ```
-- If you plan to use a letsencrypt certificate, install cert-manager
+  - Install cert-manager
 ```
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
-```  
+```
+- Follow instructions to [start Pro Manager](#start-pro-manager)
 </details>  
 
 # Management
@@ -115,10 +111,7 @@ Make sure the following ports are available for you:
 - 32300 - API
 - 32400 - Web console
 - 32600 - Consul( configuration values )
-</details>  
-
-<details>
-<summary>Start pro-manager from repository</summary>
+</details>
   
 ### Start Pro Manager
 - Clone Pro Manager
@@ -135,7 +128,6 @@ git clone https://github.com/Backendless/pro-manager.git
   npm run start
   ```
 - Open the following link in browser http://localhost:5050
-</details>  
 
 <details>
 <summary>Upgrade Pro Manager from repository</summary>
