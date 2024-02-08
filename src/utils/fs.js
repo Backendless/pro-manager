@@ -1,6 +1,5 @@
 import { Logger } from '../logger'
 import { isWin } from './os'
-//import { promisify } from 'util'
 import fs from 'fs'
 
 const logger = Logger('fs-util')
