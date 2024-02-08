@@ -1,6 +1,7 @@
 import { Logger } from '../logger'
 import { isWin } from './os'
-import fs from 'fs'
+
+const fs = require('fs')
 
 const logger = Logger('fs-util')
 
