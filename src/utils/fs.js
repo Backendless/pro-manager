@@ -34,6 +34,37 @@ export async function readFileContent(path) {
     })
 }
 
+export async function isDirectory(path) {
+    logger.verbose(`checking if path is directory ${path}`)
+    return new Promise((resolve, reject) => {
+        fs.stat(path, (err, result) => {
+            if (err) {
+                logger.error(`error to check path ${path} with error: ${err}`)
+                reject(err)
+            } else {
+                const isDir = result.isDirectory()
+                logger.verbose(`path ${path} is directory: ${isDir}`)
+                resolve(isDir)
+            }
+        })
+    })
+}
+
+export async function listDirectory(path) {
+    logger.verbose(`listing directory ${path}`)
+    return new Promise((resolve, reject) => {
+        fs.readdir(path, (err, result) => {
+            if (err) {
+                logger.error(`error to list directory ${path}: ${err}`)
+                reject(err)
+            } else {
+                logger.verbose(`directory ${path} listed: ${result}`)
+                resolve(result)
+            }
+        })
+    })
+}
+
 export function osDelimiterForFiles() {
     return isWin() ? '\\' : '/'
 }
