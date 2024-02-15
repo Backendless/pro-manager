@@ -15,7 +15,7 @@ export function describeDomainConfiguration() {
                 },
                 getDefaultConfiguration: async () => {
                     const defaultValues = await getDefaultDomainAndPorts()
-                    return { 'Console URL': `http://${defaultValues.ip}:${defaultValues.ports.console}` } 
+                    return { 'Console URL': `http://${defaultValues.domain}:${defaultValues.ports.console}` } 
                 }
             }
         ],
@@ -32,7 +32,7 @@ export function describeDomainConfiguration() {
                 },
                 getDefaultConfiguration: async () => {
                     const defaultValues = await getDefaultDomainAndPorts()
-                    return { Host: defaultValues.ip }
+                    return { Host: defaultValues.domain }
                 }
             },
             {
@@ -78,7 +78,7 @@ export function describeDomainConfiguration() {
                 },
                 getDefaultConfiguration: async () => {
                     const defaultValues = await getDefaultDomainAndPorts()
-                    return { Host: defaultValues.ip }
+                    return { Host: defaultValues.domain }
                 }
             },
             {

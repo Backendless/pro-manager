@@ -9,21 +9,21 @@ export const setupPublicDomain = async (statusLogger) => {
 
     logger.info('start setup public domains')
 
-    const { ip, ports } = await getDefaultDomainAndPorts()
+    const { domain, ports } = await getDefaultDomainAndPorts()
 
     const domains = await domainConfigurationService.getAll()
     localLogger.info(`found domains ${JSON.stringify(domains)}`)
 
     domains.rt.Port = ports.rt
-    domains.rt.Host = ip
+    domains.rt.Host = domain
 
     domains.api.Port = ports.api
-    domains.api.Host = ip
+    domains.api.Host = domain
 
     const domainDescription = await domainConfigurationService.describeConfiguration()
     const consoleUrlName = domainDescription.console[0].name
     localLogger.info(`consoleUrlName is [${consoleUrlName}]`)
-    domains.console[consoleUrlName] = `http://${ip}:${ports.console}`
+    domains.console[consoleUrlName] = `http://${domain}:${ports.console}`
 
     await domainConfigurationService.saveAll(domains)
 

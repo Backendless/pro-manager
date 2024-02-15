@@ -15,8 +15,8 @@ export async function getDefaultDomainAndPorts() {
     const isProManagerAvailableWithPublicIp = await checkIfEndpointAvailableForGet(proManagerEndpoint)
     logger.info(`pro manager is ${isProManagerAvailableWithPublicIp ? '' : 'NOT '}available by the endpoint [${proManagerEndpoint}]`)
 
-    const ip = isProManagerAvailableWithPublicIp ? publicIp : '127.0.0.1'
-    logger.info(`will be used ip [${ip}]`)
+    const domain = isProManagerAvailableWithPublicIp ? publicIp : '127.0.0.1'
+    logger.info(`will be used domain [${domain}]`)
 
     const ports = {
         rt: 32700,
@@ -24,5 +24,5 @@ export async function getDefaultDomainAndPorts() {
         console: 32400
     }
 
-    return { ip, ports }
+    return { domain, ports }
 }
