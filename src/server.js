@@ -53,12 +53,12 @@ export function start() {
       process.exit(1)
     }
 
-    logger.info('')
-    logger.info('*************************************************************************************')
-    logger.info('***   Backendless Pro Manage is running, talking to API server on %s', Config.apiUrl)
-    logger.info(`***   Open http://localhost:${Config.port} in a browser to view the app.`)
-    logger.info('*************************************************************************************')
-    logger.info('')
+    console.log('')
+    console.log('*****************************************************************')
+    console.log('***   Backendless Pro Manage is running.')
+    console.log(`***   Open http://localhost:${Config.port} in a browser to experience the app.`)
+    console.log('*****************************************************************')
+    console.log('')
   }))
 
   const startGracefulShutdown = signal => {
