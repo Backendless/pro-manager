@@ -74,6 +74,7 @@ class IngressLoadbalancerService {
         const ingressName = this._getConfigForTypeOrThrow(type).metadata.name
         logger.info(`deleting ingress rules for '${type}' type`)
         await k8sNetworkingV1Api.deleteNamespacedIngress(ingressName, await k8sConfig.getNamespace())
+        await this._saveDefaultToConsul({type})
     }
 
     async apply() {
@@ -81,6 +82,20 @@ class IngressLoadbalancerService {
         await manageService.restartService('bl-web-console')
         await manageService.restartService('bl-taskman')
         await manageService.restartService('bl-rt-server')
+    }
+
+    async _saveDefaultToConsul({ type }) {
+        const configDescriptions = describeDomainConfiguration()[type]
+        const objectToSave = {}
+        objectToSave[type] = {}
+
+        for (const configDescription of configDescriptions) {
+            Object.assign(objectToSave[type], await configDescription.getDefaultConfiguration())
+        }
+
+        logger.info(`saving default config to consul: ${JSON.stringify(objectToSave)}`)
+
+        await domainConfigurationService.saveAll(objectToSave)
     }
 
     async _saveToConsul({ type, domain, certName }) {
