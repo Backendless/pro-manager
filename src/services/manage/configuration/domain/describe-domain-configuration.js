@@ -1,3 +1,5 @@
+import { getDefaultDomainAndPorts } from "../../get-default-domain-and-ports"
+
 export function describeDomainConfiguration() {
     return {
         console: [
@@ -10,6 +12,10 @@ export function describeDomainConfiguration() {
                 required: true,
                 convertFromIngressObject: ({ domain, certName }) => {
                     return { 'Console URL': `${certName ? 'https' : 'http'}://${domain}` }
+                },
+                getDefaultConfiguration: async () => {
+                    const defaultValues = await getDefaultDomainAndPorts()
+                    return { 'Console URL': `http://${defaultValues.domain}:${defaultValues.ports.console}` } 
                 }
             }
         ],
@@ -21,9 +27,14 @@ export function describeDomainConfiguration() {
                 type: 'string',
                 consulPath: 'config/server/publicHost',
                 required: true,
-                convertFromIngressObject: ({ domain }) => { return { Host: domain } }
-            }
-            ,
+                convertFromIngressObject: ({ domain }) => { 
+                    return { Host: domain }
+                },
+                getDefaultConfiguration: async () => {
+                    const defaultValues = await getDefaultDomainAndPorts()
+                    return { Host: defaultValues.domain }
+                }
+            },
             {
                 name: 'Port',
                 description: 'Port for connection',
@@ -31,8 +42,13 @@ export function describeDomainConfiguration() {
                 type: 'number',
                 consulPath: 'config/server/publicPort',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { Port: certName ? '443' : '80' }}
-
+                convertFromIngressObject: ({ certName }) => { 
+                    return { Port: certName ? '443' : '80' }
+                },
+                getDefaultConfiguration: async () => {
+                    const defaultValues = await getDefaultDomainAndPorts()
+                    return { Port: defaultValues.ports.api }
+                }
             },
             {
                 name: 'Protocol',
@@ -41,8 +57,12 @@ export function describeDomainConfiguration() {
                 type: 'string',
                 consulPath: 'config/server/publicProtocol',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { Protocol: certName ? 'https' : 'http' }}
-
+                convertFromIngressObject: ({ certName }) => { 
+                    return { Protocol: certName ? 'https' : 'http' }
+                },
+                getDefaultConfiguration: () => {
+                    return 'http'
+                }
             }
         ],
         rt: [
@@ -53,9 +73,14 @@ export function describeDomainConfiguration() {
                 type: 'string',
                 consulPath: 'config/rt-server/socketServer/connection-host',
                 required: true,
-                convertFromIngressObject: ({ domain }) => { return { Host: domain } }
-            }
-            ,
+                convertFromIngressObject: ({ domain }) => { 
+                    return { Host: domain }
+                },
+                getDefaultConfiguration: async () => {
+                    const defaultValues = await getDefaultDomainAndPorts()
+                    return { Host: defaultValues.domain }
+                }
+            },
             {
                 name: 'Port',
                 description: 'Port for connection',
@@ -63,7 +88,13 @@ export function describeDomainConfiguration() {
                 type: 'number',
                 consulPath: 'config/rt-server/socketServer/connection-port',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { Port: certName ? '443' : '80' }}
+                convertFromIngressObject: ({ certName }) => { 
+                    return { Port: certName ? '443' : '80' }
+                },
+                getDefaultConfiguration: async () => {
+                    const defaultValues = await getDefaultDomainAndPorts()
+                    return { Port: defaultValues.ports.rt }
+                }
             },
             {
                 name: 'Protocol',
@@ -72,7 +103,12 @@ export function describeDomainConfiguration() {
                 type: 'string',
                 consulPath: 'config/rt-server/socketServer/connection-protocol',
                 required: true,
-                convertFromIngressObject: ({ certName }) => { return { Protocol: certName ? 'https' : 'http' }}
+                convertFromIngressObject: ({ certName }) => { 
+                    return { Protocol: certName ? 'https' : 'http' }
+                },
+                getDefaultConfiguration: () => {
+                    return 'http'
+                }
             }
         ],
         // consul: [
