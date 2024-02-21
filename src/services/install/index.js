@@ -92,11 +92,12 @@ class InstallService {
 
         installStatus.info('bl-init-config-values job created')
 
+        await waitForInitConsulJobComplete()
+
         if (install.license) {
             await consul.put('config/license/id', install.license)
         }
 
-        await waitForInitConsulJobComplete()
         await setupPublicDomain(installStatus)
 
         const containers = Object.entries(blContainers.bl)
