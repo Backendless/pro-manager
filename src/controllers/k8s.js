@@ -6,6 +6,8 @@ import { createConfigMap, replaceConfigMap } from '../services/k8s/k8s-config-ma
 import { statefulsetRead } from '../services/k8s/k8s-statefulset-read'
 import { BaseConfig } from '../config/base-config'
 import { listPods } from '../services/k8s/k8s-list-pods'
+import { getPodEvents } from '../services/k8s/k8s-pod-events'
+import res from 'express/lib/response'
 
 export const router = new Router()
 
@@ -42,4 +44,9 @@ router.get('/map/replace', handler(() => {
 
 router.get('/map/create', handler(() => {
     return createConfigMap('bl-test',{ some:'and it is value' })
+}))
+
+router.get('/pod/events/:podName', handler(({ params }) => {
+  const { podName } = params
+  return getPodEvents(podName)
 }))
