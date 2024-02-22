@@ -25,6 +25,7 @@ mainRouter.use('/services/manage/loadbalancer/nginx', auth(), require('./manage/
 mainRouter.use('/services/manage/loadbalancer/ingress', auth(), require('./manage/loadbalancer/ingress').router)
 mainRouter.use('/services/manage/cert', auth(), require('./manage/cert').router)
 mainRouter.use('/services/manage/cert-manager', auth(), require('./manage/cert-manager').router)
+mainRouter.use('/services/manage/consul', auth(), require('./manage/consul').router)
 
 mainRouter.use('/services/manage', auth(), require('./manager').router)
 
