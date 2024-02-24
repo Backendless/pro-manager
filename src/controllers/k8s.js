@@ -42,10 +42,15 @@ router.get('/map/replace', handler(() => {
 }))
 
 router.get('/map/create', handler(() => {
-    return createConfigMap('bl-test',{ some:'and it is value' })
+    return createConfigMap('bl-test', { some: 'and it is value' })
 }))
 
 router.get('/pod/events/:podName', handler(({ params }) => {
-  const { podName } = params
-  return getPodEvents(podName)
+    const { podName } = params
+    return getPodEvents(podName)
+}))
+
+router.get('/deployment/events/:serviceName', handler(({ params }) => {
+    const { serviceName } = params
+    return getPodEvents(serviceName)
 }))
