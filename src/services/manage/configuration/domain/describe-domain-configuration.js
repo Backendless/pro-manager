@@ -61,7 +61,7 @@ export function describeDomainConfiguration() {
                     return { Protocol: certName ? 'https' : 'http' }
                 },
                 getDefaultConfiguration: () => {
-                    return 'http'
+                    return {Protocol: 'http'}
                 }
             }
         ],
@@ -107,7 +107,7 @@ export function describeDomainConfiguration() {
                     return { Protocol: certName ? 'https' : 'http' }
                 },
                 getDefaultConfiguration: () => {
-                    return 'http'
+                    return {Protocol: 'http'}
                 }
             }
         ],
