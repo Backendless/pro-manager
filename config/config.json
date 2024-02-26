@@ -25,6 +25,6 @@
     "bcrypt": {
       "salt": 10
     },
-    "authEnabled": true
+    "authEnabled": false
   }
 }
