@@ -6,10 +6,10 @@ import { createIngressConfig } from './create-ingress-config'
 
 const logger = Logger('ingress-load-balancer-create')
 
-export async function create({ type, domain, certName }) {
-    logger.info(`creating ingress rule for '${type}' with domain '${domain}' and cert '${certName}'`)
+export async function create({ type, domain, certName, user, password }) {
+    logger.info(`creating ingress rule for '${type}' with domain '${domain}', cert '${certName}', user '${user}', password '${password}'`)
 
-    const config = await createIngressConfig({ type, domain, certName })
+    const config = await createIngressConfig({ type, domain, certName, user, password })
 
     logger.info(`creating ingress rule with config: ${JSON.stringify(config)}`)
     try {

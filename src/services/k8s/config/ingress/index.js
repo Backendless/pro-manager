@@ -6,6 +6,7 @@ const configs = {
     'api': () => _populateTypeLabel( 'api', new IngressApiConfig().config ),
     'console': () => _populateTypeLabel('console', new IngressConsoleConfig().config),
     'rt': () => _populateTypeLabel('rt', new IngressRtConfig().config ),
+    'consul': () => _populateTypeLabel('consul', new IngressRtConfig().config ),
 }
 
 export function getIngressConfig(type) {

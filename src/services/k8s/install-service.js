@@ -1,11 +1,9 @@
 import { Logger } from '../../logger'
-import { k8sAppsV1Api } from './k8s'
-import { k8sCoreV1Api } from './k8s'
-import { k8sBatchV1Api } from './k8s'
+import { k8sAppsV1Api, k8sBatchV1Api, k8sCoreV1Api } from './k8s'
 import { k8sConfig } from '../../config/k8s-config'
+import { ConsulConfig } from './config/consul-config'
 
 const logger = Logger('k8s-install-service')
-import { createService } from './k8s-create-service'
 
 class InstallService {
     /*TYPES*/
@@ -27,7 +25,7 @@ class InstallService {
         // const nginx = require('./config/nginx.json')
         // const nginxService = require('./config/nginx-service.json')
 
-        const consul = require('./config/consul.json')
+        const consul = new ConsulConfig()
 
         const createConsulStateful = await k8sAppsV1Api.createNamespacedStatefulSet(await k8sConfig.getNamespace(), consul.workload, true)
         const createConsulServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), consul.service, true)
