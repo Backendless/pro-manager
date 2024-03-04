@@ -2,12 +2,17 @@
 
 set -e
 
+proManagerBranch=${1:-"main"}
+
+echo "Passed branch is '$proManagerBranch'"
+
 echo "creating user bl-pro-manger"
 sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
 sudo passwd -d bl-pro-manager
 sudo adduser bl-pro-manager sudo
 sudo adduser bl-pro-manager adm
 sudo adduser bl-pro-manager systemd-journal
+export proManagerBranch=$proManagerBranch
 su bl-pro-manager
 
 work_dir="/home/bl-pro-manager"
@@ -43,7 +48,9 @@ sudo k3s kubectl config view --raw > ~/.kube/config
 
 echo "saved k3s config to work dir"
 
-git clone https://github.com/Backendless/pro-manager.git
+echo "cloning $proManagerBranch"
+
+git clone -b "$proManagerBranch" https://github.com/Backendless/pro-manager.git
 
 cd pro-manager
 
