@@ -4,7 +4,7 @@ set -e
 
 proManagerBranch=${1:-"main"}
 
-echo $proManagerBranch
+echo $1
 
 echo "creating user bl-pro-manger"
 sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
