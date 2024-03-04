@@ -13,7 +13,7 @@ sudo adduser bl-pro-manager sudo
 sudo adduser bl-pro-manager adm
 sudo adduser bl-pro-manager systemd-journal
 export proManagerBranch=$proManagerBranch
-su bl-pro-manager -c
+su bl-pro-manager
 
 work_dir="/home/bl-pro-manager"
 
