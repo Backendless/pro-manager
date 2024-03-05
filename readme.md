@@ -15,7 +15,7 @@ The following way of installation should work for any Debian-based OS.
 
 Open terminal and execute the following command
 ```
-curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash
+curl -o- https://raw.githubusercontent.com/Backendless/pro-manager/main/install-ubuntu.sh  | bash -s -- main
 ```
 
 At the end, Pro Manager will be available in a browser by the following link `http://<your-ip>:5050`.
