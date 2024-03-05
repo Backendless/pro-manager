@@ -3,15 +3,16 @@ import * as k8s from '@kubernetes/client-node'
 import { k8sNetworkingV1Api } from '../../../k8s/k8s'
 import { K8sError } from '../../../../error/k8s-error'
 import { Logger } from '../../../../logger'
-import { ingressLoadbalancerService } from './index'
 import { createIngressConfig } from './create-ingress-config'
+import { validateUserAndPassword } from './validate-user-and-password'
 
 const logger = Logger('ingress-load-balancer-update')
 
-export async function update( { type, domain, certName } ){
+export async function update( { type, domain, certName, user, password } ){
+    validateUserAndPassword({ user, password })
     const k8sNamespace = await k8sConfig.getNamespace()
 
-    const config = await createIngressConfig({ type, domain, certName })
+    const config = await createIngressConfig({ type, domain, certName, user, password })
 
     const ingressName = config.metadata.name
 
