@@ -26,11 +26,3 @@ export async function changeConsulPortAvailability(enableNodePort) {
 
     return updateResult
 }
-
-export async function getExternalPortState() {
-    const consulConfig = new ConsulConfig()
-    const consulService = consulConfig.service
-    const serviceInfo = await k8sCoreV1Api.readNamespacedService(consulService.metadata.name, await k8sConfig.getNamespace())
-    
-    return serviceInfo.body.spec
-}

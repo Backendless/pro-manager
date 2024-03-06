@@ -1,6 +1,7 @@
 import { handler, Router } from '../../utils/router'
 import { certManager } from '../../services/manage/cert-manager/cert-manager'
-import { changeConsulPortAvailability, getExternalPortState } from '../../services/manage/consul/change-consul-port-availability'
+import { changeConsulPortAvailability } from '../../services/manage/consul/change-consul-port-availability'
+import { isConsulExternalPortEnabled } from '../../services/manage/consul/is-consul-external-port-enabled'
 
 export const router = new Router()
 
@@ -20,5 +21,5 @@ router.delete('/:type', handler(async ({ params }) => {
 }))
 
 router.get('/external-port', handler(() => {
-    return getExternalPortState()
+    return isConsulExternalPortEnabled()
 }))
