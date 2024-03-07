@@ -1,5 +1,5 @@
-import { handler, Router } from '../../../../utils/router'
-import { nodeModulesConfigurationService } from '../../../../services/manage/configuration/code-runner/js/node-modules'
+import { nodeModulesConfigurationService } from '../../services/manage/configuration/code-runner/js/node-modules'
+import { handler, Router } from '../../utils/router'
 
 export const router = new Router()
 
