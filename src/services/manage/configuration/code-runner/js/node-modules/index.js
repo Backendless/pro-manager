@@ -17,7 +17,7 @@ class NodeModulesConfigurationService {
                     const envValue = envItem.value
                     if (envValue) {
                         envValue.split(/\s+/).forEach(envItemNodeModule => {
-                            const [name, version] = envItemNodeModule.split('@^')
+                            const [name, version] = envItemNodeModule.split('@')
                             nodeModules.push({ name, version })
                         })
                     }
@@ -34,11 +34,17 @@ class NodeModulesConfigurationService {
         const containers = deployment.body.spec.template.spec.containers
 
         if (newNodeModules && newNodeModules.length > 0) {
+            const newNodeModulesItem = {
+                name: 'BL_NODE_MODULES',
+                value: newNodeModules.map(({ name, version }) => `${name}@${version}`).join(' ')
+            }
             containers.forEach((container) => {
-                container.env.push({
-                    name: 'BL_NODE_MODULES',
-                    value: newNodeModules.map(({ name, version }) => `${name}@^${version}`).join(' ')
-                })
+                const index = container.env.findIndex(envItem => envItem.name === 'BL_NODE_MODULES')
+                if (index !== -1) {
+                    container.env[index] = newNodeModulesItem
+                } else {
+                    container.env.push(newNodeModulesItem)
+                }
             })
         } else {
             containers.forEach((container) => {
