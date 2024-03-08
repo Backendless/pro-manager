@@ -20,6 +20,7 @@ mainRouter.use('/services/manage/configuration/domain', auth(), require('./confi
 mainRouter.use('/services/manage/configuration/mail', auth(), require('./configuration/mail').router)
 mainRouter.use('/services/manage/configuration/k8s', auth(), require('./configuration/k8s').router)
 mainRouter.use('/services/manage/configuration/logs', auth(), require('./configuration/logs').router)
+mainRouter.use('/services/manage/configuration/code-runner/js/node-modules', auth(), require('./configuration/code-runner-js-node-modules').router)
 
 mainRouter.use('/services/manage/loadbalancer/nginx', auth(), require('./manage/loadbalancer/nginx').router)
 mainRouter.use('/services/manage/loadbalancer/ingress', auth(), require('./manage/loadbalancer/ingress').router)
