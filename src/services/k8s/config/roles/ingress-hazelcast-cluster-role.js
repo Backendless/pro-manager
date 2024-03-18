@@ -21,7 +21,8 @@ export class IngressHazelcastClusterRole {
                     'endpoints',
                     'pods',
                     'nodes',
-                    'services'
+                    'services',
+                    'namespaces'
                 ],
                 'verbs':     [
                     'get',
