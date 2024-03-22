@@ -21,7 +21,7 @@ class UpgradeService {
             }
         }
 
-        const result = await runUpgradeJob({ version })
+        const result = await runUpgradeJob({ version, checkUpgradeAvailable })
         const jobName = result.response.body.metadata.name
 
         const jobPods = await k8sCoreV1Api.listNamespacedPod(await k8sConfig.getNamespace(), false, true, '', '', `upgradeJobName=${jobName}`)
