@@ -6,7 +6,13 @@ export class IngressApiConfig {
         'kind': 'Ingress',
         'metadata': {
             'name': 'bl-api-ingress',
-            'labels': { ...getIngressLabel() }
+            'labels':      { ...getIngressLabel() },
+            'annotations': {
+                'nginx.ingress.kubernetes.io/proxy-body-size':       '2000m',
+                'nginx.ingress.kubernetes.io/proxy-read-timeout':    '600',
+                'nginx.ingress.kubernetes.io/proxy-send-timeout':    '600',
+                'nginx.ingress.kubernetes.io/proxy-connect-timeout': '600'
+            }
         },
         'spec': {
             'defaultBackend': {
