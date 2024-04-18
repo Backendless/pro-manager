@@ -6,12 +6,22 @@ import { k8sConfig } from '../../config/k8s-config'
 import * as k8s from '@kubernetes/client-node'
 import { blContainers } from '../bl-containers'
 import { listPods } from '../k8s/k8s-list-pods'
+import { isUpgradeAvailable } from '../manage/licesing/is-upgrade-available'
+import { ApiError } from '../../error'
 
 const logger = Logger('UpgradeService')
 
 class UpgradeService {
-    async upgrade({ version }) {
-        const result = await runUpgradeJob({ version })
+    async upgrade({ version, checkUpgradeAvailable }) {
+
+        if (checkUpgradeAvailable) {
+            const upgradeAvailable = await isUpgradeAvailable()
+            if (!upgradeAvailable) {
+                throw new ApiError.BadRequestError('We regret to inform you that an upgrade is currently unavailable with your license. For assistance with upgrading your license, kindly contact us via https://support.backendless.com. Thank you for your understanding.')
+            }
+        }
+
+        const result = await runUpgradeJob({ version, checkUpgradeAvailable })
         const jobName = result.response.body.metadata.name
 
         const jobPods = await k8sCoreV1Api.listNamespacedPod(await k8sConfig.getNamespace(), false, true, '', '', `upgradeJobName=${jobName}`)

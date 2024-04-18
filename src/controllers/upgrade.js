@@ -7,7 +7,7 @@ export const router = new Router()
 router.get('/status', handler(() => manageService.status()))
 
 router.put('/', handler(({ body }) => {
-    return upgradeService.upgrade(body)
+    return upgradeService.upgrade({ version: body.version, checkUpgradeAvailable: true })
 }))
 
 router.get('/jobs', handler(() => {
