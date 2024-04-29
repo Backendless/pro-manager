@@ -4,14 +4,15 @@ import { Logger } from '../../logger'
 import { mountPathConfig } from '../../config/mount-path-config'
 import { readFileContent } from '../../utils/fs'
 import path from 'path'
+import { UpgradeConfig } from '../k8s/config/upgrade-config'
 
 const logger = Logger('run-upgrade-job')
 const TEN_DAYS_IN_SECONDS = 3600 * 24 * 10
 
 export const jobListLabel = 'bl-upgrade'
 
-export async function runUpgradeJob({ version }) {
-    const upgradeConfig = JSON.parse(await readFileContent(path.resolve(__dirname, '../k8s/config/upgrade.json')))
+export async function runUpgradeJob({ version, checkUpgradeAvailable }) {
+    const upgradeConfig = new UpgradeConfig()
     logger.info('initializing upgrade job...')
     const job = upgradeConfig.job
     job.spec.template.spec.containers[0].image = `backendless/bl-upgrade:${version}`
@@ -20,6 +21,13 @@ export async function runUpgradeJob({ version }) {
     const jobName = `bl-upgrade-${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}-${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
     logger.info(`job name is ${jobName}`)
     job.metadata.name = jobName
+
+    if (!checkUpgradeAvailable) {
+        job.spec.template.spec.containers[0].env.push({
+            name:  'checkLicenseBeforeUpgrade',
+            value: 'false'
+        })
+    }
 
     const mountPath = await mountPathConfig.get()
     logger.info(`mount path is ${mountPath}`)
