@@ -13,6 +13,7 @@ const logger = Logger('UpgradeService')
 
 class UpgradeService {
     async upgrade({ version, checkUpgradeAvailable }) {
+        logger.info(`starting upgrade to version [${version}] checkUpgradeAvailable=[${checkUpgradeAvailable}]`)
 
         if (checkUpgradeAvailable) {
             const upgradeAvailable = await isUpgradeAvailable()

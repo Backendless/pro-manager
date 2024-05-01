@@ -26,7 +26,7 @@ export async function installMysql({ version, mountPath }) {
 
     containerMounts.push({
         name: fileNames.mysqlConfigMapName,
-        mountPath: `/etc/mysql/mysql.conf.d/${fileNames.conf}`,
+        mountPath: `/etc/mysql/${fileNames.conf}`,
         subPath: fileNames.conf
     })
     configMapVolumes.push({
@@ -38,6 +38,14 @@ export async function installMysql({ version, mountPath }) {
         name:     'data',
         hostPath: {
             path: `${mountPath}/mysql/data`,
+            type: 'DirectoryOrCreate'
+        },
+    })
+
+    volumes.push({
+        name:     'logs',
+        hostPath: {
+            path: `${mountPath}/logs/bl-mysql`,
             type: 'DirectoryOrCreate'
         },
     })

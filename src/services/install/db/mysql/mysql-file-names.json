@@ -5,6 +5,6 @@
     "create-libnss": "3_create_libnss_user.sql",
     "create-quartz": "4_CreateQuartzDB.sql"
   },
-  "conf": "mysqld.cnf",
+  "conf": "my.cnf",
   "mysqlConfigMapName": "bl-mysql-config-map"
 }
