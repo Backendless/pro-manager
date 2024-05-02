@@ -22,7 +22,7 @@ export async function waitForJobToComplete(jobName, jobNotCompleteCallback) {
         jobNotCompleteCallback()
     }
 
-    logger.info('job is not completed, waiting for 1 second to recheck')
+    logger.info(`job [${jobName}] is not completed, waiting for 1 second to recheck`)
     await wait(1000)
     await waitForJobToComplete(jobName, jobNotCompleteCallback)
 }
