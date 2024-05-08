@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "login": "sc",
+            "password": "$2b$10$wDvtmvJcn2ARDNaykDm9huU70VvyzJe8WFT.uhEWAkDfSTZy.7Zam",
+            "id": "b4e79650-0d47-11ef-9dd0-0b815ef2f9fc",
+            "created": 1715178710069,
+            "updated": 1715178710069,
+            "resetPasswordTime": 1715178710069
+        }
+    ]
+}
