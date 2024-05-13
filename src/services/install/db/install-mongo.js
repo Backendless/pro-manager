@@ -19,6 +19,14 @@ export async function installMongo({ mountPath }) {
         name: 'data'
     })
 
+    workload.spec.template.spec.volumes.push({
+        hostPath: {
+            path: `${mountPath}/logs/bl-mongo`,
+            type: 'DirectoryOrCreate'
+        },
+        name: 'logs'
+    })
+
 
     logger.verbose(`creating stateful set for mongo with config: ${JSON.stringify(workload)}`)
     installStatus.info('creating statefulset for mongo')

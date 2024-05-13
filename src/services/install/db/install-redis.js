@@ -7,7 +7,7 @@ import path from 'path'
 
 const logger = Logger('install-redis')
 
-export async function installRedis({ fullMountPath, internalPort, externalPort, name }) {
+export async function installRedis({ fullMountPath, logMountPath, internalPort, externalPort, name }) {
     const redisK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/redis.json')))
     installStatus.info(`installing ${name}...`)
     const workload = redisK8sConfig.workload
@@ -17,6 +17,13 @@ export async function installRedis({ fullMountPath, internalPort, externalPort, 
             type: 'DirectoryOrCreate'
         },
         name: 'data'
+    })
+    workload.spec.template.spec.volumes.push({
+        hostPath: {
+            path: `${logMountPath}`,
+            type: 'DirectoryOrCreate'
+        },
+        name: 'logs'
     })
 
     workload.metadata.name = name
