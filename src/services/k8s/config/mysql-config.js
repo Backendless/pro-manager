@@ -35,9 +35,6 @@ export class MysqlConfig {
                             'args':            [],
                             'env':             [
                                 {
-                                    'name':  'MYSQL_ROOT_PASSWORD',
-                                    'value': 'rootpassword'
-                                }, {
                                     'name':  'MYSQL_ROOT_HOST',
                                     'value': '%'
                                 }
