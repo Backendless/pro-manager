@@ -4,6 +4,7 @@ import { k8sAppsV1Api, k8sCoreV1Api } from '../../../k8s/k8s'
 import fileNames from './mysql-file-names.json'
 import { k8sConfig } from '../../../../config/k8s-config'
 import { MysqlConfig } from '../../../k8s/config/mysql-config'
+import { generatePasswordAndSaveToConsul } from './generate-password-and-save-to-consul'
 
 export async function installMysql({ version, mountPath }) {
     const mysqlK8sConfig = new MysqlConfig()
@@ -12,9 +13,10 @@ export async function installMysql({ version, mountPath }) {
     installStatus.info('created config map')
 
     const workload = mysqlK8sConfig.workload
-    const containerMounts = workload.spec.template.spec.containers[0].volumeMounts
+    const specConfig = workload.spec.template.spec
+    const containerMounts = specConfig.containers[0].volumeMounts
     const configMapVolumes = []
-    const volumes = workload.spec.template.spec.volumes
+    const volumes = specConfig.volumes
     volumes.push({
         configMap: {
             items: configMapVolumes,
@@ -48,6 +50,12 @@ export async function installMysql({ version, mountPath }) {
             path: `${mountPath}/logs/bl-mysql`,
             type: 'DirectoryOrCreate'
         },
+    })
+
+    const password = await generatePasswordAndSaveToConsul()
+    specConfig.containers[0].env.push({
+        name:  'MYSQL_ROOT_PASSWORD',
+        value: password
     })
 
     installStatus.info('creating statefulset for mysql')

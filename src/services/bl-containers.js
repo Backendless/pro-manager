@@ -169,6 +169,11 @@ class BlContainers {
             .map(([key, dependency]) => dependency)
     }
 
+    getSortedDependenciesExceptConsul() {
+        return this.getSortedDependencies()
+            .filter(dependency => dependency.name !== this.dependencies.consul.name)
+    }
+
     findByName(name) {
         for (const containerKey in this.bl) {
             const container = this.bl[containerKey]
