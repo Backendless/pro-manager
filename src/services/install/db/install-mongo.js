@@ -4,6 +4,8 @@ import { Logger } from '../../../logger'
 import { readFileContent } from '../../../utils/fs'
 import { k8sConfig } from '../../../config/k8s-config'
 import path from 'path'
+import fse from 'fs-extra'
+import fs from 'fs'
 
 const logger = Logger('install-mongo')
 
@@ -19,13 +21,23 @@ export async function installMongo({ mountPath }) {
         name: 'data'
     })
 
+    const logMountFolderPath = `${mountPath}/logs/bl-mongo`
     workload.spec.template.spec.volumes.push({
         hostPath: {
-            path: `${mountPath}/logs/bl-mongo`,
+            path: logMountFolderPath,
             type: 'DirectoryOrCreate'
         },
         name: 'logs'
     })
+
+    try {
+        const pathToLogFile = `${logMountFolderPath}/mongod.log`
+        await fse.ensureFile(pathToLogFile)
+        logger.info(`File for bl-redis log '${logMountFolderPath}/redis.log' created`)
+        fs.chmodSync(pathToLogFile, 0o666)
+    } catch (err) {
+        logger.error(`Error creating  file '${logMountFolderPath}/redis.log': ${err.message}`)
+    }
 
 
     logger.verbose(`creating stateful set for mongo with config: ${JSON.stringify(workload)}`)
