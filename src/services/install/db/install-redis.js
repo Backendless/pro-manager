@@ -5,6 +5,7 @@ import { readFileContent } from '../../../utils/fs'
 import { k8sConfig } from '../../../config/k8s-config'
 import path from 'path'
 import fse from 'fs-extra'
+import fs from 'fs'
 
 const logger = Logger('install-redis')
 
@@ -23,6 +24,13 @@ export async function installRedis({ fullMountPath, logMountPath, internalPort, 
     if (!(await fse.exists(logMountPath))) {
         installStatus.info(`The path [${logMountPath}] for redis logs does not exists, will be created`)
         await fse.mkdirp(logMountPath)
+    }
+
+    try {
+        await fse.ensureFile(`${logMountPath}/redis.log`)
+        logger.info(`File for bl-redis log '${logMountPath}/redis.log' created`)
+    } catch (err) {
+        logger.error(`Error creating  file '${logMountPath}/redis.log': ${err.message}`)
     }
 
     workload.spec.template.spec.volumes.push({

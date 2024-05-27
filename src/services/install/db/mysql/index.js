@@ -5,6 +5,9 @@ import fileNames from './mysql-file-names.json'
 import { k8sConfig } from '../../../../config/k8s-config'
 import { MysqlConfig } from '../../../k8s/config/mysql-config'
 import fse from 'fs-extra'
+import { Logger } from '../../../../logger'
+
+const logger = Logger('mysql-install')
 
 export async function installMysql({ version, mountPath }) {
     const mysqlK8sConfig = new MysqlConfig()
@@ -47,6 +50,13 @@ export async function installMysql({ version, mountPath }) {
     if (!(await fse.exists(pathToLogs))) {
         installStatus.info(`The path [${pathToLogs}] for mysql logs does not exists, will be created`)
         await fse.mkdirp(pathToLogs)
+    }
+
+    try {
+        fse.ensureFile(`${pathToLogs}/mysqld.log`)
+        logger.info(`Ensure file for '${pathToLogs}/mysqld.log'`)
+    } catch (err) {
+        logger.error(`Error creating file '${pathToLogs}/mysqld.log': ${err.message}`)
     }
 
     volumes.push({
