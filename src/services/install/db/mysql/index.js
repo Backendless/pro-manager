@@ -6,6 +6,7 @@ import { k8sConfig } from '../../../../config/k8s-config'
 import { MysqlConfig } from '../../../k8s/config/mysql-config'
 import fse from 'fs-extra'
 import { Logger } from '../../../../logger'
+import fs from 'fs'
 
 const logger = Logger('mysql-install')
 
@@ -53,8 +54,10 @@ export async function installMysql({ version, mountPath }) {
     }
 
     try {
-        fse.ensureFile(`${pathToLogs}/mysqld.log`)
+        const pathToLogFile = `${pathToLogs}/mysqld.log`
+        await fse.ensureFile(pathToLogFile)
         logger.info(`Ensure file for '${pathToLogs}/mysqld.log'`)
+        fs.chmodSync(pathToLogFile, 0o666)
     } catch (err) {
         logger.error(`Error creating file '${pathToLogs}/mysqld.log': ${err.message}`)
     }

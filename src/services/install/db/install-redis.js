@@ -27,8 +27,10 @@ export async function installRedis({ fullMountPath, logMountPath, internalPort, 
     }
 
     try {
-        await fse.ensureFile(`${logMountPath}/redis.log`)
+        const pathToLogFile = `${logMountPath}/redis.log`
+        await fse.ensureFile(pathToLogFile)
         logger.info(`File for bl-redis log '${logMountPath}/redis.log' created`)
+        fs.chmodSync(pathToLogFile, 0o666)
     } catch (err) {
         logger.error(`Error creating  file '${logMountPath}/redis.log': ${err.message}`)
     }
