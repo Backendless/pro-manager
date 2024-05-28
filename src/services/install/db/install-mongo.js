@@ -30,11 +30,16 @@ export async function installMongo({ mountPath }) {
         name: 'logs'
     })
 
+    if (!(await fse.exists(logMountFolderPath))) {
+        installStatus.info(`The path [${logMountFolderPath}] for mongo logs does not exists, will be created`)
+        await fse.mkdirp(logMountFolderPath)
+    }
+
     try {
         fs.chmodSync(logMountFolderPath, 0o777)
         logger.info(`changed permission for mongo log path folder "${logMountFolderPath}"`)
     } catch (err) {
-        logger.error(`Error chmod permissions for mongi log folder '${logMountFolderPath}': ${err.message}`)
+        logger.error(`Error chmod permissions for mongo log folder '${logMountFolderPath}': ${err.message}`)
     }
 
 
