@@ -27,12 +27,10 @@ export async function installRedis({ fullMountPath, logMountPath, internalPort, 
     }
 
     try {
-        const pathToLogFile = `${logMountPath}/redis.log`
-        await fse.ensureFile(pathToLogFile)
-        logger.info(`File for bl-redis log '${logMountPath}/redis.log' created`)
-        fs.chmodSync(pathToLogFile, 0o666)
+        fs.chmodSync(logMountPath, 0o777)
+        logger.info(`changed permission for redis log path folder "${logMountPath}"`)
     } catch (err) {
-        logger.error(`Error creating  file '${logMountPath}/redis.log': ${err.message}`)
+        logger.error(`Error chmod permissions for redis log folder '${logMountPath}': ${err.message}`)
     }
 
     workload.spec.template.spec.volumes.push({

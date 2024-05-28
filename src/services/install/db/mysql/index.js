@@ -54,12 +54,10 @@ export async function installMysql({ version, mountPath }) {
     }
 
     try {
-        const pathToLogFile = `${pathToLogs}/mysqld.log`
-        await fse.ensureFile(pathToLogFile)
-        logger.info(`Ensure file for '${pathToLogs}/mysqld.log'`)
-        fs.chmodSync(pathToLogFile, 0o666)
+        fs.chmodSync(pathToLogs, 0o777)
+        logger.info(`changed permission for mysql log path folder "${pathToLogs}"`)
     } catch (err) {
-        logger.error(`Error creating file '${pathToLogs}/mysqld.log': ${err.message}`)
+        logger.error(`Error chmod permissions for mysql log folder '${pathToLogs}': ${err.message}`)
     }
 
     volumes.push({
