@@ -31,12 +31,10 @@ export async function installMongo({ mountPath }) {
     })
 
     try {
-        const pathToLogFile = `${logMountFolderPath}/mongod.log`
-        await fse.ensureFile(pathToLogFile)
-        logger.info(`File for bl-redis log '${logMountFolderPath}/redis.log' created`)
-        fs.chmodSync(pathToLogFile, 0o666)
+        fs.chmodSync(logMountFolderPath, 0o777)
+        logger.info(`changed permission for mongo log path folder "${logMountFolderPath}"`)
     } catch (err) {
-        logger.error(`Error creating  file '${logMountFolderPath}/redis.log': ${err.message}`)
+        logger.error(`Error chmod permissions for mongi log folder '${logMountFolderPath}': ${err.message}`)
     }
 
 
