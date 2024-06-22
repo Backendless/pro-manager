@@ -19,6 +19,7 @@ import { deploymentRestart, statefulsetRestart } from './k8s/k8s-restart'
 import { createClusterRoleAndServiceAccount } from './install/create-cluster-role-and-service-account'
 import { IngressHazelcastClusterRole } from './k8s/config/roles/ingress-hazelcast-cluster-role'
 import { removeClusterRoleAndServiceAccount } from './install/remove-cluster-role-and-service-account'
+import { installAutomation } from './install/bl/install-bl-automation'
 
 class BlContainers {
     bl = {
@@ -84,6 +85,16 @@ class BlContainers {
             deleteService: () => deleteDeploymentAndService('bl-web-console'),
             scale: replicas => deploymentScale('bl-web-console', replicas),
             restart: () => deploymentRestart('bl-web-console')
+        },
+        automation: {
+            name: 'bl-automation',
+            imageName: 'bl-automation',
+            serviceStatus: () => blDeploymentStatus('bl-automation'),
+            installService: installArguments => installAutomation(installArguments),
+            deleteService: () => deleteDeploymentAndService('bl-automation'),
+            scale: replicas => deploymentScale('bl-automation', replicas),
+            restart: () => deploymentRestart('bl-automation'),
+            skipInstall: true
         },
         initConfigValues: {
             name: 'bl-init-config-values',
