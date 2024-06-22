@@ -1,6 +1,7 @@
 import crypto from 'crypto'
 import { mysqlConnectionConfigurationService } from '../../../manage/configuration/mysql'
 import { Logger } from '../../../../logger'
+import { consul } from '../../../consul'
 
 const logger = Logger('describe-mysql-configuration')
 
@@ -14,6 +15,12 @@ export async function generatePasswordAndSaveToConsul() {
         await mysqlConnectionConfigurationService.saveShard(shard)
         logger.info(`saved password for shard [${shard.shard}]`)
     }
+
+    logger.info(`save for password for quartz for timers`)
+    await consul.put('config/quartz/org/quartz/dataSource/myDS/password', password)
+    logger.info(`save for password for quartz for automation`)
+    await consul.put('config/automation/quartz/org/quartz/dataSource/myDS/password', password)
+
     return password
 }
 
