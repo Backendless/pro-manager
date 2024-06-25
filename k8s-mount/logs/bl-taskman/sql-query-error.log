@@ -1,0 +1,754 @@
+[ERROR] - 2024-06-24 15:16:34,534 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:37,552 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:40,642 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:43,686 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:46,709 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:49,782 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:52,817 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:55,886 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:16:58,965 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:01,998 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:05,042 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:08,069 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:11,081 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:14,095 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:17,104 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:20,116 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:23,129 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:26,135 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:29,141 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:32,146 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:35,154 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:38,164 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:41,181 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:44,193 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:47,221 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:50,238 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:53,311 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:56,516 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+
+[ERROR] - 2024-06-24 15:17:59,880 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_application'
+
+Query being executed when exception was thrown:
+USE `main_application`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForApplicationDB(MySQLSystemDBsWaiter.java:74)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:25)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:69)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:62)
+	at com.backendless.inject.InjectorService.init(InjectorService.java:38)
+	at com.backendless.taskman.TaskManager.main(TaskManager.java:71)
+

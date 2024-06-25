@@ -1,0 +1,551 @@
+2024-06-24T15:16:20.091Z [90minfo[39m: [Global] logger was created
+2024-06-24T15:16:20.096Z [90minfo[39m: [EventsRedis] logger was created
+2024-06-24T15:16:20.099Z [90minfo[39m: [AnalyticsRedis] logger was created
+2024-06-24T15:16:20.116Z [90minfo[39m: [Notifications] logger was created
+2024-06-24T15:16:20.120Z [90minfo[39m: [Status] logger was created
+2024-06-24T15:16:20.102Z [90minfo[39m: [RTRedis] logger was created
+2024-06-24T15:16:20.335Z [90minfo[39m: [RTRedis] add the server into list of RT servers
+2024-06-24T15:16:20.104Z [90minfo[39m: [UserSessionRedis] logger was created
+2024-06-24T15:16:20.109Z [90minfo[39m: [Server] logger was created
+2024-06-24T15:16:20.334Z [90minfo[39m: [Server] The server is listening on 0.0.0.0:5000
+2024-06-24T15:16:20.335Z [90minfo[39m: [Server] Management Server is listening on http://0.0.0.0:2992
+2024-06-24T15:16:20.113Z [90minfo[39m: [Request] logger was created
+2024-06-24T15:16:20.342Z [90minfo[39m: [RTRedis] new client [rt] was connected in 155ms
+2024-06-24T15:16:20.340Z [90minfo[39m: [EventsRedis] new client [events] was connected in 155ms
+2024-06-24T15:16:20.340Z [90minfo[39m: [UserSessionRedis] new client [user-session:subscriber] was connected in 153ms
+2024-06-24T15:16:20.341Z [90minfo[39m: [UserSessionRedis] new client [user-session] was connected in 154ms
+2024-06-24T15:16:20.342Z [90minfo[39m: [RTRedis] new client [rt:subscriber] was connected in 155ms
+2024-06-24T15:16:20.346Z [90minfo[39m: [AnalyticsRedis] new client [analytics] was connected in 159ms
+2024-06-24T15:16:20.341Z [90minfo[39m: [EventsRedis] new client [events:subscriber] was connected in 156ms
+2024-06-24T15:16:20.346Z [90minfo[39m: [RTRedis] remove old server registration
+2024-06-24T15:16:20.349Z [90minfo[39m: [RTRedis] add a new server registration
+2024-06-24T15:16:20.347Z [90minfo[39m: [AnalyticsRedis] new client [analytics:subscriber] was connected in 159ms
+2024-06-24T15:16:20.352Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'rtServer',
+  hostname: 'bl-rt-server-d9f5975d-c7xl6',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: 2992
+}
+2024-06-24T15:33:47.557Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:47.565Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:49.555Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:49.555Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:51.550Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:51.550Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:53.553Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:53.555Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:55.551Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:55.552Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:55.555Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:57.551Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:33:59.550Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:01.555Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:03.550Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:05.549Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:07.547Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:09.548Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:11.548Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:13.548Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:34:15.548Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:49:17.433Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:49:19.432Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:49:21.431Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:49:23.431Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:49:25.433Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T15:49:26.193Z [90minfo[39m: [Global] logger was created
+2024-06-24T15:49:26.197Z [90minfo[39m: [RTRedis] logger was created
+2024-06-24T15:49:26.390Z [90minfo[39m: [RTRedis] add the server into list of RT servers
+2024-06-24T15:49:26.199Z [90minfo[39m: [Server] logger was created
+2024-06-24T15:49:26.389Z [90minfo[39m: [Server] The server is listening on 0.0.0.0:5000
+2024-06-24T15:49:26.390Z [90minfo[39m: [Server] Management Server is listening on http://0.0.0.0:2992
+2024-06-24T15:49:26.200Z [90minfo[39m: [Request] logger was created
+2024-06-24T15:49:26.201Z [90minfo[39m: [Notifications] logger was created
+2024-06-24T15:49:26.202Z [90minfo[39m: [Status] logger was created
+2024-06-24T15:49:26.196Z [90minfo[39m: [AnalyticsRedis] logger was created
+2024-06-24T15:49:26.195Z [90minfo[39m: [EventsRedis] logger was created
+2024-06-24T15:49:26.198Z [90minfo[39m: [UserSessionRedis] logger was created
+2024-06-24T15:49:26.393Z [90minfo[39m: [EventsRedis] new client [events] was connected in 140ms
+2024-06-24T15:49:26.394Z [90minfo[39m: [UserSessionRedis] new client [user-session] was connected in 139ms
+2024-06-24T15:49:26.394Z [90minfo[39m: [RTRedis] new client [rt] was connected in 139ms
+2024-06-24T15:49:26.394Z [90minfo[39m: [AnalyticsRedis] new client [analytics] was connected in 138ms
+2024-06-24T15:49:26.393Z [90minfo[39m: [EventsRedis] new client [events:subscriber] was connected in 140ms
+2024-06-24T15:49:26.394Z [90minfo[39m: [UserSessionRedis] new client [user-session:subscriber] was connected in 139ms
+2024-06-24T15:49:26.396Z [90minfo[39m: [AnalyticsRedis] new client [analytics:subscriber] was connected in 140ms
+2024-06-24T15:49:26.394Z [90minfo[39m: [RTRedis] new client [rt:subscriber] was connected in 139ms
+2024-06-24T15:49:26.400Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'rtServer',
+  hostname: 'bl-rt-server-d9f5975d-c7xl6',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: 2992
+}
+2024-06-24T15:49:26.395Z [90minfo[39m: [RTRedis] remove old server registration
+2024-06-24T15:49:26.396Z [90minfo[39m: [RTRedis] add a new server registration
+2024-06-24T16:01:30.959Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:30.961Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:32.959Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:32.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:34.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:34.961Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:36.959Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:36.959Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:38.962Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:38.963Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:38.968Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:40.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:42.958Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:44.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:46.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:48.968Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:50.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:52.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:54.961Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:56.962Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:01:58.961Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:02:00.960Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:02:02.963Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:02:04.962Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:02:06.963Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:02:08.963Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T16:02:09.678Z [90minfo[39m: [Global] logger was created
+2024-06-24T16:02:09.683Z [90minfo[39m: [UserSessionRedis] logger was created
+2024-06-24T16:02:09.684Z [90minfo[39m: [Server] logger was created
+2024-06-24T16:02:09.798Z [90minfo[39m: [Server] The server is listening on 0.0.0.0:5000
+2024-06-24T16:02:09.798Z [90minfo[39m: [Server] Management Server is listening on http://0.0.0.0:2992
+2024-06-24T16:02:09.685Z [90minfo[39m: [Request] logger was created
+2024-06-24T16:02:09.686Z [90minfo[39m: [Notifications] logger was created
+2024-06-24T16:02:09.687Z [90minfo[39m: [Status] logger was created
+2024-06-24T16:02:09.680Z [90minfo[39m: [EventsRedis] logger was created
+2024-06-24T16:02:09.681Z [90minfo[39m: [AnalyticsRedis] logger was created
+2024-06-24T16:02:09.682Z [90minfo[39m: [RTRedis] logger was created
+2024-06-24T16:02:09.798Z [90minfo[39m: [RTRedis] add the server into list of RT servers
+2024-06-24T16:02:09.802Z [90minfo[39m: [EventsRedis] new client [events] was connected in 83ms
+2024-06-24T16:02:09.803Z [90minfo[39m: [UserSessionRedis] new client [user-session:subscriber] was connected in 82ms
+2024-06-24T16:02:09.804Z [90minfo[39m: [RTRedis] new client [rt:subscriber] was connected in 83ms
+2024-06-24T16:02:09.804Z [90minfo[39m: [AnalyticsRedis] new client [analytics] was connected in 83ms
+2024-06-24T16:02:09.803Z [90minfo[39m: [EventsRedis] new client [events:subscriber] was connected in 83ms
+2024-06-24T16:02:09.803Z [90minfo[39m: [UserSessionRedis] new client [user-session] was connected in 82ms
+2024-06-24T16:02:09.804Z [90minfo[39m: [RTRedis] new client [rt] was connected in 83ms
+2024-06-24T16:02:09.805Z [90minfo[39m: [AnalyticsRedis] new client [analytics:subscriber] was connected in 84ms
+2024-06-24T16:02:09.805Z [90minfo[39m: [RTRedis] remove old server registration
+2024-06-24T16:02:09.806Z [90minfo[39m: [RTRedis] add a new server registration
+2024-06-24T16:02:09.807Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'rtServer',
+  hostname: 'bl-rt-server-d9f5975d-c7xl6',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: 2992
+}
+2024-06-24T16:43:07.394Z [33mwarn[39m: [EventsRedis] [events] connection retry #1 in 50ms
+2024-06-24T16:43:07.399Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #1 in 50ms
+2024-06-24T16:43:07.402Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #1 in 50ms
+2024-06-24T16:43:07.403Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #1 in 50ms
+2024-06-24T16:43:07.399Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #1 in 50ms
+2024-06-24T16:43:07.401Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #1 in 50ms
+2024-06-24T16:43:07.404Z [33mwarn[39m: [RTRedis] [rt] connection retry #1 in 50ms
+2024-06-24T16:43:07.406Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #1 in 50ms
+2024-06-24T16:43:07.472Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.473Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.474Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.474Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.473Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.476Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #2 in 100ms
+2024-06-24T16:43:07.476Z [33mwarn[39m: [EventsRedis] [events] connection retry #2 in 100ms
+2024-06-24T16:43:07.473Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.475Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #2 in 100ms
+2024-06-24T16:43:07.475Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #2 in 100ms
+2024-06-24T16:43:07.475Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.475Z [33mwarn[39m: [RTRedis] [rt] connection retry #2 in 100ms
+2024-06-24T16:43:07.475Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #2 in 100ms
+2024-06-24T16:43:07.475Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #2 in 100ms
+2024-06-24T16:43:07.476Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.476Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #2 in 100ms
+2024-06-24T16:43:07.586Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.588Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.587Z [33mwarn[39m: [RTRedis] [rt] connection retry #3 in 150ms
+2024-06-24T16:43:07.587Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.588Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #3 in 150ms
+2024-06-24T16:43:07.588Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #3 in 150ms
+2024-06-24T16:43:07.589Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.589Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #3 in 150ms
+2024-06-24T16:43:07.590Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.591Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #3 in 150ms
+2024-06-24T16:43:07.599Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.600Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.599Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #3 in 150ms
+2024-06-24T16:43:07.600Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.602Z [33mwarn[39m: [EventsRedis] [events] connection retry #3 in 150ms
+2024-06-24T16:43:07.601Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #3 in 150ms
+2024-06-24T16:43:07.738Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.739Z [33mwarn[39m: [RTRedis] [rt] connection retry #4 in 200ms
+2024-06-24T16:43:07.740Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.741Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.741Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.742Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #4 in 200ms
+2024-06-24T16:43:07.742Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #4 in 200ms
+2024-06-24T16:43:07.741Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #4 in 200ms
+2024-06-24T16:43:07.744Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.745Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #4 in 200ms
+2024-06-24T16:43:07.750Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.751Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #4 in 200ms
+2024-06-24T16:43:07.754Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.754Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #4 in 200ms
+2024-06-24T16:43:07.755Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.756Z [33mwarn[39m: [EventsRedis] [events] connection retry #4 in 200ms
+2024-06-24T16:43:08.945Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.949Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.950Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.948Z [33mwarn[39m: [RTRedis] [rt] connection retry #5 in 250ms
+2024-06-24T16:43:08.949Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.950Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.952Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.951Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #5 in 250ms
+2024-06-24T16:43:08.951Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #5 in 250ms
+2024-06-24T16:43:08.951Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #5 in 250ms
+2024-06-24T16:43:08.952Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #5 in 250ms
+2024-06-24T16:43:08.952Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #5 in 250ms
+2024-06-24T16:43:08.956Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.957Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #5 in 250ms
+2024-06-24T16:43:08.960Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:08.961Z [33mwarn[39m: [EventsRedis] [events] connection retry #5 in 250ms
+2024-06-24T16:43:10.203Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.205Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.205Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.208Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.204Z [33mwarn[39m: [RTRedis] [rt] connection retry #6 in 300ms
+2024-06-24T16:43:10.208Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.208Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.210Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #6 in 300ms
+2024-06-24T16:43:10.209Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #6 in 300ms
+2024-06-24T16:43:10.209Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #6 in 300ms
+2024-06-24T16:43:10.209Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #6 in 300ms
+2024-06-24T16:43:10.210Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #6 in 300ms
+2024-06-24T16:43:10.210Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.211Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #6 in 300ms
+2024-06-24T16:43:10.214Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:10.214Z [33mwarn[39m: [EventsRedis] [events] connection retry #6 in 300ms
+2024-06-24T16:43:11.512Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.514Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.515Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.515Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.513Z [33mwarn[39m: [RTRedis] [rt] connection retry #7 in 350ms
+2024-06-24T16:43:11.515Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.517Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #7 in 350ms
+2024-06-24T16:43:11.516Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.516Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #7 in 350ms
+2024-06-24T16:43:11.517Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #7 in 350ms
+2024-06-24T16:43:11.517Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #7 in 350ms
+2024-06-24T16:43:11.517Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.518Z [33mwarn[39m: [EventsRedis] [events] connection retry #7 in 350ms
+2024-06-24T16:43:11.516Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:11.516Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #7 in 350ms
+2024-06-24T16:43:11.517Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #7 in 350ms
+2024-06-24T16:43:12.870Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.871Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.871Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.872Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.872Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.873Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.872Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.873Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:12.875Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #8 in 400ms
+2024-06-24T16:43:12.876Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #8 in 400ms
+2024-06-24T16:43:12.875Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #8 in 400ms
+2024-06-24T16:43:12.877Z [33mwarn[39m: [RTRedis] [rt] connection retry #8 in 400ms
+2024-06-24T16:43:12.874Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #8 in 400ms
+2024-06-24T16:43:12.876Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #8 in 400ms
+2024-06-24T16:43:12.874Z [33mwarn[39m: [EventsRedis] [events] connection retry #8 in 400ms
+2024-06-24T16:43:12.875Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #8 in 400ms
+2024-06-24T16:43:14.279Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.280Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.281Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.281Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.280Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.282Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.282Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.282Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:14.285Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #9 in 450ms
+2024-06-24T16:43:14.286Z [33mwarn[39m: [EventsRedis] [events] connection retry #9 in 450ms
+2024-06-24T16:43:14.284Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #9 in 450ms
+2024-06-24T16:43:14.285Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #9 in 450ms
+2024-06-24T16:43:14.284Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #9 in 450ms
+2024-06-24T16:43:14.286Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #9 in 450ms
+2024-06-24T16:43:14.284Z [33mwarn[39m: [RTRedis] [rt] connection retry #9 in 450ms
+2024-06-24T16:43:14.285Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #9 in 450ms
+2024-06-24T16:43:15.737Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.738Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.741Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.741Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.743Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.741Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.742Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #10 in 500ms
+2024-06-24T16:43:15.742Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #10 in 500ms
+2024-06-24T16:43:15.742Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #10 in 500ms
+2024-06-24T16:43:15.744Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.744Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T16:43:15.745Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #10 in 500ms
+2024-06-24T16:43:15.745Z [33mwarn[39m: [EventsRedis] [events] connection retry #10 in 500ms
+2024-06-24T16:43:15.745Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #10 in 500ms
+2024-06-24T16:43:15.742Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #10 in 500ms
+2024-06-24T16:43:15.743Z [33mwarn[39m: [RTRedis] [rt] connection retry #10 in 500ms
+2024-06-24T22:48:46.314Z [90minfo[39m: [EventsRedis] logger was created
+2024-06-24T22:48:46.317Z [90minfo[39m: [UserSessionRedis] logger was created
+2024-06-24T22:48:46.320Z [90minfo[39m: [Notifications] logger was created
+2024-06-24T22:48:46.318Z [90minfo[39m: [Server] logger was created
+2024-06-24T22:48:46.526Z [90minfo[39m: [Server] The server is listening on 0.0.0.0:5000
+2024-06-24T22:48:46.526Z [90minfo[39m: [Server] Management Server is listening on http://0.0.0.0:2992
+2024-06-24T22:48:46.319Z [90minfo[39m: [Request] logger was created
+2024-06-24T22:48:46.322Z [90minfo[39m: [Status] logger was created
+2024-06-24T22:48:46.313Z [90minfo[39m: [Global] logger was created
+2024-06-24T22:48:46.315Z [90minfo[39m: [AnalyticsRedis] logger was created
+2024-06-24T22:48:46.316Z [90minfo[39m: [RTRedis] logger was created
+2024-06-24T22:48:46.527Z [90minfo[39m: [RTRedis] add the server into list of RT servers
+2024-06-24T22:48:46.530Z [90minfo[39m: [EventsRedis] new client [events:subscriber] was connected in 153ms
+2024-06-24T22:48:46.530Z [90minfo[39m: [UserSessionRedis] new client [user-session:subscriber] was connected in 152ms
+2024-06-24T22:48:46.530Z [90minfo[39m: [EventsRedis] new client [events] was connected in 153ms
+2024-06-24T22:48:46.531Z [90minfo[39m: [RTRedis] new client [rt] was connected in 151ms
+2024-06-24T22:48:46.531Z [90minfo[39m: [UserSessionRedis] new client [user-session] was connected in 153ms
+2024-06-24T22:48:46.531Z [90minfo[39m: [AnalyticsRedis] new client [analytics:subscriber] was connected in 150ms
+2024-06-24T22:48:46.532Z [90minfo[39m: [RTRedis] new client [rt:subscriber] was connected in 152ms
+2024-06-24T22:48:46.532Z [90minfo[39m: [AnalyticsRedis] new client [analytics] was connected in 151ms
+2024-06-24T22:48:46.535Z [90minfo[39m: [RTRedis] remove old server registration
+2024-06-24T22:48:46.535Z [90minfo[39m: [RTRedis] add a new server registration
+2024-06-24T22:48:46.539Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'rtServer',
+  hostname: 'bl-rt-server-d9f5975d-c7xl6',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: 2992
+}
+2024-06-24T23:10:26.312Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:26.315Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:28.283Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:28.285Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:30.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:30.285Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:32.287Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:32.288Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:34.283Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:34.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:34.286Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:36.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:38.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:40.285Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:42.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:44.283Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:46.282Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:48.282Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:50.283Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:52.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:54.283Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:56.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:10:58.286Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:11:00.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:11:02.284Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:11:04.287Z [31merror[39m: [Server] The server is not registered any more in the Redis
+2024-06-24T23:11:04.935Z [90minfo[39m: [Global] logger was created
+2024-06-24T23:11:04.940Z [90minfo[39m: [UserSessionRedis] logger was created
+2024-06-24T23:11:04.941Z [90minfo[39m: [Server] logger was created
+2024-06-24T23:11:05.047Z [90minfo[39m: [Server] The server is listening on 0.0.0.0:5000
+2024-06-24T23:11:05.048Z [90minfo[39m: [Server] Management Server is listening on http://0.0.0.0:2992
+2024-06-24T23:11:04.938Z [90minfo[39m: [AnalyticsRedis] logger was created
+2024-06-24T23:11:04.942Z [90minfo[39m: [Notifications] logger was created
+2024-06-24T23:11:04.943Z [90minfo[39m: [Status] logger was created
+2024-06-24T23:11:04.936Z [90minfo[39m: [EventsRedis] logger was created
+2024-06-24T23:11:04.938Z [90minfo[39m: [RTRedis] logger was created
+2024-06-24T23:11:05.048Z [90minfo[39m: [RTRedis] add the server into list of RT servers
+2024-06-24T23:11:04.941Z [90minfo[39m: [Request] logger was created
+2024-06-24T23:11:05.052Z [90minfo[39m: [EventsRedis] new client [events] was connected in 79ms
+2024-06-24T23:11:05.053Z [90minfo[39m: [UserSessionRedis] new client [user-session] was connected in 79ms
+2024-06-24T23:11:05.054Z [90minfo[39m: [RTRedis] new client [rt] was connected in 79ms
+2024-06-24T23:11:05.054Z [90minfo[39m: [AnalyticsRedis] new client [analytics] was connected in 79ms
+2024-06-24T23:11:05.053Z [90minfo[39m: [EventsRedis] new client [events:subscriber] was connected in 80ms
+2024-06-24T23:11:05.053Z [90minfo[39m: [UserSessionRedis] new client [user-session:subscriber] was connected in 79ms
+2024-06-24T23:11:05.054Z [90minfo[39m: [RTRedis] new client [rt:subscriber] was connected in 79ms
+2024-06-24T23:11:05.055Z [90minfo[39m: [AnalyticsRedis] new client [analytics:subscriber] was connected in 80ms
+2024-06-24T23:11:05.055Z [90minfo[39m: [RTRedis] remove old server registration
+2024-06-24T23:11:05.055Z [90minfo[39m: [RTRedis] add a new server registration
+2024-06-24T23:11:05.057Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'rtServer',
+  hostname: 'bl-rt-server-d9f5975d-c7xl6',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: 2992
+}
+2024-06-24T23:53:13.265Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #1 in 50ms
+2024-06-24T23:53:13.270Z [33mwarn[39m: [EventsRedis] [events] connection retry #1 in 50ms
+2024-06-24T23:53:13.272Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #1 in 50ms
+2024-06-24T23:53:13.275Z [33mwarn[39m: [RTRedis] [rt] connection retry #1 in 50ms
+2024-06-24T23:53:13.271Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #1 in 50ms
+2024-06-24T23:53:13.277Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #1 in 50ms
+2024-06-24T23:53:13.273Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #1 in 50ms
+2024-06-24T23:53:13.276Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #1 in 50ms
+2024-06-24T23:53:13.321Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.325Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.325Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #2 in 100ms
+2024-06-24T23:53:13.326Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.326Z [33mwarn[39m: [EventsRedis] [events] connection retry #2 in 100ms
+2024-06-24T23:53:13.326Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.328Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.322Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #2 in 100ms
+2024-06-24T23:53:13.326Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.327Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #2 in 100ms
+2024-06-24T23:53:13.327Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #2 in 100ms
+2024-06-24T23:53:13.328Z [33mwarn[39m: [RTRedis] [rt] connection retry #2 in 100ms
+2024-06-24T23:53:13.329Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.330Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #2 in 100ms
+2024-06-24T23:53:13.335Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.335Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #2 in 100ms
+2024-06-24T23:53:13.423Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.423Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #3 in 150ms
+2024-06-24T23:53:13.429Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.431Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.431Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.430Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.430Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #3 in 150ms
+2024-06-24T23:53:13.430Z [33mwarn[39m: [EventsRedis] [events] connection retry #3 in 150ms
+2024-06-24T23:53:13.431Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.431Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #3 in 150ms
+2024-06-24T23:53:13.431Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #3 in 150ms
+2024-06-24T23:53:13.432Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.432Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #3 in 150ms
+2024-06-24T23:53:13.432Z [33mwarn[39m: [RTRedis] [rt] connection retry #3 in 150ms
+2024-06-24T23:53:13.437Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.437Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #3 in 150ms
+2024-06-24T23:53:13.577Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.577Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #4 in 200ms
+2024-06-24T23:53:13.582Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.583Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.584Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.583Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.583Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #4 in 200ms
+2024-06-24T23:53:13.583Z [33mwarn[39m: [EventsRedis] [events] connection retry #4 in 200ms
+2024-06-24T23:53:13.583Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #4 in 200ms
+2024-06-24T23:53:13.583Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.584Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #4 in 200ms
+2024-06-24T23:53:13.584Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.584Z [33mwarn[39m: [RTRedis] [rt] connection retry #4 in 200ms
+2024-06-24T23:53:13.584Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #4 in 200ms
+2024-06-24T23:53:13.596Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.596Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #4 in 200ms
+2024-06-24T23:53:13.779Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.779Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #5 in 250ms
+2024-06-24T23:53:13.785Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.785Z [33mwarn[39m: [EventsRedis] [events] connection retry #5 in 250ms
+2024-06-24T23:53:13.785Z [31merror[39m: [EventsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.785Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #5 in 250ms
+2024-06-24T23:53:13.786Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.786Z [33mwarn[39m: [RTRedis] [rt] connection retry #5 in 250ms
+2024-06-24T23:53:13.786Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.786Z [31merror[39m: [RTRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.786Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #5 in 250ms
+2024-06-24T23:53:13.786Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #5 in 250ms
+2024-06-24T23:53:13.786Z [31merror[39m: [UserSessionRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.787Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #5 in 250ms
+2024-06-24T23:53:13.808Z [31merror[39m: [AnalyticsRedis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.809Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #5 in 250ms
+2024-06-24T23:53:15.033Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.033Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #6 in 300ms
+2024-06-24T23:53:15.037Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.037Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.037Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #6 in 300ms
+2024-06-24T23:53:15.037Z [33mwarn[39m: [EventsRedis] [events] connection retry #6 in 300ms
+2024-06-24T23:53:15.037Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.037Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.037Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.037Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.037Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #6 in 300ms
+2024-06-24T23:53:15.037Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #6 in 300ms
+2024-06-24T23:53:15.038Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #6 in 300ms
+2024-06-24T23:53:15.038Z [33mwarn[39m: [RTRedis] [rt] connection retry #6 in 300ms
+2024-06-24T23:53:15.061Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:15.062Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #6 in 300ms
+2024-06-24T23:53:16.335Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.336Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #7 in 350ms
+2024-06-24T23:53:16.340Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.340Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.340Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.340Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.340Z [33mwarn[39m: [EventsRedis] [events] connection retry #7 in 350ms
+2024-06-24T23:53:16.340Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #7 in 350ms
+2024-06-24T23:53:16.340Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.340Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #7 in 350ms
+2024-06-24T23:53:16.340Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #7 in 350ms
+2024-06-24T23:53:16.340Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.340Z [33mwarn[39m: [RTRedis] [rt] connection retry #7 in 350ms
+2024-06-24T23:53:16.340Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #7 in 350ms
+2024-06-24T23:53:16.363Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:16.364Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #7 in 350ms
+2024-06-24T23:53:17.690Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.691Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #8 in 400ms
+2024-06-24T23:53:17.696Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.696Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.697Z [33mwarn[39m: [EventsRedis] [events] connection retry #8 in 400ms
+2024-06-24T23:53:17.697Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.697Z [33mwarn[39m: [RTRedis] [rt] connection retry #8 in 400ms
+2024-06-24T23:53:17.697Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.698Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.698Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.699Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #8 in 400ms
+2024-06-24T23:53:17.698Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #8 in 400ms
+2024-06-24T23:53:17.698Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #8 in 400ms
+2024-06-24T23:53:17.699Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #8 in 400ms
+2024-06-24T23:53:17.717Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:17.717Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #8 in 400ms
+2024-06-24T23:53:18.093Z [31merror[39m: [AnalyticsRedis] getaddrinfo EAI_AGAIN bl-redis
+2024-06-24T23:53:18.093Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #9 in 450ms
+2024-06-24T23:53:18.098Z [31merror[39m: [RTRedis] getaddrinfo EAI_AGAIN bl-redis
+2024-06-24T23:53:18.098Z [31merror[39m: [EventsRedis] getaddrinfo EAI_AGAIN bl-redis
+2024-06-24T23:53:18.099Z [33mwarn[39m: [RTRedis] [rt] connection retry #9 in 450ms
+2024-06-24T23:53:18.098Z [33mwarn[39m: [EventsRedis] [events] connection retry #9 in 450ms
+2024-06-24T23:53:18.099Z [31merror[39m: [EventsRedis] getaddrinfo EAI_AGAIN bl-redis
+2024-06-24T23:53:18.099Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #9 in 450ms
+2024-06-24T23:53:19.100Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.101Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.101Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.102Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #9 in 450ms
+2024-06-24T23:53:19.102Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #9 in 450ms
+2024-06-24T23:53:19.102Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #9 in 450ms
+2024-06-24T23:53:19.120Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.121Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #9 in 450ms
+2024-06-24T23:53:19.546Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.547Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #10 in 500ms
+2024-06-24T23:53:19.550Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.551Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.551Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:19.551Z [33mwarn[39m: [RTRedis] [rt] connection retry #10 in 500ms
+2024-06-24T23:53:19.551Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #10 in 500ms
+2024-06-24T23:53:19.552Z [33mwarn[39m: [EventsRedis] [events] connection retry #10 in 500ms
+2024-06-24T23:53:20.554Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:20.554Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:20.555Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #10 in 500ms
+2024-06-24T23:53:20.555Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #10 in 500ms
+2024-06-24T23:53:20.555Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:20.555Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #10 in 500ms
+2024-06-24T23:53:20.574Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:20.575Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #10 in 500ms
+2024-06-24T23:53:21.050Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:21.051Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #11 in 550ms
+2024-06-24T23:53:21.054Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:21.054Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:21.054Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:21.056Z [33mwarn[39m: [RTRedis] [rt] connection retry #11 in 550ms
+2024-06-24T23:53:21.055Z [33mwarn[39m: [EventsRedis] [events] connection retry #11 in 550ms
+2024-06-24T23:53:21.056Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #11 in 550ms
+2024-06-24T23:53:22.058Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.059Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.059Z [31merror[39m: [UserSessionRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.060Z [33mwarn[39m: [RTRedis] [rt:subscriber] connection retry #11 in 550ms
+2024-06-24T23:53:22.060Z [33mwarn[39m: [UserSessionRedis] [user-session:subscriber] connection retry #11 in 550ms
+2024-06-24T23:53:22.060Z [33mwarn[39m: [UserSessionRedis] [user-session] connection retry #11 in 550ms
+2024-06-24T23:53:22.079Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.080Z [33mwarn[39m: [AnalyticsRedis] [analytics] connection retry #11 in 550ms
+2024-06-24T23:53:22.607Z [31merror[39m: [AnalyticsRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.608Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.608Z [33mwarn[39m: [AnalyticsRedis] [analytics:subscriber] connection retry #12 in 600ms
+2024-06-24T23:53:22.609Z [31merror[39m: [RTRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.609Z [31merror[39m: [EventsRedis] connect ETIMEDOUT
+2024-06-24T23:53:22.609Z [33mwarn[39m: [EventsRedis] [events:subscriber] connection retry #12 in 600ms
+2024-06-24T23:53:22.610Z [33mwarn[39m: [EventsRedis] [events] connection retry #12 in 600ms
+2024-06-24T23:53:22.610Z [33mwarn[39m: [RTRedis] [rt] connection retry #12 in 600ms

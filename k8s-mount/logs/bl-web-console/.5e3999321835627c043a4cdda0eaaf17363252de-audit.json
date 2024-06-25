@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 20
+    },
+    "auditLog": "/opt/backendless/logs/.5e3999321835627c043a4cdda0eaaf17363252de-audit.json",
+    "files": [
+        {
+            "date": 1719242306968,
+            "name": "/opt/backendless/logs/2024-06-24.log",
+            "hash": "f3a9cc113c8af9c7e2d0fc12b0bd40d6382a9a4082c2b1bc0f6df2f6072fdd05"
+        },
+        {
+            "date": 1719314619222,
+            "name": "/opt/backendless/logs/2024-06-25.log",
+            "hash": "d584dacaedd1f70e202273c4e5f4beee5bb8d061288f7529bea7dd81df22cb61"
+        }
+    ],
+    "hashType": "sha256"
+}

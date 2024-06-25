@@ -1,0 +1,254 @@
+2024-06-24T15:18:26.849Z [90minfo[39m: [Global] logger was created
+2024-06-24T15:18:27.045Z [90minfo[39m: [Global] initialized loggers +949.341ms
+2024-06-24T15:18:34.661Z [90minfo[39m: [Global]  |-- required modules for TempAuth API +7614.773ms
+2024-06-24T15:18:39.424Z [90minfo[39m: [Global]  |-- required modules for AuditorLogs API +4763.43ms
+2024-06-24T15:19:04.058Z [90minfo[39m: [Global]  |-- required modules for Internal API +24572.922ms
+2024-06-24T15:19:14.753Z [90minfo[39m: [Global]  |-- required modules for Local API +10695.499ms
+2024-06-24T15:19:16.894Z [90minfo[39m: [Global]  |-- required modules for Remote API +2140.322ms
+2024-06-24T15:19:16.898Z [90minfo[39m: [Global] Start listening port=80 requestTimeout=1200 seconds +4.97ms
+2024-06-24T15:19:17.385Z [90minfo[39m: [Global] 
+2024-06-24T15:19:17.385Z [90minfo[39m: [Global] *************************************************************************************
+2024-06-24T15:19:17.386Z [90minfo[39m: [Global] ***   Backendless.Console was started in 51228.839ms
+2024-06-24T15:19:17.386Z [90minfo[39m: [Global] ***   Talking to the API server on http://bl-server:9000
+2024-06-24T15:19:17.386Z [90minfo[39m: [Global] ***   Open http://localhost:80 in a browser to view the app.
+2024-06-24T15:19:17.386Z [90minfo[39m: [Global] *************************************************************************************
+2024-06-24T15:19:17.386Z [90minfo[39m: [Global] 
+2024-06-24T15:18:26.929Z [90minfo[39m: [Play] logger was created
+2024-06-24T15:18:26.936Z [90minfo[39m: [App] logger was created
+2024-06-24T15:18:26.943Z [90minfo[39m: [ConsoleSDK] logger was created
+2024-06-24T15:18:26.947Z [90minfo[39m: [API] logger was created
+2024-06-24T15:18:26.951Z [90minfo[39m: [APIProxy] logger was created
+2024-06-24T15:18:26.961Z [90minfo[39m: [Redis] logger was created
+2024-06-24T15:18:26.966Z [90minfo[39m: [Codeless] logger was created
+2024-06-24T15:18:26.956Z [90minfo[39m: [FS] logger was created
+2024-06-24T15:18:26.871Z [90minfo[39m: [Utils] logger was created
+2024-06-24T15:18:26.970Z [90minfo[39m: [UIBuilder] logger was created
+2024-06-24T15:18:26.899Z [90minfo[39m: [Services] logger was created
+2024-06-24T15:18:26.975Z [90minfo[39m: [Visualizations] logger was created
+2024-06-24T15:18:26.920Z [90minfo[39m: [Status] logger was created
+2024-06-24T15:19:17.373Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'console',
+  hostname: 'bl-web-console-787596cd97-hwpq2',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: '80'
+}
+2024-06-24T15:18:26.964Z [90minfo[39m: [APIDocs] logger was created
+2024-06-24T15:18:26.985Z [90minfo[39m: [DevLogAuditor] logger was created
+2024-06-24T15:18:26.990Z [90minfo[39m: [Threads] logger was created
+2024-06-24T15:18:26.981Z [90minfo[39m: [LocalPackages] logger was created
+2024-06-24T15:18:26.994Z [90minfo[39m: [Marketplace] logger was created
+2024-06-24T15:18:27.031Z [90minfo[39m: [InstallsCollector] logger was created
+2024-06-24T15:18:26.968Z [90minfo[39m: [DraftCode] logger was created
+2024-06-24T15:18:27.030Z [90minfo[39m: [AirtableImport] logger was created
+2024-06-24T15:18:26.974Z [90minfo[39m: [Gamification] logger was created
+2024-06-24T15:18:27.037Z [90minfo[39m: [FSSizeRecalcQueue] logger was created
+2024-06-24T15:18:26.977Z [90minfo[39m: [Dashboards] logger was created
+2024-06-24T15:18:27.043Z [90minfo[39m: [QuickApps] logger was created
+2024-06-24T15:18:27.038Z [90minfo[39m: [CleanupUIBuilderBackupsQueue] logger was created
+2024-06-24T15:18:27.045Z [90minfo[39m: [Automations] logger was created
+2024-06-24T15:18:27.016Z [90minfo[39m: [Billing] logger was created
+2024-06-24T15:18:27.034Z [90minfo[39m: [Queues] logger was created
+2024-06-24T15:19:17.387Z [90minfo[39m: [Queues] Starting QueuesManager...
+2024-06-24T15:18:27.041Z [90minfo[39m: [Sockets] logger was created
+2024-06-24T15:19:17.415Z [90minfo[39m: [Redis] new client [Sync] was connected in 45051ms
+2024-06-24T15:19:17.418Z [90minfo[39m: [Redis] new client [Analytics] was connected in 49ms
+2024-06-24T15:19:17.419Z [90minfo[39m: [Redis] new client [Events] was connected in 5400ms
+2024-06-24T15:19:17.419Z [90minfo[39m: [Redis] new client [Cache] was connected in 42766ms
+2024-06-24T15:19:17.460Z [90minfo[39m: [CleanupUIBuilderBackupsQueue] Started with taskDelay=[86400 seconds OR 24 hours OR __1 day__]
+2024-06-24T15:19:17.462Z [90minfo[39m: [Queues] Started QueuesManager
+2024-06-24T16:08:37.248Z [90minfo[39m: [Global] logger was created
+2024-06-24T16:08:37.282Z [90minfo[39m: [Global] initialized loggers +137.775ms
+2024-06-24T16:08:38.101Z [90minfo[39m: [Global]  |-- required modules for TempAuth API +819.003ms
+2024-06-24T16:08:38.931Z [90minfo[39m: [Global]  |-- required modules for AuditorLogs API +830.302ms
+2024-06-24T16:08:43.619Z [90minfo[39m: [Global]  |-- required modules for Internal API +4688.082ms
+2024-06-24T16:08:47.032Z [90minfo[39m: [Global]  |-- required modules for Local API +3412.978ms
+2024-06-24T16:08:47.763Z [90minfo[39m: [Global]  |-- required modules for Remote API +730.499ms
+2024-06-24T16:08:47.763Z [90minfo[39m: [Global] Start listening port=80 requestTimeout=1200 seconds +0.237ms
+2024-06-24T16:08:47.853Z [90minfo[39m: [Global] 
+2024-06-24T16:08:47.853Z [90minfo[39m: [Global] *************************************************************************************
+2024-06-24T16:08:47.853Z [90minfo[39m: [Global] ***   Backendless.Console was started in 10708.631ms
+2024-06-24T16:08:47.853Z [90minfo[39m: [Global] ***   Talking to the API server on http://bl-server:9000
+2024-06-24T16:08:47.853Z [90minfo[39m: [Global] ***   Open http://localhost:80 in a browser to view the app.
+2024-06-24T16:08:47.853Z [90minfo[39m: [Global] *************************************************************************************
+2024-06-24T16:08:47.853Z [90minfo[39m: [Global] 
+2024-06-24T16:08:37.252Z [90minfo[39m: [Status] logger was created
+2024-06-24T16:08:47.849Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'console',
+  hostname: 'bl-web-console-646b6bd866-pgcft',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: '80'
+}
+2024-06-24T16:08:37.254Z [90minfo[39m: [Play] logger was created
+2024-06-24T16:08:37.262Z [90minfo[39m: [ConsoleSDK] logger was created
+2024-06-24T16:08:37.263Z [90minfo[39m: [API] logger was created
+2024-06-24T16:08:37.265Z [90minfo[39m: [APIProxy] logger was created
+2024-06-24T16:08:37.266Z [90minfo[39m: [FS] logger was created
+2024-06-24T16:08:37.268Z [90minfo[39m: [Redis] logger was created
+2024-06-24T16:08:37.271Z [90minfo[39m: [Codeless] logger was created
+2024-06-24T16:08:37.271Z [90minfo[39m: [APIDocs] logger was created
+2024-06-24T16:08:37.272Z [90minfo[39m: [DraftCode] logger was created
+2024-06-24T16:08:37.273Z [90minfo[39m: [UIBuilder] logger was created
+2024-06-24T16:08:37.273Z [90minfo[39m: [Gamification] logger was created
+2024-06-24T16:08:37.274Z [90minfo[39m: [Visualizations] logger was created
+2024-06-24T16:08:37.275Z [90minfo[39m: [Dashboards] logger was created
+2024-06-24T16:08:37.275Z [90minfo[39m: [LocalPackages] logger was created
+2024-06-24T16:08:37.276Z [90minfo[39m: [DevLogAuditor] logger was created
+2024-06-24T16:08:37.276Z [90minfo[39m: [Threads] logger was created
+2024-06-24T16:08:37.277Z [90minfo[39m: [Marketplace] logger was created
+2024-06-24T16:08:37.278Z [90minfo[39m: [Billing] logger was created
+2024-06-24T16:08:37.278Z [90minfo[39m: [AirtableImport] logger was created
+2024-06-24T16:08:37.279Z [90minfo[39m: [InstallsCollector] logger was created
+2024-06-24T16:08:37.279Z [90minfo[39m: [Queues] logger was created
+2024-06-24T16:08:47.853Z [90minfo[39m: [Queues] Starting QueuesManager...
+2024-06-24T16:08:37.280Z [90minfo[39m: [FSSizeRecalcQueue] logger was created
+2024-06-24T16:08:37.280Z [90minfo[39m: [CleanupUIBuilderBackupsQueue] logger was created
+2024-06-24T16:08:37.281Z [90minfo[39m: [Sockets] logger was created
+2024-06-24T16:08:37.282Z [90minfo[39m: [Automations] logger was created
+2024-06-24T16:08:37.281Z [90minfo[39m: [QuickApps] logger was created
+2024-06-24T16:08:37.250Z [90minfo[39m: [Utils] logger was created
+2024-06-24T16:08:37.251Z [90minfo[39m: [Services] logger was created
+2024-06-24T16:08:37.257Z [90minfo[39m: [App] logger was created
+2024-06-24T16:08:47.862Z [90minfo[39m: [Redis] new client [Sync] was connected in 10135ms
+2024-06-24T16:08:47.863Z [90minfo[39m: [Redis] new client [Cache] was connected in 9765ms
+2024-06-24T16:08:47.863Z [90minfo[39m: [Redis] new client [Events] was connected in 1919ms
+2024-06-24T16:08:47.866Z [90minfo[39m: [Redis] new client [Analytics] was connected in 17ms
+2024-06-24T16:08:47.868Z [90minfo[39m: [CleanupUIBuilderBackupsQueue] Started with taskDelay=[86400 seconds OR 24 hours OR __1 day__]
+2024-06-24T16:08:47.869Z [90minfo[39m: [Queues] Started QueuesManager
+2024-06-24T16:08:56.095Z [33mwarn[39m: [Global] Termination signal [SIGTERM] received. Shutting down...
+2024-06-24T16:08:56.097Z [90minfo[39m: [Queues] Stopping QueuesManager...
+2024-06-24T16:08:56.098Z [90minfo[39m: [CleanupUIBuilderBackupsQueue]  - Close connection to the "console::cleanup-ui-builder-backups" queue...
+2024-06-24T16:08:56.623Z [90minfo[39m: [Queues] Stopped QueuesManager
+2024-06-24T16:08:56.626Z [90minfo[39m: [Automations] Automations developers sessions have been cleared
+2024-06-24T16:08:56.627Z [33mwarn[39m: [Global] The Socket has been closed
+2024-06-24T16:43:07.120Z [33mwarn[39m: [Global] Termination signal [SIGTERM] received. Shutting down...
+2024-06-24T16:43:07.130Z [90minfo[39m: [Queues] Stopping QueuesManager...
+2024-06-24T16:43:07.141Z [90minfo[39m: [CleanupUIBuilderBackupsQueue]  - Close connection to the "console::cleanup-ui-builder-backups" queue...
+2024-06-24T16:43:07.376Z [33mwarn[39m: [Redis] [Sync] connection retry #1 in 50ms
+2024-06-24T16:43:07.378Z [33mwarn[39m: [Redis] [Cache] connection retry #1 in 50ms
+2024-06-24T16:43:07.379Z [33mwarn[39m: [Redis] [Events] connection retry #1 in 50ms
+2024-06-24T16:43:07.379Z [33mwarn[39m: [Redis] [Events] connection retry #1 in 50ms
+2024-06-24T16:43:07.380Z [33mwarn[39m: [Redis] [Analytics] connection retry #1 in 50ms
+2024-06-24T16:43:07.429Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.429Z [33mwarn[39m: [Redis] [Sync] connection retry #2 in 100ms
+2024-06-24T16:43:07.447Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.449Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.465Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.468Z [33mwarn[39m: [Redis] [Analytics] connection retry #2 in 100ms
+2024-06-24T16:43:07.470Z [33mwarn[39m: [Redis] [Events] connection retry #2 in 100ms
+2024-06-24T16:43:07.470Z [33mwarn[39m: [Redis] [Events] connection retry #2 in 100ms
+2024-06-24T16:43:07.471Z [33mwarn[39m: [Redis] [Cache] connection retry #2 in 100ms
+2024-06-24T16:43:07.555Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.556Z [33mwarn[39m: [Redis] [Sync] connection retry #3 in 150ms
+2024-06-24T16:43:07.614Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.618Z [33mwarn[39m: [Redis] [Analytics] connection retry #3 in 150ms
+2024-06-24T16:43:07.619Z [33mwarn[39m: [Redis] [Events] connection retry #3 in 150ms
+2024-06-24T16:43:07.623Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.625Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.628Z [33mwarn[39m: [Redis] [Events] connection retry #3 in 150ms
+2024-06-24T16:43:07.629Z [33mwarn[39m: [Redis] [Cache] connection retry #3 in 150ms
+2024-06-24T16:43:07.743Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T16:43:07.745Z [33mwarn[39m: [Redis] [Sync] connection retry #4 in 200ms
+2024-06-24T16:43:07.924Z [90minfo[39m: [Queues] Stopped QueuesManager
+2024-06-24T16:43:07.928Z [90minfo[39m: [Automations] Automations developers sessions have been cleared
+2024-06-24T16:43:07.929Z [33mwarn[39m: [Global] The Socket has been closed
+2024-06-24T22:48:46.436Z [90minfo[39m: [Global] logger was created
+2024-06-24T22:48:46.461Z [90minfo[39m: [Global] initialized loggers +183.217ms
+2024-06-24T22:48:47.536Z [90minfo[39m: [Global]  |-- required modules for TempAuth API +1074.963ms
+2024-06-24T22:48:48.605Z [90minfo[39m: [Global]  |-- required modules for AuditorLogs API +1068.762ms
+2024-06-24T22:48:53.810Z [90minfo[39m: [Global]  |-- required modules for Internal API +5204.867ms
+2024-06-24T22:48:58.430Z [90minfo[39m: [Global]  |-- required modules for Local API +4620.165ms
+2024-06-24T22:48:59.309Z [90minfo[39m: [Global]  |-- required modules for Remote API +877.953ms
+2024-06-24T22:48:59.309Z [90minfo[39m: [Global] Start listening port=80 requestTimeout=1200 seconds +0.31ms
+2024-06-24T22:48:59.353Z [90minfo[39m: [Global] 
+2024-06-24T22:48:59.353Z [90minfo[39m: [Global] *************************************************************************************
+2024-06-24T22:48:59.354Z [90minfo[39m: [Global] ***   Backendless.Console was started in 13074.589ms
+2024-06-24T22:48:59.354Z [90minfo[39m: [Global] ***   Talking to the API server on http://bl-server:9000
+2024-06-24T22:48:59.354Z [90minfo[39m: [Global] ***   Open http://localhost:80 in a browser to view the app.
+2024-06-24T22:48:59.354Z [90minfo[39m: [Global] *************************************************************************************
+2024-06-24T22:48:59.354Z [90minfo[39m: [Global] 
+2024-06-24T22:48:46.441Z [90minfo[39m: [Status] logger was created
+2024-06-24T22:48:59.350Z [33mwarn[39m: [Status] The Service Status can not be running because it is not configured {
+  serviceName: 'console',
+  hostname: 'bl-web-console-646b6bd866-pgcft',
+  nodeName: undefined,
+  internalHost: undefined,
+  internalPort: '80'
+}
+2024-06-24T22:48:46.444Z [90minfo[39m: [ConsoleSDK] logger was created
+2024-06-24T22:48:46.443Z [90minfo[39m: [App] logger was created
+2024-06-24T22:48:46.445Z [90minfo[39m: [API] logger was created
+2024-06-24T22:48:46.447Z [90minfo[39m: [FS] logger was created
+2024-06-24T22:48:46.449Z [90minfo[39m: [APIDocs] logger was created
+2024-06-24T22:48:46.446Z [90minfo[39m: [APIProxy] logger was created
+2024-06-24T22:48:46.448Z [90minfo[39m: [Redis] logger was created
+2024-06-24T22:48:46.450Z [90minfo[39m: [DraftCode] logger was created
+2024-06-24T22:48:46.450Z [90minfo[39m: [Codeless] logger was created
+2024-06-24T22:48:46.451Z [90minfo[39m: [UIBuilder] logger was created
+2024-06-24T22:48:46.453Z [90minfo[39m: [Visualizations] logger was created
+2024-06-24T22:48:46.452Z [90minfo[39m: [Gamification] logger was created
+2024-06-24T22:48:46.453Z [90minfo[39m: [Dashboards] logger was created
+2024-06-24T22:48:46.454Z [90minfo[39m: [LocalPackages] logger was created
+2024-06-24T22:48:46.455Z [90minfo[39m: [DevLogAuditor] logger was created
+2024-06-24T22:48:46.456Z [90minfo[39m: [Marketplace] logger was created
+2024-06-24T22:48:46.455Z [90minfo[39m: [Threads] logger was created
+2024-06-24T22:48:46.456Z [90minfo[39m: [Billing] logger was created
+2024-06-24T22:48:46.457Z [90minfo[39m: [AirtableImport] logger was created
+2024-06-24T22:48:46.458Z [90minfo[39m: [InstallsCollector] logger was created
+2024-06-24T22:48:46.458Z [90minfo[39m: [Queues] logger was created
+2024-06-24T22:48:59.354Z [90minfo[39m: [Queues] Starting QueuesManager...
+2024-06-24T22:48:46.459Z [90minfo[39m: [FSSizeRecalcQueue] logger was created
+2024-06-24T22:48:46.459Z [90minfo[39m: [CleanupUIBuilderBackupsQueue] logger was created
+2024-06-24T22:48:46.460Z [90minfo[39m: [Sockets] logger was created
+2024-06-24T22:48:46.461Z [90minfo[39m: [Automations] logger was created
+2024-06-24T22:48:46.460Z [90minfo[39m: [QuickApps] logger was created
+2024-06-24T22:48:46.439Z [90minfo[39m: [Utils] logger was created
+2024-06-24T22:48:46.440Z [90minfo[39m: [Services] logger was created
+2024-06-24T22:48:46.442Z [90minfo[39m: [Play] logger was created
+2024-06-24T22:48:59.360Z [90minfo[39m: [Redis] new client [Sync] was connected in 12396ms
+2024-06-24T22:48:59.361Z [90minfo[39m: [Redis] new client [Cache] was connected in 11831ms
+2024-06-24T22:48:59.361Z [90minfo[39m: [Redis] new client [Events] was connected in 2270ms
+2024-06-24T22:48:59.363Z [90minfo[39m: [Redis] new client [Analytics] was connected in 14ms
+2024-06-24T22:48:59.367Z [90minfo[39m: [CleanupUIBuilderBackupsQueue] Started with taskDelay=[86400 seconds OR 24 hours OR __1 day__]
+2024-06-24T22:48:59.367Z [90minfo[39m: [Queues] Started QueuesManager
+2024-06-24T23:53:13.049Z [33mwarn[39m: [Global] Termination signal [SIGTERM] received. Shutting down...
+2024-06-24T23:53:13.065Z [90minfo[39m: [Queues] Stopping QueuesManager...
+2024-06-24T23:53:13.066Z [90minfo[39m: [CleanupUIBuilderBackupsQueue]  - Close connection to the "console::cleanup-ui-builder-backups" queue...
+2024-06-24T23:53:13.255Z [33mwarn[39m: [Redis] [Sync] connection retry #1 in 50ms
+2024-06-24T23:53:13.277Z [33mwarn[39m: [Redis] [Cache] connection retry #1 in 50ms
+2024-06-24T23:53:13.278Z [33mwarn[39m: [Redis] [Events] connection retry #1 in 50ms
+2024-06-24T23:53:13.280Z [33mwarn[39m: [Redis] [Events] connection retry #1 in 50ms
+2024-06-24T23:53:13.284Z [33mwarn[39m: [Redis] [Analytics] connection retry #1 in 50ms
+2024-06-24T23:53:13.310Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.311Z [33mwarn[39m: [Redis] [Sync] connection retry #2 in 100ms
+2024-06-24T23:53:13.333Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.334Z [33mwarn[39m: [Redis] [Events] connection retry #2 in 100ms
+2024-06-24T23:53:13.338Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.339Z [33mwarn[39m: [Redis] [Cache] connection retry #2 in 100ms
+2024-06-24T23:53:13.340Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.344Z [33mwarn[39m: [Redis] [Analytics] connection retry #2 in 100ms
+2024-06-24T23:53:13.344Z [33mwarn[39m: [Redis] [Events] connection retry #2 in 100ms
+2024-06-24T23:53:13.414Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.414Z [33mwarn[39m: [Redis] [Sync] connection retry #3 in 150ms
+2024-06-24T23:53:13.436Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.437Z [33mwarn[39m: [Redis] [Events] connection retry #3 in 150ms
+2024-06-24T23:53:13.439Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.439Z [33mwarn[39m: [Redis] [Cache] connection retry #3 in 150ms
+2024-06-24T23:53:13.446Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.446Z [33mwarn[39m: [Redis] [Events] connection retry #3 in 150ms
+2024-06-24T23:53:13.446Z [33mwarn[39m: [Redis] [Analytics] connection retry #3 in 150ms
+2024-06-24T23:53:13.566Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.567Z [33mwarn[39m: [Redis] [Sync] connection retry #4 in 200ms
+2024-06-24T23:53:13.597Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.607Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.608Z [33mwarn[39m: [Redis] [Cache] connection retry #4 in 200ms
+2024-06-24T23:53:13.608Z [33mwarn[39m: [Redis] [Events] connection retry #4 in 200ms
+2024-06-24T23:53:13.611Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.611Z [33mwarn[39m: [Redis] [Analytics] connection retry #4 in 200ms
+2024-06-24T23:53:13.612Z [33mwarn[39m: [Redis] [Events] connection retry #4 in 200ms
+2024-06-24T23:53:13.769Z [31merror[39m: [Redis] connect ECONNREFUSED 10.97.75.135:6379
+2024-06-24T23:53:13.769Z [33mwarn[39m: [Redis] [Sync] connection retry #5 in 250ms
+2024-06-24T23:53:13.811Z [90minfo[39m: [Queues] Stopped QueuesManager
+2024-06-24T23:53:13.812Z [90minfo[39m: [Automations] Automations developers sessions have been cleared
+2024-06-24T23:53:13.813Z [33mwarn[39m: [Global] The Socket has been closed

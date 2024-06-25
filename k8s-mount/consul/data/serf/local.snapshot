@@ -1,0 +1,6 @@
+alive: bl-consul-0 10.1.0.90:8301
+event-clock: 1
+alive: bl-consul-0 10.1.0.121:8301
+event-clock: 2
+alive: bl-consul-0 10.1.0.143:8301
+event-clock: 3

@@ -1,0 +1,1540 @@
+[ERROR] - 2024-06-24 15:15:49,277 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:15:52,285 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:15:55,314 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:15:58,354 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:01,371 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:04,388 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:07,396 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:10,467 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:13,491 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:16,521 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:19,568 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:22,633 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:25,688 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:28,729 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:31,766 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:34,814 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:37,850 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:40,941 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:43,966 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:47,047 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:50,109 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:53,130 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:56,185 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:16:59,242 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:02,267 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:05,322 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:08,360 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:11,383 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:14,393 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:17,400 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:20,410 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:23,420 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:26,428 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:29,435 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:32,444 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:35,451 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:38,825 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:41,836 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:44,845 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:47,927 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:50,959 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:54,012 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:17:57,065 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_backendless'
+
+Query being executed when exception was thrown:
+USE `main_backendless`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForMainDB(MySQLSystemDBsWaiter.java:41)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:24)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
+[ERROR] - 2024-06-24 15:18:00,886 - from com.backendless.util.jdbc.ExceptionLogInterceptor in main 
+Error during SQL query execution.
+java.sql.SQLSyntaxErrorException: Unknown database 'main_application'
+
+Query being executed when exception was thrown:
+USE `main_application`
+
+
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.setDatabase(ConnectionImpl.java:2080)
+	at com.mysql.cj.jdbc.ConnectionImpl.setCatalog(ConnectionImpl.java:2028)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForApplicationDB(MySQLSystemDBsWaiter.java:74)
+	at com.backendless.waiting.MySQLSystemDBsWaiter.waitForAccessibility(MySQLSystemDBsWaiter.java:25)
+	at com.backendless.inject.config.CommonInjectorModule.configure(CommonInjectorModule.java:191)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:215)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:64)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:426)
+	at com.google.inject.spi.Elements.getElements(Elements.java:113)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:160)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.inject.guice.GuiceBuilder.injector(GuiceBuilder.java:210)
+	at play.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.java:116)
+	at play.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.java:32)
+	at play.api.ApplicationLoader$JavaApplicationLoaderAdapter$1.load(ApplicationLoader.scala:181)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+
