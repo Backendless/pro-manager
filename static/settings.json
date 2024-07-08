@@ -1,4 +1,4 @@
 {
-  "remove-prefix-to-use-different-server-serverURL": "http://localhost:5050",
-  "pollingIntervalMS": 2000
+    "remove-prefix-to-use-different-server-serverURL": "http://localhost:5050",
+    "pollingIntervalMS": 2000
 }

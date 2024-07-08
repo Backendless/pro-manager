@@ -13,12 +13,14 @@ export async function getPodEvents(podName) {
     podEvents.forEach((podEvent) => {
       resultPodEvents.push({
         lastSeen: calculateLastSeenTime(podEvent.lastTimestamp),
-        type: podEvent.type,
-        reason: podEvent.reason,
-        name: 'pod/' + podEvent.involvedObject.name,
-        message: podEvent.message
+        type:     podEvent.type,
+        reason:   podEvent.reason,
+        name:     'pod/' + podEvent.involvedObject.name,
+        message:  podEvent.message
       })
     })
+
+    checkIfThereIsNoEventsAndAddMessage( resultPodEvents )
 
     return resultPodEvents
   } catch (err) {
@@ -36,17 +38,31 @@ export async function getDeploymentEvents(serviceName) {
     deploymentEvents.forEach((deploymentEvent) => {
       resultDeploymentEvents.push({
         lastSeen: calculateLastSeenTime(deploymentEvent.lastTimestamp),
-        type: deploymentEvent.type,
-        reason: deploymentEvent.reason,
-        name: 'deployment/' + deploymentEvent.involvedObject.name,
-        message: deploymentEvent.message
+        type:     deploymentEvent.type,
+        reason:   deploymentEvent.reason,
+        name:     'deployment/' + deploymentEvent.involvedObject.name,
+        message:  deploymentEvent.message
       })
     })
-  
+
+    checkIfThereIsNoEventsAndAddMessage( resultDeploymentEvents )
+
     return resultDeploymentEvents
   } catch (err) {
     logger.error(`Error fetching deployment events: ${err}`)
     throw err
+  }
+}
+
+function checkIfThereIsNoEventsAndAddMessage( events ) {
+  if (events.length < 1) {
+    events.push({
+      lastSeen: '0m0s',
+      type:     'Empty',
+      reason:   'Empty',
+      name:     'Empty',
+      message:  'There is no events during last hour'
+    })
   }
 }
 

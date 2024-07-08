@@ -32,12 +32,9 @@ export class MysqlConfig {
                 'spec':     {
                     'containers':    [
                         {
-                            'args':            ['--sql-mode='],
+                            'args':            [],
                             'env':             [
                                 {
-                                    'name':  'MYSQL_ROOT_PASSWORD',
-                                    'value': 'rootpassword'
-                                }, {
                                     'name':  'MYSQL_ROOT_HOST',
                                     'value': '%'
                                 }
@@ -56,6 +53,10 @@ export class MysqlConfig {
                                 {
                                     'mountPath': '/var/lib/mysql',
                                     'name':      'data'
+                                },
+                                {
+                                    'mountPath': '/var/log/mysql',
+                                    'name':      'logs'
                                 }
                             ]
                         }
@@ -96,7 +97,7 @@ export class MysqlConfig {
 pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
 datadir         = /var/lib/mysql
-log-error       = /var/log/mysql/error.log
+log-error       = /var/log/mysql/mysqld.log
 
 # By default we only accept connections from localhost
 bind-address    = 0.0.0.0

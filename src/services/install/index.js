@@ -75,12 +75,9 @@ class InstallService {
 
         await initConfigMap()
 
-        for (const dependency of blContainers.getSortedDependencies()) {
-            installStatus.info(`processing ${dependency.name}...`)
-            await this._installContainer(dependency, install)
-        }
-
-        await blContainers.roles.ingressHazelcastClusterRole.install()
+        const consulDependency = blContainers.dependencies.consul
+        installStatus.info('processing consul dependency...')
+        await this._installContainer(consulDependency, install)
 
         installStatus.info('checking status of bl-init-config-values job')
         const initConfigValuesContainer = blContainers.bl.initConfigValues
@@ -93,6 +90,13 @@ class InstallService {
         installStatus.info('bl-init-config-values job created')
 
         await waitForInitConsulJobComplete()
+
+        for (const dependency of blContainers.getSortedDependenciesExceptConsul()) {
+            installStatus.info(`processing ${dependency.name}...`)
+            await this._installContainer(dependency, install)
+        }
+
+        await blContainers.roles.ingressHazelcastClusterRole.install()
 
         if (install.license) {
             await consul.put('config/license/id', install.license)

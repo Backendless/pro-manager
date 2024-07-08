@@ -4,10 +4,12 @@ import { Logger } from '../../../logger'
 import { readFileContent } from '../../../utils/fs'
 import { k8sConfig } from '../../../config/k8s-config'
 import path from 'path'
+import fse from 'fs-extra'
+import fs from 'fs'
 
 const logger = Logger('install-redis')
 
-export async function installRedis({ fullMountPath, internalPort, externalPort, name }) {
+export async function installRedis({ fullMountPath, logMountPath, internalPort, externalPort, name }) {
     const redisK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/redis.json')))
     installStatus.info(`installing ${name}...`)
     const workload = redisK8sConfig.workload
@@ -17,6 +19,26 @@ export async function installRedis({ fullMountPath, internalPort, externalPort, 
             type: 'DirectoryOrCreate'
         },
         name: 'data'
+    })
+
+    if (!(await fse.exists(logMountPath))) {
+        installStatus.info(`The path [${logMountPath}] for redis logs does not exists, will be created`)
+        await fse.mkdirp(logMountPath)
+    }
+
+    try {
+        fs.chmodSync(logMountPath, 0o777)
+        logger.info(`changed permission for redis log path folder "${logMountPath}"`)
+    } catch (err) {
+        logger.error(`Error chmod permissions for redis log folder '${logMountPath}': ${err.message}`)
+    }
+
+    workload.spec.template.spec.volumes.push({
+        hostPath: {
+            path: `${logMountPath}`,
+            type: 'DirectoryOrCreate'
+        },
+        name: 'logs'
     })
 
     workload.metadata.name = name

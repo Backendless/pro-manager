@@ -117,6 +117,7 @@ class BlContainers {
             serviceStatus: () => blStatefulsetStatus('bl-redis'),
             installService: installArguments => installRedis({
                 fullMountPath: `${installArguments.mountPath}/bl-redis/data`,
+                logMountPath: `${installArguments.mountPath}/logs/bl-redis`,
                 internalPort: 6379,
                 externalPort: 32379,
                 name: 'bl-redis'
@@ -131,6 +132,7 @@ class BlContainers {
             serviceStatus: () => blStatefulsetStatus('bl-redis-debug'),
             installService: installArguments => installRedis({
                 fullMountPath: `${installArguments.mountPath}/bl-redis-debug/data`,
+                logMountPath: `${installArguments.mountPath}/logs/bl-redis-debug`,
                 internalPort: 6380,
                 externalPort: 32380,
                 name: 'bl-redis-debug'
@@ -165,6 +167,11 @@ class BlContainers {
         return Object.entries(this.dependencies)
             .sort(([key1, dependency1], [key2, dependency2]) => dependency1.order - dependency2.order)
             .map(([key, dependency]) => dependency)
+    }
+
+    getSortedDependenciesExceptConsul() {
+        return this.getSortedDependencies()
+            .filter(dependency => dependency.name !== this.dependencies.consul.name)
     }
 
     findByName(name) {
