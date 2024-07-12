@@ -53,10 +53,6 @@ export class MysqlConfig {
                                 {
                                     'mountPath': '/var/lib/mysql',
                                     'name':      'data'
-                                },
-                                {
-                                    'mountPath': '/var/log/mysql',
-                                    'name':      'logs'
                                 }
                             ]
                         }

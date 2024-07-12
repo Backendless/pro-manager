@@ -52,10 +52,6 @@
                 {
                   "mountPath": "/data",
                   "name": "data"
-                },
-                {
-                  "mountPath": "/var/log/redis",
-                  "name": "logs"
                 }
               ]
             }

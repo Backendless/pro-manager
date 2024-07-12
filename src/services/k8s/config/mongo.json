@@ -51,10 +51,6 @@
                 {
                   "mountPath": "/data/db",
                   "name": "data"
-                },
-                {
-                  "mountPath": "/var/log/mongodb",
-                  "name": "logs"
                 }
               ]
             }
