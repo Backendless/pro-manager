@@ -6,6 +6,7 @@ import { k8sConfig } from '../../../config/k8s-config'
 import path from 'path'
 import fse from 'fs-extra'
 import fs from 'fs'
+import { isWin } from '../../../utils/os'
 
 const logger = Logger('install-mongo')
 
@@ -13,7 +14,8 @@ export async function installMongo({ mountPath }) {
     const mongoK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/mongo.json')))
     installStatus.info('installing mongo...')
     const workload = mongoK8sConfig.workload
-    workload.spec.template.spec.volumes.push({
+    const specConfig = workload.spec.template.spec
+    specConfig.volumes.push({
         hostPath: {
             path: `${mountPath}/mongo/data`,
             type: 'DirectoryOrCreate'
@@ -21,27 +23,40 @@ export async function installMongo({ mountPath }) {
         name: 'data'
     })
 
-    const logMountFolderPath = `${mountPath}/logs/bl-mongo`
-    workload.spec.template.spec.volumes.push({
-        hostPath: {
-            path: logMountFolderPath,
-            type: 'DirectoryOrCreate'
-        },
-        name: 'logs'
-    })
+    if(!isWin()) {
+        const containerConfig = specConfig.containers[0]
+        containerConfig.args.push(
+            '--logpath',
+            '/var/log/mongodb/mongod.log',
+            '--logappend'
+        )
 
-    if (!(await fse.exists(logMountFolderPath))) {
-        installStatus.info(`The path [${logMountFolderPath}] for mongo logs does not exists, will be created`)
-        await fse.mkdirp(logMountFolderPath)
+        containerConfig.volumeMounts.push({
+            'mountPath': '/var/log/mongodb',
+            'name': 'logs'
+        })
+
+        const logMountFolderPath = `${mountPath}/logs/bl-mongo`
+        specConfig.volumes.push({
+            hostPath: {
+                path: logMountFolderPath,
+                type: 'DirectoryOrCreate'
+            },
+            name:     'logs'
+        })
+
+        if (!(await fse.exists(logMountFolderPath))) {
+            installStatus.info(`The path [${logMountFolderPath}] for mongo logs does not exists, will be created`)
+            await fse.mkdirp(logMountFolderPath)
+        }
+
+        try {
+            fs.chmodSync(logMountFolderPath, 0o777)
+            logger.info(`changed permission for mongo log path folder "${logMountFolderPath}"`)
+        } catch (err) {
+            logger.error(`Error chmod permissions for mongo log folder '${logMountFolderPath}': ${err.message}`)
+        }
     }
-
-    try {
-        fs.chmodSync(logMountFolderPath, 0o777)
-        logger.info(`changed permission for mongo log path folder "${logMountFolderPath}"`)
-    } catch (err) {
-        logger.error(`Error chmod permissions for mongo log folder '${logMountFolderPath}': ${err.message}`)
-    }
-
 
     logger.verbose(`creating stateful set for mongo with config: ${JSON.stringify(workload)}`)
     installStatus.info('creating statefulset for mongo')

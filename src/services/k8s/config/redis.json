@@ -34,7 +34,6 @@
             {
               "args": [
                 "redis-server",
-                "--logfile /var/log/redis/redis.log",
                 "--appendonly",
                 "yes"
               ],
@@ -52,10 +51,6 @@
                 {
                   "mountPath": "/data",
                   "name": "data"
-                },
-                {
-                  "mountPath": "/var/log/redis",
-                  "name": "logs"
                 }
               ]
             }

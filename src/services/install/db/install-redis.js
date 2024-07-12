@@ -6,6 +6,7 @@ import { k8sConfig } from '../../../config/k8s-config'
 import path from 'path'
 import fse from 'fs-extra'
 import fs from 'fs'
+import { isWin } from '../../../utils/os'
 
 const logger = Logger('install-redis')
 
@@ -13,7 +14,9 @@ export async function installRedis({ fullMountPath, logMountPath, internalPort, 
     const redisK8sConfig = JSON.parse(await readFileContent(path.resolve( __dirname, '../../k8s/config/redis.json')))
     installStatus.info(`installing ${name}...`)
     const workload = redisK8sConfig.workload
-    workload.spec.template.spec.volumes.push({
+    const specConfig = workload.spec.template.spec
+
+    specConfig.volumes.push({
         hostPath: {
             path: `${fullMountPath}`,
             type: 'DirectoryOrCreate'
@@ -21,33 +24,42 @@ export async function installRedis({ fullMountPath, logMountPath, internalPort, 
         name: 'data'
     })
 
-    if (!(await fse.exists(logMountPath))) {
-        installStatus.info(`The path [${logMountPath}] for redis logs does not exists, will be created`)
-        await fse.mkdirp(logMountPath)
-    }
+    const containerConfig = specConfig.containers[0]
+    if (!isWin()) {
+        containerConfig.args.push('--logfile /var/log/redis/redis.log')
+        containerConfig.volumeMounts.push({
+            'mountPath': '/var/log/redis',
+            'name':      'logs'
+        })
 
-    try {
-        fs.chmodSync(logMountPath, 0o777)
-        logger.info(`changed permission for redis log path folder "${logMountPath}"`)
-    } catch (err) {
-        logger.error(`Error chmod permissions for redis log folder '${logMountPath}': ${err.message}`)
-    }
+        if (!(await fse.exists(logMountPath))) {
+            installStatus.info(`The path [${logMountPath}] for redis logs does not exists, will be created`)
+            await fse.mkdirp(logMountPath)
+        }
 
-    workload.spec.template.spec.volumes.push({
-        hostPath: {
-            path: `${logMountPath}`,
-            type: 'DirectoryOrCreate'
-        },
-        name: 'logs'
-    })
+        try {
+            fs.chmodSync(logMountPath, 0o777)
+            logger.info(`changed permission for redis log path folder "${logMountPath}"`)
+        } catch (err) {
+            logger.error(`Error chmod permissions for redis log folder '${logMountPath}': ${err.message}`)
+        }
+
+        specConfig.volumes.push({
+            hostPath: {
+                path: `${logMountPath}`,
+                type: 'DirectoryOrCreate'
+            },
+            name:     'logs'
+        })
+    }
 
     workload.metadata.name = name
     workload.metadata.annotations.name = name
     workload.spec.selector.matchLabels.app = name
     workload.spec.template.metadata.labels.app = name
-    workload.spec.template.spec.containers[0].name = name
-    workload.spec.template.spec.containers[0].args.push('--port', internalPort.toString())
-    workload.spec.template.spec.containers[0].ports[0].containerPort = internalPort
+    containerConfig.name = name
+    containerConfig.args.push('--port', internalPort.toString())
+    containerConfig.ports[0].containerPort = internalPort
 
     installStatus.info(`creating statefulset for ${name}`)
     logger.verbose(`creating statefulset for ${name} with workload '${JSON.stringify(workload)}'`)
