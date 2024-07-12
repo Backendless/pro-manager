@@ -24,8 +24,10 @@ export async function installRedis({ fullMountPath, logMountPath, internalPort, 
         name: 'data'
     })
 
+    const containerConfig = specConfig.containers[0]
     if (!isWin()) {
-        specConfig.containers[0].volumeMounts.push({
+        containerConfig.args.push('--logfile /var/log/redis/redis.log')
+        containerConfig.volumeMounts.push({
             'mountPath': '/var/log/redis',
             'name':      'logs'
         })
@@ -55,9 +57,9 @@ export async function installRedis({ fullMountPath, logMountPath, internalPort, 
     workload.metadata.annotations.name = name
     workload.spec.selector.matchLabels.app = name
     workload.spec.template.metadata.labels.app = name
-    specConfig.containers[0].name = name
-    specConfig.containers[0].args.push('--port', internalPort.toString())
-    specConfig.containers[0].ports[0].containerPort = internalPort
+    containerConfig.name = name
+    containerConfig.args.push('--port', internalPort.toString())
+    containerConfig.ports[0].containerPort = internalPort
 
     installStatus.info(`creating statefulset for ${name}`)
     logger.verbose(`creating statefulset for ${name} with workload '${JSON.stringify(workload)}'`)

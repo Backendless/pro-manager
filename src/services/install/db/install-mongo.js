@@ -24,7 +24,14 @@ export async function installMongo({ mountPath }) {
     })
 
     if(!isWin()) {
-        specConfig.containers[0].volumeMounts.push({
+        const containerConfig = specConfig.containers[0]
+        containerConfig.args.push(
+            '--logpath',
+            '/var/log/mongodb/mongod.log',
+            '--logappend'
+        )
+
+        containerConfig.volumeMounts.push({
             'mountPath': '/var/log/mongodb',
             'name': 'logs'
         })
