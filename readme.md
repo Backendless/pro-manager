@@ -62,6 +62,13 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 ```
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.yaml
 ```
+
+- Install node js v14
+  - Install `nvm`  
+      - For Windows you can use https://github.com/coreybutler/nvm-windows?tab=readme-ov-file#installation--upgrades
+      - For Mac OS `brew install nvm`
+  - Execute `nvm install 14`
+  - Execute `nvm use 14`
 - Follow instructions to [start Pro Manager](#start-pro-manager) 
 </details>
 

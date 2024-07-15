@@ -8,6 +8,7 @@ import { generatePasswordAndSaveToConsul } from './generate-password-and-save-to
 import fse from 'fs-extra'
 import { Logger } from '../../../../logger'
 import fs from 'fs'
+import { isWin } from '../../../../utils/os'
 
 const logger = Logger('mysql-install')
 
@@ -49,26 +50,33 @@ export async function installMysql({ version, mountPath }) {
         },
     })
 
-    const pathToLogs = `${mountPath}/logs/bl-mysql`
-    if (!(await fse.exists(pathToLogs))) {
-        installStatus.info(`The path [${pathToLogs}] for mysql logs does not exists, will be created`)
-        await fse.mkdirp(pathToLogs)
-    }
+    if (!isWin()) {
+        specConfig.containers[0].volumeMounts.push({
+            'mountPath': '/var/log/mysql',
+            'name':      'logs'
+        })
 
-    try {
-        fs.chmodSync(pathToLogs, 0o777)
-        logger.info(`changed permission for mysql log path folder "${pathToLogs}"`)
-    } catch (err) {
-        logger.error(`Error chmod permissions for mysql log folder '${pathToLogs}': ${err.message}`)
-    }
+        const pathToLogs = `${mountPath}/logs/bl-mysql`
+        if (!(await fse.exists(pathToLogs))) {
+            installStatus.info(`The path [${pathToLogs}] for mysql logs does not exists, will be created`)
+            await fse.mkdirp(pathToLogs)
+        }
 
-    volumes.push({
-        name:     'logs',
-        hostPath: {
-            path: pathToLogs,
-            type: 'DirectoryOrCreate'
-        },
-    })
+        try {
+            fs.chmodSync(pathToLogs, 0o777)
+            logger.info(`changed permission for mysql log path folder "${pathToLogs}"`)
+        } catch (err) {
+            logger.error(`Error chmod permissions for mysql log folder '${pathToLogs}': ${err.message}`)
+        }
+
+        volumes.push({
+            name:     'logs',
+            hostPath: {
+                path: pathToLogs,
+                type: 'DirectoryOrCreate'
+            },
+        })
+    }
 
     const password = await generatePasswordAndSaveToConsul()
     specConfig.containers[0].env.push({
