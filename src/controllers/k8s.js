@@ -6,7 +6,8 @@ import { createConfigMap, replaceConfigMap } from '../services/k8s/k8s-config-ma
 import { statefulsetRead } from '../services/k8s/k8s-statefulset-read'
 import { BaseConfig } from '../config/base-config'
 import { listPods } from '../services/k8s/k8s-list-pods'
-import { getPodEvents, getDeploymentEvents } from '../services/k8s/k8s-events-manager'
+import { getDeploymentEvents, getPodEvents } from '../services/k8s/k8s-events-manager'
+import { deploymentStatus } from '../services/k8s/k8s-status'
 
 export const router = new Router()
 
@@ -19,6 +20,8 @@ router.get('/statefulset/status', handler(async ({ query }) => {
 }))
 
 router.get('/statefulset', handler(({ query }) => statefulsetRead(query.name)))
+
+router.get('/deployment', handler(({ query }) => deploymentStatus(query.name, true)))
 
 router.get('/job/status', handler(() => {
     return jobStatus('bl-init-config-values', true)

@@ -40,6 +40,18 @@ export class IngressApiConfig {
                                         }
                                     }
                                 }
+                            },
+                            {
+                                'path': '^/[A-Za-z0-9-]{36}/([A-Za-z0-9-]{36}|console)/automation/(.*)$',
+                                'pathType': 'Prefix',
+                                'backend': {
+                                    'service': {
+                                        'name': 'bl-server',
+                                        'port': {
+                                            'number': 9000
+                                        }
+                                    }
+                                }
                             }
                         ]
                     }

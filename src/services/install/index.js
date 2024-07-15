@@ -106,6 +106,7 @@ class InstallService {
 
         const containers = Object.entries(blContainers.bl)
             .filter(([key, container]) => container !== initConfigValuesContainer)
+            .filter(([key, container]) => !container.skipInstall)
             .map(([key, container]) => container)
 
         for (const container of containers) {
