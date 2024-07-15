@@ -53,10 +53,6 @@ export class MysqlConfig {
                                 {
                                     'mountPath': '/var/lib/mysql',
                                     'name':      'data'
-                                },
-                                {
-                                    'mountPath': '/var/log/mysql',
-                                    'name':      'logs'
                                 }
                             ]
                         }
@@ -97,7 +93,6 @@ export class MysqlConfig {
 pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
 datadir         = /var/lib/mysql
-log-error       = /var/log/mysql/mysqld.log
 
 # By default we only accept connections from localhost
 bind-address    = 0.0.0.0
