@@ -8,7 +8,7 @@ export class IngressConsoleConfig {
             'name': 'bl-console-ingress',
             'labels':      { ...getIngressLabel() },
             'annotations': {
-                'nginx.ingress.kubernetes.io/proxy-body-size':       '2000m',
+                'nginx.ingress.kubernetes.io/proxy-body-size':       '10000m',
                 'nginx.ingress.kubernetes.io/proxy-read-timeout':    '600',
                 'nginx.ingress.kubernetes.io/proxy-send-timeout':    '600',
                 'nginx.ingress.kubernetes.io/proxy-connect-timeout': '600'
