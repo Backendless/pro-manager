@@ -11,8 +11,7 @@ export class IngressApiConfig {
                 'nginx.ingress.kubernetes.io/proxy-body-size':       '10000m',
                 'nginx.ingress.kubernetes.io/proxy-read-timeout':    '600',
                 'nginx.ingress.kubernetes.io/proxy-send-timeout':    '600',
-                'nginx.ingress.kubernetes.io/proxy-connect-timeout': '600',
-                'nginx.ingress.kubernetes.io/use-regex': 'true'
+                'nginx.ingress.kubernetes.io/proxy-connect-timeout': '600'
             }
         },
         'spec': {
@@ -43,7 +42,7 @@ export class IngressApiConfig {
                                 }
                             },
                             {
-                                'path': '^/[A-Za-z0-9-]{36}/([A-Za-z0-9-]{36}|console)/automation/(.*)$',
+                                'path': '/.*/.*/automation/',
                                 'pathType': 'Prefix',
                                 'backend': {
                                     'service': {
