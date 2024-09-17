@@ -1,12 +1,13 @@
 import { IngressApiConfig } from './ingress-api-config'
 import { IngressConsoleConfig } from './ingress-console-config'
 import { IngressRtConfig } from './ingress-rt-config'
+import { IngressConsulConfig } from './ingress-consul-config'
 
 const configs = {
     'api': () => _populateTypeLabel( 'api', new IngressApiConfig().config ),
     'console': () => _populateTypeLabel('console', new IngressConsoleConfig().config),
     'rt': () => _populateTypeLabel('rt', new IngressRtConfig().config ),
-    'consul': () => _populateTypeLabel('consul', new IngressRtConfig().config ),
+    'consul': () => _populateTypeLabel('consul', new IngressConsulConfig().config ),
 }
 
 export function getIngressConfig(type) {

@@ -1,6 +1,6 @@
 import { getIngressLabel } from './index'
 
-export class IngressApiConfig {
+export class IngressConsulConfig {
     config = {
         'apiVersion': 'networking.k8s.io/v1',
         'kind': 'Ingress',
