@@ -42,7 +42,7 @@ export class IngressApiConfig {
                                 }
                             },
                             {
-                                'path': '^/[A-Za-z0-9-]{36}/([A-Za-z0-9-]{36}|console)/automation/(.*)$',
+                                'path': '/.*/.*/automation/',
                                 'pathType': 'Prefix',
                                 'backend': {
                                     'service': {
