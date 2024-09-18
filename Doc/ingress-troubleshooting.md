@@ -70,3 +70,12 @@ Events:                  <none>
     I0510 06:12:12.613567       7 event.go:285] Event(v1.ObjectReference{Kind:"Ingress", Namespace:"default", Name:"bl-api-ingress", UID:"66ea2f9f-7194-4585-991a-c7935b54ebcf", APIVersion:"networking.k8s.io/v1", ResourceVersion:"422088", FieldPath:""}): type: 'Normal' reason: 'Sync' Scheduled for sync
     W0510 06:12:12.613873       7 controller.go:1333] Error getting SSL certificate "default/bl-ast": local SSL certificate default/bl-ast was not found. Using default certificate
     ```
+   
+# Cert manager
+```shell
+kubectl get pods -n cert-manager
+```
+
+```shell
+kubectl logs -f -n cert-manager <pod name>
+```

@@ -1,6 +1,7 @@
 import { k8sCoreV1Api } from '../../../k8s/k8s'
 import { k8sConfig } from '../../../../config/k8s-config'
 import { Logger } from '../../../../logger'
+import bcrypt from 'bcrypt'
 
 const logger = Logger('replace-basic-auth-secret')
 
@@ -18,7 +19,7 @@ export async function replaceBasicAuthSecret({ secretName, user, password }) {
         }
     }
 
-    const authString = `${user}:${password}`
+    const authString = `${user}:${bcrypt.hashSync(password, 10)}`
     const base64AuthString = Buffer.from(authString).toString('base64')
 
     const secretManifest = {
