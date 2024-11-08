@@ -11,7 +11,8 @@ export class IngressApiConfig {
                 'nginx.ingress.kubernetes.io/proxy-body-size':       '10000m',
                 'nginx.ingress.kubernetes.io/proxy-read-timeout':    '600',
                 'nginx.ingress.kubernetes.io/proxy-send-timeout':    '600',
-                'nginx.ingress.kubernetes.io/proxy-connect-timeout': '600'
+                'nginx.ingress.kubernetes.io/proxy-connect-timeout': '600',
+                'nginx.ingress.kubernetes.io/use-regex':             'true'
             }
         },
         'spec': {
@@ -34,9 +35,9 @@ export class IngressApiConfig {
                                 'pathType': 'Prefix',
                                 'backend': {
                                     'service': {
-                                        'name': 'bl-server',
+                                        'name': 'bl-automation',
                                         'port': {
-                                            'number': 9000
+                                            'number': 9095
                                         }
                                     }
                                 }
