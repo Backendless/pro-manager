@@ -52,6 +52,7 @@ export async function installAutomation({
 
     logger.info(`turn on automation in consul`)
     await consul.put('config/automation/api/enabled', true)
+    await consul.put('config/console/featureToggle/automations', 1)
 
     return {
         createStatefulSetResult,

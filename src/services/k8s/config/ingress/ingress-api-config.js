@@ -35,9 +35,21 @@ export class IngressApiConfig {
                                 'pathType': 'Prefix',
                                 'backend': {
                                     'service': {
-                                        'name': 'bl-automation',
+                                        'name': 'bl-server',
                                         'port': {
-                                            'number': 9095
+                                            'number': 9000
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                'path': '/integration/oauth/callback',
+                                'pathType': 'Prefix',
+                                'backend': {
+                                    'service': {
+                                        'name': 'bl-node-server',
+                                        'port': {
+                                            'number': 4000
                                         }
                                     }
                                 }
@@ -47,9 +59,9 @@ export class IngressApiConfig {
                                 'pathType': 'Prefix',
                                 'backend': {
                                     'service': {
-                                        'name': 'bl-server',
+                                        'name': 'bl-automation',
                                         'port': {
-                                            'number': 9000
+                                            'number': 9095
                                         }
                                     }
                                 }

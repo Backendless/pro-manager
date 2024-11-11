@@ -17,6 +17,10 @@ import { manageService } from '../../manage-service'
 import { describeIngressConfiguration } from './describe-ingress-configuration'
 import { certManager } from '../../cert-manager/cert-manager'
 import { extractCertNameFromSecretName } from './tls-name'
+import {
+    restartServicesForDomainConfiguration
+} from '../../configuration/domain/restart-services-for-domain-configuration'
+import { publicHostChanged } from '../../configuration/domain/public-host-changed'
 
 const logger = Logger('ingress-load-balancer')
 
@@ -26,6 +30,9 @@ class IngressLoadbalancerService {
         if( type !== 'consul' ){
             await this._saveToConsul({ type, domain, certName })
         }
+
+        await publicHostChanged({ type })
+
         return createResult
     }
 
@@ -34,6 +41,8 @@ class IngressLoadbalancerService {
         if( type !== 'consul' ) {
             await this._saveToConsul({ type, domain, certName })
         }
+
+        await publicHostChanged({ type })
 
         return updateResult
     }
@@ -82,13 +91,12 @@ class IngressLoadbalancerService {
         if( type !== 'consul' ){
             await this._saveDefaultToConsul({type})
         }
+
+        await publicHostChanged({ type })
     }
 
     async apply() {
-        await manageService.restartService('bl-server')
-        await manageService.restartService('bl-web-console')
-        await manageService.restartService('bl-taskman')
-        await manageService.restartService('bl-rt-server')
+        await restartServicesForDomainConfiguration()
     }
 
     async _saveDefaultToConsul({ type }) {
