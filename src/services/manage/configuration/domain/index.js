@@ -5,6 +5,8 @@ import { manageService } from '../../manage-service'
 import { blContainers } from '../../../bl-containers'
 import { getValueByDescription } from '../get-value-by-description'
 import { ApiError } from '../../../../error'
+import { restartServicesForDomainConfiguration } from './restart-services-for-domain-configuration'
+import { publicHostChanged } from './public-host-changed'
 
 const logger = Logger('domain-connection-configuration-service')
 
@@ -51,16 +53,14 @@ class DomainConfigurationService {
       }
 
       await this._saveToConsul(description, domains[section])
+      await publicHostChanged({ type: section })
     }
   }
 
   async saveConfigAndRestart({ config, shouldRestart }){
     await this.saveAll(config)
     if( shouldRestart === true ) {
-      await manageService.restartService('bl-server')
-      await manageService.restartService('bl-web-console')
-      await manageService.restartService('bl-taskman')
-      await manageService.restartService('bl-rt-server')
+      await restartServicesForDomainConfiguration()
     }
   }
 

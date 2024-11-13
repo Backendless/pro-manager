@@ -20,6 +20,7 @@ import { createClusterRoleAndServiceAccount } from './install/create-cluster-rol
 import { IngressHazelcastClusterRole } from './k8s/config/roles/ingress-hazelcast-cluster-role'
 import { removeClusterRoleAndServiceAccount } from './install/remove-cluster-role-and-service-account'
 import { installAutomation } from './install/bl/install-bl-automation'
+import { installNodeServer } from './install/bl/install-bl-node-server'
 
 class BlContainers {
     bl = {
@@ -95,6 +96,16 @@ class BlContainers {
             scale: replicas => deploymentScale('bl-automation', replicas),
             restart: () => deploymentRestart('bl-automation'),
             skipInstall: true
+        },
+        nodeServer: {
+            name:           'bl-node-server',
+            imageName:      'bl-node-server',
+            serviceStatus:  () => blDeploymentStatus('bl-node-server'),
+            installService: installArguments => installNodeServer(installArguments),
+            deleteService:  () => deleteDeploymentAndService('bl-node-server'),
+            scale:          replicas => deploymentScale('bl-node-server', replicas),
+            restart:        () => deploymentRestart('bl-node-server'),
+            skipInstall:    false
         },
         initConfigValues: {
             name: 'bl-init-config-values',
