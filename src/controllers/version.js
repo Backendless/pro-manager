@@ -1,7 +1,6 @@
-import { Router } from '../utils/router'
-
-const proxy = require('express-http-proxy')
+import { handler, Router } from '../utils/router'
+import { getReleasedVersions } from '../services/manage/get-released-versions'
 
 export const router = new Router()
 
-router.use('/docker-hub', proxy('https://hub.docker.com', { parseReqBody: false }))
+router.use('/docker-hub/v2/repositories/backendless/bl-server/tags/', handler(async () => getReleasedVersions()))
