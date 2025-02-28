@@ -67,7 +67,7 @@ export class IngressApiConfig {
                                 }
                             },
                             {
-                                'path': '/automation/',
+                                'path': '/automation',
                                 'pathType': 'Prefix',
                                 'backend': {
                                     'service': {
