@@ -12,7 +12,7 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -23,10 +23,17 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": [
+            "9176f296fff445d3d81faef6cf4854d6",
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "1e23a48a29f82b3fc1f647fd98cb53f6"
+          ]
+        },
+        "onMounted": {
+          "usedCustomFunctions": []
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -37,7 +44,7 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -48,20 +55,23 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
     "3c48282edad672c3a97414a89b3c15df": {
-      "id": "aside TabContentStatus",
+      "id": "aside__TabContent Status",
       "type": "block",
       "moduleType": "system",
       "moduleId": "block",
       "handlers": {
         "onBeforeMount": {
-          "dependencies": [
-            "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
           ]
+        },
+        "onMounted": {
+          "usedCustomFunctions": []
         }
       }
     },
@@ -72,10 +82,10 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -86,21 +96,7 @@
       "moduleId": "block",
       "handlers": {
         "onDynamicItemsAssignment": {
-          "dependencies": []
-        }
-      }
-    },
-    "14ec284f978d75e2cd75db678d46df17": {
-      "id": "aside TabContentItemMysql",
-      "type": "block",
-      "moduleType": "system",
-      "moduleId": "block",
-      "handlers": {
-        "onClick": {
-          "dependencies": []
-        },
-        "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -114,7 +110,7 @@
           "dependencies": []
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -139,10 +135,10 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -153,7 +149,7 @@
       "moduleId": "block",
       "handlers": {
         "onMounted": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -164,7 +160,10 @@
       "moduleId": "block",
       "handlers": {
         "onMounted": {
-          "dependencies": []
+          "usedCustomFunctions": []
+        },
+        "onBeforeMount": {
+          "usedCustomFunctions": []
         }
       }
     },
@@ -189,7 +188,7 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -200,7 +199,10 @@
       "moduleId": "block",
       "handlers": {
         "onMounted": {
-          "dependencies": []
+          "usedCustomFunctions": []
+        },
+        "onBeforeMount": {
+          "usedCustomFunctions": []
         }
       }
     },
@@ -211,10 +213,10 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -225,10 +227,10 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -239,7 +241,7 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -250,12 +252,15 @@
       "moduleId": "block",
       "handlers": {
         "onBeforeMount": {
-          "dependencies": [
-            "./functions/696a14dd8d2f85be7023c2c4441a65a5/code.js"
-          ]
+          "usedCustomFunctions": []
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
+        },
+        "onMounted": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
         }
       }
     },
@@ -277,10 +282,12 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": [
+            "b57fda13679c94ef267a4d8c86ef896c"
+          ]
         },
         "onClassListAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -291,7 +298,7 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         },
         "onClassListAssignment": {
           "dependencies": []
@@ -304,8 +311,134 @@
       "moduleType": "system",
       "moduleId": "block",
       "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        },
         "onDynamicItemsAssignment": {
-          "dependencies": []
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "448ca0c2d51eccf536522379dc1f1fe1": {
+      "id": "aside TabContentItemIngress",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "5698979b878d62056302bf1c9e3a87b6": {
+      "id": "aside__TabContentItem",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "7721368b92c51e2896bb84492a0981ce": {
+      "id": "aside TabContentItemEmail",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "d75f215f23aa0a44d2d32f17694c1636": {
+      "id": "aside__TabContent--service",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "2443481caf038dd5d7e9a159dae823bf": {
+      "id": "aside__TabContentItem",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "1e23a48a29f82b3fc1f647fd98cb53f6",
+            "9176f296fff445d3d81faef6cf4854d6"
+          ]
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "66e892a819384aa8fef80389d948b163": {
+      "id": "aside TabContentItemMySQL",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "ca0862e89aaf6fa809dfb88ce6d7782b": {
+      "id": "aside TabContentMySQL",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "30554b16cab32278aae1020f499836e4": {
+      "id": "aside TabContentItemCoderunner",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "c6a2119823d67f499f38bf1812586ca9": {
+      "id": "aside TabContentItemMain",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
         }
       }
     }
@@ -317,5 +450,6 @@
     "text"
   ],
   "style": {},
-  "attrs": {}
+  "attrs": {},
+  "pods": {}
 }

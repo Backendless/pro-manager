@@ -30,7 +30,7 @@ define([], () => ({
   },
   /* handler:onClick */
   /* handler:onClassListAssignment */
-  onClassListAssignment(___arguments) {
+  ['onClassListAssignment'](___arguments) {
     var classList;
 
 function getObjectProperty(object, propPath) {
