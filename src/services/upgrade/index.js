@@ -8,6 +8,7 @@ import { blContainers } from '../bl-containers'
 import { listPods } from '../k8s/k8s-list-pods'
 import { isUpgradeAvailable } from '../manage/licesing/is-upgrade-available'
 import { ApiError } from '../../error'
+import { wait } from '../../utils/waiter'
 
 const logger = Logger('UpgradeService')
 
@@ -25,8 +26,13 @@ class UpgradeService {
         const result = await runUpgradeJob({ version, checkUpgradeAvailable })
         const jobName = result.response.body.metadata.name
 
+        logger.info(`job with name [${jobName}] is started\n\n`)
+
+        await wait(5000)
+
         const jobPods = await k8sCoreV1Api.listNamespacedPod(await k8sConfig.getNamespace(), false, true, '', '', `upgradeJobName=${jobName}`)
-        logger.info('job started\n\n')
+
+        logger.verbose(`listed job pods [${JSON.stringify(jobPods)}]`)
 
         const jobPod = jobPods.body.items[0]
         logger.verbose(`upgrade job pod is ${JSON.stringify(jobPod)}`)
