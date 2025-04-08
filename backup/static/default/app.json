@@ -1,0 +1,45 @@
+{
+  "mainPage": "home",
+  "isFunctionsMigrated": true,
+  "isFunctionsRenamedToUid": true,
+  "publishedPath": "web/dev",
+  "customFunctionsMap": {
+    "1e23a48a29f82b3fc1f647fd98cb53f6": "getSocketOrigin",
+    "4f8fe7d853c915840a67685fa058d83f": "getTooltip",
+    "696a14dd8d2f85be7023c2c4441a65a5": "ProManagerAPI",
+    "87ee9386852a3c4ad32caddae372ff43": "alertLay",
+    "8f16ba2ef5c9c7a7b32d569b3762f6c4": "showMessage",
+    "9176f296fff445d3d81faef6cf4854d6": "openSocketServices",
+    "9ee1a48ea72b90ad38188d610893128b": "openSocketCurrentUpgrade",
+    "b57fda13679c94ef267a4d8c86ef896c": "openSocketUpgrade"
+  },
+  "shownInViewer": false,
+  "viewport": {
+    "width": null,
+    "height": null,
+    "initialScale": 1,
+    "minScale": 1,
+    "maxScale": 5,
+    "userScalable": true
+  },
+  "metaTags": {},
+  "externalLibraries": [],
+  "faviconHash": "8cb9a0ae",
+  "container": "default",
+  "gameServerURL": "https://eu-game.backendless.com",
+  "devConsoleURL": "https://eu-develop.backendless.com",
+  "backupsPolicy": {
+    "backupsTTLinDays": 30,
+    "backupsTTLEnabled": true,
+    "lastBackupsLimit": 100,
+    "lastBackupsLimitEnabled": false,
+    "deleteCustomBackups": false
+  },
+  "pwa": {
+    "enabled": false,
+    "icons": [],
+    "appName": "Backendless App",
+    "displayMode": "standalone",
+    "themeColor": "#ffffff"
+  }
+}

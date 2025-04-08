@@ -1,0 +1,189 @@
+.aside {
+  width: 325px;
+  height: calc(100vh - 80px);
+  background-color: @BgDark;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 100;
+  overflow-y: auto;
+  
+  &__tab {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  &__TabHeader {
+    background-color: @BgLightDark;
+    height: 56px;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    margin-bottom: 4px; 
+  }
+  
+  &__TabHeaderStatus {
+    
+     &::before {
+      content: url('./styles/images/statusIcon.png');
+      margin-left: 11px;
+      margin-right: 9px;
+    }
+    
+    &::after {
+      position: absolute;
+      right: 20px;
+      top: 17px;
+      content: url('./styles/images/downArrow.png');
+    }
+  }
+  
+  &__TabHeaderConfig {
+    
+     &::before {
+      content: url('./styles/images/configIcon.png');
+      margin-left: 11px;
+      margin-right: 9px;
+    }
+    
+    &::after {
+      position: absolute;
+      right: 20px;
+      top: 17px;
+      content: url('./styles/images/downArrow.png');
+    }
+  }
+  
+  &__TabHeaderUpgrade {
+    
+    &::before {
+      content: url('./styles/images/upgradeIcon.png');
+      margin-left: 11px;
+      margin-right: 9px;
+    }
+    
+    &::after {
+      position: absolute;
+      right: 20px;
+      top: 17px;
+      content: url('./styles/images/downArrow.png');
+    }
+  }
+  
+  &__TabHeaderSettings {
+    
+    &::before {
+      content: url('./styles/images/settingsIcon.png');
+      margin-left: 11px;
+      margin-right: 9px;
+    }
+    
+    &::after {
+      position: absolute;
+      right: 20px;
+      top: 17px;
+      content: url('./styles/images/downArrow.png');
+    }
+  }
+  
+  &__TabHeader--rotated::after {
+    transform: rotate(180deg);
+  }
+  
+  &__TabTitle {
+    .FontMain;
+    color: #fff;
+  }
+  
+  &__TabContent {
+    display: block;
+    transition: max-height, .4s;
+    overflow: hidden;
+    width: 100%;
+    
+    &--service {
+      max-height: 0;
+      
+      .aside__TabContentTitle {
+        margin-left: 30px;
+      }
+      
+      &.open {
+        max-height: 500px;
+      }
+    }
+  }
+  
+  &__ContentItemContainer {
+    flex-direction: column;
+  }
+  
+  &__TabContentItem {
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 9px;
+    padding-right: 15px;
+    
+    &::first-child {
+      margin-top: 4px;
+    }
+  }
+  
+  &__TabContentItem--active {
+    background-color: @BgMiddleDark;
+    position: relative;
+    
+    &::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      position: absolute;
+      top: 12px;
+      right: -6px;
+      transform: rotate(45deg);
+    }
+  }
+  
+  &__TabContentTitle {
+    .FontMain;
+    color: #fff;
+    margin-left: 15px;
+    word-break: break-all;
+  }
+  
+  &__TabSubContentTitle {
+    margin-left: 30px;
+  }
+  
+  &__TabItemDomains { 
+    position: relative;
+    
+    &::after {
+      position: absolute;
+      right: 20px;
+      top: 11px;
+      content: url('./styles/images/downArrow.png');
+    }
+  }
+  
+  &__SubTab {
+    flex-direction: column;
+  }
+ 
+}
+
+
+@media screen and (max-width: 990px) {
+  .aside {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: -325px;
+    transition: all, 0.4s;
+    overflow: auto;
+  }
+}
+

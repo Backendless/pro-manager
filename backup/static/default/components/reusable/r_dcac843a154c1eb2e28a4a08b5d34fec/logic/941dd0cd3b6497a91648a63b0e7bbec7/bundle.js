@@ -1,0 +1,160 @@
+define([], () => ({
+  /* content */
+  /* handler:onClick */
+  async ['onClick'](___arguments) {
+    var deploymentEvents, podEvents, podName, origin;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if (!(getObjectProperty(___arguments.context.appData, 'openSocket'))) {
+    if ((getObjectProperty(___arguments.context.pageData, 'serviceName')) && (getObjectProperty(___arguments.context.pageData, 'podName'))) {
+      ___arguments.context.appData['openSocket'] = (await BackendlessUI.Functions.Custom['fn_9176f296fff445d3d81faef6cf4854d6']((getObjectProperty(___arguments.context.pageData, 'serviceName')), (getObjectProperty(___arguments.context.pageData, 'podName')), origin));
+    }
+  }
+  if ((getObjectProperty(((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('62182e6e6db9aecf974c9c65dfaea369')), 'left')) != '0px') {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('62182e6e6db9aecf974c9c65dfaea369'))['left'] = (String(0) + String('px'));
+  } else {
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('62182e6e6db9aecf974c9c65dfaea369'))['left'] = (String(-325) + String('px'));
+  }
+  podName = ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid).dynamicListItems })('d75f215f23aa0a44d2d32f17694c1636'))[0];
+  if (podName) {
+    if (getObjectProperty(___arguments.context.dataModel, 'active')) {
+      ___arguments.context.dataModel['active'] = false;
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = undefined;
+    } else {
+      ___arguments.context.dataModel['active'] = true;
+      ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = undefined;
+      if (getObjectProperty(___arguments.context.appData, 'previousService')) {
+        if ((getObjectProperty(___arguments.context.appData, 'openSocket')) && (getObjectProperty((getObjectProperty(___arguments.context.appData, 'openSocket')), 'connected'))) {
+          await (async function(serviceName, podName) {
+
+          	  socket.emit ('service-logs:unsubscribe', {
+          	    "serviceName":`${serviceName}`,
+          	    "podName":`${podName}`,
+          	    "channelName":`${serviceName}-logs`
+          	  });
+
+          	  socket.disconnect();
+          })((getObjectProperty(___arguments.context.appData, 'previousService')), (getObjectProperty(podName, 'name')));
+        }
+      }
+      podEvents = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', (String('/k8s/pod/events/') + String(getObjectProperty(podName, 'name'))), null, null));
+      deploymentEvents = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', (String('/k8s/deployment/events/') + String(getObjectProperty(___arguments.context.dataModel, 'name'))), null, null));
+      (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('serviceLogs', ({ [`serviceName`]: (getObjectProperty(___arguments.context.dataModel, 'name')),[`podName`]: (getObjectProperty(podName, 'name')),[`pageServerStatus`]: 'ServerLogs',[`followBtnLabel`]: (getObjectProperty(___arguments.context.pageData, 'followBtnLabel')),[`downloadBtnLabel`]: 'Download',[`podEvents`]: podEvents,[`deploymentEvents`]: deploymentEvents }));
+      await (async function() {
+      	// logClear = false;
+      	logStopFollow = false;
+      	logOriginalText = '';
+      	logFileText = ''
+
+      })();
+      origin = (await BackendlessUI.Functions.Custom['fn_1e23a48a29f82b3fc1f647fd98cb53f6']());
+      ___arguments.context.appData['openSocket'] = (await BackendlessUI.Functions.Custom['fn_9176f296fff445d3d81faef6cf4854d6']((getObjectProperty(___arguments.context.dataModel, 'name')), (getObjectProperty(podName, 'name')), origin));
+      ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.dataModel, 'name'));
+      ___arguments.context.pageData['podName'] = (getObjectProperty(podName, 'name'));
+    }
+  } else {
+    podEvents = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', (String('/k8s/pod/events/') + String(getObjectProperty(podName, 'name'))), null, null));
+    deploymentEvents = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', (String('/k8s/deployment/events/') + String(getObjectProperty(___arguments.context.dataModel, 'name'))), null, null));
+    (function (pageName, pageData) { BackendlessUI.Navigator.goToPage(pageName, pageData) })('serviceLogs', ({ [`serviceName`]: (getObjectProperty(___arguments.context.dataModel, 'name')),[`pageServerStatus`]: 'ServerLogs',[`followBtnLabel`]: (getObjectProperty(___arguments.context.pageData, 'followBtnLabel')),[`downloadBtnLabel`]: 'Download',[`podEvents`]: podEvents,[`deploymentEvents`]: deploymentEvents }));
+    await (async function() {
+    	const output = document.querySelector('.ServerLogs__ContentLogs')
+
+    	  if(output) {
+    	    output.innerText = ''
+    	  }
+    })();
+    ___arguments.context.dataModel['active'] = false;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = undefined;
+    ___arguments.context.appData['previousService'] = (getObjectProperty(___arguments.context.dataModel, 'name'));
+  }
+
+  },
+  /* handler:onClick */
+  /* handler:onMounted */
+  ['onMounted'](___arguments) {
+    function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  if ((getObjectProperty(___arguments.context.dataModel, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName'))) {
+    ___arguments.context.dataModel['active'] = true;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('3c48282edad672c3a97414a89b3c15df'))['maxHeight'] = undefined;
+  }
+
+  },
+  /* handler:onMounted */
+  /* handler:onClassListAssignment */
+  ['onClassListAssignment'](___arguments) {
+    var classList;
+
+function getObjectProperty(object, propPath) {
+  if (typeof propPath !== 'string' || object[propPath] !== undefined) {
+    return object[propPath]
+  }
+
+  const propsNamesList = propPath.split('.')
+
+  let result = object
+
+  for (let i = 0; i < propsNamesList.length; i++) {
+    if (!result || result[propsNamesList[i]] === undefined) {
+      return
+    }
+
+    result = result[propsNamesList[i]]
+  }
+
+  return result
+}
+
+
+  classList = ['aside__TabContentItem'];
+  if (!(getObjectProperty(___arguments.context.pageData, 'podName'))) {
+    if ((getObjectProperty(___arguments.context.dataModel, 'name')) == (getObjectProperty(___arguments.context.pageData, 'serviceName'))) {
+      classList = ['aside__TabContentItem', 'aside__TabContentItem--active'];
+    }
+  }
+
+  return classList
+
+  },
+  /* handler:onClassListAssignment */
+  /* content */
+}))
