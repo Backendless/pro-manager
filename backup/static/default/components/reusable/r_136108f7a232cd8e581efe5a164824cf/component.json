@@ -1,0 +1,17 @@
+{
+  "category": "Reusable Components",
+  "showInToolbox": true,
+  "type": "reusable",
+  "faIcon": "recycle",
+  "name": "install logo (r_136)",
+  "components": {},
+  "id": "r_136108f7a232cd8e581efe5a164824cf",
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "text"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

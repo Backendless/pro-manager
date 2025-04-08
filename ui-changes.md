@@ -28,7 +28,8 @@ This guide explains how to make UI changes in the **Pro Manager** application us
 - Create a ZIP archive of the entire `default` directory and download it:
   <br><br> ![zip-container](assets/zip-container.png) <br><br>
 
-- Move the archive to your local **pro-manager** project in the `static` folder:
+- Unzip the archive.
+- Move the folder to your local **pro-manager** project in the `static` folder:
   > /backup/static
 
   ![backup-static](assets/backup-static.png)
