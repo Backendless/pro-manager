@@ -1,0 +1,67 @@
+.ssl {
+  width: 100%;
+  margin-bottom: 40px;
+  max-width: 592px;
+  flex-direction: column;
+  
+  &__TabsWrapper {
+    overflow: auto;
+    margin-bottom: 50px;
+  }
+  
+  &__tabs {
+    width: 100%;
+    justify-content: space-between;
+    min-width: 435px;
+  }
+  
+  &__TabsItem {
+    padding: 0px 18px 8px 18px;
+    font-family: FuturaBook, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: @LightGrey;
+    cursor: pointer;
+  }
+  
+  &__TabsItem--active {
+    border-bottom: 2px solid @blue;
+    color: @black;
+  }
+  
+  &__nginx {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  &__info {
+    font-family: FuturaBook, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: @black;
+    margin-bottom: 50px;
+  }
+  
+  &__FormGroup {
+    width: 100%;
+    max-width: 454px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+    .InputWrapper {
+      flex-direction: column;
+    }
+  }
+  
+  &__hide {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .ssl__TabsItem {
+    padding: 0px 16px 7px 16px;
+    font-size: 16px;
+  }
+}

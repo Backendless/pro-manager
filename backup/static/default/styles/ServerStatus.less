@@ -1,0 +1,363 @@
+.ServerStatus {
+  width: 100%;
+  min-width: 950px;
+  height: fit-content;
+  flex-direction: column;
+  margin-right: 88px;
+  
+  @media screen and (max-width: 1440px) {
+    max-width: 967px;
+    margin-right: 0;
+  }
+  
+  &__LinkBl {
+    overflow: hidden;
+  }
+  
+  &__links {
+    margin-left: 20px;
+  }
+  
+  &__LinkWrapper {
+    margin-right: 90px;
+    margin-bottom: 10px;
+    width: 33%;
+  }
+  
+  &__LinkWrapper:last-child {
+    margin-right: 0;
+  }
+  
+  &__LinkTitle {
+    .FontMain;
+    color: @black;
+    margin-right: 15px;
+    white-space: nowrap !important;
+  }
+  
+  &__link {
+    .FontMain;
+    .overflowEllipsis;
+    cursor: pointer;
+    color: @blue;
+    text-decoration: underline;
+  }
+  
+  &__item {
+    width: 100%;
+    min-width: 740px;
+    padding: 16px 20px;
+    border: 1px solid @BgLightBlue;
+    border-radius: 6px;
+    align-items: center;
+    margin-bottom: 8px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__container {
+    flex-direction: column;
+  }
+  
+  &__ItemProcess {
+    width: 25.57%;
+    min-width: 170px;
+    align-items: center;
+  }
+  
+  &__ItemProcessVersion {
+    width: 20.42%;
+    min-width: 75px;
+  }
+  
+  &__ItemStatus {
+    width: 13.45%;
+    min-width: 100px;
+  }
+  
+  &__ItemStatusControls {
+    width: 40.56%;
+    min-width: 350px;
+    justify-content: space-between;
+  }
+  
+  &__ItemProcessName,
+  &__ItemVersionName {
+    .FontMain;
+    color: @black;
+    margin-right: 10px;
+  }
+  
+  &__ItemProcessName {
+    margin-left: 7px;
+    cursor: pointer;
+    color: #1B76BC;
+    text-decoration: underline;
+  }
+  
+  &__ItemProcessCheck {
+    .MuiFormControlLabel-root {
+      margin-right: 0;
+    }
+   
+    .MuiSvgIcon-root {
+      height: 18px;
+      width: 18px;
+    }
+    
+    .MuiIconButton-root {
+      height: 13px;
+      width: 13px;
+    }
+    
+    .bl-checkbox:not(.bl-checkbox--disabled) .bl-checkbox-root:hover,
+    .MuiIconButton-colorSecondary:hover,
+    .MuiIconButton-root {
+      pointer-events: none;
+    }
+    
+    .MuiCheckbox-root {
+      color: #303042 !important;
+    }
+    
+  }
+  
+  .bl-checkbox--checked {
+    .MuiCheckbox-root {
+      color: @blue !important;
+    }
+  }
+  
+  &__ItemStatusName {
+    .FontMain;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    
+    &::before {
+      content: '';
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  }
+  
+  &__ItemStatusName--running {
+    color: #2ECC71;
+    
+    &::before {
+      background-image: url('./styles/images/running.svg');
+    }
+  }
+  
+  &__ItemStatusName--complete {
+    color: #2ECC71;
+    
+    &::before {
+      background-image: url('./styles/images/complete.svg');
+    }
+  }
+  
+  &__ItemStatusName--notInstalled {
+    color: #95A5A6;
+    
+    &::before {
+      background-image: url('./styles/images/disabled.svg');
+    }
+  }
+  
+  &__ItemStatusName--stopped {
+    color: #E74C3C;
+    
+    &::before {
+      background-image: url('./styles/images/down.svg');
+    }
+  }
+  
+  &__ItemStatusName--changing {
+    color: #E67E22;
+    
+    &::before {
+      background-image: url('./styles/images/changing.svg');
+    }
+  }
+  
+  &__ItemBtn {
+    width: 130px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.38);
+    margin-right: 8px;
+    
+    @media screen and (max-width: 1440px) {
+      width: 120px;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  
+  &__ItemBtn--StopActive {
+    cursor: pointer;
+    border: 2px solid @BtnStop;
+    color: @BtnStop;
+  }
+  
+  &__ItemBtn--RestartActive {
+    cursor: pointer;
+    border: 2px solid @BtnRestart;
+    color: @BtnRestart;
+  }
+  
+  &__ItemBtn--StartActive {
+    cursor: pointer;
+    border: 2px solid @BtnStart;
+    color: @BtnStart;
+  }
+  
+  &__ItemBtnTitle {
+    color: inherit;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;     
+  }
+  
+  &__BtnIconStop {
+    width: 14px;
+    height: 14px;
+    border: 1.3px solid rgba(0, 0, 0, 0.38);
+    margin-right: 10px;
+  }
+  
+  &__BtnIconStop--active {
+    border: 1.3px solid @BtnStop;
+  }
+  
+  &__BtnIconRestart,
+  &__BtnIconRestart--active {
+    width: 14px;
+    height: 14px;
+    margin-right: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__BtnIconRestart {
+    background-image: url('./styles/images/restartIcon.svg');
+  }
+  
+  &__BtnIconRestart--active {
+    background-image: url('./styles/images/restartBtnActive.svg');
+  }
+  
+  &__BtnIconStart,
+  &__BtnIconStart--active {
+    width: 14px;
+    height: 14px;
+    margin-right: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__BtnIconStart {
+    background-image: url('./styles/images/startIcon.svg');
+  }
+  
+  &__BtnIconStart--active {
+    background-image: url('./styles/images/startBtnActive.svg');
+  }
+  
+  &__header {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 7px;
+    padding: 0px 20px;
+    align-items: flex-start;
+  }
+  
+  &__ProcessHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  &__HeaderTitle {
+    .FontTitle;
+    font-size: 14px;
+    line-height: 16px;
+    color: @LightGrey;
+  }
+  
+  &__HeaderTitleProcess {
+    margin-left: 35px;
+  }
+  
+  &__BtnWrap {
+    margin-right: 8px;
+  }
+  
+  &__StopAllBtnWrap {
+    margin-left: 10px;
+  }
+  
+  &__StopAllBtn {
+    margin: 4px 0;
+    
+    &::before {
+      content: '';
+      opacity: 0.2;
+      border: 2px solid #303042;
+      width: 10px;
+      height: 10px;
+      display: block;
+      box-sizing: border-box;
+    }
+  }
+  
+  &__StopAllBtn--active::before {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  &__RestartAllBtn::before {
+    content: url('./styles/images/restartAll.svg');
+    opacity: 0.2;
+  }
+  
+  &__RestartAllBtn--active::before {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  &__StartAllBtn {
+    height: 17px;
+  
+    &::before {
+      content: url('./styles/images/startAll.svg');
+      opacity: 0.2;
+    }
+  }
+  
+  &__StartAllBtn--active::before {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  &__HeaderControls {
+    margin-top: 16px;
+    align-items: center;
+  }
+}
+
