@@ -1,0 +1,180 @@
+.mysql {
+  width: 100%;
+  max-width: 800px;
+  height: fit-content;
+  margin-bottom: 40px;
+  flex-direction: column;
+  margin-right: 88px;
+  
+  @media screen and (max-width: 1440px) {
+    margin-right: 0;
+  }
+  
+  &__wrap {
+    flex-direction: column;
+  }
+  
+  &__KubernetesWrap {
+
+    .InputWrapper {
+      width: 100% !important;
+    }
+  }
+  
+  &__DataServiceWrap {
+    
+    .mysql {
+      
+      &__ItemToggle {
+        justify-content: flex-start;
+        
+        .mysql__FormGroup {
+          min-width: auto;
+          width: auto;
+        }
+      }
+    }
+  }
+  
+  &__DomainsGeneralWrap {
+    
+    .MainButton {
+      
+      @media screen and (max-width: 420px) {
+        width: 162px;
+      }
+    }
+  }
+  
+  &__container {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  &__block {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  
+  &__TitleWrap {
+    display: block;
+  }
+  
+  &__title {
+    margin-bottom: 5px;
+    font-family: FuturaHeavy, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 21px;
+    color: @black;
+    
+    &--reg {
+      font-family: FuturaBook, Arial, sans-serif;
+    }
+  }
+  
+  &__subtitle {
+    margin-bottom: 20px;
+    font-family: FuturaBook, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: #18181F;
+    text-align: justify;
+  }
+  
+  .mysql__title--second {
+    margin-top: 34px;
+  }
+  
+  &__item {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    align-items: center;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__ItemToggle {
+    margin-top: 8px;
+    margin-bottom: 25px;
+  }
+  
+  &__ItemNameWrap {
+    height: 34px;
+    align-items: center;
+  }
+  
+  &__ItemName {
+    .FontMain;
+    width: 138px;
+    min-width: 138px;
+    margin-right: 20px;
+    word-wrap: break-word;
+  }
+  
+  &__FormGroup {
+    width: calc(100% - 138px);
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__loader {
+    display: none;
+    align-self: center;
+  }
+  
+  &__QuestionIconWrap {
+    height: 34px;
+    align-items: center;
+  }
+  
+  &__icons {
+    margin-left: 15px;
+    position: absolute;
+    right: 0;
+    top: 8px;
+  }
+  
+  &__checkbox {
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+  
+  &.remove {
+    
+    .mysql {
+      
+      &__wrap {
+        margin-bottom: 60px;
+      }
+    }
+  }
+  
+  .InputWrapper {
+    width: calc(100% - 23px);
+    flex-direction: column;
+    position: relative;
+    font-size: 14px;
+    
+    &--pass {
+      .MuiInputBase-input {
+        padding-right: 30px;
+      }
+    }
+  }
+  
+  .divider {
+    margin: 8px 0 27px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  
+  .mysql__MainButton {
+    font-size: 13px !important;
+  }
+}

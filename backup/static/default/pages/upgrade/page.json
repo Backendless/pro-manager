@@ -1,0 +1,253 @@
+{
+  "components": {
+    "9051123f6b4f94ef192265039293d4cd": {
+      "id": "UpgradeLogs ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDynamicItemsAssignment": {
+          "usedCustomFunctions": []
+        },
+        "onBeforeUnmount": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "8bc4792e519b80bac6992c938c05b82a": {
+      "id": "UpgradeLogs ContentItem",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onEnter": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onLeave": {
+          "dependencies": []
+        }
+      }
+    },
+    "27d5660e3277d76c390ef4d5ebc32019": {
+      "id": "UpgradeControl icon",
+      "type": "icon",
+      "moduleType": "system",
+      "moduleId": "icon",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "f0e46aefb9a7b07518bb18eea4713526": {
+      "id": "UpgradeControl SearchInput",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onFocus": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onChange": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "d61f05ceb764b89f8c44a8c320457ad6": {
+      "id": "UpgradeControl button",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4",
+            "9ee1a48ea72b90ad38188d610893128b"
+          ]
+        }
+      }
+    },
+    "924202b19f0ef683e3940a99b258d565": {
+      "id": "Upgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClassListAssignment": {
+          "usedCustomFunctions": [
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        }
+      }
+    },
+    "ea569f4f8251b46dc33c1bd6e0ce4a87": {
+      "id": "UpgradeControl ResultsItem",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "766bf461796308dbbad8e8489727e7c2": {
+      "id": "wrapper",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "de4b5649b133135f2a66cfa55ff4ba57": {
+      "id": "UpgradeControl__RestoreIconWrap",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "1468f7bfb8c1cd6970ed959dea420cea": {
+      "id": "UpgradeControl__RestoreIcon",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "45e33fb610065e69d999ac453e4f549e": {
+      "id": "UpgradeControl controls",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "aade47b3fea18bcd00f48f5602e2c673": {
+      "id": "ServerLogs__ContentBl",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "246e248a966a97b80d2ea20305a2bd14": {
+      "id": "ServerLogs__ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeUnmount": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b2b16f278a0d4d44db4cc3ac8be37377": {
+      "id": "UpgradeLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onScroll": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "9db50814089976a24ebfced9af6a4395": {
+      "id": "UpgradeLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onScroll": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "496f9f435bd2ff76a3e5a75a636f665f": {
+      "id": "UpgradeLogs ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        },
+        "onDynamicItemsAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b8441872879436c407f8f8888e782519": {
+      "id": "UpgradeLogs ContentItem",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "a3040258cf431697f28a8d7ea3a9c879": {
+      "id": "ServerLogs__ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+    "r_dcac843a154c1eb2e28a4a08b5d34fec",
+    "text",
+    "divider",
+    "paragraph",
+    "input",
+    "icon",
+    "button",
+    "r_41642befc66d596257ab7a78faaac32f"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

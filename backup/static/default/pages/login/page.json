@@ -1,0 +1,61 @@
+{
+  "label": "Landing Page",
+  "style": {},
+  "usedComponentTypes": [
+    "block",
+    "r_136108f7a232cd8e581efe5a164824cf",
+    "text",
+    "form",
+    "input",
+    "button"
+  ],
+  "components": {
+    "4726032dbb9b39a30239907c90c2aac7": {
+      "id": "install BeginButton",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onDisabledStateAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "90d8c3571dc2b58b3ce53fd97a5af9d9": {
+      "id": "IconOpenEye",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "891bf3ca729d37cf46cc1e6329c36163": {
+      "id": "IconCloseEye",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "attrs": {},
+  "pods": {}
+}
