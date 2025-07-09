@@ -1,3 +1,4 @@
+import { hasFlowRunnerLicense } from './manage/licesing/has-flowrunner-license'
 import { blDeploymentStatus, blStatefulsetStatus } from './k8s/bl-status'
 import { deleteDeploymentAndService, deleteStatefulsetAndService } from './k8s/k8s-delete-service'
 import { blJobStatus } from './k8s/bl-job-status'
@@ -95,7 +96,7 @@ class BlContainers {
             deleteService: () => deleteDeploymentAndService('bl-automation'),
             scale: replicas => deploymentScale('bl-automation', replicas),
             restart: () => deploymentRestart('bl-automation'),
-            skipInstall: true
+            skipInstall: async () => !(await hasFlowRunnerLicense())
         },
         nodeServer: {
             name:           'bl-node-server',

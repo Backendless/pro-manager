@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "login": "testexists",
+            "password": "$2b$10$F2p3c0H8BrcjpYhvIuk28.HEkyd6HKXpwsxpoUOhAjoK5WQo40KgO",
+            "id": "2a216a80-5654-11f0-93fe-6103f833577d",
+            "created": 1751357993256,
+            "updated": 1751357993256,
+            "resetPasswordTime": 1751357993256
+        }
+    ]
+}
