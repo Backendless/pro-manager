@@ -104,10 +104,21 @@ class InstallService {
 
         await setupPublicDomain(installStatus)
 
-        const containers = Object.entries(blContainers.bl)
-            .filter(([key, container]) => container !== initConfigValuesContainer)
-            .filter(([key, container]) => !container.skipInstall)
-            .map(([key, container]) => container)
+        const entries = Object.entries(blContainers.bl)
+          .filter(([key, container]) => container !== initConfigValuesContainer)
+
+        const containersWithSkipFlags = await Promise.all(
+          entries.map(async ([key, container]) => {
+            const shouldSkip = typeof container.skipInstall === 'function'
+              ? await container.skipInstall()
+              : container.skipInstall
+
+            return { container, shouldSkip }
+        }))
+
+        const containers = containersWithSkipFlags
+          .filter(item => !item.shouldSkip)
+          .map(item => item.container)
 
         for (const container of containers) {
             await repeatOnFail(
