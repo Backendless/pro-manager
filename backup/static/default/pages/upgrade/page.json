@@ -185,6 +185,53 @@
           "usedCustomFunctions": []
         }
       }
+    },
+    "9db50814089976a24ebfced9af6a4395": {
+      "id": "UpgradeLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onScroll": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "496f9f435bd2ff76a3e5a75a636f665f": {
+      "id": "UpgradeLogs ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        },
+        "onDynamicItemsAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b8441872879436c407f8f8888e782519": {
+      "id": "UpgradeLogs ContentItem",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "a3040258cf431697f28a8d7ea3a9c879": {
+      "id": "ServerLogs__ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        }
+      }
     }
   },
   "dataBinding": {},
