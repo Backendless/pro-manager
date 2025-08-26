@@ -1,0 +1,134 @@
+{
+  "components": {
+    "4038f86f5b6cacb8ee37a8efac3527aa": {
+      "id": "domains TitleMain",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "5a537424c7d5f0fa5c2169ba52cdc3b9": {
+      "id": "domains SaveBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onDisabledStateAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b4ac65b40f178182007af4f16afe24d6": {
+      "id": "domains controls",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "dependencies": []
+        }
+      }
+    },
+    "33a848b796b77f762a2122974b1af0aa": {
+      "id": "domains SaveRestartBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onDisabledStateAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "7e1ac109ebbe4db399af721c8b472bd2": {
+      "id": "InputHost",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onLeave": {
+          "dependencies": []
+        },
+        "onEnter": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "3ed8f4e9c52b6277c808d7edf7577e56": {
+      "id": "domains ItemName",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "924202b19f0ef683e3940a99b258d565": {
+      "id": "domains",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        }
+      }
+    },
+    "198c9c59e5389ad5ff37a4bb3e22bce5": {
+      "id": "QuestionIcon",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+    "r_dcac843a154c1eb2e28a4a08b5d34fec",
+    "text",
+    "divider",
+    "input",
+    "button",
+    "r_41642befc66d596257ab7a78faaac32f"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

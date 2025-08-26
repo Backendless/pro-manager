@@ -1,0 +1,337 @@
+.ServerLogs {
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  height: fit-content;
+  margin-right: 88px;
+  
+  @media screen and (max-width: 1440px) {
+    margin-right: 0;
+  }
+  
+  &--mt15m {
+    margin-top: -15px;
+    
+    @media screen and (max-width: 1400px) {
+      margin-top: 0;
+    }
+  }
+  
+  &__top {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 12px;
+  }
+  
+  &__TabsLabel {
+    padding: 0px 20px 8px 20px;
+    margin-right: 20px;
+    color: @LightGrey;
+    font-family: FuturaBook, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+  }
+  
+  &__TabsLabel--active {
+    color: @black;
+    border-bottom: 2px solid @blue;
+  }
+  
+  &__controls {
+    align-items: center;
+    margin-top: -10px;
+  }
+  
+  &__ControlsIconWrap {
+    margin-right: 16px;
+  }
+  
+  &__ControlsIcon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__ControlsIconRunning {
+    background-image: url('./styles/images/running.svg');
+  }
+  
+  &__ControlsIconComplete {
+    background-image: url('./styles/images/complete.svg');
+  }
+  
+  &__ControlsIconNotinstalled {
+    background-image: url('./styles/images/disabled.svg');
+  }
+  
+  &__ControlsIconStopped {
+    background-image: url('./styles/images/down.svg');
+  }
+  
+  &__ControlsIconChanging {
+    background-image: url('./styles/images/changing.svg');
+  }
+  
+  &__ControlsFilter {
+    position: relative;
+    height: 34px;
+    
+    .icon {
+      position: absolute;
+      right: 7px;
+      top: calc(50% - 8px);
+      color: gray;
+      cursor: pointer;
+      font-size: 18px;
+      opacity: 0.6;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+    
+    .MuiOutlinedInput-input {
+      padding-right: 27px;
+    }
+  }
+  
+  &__btn {
+    padding: 6px 14px 6px 14px;
+    border: 2px solid @black;
+    border-radius: 6px;
+    margin-left: 8px;
+    align-items: center;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: @BgGrey !important;
+      transition: 0.5s;
+    }
+    
+    &:active {
+      background-color: @BgGrey !important;
+      box-shadow: rgb(100 100 111 / 20%) 0px 0px 8px 1px;
+      transition: 0.2s;
+    }
+    
+    &:focus {
+      background-color: @BgGrey !important;
+    }
+    
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+  
+  &__BtnILabel {
+    color: @black;
+    font-family: FuturaHeavy, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  &__BtnIconStop {
+    width: 10px;
+    height: 10px;
+    border: 2px solid  @black;
+    margin-right: 8px;
+  }
+  
+  &__BtnIcon {
+    width: 10px;
+    height: 12px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__BtnIconRestart {
+    background-image: url('./styles/images/restartAll.svg');
+  }
+  
+  &__BtnIconStart {
+    background-image: url('./styles/images/startAll.svg');
+  }
+  
+  &__ContentBl {
+    flex-direction: column;
+    position: relative;
+    padding: 8px 8px 8px 16px;
+    border: 1px solid #DAE3F2;
+    border-radius: 6px;
+  }
+  
+  &__ContentWrapper {
+    overflow: auto;
+    height: 65vh;
+    display: none;
+    
+    @media screen and (min-width: 769px) and (min-height: 901px) {
+      height: 70vh;
+    }
+    
+    @media screen and (min-width: 769px) and (max-height: 900px) {
+      height: 66vh;
+    }
+    
+    @media screen and (min-width: 769px) and (max-height: 800px) {
+      height: 64vh;
+    }
+    
+    @media screen and (min-width: 769px) and (max-height: 700px) {
+      height: 60vh;
+    }
+    
+    @media screen and (min-width: 769px) and (max-height: 600px) {
+      height: 54vh;
+    }
+    
+    @media screen and (min-width: 991px) and (max-height: 800px) {
+      height: 60vh;
+    }
+    
+    @media screen and (min-width: 991px) and (max-height: 700px) {
+      height: 55vh;
+    }
+    
+    &--pod {
+      //styles for pods events tab
+    }
+    
+    &--deployment {
+      //styles for deployment events tab
+    }
+  }
+  
+  &__ContentWrapper::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: #E3E6E8;
+    border-radius: 4px;
+  }
+  
+  &__ContentWrapper::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #ABB3BA;
+  }
+  
+  &__content {
+    height: 65vh;
+    width: 100%;
+    padding: 8px 0;
+    height: 100%;
+    .FontMain;
+  }
+  
+  &__ContentLogs {
+    display: block;
+    word-break: break-word;
+  }
+  
+  &__ControlsWrapper {
+    margin-top: 18px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__ControlsBtn {
+    
+    .MainButton;
+    margin-right: 10px;
+    width: 115px;
+    
+    &:first-child {
+      width: 180px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  
+  &__marker {
+    background-color: yellow;
+  }
+  
+  &__ControlsBtn--disabled {
+    opacity: .5;
+  }
+  
+}
+    
+
+@media screen and (max-width: 768px) {
+  .ServerLogs {
+    
+    &__top {
+      flex-direction: column;
+    }
+    
+    &__controls {
+      margin-top: 15px;
+    }
+    
+    &__ControlsWrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    &__ControlsBtns {
+      order: 2;
+    }
+    
+    &__ControlsFilter {
+      margin-bottom: 18px;
+      order: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  
+  .ServerLogs {
+    
+    &__TabsLabel {
+      padding: 0px 10px 8px 10px;
+      line-height: 17px;
+      margin-right: 0;
+    }
+    
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  .ServerLogs {
+    
+    &__ControlsBtns {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    
+    &__ControlsBtn {
+      width: 180px;
+      margin-bottom: 10px;
+      
+      &:first-child {
+        width: 180px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  
+  .ServerLogs {
+    
+    &__tabs {
+      justify-content: space-between;
+    }
+    
+    &__TabsLabel {
+      font-size: 15px;
+    }
+  }
+}

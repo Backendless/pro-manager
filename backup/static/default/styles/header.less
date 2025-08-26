@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  min-height: 80px;
+  background-color: @BgDeepDark;
+  align-items: center;
+  
+  &__logo {
+    width: 257px;
+    height: 100%;
+    background-image: url('./styles/images/logoManage.png');
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  &__title {
+    font-family: FuturaHeavy;
+    letter-spacing: 0.9px;
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff;
+  }
+  
+  &__menu {
+    color: #fff;
+    font-size: 40px;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .header {
+    
+    &__menu {
+      display: block;
+    }
+    
+    &__logo {
+      width: 100px;
+      background: none;
+    }
+  }
+}

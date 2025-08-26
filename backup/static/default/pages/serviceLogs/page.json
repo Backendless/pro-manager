@@ -1,0 +1,276 @@
+{
+  "components": {
+    "7e437288f19344daa5a4bed75c728637": {
+      "id": "ServerLogs TabsLabelPod",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "64b6f006eead4076cacfac687291d9c6": {
+      "id": "ServerLogs__TabsLabelDeployment",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "184ed6e69bd6d8f1e8fc35c7403c36e5": {
+      "id": "ServerLogs TabsLabelLogs",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "cc6c067e2b46da2502deb333245ebfc6": {
+      "id": "ServerLogs controls",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeUnmount": {
+          "dependencies": []
+        },
+        "onBeforeMount": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "721f315c4f7e15987c55eda29943e742": {
+      "id": "ServerLogs BtnStop",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        },
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "c0128152af0d6e8140ecf17af47e2651": {
+      "id": "ServerLogs ControlsIcon",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "ff639427cbb2fd7735982d312e54c2fb": {
+      "id": "ServerLogs BtnRestart",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        },
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "17e15d26a59d2afecccd78a80f2b5081": {
+      "id": "ServerLogs BtnStart",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        },
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "9051123f6b4f94ef192265039293d4cd": {
+      "id": "ServerLogs__ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeUnmount": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onLeave": {
+          "dependencies": []
+        },
+        "onEnter": {
+          "usedCustomFunctions": [
+            "1e23a48a29f82b3fc1f647fd98cb53f6",
+            "9176f296fff445d3d81faef6cf4854d6"
+          ]
+        }
+      }
+    },
+    "8a65b938894c447674af5ac1fe34b1b8": {
+      "id": "ServerLogs ControlsBtnClear",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "7121511100ee1817f78309a7f31d0a72": {
+      "id": "ServerLogs ControlsBtnFollow",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "4e13749fcca8dd9a1a09e5035b35b04e": {
+      "id": "ServerLogs ControlsInputFilter",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        },
+        "onValueAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "a5c83209f9141b769232623c80466917": {
+      "id": "ServerLogs ControlsBtndownload",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b2ab50636f9e59e467a99f6b681d1001": {
+      "id": "ServerLogs__BtnWrap",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        },
+        "onTooltipTextAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "76672eb5e30a988d34ed50f8321e8405": {
+      "id": "icon",
+      "type": "icon",
+      "moduleType": "system",
+      "moduleId": "icon",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b2b16f278a0d4d44db4cc3ac8be37377": {
+      "id": "ServerLogs__ContentWrapper_logs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onScroll": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "15781b18547de64d9c280b3802ba29c8": {
+      "id": "",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "d6a74b281ba6ec2e9482fbc55a4d1df1": {
+      "id": "",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+    "r_dcac843a154c1eb2e28a4a08b5d34fec",
+    "text",
+    "button",
+    "input",
+    "icon",
+    "r_41642befc66d596257ab7a78faaac32f"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

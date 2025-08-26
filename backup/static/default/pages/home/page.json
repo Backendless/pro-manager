@@ -1,0 +1,24 @@
+{
+  "components": {
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onEnter": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onLeave": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

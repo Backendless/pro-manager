@@ -1,0 +1,25 @@
+{
+  "name": "alertLay",
+  "id": "87ee9386852a3c4ad32caddae372ff43",
+  "filePath": "./functions/87ee9386852a3c4ad32caddae372ff43/code.js",
+  "usedCustomFunctions": [],
+  "inputs": [
+    {
+      "label": "pageData",
+      "name": "pageData"
+    },
+    {
+      "label": "message",
+      "name": "message"
+    },
+    {
+      "label": "layout",
+      "name": "layout"
+    },
+    {
+      "label": "color",
+      "name": "color"
+    }
+  ],
+  "hasReturn": false
+}

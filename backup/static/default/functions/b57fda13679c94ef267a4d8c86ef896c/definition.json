@@ -1,0 +1,17 @@
+{
+  "name": "openSocketUpgrade",
+  "id": "b57fda13679c94ef267a4d8c86ef896c",
+  "filePath": "./functions/b57fda13679c94ef267a4d8c86ef896c/code.js",
+  "usedCustomFunctions": [],
+  "inputs": [
+    {
+      "label": "serviceName",
+      "name": "serviceName"
+    },
+    {
+      "label": "podName",
+      "name": "podName"
+    }
+  ],
+  "hasReturn": true
+}
