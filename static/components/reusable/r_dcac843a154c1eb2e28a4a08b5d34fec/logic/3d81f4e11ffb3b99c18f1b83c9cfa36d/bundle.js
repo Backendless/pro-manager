@@ -1,7 +1,12 @@
 define([], () => ({
   /* content */
+  /* handler:onMounted */
+  ['onMounted'](___arguments) {
+    
+  },
+  /* handler:onMounted */
   /* handler:onDynamicItemsAssignment */
-  onDynamicItemsAssignment(___arguments) {
+  ['onDynamicItemsAssignment'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]

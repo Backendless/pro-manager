@@ -1,6 +1,8 @@
 {
   "category": "Reusable Components",
   "showInToolbox": true,
+  "type": "reusable",
+  "faIcon": "recycle",
   "name": "header",
   "components": {
     "acafba620bdcd139813c3e2a3613dfaf": {
@@ -10,7 +12,7 @@
       "moduleId": "icon",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     },
@@ -21,13 +23,12 @@
       "moduleId": "block",
       "handlers": {
         "onClick": {
-          "dependencies": []
+          "usedCustomFunctions": []
         }
       }
     }
   },
   "id": "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
-  "type": "reusable",
   "dataBinding": {},
   "usedComponentTypes": [
     "block",
@@ -36,5 +37,5 @@
   ],
   "style": {},
   "attrs": {},
-  "faIcon": "recycle"
+  "pods": {}
 }
