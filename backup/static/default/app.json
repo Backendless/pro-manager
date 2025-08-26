@@ -25,7 +25,7 @@
   "metaTags": {},
   "externalLibraries": [],
   "faviconHash": "8cb9a0ae",
-  "container": "backup_default",
+  "container": "default",
   "gameServerURL": "https://eu-game.backendless.com",
   "devConsoleURL": "https://eu-develop.backendless.com",
   "backupsPolicy": {
