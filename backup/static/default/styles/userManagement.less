@@ -1,0 +1,173 @@
+.management {
+  width: 100%;
+  max-width: 100%;
+  
+  &__wrap {
+    width: 100%;
+  }
+  
+  &__block {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  &__FormGroup {
+    max-width: 355px;
+  }
+  
+  &__controls {
+    align-items: center;
+  }
+  
+  &__MainButton {
+    margin-top: 25px;
+  }
+  
+  &__WrraperTextItem {
+    display: block;
+    margin-bottom: 25px;
+  }
+  
+  &__ItemText {
+    .FontMain;
+    font-size: 18px;
+  }
+  
+  &__ItemText--bold {
+    .FontMain;
+    font-weight: 700;
+  }
+  
+  &__ItemName {
+    width: 100%;
+    font-size: 22px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    line-height: 1;
+    word-break: break-word;
+  }
+  
+  &__NoUsersMessage {
+    .FontMain;
+    font-size: 19px;
+  }
+  
+  .mysql {
+    &__container {
+      max-height: 485px;
+      overflow: auto;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.CreateUser {
+  
+  &__main {
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid @blue;
+    border-radius: 5px;
+    margin: 7px;
+    max-width: 460px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  &__form {
+    box-shadow: none;
+    border: none;
+    width: 100%;
+  }
+  
+  &__item {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  &__FormGroup {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  &__CloseBtn {
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    font-size: 18px;
+    opacity: 0.6;
+    color: gray;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 15px;
+  }
+  
+  &__TitleText {
+    margin: 0px 0px 20px;
+    font-family: FuturaBook, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    color: @black;
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+  
+  &__label {
+    .FontMain;
+    min-width: 100px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  
+  .management {
+    
+    &__ItemName {
+      margin-right: 20px;
+    }
+    
+    &__controls {
+      min-width: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  &__controls {
+    .MainButton {
+      width: 140px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  .management {
+    
+    &__item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    &__ItemName {
+      width: 100%;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    
+    &__controls {
+      .MainButton {
+        width: 160px;
+      }
+    }
+  }
+}

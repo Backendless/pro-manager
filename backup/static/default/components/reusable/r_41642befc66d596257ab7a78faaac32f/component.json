@@ -1,0 +1,60 @@
+{
+  "category": "Reusable Components",
+  "showInToolbox": true,
+  "type": "reusable",
+  "faIcon": "recycle",
+  "name": "alert",
+  "components": {
+    "ebf8fa041b87cedbe98f3342f943badf": {
+      "id": "alert cancel btn",
+      "type": "icon",
+      "moduleType": "system",
+      "moduleId": "icon",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "56af2c373986c15715d6b101723d8d4f": {
+      "id": "alert text",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "00273088daea2b2c6eeedc9f080e6bac": {
+      "id": "ingressLink",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "usedComponentTypes": [
+    "block",
+    "text",
+    "icon"
+  ],
+  "id": "r_41642befc66d596257ab7a78faaac32f",
+  "style": {},
+  "attrs": {
+    "data-data-container": "false"
+  },
+  "pods": {},
+  "dataBinding": {}
+}

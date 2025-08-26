@@ -1,0 +1,106 @@
+{
+  "components": {
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onEnter": {
+          "usedCustomFunctions": [
+            "b57fda13679c94ef267a4d8c86ef896c"
+          ]
+        },
+        "onLeave": {
+          "dependencies": []
+        }
+      }
+    },
+    "924202b19f0ef683e3940a99b258d565": {
+      "id": "Upgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClassListAssignment": {
+          "usedCustomFunctions": [
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        }
+      }
+    },
+    "b9e32a693acbd1e56df5336d4c5df0d6": {
+      "id": "ServerLogs__ControlsBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onLabelAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "8fe17f091566246719df127cb9f4144d": {
+      "id": "",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "05d1c6ea98b3e4b672be45997e579ff7": {
+      "id": "",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onLabelAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "1ba48423ace5bfb2e64a1dd5765ed14e": {
+      "id": "ServerLogs__ContentLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeUnmount": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b2b16f278a0d4d44db4cc3ac8be37377": {
+      "id": "UpgradeLogs",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onScroll": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+    "r_dcac843a154c1eb2e28a4a08b5d34fec",
+    "text",
+    "divider",
+    "button",
+    "r_41642befc66d596257ab7a78faaac32f"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

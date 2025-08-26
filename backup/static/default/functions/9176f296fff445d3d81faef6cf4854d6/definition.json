@@ -1,0 +1,21 @@
+{
+  "name": "openSocketServices",
+  "id": "9176f296fff445d3d81faef6cf4854d6",
+  "filePath": "./functions/9176f296fff445d3d81faef6cf4854d6/code.js",
+  "usedCustomFunctions": [],
+  "inputs": [
+    {
+      "label": "serviceName",
+      "name": "serviceName"
+    },
+    {
+      "label": "podName",
+      "name": "podName"
+    },
+    {
+      "label": "host",
+      "name": "host"
+    }
+  ],
+  "hasReturn": true
+}

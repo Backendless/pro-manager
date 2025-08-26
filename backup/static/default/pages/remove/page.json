@@ -1,0 +1,214 @@
+{
+  "components": {
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onLeave": {
+          "dependencies": []
+        },
+        "onEnter": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "169ca04218c3102f67d1f8aef66f25f5": {
+      "id": "ModalRemove",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeUnmount": {
+          "usedCustomFunctions": []
+        },
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "a9f794c30478c545e5b58c5659bf8611": {
+      "id": "ModalRemove__CloseIcon",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "a8ced2d9f85be027230dd814ee1fdb8b": {
+      "id": "btn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "33a848b796b77f762a2122974b1af0aa": {
+      "id": "MainButton",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "d1bed328af1f6f344afc053369cdf082": {
+      "id": "btn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onStyleAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "471922b322bd59973d9f11b3f3f36f1f": {
+      "id": "ModalRemove__InputField",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "4d93e6c9abe30946ada853ed213184d2": {
+      "id": "modal__shadow",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "ee3841a4181ee45f1b4401031351092b": {
+      "id": "UpgradeControl__icon",
+      "type": "icon",
+      "moduleType": "system",
+      "moduleId": "icon",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "5f46bc085427795650463585f3135dfb": {
+      "id": "SearchField__SearchInput",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onFocus": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        }
+      }
+    },
+    "0768ae4a5bce8bd43872e8d894cfc446": {
+      "id": "UpgradeControl__ResultsItem",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "d258d65b1a65a3bbd51f4a93943cdb59": {
+      "id": "changeBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "8f16ba2ef5c9c7a7b32d569b3762f6c4"
+          ]
+        },
+        "onDisabledStateAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "766bf461796308dbbad8e8489727e7c2": {
+      "id": "wrapper",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "1d48b466d062cde5ed4448213ac23411": {
+      "id": "",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "a758abc8c9582498eba8a2914a489a8c": {
+      "id": "downloadLogsLink",
+      "type": "link",
+      "moduleType": "system",
+      "moduleId": "link",
+      "handlers": {
+        "onTargetPathAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+    "r_dcac843a154c1eb2e28a4a08b5d34fec",
+    "text",
+    "divider",
+    "input",
+    "icon",
+    "button",
+    "link",
+    "r_41642befc66d596257ab7a78faaac32f"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

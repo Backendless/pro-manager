@@ -1,35 +1,35 @@
 {
-  "port": 5050,
-  "socketIOPort": 5051,
-  "license": {
-    "appId": "0DC14B8C-F51A-93D2-FF7A-D950FA8E0C00",
-    "apiKey": "BE12C141-7E08-934F-FF4C-111D2D520D00",
-    "serviceName": "KeysV1"
-  },
-  "logger": {
-    "levels": {
-      "default": "info",
-      "base-config": "info",
-      "install-mongo": "verbose",
-      "install-redis": "verbose",
-      "mysql-connection-configuration-service": "verbose",
-      "fs-util": "verbose",
-      "bl-statefulset-status": "info",
-      "run-upgrade-job": "verbose",
-      "UpgradeService": "verbose",
-      "install-bl-rt-server": "verbose",
-      "install-bl-server": "verbose",
-      "service-log": "verbose",
-      "k8s-scale": "debug"
+    "port": 5050,
+    "socketIOPort": 5051,
+    "license": {
+        "appId": "0DC14B8C-F51A-93D2-FF7A-D950FA8E0C00",
+        "apiKey": "BE12C141-7E08-934F-FF4C-111D2D520D00",
+        "serviceName": "KeysV1"
+    },
+    "logger": {
+        "levels": {
+            "default": "info",
+            "base-config": "info",
+            "install-mongo": "verbose",
+            "install-redis": "verbose",
+            "mysql-connection-configuration-service": "verbose",
+            "fs-util": "verbose",
+            "bl-statefulset-status": "info",
+            "run-upgrade-job": "verbose",
+            "UpgradeService": "verbose",
+            "install-bl-rt-server": "verbose",
+            "install-bl-server": "verbose",
+            "service-log": "verbose",
+            "k8s-scale": "debug"
+        }
+    },
+    "user": {
+        "jwt": {
+            "pass": "6e62a"
+        },
+        "bcrypt": {
+            "salt": 10
+        },
+        "authEnabled": true
     }
-  },
-  "user": {
-    "jwt": {
-      "pass": null
-    },
-    "bcrypt": {
-      "salt": 10
-    },
-    "authEnabled": true
-  }
 }
