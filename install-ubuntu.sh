@@ -34,8 +34,8 @@ echo "nvm installed"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install v14.18.2
-nvm use v14.18.2
+nvm install v22.17.1
+nvm use v22.17.1
 
 echo "installing k3s..."
 curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable traefik" sh -
