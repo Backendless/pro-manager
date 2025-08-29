@@ -104,6 +104,13 @@ async function asyncListFilter(sourceList, callback) {
 }
 
 
+  if (!!___arguments.value.length) {
+    ___arguments.context.pageData['btnUpgradeDisabled'] = false;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '1';
+  } else {
+    ___arguments.context.pageData['btnUpgradeDisabled'] = true;
+    ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '0.5';
+  }
   try {
     versions = (await BackendlessUI.Functions.Custom['fn_696a14dd8d2f85be7023c2c4441a65a5']('get', '/version/docker-hub/v2/repositories/backendless/bl-server/tags/', null, ({ [`page_size`]: 20,[`page`]: 1,[`ordering`]: 'last_updated',[`name`]: ___arguments.value })));
     versionsData = ({ [`count`]: (getObjectProperty(versions, 'count')),[`next`]: (getObjectProperty(versions, 'next')),[`previous`]: (getObjectProperty(versions, 'previous')),[`results`]: (await asyncListFilter((getObjectProperty(versions, 'results')), async (item) => {
