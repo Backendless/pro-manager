@@ -67,18 +67,18 @@
         }
       }
     },
-    "1ba48423ace5bfb2e64a1dd5765ed14e": {
+    "42a47b89a166730d5e3b79144562195b": {
       "id": "ServerLogs__ContentLogs",
       "type": "block",
       "moduleType": "system",
       "moduleId": "block",
       "handlers": {
-        "onBeforeUnmount": {
+        "onBeforeMount": {
           "usedCustomFunctions": []
         }
       }
     },
-    "b2b16f278a0d4d44db4cc3ac8be37377": {
+    "453e42de8a533bc61eecfa0e6324f0a2": {
       "id": "UpgradeLogs",
       "type": "block",
       "moduleType": "system",

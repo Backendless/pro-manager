@@ -1,7 +1,7 @@
 define([], () => ({
   /* content */
-  /* handler:onBeforeUnmount */
-  async ['onBeforeUnmount'](___arguments) {
+  /* handler:onBeforeMount */
+  async ['onBeforeMount'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -40,6 +40,6 @@ define([], () => ({
   }
 
   },
-  /* handler:onBeforeUnmount */
+  /* handler:onBeforeMount */
   /* content */
 }))
