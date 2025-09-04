@@ -52,5 +52,5 @@ This guide explains how to make UI changes in the **Pro Manager** application us
 
   ![static-folder](assets/static-folder.png) <br><br>
 
-- <span style="color:red">**⚠️ Revert changes in the `automation.json` and `settings.json` files:** 
+- <span style="color:red">**⚠️ Revert changes in the `automations.json` and `settings.json` files:** 
   <br><br> ![revert-files](assets/revert-files.png) <br><br>

@@ -33,7 +33,7 @@
           "containers": [
             {
               "args": [],
-              "image": "mongo:5",
+              "image": "mongo:6.0.26",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-mongo",
               "ports": [

@@ -81,6 +81,7 @@ async function connectSoket() {
     await BackendlessUI.Functions.Custom['fn_8f16ba2ef5c9c7a7b32d569b3762f6c4'](___arguments.context.pageData, (getObjectProperty(error, 'message')), 'rgba(231, 76, 60, 0.93)', ((function (componentUid) { return ___arguments.context.getComponentByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('95980ee1806a02128292c7d76666d134')), ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('56af2c373986c15715d6b101723d8d4f')));
 
   } finally {
+    console.log('%c>> ' + 'PAge:', 'color: #ffee58', ___arguments.context.pageData);
     ((function (componentUid) { return ___arguments.context.getComponentStyleByUid(componentUid) })('d61f05ceb764b89f8c44a8c320457ad6'))['opacity'] = '1';
     ___arguments.context.pageData['btnUpgradeLabel'] = 'Upgrade';
     ___arguments.context.pageData['btnUpgradeDisabled'] = false;

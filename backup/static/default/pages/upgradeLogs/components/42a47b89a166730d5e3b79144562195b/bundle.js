@@ -1,7 +1,7 @@
 define([], () => ({
   /* content */
-  /* handler:onBeforeUnmount */
-  async ['onBeforeUnmount'](___arguments) {
+  /* handler:onBeforeMount */
+  async ['onBeforeMount'](___arguments) {
     function getObjectProperty(object, propPath) {
   if (typeof propPath !== 'string' || object[propPath] !== undefined) {
     return object[propPath]
@@ -23,24 +23,23 @@ define([], () => ({
 }
 
 
-  if (getObjectProperty(___arguments.context.appData, 'previousUpgrade')) {
-    if (getObjectProperty((getObjectProperty(___arguments.context.appData, 'opensSoketCurrentUpgrade')), 'connected')) {
+  if (getObjectProperty(___arguments.context.appData, 'previousServiceUpgrade')) {
+    if (getObjectProperty((getObjectProperty(___arguments.context.appData, 'opensScketUpgrade')), 'connected')) {
       await (async function(serviceName) {
-
-      	  socketCurrentUpgrade.emit ('service-logs:unsubscribe', {
+      	  socketUpgrade.emit ('service-logs:unsubscribe', {
       	    "serviceName":`${serviceName}`,
       	    "channelName":`${serviceName}-log`
       	  });
 
-      	  socketCurrentUpgrade.disconnect();
+      	  socketUpgrade.disconnect();
 
 
 
-      })((getObjectProperty(___arguments.context.appData, 'previousUpgrade')));
+      })((getObjectProperty(___arguments.context.appData, 'previousServiceUpgrade')));
     }
   }
 
   },
-  /* handler:onBeforeUnmount */
+  /* handler:onBeforeMount */
   /* content */
 }))

@@ -25,7 +25,7 @@
     },
     "user": {
         "jwt": {
-            "pass": "6e62a"
+            "pass": "e99ec"
         },
         "bcrypt": {
             "salt": 10
