@@ -1,0 +1,194 @@
+{
+  "components": {
+    "4038f86f5b6cacb8ee37a8efac3527aa": {
+      "id": "mysql TitleMain",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "5a537424c7d5f0fa5c2169ba52cdc3b9": {
+      "id": "mysql SaveBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "b4ac65b40f178182007af4f16afe24d6": {
+      "id": "mysql controls",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "dependencies": []
+        }
+      }
+    },
+    "33a848b796b77f762a2122974b1af0aa": {
+      "id": "mysql SaveRestartBtn",
+      "type": "button",
+      "moduleType": "system",
+      "moduleId": "button",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "7e1ac109ebbe4db399af721c8b472bd2": {
+      "id": "InputPattern",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "322d59330616d696920fec1cba3f5519": {
+      "id": "InputMaxActive",
+      "type": "input",
+      "moduleType": "system",
+      "moduleId": "input",
+      "handlers": {
+        "onChange": {
+          "usedCustomFunctions": []
+        },
+        "onValueAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "f2cd77e13a5f3c9633a2a81f62910c09": {
+      "id": "ValidationMessagePattern ",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "2f64e73db50c4814bf82eaa10ad4dee9": {
+      "id": "ValidationMessageMaxActive",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "5e3f611a895a0c48231e90eda783d117": {
+      "id": "mysql MainContainer",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "9f186f89932cdfe880554e43f4f916a1": {
+      "id": "mysql container",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDynamicItemsAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "ef925676496420d56f57345d0dfd424e": {
+      "id": "mysql item",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "f5c48fa916fb2cbc6ffa89cc1a7213a1": {
+      "id": "mysql item",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "e42148c2a25d4b52cd0dab7ff8f9ca6a": {
+      "id": "mysql item",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDisplayAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "ffb46f1e64ca651da533c08c9633f67d": {
+      "id": "toggle",
+      "type": "switch",
+      "moduleType": "system",
+      "moduleId": "switch",
+      "handlers": {
+        "onCheckedStateAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "page": {
+      "type": "page",
+      "moduleType": "system",
+      "moduleId": "page",
+      "handlers": {
+        "onLeave": {
+          "dependencies": []
+        },
+        "onEnter": {
+          "dependencies": []
+        }
+      }
+    }
+  },
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "r_eecdebf7a73f3c5e1cffd6bc92dbd289",
+    "r_dcac843a154c1eb2e28a4a08b5d34fec",
+    "text",
+    "input",
+    "switch",
+    "button",
+    "r_41642befc66d596257ab7a78faaac32f"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}

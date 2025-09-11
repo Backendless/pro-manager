@@ -1,0 +1,455 @@
+{
+  "category": "Reusable Components",
+  "showInToolbox": true,
+  "type": "reusable",
+  "faIcon": "recycle",
+  "name": "aside",
+  "components": {
+    "1fed8d3527f135219fb66d9de15adb04": {
+      "id": "aside TabHeaderStatus",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "941dd0cd3b6497a91648a63b0e7bbec7": {
+      "id": "aside TabContentItem",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "9176f296fff445d3d81faef6cf4854d6",
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "1e23a48a29f82b3fc1f647fd98cb53f6"
+          ]
+        },
+        "onMounted": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "02f59a618f63b16eab9c8fcf60ac6e41": {
+      "id": "aside TabHeaderConfig",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "c9ab1739404cb44b5b1b8bc263b8f966": {
+      "id": "aside TabContentItemDomains",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "3c48282edad672c3a97414a89b3c15df": {
+      "id": "aside__TabContent Status",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeMount": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "242a605e5b9ad51d7db207da080446ef": {
+      "id": "aside TabContentItemAll",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "eabb8cf45a71bcf1946dc53f30c31b8e": {
+      "id": "aside ContentItemContainer",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onDynamicItemsAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "e18fe2c44deb374fbddc1d8bc3f2848b": {
+      "id": "aside TabContentItemRedis",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "01553a7c2d381aa60e5ccf3789f368d7": {
+      "id": "aside TabContentItemDataService",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "4f8a44592e064cf3cf6c686767b9b44a": {
+      "id": "aside TabContentItemGeneral",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "82bfb23351e9fb6b2b482c3d040db27a": {
+      "id": "aside TabContentDomains",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "ca8df858b6abfa78f849814f98cbadeb": {
+      "id": "aside TabContentConfig",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        },
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "6cab43b49cea42f97ae16e6befa3a51e": {
+      "id": "aside TabContentItemSsl",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "dependencies": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "03f4bd550b65418c743e04afe3aab9d9": {
+      "id": "aside TabHeaderSettings",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "b18be6db888c37d656d8a09b4db77b43": {
+      "id": "aside TabContentSettings",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        },
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "5478c0a1f053be3a3702c49522bc3f9f": {
+      "id": "aside TabContentItemManagement",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "28ba1a8199a4eecb2cd95d94ca4c9b79": {
+      "id": "aside TabContentItemKubernet",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "7d9115a5d5fa680bccbf5b04e8670af9": {
+      "id": "aside TabHeaderUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "a0ee549c33148fbe32998507d3e95d7c": {
+      "id": "aside TabContentUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onBeforeMount": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        },
+        "onMounted": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        }
+      }
+    },
+    "5c9dbfe9dbd831d9236cdced4d2ee75e": {
+      "id": "aside TabContentTitle",
+      "type": "text",
+      "moduleType": "system",
+      "moduleId": "text",
+      "handlers": {
+        "onContentAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "17ba156b5b49eae93175d437c9e8c1c2": {
+      "id": "aside TabContentItemUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "b57fda13679c94ef267a4d8c86ef896c"
+          ]
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "d03b9242444bed493a3f71c94029bfcc": {
+      "id": "aside TabContentItemUpgradeNow",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "dependencies": []
+        }
+      }
+    },
+    "3d81f4e11ffb3b99c18f1b83c9cfa36d": {
+      "id": "aside ContentItemContainerUpgrade",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        },
+        "onDynamicItemsAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "448ca0c2d51eccf536522379dc1f1fe1": {
+      "id": "aside TabContentItemIngress",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "5698979b878d62056302bf1c9e3a87b6": {
+      "id": "aside__TabContentItem",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "7721368b92c51e2896bb84492a0981ce": {
+      "id": "aside TabContentItemEmail",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "d75f215f23aa0a44d2d32f17694c1636": {
+      "id": "aside__TabContent--service",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5"
+          ]
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "2443481caf038dd5d7e9a159dae823bf": {
+      "id": "aside__TabContentItem",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": [
+            "696a14dd8d2f85be7023c2c4441a65a5",
+            "1e23a48a29f82b3fc1f647fd98cb53f6",
+            "9176f296fff445d3d81faef6cf4854d6"
+          ]
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "66e892a819384aa8fef80389d948b163": {
+      "id": "aside TabContentItemMySQL",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "ca0862e89aaf6fa809dfb88ce6d7782b": {
+      "id": "aside TabContentMySQL",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onMounted": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "30554b16cab32278aae1020f499836e4": {
+      "id": "aside TabContentItemCoderunner",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        },
+        "onClassListAssignment": {
+          "usedCustomFunctions": []
+        }
+      }
+    },
+    "c6a2119823d67f499f38bf1812586ca9": {
+      "id": "aside TabContentItemMain",
+      "type": "block",
+      "moduleType": "system",
+      "moduleId": "block",
+      "handlers": {
+        "onClick": {
+          "usedCustomFunctions": []
+        }
+      }
+    }
+  },
+  "id": "r_dcac843a154c1eb2e28a4a08b5d34fec",
+  "dataBinding": {},
+  "usedComponentTypes": [
+    "block",
+    "text"
+  ],
+  "style": {},
+  "attrs": {},
+  "pods": {}
+}
