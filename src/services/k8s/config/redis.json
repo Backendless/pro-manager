@@ -37,7 +37,7 @@
                 "--appendonly",
                 "yes"
               ],
-              "image": "redis:6",
+              "image": "redis:8.2.1",
               "imagePullPolicy": "IfNotPresent",
               "name": "bl-redis",
               "ports": [
