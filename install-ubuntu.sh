@@ -6,14 +6,24 @@ proManagerBranch=${1:-"main"}
 
 echo "Passed branch is '$proManagerBranch'"
 
-echo "creating user bl-pro-manger"
-sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
+# ---- privileged bootstrap: runs as the invoking (e.g. ubuntu) user ----
+echo "creating user bl-pro-manager"
+id -u bl-pro-manager >/dev/null 2>&1 || \
+  sudo adduser --gecos 'user for backendless pro-manager' --disabled-password --quiet bl-pro-manager
 sudo passwd -d bl-pro-manager
 sudo adduser bl-pro-manager sudo
 sudo adduser bl-pro-manager adm
 sudo adduser bl-pro-manager systemd-journal
-export proManagerBranch=$proManagerBranch
-su bl-pro-manager
+
+echo "granting passwordless sudo to bl-pro-manager"
+echo 'bl-pro-manager ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/bl-pro-manager > /dev/null
+sudo chmod 440 /etc/sudoers.d/bl-pro-manager
+
+# ---- install body: runs as bl-pro-manager, fed via heredoc (single download) ----
+sudo -H -u bl-pro-manager bash -s -- "$proManagerBranch" <<'INSTALL_BODY'
+set -e
+
+proManagerBranch=${1:-"main"}
 
 work_dir="/home/bl-pro-manager"
 
@@ -104,12 +114,12 @@ cat << EOF
 *******************************************************************************************************************
 *******************************************************************************************************************
 
-█████╗░░█████╗░░█████╗░██╗░░██╗███████╗███╗░░██╗██████╗░██╗░░░░░███████╗░██████╗░██████╗  ██████╗░██████╗░░█████╗░
-██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔════╝████╗░██║██╔══██╗██║░░░░░██╔════╝██╔════╝██╔════╝  ██╔══██╗██╔══██╗██╔══██╗
-██████╦╝███████║██║░░╚═╝█████═╝░█████╗░░██╔██╗██║██║░░██║██║░░░░░█████╗░░╚█████╗░╚█████╗░  ██████╔╝██████╔╝██║░░██║
-██╔══██╗██╔══██║██║░░██╗██╔═██╗░██╔══╝░░██║╚████║██║░░██║██║░░░░░██╔══╝░░░╚═══██╗░╚═══██╗  ██╔═══╝░██╔══██╗██║░░██║
-██████╦╝██║░░██║╚█████╔╝██║░╚██╗███████╗██║░╚███║██████╔╝███████╗███████╗██████╔╝██████╔╝  ██║░░░░░██║░░██║╚█████╔╝
-╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝╚═════╝░╚══════╝╚══════╝╚═════╝░╚═════╝░  ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░
+█████╗░░█████╗░░█████╗░██╗░░██╗███████╗███╗░░██╗██████╗░██╗░░░░░███████╗░██████╗░██████╗  ██████╗░██████╗░░█████╗░
+██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔════╝████╗░██║██╔══██╗██║░░░░░██╔════╝██╔════╝██╔════╝  ██╔══██╗██╔══██╗██╔══██╗
+██████╦╝███████║██║░░╚═╝█████═╝░█████╗░░██╔██╗██║██║░░██║██║░░░░░█████╗░░╚█████╗░╚█████╗░  ██████╔╝██████╔╝██║░░██║
+██╔══██╗██╔══██║██║░░██╗██╔═██╗░██╔══╝░░██║╚████║██║░░██║██║░░░░░██╔══╝░░░╚═══██╗░╚═══██╗  ██╔═══╝░██╔══██╗██║░░██║
+██████╦╝██║░░██║╚█████╔╝██║░╚██╗███████╗██║░╚███║██████╔╝███████╗███████╗██████╔╝██████╔╝  ██║░░░░░██║░░██║╚█████╔╝
+╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝╚═════╝░╚══════╝╚══════╝╚═════╝░╚═════╝░  ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░
 
 Copyright 2012-2023, Backendless Corp. All rights reserved.
 
@@ -119,3 +129,4 @@ EOF
 
 sleep 1
 exit 0
+INSTALL_BODY
