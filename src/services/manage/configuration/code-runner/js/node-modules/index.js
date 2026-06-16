@@ -1,5 +1,5 @@
-import { k8sConfig } from "../../../../../../config/k8s-config"
-import { k8sAppsV1Api } from "../../../../../k8s/k8s"
+import { k8sConfig } from '../../../../../../config/k8s-config'
+import { k8sAppsV1Api } from '../../../../../k8s/k8s'
 
 class NodeModulesConfigurationService {
 
@@ -38,7 +38,7 @@ class NodeModulesConfigurationService {
                 name: 'BL_NODE_MODULES',
                 value: newNodeModules.map(({ name, version }) => `${name}@${version}`).join(' ')
             }
-            containers.forEach((container) => {
+            containers.forEach(container => {
                 const index = container.env.findIndex(envItem => envItem.name === 'BL_NODE_MODULES')
                 if (index !== -1) {
                     container.env[index] = newNodeModulesItem
@@ -47,7 +47,7 @@ class NodeModulesConfigurationService {
                 }
             })
         } else {
-            containers.forEach((container) => {
+            containers.forEach(container => {
                 container.env = container.env.filter(envItem => envItem.name !== 'BL_NODE_MODULES')
             })
         }
