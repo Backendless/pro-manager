@@ -89,7 +89,7 @@ class IngressLoadbalancerService {
         logger.info(`deleting ingress rules for '${type}' type`)
         await k8sNetworkingV1Api.deleteNamespacedIngress(ingressName, await k8sConfig.getNamespace())
         if( type !== 'consul' ){
-            await this._saveDefaultToConsul({type})
+            await this._saveDefaultToConsul({ type })
         }
 
         await publicHostChanged({ type })

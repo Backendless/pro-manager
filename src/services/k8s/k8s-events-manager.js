@@ -10,7 +10,7 @@ export async function getPodEvents(podName) {
     const podEvents = result.body.items.filter(event => event.involvedObject.kind === 'Pod' && event.involvedObject.name === podName)
     const resultPodEvents = []
 
-    podEvents.forEach((podEvent) => {
+    podEvents.forEach(podEvent => {
       resultPodEvents.push({
         lastSeen: calculateLastSeenTime(podEvent.lastTimestamp),
         type:     podEvent.type,
@@ -35,7 +35,7 @@ export async function getDeploymentEvents(serviceName) {
     const deploymentEvents = result.body.items.filter(event => event.involvedObject.kind === 'Deployment' && event.involvedObject.name === serviceName)
     const resultDeploymentEvents = []
 
-    deploymentEvents.forEach((deploymentEvent) => {
+    deploymentEvents.forEach(deploymentEvent => {
       resultDeploymentEvents.push({
         lastSeen: calculateLastSeenTime(deploymentEvent.lastTimestamp),
         type:     deploymentEvent.type,
