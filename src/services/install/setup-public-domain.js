@@ -4,7 +4,7 @@ import { getDefaultDomainAndPorts } from '../manage/get-default-domain-and-ports
 
 const localLogger = Logger('setup-public-domain')
 
-export const setupPublicDomain = async (statusLogger) => {
+export const setupPublicDomain = async statusLogger => {
     const logger = statusLogger || localLogger
 
     logger.info('start setup public domains')

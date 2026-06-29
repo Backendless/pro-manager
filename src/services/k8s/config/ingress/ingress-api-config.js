@@ -53,30 +53,6 @@ export class IngressApiConfig {
                                         }
                                     }
                                 }
-                            },
-                            {
-                                'path': '/.*/.*/automation/',
-                                'pathType': 'Prefix',
-                                'backend': {
-                                    'service': {
-                                        'name': 'bl-automation',
-                                        'port': {
-                                            'number': 9095
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                'path': '/automation',
-                                'pathType': 'Prefix',
-                                'backend': {
-                                    'service': {
-                                        'name': 'bl-automation',
-                                        'port': {
-                                            'number': 9095
-                                        }
-                                    }
-                                }
                             }
                         ]
                     }

@@ -10,5 +10,4 @@ export async function restartServicesForDomainConfiguration() {
     await manageService.restartService('bl-taskman')
     await manageService.restartService('bl-rt-server')
     await manageService.restartService('bl-node-server')
-    await manageService.restartService('bl-automation')
 }

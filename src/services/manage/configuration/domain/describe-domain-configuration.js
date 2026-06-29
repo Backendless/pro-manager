@@ -1,4 +1,4 @@
-import { getDefaultDomainAndPorts } from "../../get-default-domain-and-ports"
+import { getDefaultDomainAndPorts } from '../../get-default-domain-and-ports'
 
 export function describeDomainConfiguration() {
     return {
@@ -61,7 +61,7 @@ export function describeDomainConfiguration() {
                     return { Protocol: certName ? 'https' : 'http' }
                 },
                 getDefaultConfiguration: () => {
-                    return {Protocol: 'http'}
+                    return { Protocol: 'http' }
                 }
             }
         ],
@@ -107,7 +107,7 @@ export function describeDomainConfiguration() {
                     return { Protocol: certName ? 'https' : 'http' }
                 },
                 getDefaultConfiguration: () => {
-                    return {Protocol: 'http'}
+                    return { Protocol: 'http' }
                 }
             }
         ],

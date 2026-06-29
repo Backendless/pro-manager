@@ -1,6 +1,6 @@
 import { Logger } from '../../logger'
 import { checkIfEndpointAvailableForGet } from './check-if-endpoint-available'
-import { getPublicIp } from "./get-public-ip"
+import { getPublicIp } from './get-public-ip'
 import config from '../../../config/config.json'
 
 const logger = Logger('get-default-domain-and-ports')

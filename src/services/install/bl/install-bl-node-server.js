@@ -50,7 +50,7 @@ export async function installNodeServer({
     installStatus.info('creating service for bl-node-server')
     const createServiceResult = await k8sCoreV1Api.createNamespacedService(await k8sConfig.getNamespace(), nodeServerConfig.service)
 
-    logger.info(`add config to consul`)
+    logger.info('add config to consul')
     await consul.put('config/nodeServer/internalAddress', 'http://bl-node-server:4000')
 
     return {

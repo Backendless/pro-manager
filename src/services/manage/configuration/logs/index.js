@@ -1,7 +1,7 @@
-import { mountPathConfig } from "../../../../config/mount-path-config"
+import { mountPathConfig } from '../../../../config/mount-path-config'
 import path from 'path'
 import JSZip from 'jszip'
-import { isDirectory, listDirectory, readFileContent } from "../../../../utils/fs"
+import { isDirectory, listDirectory, readFileContent } from '../../../../utils/fs'
 
 class LogsConfigurationService {
 
